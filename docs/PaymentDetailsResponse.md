@@ -1,0 +1,50 @@
+# Org.OpenAPITools.Model.PaymentDetailsResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**TransactionId** | **string** |  | [optional] 
+**TransactionCode** | **string** |  | [optional] 
+**TransactionOrigin** | **string** |  | [optional] 
+**RefundOrigin** | **string** |  | [optional] 
+**BillingContact** | [**SecurePaymentRequestBillingContact**](SecurePaymentRequestBillingContact.md) |  | [optional] 
+**ReferenceTransactionId** | **string** |  | [optional] 
+**TransactionDate** | **string** |  | [optional] 
+**MerchantId** | **string** |  | [optional] 
+**IpAddress** | **string** |  | [optional] 
+**OperationType** | **string** |  | [optional] 
+**ChannelType** | **string** |  | [optional] 
+**ProcessMethod** | **string** |  | [optional] 
+**PaymentType** | **string** |  | [optional] 
+**PaymentCategory** | **string** |  | [optional] 
+**ProcessorName** | **string** |  | [optional] 
+**TenderInfo** | [**PaymentDetailsResponseTenderInfo**](PaymentDetailsResponseTenderInfo.md) |  | [optional] 
+**ReferenceCustomerId** | **string** |  | [optional] 
+**CustomerAccountId** | **string** |  | [optional] 
+**InvoiceNo** | **string** |  | [optional] 
+**ReferenceNo** | **string** |  | [optional] 
+**Remarks** | **string** |  | [optional] 
+**TerminalId** | **string** |  | [optional] 
+**TransactionStatus** | **string** |  | [optional] 
+**PreviousTransactionStatus** | **string** |  | [optional] 
+**TransactionResult** | [**PaymentDetailsResponseTransactionResult**](PaymentDetailsResponseTransactionResult.md) |  | [optional] 
+**InvoiceId** | **string** |  | [optional] 
+**AdditionalFields** | **string** |  | [optional] 
+**SettlementDate** | **string** |  | [optional] 
+**Issuer** | **string** |  | [optional] 
+**MerchantName** | **string** |  | [optional] 
+**MerchantDBAName** | **string** |  | [optional] 
+**Splits** | **string** |  | [optional] 
+**PaymentDescription** | **string** |  | [optional] 
+**RefundTransactions** | **string** |  | [optional] 
+**TotalRefundAmount** | **decimal** |  | [optional] 
+**RemainingAmount** | **decimal** |  | [optional] 
+**ChargebackReason** | **string** |  | [optional] 
+**ChargebackReasonCode** | **string** |  | [optional] 
+**ChargebackDateTime** | **string** |  | [optional] 
+**SubTotalAmount** | **decimal** |  | [optional] 
+**CompanyName** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

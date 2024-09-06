@@ -1,0 +1,16 @@
+# Org.OpenAPITools.Model.PFLiteSecureQuoteRequestInsured
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** |  | [optional] 
+**FirstName** | **string** |  | 
+**LastName** | **string** |  | 
+**MobilePhoneNumber** | **string** |  | [optional] 
+**EmailAddress** | **string** |  | [optional] 
+**IsCancellationWarningViaTextEnabled** | **bool** |  | [optional] 
+**Address** | [**PFLiteSecureQuoteRequestInsuredAddress**](PFLiteSecureQuoteRequestInsuredAddress.md) |  | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

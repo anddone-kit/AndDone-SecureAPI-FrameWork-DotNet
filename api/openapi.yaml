@@ -1,0 +1,5334 @@
+openapi: 3.0.1
+info:
+  description: Secure API's
+  title: Secure API
+  version: v1
+servers:
+- url: https://api.uat.anddone.com/
+paths:
+  /secure/tokens/activations:
+    delete:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRequest'
+        description: secure merchant token request
+        required: true
+      responses:
+        "2XX":
+          content: {}
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for deactivating merchant token securely
+      tags:
+      - Secure Token Management
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Adapter-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: tokenRequest
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetQuoteRequest'
+        description: Signature Request details
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PFQuoteResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API will return quotes created againsts a payment intent.
+      tags:
+      - Secure Embedded Premium Finance
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-PremiumFinance-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: QuoteRequest
+  /secure/merchants/epf/quotes/policy:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PFEndorsementRequest'
+        description: PF Endorsement Request details
+        required: false
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PFEndorsementResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API will do return a quote for an existing policy or new policy
+        for an existing account
+      tags:
+      - Embedded Premium Finance Endorsements
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-PremiumFinance-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: EndorsementRequest
+    put:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Merchant identifier
+        explode: false
+        in: path
+        name: parentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PFPolicyUpdateRequestDTO'
+        description: PFPolicyUpdateRequest DTO
+        required: true
+      responses:
+        "2XX":
+          content: {}
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is will update the policy number
+      tags:
+      - Secure Embedded Premium Finance
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-PremiumFinance-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: PolicyUpdateRequest
+  /secure/reports/downloads:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReportDownloadRequest'
+        description: ReportDownloadRequest
+        required: false
+      responses:
+        "2XX":
+          content: {}
+          description: Successful CSV file download
+          headers:
+            Content-Type:
+              description: The MIME type of the CSV file being downloaded
+              explode: false
+              schema:
+                type: object
+              style: simple
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API will add system report.
+      tags:
+      - Secure Reports
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Report-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: ReportDownloadRequest
+  /secure/payments:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurePaymentRequest'
+        description: payment Detail
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDetailsResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API posts new Secure payment request for the merchant.
+      tags:
+      - Secure Payments
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: paymentRequest
+  /secure/payments/search:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Transaction search criteria
+        explode: true
+        in: query
+        name: adminTransactionSearchCriteria
+        required: false
+        schema: {}
+        style: form
+      - description: Set Page Info
+        explode: true
+        in: query
+        name: pageInfo
+        required: false
+        schema: {}
+        style: form
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminTransactionEntityResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API gets Secure payment by search criteria for the merchant.
+      tags:
+      - Secure Payments
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+  /secure/payments/export:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Transaction search criteria
+        explode: true
+        in: query
+        name: adminTransactionSearchCriteria
+        required: false
+        schema: {}
+        style: form
+      - description: Set Page Info
+        explode: true
+        in: query
+        name: pageInfo
+        required: false
+        schema: {}
+        style: form
+      responses:
+        "2XX":
+          content: {}
+          description: Successful operation - SSE stream initiated
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API gets Secure payment by search criteria for the merchant.
+      tags:
+      - Secure Payments
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+  /secure/refunds/eligibility:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionRefundEligibilityRequest'
+        description: refund Detail
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RefundEligibility'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API return refund eligibility of a transaction.
+      tags:
+      - Secure Refunds
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: transactionRefundEligibilityRequest
+  /secure/refunds:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionRefundRequest'
+        description: refund Detail
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API return refund a transaction.
+      tags:
+      - Secure Refunds
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: transactionRefundRequest
+  /secure/cancellations:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionCancelRequest'
+        description: Cancel Detail
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelledTransactionResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API cancel a transaction.
+      tags:
+      - Secure Voids
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: cancelRequest
+  /secure/paymentsdetails:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurePaymentDetailsRequest'
+        description: Payment Details Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SecurePaymentDetailsResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for getting details of Payments
+      tags:
+      - Secure Payments
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: securePaymentDetailsRequest
+  /secure/paymentintents:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentIntentRequest'
+        description: Payment Intent Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is use to create Secure payment Intent.
+      tags:
+      - Secure Payment Intent
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: paymentIntentRequest
+    put:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateIntentRequest'
+        description: Update Intent Request
+        required: true
+      responses:
+        "2XX":
+          content: {}
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is use update the amount of payment intent.
+      tags:
+      - Secure Payment Intent
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: updateIntentRequest
+  /secure/paymentintents/expirations?id={id}:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Payment Intent Id
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentExpiresResponse'
+          description: Successful operation
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API expires the payment Intent or link.
+      tags:
+      - Secure Payment Intent
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+  /secure/paymentlinks:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentLinkRequest'
+        description: Payment Link Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentLinkResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used to create Payment Links
+      tags:
+      - Secure Payment Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: paymentLinkRequest
+  /secure/paymentlinks/details:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurePaymentLinkRequest'
+        description: Secure Payment Link Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentLinkResponse'
+          description: Successful operation
+        "401":
+          content: {}
+          description: Unauthorized
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for getting Payment Links by PaymentLink ID
+      tags:
+      - Secure Payment Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: SecurePaymentLinkRequest
+  /secure/paymentlinks/expirations:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecurePaymentLinkRequest'
+        description: Secure Payment Link Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntentExpiresResponse'
+          description: Successful operation
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for to set expired payment link
+      tags:
+      - Secure Payment Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: SecurePaymentLinkRequest
+  /secure/paymentlinks/{id}:
+    put:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: PaymentLink identifier
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentLinkRequest'
+        description: Payment Link Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentLinkResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used to update Payment Links
+      tags:
+      - Secure Payment Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: paymentLinkRequest
+  /secure/tokenlinks:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecureTokenLinkRequest'
+        description: Secure Token Link Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenLinkResponse'
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is use to create Secure Token Links
+      tags:
+      - Secure Token Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: secureTokenLinkRequest
+    put:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecureTokenLinkUpdateRequest'
+        description: Secure Token Link Update Request
+        required: true
+      responses:
+        "2XX":
+          content: {}
+          description: Successful operation
+        "400":
+          content: {}
+          description: Bad Request
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API will update the expireIn and paymentType of Token Link.
+      tags:
+      - Secure Token Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: secureTokenLinkUpdateRequest
+  /secure/tokenlinks/details:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecureTokenLinkIdRequest'
+        description: Secure Token Link Id Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenLinkByIdResponse'
+          description: Successful operation
+        "401":
+          content: {}
+          description: Unauthorized
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for getting Token Links by TokenLink ID
+      tags:
+      - Secure Token Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: secureTokenLinkIdRequest
+  /secure/tokenlinks/list:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Token Link search criteria
+        explode: true
+        in: query
+        name: tokenLinkSearchCriteria
+        required: false
+        schema: {}
+        style: form
+      - description: Set Page Info
+        explode: true
+        in: query
+        name: pageInfo
+        required: false
+        schema: {}
+        style: form
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenLinkResponse'
+          description: Successful operation
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for getting all Token Links for Merchant
+      tags:
+      - Secure Token Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+  /secure/tokenlinks/expirations:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecureTokenLinkIdRequest'
+        description: Secure Token Link Id Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenLinkExpiredResponse'
+          description: Successful operation
+        "404":
+          content: {}
+          description: Not Found
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API expires the token link.
+      tags:
+      - Secure Token Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: secureTokenLinkIdRequest
+  /secure/tokens/details:
+    post:
+      parameters:
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-api-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header
+        explode: false
+        in: header
+        name: x-app-key
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: an authorization header. Your origin IP address or URL. Must
+          be configured with AndDone Administration
+        explode: false
+        in: header
+        name: Origin
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: x-version
+        explode: false
+        in: header
+        name: x-version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SecureTokenLinkIdRequest'
+        description: Secure Token Link Id Request
+        required: true
+      responses:
+        "2XX":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MerchantTokenShortResponse'
+          description: Successful operation
+        "500":
+          content: {}
+          description: Server Error
+      security:
+      - x-api-key: []
+        x-app-key: []
+        Origin: []
+      summary: This API is used for getting details of Token Link
+      tags:
+      - Secure Token Links
+      x-accesscontrol-secure: secure
+      x-amazon-apigateway-integration:
+        type: aws_proxy
+        uri: arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:613617718815:function:dev-Transaction-API/invocations
+        httpMethod: POST
+        credentials: arn:aws:iam::613617718815:role/dev-AWSInfra-Main-Stack-APIGatewayIntegrationRole-74CBNG5BXV1S
+      x-codegen-request-body-name: secureTokenLinkIdRequest
+components:
+  schemas:
+    TokenRequest:
+      example:
+        token: 0LDGVDMPLL59EK2X
+      properties:
+        token:
+          type: string
+      type: object
+    PFQuoteDTORequest:
+      type: object
+    PFUpdatePFARequestDTO:
+      example:
+        quoteKey: "21563588"
+      properties:
+        quoteKey:
+          description: This denotes the quoteKey.
+          type: number
+      type: object
+    PFLiteGetQuoteRequest:
+      example:
+        paymentLinkId: V8R4VQkv
+      properties:
+        paymentLinkId:
+          description: This denotes the payment link id.
+          type: string
+      required:
+      - paymentLinkId
+      type: object
+    PFLiteSecureQuoteRequest:
+      example:
+        merchant:
+          contactName: test1
+          contactPhone: "9090909091"
+        insured:
+          id: d35gf4f
+          firstName: John
+          lastName: Doe
+          mobilePhoneNumber: string
+          emailAddress: string@email.com
+          isCancellationWarningViaTextEnabled: true
+          address:
+            address1: 7438 Airport Drive
+            address2: 743 Airport Drive
+            city: Kansas City
+            state: MO
+            zip: "64105"
+            phone: "9090909090"
+        program:
+          programId: 123456
+          loanType: Commercial
+        policies:
+        - id: d35gf4f
+          policyNumber: DoesPolicy
+          premium: 2000
+          coverageType: Fire
+          effectiveDate: 01-01-2024 00:00:00
+          cancelDays: Item20
+          minimumEarnedPercent: 2.2
+          carrier:
+            name: John Doe Company
+            bestNumber: "3245"
+            uniqueId: "32424"
+      properties:
+        merchant:
+          $ref: '#/components/schemas/PFLiteSecureQuoteRequest_merchant'
+        insured:
+          $ref: '#/components/schemas/PFLiteSecureQuoteRequest_insured'
+        program:
+          $ref: '#/components/schemas/PFLiteSecureQuoteRequest_program'
+        policies:
+          items:
+            $ref: '#/components/schemas/PFLiteSecureQuoteRequest_policies_inner'
+          type: array
+      type: object
+    PFLitePaymentLinkRequest:
+      example:
+        quoteKey: "25673385"
+        isPayInFull: true
+      properties:
+        quoteKey:
+          type: string
+        isPayInFull:
+          type: boolean
+      type: object
+    PaymentLinkResponse:
+      example:
+        id: O78jve8k
+        merchantId: GBaPo83P
+        title: FirstPayment
+        paymentLink: http://v2-payment-gateway.s3-website-us-east-1.amazonaws.com/dynamicpay/O78jve8k
+        shortLink: '"https://d1hw301toleak0.cloudfront.net/R83AeO"'
+        amount: 20
+        paymentDescription: FirstPayment
+        expireBy: "null"
+        expireOn: 07-17-2021 13:35:00
+        applyPaymentAdjustments: true
+        enablePartialPayment: false
+        enableMultiplePayment: true
+        customers:
+        - firstName: ExampleFirstName
+          lastName: ExampleLastName
+          email: example@test.com
+          phone: "1234567890"
+          notifyViaSMS: false
+          notifyViaEmail: true
+        lineItems:
+        - lineItemType: 1
+          productId: Prod-001
+          description: Example Product 1
+          quantity: 1
+          rate: 100
+        payments: "null"
+        noOfPaymentMade: 0
+        totalPaidAmount: 0
+        enableProtection: false
+        protectionMode: "null"
+        displayReceipt: false
+        linkStatus: 1
+        invoiceNumber: 2021-000207
+        createdOn: 07-08-2021 06:57:47
+        createdBy: REMerchant
+        modifiedOn: 07-08-2021 06:57:47
+        modifiedBy: REMerchant
+        shortDescription: FirstPayment
+        resonseType: "null"
+        displaySettings: "null"
+        quoteKey: "null"
+        accountNumber: "3451"
+        referenceDataList:
+        - referenceType: PolicyNumber
+          referenceNumber: pol123
+        referenceType: 0
+        referenceNumber: "null"
+        referenceKey: "null"
+        enablePremiumFinance: false
+      properties:
+        id:
+          type: string
+        merchantId:
+          type: string
+        title:
+          type: string
+        paymentLink:
+          type: string
+        shortLink:
+          type: string
+        amount:
+          type: number
+        paymentDescription:
+          type: string
+        expireBy:
+          type: string
+        expireOn:
+          type: string
+        applyPaymentAdjustments:
+          type: boolean
+        enablePartialPayment:
+          type: boolean
+        enableMultiplePayment:
+          type: boolean
+        payments:
+          items:
+            type: object
+          type: array
+        noOfPaymentMade:
+          type: number
+        totalPaidAmount:
+          type: number
+        enableProtection:
+          type: boolean
+        protectionMode:
+          type: string
+        displayReceipt:
+          type: boolean
+        linkStatus:
+          type: string
+        invoiceNumber:
+          type: string
+        createdOn:
+          type: string
+        createdBy:
+          type: string
+        modifiedOn:
+          type: string
+        modifiedBy:
+          type: string
+        shortDescription:
+          type: string
+        resonseType:
+          type: string
+        callbackParameters:
+          $ref: '#/components/schemas/PaymentLinkResponse_callbackParameters'
+        customers:
+          items:
+            $ref: '#/components/schemas/PaymentLinkResponse_customers_inner'
+          type: array
+        lineItems:
+          items:
+            $ref: '#/components/schemas/PaymentLinkResponse_lineItems_inner'
+          type: array
+        displaySettings:
+          $ref: '#/components/schemas/PaymentLinkResponse_displaySettings'
+        splits:
+          items:
+            $ref: '#/components/schemas/PaymentLinkResponse_splits_inner'
+          type: array
+        saveForFuture:
+          type: boolean
+        quoteKey:
+          type: string
+        accountNumber:
+          type: string
+        enablePremiumFinance:
+          type: boolean
+      type: object
+    GetQuoteRequest:
+      example:
+        paymentIntentId: ndDBAZxO
+      properties:
+        paymentIntentId:
+          description: This denotes the payment intent id.
+          type: string
+      required:
+      - paymentIntentId
+      type: object
+    PFPolicyUpdateRequestDTO:
+      example:
+        quoteKey: 22857791
+        premium: 9000
+        category: FIRE
+        newPolicyNumber: "1256"
+      properties:
+        quoteKey:
+          description: This denotes the quote key.
+          type: number
+        accountNumber:
+          description: This denotes the loan account number.
+          type: string
+        premium:
+          description: This denotes the premium amount.
+          type: number
+        category:
+          description: This denotes the coverage Type.
+          type: string
+        newPolicyNumber:
+          description: This denotes the new policy number.
+          type: string
+      required:
+      - category
+      - newPolicyNumber
+      - premium
+      - quoteKey
+      type: object
+    PFQuoteEsignRequest:
+      example:
+        quoteKey: "1234"
+        insuredName: John
+        ipAddress: 101.205.12.14
+        macAddress: 12-34-56-78-9A-BC
+      properties:
+        quoteKey:
+          description: This denotes the quoteKey.
+          type: string
+        insuredName:
+          description: This denotes the name of the insured.
+          type: string
+        ipAddress:
+          description: This denotes the ip address of the client.
+          type: string
+        macAddress:
+          description: This denotes the mac address of the client.
+          type: string
+      required:
+      - insuredName
+      - ipAddress
+      - macAddress
+      - quoteKey
+      type: object
+    PFEndorsementResponse:
+      example:
+        integrationID: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        isSuccess: true
+        message: string
+        item:
+          saveStatus: Success
+          quote:
+            pfa: JVEBRdfklsdjfjewrjlsdfmsamlkrlkelrwesklsd
+            quoteKey: 11245345
+            premium: 1200
+            downAmount: 308
+            amountFinanced: 892
+            financeCharge: 48.86
+            totalPayments: 940.86
+            paymentAmount: 104.54
+            docStamp: 0
+            firstDueDate: 07/16/2023
+            apr: 12.95
+            installments: 9
+            paymentsRetained: 0
+            paymentRetainedAmount: 0
+            eSignResult:
+              processed: false
+              eSignOption: 0
+      properties:
+        integrationID:
+          type: string
+        isSuccess:
+          type: boolean
+        message:
+          type: string
+        item:
+          $ref: '#/components/schemas/PFEndorsementResponse_item'
+      type: object
+    PFCheckEndorsementResponse:
+      example:
+        integrationID: 3fa85f64-5717-4562-b3fc-2c963f66afa6
+        isSuccess: true
+        isEndorsementEligible: true
+        message: string
+        item:
+          AgreementID: 41243421
+          ClientID: 4124
+          AccountNumber: 23414dc43
+          ClientName: name
+          IsCommercial: true
+          policies:
+          - PolicyID: 1232345
+            CompanyName: name
+            PolicyNumber: 3523d351f
+            Premium: 123.32
+            CoverageType: FIRE
+            CoverageTypeDescription: Description
+            CompanyTypeID: 123
+      properties:
+        integrationID:
+          type: string
+        isSuccess:
+          type: boolean
+        isEndorsementEligible:
+          type: boolean
+        message:
+          type: string
+        item:
+          $ref: '#/components/schemas/PFCheckEndorsementResponse_item'
+      type: object
+    QuoteRequest:
+      example:
+        QuoteKey: "22133742"
+      properties:
+        QuoteKey:
+          description: This denotes the quoteKey.
+          type: string
+      required:
+      - QuoteKey
+      type: object
+    PFQuoteResponse:
+      type: object
+    PFRetrievePFARequest:
+      example:
+        QuoteKey: "22133742"
+      properties:
+        QuoteKey:
+          description: This denotes the quoteKey.
+          type: string
+      required:
+      - QuoteKey
+      type: object
+    RetrievePFAResponse:
+      type: object
+    PFCheckEndorsementsRequest:
+      example:
+        accountNumber: "123456"
+        quoteKey: "1234"
+        isCommercial: true
+      properties:
+        accountNumber:
+          description: This denotes the loan account number.
+          type: string
+        quoteKey:
+          description: This denotes the quoteKey.
+          type: string
+        isCommercial:
+          description: This denotes the flag which identifies if the agreement is
+            commercial LOB or Personal LOB.
+          type: boolean
+      required:
+      - accountNumber
+      type: object
+    PFEndorsementRequest:
+      example:
+        quote:
+          agreementId: "9875972"
+          policies:
+          - policyId: "9875972"
+            premium: 1200
+            effectiveDate: 2023-02-20T05:39:43.181Z
+            expirationDate: 2023-02-20T05:39:43.181Z
+            coverage: FIRE
+            company:
+              BestNumber: ""
+              UniqueID: "0000"
+              Name: IPFS TOTALPAY
+              CareOf: moon
+              Address1: 789 Oak Ave
+              Address2: 789 Oak Ave
+              City: Kansas City
+              State: MO
+              Zip: "442356"
+              Phone: "442356312312"
+          Insured:
+            UniqueID: test
+            Email: test@test.com
+            Address:
+              Name: MichaelJackson
+              Address1: 7438 Airport Drive
+              Address2: 743 Airport Drive
+              City: Kansas City
+              State: MO
+              Zip: "12345"
+              Phone: "9090909090"
+          Agent:
+            UniqueID: test1
+            Email: test@test.com
+            Address:
+              Name: MichaelJackson
+              Address1: 7438 Airport Drive
+              Address2: 743 Airport Drive
+              City: Kansas City
+              State: MO
+              Zip: "12345"
+              Phone: "9090909090"
+      properties:
+        quote:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote'
+      required:
+      - quote
+      type: object
+    ReportDownloadRequest:
+      example:
+        ReportId: autho
+        Date: 04-04-2022
+      properties:
+        ReportId:
+          type: string
+        Date:
+          type: string
+      type: object
+    AdminTransactionSearchCriteria:
+      example:
+        startDate: 2019-07-05T11:44:22.700454
+        endDate: 2019-08-05T11:44:22.700454
+        transactionId: n1WxodVY
+        referenceTransactionId: JydrJdk9
+        transactionStatuses: "5"
+        customerIds: "n1WxodVY,JydrJdk9"
+        partnerIds: All
+        orderCodes: "12562"
+        transactionType: "0"
+        authCode: ACD12
+        cardHolderName: John
+        amount: 50
+        fromAmount: 1
+        toAmount: 200
+        channelTypes: "3"
+        maskAccount: '****4532'
+        customerName: John
+        recurringId: n1WxodVY
+        referenceNo: "04321"
+        resellerIds: "21,2"
+        merchantIds: "61,40"
+        paymentType: PaymentIntent
+        paymentCategory: MerchantPayment
+      properties:
+        startDate:
+          type: string
+        endDate:
+          type: string
+        transactionId:
+          type: string
+        referenceTransactionId:
+          type: string
+        transactionStatuses:
+          type: string
+        customerIds:
+          type: string
+        partnerIds:
+          type: string
+        orderCodes:
+          type: string
+        transactionType:
+          type: number
+        authCode:
+          type: string
+        cardHolderName:
+          type: string
+        amount:
+          type: number
+        fromAmount:
+          type: number
+        toAmount:
+          type: number
+        channelTypes:
+          type: string
+        maskAccount:
+          type: string
+        customerName:
+          type: string
+        recurringId:
+          type: string
+        referenceNo:
+          type: string
+        resellerIds:
+          type: string
+        merchantIds:
+          type: string
+        paymentType:
+          enum:
+          - None
+          - AnytimePayment
+          - SubDomain
+          - PaymentIntent
+          - PaymentLink
+          - OpenPayment
+          - TokenLink
+          type: string
+        paymentCategory:
+          enum:
+          - None
+          - MerchantPayment
+          - MPIPD
+          - MPIPI
+          - PFD
+          - PFI
+          type: string
+      type: object
+    UpdateIntentRequest:
+      example:
+        paymentIntentId: yB8B9xgV
+        quoteKey: "21190475"
+      properties:
+        paymentIntentId:
+          type: string
+        quoteKey:
+          type: string
+      type: object
+    PaymentDetailsRequest:
+      example:
+        token: ""
+        paymentLinkId: ""
+        id: ""
+      properties:
+        token:
+          type: string
+        paymentLinkId:
+          type: string
+        id:
+          type: string
+      type: object
+    TransactionRefundRequest:
+      example:
+        InvoiceNumber: ""
+        PONumber: ""
+        RefundAmount: 0
+        TransactionId: ""
+        Remarks: ""
+        RefundReason: ""
+        RefundDetail: ""
+      properties:
+        InvoiceNumber:
+          type: string
+        PONumber:
+          type: string
+        RefundType:
+          enum:
+          - 1
+          type: number
+        RefundAmount:
+          type: number
+        TransactionId:
+          type: string
+        Remarks:
+          type: string
+        RefundReason:
+          type: string
+        RefundDetail:
+          type: string
+      type: object
+    RefundEligibility:
+      example:
+        RefundEligible: true
+        Message: ""
+      properties:
+        refundEligible:
+          type: boolean
+        message:
+          type: string
+      type: object
+    TransactionResponse:
+      example:
+        transactionId: 1f8353b7-7749-42b8-8de8-523fcba255ec
+        transactionCode: WEB
+        transactionOrigin: 0
+        billingContact:
+        - name:
+          - title: Mr
+            firstName: James
+            middleName: George
+            lastName: Michael
+          companyName: Walmart
+          department: Grocery
+          fax: "2129876543"
+          phone: "5557543010"
+          alternatePhone: "5417543018"
+          mobile: "5417543010"
+          email: james.goerge@gmail.com
+          uRL: www.google.com
+          address:
+          - addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+        shippingContact:
+        - name:
+          - title: Mr
+            firstName: James
+            middleName: George
+            lastName: Michael
+          companyName: Walmart
+          department: Grocery
+          fax: "2129876543"
+          phone: "5557543010"
+          alternatePhone: "5417543018"
+          mobile: "5417543010"
+          email: james.goerge@gmail.com
+          uRL: www.google.com
+          address:
+          - addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+        referenceTransactionId: ""
+        transactionDate: ""
+        merchantId: A9aXwD84
+        ipAddress: ""
+        operationType: 0
+        channelType: 3
+        isDebit: false
+        tenderInfo:
+        - bankName: ICICI
+          routingNumber: "215132"
+          rawMICRLine: ""
+          accountType: ""
+          checkType: VISA
+          checkNumber: ""
+          nameOnCheck: MichaelJackson
+          accountHolderName: MichaelJackson
+          accountCategory: 1
+          cardHolderName: MichaelJackson
+          cardType: VISA
+          maskCardNumber: ""
+          cardExpiry: "1220"
+          cVData: "999"
+          cVDataStatus: ""
+          trackData: ""
+          healthCareAccountType: HSA
+          rxAmount: 0
+          visionAmount: 0
+          dentalAmount: 0
+          clinicAmount: 0
+          isCheckCard: false
+          captureAmount: 50
+          amount: 1
+          tipAmount: 1
+          convenienceAmount: 1
+          taxAmount: 1
+          taxPercent: 0
+          adjustmentValue: 3.88
+          adjustmentValueType: 2
+          adjustmentAmount: 0.43
+          adjustmentDisplayName: Surcharge
+          adjustmentDescriptorMessage: This is service for ach payments
+          paymentAdjustmentType: 2
+          preAuthCode: "123456"
+          maskAccount: '****0055'
+          ePB: Collegeville
+          kSN: Collegeville
+          cashBackAmount: Collegeville
+          accountToken: Collegeville
+          accountTokenMessage: Collegeville
+          createAccountToken: Collegeville
+          discountType: 1
+          discountAmount: 5.4
+          discountPercent: 0
+          taxAfterDiscount: true
+        referenceCustomerId: ""
+        customerAccountId: ""
+        invoiceNo: "47"
+        poNo: ""
+        referenceNo: ""
+        remarks: ""
+        recurringType: 1
+        recurringId: BD8QpWpP
+        installmentNumber: 0
+        installmentCount: 0
+        allowDuplicates: false
+        verificationEnabled: false
+        sentSuccessNotification: true
+        sentFailedNotification: true
+        trainingMode: true
+        terminalId: "50"
+        isOffline: false
+        transactionStatus: 16
+        transactionResult:
+        - success: true
+          processorAuthCode: ""
+          traceNumber: ""
+          reasonCode: ""
+          reasonMessage: ""
+          additionResultData: ""
+          additionResultData2: ""
+          verificationStatus: false
+          verification1Code: ""
+          verification2Code: ""
+        level: 0
+        partnerId: ""
+        orderId: ""
+        invoiceId: ""
+        paymentLinkId: ""
+      properties:
+        transactionId:
+          type: string
+        transactionCode:
+          type: string
+        transactionOrigin:
+          type: number
+        billingContact:
+          $ref: '#/components/schemas/TransactionResponse_billingContact'
+        shippingContact:
+          $ref: '#/components/schemas/TransactionResponse_billingContact'
+        referenceTransactionId:
+          type: string
+        transactionDate:
+          type: string
+        merchantId:
+          type: string
+        ipAddress:
+          type: string
+        operationType:
+          type: number
+        channelType:
+          type: number
+        isDebit:
+          type: boolean
+        tenderInfo:
+          $ref: '#/components/schemas/TransactionResponse_tenderInfo'
+        referenceCustomerId:
+          type: string
+        customerAccountId:
+          type: string
+        invoiceNo:
+          type: string
+        poNo:
+          type: string
+        referenceNo:
+          type: string
+        remarks:
+          type: string
+        recurringType:
+          type: number
+        recurringId:
+          type: string
+        installmentNumber:
+          type: number
+        installmentCount:
+          type: number
+        allowDuplicates:
+          type: boolean
+        verificationEnabled:
+          type: boolean
+        sentSuccessNotification:
+          type: boolean
+        sentFailedNotification:
+          type: boolean
+        trainingMode:
+          type: boolean
+        terminalId:
+          type: string
+        isOffline:
+          type: boolean
+        transactionStatus:
+          type: number
+        transactionResult:
+          $ref: '#/components/schemas/TransactionResponse_transactionResult'
+        level:
+          type: number
+        partnerId:
+          type: string
+        orderId:
+          type: string
+        invoiceId:
+          type: string
+        paymentLinkId:
+          type: string
+      type: object
+    SettingsRequest:
+      example:
+        token: ""
+        subDomainName: ""
+        paymentLinkId: ""
+        customerEmail: ""
+      properties:
+        token:
+          type: string
+        subDomainName:
+          type: string
+        paymentLinkId:
+          type: string
+        customerEmail:
+          type: string
+      type: object
+    PaymentLinkPaymentRequest:
+      example:
+        paymentLinkId: ""
+        transactionCode: ""
+        billingContact:
+        - name:
+          - title: Mr
+            firstName: James
+            middleName: George
+            lastName: Michael
+          companyName: Walmart
+          department: Grocery
+          fax: "2129876543"
+          phone: "5557543010"
+          alternatePhone: "5417543018"
+          mobile: "5417543010"
+          email: james.goerge@gmail.com
+          uRL: www.google.com
+          address:
+          - addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+        channelType: ""
+        tenderInfo:
+          bankName: ""
+          accountNumber: ""
+          routingNumber: ""
+          rawMICRLine: ""
+          accountType: ""
+          checkNumber: ""
+          accountCategory: ""
+          accountHolderName: ""
+          nameOnCheck: ""
+          cardHolderName: ""
+          cardType: ""
+          cardNumber: ""
+          cardExpiry: ""
+          cVData: ""
+          cVDataStatus: ""
+          trackData: ""
+          healthCareAccountType: ""
+          rxAmount: ""
+          visionAmount: ""
+          dentalAmount: ""
+          clinicAmount: ""
+          removeDiscounting: ""
+          amount: ""
+          tipAmount: ""
+          convenienceAmount: ""
+          taxPercent: ""
+          preAuthCode: ""
+          createAccountToken: ""
+          accountToken: ""
+        invoiceNo: ""
+        remarks: ""
+      properties:
+        paymentLinkId:
+          type: string
+        transactionCode:
+          type: string
+        billingContact:
+          $ref: '#/components/schemas/TransactionResponse_billingContact'
+        channelType:
+          type: number
+        tenderInfo:
+          $ref: '#/components/schemas/PaymentLinkPaymentRequest_tenderInfo'
+        invoiceNo:
+          type: string
+        remarks:
+          type: string
+      type: object
+    SecurePaymentRequest:
+      example:
+        token: asd12
+        type: PaymentIntent
+        transactionCode: parentId
+        billingContact:
+          name:
+            firstName: James
+            lastName: Michael
+          address:
+            addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+        channelType: CreditCard
+        tenderInfo:
+          bankName: ""
+          accountNumber: ""
+          routingNumber: ""
+          accountType: ""
+          checkNumber: ""
+          accountCategory: Personal
+          accountHolderName: ""
+          nameOnCheck: ""
+          cardHolderName: John Smith
+          cardType: VISA
+          cardNumber: "4151500000000008"
+          cardExpiry: "0330"
+          cVData: "737"
+          cVDataStatus: AV
+          removeDiscounting: false
+          amount: ""
+          createAccountToken: false
+          accountToken: ""
+        invoiceNo: parentId
+        remarks: parentId
+        additionalFields:
+          policyNumber: "1231"
+      properties:
+        paymentReference:
+          type: string
+        type:
+          enum:
+          - AnytimePayment
+          - PaymentIntent
+          - PaymentLink
+          - OpenPayment
+          type: string
+        transactionCode:
+          type: string
+        billingContact:
+          $ref: '#/components/schemas/SecurePaymentRequest_billingContact'
+        channelType:
+          enum:
+          - CreditCard
+          - DebitCard
+          - ACH
+          type: string
+        tenderInfo:
+          $ref: '#/components/schemas/SecurePaymentRequest_tenderInfo'
+        remarks:
+          type: string
+        additionalFields:
+          $ref: '#/components/schemas/SecurePaymentRequest_additionalFields'
+      type: object
+    PaymentDetailsResponse:
+      example:
+        merchantDBAName: merchantDBAName
+        splits: splits
+        billingContact:
+          address:
+            country: 0.8008281904610115
+            city: city
+            postalCode: postalCode
+            addressLine1: addressLine1
+            timeZone: timeZone
+            addressLine2: addressLine2
+            state: state
+          name:
+            firstName: firstName
+            lastName: lastName
+        additionalFields: additionalFields
+        companyName: companyName
+        channelType: channelType
+        terminalId: terminalId
+        previousTransactionStatus: previousTransactionStatus
+        refundTransactions: refundTransactions
+        transactionOrigin: transactionOrigin
+        processMethod: processMethod
+        transactionResult:
+          traceNumber: traceNumber
+          verificationStatus: true
+          reasonMessage: reasonMessage
+          verification2Code: verification2Code
+          errorMessage: errorMessage
+          errorCode: errorCode
+          additionResultData2: additionResultData2
+          processorAuthCode: processorAuthCode
+          additionResultData: additionResultData
+          success: true
+          verification1Code: verification1Code
+          reasonCode: reasonCode
+          merchantReference: merchantReference
+        issuer: issuer
+        paymentType: paymentType
+        merchantName: merchantName
+        remainingAmount: 1.0246457001441578
+        merchantId: merchantId
+        tenderInfo:
+          createAccountToken: true
+          accountCategory: accountCategory
+          binNumber: binNumber
+          discountAmount: 4.145608029883936
+          bankName: bankName
+          preAuthCode: preAuthCode
+          accountHolderName: accountHolderName
+          commissionValue: 7.386281948385884
+          fullAccountNumber: fullAccountNumber
+          maskCardNumber: maskCardNumber
+          adjustmentPercentValue: 9.301444243932576
+          taxPercent: 7.061401241503109
+          adjustmentDisplayName: adjustmentDisplayName
+          discountType: discountType
+          currency: currency
+          rawMICRLine: rawMICRLine
+          convenienceAmount: 5.637376656633329
+          checkType: checkType
+          adjustmentFixedValue: 3.616076749251911
+          checkNumber: checkNumber
+          amount: 1.4658129805029452
+          discountPercent: 2.027123023002322
+          paymentAdjustmentType: paymentAdjustmentType
+          cardHolderName: cardHolderName
+          tipAmount: 5.962133916683182
+          accountType: accountType
+          taxAfterDiscount: true
+          cardType: cardType
+          nameOnCheck: nameOnCheck
+          commissionType: commissionType
+          captureAmount: 6.027456183070403
+          routingNumber: routingNumber
+          cardExpiry: cardExpiry
+          adjustmentDescriptorMessage: adjustmentDescriptorMessage
+          maskAccount: maskAccount
+          taxAmount: 2.3021358869347655
+          accountToken: accountToken
+          accountTokenMessage: accountTokenMessage
+        chargebackReason: chargebackReason
+        processorName: processorName
+        invoiceNo: invoiceNo
+        subTotalAmount: 1.4894159098541704
+        chargebackReasonCode: chargebackReasonCode
+        chargebackDateTime: chargebackDateTime
+        referenceNo: referenceNo
+        paymentCategory: paymentCategory
+        transactionStatus: transactionStatus
+        ipAddress: ipAddress
+        refundOrigin: refundOrigin
+        transactionCode: transactionCode
+        settlementDate: settlementDate
+        transactionDate: transactionDate
+        transactionId: transactionId
+        referenceCustomerId: referenceCustomerId
+        paymentDescription: paymentDescription
+        customerAccountId: customerAccountId
+        operationType: operationType
+        invoiceId: invoiceId
+        totalRefundAmount: 1.2315135367772556
+        referenceTransactionId: referenceTransactionId
+        remarks: remarks
+      properties:
+        transactionId:
+          type: string
+        transactionCode:
+          type: string
+        transactionOrigin:
+          type: string
+        refundOrigin:
+          type: string
+        billingContact:
+          $ref: '#/components/schemas/SecurePaymentRequest_billingContact'
+        referenceTransactionId:
+          type: string
+        transactionDate:
+          type: string
+        merchantId:
+          type: string
+        ipAddress:
+          type: string
+        operationType:
+          type: string
+        channelType:
+          type: string
+        processMethod:
+          type: string
+        paymentType:
+          type: string
+        paymentCategory:
+          type: string
+        processorName:
+          type: string
+        tenderInfo:
+          $ref: '#/components/schemas/PaymentDetailsResponse_tenderInfo'
+        referenceCustomerId:
+          type: string
+        customerAccountId:
+          type: string
+        invoiceNo:
+          type: string
+        referenceNo:
+          type: string
+        remarks:
+          type: string
+        terminalId:
+          type: string
+        transactionStatus:
+          type: string
+        previousTransactionStatus:
+          type: string
+        transactionResult:
+          $ref: '#/components/schemas/PaymentDetailsResponse_transactionResult'
+        invoiceId:
+          type: string
+        additionalFields:
+          type: string
+        settlementDate:
+          type: string
+        issuer:
+          type: string
+        merchantName:
+          type: string
+        merchantDBAName:
+          type: string
+        splits:
+          type: string
+        paymentDescription:
+          type: string
+        refundTransactions:
+          type: string
+        totalRefundAmount:
+          type: number
+        remainingAmount:
+          type: number
+        chargebackReason:
+          type: string
+        chargebackReasonCode:
+          type: string
+        chargebackDateTime:
+          type: string
+        subTotalAmount:
+          type: number
+        companyName:
+          type: string
+      type: object
+    AdminTransactionEntityResponse:
+      example:
+        transactionId: 82297254-bcf4-4e6c-a254-eee7763825a5
+        merchantId: 1KaKlqdP
+        transactionDate: 05-07-2021 02:34:56
+        operationType: 0
+        channelType: 3
+        isDebit: true
+        referenceTransactionId: "null"
+        referenceCustomerId: YB85D4W6
+        customerAccountId: Q48nqbWJ
+        recurringId: "null"
+        batchId: 0
+        transactionStatus: 5
+        settlementDate: "null"
+        authCode: "null"
+        cardNumber: '****7338'
+        accountNumber: "null"
+        chequeNumber: "null"
+        routingNumber: "null"
+        nameOnCheckOrCard: Debit Card
+        accountHolderName: "null"
+        accountCategory: "null"
+        trainingMode: true
+        amount: 1
+        tipAmount: 0
+        convenienceAmount: 0
+        captureAmount: 1
+        taxAmount: 0
+        surchagePercent: "null"
+        surchageAmount: "null"
+        cashDiscountPercent: "null"
+        cashDiscountAmount: "null"
+        cashIncentiveType: "null"
+        cashIncentivePercent: "null"
+        cashIncentiveAmount: "null"
+        clinicAmount: "null"
+        dentalAmount: "null"
+        rxAmount: 0
+        visionAmount: "null"
+        cardType: VISA
+        createdOn: 05-07-2021 02:34:56
+        createdBy: System
+        modifiedOn: 05-07-2021 02:34:56
+        modifiedBy: System
+        customerName: John customer
+        partnerId: "null"
+        partnerName: "null"
+        orderId: "null"
+        invoiceId: "null"
+        paymentLinkId: "null"
+        referenceNo: "null"
+        processorName: Dummy
+        verification2Code: "null"
+        paymentType: PaymentIntent
+        paymentCategory: MerchantPayment
+      properties:
+        transactionId:
+          type: string
+        merchantId:
+          type: string
+        transactionDate:
+          type: string
+        operationType:
+          type: number
+        channelType:
+          type: number
+        isDebit:
+          type: boolean
+        referenceTransactionId:
+          type: string
+        referenceCustomerId:
+          type: string
+        customerAccountId:
+          type: string
+        recurringId:
+          type: string
+        batchId:
+          type: number
+        transactionStatus:
+          type: number
+        settlementDate:
+          type: string
+        authCode:
+          type: string
+        cardNumber:
+          type: string
+        accountNumber:
+          type: string
+        chequeNumber:
+          type: string
+        routingNumber:
+          type: string
+        nameOnCheckOrCard:
+          type: string
+        accountHolderName:
+          type: string
+        accountCategory:
+          type: number
+        trainingMode:
+          type: boolean
+        amount:
+          type: number
+        tipAmount:
+          type: number
+        convenienceAmount:
+          type: number
+        captureAmount:
+          type: number
+        yaxAmount:
+          type: number
+        surchagePercent:
+          type: number
+        surchageAmount:
+          type: number
+        cashDiscountPercent:
+          type: number
+        cashDiscountAmount:
+          type: number
+        cashIncentiveType:
+          type: number
+        cashIncentivePercent:
+          type: number
+        cashIncentiveAmount:
+          type: number
+        clinicAmount:
+          type: number
+        dentalAmount:
+          type: number
+        rxAmount:
+          type: number
+        visionAmount:
+          type: number
+        cardType:
+          type: string
+        createdOn:
+          type: string
+        createdBy:
+          type: string
+        modifiedOn:
+          type: string
+        modifiedBy:
+          type: string
+        customerName:
+          type: string
+        partnerId:
+          type: string
+        partnerName:
+          type: string
+        orderId:
+          type: string
+        invoiceId:
+          type: string
+        paymentLinkId:
+          type: string
+        referenceNo:
+          type: string
+        processorName:
+          type: string
+        verification2Code:
+          type: string
+        paymentType:
+          enum:
+          - None
+          - AnytimePayment
+          - SubDomain
+          - PaymentIntent
+          - PaymentLink
+          - OpenPayment
+          - TokenLink
+          type: string
+        paymentCategory:
+          enum:
+          - None
+          - MerchantPayment
+          - MPIPD
+          - MPIPI
+          - PFD
+          - PFI
+          type: string
+      type: object
+    TransactionCancelRequest:
+      example:
+        TransactionId: ""
+        VoidReason: ""
+      properties:
+        TransactionId:
+          type: string
+        VoidReason:
+          type: string
+      type: object
+    TransactionRefundEligibilityRequest:
+      example:
+        InvoiceNumber: ""
+        PONumber: ""
+        RefundAmount: 0
+        TransactionId: ""
+        Remarks: ""
+      properties:
+        InvoiceNumber:
+          type: string
+        PONumber:
+          type: string
+        RefundAmount:
+          type: number
+        TransactionId:
+          type: string
+        Remarks:
+          type: string
+      type: object
+    CancelledTransactionResponse:
+      example:
+        TransactionStatus: ""
+        Message: ""
+        CanBeCancelled: true
+        TransactionId: ""
+      properties:
+        TransactionStatus:
+          type: string
+        Message:
+          type: string
+        IsCancelled:
+          type: boolean
+        TransactionId:
+          type: string
+      type: object
+    SecurePaymentDetailsRequest:
+      example:
+        id: 631a6bc9-7f8c-41a6-b4c5-4faebddb78dd
+        paymentToken: wKvoMb8y
+        type: PaymentIntent
+        includeRefundTransactions: false
+      properties:
+        id:
+          type: string
+        paymentToken:
+          type: string
+        type:
+          enum:
+          - AnytimePayment
+          - PaymentIntent
+          - PaymentLink
+          - OpenPayment
+          type: string
+      type: object
+    SecurePaymentDetailsResponse:
+      example:
+        transactionId: d1523530-4e66-4c29-ba68-96e39d83104d
+        billingContact:
+        - name:
+          - title: title
+            firstName: John
+            middleName: ""
+            lastName: Smith
+          companyName: ""
+          department: ""
+          fax: ""
+          phone: "8003213388"
+          alternatePhone: ""
+          mobile: ""
+          email: ""
+          url: ""
+        address:
+        - addressLine1: "30"
+          addressLine2: Memorial Drive
+          city: Avon
+          state: NY
+          country: 1
+          postalCode: "12701"
+        transactionDate: 11-11-2022 08:15:58
+        merchantId: wKvoMb8y
+        processMethod: CardNotPresent
+        transactionOrigin: PaymentIntent
+        refundOrigin: 0
+        achTenderInfo: ""
+        ccTenderInfo:
+        - cardHolderName: Azhar Dave
+          cardType: VISA
+          maskCardNumber: '****0008'
+          cardExpiry: "0330"
+          captureAmount: 50
+          amount: 50
+          tipAmount: 0
+          convenienceAmount: 0
+          binNumber: "415150"
+          taxAmount: 0
+          taxAfterDiscount: false
+          taxPercent: 0
+          adjustmentPercentValue: ""
+          adjustmentFixedValue: ""
+          adjustmentAmount: ""
+          adjustmentDisplayName: ""
+          adjustmentDescriptorMessage: ""
+          paymentAdjustmentType: None
+          preAuthCode: ""
+          maskAccount: ""
+          accountToken: ""
+          accountTokenMessage: ""
+          createAccountToken: false
+          discountType: Fixed
+          discountPercent: 0
+          discountAmount: 0
+          commissionType: Percentage
+          commissionValue: 2.99
+        debitCardTenderInfo: ""
+        referenceCustomerId: ""
+        customerAccountId: ""
+        invoiceNo: invoiceNumber-007
+        remarks: ""
+        transactionStatus: Authorized
+        transactionResult:
+        - success: true
+          processorAuthCode: Authorised
+          traceNumber: D4L8TLN7B3RZNN82
+          reasonCode: ""
+          reasonMessage: ""
+        invoiceId: ""
+        paymentLinkId: KvoKpVvy
+        additionalFields: "{\"policynumber\":\"123456\"}"
+        paymentType: PaymentIntent
+        paymentCategory: MerchantPayment
+        transactionEntitySplitResponses:
+        - accountAlias: VirtualAccountOne
+          amount: 18.5
+          chargeIndicator: 1
+        - accountAlias: Anddone_DEFAULT
+          amount: 30
+          chargeIndicator: 0
+      properties:
+        transactionId:
+          type: string
+        billingContact:
+          $ref: '#/components/schemas/TransactionResponse_billingContact'
+        transactionDate:
+          type: string
+        merchantId:
+          type: string
+        processMethod:
+          enum:
+          - ACH
+          - CardNotPresent
+          type: string
+        transactionOrigin:
+          enum:
+          - WebForm
+          - PaymentIntent
+          type: string
+        refundOrigin:
+          type: number
+        achTenderInfo:
+          $ref: '#/components/schemas/SecurePaymentDetailsResponse_achTenderInfo'
+        ccTenderInfo:
+          $ref: '#/components/schemas/SecurePaymentDetailsResponse_ccTenderInfo'
+        debitCardTenderInfo:
+          type: string
+        referenceCustomerId:
+          type: string
+        customerAccountId:
+          type: string
+        invoiceNo:
+          type: string
+        remarks:
+          type: string
+        transactionStatus:
+          enum:
+          - Created
+          - PendingForAuthorized
+          - Authorized
+          - Posted
+          - Captured
+          - Failed
+          - Returned
+          - Chargeback
+          - Cancelled
+          - Refunded
+          - Approved
+          - CancelAttempt
+          - RefundAttempt
+          - Hold
+          - Denied
+          - SettlementHold
+          - Success
+          - Retried
+          - ReprocessAttempt
+          - Reprocessed
+          - None
+          - Unknown
+          type: string
+        transactionResult:
+          $ref: '#/components/schemas/SecurePaymentDetailsResponse_transactionResult'
+        invoiceId:
+          type: string
+        paymentLinkId:
+          type: string
+        additionalFields:
+          type: string
+        paymentType:
+          enum:
+          - None
+          - AnytimePayment
+          - SubDomain
+          - PaymentIntent
+          - PaymentLink
+          - OpenPayment
+          - TokenLink
+          type: string
+        paymentCategory:
+          enum:
+          - None
+          - MerchantPayment
+          - MPIPD
+          - MPIPI
+          - PFD
+          - PFI
+          type: string
+        transactionEntitySplitResponses:
+          items:
+            $ref: '#/components/schemas/SecurePaymentDetailsResponse_transactionEntitySplitResponses_inner'
+          type: array
+      type: object
+    PaymentIntentRequest:
+      example:
+        amount: 20
+        title: FirstPayment
+        shortDescription: FirstPayment
+        paymentDescription: FirstPayment
+        invoiceNumber: 2021-000207
+        expireIn: "30000"
+        intent:
+          paymentTypes:
+          - CreditCard
+          - DebitCard
+          - ACH
+        saveForFuture: true
+        quoteKey: "2111109"
+        accountNumber: CAB-2012322
+        splits:
+        - virtualAccount: VirtualAccountOne
+          amount: 20
+          reference: Reference
+          chargeIndicator: true
+        - virtualAccount: Anddone_DEFAULT
+          amount: 30
+          reference: Reference
+          chargeIndicator: false
+      properties:
+        amount:
+          type: number
+        title:
+          type: string
+        shortDescription:
+          type: string
+        paymentDescription:
+          type: string
+        invoiceNumber:
+          type: string
+        expiresIn:
+          type: string
+        intent:
+          $ref: '#/components/schemas/PaymentLinkResponse_displaySettings_intent'
+        saveForFuture:
+          type: boolean
+        accountNumber:
+          type: string
+        enablePremiumFinance:
+          type: boolean
+        quoteKey:
+          type: string
+        splits:
+          items:
+            $ref: '#/components/schemas/PaymentIntentRequest_splits_inner'
+          type: array
+      type: object
+    PaymentIntentResponse:
+      example:
+        paymentToken: VxjOR78p
+        amount: 20
+        title: FirstPayment
+        shortDescription: FirstPayment
+        paymentDescription: FirstPayment
+        invoiceNumber: 2021-000207
+        expireOn: 11-11-2022 14:18:56
+        intent:
+          paymentTypes:
+          - CreditCard
+          - DebitCard
+          - ACH
+        saveForFuture: true
+        quoteKey: "2111109"
+        accountNumber: CAB-2012322
+        splits:
+        - virtualAccount: VirtualAccountOne
+          amount: 20
+          reference: Reference
+          chargeIndicator: true
+        - virtualAccount: Anddone_DEFAULT
+          amount: 30
+          reference: Reference
+          chargeIndicator: false
+      properties:
+        paymentToken:
+          type: string
+        amount:
+          type: number
+        title:
+          type: string
+        shortDescription:
+          type: string
+        paymentDescription:
+          type: string
+        invoiceNumber:
+          type: string
+        expiresOn:
+          type: string
+        intent:
+          $ref: '#/components/schemas/PaymentLinkResponse_displaySettings_intent'
+        saveForFuture:
+          type: boolean
+        accountNumber:
+          type: boolean
+        quoteKey:
+          type: boolean
+        splits:
+          items:
+            $ref: '#/components/schemas/PaymentIntentRequest_splits_inner'
+          type: array
+      type: object
+    PaymentIntentExpiresResponse:
+      example:
+        message: PaymentIntent is expired successfully
+      properties:
+        message:
+          type: string
+      type: object
+    PaymentLinkRequest:
+      example:
+        title: FirstPayment
+        merchantId: GBaPo83P
+        shortDescription: FirstPayment
+        paymentDescription: FirstPayment
+        amount: 20
+        invoiceNumber: 2021-000207
+        enablePartialPayment: false
+        enableMultiplePayment: true
+        enableProtection: false
+        displayReceipt: false
+        expireIn: "300"
+        expireInUnit: "2"
+        applyPaymentAdjustments: true
+        accountNumber: 123sd
+        responseType: "1"
+        callbackParameters:
+          callbackApiUrl: htttp://yahoo.com
+          callbackMessage: this is test message
+        referenceDataList:
+        - referenceType: PolicyNumber
+          referenceNumber: pol123
+        settings:
+          additionalDetailsPreference: "1"
+          intent:
+            paymentTypes:
+            - ACH
+            - CreditCard
+            - DebitCard
+      properties:
+        title:
+          type: string
+        merchantId:
+          type: string
+        shortDescription:
+          type: string
+        paymentDescription:
+          type: string
+        amount:
+          type: number
+        invoiceNumber:
+          type: string
+        enablePartialPayment:
+          type: boolean
+        enableMultiplePayment:
+          type: boolean
+        enableProtection:
+          type: boolean
+        displayReceipt:
+          type: boolean
+        expireIn:
+          type: string
+        expireInUnit:
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          type: integer
+        referenceType:
+          enum:
+          - "1"
+          - "2"
+          - "3"
+          - "4"
+          - "5"
+          type: string
+        referenceNumber:
+          type: string
+        accountNumber:
+          type: string
+        responseType:
+          enum:
+          - 1
+          - 2
+          type: integer
+        callbackParameters:
+          $ref: '#/components/schemas/PaymentLinkRequest_callbackParameters'
+        applyPaymentAdjustments:
+          type: boolean
+        customers:
+          items:
+            $ref: '#/components/schemas/PaymentLinkResponse_customers_inner'
+          type: array
+        lineItems:
+          items:
+            $ref: '#/components/schemas/PaymentLinkResponse_lineItems_inner'
+          type: array
+        settings:
+          $ref: '#/components/schemas/PaymentLinkRequest_settings'
+      type: object
+    SecurePaymentLinkRequest:
+      example:
+        paymentLinkId: drqwfeg
+      properties:
+        paymentLinkId:
+          type: string
+      type: object
+    SecureTokenLinkIdRequest:
+      example:
+        tokenLinkId: drqwfeg
+      properties:
+        tokenLinkId:
+          type: string
+      type: object
+    TokenLinkExpiredResponse:
+      type: object
+    SecureTokenLinkRequest:
+      example:
+        merchantId: GBaPo83P
+        title: FirstPayment
+        expireIn: "300"
+        expireInUnit: "2"
+        intent:
+          paymentTypes:
+          - CreditCard
+          - DebitCard
+          - ACH
+        customers:
+        - firstName: ExampleFirstName
+          lastName: ExampleLastName
+          email: example@test.com
+          phone: "1234567890"
+          address:
+          - addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+      properties:
+        merchantId:
+          type: string
+        title:
+          type: string
+        expireIn:
+          type: string
+        expireInUnit:
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          type: number
+        intent:
+          $ref: '#/components/schemas/PaymentLinkResponse_displaySettings_intent'
+        customers:
+          items:
+            $ref: '#/components/schemas/SecureTokenLinkRequest_customers_inner'
+          type: array
+      type: object
+    TokenLinkResponse:
+      example:
+        merchantId: mE8ND2vq
+        tokenLinkId: O78jve8k
+        title: FirstPayment
+        tokenLink: https://link.dev.none.com/#/O78jve8k
+        expireOn: 05-11-2023 05:57:04
+        createdOn: 04-21-2023 05:57:04
+        modifiedOn: 04-21-2023 05:57:04
+        createdBy: RohitDev
+        modifiedBy: RohitDev
+        tokenLinkStatus: Created
+        intent:
+        - paymentTypes:
+          - CreditCard
+          - DebitCard
+          - ACH
+        customers:
+        - firstName: ExampleFirstName
+          lastName: ExampleLastName
+          email: example@test.com
+          phone: "1234567890"
+          address:
+          - addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+      properties:
+        merchantId:
+          type: string
+        tokenLinkId:
+          type: string
+        title:
+          type: string
+        url:
+          type: string
+        expireOn:
+          type: string
+        createdOn:
+          type: string
+        modifiedOn:
+          type: string
+        createdBy:
+          type: string
+        modifiedBy:
+          type: string
+        tokenLinkStatus:
+          type: string
+        intent:
+          $ref: '#/components/schemas/TokenLinkResponse_intent'
+        customers:
+          items:
+            $ref: '#/components/schemas/TokenLinkResponse_customers_inner'
+          type: array
+      type: object
+    TokenLinkSearchCriteria:
+      example:
+        email: abc@gmail.com
+        phone: "9870654321"
+        status: 0
+        statuses: ""
+        fromDate: 2019-07-05T11:44:22.700454
+        toDate: 2019-11-05T11:44:22.700454
+        title: title
+        paymentDescription: Description
+        invoiceNumber: IN0000
+      properties:
+        email:
+          type: string
+        phone:
+          type: string
+        status:
+          type: number
+        statuses:
+          type: string
+        fromDate:
+          type: string
+        toDate:
+          type: string
+        title:
+          type: string
+        paymentDescription:
+          type: string
+        invoiceNumber:
+          type: string
+      type: object
+    SecureTokenLinkUpdateRequest:
+      example:
+        tokenLinkId: ZdmL7Q8Q
+        expireIn: "15"
+        expireInUnit: "2"
+        intent:
+          paymentTypes:
+          - CreditCard
+          - DebitCard
+          - ACH
+      properties:
+        tokenLinkId:
+          type: string
+        expireIn:
+          type: number
+        expireInUnit:
+          enum:
+          - Minutes
+          - Hours
+          - Days
+          - Weeks
+          type: string
+        intent:
+          $ref: '#/components/schemas/PaymentLinkResponse_displaySettings_intent'
+      type: object
+    TokenLinkByIdResponse:
+      example:
+        tokenLinkId: O78jve8k
+        title: FirstPayment
+        tokenLink: https://link.dev.none.com/#/O78jve8k
+        expireOn: 07-17-2021 13:35:00
+        createdOn: 07-17-2021 13:35:00
+        modifiedOn: 07-17-2021 13:35:00
+        createdBy: user
+        modifiedBy: user
+        tokenLinkStatus: Created
+        accountToken:
+        - id: YndDyvOe
+          tokenLinkId: 4jdegaxz
+          merchantId: 4jdegaxz
+          accountHolderName: admin
+          cardNumber: "415150"
+          cardExpiry: "2203"
+          routingNumber: "1122"
+          maskedAccountNumber: '****0008'
+          processMethod: CardNotPresent
+          channelType: DebitCard
+          address:
+            addressLine1: "41"
+            addressLine2: Anawana Lake Road
+            city: Monticello
+            state: AK
+            country: "1"
+            postalCode: "12701"
+            timeZone: "null"
+        intent:
+        - paymentTypes:
+          - CreditCard
+          - DebitCard
+          - ACH
+        customers:
+        - firstName: ExampleFirstName
+          lastName: ExampleLastName
+          email: example@test.com
+          phone: "1234567890"
+          address:
+          - addressLine1: 7438 Airport Drive
+            addressLine2: Collegeville
+            city: PA
+            state: Georgia
+            country: 1
+            postalCode: "19426"
+            timeZone: EASTERN
+        timeLine:
+        - id: O78jve8k
+          tokenLinkId: GBaPo83P
+          merchantId: GBaPo83P
+          paymentLinkType: TokenLink
+          linkStatus: Enabled
+          tokenLinkStatus: Created
+          eventDate: 07-08-2021 06:57:47
+      properties:
+        tokenLinkId:
+          type: string
+        title:
+          type: string
+        tokenLink:
+          type: string
+        expireOn:
+          type: string
+        createdOn:
+          type: string
+        modifiedOn:
+          type: string
+        createdBy:
+          type: string
+        modifiedBy:
+          type: string
+        tokenLinkStatus:
+          type: string
+        accountToken:
+          $ref: '#/components/schemas/TokenLinkByIdResponse_accountToken'
+        intent:
+          $ref: '#/components/schemas/TokenLinkResponse_intent'
+        customers:
+          items:
+            $ref: '#/components/schemas/TokenLinkResponse_customers_inner'
+          type: array
+        timeLine:
+          items:
+            $ref: '#/components/schemas/TokenLinkByIdResponse_timeLine_inner'
+          type: array
+      type: object
+    MerchantTokenShortResponse:
+      example:
+        id: YndDyvOe
+        tokenLinkId: 4jdegaxz
+        merchantId: 4jdegaxz
+        accountHolderName: admin
+        cardNumber: "415150"
+        cardExpiry: "2203"
+        routingNumber: "1122"
+        maskedAccountNumber: '****0008'
+        processMethod: CardNotPresent
+        channelType: DebitCard
+        address:
+          addressLine1: "41"
+          addressLine2: Anawana Lake Road
+          city: Monticello
+          state: AK
+          country: "1"
+          postalCode: "12701"
+          timeZone: "null"
+      properties:
+        id:
+          type: string
+        tokenLinkId:
+          type: string
+        merchantId:
+          type: string
+        accountHolderName:
+          type: string
+        cardNumber:
+          type: string
+        cardExpiry:
+          type: string
+        routingNumber:
+          type: string
+        maskedAccountNumber:
+          type: string
+        processMethod:
+          type: string
+        channelType:
+          type: string
+        address:
+          $ref: '#/components/schemas/TransactionResponse_billingContact_address'
+      type: object
+    PFLiteSecureQuoteRequest_merchant:
+      properties:
+        contactName:
+          type: string
+        contactPhone:
+          type: string
+      type: object
+    PFLiteSecureQuoteRequest_insured_address:
+      properties:
+        address1:
+          type: string
+        address2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        phone:
+          type: string
+      required:
+      - address1
+      - address2
+      - city
+      - phone
+      - state
+      - zip
+      type: object
+    PFLiteSecureQuoteRequest_insured:
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        mobilePhoneNumber:
+          type: string
+        emailAddress:
+          type: string
+        isCancellationWarningViaTextEnabled:
+          type: boolean
+        address:
+          $ref: '#/components/schemas/PFLiteSecureQuoteRequest_insured_address'
+      required:
+      - address
+      - firstName
+      - lastName
+      type: object
+    PFLiteSecureQuoteRequest_program:
+      properties:
+        programId:
+          type: number
+        loanType:
+          enum:
+          - Commercial
+          - Personal
+          type: string
+      required:
+      - loanType
+      - programId
+      type: object
+    PFLiteSecureQuoteRequest_policies_inner_carrier:
+      properties:
+        name:
+          type: string
+        bestNumber:
+          type: string
+        uniqueId:
+          type: string
+      required:
+      - bestNumber
+      - name
+      - uniqueId
+      type: object
+    PFLiteSecureQuoteRequest_policies_inner:
+      properties:
+        id:
+          type: string
+        policyNumber:
+          type: string
+        premium:
+          type: number
+        coverageType:
+          type: string
+        effectiveDate:
+          type: string
+        minimumEarnedPercent:
+          type: number
+        carrier:
+          $ref: '#/components/schemas/PFLiteSecureQuoteRequest_policies_inner_carrier'
+      required:
+      - effectiveDate
+      - minimumEarnedPercent
+      - policyNumber
+      type: object
+    PaymentLinkResponse_callbackParameters:
+      properties:
+        callbackSuccessUrl:
+          type: string
+        callbackFailureUrl:
+          type: string
+        accessKey:
+          type: string
+        secretKey:
+          type: string
+        referenceNo:
+          type: string
+        referenceType:
+          type: string
+        transactionId:
+          type: string
+        callbackApiUrl:
+          type: string
+        callbackMessage:
+          type: string
+      type: object
+    PaymentLinkResponse_customers_inner:
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        notifyViaSMS:
+          type: boolean
+        notifyViaEmail:
+          type: boolean
+      type: object
+    PaymentLinkResponse_lineItems_inner:
+      properties:
+        lineItemType:
+          type: number
+        productId:
+          type: string
+        description:
+          type: string
+        quantity:
+          type: number
+        rate:
+          type: number
+      type: object
+    PaymentLinkResponse_displaySettings_intent:
+      properties:
+        paymentTypes:
+          items:
+            enum:
+            - CreditCard
+            - DebitCard
+            - ACH
+            type: string
+          type: array
+      type: object
+    PaymentLinkResponse_displaySettings:
+      properties:
+        selectedCustomerFields:
+          type: string
+        additionalDetailsPreference:
+          type: string
+        displaySummary:
+          type: boolean
+        acceptCustomerInfo:
+          type: boolean
+        removeHeader:
+          type: boolean
+        acceptCard:
+          type: boolean
+        acceptBankAccount:
+          type: boolean
+        saveCustomer:
+          type: boolean
+        saveCustomerAccount:
+          type: boolean
+        intent:
+          $ref: '#/components/schemas/PaymentLinkResponse_displaySettings_intent'
+      type: object
+    PaymentLinkResponse_splits_inner:
+      properties:
+        virtualAccount:
+          type: string
+        amount:
+          type: number
+        reference:
+          type: string
+        chargeIndicator:
+          type: boolean
+      type: object
+    PFEndorsementResponse_item_quote_ESignResult:
+      properties:
+        Processed:
+          type: object
+        Message:
+          type: object
+        BatchID:
+          type: object
+        AgentURL:
+          type: object
+        InsuredURL:
+          type: object
+        ESignOption:
+          type: object
+      type: object
+    PFEndorsementResponse_item_quote:
+      properties:
+        pfa:
+          type: object
+        quoteKey:
+          type: object
+        Premium:
+          type: object
+        DownAmount:
+          type: object
+        AmountFinanced:
+          type: object
+        FinanceCharge:
+          type: object
+        TotalPayments:
+          type: object
+        PaymentAmount:
+          type: object
+        DocStamp:
+          type: object
+        FirstDueDate:
+          type: object
+        Apr:
+          type: object
+        Installments:
+          type: object
+        PaymentsRetained:
+          type: object
+        PaymentRetainedAmount:
+          type: object
+        ESignResult:
+          $ref: '#/components/schemas/PFEndorsementResponse_item_quote_ESignResult'
+      type: object
+    PFEndorsementResponse_item:
+      properties:
+        saveStatus:
+          type: string
+        quote:
+          $ref: '#/components/schemas/PFEndorsementResponse_item_quote'
+      type: object
+    PFCheckEndorsementResponse_item_quote_inner:
+      properties:
+        PolicyID:
+          type: object
+        CompanyName:
+          type: object
+        PolicyNumber:
+          type: object
+        Premium:
+          type: object
+        CoverageType:
+          type: object
+        CoverageTypeDescription:
+          type: object
+        CompanyTypeID:
+          type: object
+      type: object
+    PFCheckEndorsementResponse_item:
+      properties:
+        AgreementID:
+          type: number
+        ClientID:
+          type: number
+        AccountNumber:
+          type: number
+        ClientName:
+          type: number
+        IsCommercial:
+          type: boolean
+        quote:
+          items:
+            $ref: '#/components/schemas/PFCheckEndorsementResponse_item_quote_inner'
+          type: array
+      type: object
+    PFEndorsementRequest_quote_policies_inner_company:
+      properties:
+        BestNumber:
+          type: string
+        UniqueID:
+          type: string
+        Name:
+          type: string
+        CareOf:
+          type: string
+        Address1:
+          type: string
+        Address2:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        Zip:
+          type: string
+        phone:
+          type: string
+      required:
+      - Address1
+      - City
+      - Name
+      - State
+      - UniqueID
+      - Zip
+      type: object
+    PFEndorsementRequest_quote_policies_inner_ga:
+      properties:
+        UniqueID:
+          type: string
+        Name:
+          type: string
+        CareOf:
+          type: string
+        Address1:
+          type: string
+        Address2:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        Zip:
+          type: string
+        phone:
+          type: string
+      required:
+      - Address1
+      - City
+      - Name
+      - State
+      - UniqueID
+      - Zip
+      type: object
+    PFEndorsementRequest_quote_policies_inner_totalPayFunding_inner:
+      properties:
+        PayTo:
+          type: string
+        PaymentMethod:
+          type: string
+        FundingType:
+          type: string
+        BankRoutingNumber:
+          type: string
+        BankAcctNumber:
+          type: string
+        IsCheckingAccount:
+          type: boolean
+        Amount:
+          type: number
+        FundingDate:
+          type: string
+      type: object
+    PFEndorsementRequest_quote_policies_inner_policyFee_inner:
+      properties:
+        feeName:
+          type: string
+        feeAmount:
+          type: number
+      type: object
+    PFEndorsementRequest_quote_policies_inner:
+      properties:
+        policyId:
+          description: This denotes the policy identifier.
+          type: string
+        premium:
+          description: This denotes the premium amount.
+          type: number
+        down:
+          description: This denotes the down amount.
+          type: number
+        downPercent:
+          description: This denotes the down amount.
+          type: number
+        fee:
+          description: This denotes the fee amount.
+          type: number
+        tax:
+          description: This denotes the tax amount.
+          type: number
+        number:
+          description: This denotes the policy number.
+          type: string
+        company:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_policies_inner_company'
+        ga:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_policies_inner_ga'
+        broker:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_policies_inner_ga'
+        coverage:
+          description: This denotes the coverage and it is required if adding new
+            policy.
+          type: string
+        effectiveDate:
+          description: This denotes the effective date.
+          type: string
+        expirationDate:
+          description: This denotes the expiration date and it is required if adding
+            new policy.
+          type: string
+        term:
+          description: This denotes the number of term.
+          type: number
+        minimumEarned:
+          description: This denotes the minimum Earned amount.
+          type: number
+        MinimumEarnedPercent:
+          description: This denotes the minimum Earned percent.
+          type: number
+        auditable:
+          description: This denotes the flag if its auditable or not.
+          type: boolean
+        cancelDays:
+          description: This denotes the cancel days.
+          type: string
+        lossPayeeRequested:
+          description: This denotes the flag of loss payee requested.
+          type: boolean
+        minimumLiability:
+          description: This denotes the minimum laibility.
+          type: number
+        maximumLiability:
+          description: This denotes the maximum laibility.
+          type: number
+        totalPayFunding:
+          items:
+            $ref: '#/components/schemas/PFEndorsementRequest_quote_policies_inner_totalPayFunding_inner'
+          type: array
+        policyFee:
+          items:
+            $ref: '#/components/schemas/PFEndorsementRequest_quote_policies_inner_policyFee_inner'
+          type: array
+        invoiceNumber:
+          description: This denotes the invoice number.
+          type: string
+      required:
+      - effectiveDate
+      - expirationDate
+      - policyId
+      - premium
+      - term
+      type: object
+    PFEndorsementRequest_quote_details:
+      properties:
+        Commercial:
+          description: This denotes the Commercial.
+          type: string
+        Coupon:
+          description: This denotes the Coupon.
+          type: string
+        CouponInvoicePrinted:
+          description: This denotes the flag if invoice printed or not.
+          type: boolean
+        Crd:
+          description: This denotes the Crd.
+          type: number
+        Interval:
+          description: This denotes the Interval.
+          type: string
+        Installments:
+          description: This denotes the number of installments.
+          type: number
+        ProgramID:
+          description: This denotes the programId.
+          type: number
+        BrokerFee:
+          description: This denotes the broker fees.
+          type: number
+        ESignOption:
+          description: This denotes the ESign Option.
+          type: string
+        ProcessDownPayment:
+          description: This denotes the flag that down payment is processed or not.
+          type: boolean
+        ProcessDownPaymentNoReason:
+          description: This denotes the Process Down Payment No Reason.
+          type: string
+        DownPaymentMethod:
+          description: This denotes the Down Payment Method.
+          type: string
+        DownPaymentPaidBy:
+          description: This denotes the Down Payment Paid y.
+          type: string
+        BatchID:
+          description: This denotes the batch id.
+          type: string
+        ReturnPFA:
+          description: This denotes the flag whether to return pfa or not.
+          type: boolean
+        EqualPayments:
+          description: This denotes the equal payments.
+          type: string
+        QuoteExpirationDays:
+          description: This denotes the number of days to expire.
+          type: number
+        BypassCADNB:
+          description: This denotes the flag whether to Bypass CADNB.
+          type: boolean
+        AllowZeroAPR:
+          description: This denotes the Allow Zero APR.
+          type: boolean
+        AssociatedAccountNumber:
+          description: This denotes the Associated Account Number.
+          type: string
+        Channel:
+          description: This denotes the Channel.
+          type: string
+        ChannelVersion:
+          description: This denotes the channel version.
+          type: string
+      type: object
+    PFEndorsementRequest_quote_Insured_Address:
+      description: This denotes the address of the insured.
+      properties:
+        Name:
+          type: string
+        Address1:
+          type: string
+        Address2:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        Zip:
+          type: string
+        Phone:
+          type: string
+      type: object
+    PFEndorsementRequest_quote_Insured:
+      properties:
+        AgentCustomerNumber:
+          description: This denotes the Agent Customer Number.
+          type: string
+        Email:
+          description: This denotes the email.
+          type: string
+        CareOf:
+          description: This denotes the care of.
+          type: string
+        Address:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_Insured_Address'
+      required:
+      - Address
+      - Email
+      type: object
+    PFEndorsementRequest_quote_Agent_Address:
+      description: This denotes the address of the agent.
+      properties:
+        Name:
+          type: string
+        Address1:
+          type: string
+        Address2:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        Zip:
+          type: string
+        Phone:
+          type: string
+      type: object
+    PFEndorsementRequest_quote_Agent:
+      properties:
+        UniqueID:
+          description: This denotes the Unique ID.
+          type: string
+        Email:
+          description: This denotes the email of the agent.
+          type: string
+        Address:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_Agent_Address'
+      required:
+      - Address
+      - Email
+      type: object
+    PFEndorsementRequest_quote_communication:
+      properties:
+        InsuredESignCompletionURL:
+          type: string
+        PaymentPortalCancelRedirectURL:
+          type: string
+        PaymentPortalDeclineOfferRedirectURL:
+          type: boolean
+        ReturnInsuredESignURL:
+          type: boolean
+        ESignAutoStart:
+          type: boolean
+        ESignStartPickOptions:
+          type: boolean
+        SuppressInsuredESignEmail:
+          type: boolean
+        HasDocumentsToUpload:
+          type: boolean
+        SendEmailToRetailAgent:
+          type: boolean
+        SendWelcomeLetterEmailToInsured:
+          type: boolean
+      type: object
+    PFEndorsementRequest_quote:
+      properties:
+        agreementId:
+          description: This denotes the agreementId recieved in check endorsement
+            api.
+          type: string
+        policies:
+          items:
+            $ref: '#/components/schemas/PFEndorsementRequest_quote_policies_inner'
+          type: array
+        details:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_details'
+        Insured:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_Insured'
+        Agent:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_Agent'
+        communication:
+          $ref: '#/components/schemas/PFEndorsementRequest_quote_communication'
+      required:
+      - Insured
+      - agreementId
+      - policies
+      type: object
+    TransactionResponse_billingContact_name:
+      properties:
+        title:
+          type: string
+        firstName:
+          type: string
+        middleName:
+          type: string
+        lastName:
+          type: string
+      type: object
+    TransactionResponse_billingContact_address:
+      example:
+        country: 0.8008281904610115
+        city: city
+        postalCode: postalCode
+        addressLine1: addressLine1
+        timeZone: timeZone
+        addressLine2: addressLine2
+        state: state
+      properties:
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        country:
+          type: number
+        postalCode:
+          type: string
+        timeZone:
+          type: string
+      type: object
+    TransactionResponse_billingContact:
+      properties:
+        name:
+          $ref: '#/components/schemas/TransactionResponse_billingContact_name'
+        companyName:
+          type: string
+        department:
+          type: string
+        fax:
+          type: string
+        phone:
+          type: string
+        alternatePhone:
+          type: string
+        mobile:
+          type: string
+        email:
+          type: string
+        uRL:
+          type: string
+        address:
+          $ref: '#/components/schemas/TransactionResponse_billingContact_address'
+      type: object
+    TransactionResponse_tenderInfo:
+      properties:
+        bankName:
+          type: string
+        routingNumber:
+          type: string
+        rawMICRLine:
+          type: string
+        accountType:
+          type: string
+        checkType:
+          type: string
+        checkNumber:
+          type: string
+        nameOnCheck:
+          type: string
+        accountHolderName:
+          type: string
+        accountCategory:
+          type: number
+        cardHolderName:
+          type: string
+        cardType:
+          type: string
+        maskCardNumber:
+          type: string
+        cardExpiry:
+          type: string
+        cVData:
+          type: string
+        cVDataStatus:
+          type: string
+        trackData:
+          type: string
+        healthCareAccountType:
+          type: string
+        rxAmount:
+          type: number
+        visionAmount:
+          type: number
+        dentalAmount:
+          type: number
+        clinicAmount:
+          type: number
+        isCheckCard:
+          type: boolean
+        captureAmount:
+          type: number
+        amount:
+          type: number
+        tipAmount:
+          type: number
+        convenienceAmount:
+          type: number
+        taxAmount:
+          type: number
+        taxPercent:
+          type: number
+        adjustmentValue:
+          type: number
+        adjustmentValueType:
+          type: number
+        adjustmentAmount:
+          type: number
+        adjustmentDisplayName:
+          type: string
+        adjustmentDescriptorMessage:
+          type: string
+        paymentAdjustmentType:
+          type: string
+        preAuthCode:
+          type: string
+        maskAccount:
+          type: string
+        ePB:
+          type: string
+        kSN:
+          type: string
+        cashBackAmount:
+          type: number
+        accountToken:
+          type: string
+        accountTokenMessage:
+          type: string
+        createAccountToken:
+          type: boolean
+        discountType:
+          type: string
+        discountAmount:
+          type: number
+        discountPercent:
+          type: number
+        taxAfterDiscount:
+          type: boolean
+      type: object
+    TransactionResponse_transactionResult:
+      properties:
+        success:
+          type: boolean
+        processorAuthCode:
+          type: string
+        traceNumber:
+          type: string
+        reasonCode:
+          type: string
+        reasonMessage:
+          type: string
+        additionResultData:
+          type: string
+        additionResultData2:
+          type: string
+        verificationStatus:
+          type: string
+        verification1Code:
+          type: string
+        verification2Code:
+          type: string
+      type: object
+    PaymentLinkPaymentRequest_tenderInfo:
+      properties:
+        bankName:
+          type: string
+        accountNumber:
+          type: string
+        routingNumber:
+          type: string
+        rawMICRLine:
+          type: string
+        accountType:
+          type: string
+        checkNumber:
+          type: string
+        accountCategory:
+          type: number
+        accountHolderName:
+          type: string
+        nameOnCheck:
+          type: string
+        cardHolderName:
+          type: string
+        cardType:
+          type: string
+        cardNumber:
+          type: string
+        cardExpiry:
+          type: string
+        cVData:
+          type: string
+        cVDataStatus:
+          type: string
+        trackData:
+          type: string
+        healthCareAccountType:
+          type: string
+        rxAmount:
+          type: number
+        visionAmount:
+          type: number
+        dentalAmount:
+          type: number
+        clinicAmount:
+          type: number
+        removeDiscounting:
+          type: number
+        amount:
+          type: number
+        tipAmount:
+          type: number
+        convenienceAmount:
+          type: number
+        taxPercent:
+          type: number
+        preAuthCode:
+          type: string
+        createAccountToken:
+          type: string
+        accountToken:
+          type: string
+      type: object
+    SecurePaymentRequest_billingContact_name:
+      example:
+        firstName: firstName
+        lastName: lastName
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+      type: object
+    SecurePaymentRequest_billingContact:
+      example:
+        address:
+          country: 0.8008281904610115
+          city: city
+          postalCode: postalCode
+          addressLine1: addressLine1
+          timeZone: timeZone
+          addressLine2: addressLine2
+          state: state
+        name:
+          firstName: firstName
+          lastName: lastName
+      properties:
+        name:
+          $ref: '#/components/schemas/SecurePaymentRequest_billingContact_name'
+        address:
+          $ref: '#/components/schemas/TransactionResponse_billingContact_address'
+      type: object
+    SecurePaymentRequest_tenderInfo:
+      properties:
+        bankName:
+          type: string
+        accountNumber:
+          type: string
+        routingNumber:
+          type: string
+        accountType:
+          type: string
+        checkNumber:
+          type: string
+        accountHolderName:
+          type: string
+        nameOnCheck:
+          type: string
+        cardHolderName:
+          type: string
+        cardType:
+          type: string
+        cardNumber:
+          type: string
+        cardExpiry:
+          type: string
+        cvv:
+          type: number
+        cVDataStatus:
+          type: string
+        removeDiscounting:
+          type: boolean
+        amount:
+          type: number
+        createAccountToken:
+          type: boolean
+        accountToken:
+          type: string
+      type: object
+    SecurePaymentRequest_additionalFields:
+      properties:
+        policyNumber:
+          type: string
+      type: object
+    PaymentDetailsResponse_tenderInfo:
+      example:
+        createAccountToken: true
+        accountCategory: accountCategory
+        binNumber: binNumber
+        discountAmount: 4.145608029883936
+        bankName: bankName
+        preAuthCode: preAuthCode
+        accountHolderName: accountHolderName
+        commissionValue: 7.386281948385884
+        fullAccountNumber: fullAccountNumber
+        maskCardNumber: maskCardNumber
+        adjustmentPercentValue: 9.301444243932576
+        taxPercent: 7.061401241503109
+        adjustmentDisplayName: adjustmentDisplayName
+        discountType: discountType
+        currency: currency
+        rawMICRLine: rawMICRLine
+        convenienceAmount: 5.637376656633329
+        checkType: checkType
+        adjustmentFixedValue: 3.616076749251911
+        checkNumber: checkNumber
+        amount: 1.4658129805029452
+        discountPercent: 2.027123023002322
+        paymentAdjustmentType: paymentAdjustmentType
+        cardHolderName: cardHolderName
+        tipAmount: 5.962133916683182
+        accountType: accountType
+        taxAfterDiscount: true
+        cardType: cardType
+        nameOnCheck: nameOnCheck
+        commissionType: commissionType
+        captureAmount: 6.027456183070403
+        routingNumber: routingNumber
+        cardExpiry: cardExpiry
+        adjustmentDescriptorMessage: adjustmentDescriptorMessage
+        maskAccount: maskAccount
+        taxAmount: 2.3021358869347655
+        accountToken: accountToken
+        accountTokenMessage: accountTokenMessage
+      properties:
+        bankName:
+          type: string
+        routingNumber:
+          type: string
+        rawMICRLine:
+          type: string
+        accountType:
+          type: string
+        checkType:
+          type: string
+        checkNumber:
+          type: string
+        nameOnCheck:
+          type: string
+        accountHolderName:
+          type: string
+        accountCategory:
+          type: string
+        cardHolderName:
+          type: string
+        cardType:
+          type: string
+        maskCardNumber:
+          type: string
+        binNumber:
+          type: string
+        cardExpiry:
+          type: string
+        captureAmount:
+          type: number
+        amount:
+          type: number
+        tipAmount:
+          type: number
+        convenienceAmount:
+          type: number
+        taxAmount:
+          type: number
+        taxAfterDiscount:
+          type: boolean
+        taxPercent:
+          type: number
+        adjustmentPercentValue:
+          type: number
+        adjustmentFixedValue:
+          type: number
+        adjustmentDisplayName:
+          type: string
+        adjustmentDescriptorMessage:
+          type: string
+        paymentAdjustmentType:
+          type: string
+        preAuthCode:
+          type: string
+        maskAccount:
+          type: string
+        accountToken:
+          type: string
+        accountTokenMessage:
+          type: string
+        createAccountToken:
+          type: boolean
+        discountType:
+          type: string
+        discountPercent:
+          type: number
+        discountAmount:
+          type: number
+        commissionType:
+          type: string
+        commissionValue:
+          type: number
+        currency:
+          type: string
+        fullAccountNumber:
+          type: string
+      type: object
+    PaymentDetailsResponse_transactionResult:
+      example:
+        traceNumber: traceNumber
+        verificationStatus: true
+        reasonMessage: reasonMessage
+        verification2Code: verification2Code
+        errorMessage: errorMessage
+        errorCode: errorCode
+        additionResultData2: additionResultData2
+        processorAuthCode: processorAuthCode
+        additionResultData: additionResultData
+        success: true
+        verification1Code: verification1Code
+        reasonCode: reasonCode
+        merchantReference: merchantReference
+      properties:
+        success:
+          type: boolean
+        processorAuthCode:
+          type: string
+        traceNumber:
+          type: string
+        reasonCode:
+          type: string
+        reasonMessage:
+          type: string
+        additionResultData:
+          type: string
+        additionResultData2:
+          type: string
+        verificationStatus:
+          type: boolean
+        verification1Code:
+          type: string
+        verification2Code:
+          type: string
+        errorCode:
+          type: string
+        errorMessage:
+          type: string
+        merchantReference:
+          type: string
+      type: object
+    SecurePaymentDetailsResponse_achTenderInfo:
+      properties:
+        bankName:
+          type: string
+        routingNumber:
+          type: string
+        checkType:
+          type: string
+        checkNumber:
+          type: string
+        nameOnCheck:
+          type: string
+        accountHolderName:
+          type: string
+        accountCategory:
+          enum:
+          - Personal
+          - Business
+          type: string
+        captureAmount:
+          type: number
+        amount:
+          type: number
+        convenienceAmount:
+          type: number
+        binNumber:
+          type: string
+        taxAmount:
+          type: number
+        taxAfterDiscount:
+          type: number
+        taxPercent:
+          type: number
+        healthCareAccountType:
+          type: string
+        adjustmentPercentValue:
+          type: number
+        adjustmentFixedValue:
+          type: number
+        adjustmentAmount:
+          type: number
+        adjustmentDisplayName:
+          type: number
+        adjustmentDescriptorMessage:
+          type: number
+        paymentAdjustmentType:
+          type: number
+        preAuthCode:
+          type: number
+        maskAccount:
+          type: number
+        accountToken:
+          type: number
+        accountTokenMessage:
+          type: string
+        createAccountToken:
+          type: string
+        discountType:
+          type: string
+        discountPercent:
+          type: string
+        discountAmount:
+          type: number
+        commissionType:
+          enum:
+          - Fixed
+          - Percentage
+          type: string
+        commissionValue:
+          type: number
+      type: object
+    SecurePaymentDetailsResponse_ccTenderInfo:
+      properties:
+        cardHolderName:
+          type: string
+        maskCardNumber:
+          type: string
+        cardExpiry:
+          type: string
+        captureAmount:
+          type: number
+        amount:
+          type: number
+        binNumber:
+          type: string
+        taxAmount:
+          type: number
+        taxAfterDiscount:
+          type: boolean
+        taxPercent:
+          type: number
+        adjustmentPercentValue:
+          type: number
+        adjustmentFixedValue:
+          type: number
+        adjustmentAmount:
+          type: number
+        adjustmentDisplayName:
+          type: string
+        adjustmentDescriptorMessage:
+          type: string
+        paymentAdjustmentType:
+          enum:
+          - CashIncentive
+          - Surcharge
+          - ConvenienceFee
+          - CashDiscount
+          type: string
+        preAuthCode:
+          type: string
+        maskAccount:
+          type: number
+        accountToken:
+          type: string
+        accountTokenMessage:
+          type: string
+        createAccountToken:
+          type: boolean
+        discountType:
+          enum:
+          - Fixed
+          - Percentage
+          type: string
+        discountPercent:
+          type: number
+        discountAmount:
+          type: number
+        convenienceAmount:
+          type: number
+        commissionType:
+          enum:
+          - Fixed
+          - Percentage
+          type: string
+        commissionValue:
+          type: number
+      type: object
+    SecurePaymentDetailsResponse_transactionResult:
+      properties:
+        success:
+          type: boolean
+        processorAuthCode:
+          type: string
+        traceNumber:
+          type: string
+        reasonCode:
+          type: string
+        reasonMessage:
+          type: string
+      type: object
+    SecurePaymentDetailsResponse_transactionEntitySplitResponses_inner:
+      properties:
+        accountAlias:
+          type: string
+        amount:
+          type: number
+        chargeIndicator:
+          type: boolean
+      type: object
+    PaymentIntentRequest_splits_inner:
+      properties:
+        VirtualAccount:
+          type: string
+        Amount:
+          type: number
+        Reference:
+          type: string
+        ChargeIndicator:
+          type: boolean
+      type: object
+    PaymentLinkRequest_callbackParameters:
+      properties:
+        callbackApiUrl:
+          type: string
+        callbackMessage:
+          type: string
+      type: object
+    PaymentLinkRequest_settings_intent:
+      properties:
+        paymentTypes:
+          items:
+            type: string
+          type: array
+      type: object
+    PaymentLinkRequest_settings:
+      properties:
+        additionalDetailsPreference:
+          enum:
+          - 1
+          - 2
+          - 3
+          type: number
+        intent:
+          $ref: '#/components/schemas/PaymentLinkRequest_settings_intent'
+      type: object
+    SecureTokenLinkRequest_customers_inner_address:
+      properties:
+        AddressLine1:
+          type: string
+        AddressLine2:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        Country:
+          type: number
+        PostalCode:
+          type: string
+        TimeZone:
+          type: string
+      type: object
+    SecureTokenLinkRequest_customers_inner:
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        phoneCountryCode:
+          type: string
+        address:
+          $ref: '#/components/schemas/SecureTokenLinkRequest_customers_inner_address'
+      type: object
+    TokenLinkResponse_intent:
+      properties:
+        paymentTypes:
+          items:
+            enum:
+            - NotDefined
+            - ACH
+            - CreditCard
+            - DebitCard
+            - RTP
+            type: string
+          type: array
+      type: object
+    TokenLinkResponse_customers_inner:
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        address:
+          $ref: '#/components/schemas/SecureTokenLinkRequest_customers_inner_address'
+      type: object
+    TokenLinkByIdResponse_accountToken:
+      properties:
+        id:
+          type: string
+        tokenLinkId:
+          type: string
+        merchantId:
+          type: string
+        accountHolderName:
+          type: string
+        cardNumber:
+          type: string
+        cardExpiry:
+          type: string
+        routingNumber:
+          type: string
+        maskedAccountNumber:
+          type: string
+        processMethod:
+          type: string
+        channelType:
+          type: string
+        address:
+          $ref: '#/components/schemas/TransactionResponse_billingContact_address'
+      type: object
+    TokenLinkByIdResponse_timeLine_inner:
+      properties:
+        id:
+          type: string
+        tokenLinkId:
+          type: string
+        merchantId:
+          type: string
+        paymentLinkType:
+          type: string
+        linkStatus:
+          type: string
+        tokenLinkStatus:
+          type: string
+        eventDate:
+          type: string
+      type: object
+  securitySchemes:
+    x-api-key:
+      in: header
+      name: x-api-key
+      type: apiKey
+    x-app-key:
+      in: header
+      name: x-app-key
+      type: apiKey
+    Origin:
+      in: header
+      name: Origin
+      type: apiKey
+x-original-swagger-version: "2.0"
+

@@ -1,0 +1,117 @@
+# Org.OpenAPITools.Api.SecureTokenManagementApi
+
+All URIs are relative to *https://api.uat.anddone.com*
+
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**SecureTokensActivationsDelete**](SecureTokenManagementApi.md#securetokensactivationsdelete) | **DELETE** /secure/tokens/activations | This API is used for deactivating merchant token securely |
+
+<a id="securetokensactivationsdelete"></a>
+# **SecureTokensActivationsDelete**
+> void SecureTokensActivationsDelete (string xApiKey, string xVersion, string xAppKey, string origin, TokenRequest tokenRequest)
+
+This API is used for deactivating merchant token securely
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class SecureTokensActivationsDeleteExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: Origin
+            config.AddApiKey("Origin", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Origin", "Bearer");
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
+
+            var apiInstance = new SecureTokenManagementApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var tokenRequest = new TokenRequest(); // TokenRequest | secure merchant token request
+
+            try
+            {
+                // This API is used for deactivating merchant token securely
+                apiInstance.SecureTokensActivationsDelete(xApiKey, xVersion, xAppKey, origin, tokenRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureTokenManagementApi.SecureTokensActivationsDelete: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SecureTokensActivationsDeleteWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // This API is used for deactivating merchant token securely
+    apiInstance.SecureTokensActivationsDeleteWithHttpInfo(xApiKey, xVersion, xAppKey, origin, tokenRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureTokenManagementApi.SecureTokensActivationsDeleteWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **tokenRequest** | [**TokenRequest**](TokenRequest.md) | secure merchant token request |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Origin](../README.md#Origin), [x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
+| **2XX** | Successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
