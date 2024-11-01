@@ -1,121 +1,105 @@
-# Org.OpenAPITools.Api.SecureVoidsApi
+# openapi_client.SecureVoidsApi
 
 All URIs are relative to *https://api.uat.anddone.com*
 
-| Method | HTTP request | Description |
-|--------|--------------|-------------|
-| [**SecureCancellationsPost**](SecureVoidsApi.md#securecancellationspost) | **POST** /secure/cancellations | This API cancel a transaction. |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**secure_cancellations_post**](SecureVoidsApi.md#secure_cancellations_post) | **POST** /secure/cancellations | This API cancel a transaction.
 
-<a id="securecancellationspost"></a>
-# **SecureCancellationsPost**
-> CancelledTransactionResponse SecureCancellationsPost (string xApiKey, string xAppKey, string origin, string xVersion, TransactionCancelRequest cancelRequest)
+
+# **secure_cancellations_post**
+> SecureCancelledTransactionResponse secure_cancellations_post(x_api_key, x_app_key, x_version, origin, secure_transaction_cancel_request)
 
 This API cancel a transaction.
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
 
-namespace Example
-{
-    public class SecureCancellationsPostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.uat.anddone.com";
-            // Configure API key authorization: Origin
-            config.AddApiKey("Origin", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Origin", "Bearer");
-            // Configure API key authorization: x-api-key
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: x-app-key
-            config.AddApiKey("x-app-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-app-key", "Bearer");
+* Api Key Authentication (x-api-key):
+* Api Key Authentication (x-app-key):
 
-            var apiInstance = new SecureVoidsApi(config);
-            var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xAppKey = "xAppKey_example";  // string | an authorization header
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = "xVersion_example";  // string | x-version
-            var cancelRequest = new TransactionCancelRequest(); // TransactionCancelRequest | Cancel Detail
+```python
+import openapi_client
+from openapi_client.models.secure_cancelled_transaction_response import SecureCancelledTransactionResponse
+from openapi_client.models.secure_transaction_cancel_request import SecureTransactionCancelRequest
+from openapi_client.rest import ApiException
+from pprint import pprint
 
-            try
-            {
-                // This API cancel a transaction.
-                CancelledTransactionResponse result = apiInstance.SecureCancellationsPost(xApiKey, xAppKey, origin, xVersion, cancelRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SecureVoidsApi.SecureCancellationsPost: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
+# Defining the host is optional and defaults to https://api.uat.anddone.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://api.uat.anddone.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x-api-key
+configuration.api_key['x-api-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# Configure API key authorization: x-app-key
+configuration.api_key['x-app-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-app-key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SecureVoidsApi(api_client)
+    x_api_key = 'x_api_key_example' # str | an authorization header
+    x_app_key = 'x_app_key_example' # str | an authorization header
+    x_version = 'x_version_example' # str | x-version
+    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+    secure_transaction_cancel_request = openapi_client.SecureTransactionCancelRequest() # SecureTransactionCancelRequest | Cancel Detail
+
+    try:
+        # This API cancel a transaction.
+        api_response = api_instance.secure_cancellations_post(x_api_key, x_app_key, x_version, origin, secure_transaction_cancel_request)
+        print("The response of SecureVoidsApi->secure_cancellations_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SecureVoidsApi->secure_cancellations_post: %s\n" % e)
 ```
 
-#### Using the SecureCancellationsPostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
 
-```csharp
-try
-{
-    // This API cancel a transaction.
-    ApiResponse<CancelledTransactionResponse> response = apiInstance.SecureCancellationsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, cancelRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SecureVoidsApi.SecureCancellationsPostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **xApiKey** | **string** | an authorization header |  |
-| **xAppKey** | **string** | an authorization header |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
-| **xVersion** | **string** | x-version |  |
-| **cancelRequest** | [**TransactionCancelRequest**](TransactionCancelRequest.md) | Cancel Detail |  |
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_api_key** | **str**| an authorization header | 
+ **x_app_key** | **str**| an authorization header | 
+ **x_version** | **str**| x-version | 
+ **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
+ **secure_transaction_cancel_request** | [**SecureTransactionCancelRequest**](SecureTransactionCancelRequest.md)| Cancel Detail | 
 
 ### Return type
 
-[**CancelledTransactionResponse**](CancelledTransactionResponse.md)
+[**SecureCancelledTransactionResponse**](SecureCancelledTransactionResponse.md)
 
 ### Authorization
 
-[Origin](../README.md#Origin), [x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
+[x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Server Error |  -  |
-| **2XX** | Successful operation |  -  |
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

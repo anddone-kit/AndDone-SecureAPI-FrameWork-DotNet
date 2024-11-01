@@ -1,322 +1,82 @@
-# Org.OpenAPITools.Api.SecurePaymentIntentApi
+# openapi_client.SecurePaymentIntentApi
 
 All URIs are relative to *https://api.uat.anddone.com*
 
-| Method | HTTP request | Description |
-|--------|--------------|-------------|
-| [**SecurePaymentintentsExpirationsididPost**](SecurePaymentIntentApi.md#securepaymentintentsexpirationsididpost) | **POST** /secure/paymentintents/expirations?id&#x3D;{id} | This API expires the payment Intent or link. |
-| [**SecurePaymentintentsPost**](SecurePaymentIntentApi.md#securepaymentintentspost) | **POST** /secure/paymentintents | This API is use to create Secure payment Intent. |
-| [**SecurePaymentintentsPut**](SecurePaymentIntentApi.md#securepaymentintentsput) | **PUT** /secure/paymentintents | This API is use update the amount of payment intent. |
-
-<a id="securepaymentintentsexpirationsididpost"></a>
-# **SecurePaymentintentsExpirationsididPost**
-> PaymentIntentExpiresResponse SecurePaymentintentsExpirationsididPost (string xApiKey, string xAppKey, string origin, string xVersion, string id)
-
-This API expires the payment Intent or link.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
-
-namespace Example
-{
-    public class SecurePaymentintentsExpirationsididPostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.uat.anddone.com";
-            // Configure API key authorization: Origin
-            config.AddApiKey("Origin", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Origin", "Bearer");
-            // Configure API key authorization: x-api-key
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: x-app-key
-            config.AddApiKey("x-app-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-app-key", "Bearer");
-
-            var apiInstance = new SecurePaymentIntentApi(config);
-            var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xAppKey = "xAppKey_example";  // string | an authorization header
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = "xVersion_example";  // string | x-version
-            var id = "id_example";  // string | Payment Intent Id
-
-            try
-            {
-                // This API expires the payment Intent or link.
-                PaymentIntentExpiresResponse result = apiInstance.SecurePaymentintentsExpirationsididPost(xApiKey, xAppKey, origin, xVersion, id);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SecurePaymentIntentApi.SecurePaymentintentsExpirationsididPost: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SecurePaymentintentsExpirationsididPostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // This API expires the payment Intent or link.
-    ApiResponse<PaymentIntentExpiresResponse> response = apiInstance.SecurePaymentintentsExpirationsididPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, id);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SecurePaymentIntentApi.SecurePaymentintentsExpirationsididPostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **xApiKey** | **string** | an authorization header |  |
-| **xAppKey** | **string** | an authorization header |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
-| **xVersion** | **string** | x-version |  |
-| **id** | **string** | Payment Intent Id |  |
-
-### Return type
-
-[**PaymentIntentExpiresResponse**](PaymentIntentExpiresResponse.md)
-
-### Authorization
-
-[Origin](../README.md#Origin), [x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**secure_epf_updateintent_put**](SecurePaymentIntentApi.md#secure_epf_updateintent_put) | **PUT** /secure/epf/updateintent | This API is use update the amount of payment intent.
+[**secure_paymentintents_expirations_post**](SecurePaymentIntentApi.md#secure_paymentintents_expirations_post) | **POST** /secure/paymentintents/expirations | This API expires the payment Intent or link.
+[**secure_paymentintents_post**](SecurePaymentIntentApi.md#secure_paymentintents_post) | **POST** /secure/paymentintents | This API is use to create Secure payment Intent.
 
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **404** | Not Found |  -  |
-| **500** | Server Error |  -  |
-| **2XX** | Successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="securepaymentintentspost"></a>
-# **SecurePaymentintentsPost**
-> PaymentIntentResponse SecurePaymentintentsPost (string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest)
-
-This API is use to create Secure payment Intent.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
-
-namespace Example
-{
-    public class SecurePaymentintentsPostExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.uat.anddone.com";
-            // Configure API key authorization: Origin
-            config.AddApiKey("Origin", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Origin", "Bearer");
-            // Configure API key authorization: x-api-key
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: x-app-key
-            config.AddApiKey("x-app-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-app-key", "Bearer");
-
-            var apiInstance = new SecurePaymentIntentApi(config);
-            var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xAppKey = "xAppKey_example";  // string | an authorization header
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = "xVersion_example";  // string | x-version
-            var paymentIntentRequest = new PaymentIntentRequest(); // PaymentIntentRequest | Payment Intent Request
-
-            try
-            {
-                // This API is use to create Secure payment Intent.
-                PaymentIntentResponse result = apiInstance.SecurePaymentintentsPost(xApiKey, xAppKey, origin, xVersion, paymentIntentRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SecurePaymentIntentApi.SecurePaymentintentsPost: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the SecurePaymentintentsPostWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // This API is use to create Secure payment Intent.
-    ApiResponse<PaymentIntentResponse> response = apiInstance.SecurePaymentintentsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, paymentIntentRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SecurePaymentIntentApi.SecurePaymentintentsPostWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **xApiKey** | **string** | an authorization header |  |
-| **xAppKey** | **string** | an authorization header |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
-| **xVersion** | **string** | x-version |  |
-| **paymentIntentRequest** | [**PaymentIntentRequest**](PaymentIntentRequest.md) | Payment Intent Request |  |
-
-### Return type
-
-[**PaymentIntentResponse**](PaymentIntentResponse.md)
-
-### Authorization
-
-[Origin](../README.md#Origin), [x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Server Error |  -  |
-| **2XX** | Successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="securepaymentintentsput"></a>
-# **SecurePaymentintentsPut**
-> void SecurePaymentintentsPut (string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest)
+# **secure_epf_updateintent_put**
+> secure_epf_updateintent_put(x_api_key, x_app_key, x_version, origin, update_intent_request)
 
 This API is use update the amount of payment intent.
 
 ### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
 
-namespace Example
-{
-    public class SecurePaymentintentsPutExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.uat.anddone.com";
-            // Configure API key authorization: Origin
-            config.AddApiKey("Origin", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Origin", "Bearer");
-            // Configure API key authorization: x-api-key
-            config.AddApiKey("x-api-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-api-key", "Bearer");
-            // Configure API key authorization: x-app-key
-            config.AddApiKey("x-app-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("x-app-key", "Bearer");
+* Api Key Authentication (x-api-key):
+* Api Key Authentication (x-app-key):
 
-            var apiInstance = new SecurePaymentIntentApi(config);
-            var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xAppKey = "xAppKey_example";  // string | an authorization header
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = "xVersion_example";  // string | x-version
-            var updateIntentRequest = new UpdateIntentRequest(); // UpdateIntentRequest | Update Intent Request
+```python
+import openapi_client
+from openapi_client.models.update_intent_request import UpdateIntentRequest
+from openapi_client.rest import ApiException
+from pprint import pprint
 
-            try
-            {
-                // This API is use update the amount of payment intent.
-                apiInstance.SecurePaymentintentsPut(xApiKey, xAppKey, origin, xVersion, updateIntentRequest);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SecurePaymentIntentApi.SecurePaymentintentsPut: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
+# Defining the host is optional and defaults to https://api.uat.anddone.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://api.uat.anddone.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x-api-key
+configuration.api_key['x-api-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# Configure API key authorization: x-app-key
+configuration.api_key['x-app-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-app-key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SecurePaymentIntentApi(api_client)
+    x_api_key = 'x_api_key_example' # str | an authorization header
+    x_app_key = 'x_app_key_example' # str | an authorization header
+    x_version = 'x_version_example' # str | x-version
+    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+    update_intent_request = openapi_client.UpdateIntentRequest() # UpdateIntentRequest | Update Intent Request
+
+    try:
+        # This API is use update the amount of payment intent.
+        api_instance.secure_epf_updateintent_put(x_api_key, x_app_key, x_version, origin, update_intent_request)
+    except Exception as e:
+        print("Exception when calling SecurePaymentIntentApi->secure_epf_updateintent_put: %s\n" % e)
 ```
 
-#### Using the SecurePaymentintentsPutWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
 
-```csharp
-try
-{
-    // This API is use update the amount of payment intent.
-    apiInstance.SecurePaymentintentsPutWithHttpInfo(xApiKey, xAppKey, origin, xVersion, updateIntentRequest);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SecurePaymentIntentApi.SecurePaymentintentsPutWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **xApiKey** | **string** | an authorization header |  |
-| **xAppKey** | **string** | an authorization header |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
-| **xVersion** | **string** | x-version |  |
-| **updateIntentRequest** | [**UpdateIntentRequest**](UpdateIntentRequest.md) | Update Intent Request |  |
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_api_key** | **str**| an authorization header | 
+ **x_app_key** | **str**| an authorization header | 
+ **x_version** | **str**| x-version | 
+ **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
+ **update_intent_request** | [**UpdateIntentRequest**](UpdateIntentRequest.md)| Update Intent Request | 
 
 ### Return type
 
@@ -324,21 +84,211 @@ void (empty response body)
 
 ### Authorization
 
-[Origin](../README.md#Origin), [x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
+[x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **400** | Bad Request |  -  |
-| **404** | Not Found |  -  |
-| **500** | Server Error |  -  |
-| **2XX** | Successful operation |  -  |
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **secure_paymentintents_expirations_post**
+> PaymentIntentExpiresResponse secure_paymentintents_expirations_post(x_api_key, x_app_key, x_version, origin, id=id)
+
+This API expires the payment Intent or link.
+
+### Example
+
+* Api Key Authentication (x-api-key):
+* Api Key Authentication (x-app-key):
+
+```python
+import openapi_client
+from openapi_client.models.payment_intent_expires_response import PaymentIntentExpiresResponse
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.uat.anddone.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://api.uat.anddone.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x-api-key
+configuration.api_key['x-api-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# Configure API key authorization: x-app-key
+configuration.api_key['x-app-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-app-key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SecurePaymentIntentApi(api_client)
+    x_api_key = 'x_api_key_example' # str | an authorization header
+    x_app_key = 'x_app_key_example' # str | an authorization header
+    x_version = 'x_version_example' # str | x-version
+    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+    id = 'id_example' # str | Payment Intent Id (optional)
+
+    try:
+        # This API expires the payment Intent or link.
+        api_response = api_instance.secure_paymentintents_expirations_post(x_api_key, x_app_key, x_version, origin, id=id)
+        print("The response of SecurePaymentIntentApi->secure_paymentintents_expirations_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SecurePaymentIntentApi->secure_paymentintents_expirations_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_api_key** | **str**| an authorization header | 
+ **x_app_key** | **str**| an authorization header | 
+ **x_version** | **str**| x-version | 
+ **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
+ **id** | **str**| Payment Intent Id | [optional] 
+
+### Return type
+
+[**PaymentIntentExpiresResponse**](PaymentIntentExpiresResponse.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**404** | Not Found |  -  |
+**500** | Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **secure_paymentintents_post**
+> PaymentIntentResponse secure_paymentintents_post(x_api_key, x_app_key, x_version, origin, payment_intent_request=payment_intent_request)
+
+This API is use to create Secure payment Intent.
+
+### Example
+
+* Api Key Authentication (x-api-key):
+* Api Key Authentication (x-app-key):
+
+```python
+import openapi_client
+from openapi_client.models.payment_intent_request import PaymentIntentRequest
+from openapi_client.models.payment_intent_response import PaymentIntentResponse
+from openapi_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.uat.anddone.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "https://api.uat.anddone.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: x-api-key
+configuration.api_key['x-api-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# Configure API key authorization: x-app-key
+configuration.api_key['x-app-key'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-app-key'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.SecurePaymentIntentApi(api_client)
+    x_api_key = 'x_api_key_example' # str | an authorization header
+    x_app_key = 'x_app_key_example' # str | an authorization header
+    x_version = 'x_version_example' # str | x-version
+    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+    payment_intent_request = openapi_client.PaymentIntentRequest() # PaymentIntentRequest | Payment Intent Request (optional)
+
+    try:
+        # This API is use to create Secure payment Intent.
+        api_response = api_instance.secure_paymentintents_post(x_api_key, x_app_key, x_version, origin, payment_intent_request=payment_intent_request)
+        print("The response of SecurePaymentIntentApi->secure_paymentintents_post:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling SecurePaymentIntentApi->secure_paymentintents_post: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **x_api_key** | **str**| an authorization header | 
+ **x_app_key** | **str**| an authorization header | 
+ **x_version** | **str**| x-version | 
+ **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
+ **payment_intent_request** | [**PaymentIntentRequest**](PaymentIntentRequest.md)| Payment Intent Request | [optional] 
+
+### Return type
+
+[**PaymentIntentResponse**](PaymentIntentResponse.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key), [x-app-key](../README.md#x-app-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful operation |  -  |
+**400** | Bad Request |  -  |
+**404** | Not Found |  -  |
+**500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
