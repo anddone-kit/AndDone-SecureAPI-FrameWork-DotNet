@@ -39,44 +39,52 @@ namespace Org.OpenAPITools.Model
         /// <param name="refundAmount">refundAmount.</param>
         /// <param name="transactionId">transactionId.</param>
         /// <param name="remarks">remarks.</param>
-        public TransactionRefundEligibilityRequest(string invoiceNumber = default(string), string pONumber = default(string), decimal refundAmount = default(decimal), string transactionId = default(string), string remarks = default(string))
+        /// <param name="splits">splits.</param>
+        public TransactionRefundEligibilityRequest(string invoiceNumber = default(string), string pONumber = default(string), decimal refundAmount = default(decimal), string transactionId = default(string), string remarks = default(string), List<PaymentRequestSplitsInner> splits = default(List<PaymentRequestSplitsInner>))
         {
             this.InvoiceNumber = invoiceNumber;
             this.PONumber = pONumber;
             this.RefundAmount = refundAmount;
             this.TransactionId = transactionId;
             this.Remarks = remarks;
+            this.Splits = splits;
         }
 
         /// <summary>
         /// Gets or Sets InvoiceNumber
         /// </summary>
-        [DataMember(Name = "InvoiceNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "invoiceNumber", EmitDefaultValue = false)]
         public string InvoiceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets PONumber
         /// </summary>
-        [DataMember(Name = "PONumber", EmitDefaultValue = false)]
+        [DataMember(Name = "pONumber", EmitDefaultValue = false)]
         public string PONumber { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundAmount
         /// </summary>
-        [DataMember(Name = "RefundAmount", EmitDefaultValue = false)]
+        [DataMember(Name = "refundAmount", EmitDefaultValue = false)]
         public decimal RefundAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionId
         /// </summary>
-        [DataMember(Name = "TransactionId", EmitDefaultValue = false)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
         /// <summary>
         /// Gets or Sets Remarks
         /// </summary>
-        [DataMember(Name = "Remarks", EmitDefaultValue = false)]
+        [DataMember(Name = "remarks", EmitDefaultValue = false)]
         public string Remarks { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Splits
+        /// </summary>
+        [DataMember(Name = "splits", EmitDefaultValue = false)]
+        public List<PaymentRequestSplitsInner> Splits { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -91,6 +99,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  RefundAmount: ").Append(RefundAmount).Append("\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  Remarks: ").Append(Remarks).Append("\n");
+            sb.Append("  Splits: ").Append(Splits).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -109,7 +118,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

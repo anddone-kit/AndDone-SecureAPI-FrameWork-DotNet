@@ -39,23 +39,82 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequest" /> class.
         /// </summary>
-        /// <param name="quoteKey">This denotes the quoteKey. (required).</param>
-        public QuoteRequest(string quoteKey = default(string))
+        /// <param name="merchantId">merchantId.</param>
+        /// <param name="paymentIntentId">paymentIntentId (required).</param>
+        /// <param name="details">details (required).</param>
+        /// <param name="insured">insured (required).</param>
+        /// <param name="agent">agent (required).</param>
+        /// <param name="policies">policies (required).</param>
+        public QuoteRequest(string merchantId = default(string), string paymentIntentId = default(string), QuoteRequestDetails details = default(QuoteRequestDetails), QuoteRequestInsured insured = default(QuoteRequestInsured), QuoteRequestAgent agent = default(QuoteRequestAgent), List<QuoteRequestPoliciesInner> policies = default(List<QuoteRequestPoliciesInner>))
         {
-            // to ensure "quoteKey" is required (not null)
-            if (quoteKey == null)
+            // to ensure "paymentIntentId" is required (not null)
+            if (paymentIntentId == null)
             {
-                throw new ArgumentNullException("quoteKey is a required property for QuoteRequest and cannot be null");
+                throw new ArgumentNullException("paymentIntentId is a required property for QuoteRequest and cannot be null");
             }
-            this.QuoteKey = quoteKey;
+            this.PaymentIntentId = paymentIntentId;
+            // to ensure "details" is required (not null)
+            if (details == null)
+            {
+                throw new ArgumentNullException("details is a required property for QuoteRequest and cannot be null");
+            }
+            this.Details = details;
+            // to ensure "insured" is required (not null)
+            if (insured == null)
+            {
+                throw new ArgumentNullException("insured is a required property for QuoteRequest and cannot be null");
+            }
+            this.Insured = insured;
+            // to ensure "agent" is required (not null)
+            if (agent == null)
+            {
+                throw new ArgumentNullException("agent is a required property for QuoteRequest and cannot be null");
+            }
+            this.Agent = agent;
+            // to ensure "policies" is required (not null)
+            if (policies == null)
+            {
+                throw new ArgumentNullException("policies is a required property for QuoteRequest and cannot be null");
+            }
+            this.Policies = policies;
+            this.MerchantId = merchantId;
         }
 
         /// <summary>
-        /// This denotes the quoteKey.
+        /// Gets or Sets MerchantId
         /// </summary>
-        /// <value>This denotes the quoteKey.</value>
-        [DataMember(Name = "QuoteKey", IsRequired = true, EmitDefaultValue = true)]
-        public string QuoteKey { get; set; }
+        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
+        public string MerchantId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PaymentIntentId
+        /// </summary>
+        [DataMember(Name = "paymentIntentId", IsRequired = true, EmitDefaultValue = true)]
+        public string PaymentIntentId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Details
+        /// </summary>
+        [DataMember(Name = "details", IsRequired = true, EmitDefaultValue = true)]
+        public QuoteRequestDetails Details { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Insured
+        /// </summary>
+        [DataMember(Name = "insured", IsRequired = true, EmitDefaultValue = true)]
+        public QuoteRequestInsured Insured { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Agent
+        /// </summary>
+        [DataMember(Name = "agent", IsRequired = true, EmitDefaultValue = true)]
+        public QuoteRequestAgent Agent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Policies
+        /// </summary>
+        [DataMember(Name = "policies", IsRequired = true, EmitDefaultValue = true)]
+        public List<QuoteRequestPoliciesInner> Policies { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,7 +124,12 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class QuoteRequest {\n");
-            sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
+            sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
+            sb.Append("  PaymentIntentId: ").Append(PaymentIntentId).Append("\n");
+            sb.Append("  Details: ").Append(Details).Append("\n");
+            sb.Append("  Insured: ").Append(Insured).Append("\n");
+            sb.Append("  Agent: ").Append(Agent).Append("\n");
+            sb.Append("  Policies: ").Append(Policies).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,7 +148,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

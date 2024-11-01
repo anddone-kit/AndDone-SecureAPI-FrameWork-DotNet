@@ -82,6 +82,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'SaveForFuture'
+        /// </summary>
+        [Fact]
+        public void SaveForFutureTest()
+        {
+            // TODO unit test for the property 'SaveForFuture'
+        }
+
+        /// <summary>
         /// Test the property 'PaymentDescription'
         /// </summary>
         [Fact]
@@ -154,12 +163,21 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'ExpireInUnit'
+        /// Test the property 'ExpireBy'
         /// </summary>
         [Fact]
-        public void ExpireInUnitTest()
+        public void ExpireByTest()
         {
-            // TODO unit test for the property 'ExpireInUnit'
+            // TODO unit test for the property 'ExpireBy'
+        }
+
+        /// <summary>
+        /// Test the property 'ExpireOn'
+        /// </summary>
+        [Fact]
+        public void ExpireOnTest()
+        {
+            // TODO unit test for the property 'ExpireOn'
         }
 
         /// <summary>
@@ -172,12 +190,57 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ExpireInUnit'
+        /// </summary>
+        [Fact]
+        public void ExpireInUnitTest()
+        {
+            // TODO unit test for the property 'ExpireInUnit'
+        }
+
+        /// <summary>
         /// Test the property 'ReferenceNumber'
         /// </summary>
         [Fact]
         public void ReferenceNumberTest()
         {
             // TODO unit test for the property 'ReferenceNumber'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceKey'
+        /// </summary>
+        [Fact]
+        public void ReferenceKeyTest()
+        {
+            // TODO unit test for the property 'ReferenceKey'
+        }
+
+        /// <summary>
+        /// Test the property 'EnablePremiumFinance'
+        /// </summary>
+        [Fact]
+        public void EnablePremiumFinanceTest()
+        {
+            // TODO unit test for the property 'EnablePremiumFinance'
+        }
+
+        /// <summary>
+        /// Test the property 'PlatformSettlementStatus'
+        /// </summary>
+        [Fact]
+        public void PlatformSettlementStatusTest()
+        {
+            // TODO unit test for the property 'PlatformSettlementStatus'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceDataList'
+        /// </summary>
+        [Fact]
+        public void ReferenceDataListTest()
+        {
+            // TODO unit test for the property 'ReferenceDataList'
         }
 
         /// <summary>
@@ -208,6 +271,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'PaymentLinkType'
+        /// </summary>
+        [Fact]
+        public void PaymentLinkTypeTest()
+        {
+            // TODO unit test for the property 'PaymentLinkType'
+        }
+
+        /// <summary>
         /// Test the property 'ApplyPaymentAdjustments'
         /// </summary>
         [Fact]
@@ -217,12 +289,30 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'QuoteKey'
+        /// </summary>
+        [Fact]
+        public void QuoteKeyTest()
+        {
+            // TODO unit test for the property 'QuoteKey'
+        }
+
+        /// <summary>
         /// Test the property 'Customers'
         /// </summary>
         [Fact]
         public void CustomersTest()
         {
             // TODO unit test for the property 'Customers'
+        }
+
+        /// <summary>
+        /// Test the property 'Splits'
+        /// </summary>
+        [Fact]
+        public void SplitsTest()
+        {
+            // TODO unit test for the property 'Splits'
         }
 
         /// <summary>

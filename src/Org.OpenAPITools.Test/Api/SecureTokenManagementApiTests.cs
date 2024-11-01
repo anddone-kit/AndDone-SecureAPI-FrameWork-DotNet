@@ -63,10 +63,26 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xVersion = null;
-            //string xAppKey = null;
             //string origin = null;
+            //string xAppKey = null;
             //TokenRequest tokenRequest = null;
-            //instance.SecureTokensActivationsDelete(xApiKey, xVersion, xAppKey, origin, tokenRequest);
+            //instance.SecureTokensActivationsDelete(xApiKey, xVersion, origin, xAppKey, tokenRequest);
+        }
+
+        /// <summary>
+        /// Test SecureTokensDetailsPost
+        /// </summary>
+        [Fact]
+        public void SecureTokensDetailsPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //SecureTokenLinkRequest secureTokenLinkRequest = null;
+            //var response = instance.SecureTokensDetailsPost(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+            //Assert.IsType<SecureMerchantTokenShortResponse>(response);
         }
     }
 }

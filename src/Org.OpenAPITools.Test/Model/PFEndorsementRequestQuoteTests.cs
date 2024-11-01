@@ -55,6 +55,24 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'MerchantReference'
+        /// </summary>
+        [Fact]
+        public void MerchantReferenceTest()
+        {
+            // TODO unit test for the property 'MerchantReference'
+        }
+
+        /// <summary>
+        /// Test the property 'AccountNumber'
+        /// </summary>
+        [Fact]
+        public void AccountNumberTest()
+        {
+            // TODO unit test for the property 'AccountNumber'
+        }
+
+        /// <summary>
         /// Test the property 'AgreementId'
         /// </summary>
         [Fact]

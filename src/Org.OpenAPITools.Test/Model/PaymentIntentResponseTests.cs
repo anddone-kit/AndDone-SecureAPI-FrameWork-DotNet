@@ -125,41 +125,5 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'Intent'
         }
-
-        /// <summary>
-        /// Test the property 'SaveForFuture'
-        /// </summary>
-        [Fact]
-        public void SaveForFutureTest()
-        {
-            // TODO unit test for the property 'SaveForFuture'
-        }
-
-        /// <summary>
-        /// Test the property 'AccountNumber'
-        /// </summary>
-        [Fact]
-        public void AccountNumberTest()
-        {
-            // TODO unit test for the property 'AccountNumber'
-        }
-
-        /// <summary>
-        /// Test the property 'QuoteKey'
-        /// </summary>
-        [Fact]
-        public void QuoteKeyTest()
-        {
-            // TODO unit test for the property 'QuoteKey'
-        }
-
-        /// <summary>
-        /// Test the property 'Splits'
-        /// </summary>
-        [Fact]
-        public void SplitsTest()
-        {
-            // TODO unit test for the property 'Splits'
-        }
     }
 }

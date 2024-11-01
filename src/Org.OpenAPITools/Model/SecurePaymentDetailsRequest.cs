@@ -74,11 +74,13 @@ namespace Org.OpenAPITools.Model
         /// <param name="id">id.</param>
         /// <param name="paymentToken">paymentToken.</param>
         /// <param name="type">type.</param>
-        public SecurePaymentDetailsRequest(string id = default(string), string paymentToken = default(string), TypeEnum? type = default(TypeEnum?))
+        /// <param name="includeRefundTransactions">includeRefundTransactions.</param>
+        public SecurePaymentDetailsRequest(string id = default(string), string paymentToken = default(string), TypeEnum? type = default(TypeEnum?), bool includeRefundTransactions = default(bool))
         {
             this.Id = id;
             this.PaymentToken = paymentToken;
             this.Type = type;
+            this.IncludeRefundTransactions = includeRefundTransactions;
         }
 
         /// <summary>
@@ -94,6 +96,12 @@ namespace Org.OpenAPITools.Model
         public string PaymentToken { get; set; }
 
         /// <summary>
+        /// Gets or Sets IncludeRefundTransactions
+        /// </summary>
+        [DataMember(Name = "includeRefundTransactions", EmitDefaultValue = true)]
+        public bool IncludeRefundTransactions { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -104,6 +112,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  PaymentToken: ").Append(PaymentToken).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  IncludeRefundTransactions: ").Append(IncludeRefundTransactions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -122,7 +131,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

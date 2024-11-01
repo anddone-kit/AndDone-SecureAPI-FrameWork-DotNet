@@ -40,21 +40,21 @@ namespace Org.OpenAPITools.Model
         /// <param name="crd">This denotes the Crd..</param>
         /// <param name="interval">This denotes the Interval..</param>
         /// <param name="installments">This denotes the number of installments..</param>
-        /// <param name="programID">This denotes the programId..</param>
+        /// <param name="programID">This denotes the program ID..</param>
         /// <param name="brokerFee">This denotes the broker fees..</param>
-        /// <param name="eSignOption">This denotes the ESign Option..</param>
+        /// <param name="eSignOption">This denotes the eSign Option..</param>
         /// <param name="processDownPayment">This denotes the flag that down payment is processed or not..</param>
         /// <param name="processDownPaymentNoReason">This denotes the Process Down Payment No Reason..</param>
         /// <param name="downPaymentMethod">This denotes the Down Payment Method..</param>
-        /// <param name="downPaymentPaidBy">This denotes the Down Payment Paid y..</param>
-        /// <param name="batchID">This denotes the batch id..</param>
-        /// <param name="returnPFA">This denotes the flag whether to return pfa or not..</param>
+        /// <param name="downPaymentPaidBy">This denotes the Down Payment Paid by..</param>
+        /// <param name="batchID">This denotes the batch ID..</param>
+        /// <param name="returnPFA">This denotes the flag whether to return PFA or not..</param>
         /// <param name="equalPayments">This denotes the equal payments..</param>
         /// <param name="quoteExpirationDays">This denotes the number of days to expire..</param>
-        /// <param name="bypassCADNB">This denotes the flag whether to Bypass CADNB..</param>
+        /// <param name="bypassCADNB">This denotes the flag whether to bypass CADNB..</param>
         /// <param name="allowZeroAPR">This denotes the Allow Zero APR..</param>
-        /// <param name="associatedAccountNumber">This denotes the Associated Account Number..</param>
-        /// <param name="channel">This denotes the Channel..</param>
+        /// <param name="associatedAccountNumber">This denotes the associated account number..</param>
+        /// <param name="channel">This denotes the channel..</param>
         /// <param name="channelVersion">This denotes the channel version..</param>
         public PFEndorsementRequestQuoteDetails(string commercial = default(string), string coupon = default(string), bool couponInvoicePrinted = default(bool), decimal crd = default(decimal), string interval = default(string), decimal installments = default(decimal), decimal programID = default(decimal), decimal brokerFee = default(decimal), string eSignOption = default(string), bool processDownPayment = default(bool), string processDownPaymentNoReason = default(string), string downPaymentMethod = default(string), string downPaymentPaidBy = default(string), string batchID = default(string), bool returnPFA = default(bool), string equalPayments = default(string), decimal quoteExpirationDays = default(decimal), bool bypassCADNB = default(bool), bool allowZeroAPR = default(bool), string associatedAccountNumber = default(string), string channel = default(string), string channelVersion = default(string))
         {
@@ -125,9 +125,9 @@ namespace Org.OpenAPITools.Model
         public decimal Installments { get; set; }
 
         /// <summary>
-        /// This denotes the programId.
+        /// This denotes the program ID.
         /// </summary>
-        /// <value>This denotes the programId.</value>
+        /// <value>This denotes the program ID.</value>
         [DataMember(Name = "ProgramID", EmitDefaultValue = false)]
         public decimal ProgramID { get; set; }
 
@@ -139,9 +139,9 @@ namespace Org.OpenAPITools.Model
         public decimal BrokerFee { get; set; }
 
         /// <summary>
-        /// This denotes the ESign Option.
+        /// This denotes the eSign Option.
         /// </summary>
-        /// <value>This denotes the ESign Option.</value>
+        /// <value>This denotes the eSign Option.</value>
         [DataMember(Name = "ESignOption", EmitDefaultValue = false)]
         public string ESignOption { get; set; }
 
@@ -167,23 +167,23 @@ namespace Org.OpenAPITools.Model
         public string DownPaymentMethod { get; set; }
 
         /// <summary>
-        /// This denotes the Down Payment Paid y.
+        /// This denotes the Down Payment Paid by.
         /// </summary>
-        /// <value>This denotes the Down Payment Paid y.</value>
+        /// <value>This denotes the Down Payment Paid by.</value>
         [DataMember(Name = "DownPaymentPaidBy", EmitDefaultValue = false)]
         public string DownPaymentPaidBy { get; set; }
 
         /// <summary>
-        /// This denotes the batch id.
+        /// This denotes the batch ID.
         /// </summary>
-        /// <value>This denotes the batch id.</value>
+        /// <value>This denotes the batch ID.</value>
         [DataMember(Name = "BatchID", EmitDefaultValue = false)]
         public string BatchID { get; set; }
 
         /// <summary>
-        /// This denotes the flag whether to return pfa or not.
+        /// This denotes the flag whether to return PFA or not.
         /// </summary>
-        /// <value>This denotes the flag whether to return pfa or not.</value>
+        /// <value>This denotes the flag whether to return PFA or not.</value>
         [DataMember(Name = "ReturnPFA", EmitDefaultValue = true)]
         public bool ReturnPFA { get; set; }
 
@@ -202,9 +202,9 @@ namespace Org.OpenAPITools.Model
         public decimal QuoteExpirationDays { get; set; }
 
         /// <summary>
-        /// This denotes the flag whether to Bypass CADNB.
+        /// This denotes the flag whether to bypass CADNB.
         /// </summary>
-        /// <value>This denotes the flag whether to Bypass CADNB.</value>
+        /// <value>This denotes the flag whether to bypass CADNB.</value>
         [DataMember(Name = "BypassCADNB", EmitDefaultValue = true)]
         public bool BypassCADNB { get; set; }
 
@@ -216,16 +216,16 @@ namespace Org.OpenAPITools.Model
         public bool AllowZeroAPR { get; set; }
 
         /// <summary>
-        /// This denotes the Associated Account Number.
+        /// This denotes the associated account number.
         /// </summary>
-        /// <value>This denotes the Associated Account Number.</value>
+        /// <value>This denotes the associated account number.</value>
         [DataMember(Name = "AssociatedAccountNumber", EmitDefaultValue = false)]
         public string AssociatedAccountNumber { get; set; }
 
         /// <summary>
-        /// This denotes the Channel.
+        /// This denotes the channel.
         /// </summary>
-        /// <value>This denotes the Channel.</value>
+        /// <value>This denotes the channel.</value>
         [DataMember(Name = "Channel", EmitDefaultValue = false)]
         public string Channel { get; set; }
 
@@ -284,7 +284,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

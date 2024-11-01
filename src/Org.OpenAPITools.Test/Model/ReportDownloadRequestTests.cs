@@ -64,6 +64,24 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ReportGenerationLogId'
+        /// </summary>
+        [Fact]
+        public void ReportGenerationLogIdTest()
+        {
+            // TODO unit test for the property 'ReportGenerationLogId'
+        }
+
+        /// <summary>
+        /// Test the property 'FileCompress'
+        /// </summary>
+        [Fact]
+        public void FileCompressTest()
+        {
+            // TODO unit test for the property 'FileCompress'
+        }
+
+        /// <summary>
         /// Test the property 'Date'
         /// </summary>
         [Fact]

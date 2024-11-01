@@ -1,66 +1,47 @@
-# PFLiteQuoteByPaymentLinkResponse
-
+# Org.OpenAPITools.Model.PFLiteQuoteByPaymentLinkResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Unique identifier of the quote | [optional] 
-**quote_key** | **str** | Key for the quote | [optional] 
-**pf_type** | **str** | Type of premium finance | [optional] 
-**is_endorsement** | **bool** | Indicates if it is an endorsement | [optional] 
-**merchant_id** | **str** | Identifier of the merchant | [optional] 
-**program_id** | **int** | Identifier of the program | [optional] 
-**payment_link_id** | **str** | Identifier of the payment link | [optional] 
-**account_number** | **str** | Account number | [optional] 
-**quote_status** | **str** | The status of the quote. | [optional] 
-**is_active** | **bool** | Indicates if the quote is active | [optional] [default to True]
-**premium** | **float** | Premium amount | [optional] 
-**additional_fees** | **float** | Additional fees | [optional] 
-**down_amount** | **float** | Down payment amount | [optional] 
-**amount_financed** | **float** | Amount financed | [optional] 
-**finance_charge** | **float** | Finance charge | [optional] 
-**total_payments** | **float** | Total payments | [optional] 
-**payment_amount** | **float** | Payment amount | [optional] 
-**doc_stamp** | **int** | Document stamp | [optional] 
-**first_due_date** | **str** | First due date | [optional] 
-**apr** | **float** | Annual percentage rate | [optional] 
-**installments** | **int** | Number of installments | [optional] 
-**batch_id** | **str** | Batch identifier | [optional] 
-**payments_retained** | **int** | Number of payments retained | [optional] 
-**payment_retained_amount** | **float** | Amount retained from payments | [optional] 
-**retail_agent_register_login_url** | **str** | URL for retail agent registration/login | [optional] 
-**insured_name** | **str** | Name of the insured | [optional] 
-**is_esign_pfa** | **bool** | Indicates if e-signature for PFA is required | [optional] 
-**next_payment_due_date** | **str** | Next payment due date | [optional] 
-**last_payment_date** | **str** | Last payment date | [optional] 
-**is_down_payment_required** | **bool** | Indicates if down payment is required | [optional] 
-**is_esign_required** | **bool** | Indicates if e-signature is required | [optional] 
-**is_deleted** | **bool** | Indicates if the quote is deleted | [optional] 
-**created_on** | **str** | Creation date and time | [optional] 
-**created_by** | **str** | Creator of the quote | [optional] 
-**modified_on** | **str** | Modification date and time | [optional] 
-**modified_by** | **str** | Modifier of the quote | [optional] 
-**un_sign_pfa** | **str** | Un-signed PFA document | [optional] 
-**sign_pfa** | **str** | Signed PFA document | [optional] 
+**Id** | **string** | Unique identifier of the quote | [optional] 
+**QuoteKey** | **string** | Key for the quote | [optional] 
+**PfType** | **string** | Type of premium finance | [optional] 
+**IsEndorsement** | **bool** | Indicates if it is an endorsement | [optional] 
+**MerchantId** | **string** | Identifier of the merchant | [optional] 
+**ProgramId** | **int** | Identifier of the program | [optional] 
+**PaymentLinkId** | **string** | Identifier of the payment link | [optional] 
+**AccountNumber** | **string** | Account number | [optional] 
+**QuoteStatus** | **string** | The status of the quote. | [optional] 
+**IsActive** | **bool** | Indicates if the quote is active | [optional] [default to true]
+**Premium** | **decimal** | Premium amount | [optional] 
+**AdditionalFees** | **decimal** | Additional fees | [optional] 
+**DownAmount** | **decimal** | Down payment amount | [optional] 
+**AmountFinanced** | **decimal** | Amount financed | [optional] 
+**FinanceCharge** | **decimal** | Finance charge | [optional] 
+**TotalPayments** | **decimal** | Total payments | [optional] 
+**PaymentAmount** | **decimal** | Payment amount | [optional] 
+**DocStamp** | **int** | Document stamp | [optional] 
+**FirstDueDate** | **string** | First due date | [optional] 
+**Apr** | **decimal** | Annual percentage rate | [optional] 
+**Installments** | **int** | Number of installments | [optional] 
+**BatchId** | **string** | Batch identifier | [optional] 
+**PaymentsRetained** | **int** | Number of payments retained | [optional] 
+**PaymentRetainedAmount** | **decimal** | Amount retained from payments | [optional] 
+**RetailAgentRegisterLoginURL** | **string** | URL for retail agent registration/login | [optional] 
+**InsuredName** | **string** | Name of the insured | [optional] 
+**IsEsignPFA** | **bool** | Indicates if e-signature for PFA is required | [optional] 
+**NextPaymentDueDate** | **string** | Next payment due date | [optional] 
+**LastPaymentDate** | **string** | Last payment date | [optional] 
+**IsDownPaymentRequired** | **bool** | Indicates if down payment is required | [optional] 
+**IsEsignRequired** | **bool** | Indicates if e-signature is required | [optional] 
+**IsDeleted** | **bool** | Indicates if the quote is deleted | [optional] 
+**CreatedOn** | **string** | Creation date and time | [optional] 
+**CreatedBy** | **string** | Creator of the quote | [optional] 
+**ModifiedOn** | **string** | Modification date and time | [optional] 
+**ModifiedBy** | **string** | Modifier of the quote | [optional] 
+**UnSignPFA** | **string** | Un-signed PFA document | [optional] 
+**SignPFA** | **string** | Signed PFA document | [optional] 
 
-## Example
-
-```python
-from openapi_client.models.pf_lite_quote_by_payment_link_response import PFLiteQuoteByPaymentLinkResponse
-
-# TODO update the JSON string below
-json = "{}"
-# create an instance of PFLiteQuoteByPaymentLinkResponse from a JSON string
-pf_lite_quote_by_payment_link_response_instance = PFLiteQuoteByPaymentLinkResponse.from_json(json)
-# print the JSON string representation of the object
-print(PFLiteQuoteByPaymentLinkResponse.to_json())
-
-# convert the object into a dict
-pf_lite_quote_by_payment_link_response_dict = pf_lite_quote_by_payment_link_response_instance.to_dict()
-# create an instance of PFLiteQuoteByPaymentLinkResponse from a dict
-pf_lite_quote_by_payment_link_response_from_dict = PFLiteQuoteByPaymentLinkResponse.from_dict(pf_lite_quote_by_payment_link_response_dict)
-```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

@@ -1,87 +1,99 @@
-# openapi_client.SecureTokenLinksApi
+# Org.OpenAPITools.Api.SecureTokenLinksApi
 
 All URIs are relative to *https://api.uat.anddone.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**secure_tokenlinks_details_post**](SecureTokenLinksApi.md#secure_tokenlinks_details_post) | **POST** /secure/tokenlinks/details | This API is used for getting Token Links by TokenLink ID
-[**secure_tokenlinks_expirations_post**](SecureTokenLinksApi.md#secure_tokenlinks_expirations_post) | **POST** /secure/tokenlinks/expirations | This API expires the token link.
-[**secure_tokenlinks_list_post**](SecureTokenLinksApi.md#secure_tokenlinks_list_post) | **POST** /secure/tokenlinks/list | This API is used for getting all Token Links for Merchant
-[**secure_tokenlinks_post**](SecureTokenLinksApi.md#secure_tokenlinks_post) | **POST** /secure/tokenlinks | This API is use to create Secure Token Links
-[**secure_tokenlinks_put**](SecureTokenLinksApi.md#secure_tokenlinks_put) | **PUT** /secure/tokenlinks | This API will update the expireIn and paymentType of Token Link.
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**SecureTokenlinksDetailsPost**](SecureTokenLinksApi.md#securetokenlinksdetailspost) | **POST** /secure/tokenlinks/details | This API is used for getting Token Links by TokenLink ID |
+| [**SecureTokenlinksExpirationsPost**](SecureTokenLinksApi.md#securetokenlinksexpirationspost) | **POST** /secure/tokenlinks/expirations | This API expires the token link. |
+| [**SecureTokenlinksListPost**](SecureTokenLinksApi.md#securetokenlinkslistpost) | **POST** /secure/tokenlinks/list | This API is used for getting all Token Links for Merchant |
+| [**SecureTokenlinksPost**](SecureTokenLinksApi.md#securetokenlinkspost) | **POST** /secure/tokenlinks | This API is use to create Secure Token Links |
+| [**SecureTokenlinksPut**](SecureTokenLinksApi.md#securetokenlinksput) | **PUT** /secure/tokenlinks | This API will update the expireIn and paymentType of Token Link. |
 
-
-# **secure_tokenlinks_details_post**
-> SecureTokenLinkByIdResponse secure_tokenlinks_details_post(x_api_key, x_app_key, x_version, origin, secure_token_link_request)
+<a id="securetokenlinksdetailspost"></a>
+# **SecureTokenlinksDetailsPost**
+> SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
 
 This API is used for getting Token Links by TokenLink ID
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureTokenlinksDetailsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.secure_token_link_by_id_response import SecureTokenLinkByIdResponse
-from openapi_client.models.secure_token_link_request import SecureTokenLinkRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureTokenLinksApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var secureTokenLinkRequest = new SecureTokenLinkRequest(); // SecureTokenLinkRequest | Secure Token Link Id Request
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureTokenLinksApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    secure_token_link_request = openapi_client.SecureTokenLinkRequest() # SecureTokenLinkRequest | Secure Token Link Id Request
-
-    try:
-        # This API is used for getting Token Links by TokenLink ID
-        api_response = api_instance.secure_tokenlinks_details_post(x_api_key, x_app_key, x_version, origin, secure_token_link_request)
-        print("The response of SecureTokenLinksApi->secure_tokenlinks_details_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureTokenLinksApi->secure_tokenlinks_details_post: %s\n" % e)
+            try
+            {
+                // This API is used for getting Token Links by TokenLink ID
+                SecureTokenLinkByIdResponse result = apiInstance.SecureTokenlinksDetailsPost(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksDetailsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureTokenlinksDetailsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API is used for getting Token Links by TokenLink ID
+    ApiResponse<SecureTokenLinkByIdResponse> response = apiInstance.SecureTokenlinksDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksDetailsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **secure_token_link_request** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md)| Secure Token Link Id Request | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **secureTokenLinkRequest** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md) | Secure Token Link Id Request |  |
 
 ### Return type
 
@@ -96,88 +108,101 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**401** | Unauthorized |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_tokenlinks_expirations_post**
-> SecureTokenLinkExpiredResponse secure_tokenlinks_expirations_post(x_api_key, x_app_key, x_version, origin, secure_token_link_request)
+<a id="securetokenlinksexpirationspost"></a>
+# **SecureTokenlinksExpirationsPost**
+> SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
 
 This API expires the token link.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureTokenlinksExpirationsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.secure_token_link_expired_response import SecureTokenLinkExpiredResponse
-from openapi_client.models.secure_token_link_request import SecureTokenLinkRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureTokenLinksApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var secureTokenLinkRequest = new SecureTokenLinkRequest(); // SecureTokenLinkRequest | Secure Token Link Id Request
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureTokenLinksApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    secure_token_link_request = openapi_client.SecureTokenLinkRequest() # SecureTokenLinkRequest | Secure Token Link Id Request
-
-    try:
-        # This API expires the token link.
-        api_response = api_instance.secure_tokenlinks_expirations_post(x_api_key, x_app_key, x_version, origin, secure_token_link_request)
-        print("The response of SecureTokenLinksApi->secure_tokenlinks_expirations_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureTokenLinksApi->secure_tokenlinks_expirations_post: %s\n" % e)
+            try
+            {
+                // This API expires the token link.
+                SecureTokenLinkExpiredResponse result = apiInstance.SecureTokenlinksExpirationsPost(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksExpirationsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureTokenlinksExpirationsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API expires the token link.
+    ApiResponse<SecureTokenLinkExpiredResponse> response = apiInstance.SecureTokenlinksExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksExpirationsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **secure_token_link_request** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md)| Secure Token Link Id Request | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **secureTokenLinkRequest** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md) | Secure Token Link Id Request |  |
 
 ### Return type
 
@@ -192,120 +217,134 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_tokenlinks_list_post**
-> SecureTokenLinkResponse secure_tokenlinks_list_post(x_api_key, x_app_key, x_version, origin, email=email, status=status, phone=phone, statuses=statuses, title=title, payment_description=payment_description, invoice_number=invoice_number, expiry_date=expiry_date, from_expiry_date=from_expiry_date, free_text_search=free_text_search, token_link_id=token_link_id, to_expiry_date=to_expiry_date, from_date=from_date, to_date=to_date, start_row=start_row, page_size=page_size, sort_field=sort_field, asc=asc)
+<a id="securetokenlinkslistpost"></a>
+# **SecureTokenlinksListPost**
+> SecureTokenLinkResponse SecureTokenlinksListPost (string xApiKey, string xAppKey, string xVersion, string origin, string? email = null, string? status = null, string? phone = null, string? statuses = null, string? title = null, string? paymentDescription = null, string? invoiceNumber = null, string? expiryDate = null, string? fromExpiryDate = null, string? freeTextSearch = null, string? tokenLinkId = null, string? toExpiryDate = null, string? fromDate = null, string? toDate = null, int? startRow = null, int? pageSize = null, string? sortField = null, bool? asc = null)
 
 This API is used for getting all Token Links for Merchant
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureTokenlinksListPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.secure_token_link_response import SecureTokenLinkResponse
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureTokenLinksApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var email = "email_example";  // string? | email (optional) 
+            var status = "NA";  // string? | status (optional) 
+            var phone = "phone_example";  // string? | phone (optional) 
+            var statuses = "statuses_example";  // string? | statuses (optional) 
+            var title = "title_example";  // string? | title (optional) 
+            var paymentDescription = "paymentDescription_example";  // string? | paymentDescription (optional) 
+            var invoiceNumber = "invoiceNumber_example";  // string? | invoiceNumber (optional) 
+            var expiryDate = "expiryDate_example";  // string? | expiryDate (optional) 
+            var fromExpiryDate = "fromExpiryDate_example";  // string? | fromExpiryDate (optional) 
+            var freeTextSearch = "freeTextSearch_example";  // string? | freeTextSearch (optional) 
+            var tokenLinkId = "tokenLinkId_example";  // string? | tokenLinkId (optional) 
+            var toExpiryDate = "toExpiryDate_example";  // string? | toExpiryDate (optional) 
+            var fromDate = "fromDate_example";  // string? | fromDate (optional) 
+            var toDate = "toDate_example";  // string? | toDate (optional) 
+            var startRow = 56;  // int? | Set StartRow (optional) 
+            var pageSize = 56;  // int? | Set PageSize (optional) 
+            var sortField = "sortField_example";  // string? | Set SortField (optional) 
+            var asc = true;  // bool? | Set Asc (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureTokenLinksApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    email = 'email_example' # str | email (optional)
-    status = 'status_example' # str | status (optional)
-    phone = 'phone_example' # str | phone (optional)
-    statuses = 'statuses_example' # str | statuses (optional)
-    title = 'title_example' # str | title (optional)
-    payment_description = 'payment_description_example' # str | paymentDescription (optional)
-    invoice_number = 'invoice_number_example' # str | invoiceNumber (optional)
-    expiry_date = 'expiry_date_example' # str | expiryDate (optional)
-    from_expiry_date = 'from_expiry_date_example' # str | fromExpiryDate (optional)
-    free_text_search = 'free_text_search_example' # str | freeTextSearch (optional)
-    token_link_id = 'token_link_id_example' # str | tokenLinkId (optional)
-    to_expiry_date = 'to_expiry_date_example' # str | toExpiryDate (optional)
-    from_date = 'from_date_example' # str | fromDate (optional)
-    to_date = 'to_date_example' # str | toDate (optional)
-    start_row = 56 # int | Set StartRow (optional)
-    page_size = 56 # int | Set PageSize (optional)
-    sort_field = 'sort_field_example' # str | Set SortField (optional)
-    asc = True # bool | Set Asc (optional)
-
-    try:
-        # This API is used for getting all Token Links for Merchant
-        api_response = api_instance.secure_tokenlinks_list_post(x_api_key, x_app_key, x_version, origin, email=email, status=status, phone=phone, statuses=statuses, title=title, payment_description=payment_description, invoice_number=invoice_number, expiry_date=expiry_date, from_expiry_date=from_expiry_date, free_text_search=free_text_search, token_link_id=token_link_id, to_expiry_date=to_expiry_date, from_date=from_date, to_date=to_date, start_row=start_row, page_size=page_size, sort_field=sort_field, asc=asc)
-        print("The response of SecureTokenLinksApi->secure_tokenlinks_list_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureTokenLinksApi->secure_tokenlinks_list_post: %s\n" % e)
+            try
+            {
+                // This API is used for getting all Token Links for Merchant
+                SecureTokenLinkResponse result = apiInstance.SecureTokenlinksListPost(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksListPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureTokenlinksListPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API is used for getting all Token Links for Merchant
+    ApiResponse<SecureTokenLinkResponse> response = apiInstance.SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksListPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **email** | **str**| email | [optional] 
- **status** | **str**| status | [optional] 
- **phone** | **str**| phone | [optional] 
- **statuses** | **str**| statuses | [optional] 
- **title** | **str**| title | [optional] 
- **payment_description** | **str**| paymentDescription | [optional] 
- **invoice_number** | **str**| invoiceNumber | [optional] 
- **expiry_date** | **str**| expiryDate | [optional] 
- **from_expiry_date** | **str**| fromExpiryDate | [optional] 
- **free_text_search** | **str**| freeTextSearch | [optional] 
- **token_link_id** | **str**| tokenLinkId | [optional] 
- **to_expiry_date** | **str**| toExpiryDate | [optional] 
- **from_date** | **str**| fromDate | [optional] 
- **to_date** | **str**| toDate | [optional] 
- **start_row** | **int**| Set StartRow | [optional] 
- **page_size** | **int**| Set PageSize | [optional] 
- **sort_field** | **str**| Set SortField | [optional] 
- **asc** | **bool**| Set Asc | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **email** | **string?** | email | [optional]  |
+| **status** | **string?** | status | [optional]  |
+| **phone** | **string?** | phone | [optional]  |
+| **statuses** | **string?** | statuses | [optional]  |
+| **title** | **string?** | title | [optional]  |
+| **paymentDescription** | **string?** | paymentDescription | [optional]  |
+| **invoiceNumber** | **string?** | invoiceNumber | [optional]  |
+| **expiryDate** | **string?** | expiryDate | [optional]  |
+| **fromExpiryDate** | **string?** | fromExpiryDate | [optional]  |
+| **freeTextSearch** | **string?** | freeTextSearch | [optional]  |
+| **tokenLinkId** | **string?** | tokenLinkId | [optional]  |
+| **toExpiryDate** | **string?** | toExpiryDate | [optional]  |
+| **fromDate** | **string?** | fromDate | [optional]  |
+| **toDate** | **string?** | toDate | [optional]  |
+| **startRow** | **int?** | Set StartRow | [optional]  |
+| **pageSize** | **int?** | Set PageSize | [optional]  |
+| **sortField** | **string?** | Set SortField | [optional]  |
+| **asc** | **bool?** | Set Asc | [optional]  |
 
 ### Return type
 
@@ -320,87 +359,100 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_tokenlinks_post**
-> SecureTokenLinkResponse secure_tokenlinks_post(x_api_key, x_app_key, x_version, origin, token_link_secure_request)
+<a id="securetokenlinkspost"></a>
+# **SecureTokenlinksPost**
+> SecureTokenLinkResponse SecureTokenlinksPost (string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest)
 
 This API is use to create Secure Token Links
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureTokenlinksPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.secure_token_link_response import SecureTokenLinkResponse
-from openapi_client.models.token_link_secure_request import TokenLinkSecureRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureTokenLinksApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var tokenLinkSecureRequest = new TokenLinkSecureRequest(); // TokenLinkSecureRequest | Secure Token Link Request
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureTokenLinksApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    token_link_secure_request = openapi_client.TokenLinkSecureRequest() # TokenLinkSecureRequest | Secure Token Link Request
-
-    try:
-        # This API is use to create Secure Token Links
-        api_response = api_instance.secure_tokenlinks_post(x_api_key, x_app_key, x_version, origin, token_link_secure_request)
-        print("The response of SecureTokenLinksApi->secure_tokenlinks_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureTokenLinksApi->secure_tokenlinks_post: %s\n" % e)
+            try
+            {
+                // This API is use to create Secure Token Links
+                SecureTokenLinkResponse result = apiInstance.SecureTokenlinksPost(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureTokenlinksPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API is use to create Secure Token Links
+    ApiResponse<SecureTokenLinkResponse> response = apiInstance.SecureTokenlinksPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **token_link_secure_request** | [**TokenLinkSecureRequest**](TokenLinkSecureRequest.md)| Secure Token Link Request | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **tokenLinkSecureRequest** | [**TokenLinkSecureRequest**](TokenLinkSecureRequest.md) | Secure Token Link Request |  |
 
 ### Return type
 
@@ -415,85 +467,97 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **201** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_tokenlinks_put**
-> secure_tokenlinks_put(x_api_key, x_app_key, x_version, origin, secure_token_link_update_request)
+<a id="securetokenlinksput"></a>
+# **SecureTokenlinksPut**
+> void SecureTokenlinksPut (string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest)
 
 This API will update the expireIn and paymentType of Token Link.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureTokenlinksPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.secure_token_link_update_request import SecureTokenLinkUpdateRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureTokenLinksApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var secureTokenLinkUpdateRequest = new SecureTokenLinkUpdateRequest(); // SecureTokenLinkUpdateRequest | Secure Token Link Update Request
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureTokenLinksApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    secure_token_link_update_request = openapi_client.SecureTokenLinkUpdateRequest() # SecureTokenLinkUpdateRequest | Secure Token Link Update Request
-
-    try:
-        # This API will update the expireIn and paymentType of Token Link.
-        api_instance.secure_tokenlinks_put(x_api_key, x_app_key, x_version, origin, secure_token_link_update_request)
-    except Exception as e:
-        print("Exception when calling SecureTokenLinksApi->secure_tokenlinks_put: %s\n" % e)
+            try
+            {
+                // This API will update the expireIn and paymentType of Token Link.
+                apiInstance.SecureTokenlinksPut(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureTokenlinksPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will update the expireIn and paymentType of Token Link.
+    apiInstance.SecureTokenlinksPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureTokenLinksApi.SecureTokenlinksPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **secure_token_link_update_request** | [**SecureTokenLinkUpdateRequest**](SecureTokenLinkUpdateRequest.md)| Secure Token Link Update Request | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **secureTokenLinkUpdateRequest** | [**SecureTokenLinkUpdateRequest**](SecureTokenLinkUpdateRequest.md) | Secure Token Link Update Request |  |
 
 ### Return type
 
@@ -508,14 +572,14 @@ void (empty response body)
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

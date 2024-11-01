@@ -27,18 +27,185 @@ namespace Org.OpenAPITools.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This API is will update the policy number
+        /// This API will update PFA to book a quote.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PFUpdatePFAResponse</returns>
+        PFUpdatePFAResponse SecureEpfQuotesBookingPut(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0);
+
+        /// <summary>
+        /// This API will update PFA to book a quote.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PFUpdatePFAResponse</returns>
+        ApiResponse<PFUpdatePFAResponse> SecureEpfQuotesBookingPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0);
+        /// <summary>
+        /// This API will eSign the pfa with insured name.
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureMerchantsEpfQuotesPolicyPut(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0);
+        void SecureEpfQuotesCaptureesignPut(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API will eSign the pfa with insured name.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SecureEpfQuotesCaptureesignPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0);
+        /// <summary>
+        /// This API is used to Generate Quotes
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PFGenerateQuoteResponse&gt;</returns>
+        List<PFGenerateQuoteResponse> SecureEpfQuotesGeneratePost(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API is used to Generate Quotes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PFGenerateQuoteResponse&gt;</returns>
+        ApiResponse<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0);
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent.
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;QuoteResponseIntent&gt;</returns>
+        List<QuoteResponseIntent> SecureEpfQuotesIntentPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;QuoteResponseIntent&gt;</returns>
+        ApiResponse<List<QuoteResponseIntent>> SecureEpfQuotesIntentPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0);
+        /// <summary>
+        /// This API will return quote by QuoteKey.
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;QuoteResponse&gt;</returns>
+        List<QuoteResponse> SecureEpfQuotesPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API will return quote by QuoteKey.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;QuoteResponse&gt;</returns>
+        ApiResponse<List<QuoteResponse>> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
+        /// <summary>
+        /// This API will return PFA for given quoteKey.
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        string SecureEpfRetrievepfaPost(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API will return PFA for given quoteKey.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> SecureEpfRetrievepfaPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0);
+        /// <summary>
+        /// This API is will update the policy number
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PFPolicyUpdateResponse</returns>
+        PFPolicyUpdateResponse SecureMerchantsEpfQuotesPolicyPut(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0);
 
         /// <summary>
         /// This API is will update the policy number
@@ -49,41 +216,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0);
-        /// <summary>
-        /// This API will return quotes created againsts a payment intent.
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        Object SecureTokensActivationsPost(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0);
-
-        /// <summary>
-        /// This API will return quotes created againsts a payment intent.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> SecureTokensActivationsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of PFPolicyUpdateResponse</returns>
+        ApiResponse<PFPolicyUpdateResponse> SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -94,7 +232,7 @@ namespace Org.OpenAPITools.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// This API is will update the policy number
+        /// This API will update PFA to book a quote.
         /// </summary>
         /// <remarks>
         /// 
@@ -102,14 +240,211 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PFUpdatePFAResponse</returns>
+        System.Threading.Tasks.Task<PFUpdatePFAResponse> SecureEpfQuotesBookingPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API will update PFA to book a quote.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PFUpdatePFAResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PFUpdatePFAResponse>> SecureEpfQuotesBookingPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API will eSign the pfa with insured name.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureMerchantsEpfQuotesPolicyPutAsync(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureEpfQuotesCaptureesignPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API will eSign the pfa with insured name.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API is used to Generate Quotes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PFGenerateQuoteResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostAsync(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API is used to Generate Quotes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PFGenerateQuoteResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<PFGenerateQuoteResponse>>> SecureEpfQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;QuoteResponseIntent&gt;</returns>
+        System.Threading.Tasks.Task<List<QuoteResponseIntent>> SecureEpfQuotesIntentPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;QuoteResponseIntent&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<QuoteResponseIntent>>> SecureEpfQuotesIntentPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API will return quote by QuoteKey.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;QuoteResponse&gt;</returns>
+        System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API will return quote by QuoteKey.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;QuoteResponse&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<QuoteResponse>>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API will return PFA for given quoteKey.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> SecureEpfRetrievepfaPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API will return PFA for given quoteKey.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> SecureEpfRetrievepfaPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API is will update the policy number
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PFPolicyUpdateResponse</returns>
+        System.Threading.Tasks.Task<PFPolicyUpdateResponse> SecureMerchantsEpfQuotesPolicyPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is will update the policy number
@@ -120,47 +455,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureMerchantsEpfQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// This API will return quotes created againsts a payment intent.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SecureTokensActivationsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// This API will return quotes created againsts a payment intent.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokensActivationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (PFPolicyUpdateResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PFPolicyUpdateResponse>> SecureMerchantsEpfQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -282,70 +583,294 @@ namespace Org.OpenAPITools.Api
         }
 
         /// <summary>
-        /// This API is will update the policy number 
+        /// This API will update PFA to book a quote. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void SecureMerchantsEpfQuotesPolicyPut(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0)
+        /// <returns>PFUpdatePFAResponse</returns>
+        public PFUpdatePFAResponse SecureEpfQuotesBookingPut(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0)
         {
-            SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(xApiKey, xAppKey, origin, xVersion, parentId, policyUpdateRequest);
+            Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> localVarResponse = SecureEpfQuotesBookingPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
-        /// This API is will update the policy number 
+        /// This API will update PFA to book a quote. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of PFUpdatePFAResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> SecureEpfQuotesBookingPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
             }
 
             // verify the required parameter 'xAppKey' is set
             if (xAppKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
             }
 
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
             }
 
-            // verify the required parameter 'parentId' is set
-            if (parentId == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'parentId' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
             }
 
-            // verify the required parameter 'policyUpdateRequest' is set
-            if (policyUpdateRequest == null)
+            // verify the required parameter 'pFQuoteBookingRequest' is set
+            if (pFQuoteBookingRequest == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'policyUpdateRequest' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'pFQuoteBookingRequest' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
+            }
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFQuoteBookingRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesBookingPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<PFUpdatePFAResponse>("/secure/epf/quotes/booking", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesBookingPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will update PFA to book a quote. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PFUpdatePFAResponse</returns>
+        public async System.Threading.Tasks.Task<PFUpdatePFAResponse> SecureEpfQuotesBookingPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> localVarResponse = await SecureEpfQuotesBookingPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will update PFA to book a quote. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PFUpdatePFAResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse>> SecureEpfQuotesBookingPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
+            }
+
+            // verify the required parameter 'pFQuoteBookingRequest' is set
+            if (pFQuoteBookingRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'pFQuoteBookingRequest' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesBookingPut");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFQuoteBookingRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesBookingPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<PFUpdatePFAResponse>("/secure/epf/quotes/booking", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesBookingPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will eSign the pfa with insured name. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void SecureEpfQuotesCaptureesignPut(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0)
+        {
+            SecureEpfQuotesCaptureesignPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest);
+        }
+
+        /// <summary>
+        /// This API will eSign the pfa with insured name. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureEpfQuotesCaptureesignPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0)
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -370,21 +895,15 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("parentId", Org.OpenAPITools.Client.ClientUtils.ParameterToString(parentId)); // path parameter
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = policyUpdateRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFQuoteEsignRequest;
 
-            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureMerchantsEpfQuotesPolicyPut";
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesCaptureesignPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -397,10 +916,10 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/secure/merchants/epf/quotes/policy", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/secure/epf/quotes/captureesign", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SecureMerchantsEpfQuotesPolicyPut", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesCaptureesignPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -411,21 +930,1000 @@ namespace Org.OpenAPITools.Api
         }
 
         /// <summary>
-        /// This API is will update the policy number 
+        /// This API will eSign the pfa with insured name. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureMerchantsEpfQuotesPolicyPutAsync(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureEpfQuotesCaptureesignPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SecureMerchantsEpfQuotesPolicyPutWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, parentId, policyUpdateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// This API will eSign the pfa with insured name. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesCaptureesignPut");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFQuoteEsignRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesCaptureesignPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/secure/epf/quotes/captureesign", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesCaptureesignPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API is used to Generate Quotes 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;PFGenerateQuoteResponse&gt;</returns>
+        public List<PFGenerateQuoteResponse> SecureEpfQuotesGeneratePost(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0)
+        {
+            Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> localVarResponse = SecureEpfQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, quoteRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API is used to Generate Quotes 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;PFGenerateQuoteResponse&gt;</returns>
+        public Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0)
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = quoteRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesGeneratePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<PFGenerateQuoteResponse>>("/secure/epf/quotes/generate", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesGeneratePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API is used to Generate Quotes 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;PFGenerateQuoteResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostAsync(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> localVarResponse = await SecureEpfQuotesGeneratePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, quoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API is used to Generate Quotes 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="quoteRequest">Quote Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;PFGenerateQuoteResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>>> SecureEpfQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesGeneratePost");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = quoteRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesGeneratePost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<PFGenerateQuoteResponse>>("/secure/epf/quotes/generate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesGeneratePost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;QuoteResponseIntent&gt;</returns>
+        public List<QuoteResponseIntent> SecureEpfQuotesIntentPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0)
+        {
+            Org.OpenAPITools.Client.ApiResponse<List<QuoteResponseIntent>> localVarResponse = SecureEpfQuotesIntentPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;QuoteResponseIntent&gt;</returns>
+        public Org.OpenAPITools.Client.ApiResponse<List<QuoteResponseIntent>> SecureEpfQuotesIntentPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0)
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = getQuoteRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesIntentPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<QuoteResponseIntent>>("/secure/epf/quotes/intent", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesIntentPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;QuoteResponseIntent&gt;</returns>
+        public async System.Threading.Tasks.Task<List<QuoteResponseIntent>> SecureEpfQuotesIntentPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Org.OpenAPITools.Client.ApiResponse<List<QuoteResponseIntent>> localVarResponse = await SecureEpfQuotesIntentPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, getQuoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will return quotes created againsts a payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;QuoteResponseIntent&gt;)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<QuoteResponseIntent>>> SecureEpfQuotesIntentPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesIntentPost");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = getQuoteRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesIntentPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<QuoteResponseIntent>>("/secure/epf/quotes/intent", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesIntentPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will return quote by QuoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>List&lt;QuoteResponse&gt;</returns>
+        public List<QuoteResponse> SecureEpfQuotesPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
+        {
+            Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> localVarResponse = SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will return quote by QuoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of List&lt;QuoteResponse&gt;</returns>
+        public Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = getQuoteKeyRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<List<QuoteResponse>>("/secure/epf/quotes", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will return quote by QuoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;QuoteResponse&gt;</returns>
+        public async System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> localVarResponse = await SecureEpfQuotesPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will return quote by QuoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;QuoteResponse&gt;)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfQuotesPost");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = getQuoteKeyRequest;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<QuoteResponse>>("/secure/epf/quotes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfQuotesPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will return PFA for given quoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        public string SecureEpfRetrievepfaPost(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0)
+        {
+            Org.OpenAPITools.Client.ApiResponse<string> localVarResponse = SecureEpfRetrievepfaPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will return PFA for given quoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        public Org.OpenAPITools.Client.ApiResponse<string> SecureEpfRetrievepfaPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0)
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFRetrievePFARequestDTO;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfRetrievepfaPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<string>("/secure/epf/retrievepfa", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfRetrievepfaPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API will return PFA for given quoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> SecureEpfRetrievepfaPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Org.OpenAPITools.Client.ApiResponse<string> localVarResponse = await SecureEpfRetrievepfaPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API will return PFA for given quoteKey. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<string>> SecureEpfRetrievepfaPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureEpfRetrievepfaPost");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFRetrievePFARequestDTO;
+
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfRetrievepfaPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/secure/epf/retrievepfa", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfRetrievepfaPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>
@@ -434,14 +1932,29 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="parentId">Merchant identifier</param>
-        /// <param name="policyUpdateRequest">PFPolicyUpdateRequest DTO</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureMerchantsEpfQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, string parentId, PFPolicyUpdateRequestDTO policyUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>PFPolicyUpdateResponse</returns>
+        public PFPolicyUpdateResponse SecureMerchantsEpfQuotesPolicyPut(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0)
+        {
+            Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> localVarResponse = SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This API is will update the policy number 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PFPolicyUpdateResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -455,30 +1968,17 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
 
-            // verify the required parameter 'parentId' is set
-            if (parentId == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'parentId' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
-
-            // verify the required parameter 'policyUpdateRequest' is set
-            if (policyUpdateRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'policyUpdateRequest' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
-            }
-
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
@@ -488,6 +1988,7 @@ namespace Org.OpenAPITools.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "application/json"
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -502,21 +2003,15 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("parentId", Org.OpenAPITools.Client.ClientUtils.ParameterToString(parentId)); // path parameter
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = policyUpdateRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFPolicyUpdateRequestDTO;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureMerchantsEpfQuotesPolicyPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -529,8 +2024,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/secure/merchants/epf/quotes/policy", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
+            var localVarResponse = this.Client.Put<PFPolicyUpdateResponse>("/secure/merchants/epf/quotes/policy", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureMerchantsEpfQuotesPolicyPut", localVarResponse);
@@ -544,187 +2038,59 @@ namespace Org.OpenAPITools.Api
         }
 
         /// <summary>
-        /// This API will return quotes created againsts a payment intent. 
+        /// This API is will update the policy number 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        public Object SecureTokensActivationsPost(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0)
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PFPolicyUpdateResponse</returns>
+        public async System.Threading.Tasks.Task<PFPolicyUpdateResponse> SecureMerchantsEpfQuotesPolicyPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<Object> localVarResponse = SecureTokensActivationsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, quoteRequest);
+            Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> localVarResponse = await SecureMerchantsEpfQuotesPolicyPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// This API will return quotes created againsts a payment intent. 
+        /// This API is will update the policy number 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokensActivationsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0)
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PFPolicyUpdateResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse>> SecureMerchantsEpfQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
 
             // verify the required parameter 'xAppKey' is set
             if (xAppKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
 
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
-            }
-
-            // verify the required parameter 'quoteRequest' is set
-            if (quoteRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'quoteRequest' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
-            }
-
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = quoteRequest;
-
-            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureTokensActivationsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
-            // authentication (x-api-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (x-app-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/secure/tokens/activations", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("SecureTokensActivationsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// This API will return quotes created againsts a payment intent. 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SecureTokensActivationsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Org.OpenAPITools.Client.ApiResponse<Object> localVarResponse = await SecureTokensActivationsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, quoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// This API will return quotes created againsts a payment intent. 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="quoteRequest">Signature Request details</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokensActivationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, GetQuoteRequest quoteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'xApiKey' is set
-            if (xApiKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
-            }
-
-            // verify the required parameter 'xAppKey' is set
-            if (xAppKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
 
             // verify the required parameter 'origin' is set
             if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
-            }
-
-            // verify the required parameter 'xVersion' is set
-            if (xVersion == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
-            }
-
-            // verify the required parameter 'quoteRequest' is set
-            if (quoteRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'quoteRequest' when calling SecureEmbeddedPremiumFinanceApi->SecureTokensActivationsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureEmbeddedPremiumFinanceApi->SecureMerchantsEpfQuotesPolicyPut");
             }
 
 
@@ -753,18 +2119,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = quoteRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = pFPolicyUpdateRequestDTO;
 
-            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureTokensActivationsPost";
+            localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureMerchantsEpfQuotesPolicyPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -777,11 +2138,11 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/secure/tokens/activations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<PFPolicyUpdateResponse>("/secure/merchants/epf/quotes/policy", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SecureTokensActivationsPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SecureMerchantsEpfQuotesPolicyPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

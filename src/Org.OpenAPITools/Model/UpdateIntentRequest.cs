@@ -36,10 +36,12 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="paymentIntentId">paymentIntentId.</param>
         /// <param name="quoteKey">quoteKey.</param>
-        public UpdateIntentRequest(string paymentIntentId = default(string), string quoteKey = default(string))
+        /// <param name="merchantToken">merchantToken.</param>
+        public UpdateIntentRequest(string paymentIntentId = default(string), string quoteKey = default(string), string merchantToken = default(string))
         {
             this.PaymentIntentId = paymentIntentId;
             this.QuoteKey = quoteKey;
+            this.MerchantToken = merchantToken;
         }
 
         /// <summary>
@@ -55,6 +57,12 @@ namespace Org.OpenAPITools.Model
         public string QuoteKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets MerchantToken
+        /// </summary>
+        [DataMember(Name = "merchantToken", EmitDefaultValue = false)]
+        public string MerchantToken { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +72,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("class UpdateIntentRequest {\n");
             sb.Append("  PaymentIntentId: ").Append(PaymentIntentId).Append("\n");
             sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
+            sb.Append("  MerchantToken: ").Append(MerchantToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +91,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

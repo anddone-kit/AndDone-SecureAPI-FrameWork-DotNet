@@ -38,22 +38,22 @@ namespace Org.OpenAPITools.Model
         public enum AdditionalDetailsPreferenceEnum
         {
             /// <summary>
-            /// Enum _1 for value: 1
+            /// Enum AskShopper for value: AskShopper
             /// </summary>
-            [EnumMember(Value = "1")]
-            _1 = 1,
+            [EnumMember(Value = "AskShopper")]
+            AskShopper = 1,
 
             /// <summary>
-            /// Enum _2 for value: 2
+            /// Enum ManualEnter for value: ManualEnter
             /// </summary>
-            [EnumMember(Value = "2")]
-            _2 = 2,
+            [EnumMember(Value = "ManualEnter")]
+            ManualEnter = 2,
 
             /// <summary>
-            /// Enum _3 for value: 3
+            /// Enum NoAdditionalDetails for value: NoAdditionalDetails
             /// </summary>
-            [EnumMember(Value = "3")]
-            _3 = 3
+            [EnumMember(Value = "NoAdditionalDetails")]
+            NoAdditionalDetails = 3
         }
 
 
@@ -67,10 +67,26 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
         /// <param name="intent">intent.</param>
-        public PaymentLinkRequestSettings(AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), PaymentLinkRequestSettingsIntent intent = default(PaymentLinkRequestSettingsIntent))
+        /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
+        /// <param name="displaySummary">displaySummary.</param>
+        /// <param name="acceptCustomerInfo">acceptCustomerInfo.</param>
+        /// <param name="removeHeader">removeHeader.</param>
+        /// <param name="acceptCard">acceptCard.</param>
+        /// <param name="acceptBankAccount">acceptBankAccount.</param>
+        /// <param name="saveCustomer">saveCustomer.</param>
+        /// <param name="saveCustomerAccount">saveCustomerAccount.</param>
+        public PaymentLinkRequestSettings(AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), PaymentLinkRequestSettingsIntent intent = default(PaymentLinkRequestSettingsIntent), string selectedCustomerFields = default(string), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool))
         {
             this.AdditionalDetailsPreference = additionalDetailsPreference;
             this.Intent = intent;
+            this.SelectedCustomerFields = selectedCustomerFields;
+            this.DisplaySummary = displaySummary;
+            this.AcceptCustomerInfo = acceptCustomerInfo;
+            this.RemoveHeader = removeHeader;
+            this.AcceptCard = acceptCard;
+            this.AcceptBankAccount = acceptBankAccount;
+            this.SaveCustomer = saveCustomer;
+            this.SaveCustomerAccount = saveCustomerAccount;
         }
 
         /// <summary>
@@ -78,6 +94,54 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "intent", EmitDefaultValue = false)]
         public PaymentLinkRequestSettingsIntent Intent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SelectedCustomerFields
+        /// </summary>
+        [DataMember(Name = "selectedCustomerFields", EmitDefaultValue = false)]
+        public string SelectedCustomerFields { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplaySummary
+        /// </summary>
+        [DataMember(Name = "displaySummary", EmitDefaultValue = true)]
+        public bool DisplaySummary { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AcceptCustomerInfo
+        /// </summary>
+        [DataMember(Name = "acceptCustomerInfo", EmitDefaultValue = true)]
+        public bool AcceptCustomerInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RemoveHeader
+        /// </summary>
+        [DataMember(Name = "removeHeader", EmitDefaultValue = true)]
+        public bool RemoveHeader { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AcceptCard
+        /// </summary>
+        [DataMember(Name = "acceptCard", EmitDefaultValue = true)]
+        public bool AcceptCard { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AcceptBankAccount
+        /// </summary>
+        [DataMember(Name = "acceptBankAccount", EmitDefaultValue = true)]
+        public bool AcceptBankAccount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SaveCustomer
+        /// </summary>
+        [DataMember(Name = "saveCustomer", EmitDefaultValue = true)]
+        public bool SaveCustomer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SaveCustomerAccount
+        /// </summary>
+        [DataMember(Name = "saveCustomerAccount", EmitDefaultValue = true)]
+        public bool SaveCustomerAccount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -89,6 +153,14 @@ namespace Org.OpenAPITools.Model
             sb.Append("class PaymentLinkRequestSettings {\n");
             sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
+            sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
+            sb.Append("  DisplaySummary: ").Append(DisplaySummary).Append("\n");
+            sb.Append("  AcceptCustomerInfo: ").Append(AcceptCustomerInfo).Append("\n");
+            sb.Append("  RemoveHeader: ").Append(RemoveHeader).Append("\n");
+            sb.Append("  AcceptCard: ").Append(AcceptCard).Append("\n");
+            sb.Append("  AcceptBankAccount: ").Append(AcceptBankAccount).Append("\n");
+            sb.Append("  SaveCustomer: ").Append(SaveCustomer).Append("\n");
+            sb.Append("  SaveCustomerAccount: ").Append(SaveCustomerAccount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,7 +179,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

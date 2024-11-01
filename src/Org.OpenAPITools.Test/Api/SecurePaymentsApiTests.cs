@@ -63,11 +63,52 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //Object? adminTransactionSearchCriteria = null;
-            //Object? pageInfo = null;
-            //instance.SecurePaymentsExportPost(xApiKey, xAppKey, origin, xVersion, adminTransactionSearchCriteria, pageInfo);
+            //string origin = null;
+            //string? startDate = null;
+            //string? endDate = null;
+            //string? transactionId = null;
+            //string? referenceTransactionId = null;
+            //string? transactionStatuses = null;
+            //string? customerIds = null;
+            //string? transactionType = null;
+            //string? authCode = null;
+            //string? cardHolderName = null;
+            //string? shopperName = null;
+            //decimal? amount = null;
+            //decimal? fromAmount = null;
+            //decimal? toAmount = null;
+            //string? channelTypes = null;
+            //string? maskAccount = null;
+            //string? customerName = null;
+            //string? binNumber = null;
+            //string? referenceNo = null;
+            //string? recurringId = null;
+            //string? transactionSourceType = null;
+            //string? resellerIds = null;
+            //string? merchantIds = null;
+            //string? traceNumbers = null;
+            //string? searchText = null;
+            //string? merchantReference = null;
+            //string? additionalFields = null;
+            //string? paymentMethod = null;
+            //bool? exportToCsv = null;
+            //bool? exportToPDF = null;
+            //int? skipRecordCount = null;
+            //int? totalRecordCount = null;
+            //int? batchSize = null;
+            //string? paymentTypes = null;
+            //string? merchantDBAName = null;
+            //string? paymentCategory = null;
+            //string? sortField = null;
+            //string? emailIdToReceiveExportedTransactions = null;
+            //bool? isTransactionCostBreakDown = null;
+            //string? batchId = null;
+            //bool? suppressTechnologyFee = null;
+            //decimal? startRow = null;
+            //decimal? pageSize = null;
+            //bool? asc = null;
+            //instance.SecurePaymentsExportPost(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
         }
 
         /// <summary>
@@ -79,11 +120,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //SecurePaymentRequest paymentRequest = null;
-            //var response = instance.SecurePaymentsPost(xApiKey, xAppKey, origin, xVersion, paymentRequest);
-            //Assert.IsType<PaymentDetailsResponse>(response);
+            //string origin = null;
+            //PaymentRequest paymentRequest = null;
+            //var response = instance.SecurePaymentsPost(xApiKey, xAppKey, xVersion, origin, paymentRequest);
+            //Assert.IsType<TransactionDetailResponse>(response);
         }
 
         /// <summary>
@@ -95,11 +136,52 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //Object? adminTransactionSearchCriteria = null;
-            //Object? pageInfo = null;
-            //var response = instance.SecurePaymentsSearchPost(xApiKey, xAppKey, origin, xVersion, adminTransactionSearchCriteria, pageInfo);
+            //string origin = null;
+            //string? startDate = null;
+            //string? endDate = null;
+            //string? transactionId = null;
+            //string? referenceTransactionId = null;
+            //string? transactionStatuses = null;
+            //string? customerIds = null;
+            //string? transactionType = null;
+            //string? authCode = null;
+            //string? cardHolderName = null;
+            //string? shopperName = null;
+            //decimal? amount = null;
+            //decimal? fromAmount = null;
+            //decimal? toAmount = null;
+            //string? channelTypes = null;
+            //string? maskAccount = null;
+            //string? customerName = null;
+            //string? binNumber = null;
+            //string? referenceNo = null;
+            //string? recurringId = null;
+            //string? transactionSourceType = null;
+            //string? resellerIds = null;
+            //string? merchantIds = null;
+            //string? traceNumbers = null;
+            //string? searchText = null;
+            //string? merchantReference = null;
+            //string? additionalFields = null;
+            //string? paymentMethod = null;
+            //bool? exportToCsv = null;
+            //bool? exportToPDF = null;
+            //int? skipRecordCount = null;
+            //int? totalRecordCount = null;
+            //int? batchSize = null;
+            //string? paymentTypes = null;
+            //string? merchantDBAName = null;
+            //string? paymentCategory = null;
+            //string? sortField = null;
+            //string? emailIdToReceiveExportedTransactions = null;
+            //bool? isTransactionCostBreakDown = null;
+            //string? batchId = null;
+            //bool? suppressTechnologyFee = null;
+            //decimal? startRow = null;
+            //decimal? pageSize = null;
+            //bool? asc = null;
+            //var response = instance.SecurePaymentsSearchPost(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
             //Assert.IsType<AdminTransactionEntityResponse>(response);
         }
 
@@ -112,10 +194,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //SecurePaymentDetailsRequest securePaymentDetailsRequest = null;
-            //var response = instance.SecurePaymentsdetailsPost(xApiKey, xAppKey, origin, xVersion, securePaymentDetailsRequest);
+            //var response = instance.SecurePaymentsdetailsPost(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest);
             //Assert.IsType<SecurePaymentDetailsResponse>(response);
         }
     }

@@ -98,5 +98,14 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'Remarks'
         }
+
+        /// <summary>
+        /// Test the property 'Splits'
+        /// </summary>
+        [Fact]
+        public void SplitsTest()
+        {
+            // TODO unit test for the property 'Splits'
+        }
     }
 }

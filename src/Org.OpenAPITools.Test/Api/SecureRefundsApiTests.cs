@@ -63,10 +63,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //TransactionRefundEligibilityRequest transactionRefundEligibilityRequest = null;
-            //var response = instance.SecureRefundsEligibilityPost(xApiKey, xAppKey, origin, xVersion, transactionRefundEligibilityRequest);
+            //var response = instance.SecureRefundsEligibilityPost(xApiKey, xAppKey, xVersion, origin, transactionRefundEligibilityRequest);
             //Assert.IsType<RefundEligibility>(response);
         }
 
@@ -79,11 +79,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //TransactionRefundRequest transactionRefundRequest = null;
-            //var response = instance.SecureRefundsPost(xApiKey, xAppKey, origin, xVersion, transactionRefundRequest);
-            //Assert.IsType<TransactionResponse>(response);
+            //string origin = null;
+            //SecureTransactionRefundRequest secureTransactionRefundRequest = null;
+            //var response = instance.SecureRefundsPost(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest);
+            //Assert.IsType<SecureTransactionDetailDTO>(response);
         }
     }
 }

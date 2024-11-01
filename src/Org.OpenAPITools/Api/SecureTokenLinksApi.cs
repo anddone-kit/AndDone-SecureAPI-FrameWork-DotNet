@@ -32,12 +32,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TokenLinkByIdResponse</returns>
-        TokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0);
+        /// <returns>SecureTokenLinkByIdResponse</returns>
+        SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting Token Links by TokenLink ID
@@ -48,24 +48,24 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TokenLinkByIdResponse</returns>
-        ApiResponse<TokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of SecureTokenLinkByIdResponse</returns>
+        ApiResponse<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
         /// <summary>
         /// This API expires the token link.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        Object SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0);
+        /// <returns>SecureTokenLinkExpiredResponse</returns>
+        SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API expires the token link.
@@ -76,25 +76,41 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of SecureTokenLinkExpiredResponse</returns>
+        ApiResponse<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TokenLinkResponse</returns>
-        TokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0);
+        /// <returns>SecureTokenLinkResponse</returns>
+        SecureTokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
@@ -105,25 +121,41 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TokenLinkResponse</returns>
-        ApiResponse<TokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0);
+        /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
+        ApiResponse<SecureTokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
         /// <summary>
         /// This API is use to create Secure Token Links
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TokenLinkResponse</returns>
-        TokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        /// <returns>SecureTokenLinkResponse</returns>
+        SecureTokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is use to create Secure Token Links
@@ -134,24 +166,24 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TokenLinkResponse</returns>
-        ApiResponse<TokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
+        ApiResponse<SecureTokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0);
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureTokenlinksPut(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
+        void SecureTokenlinksPut(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
@@ -162,40 +194,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
-        /// <summary>
-        /// This API is used for getting details of Token Link
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>MerchantTokenShortResponse</returns>
-        MerchantTokenShortResponse SecureTokensDetailsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0);
-
-        /// <summary>
-        /// This API is used for getting details of Token Link
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of MerchantTokenShortResponse</returns>
-        ApiResponse<MerchantTokenShortResponse> SecureTokensDetailsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0);
+        ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -214,13 +218,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TokenLinkByIdResponse</returns>
-        System.Threading.Tasks.Task<TokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of SecureTokenLinkByIdResponse</returns>
+        System.Threading.Tasks.Task<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting Token Links by TokenLink ID
@@ -231,13 +235,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TokenLinkByIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (SecureTokenLinkByIdResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API expires the token link.
         /// </summary>
@@ -247,13 +251,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of SecureTokenLinkExpiredResponse</returns>
+        System.Threading.Tasks.Task<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API expires the token link.
@@ -264,13 +268,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (SecureTokenLinkExpiredResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkExpiredResponse>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
         /// </summary>
@@ -280,14 +284,30 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TokenLinkResponse</returns>
-        System.Threading.Tasks.Task<TokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of SecureTokenLinkResponse</returns>
+        System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
@@ -298,14 +318,30 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TokenLinkResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is use to create Secure Token Links
         /// </summary>
@@ -315,13 +351,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TokenLinkResponse</returns>
-        System.Threading.Tasks.Task<TokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of SecureTokenLinkResponse</returns>
+        System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is use to create Secure Token Links
@@ -332,13 +368,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TokenLinkResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
         /// </summary>
@@ -348,13 +384,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
@@ -365,46 +401,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// This API is used for getting details of Token Link
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MerchantTokenShortResponse</returns>
-        System.Threading.Tasks.Task<MerchantTokenShortResponse> SecureTokensDetailsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// This API is used for getting details of Token Link
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MerchantTokenShortResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MerchantTokenShortResponse>> SecureTokensDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -531,14 +534,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TokenLinkByIdResponse</returns>
-        public TokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0)
+        /// <returns>SecureTokenLinkByIdResponse</returns>
+        public SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<TokenLinkByIdResponse> localVarResponse = SecureTokenlinksDetailsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> localVarResponse = SecureTokenlinksDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
             return localVarResponse.Data;
         }
 
@@ -548,12 +551,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TokenLinkByIdResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<TokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of SecureTokenLinkByIdResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -567,22 +570,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
             }
 
-            // verify the required parameter 'secureTokenLinkIdRequest' is set
-            if (secureTokenLinkIdRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkIdRequest' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
+            }
+
+            // verify the required parameter 'secureTokenLinkRequest' is set
+            if (secureTokenLinkRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkRequest' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -610,18 +613,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkIdRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksDetailsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -634,7 +632,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TokenLinkByIdResponse>("/secure/tokenlinks/details", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SecureTokenLinkByIdResponse>("/secure/tokenlinks/details", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureTokenlinksDetailsPost", localVarResponse);
@@ -653,15 +651,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TokenLinkByIdResponse</returns>
-        public async System.Threading.Tasks.Task<TokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of SecureTokenLinkByIdResponse</returns>
+        public async System.Threading.Tasks.Task<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<TokenLinkByIdResponse> localVarResponse = await SecureTokenlinksDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> localVarResponse = await SecureTokenlinksDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -671,13 +669,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TokenLinkByIdResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<TokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (SecureTokenLinkByIdResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -691,22 +689,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
             }
 
-            // verify the required parameter 'secureTokenLinkIdRequest' is set
-            if (secureTokenLinkIdRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkIdRequest' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
+            }
+
+            // verify the required parameter 'secureTokenLinkRequest' is set
+            if (secureTokenLinkRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkRequest' when calling SecureTokenLinksApi->SecureTokenlinksDetailsPost");
             }
 
 
@@ -735,18 +733,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkIdRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksDetailsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -759,7 +752,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TokenLinkByIdResponse>("/secure/tokenlinks/details", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SecureTokenLinkByIdResponse>("/secure/tokenlinks/details", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -779,14 +772,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Object</returns>
-        public Object SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0)
+        /// <returns>SecureTokenLinkExpiredResponse</returns>
+        public SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<Object> localVarResponse = SecureTokenlinksExpirationsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> localVarResponse = SecureTokenlinksExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
             return localVarResponse.Data;
         }
 
@@ -796,12 +789,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of SecureTokenLinkExpiredResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -815,22 +808,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
             }
 
-            // verify the required parameter 'secureTokenLinkIdRequest' is set
-            if (secureTokenLinkIdRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkIdRequest' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
+            }
+
+            // verify the required parameter 'secureTokenLinkRequest' is set
+            if (secureTokenLinkRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkRequest' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -858,18 +851,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkIdRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksExpirationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -882,7 +870,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/secure/tokenlinks/expirations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SecureTokenLinkExpiredResponse>("/secure/tokenlinks/expirations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureTokenlinksExpirationsPost", localVarResponse);
@@ -901,15 +889,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of SecureTokenLinkExpiredResponse</returns>
+        public async System.Threading.Tasks.Task<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<Object> localVarResponse = await SecureTokenlinksExpirationsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> localVarResponse = await SecureTokenlinksExpirationsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -919,13 +907,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (SecureTokenLinkExpiredResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -939,22 +927,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
             }
 
-            // verify the required parameter 'secureTokenLinkIdRequest' is set
-            if (secureTokenLinkIdRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkIdRequest' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
+            }
+
+            // verify the required parameter 'secureTokenLinkRequest' is set
+            if (secureTokenLinkRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkRequest' when calling SecureTokenLinksApi->SecureTokenlinksExpirationsPost");
             }
 
 
@@ -983,18 +971,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkIdRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksExpirationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1007,7 +990,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/secure/tokenlinks/expirations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SecureTokenLinkExpiredResponse>("/secure/tokenlinks/expirations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1027,15 +1010,31 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TokenLinkResponse</returns>
-        public TokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0)
+        /// <returns>SecureTokenLinkResponse</returns>
+        public SecureTokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> localVarResponse = SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, tokenLinkSearchCriteria, pageInfo);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
             return localVarResponse.Data;
         }
 
@@ -1045,13 +1044,29 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TokenLinkResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0)
+        /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1065,16 +1080,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -1099,27 +1114,86 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (tokenLinkSearchCriteria != null)
+            if (fromDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "tokenLinkSearchCriteria", tokenLinkSearchCriteria));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromDate", fromDate));
             }
-            if (pageInfo != null)
+            if (toDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageInfo", pageInfo));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toDate", toDate));
+            }
+            if (startRow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+            }
+            if (sortField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+            }
+            if (asc != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "Asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            if (email != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("email", Org.OpenAPITools.Client.ClientUtils.ParameterToString(email)); // header parameter
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("status", Org.OpenAPITools.Client.ClientUtils.ParameterToString(status)); // header parameter
+            }
+            if (phone != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("phone", Org.OpenAPITools.Client.ClientUtils.ParameterToString(phone)); // header parameter
+            }
+            if (statuses != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("statuses", Org.OpenAPITools.Client.ClientUtils.ParameterToString(statuses)); // header parameter
+            }
+            if (title != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("title", Org.OpenAPITools.Client.ClientUtils.ParameterToString(title)); // header parameter
+            }
+            if (paymentDescription != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("paymentDescription", Org.OpenAPITools.Client.ClientUtils.ParameterToString(paymentDescription)); // header parameter
+            }
+            if (invoiceNumber != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("invoiceNumber", Org.OpenAPITools.Client.ClientUtils.ParameterToString(invoiceNumber)); // header parameter
+            }
+            if (expiryDate != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("expiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(expiryDate)); // header parameter
+            }
+            if (fromExpiryDate != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("fromExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(fromExpiryDate)); // header parameter
+            }
+            if (freeTextSearch != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("freeTextSearch", Org.OpenAPITools.Client.ClientUtils.ParameterToString(freeTextSearch)); // header parameter
+            }
+            if (tokenLinkId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("tokenLinkId", Org.OpenAPITools.Client.ClientUtils.ParameterToString(tokenLinkId)); // header parameter
+            }
+            if (toExpiryDate != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("toExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(toExpiryDate)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksListPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1132,7 +1206,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SecureTokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureTokenlinksListPost", localVarResponse);
@@ -1151,16 +1225,32 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TokenLinkResponse</returns>
-        public async System.Threading.Tasks.Task<TokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of SecureTokenLinkResponse</returns>
+        public async System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> localVarResponse = await SecureTokenlinksListPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, tokenLinkSearchCriteria, pageInfo, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = await SecureTokenlinksListPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1170,14 +1260,30 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="tokenLinkSearchCriteria">Token Link search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="email">email (optional)</param>
+        /// <param name="status">status (optional)</param>
+        /// <param name="phone">phone (optional)</param>
+        /// <param name="statuses">statuses (optional)</param>
+        /// <param name="title">title (optional)</param>
+        /// <param name="paymentDescription">paymentDescription (optional)</param>
+        /// <param name="invoiceNumber">invoiceNumber (optional)</param>
+        /// <param name="expiryDate">expiryDate (optional)</param>
+        /// <param name="fromExpiryDate">fromExpiryDate (optional)</param>
+        /// <param name="freeTextSearch">freeTextSearch (optional)</param>
+        /// <param name="tokenLinkId">tokenLinkId (optional)</param>
+        /// <param name="toExpiryDate">toExpiryDate (optional)</param>
+        /// <param name="fromDate">fromDate (optional)</param>
+        /// <param name="toDate">toDate (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="sortField">Set SortField (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TokenLinkResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? tokenLinkSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1191,16 +1297,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksListPost");
             }
 
 
@@ -1226,27 +1332,86 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (tokenLinkSearchCriteria != null)
+            if (fromDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "tokenLinkSearchCriteria", tokenLinkSearchCriteria));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromDate", fromDate));
             }
-            if (pageInfo != null)
+            if (toDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageInfo", pageInfo));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toDate", toDate));
+            }
+            if (startRow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+            }
+            if (sortField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+            }
+            if (asc != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "Asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            if (email != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("email", Org.OpenAPITools.Client.ClientUtils.ParameterToString(email)); // header parameter
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("status", Org.OpenAPITools.Client.ClientUtils.ParameterToString(status)); // header parameter
+            }
+            if (phone != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("phone", Org.OpenAPITools.Client.ClientUtils.ParameterToString(phone)); // header parameter
+            }
+            if (statuses != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("statuses", Org.OpenAPITools.Client.ClientUtils.ParameterToString(statuses)); // header parameter
+            }
+            if (title != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("title", Org.OpenAPITools.Client.ClientUtils.ParameterToString(title)); // header parameter
+            }
+            if (paymentDescription != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("paymentDescription", Org.OpenAPITools.Client.ClientUtils.ParameterToString(paymentDescription)); // header parameter
+            }
+            if (invoiceNumber != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("invoiceNumber", Org.OpenAPITools.Client.ClientUtils.ParameterToString(invoiceNumber)); // header parameter
+            }
+            if (expiryDate != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("expiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(expiryDate)); // header parameter
+            }
+            if (fromExpiryDate != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("fromExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(fromExpiryDate)); // header parameter
+            }
+            if (freeTextSearch != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("freeTextSearch", Org.OpenAPITools.Client.ClientUtils.ParameterToString(freeTextSearch)); // header parameter
+            }
+            if (tokenLinkId != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("tokenLinkId", Org.OpenAPITools.Client.ClientUtils.ParameterToString(tokenLinkId)); // header parameter
+            }
+            if (toExpiryDate != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("toExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(toExpiryDate)); // header parameter
+            }
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksListPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1259,7 +1424,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SecureTokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1279,14 +1444,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TokenLinkResponse</returns>
-        public TokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        /// <returns>SecureTokenLinkResponse</returns>
+        public SecureTokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> localVarResponse = SecureTokenlinksPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, secureTokenLinkRequest);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = SecureTokenlinksPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest);
             return localVarResponse.Data;
         }
 
@@ -1296,12 +1461,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TokenLinkResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1315,22 +1480,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksPost");
             }
 
-            // verify the required parameter 'secureTokenLinkRequest' is set
-            if (secureTokenLinkRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkRequest' when calling SecureTokenLinksApi->SecureTokenlinksPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPost");
+            }
+
+            // verify the required parameter 'tokenLinkSecureRequest' is set
+            if (tokenLinkSecureRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'tokenLinkSecureRequest' when calling SecureTokenLinksApi->SecureTokenlinksPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -1358,18 +1523,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = tokenLinkSecureRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1382,7 +1542,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TokenLinkResponse>("/secure/tokenlinks", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SecureTokenLinkResponse>("/secure/tokenlinks", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureTokenlinksPost", localVarResponse);
@@ -1401,15 +1561,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TokenLinkResponse</returns>
-        public async System.Threading.Tasks.Task<TokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of SecureTokenLinkResponse</returns>
+        public async System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> localVarResponse = await SecureTokenlinksPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, secureTokenLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = await SecureTokenlinksPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1419,13 +1579,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkRequest">Secure Token Link Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TokenLinkResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1439,22 +1599,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksPost");
             }
 
-            // verify the required parameter 'secureTokenLinkRequest' is set
-            if (secureTokenLinkRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkRequest' when calling SecureTokenLinksApi->SecureTokenlinksPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPost");
+            }
+
+            // verify the required parameter 'tokenLinkSecureRequest' is set
+            if (tokenLinkSecureRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'tokenLinkSecureRequest' when calling SecureTokenLinksApi->SecureTokenlinksPost");
             }
 
 
@@ -1483,18 +1643,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = tokenLinkSecureRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1507,7 +1662,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TokenLinkResponse>("/secure/tokenlinks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SecureTokenLinkResponse>("/secure/tokenlinks", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1527,14 +1682,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureTokenlinksPut(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
+        public void SecureTokenlinksPut(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
         {
-            SecureTokenlinksPutWithHttpInfo(xApiKey, xAppKey, origin, xVersion, secureTokenLinkUpdateRequest);
+            SecureTokenlinksPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest);
         }
 
         /// <summary>
@@ -1543,12 +1698,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1562,16 +1717,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksPut");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPut");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPut");
             }
 
             // verify the required parameter 'secureTokenLinkUpdateRequest' is set
@@ -1604,18 +1759,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkUpdateRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1647,15 +1797,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SecureTokenlinksPutWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, secureTokenLinkUpdateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SecureTokenlinksPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1664,13 +1814,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1684,16 +1834,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokenlinksPut");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPut");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokenlinksPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokenlinksPut");
             }
 
             // verify the required parameter 'secureTokenLinkUpdateRequest' is set
@@ -1727,18 +1877,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkUpdateRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPut";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1756,254 +1901,6 @@ namespace Org.OpenAPITools.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureTokenlinksPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// This API is used for getting details of Token Link 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>MerchantTokenShortResponse</returns>
-        public MerchantTokenShortResponse SecureTokensDetailsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0)
-        {
-            Org.OpenAPITools.Client.ApiResponse<MerchantTokenShortResponse> localVarResponse = SecureTokensDetailsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// This API is used for getting details of Token Link 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of MerchantTokenShortResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<MerchantTokenShortResponse> SecureTokensDetailsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0)
-        {
-            // verify the required parameter 'xApiKey' is set
-            if (xApiKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'xAppKey' is set
-            if (xAppKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'xVersion' is set
-            if (xVersion == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'secureTokenLinkIdRequest' is set
-            if (secureTokenLinkIdRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkIdRequest' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkIdRequest;
-
-            localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokensDetailsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
-            // authentication (x-api-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (x-app-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<MerchantTokenShortResponse>("/secure/tokens/details", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("SecureTokensDetailsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// This API is used for getting details of Token Link 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of MerchantTokenShortResponse</returns>
-        public async System.Threading.Tasks.Task<MerchantTokenShortResponse> SecureTokensDetailsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            Org.OpenAPITools.Client.ApiResponse<MerchantTokenShortResponse> localVarResponse = await SecureTokensDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// This API is used for getting details of Token Link 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="secureTokenLinkIdRequest">Secure Token Link Id Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (MerchantTokenShortResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<MerchantTokenShortResponse>> SecureTokensDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecureTokenLinkIdRequest secureTokenLinkIdRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'xApiKey' is set
-            if (xApiKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'xAppKey' is set
-            if (xAppKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'xVersion' is set
-            if (xVersion == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-            // verify the required parameter 'secureTokenLinkIdRequest' is set
-            if (secureTokenLinkIdRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTokenLinkIdRequest' when calling SecureTokenLinksApi->SecureTokensDetailsPost");
-            }
-
-
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = secureTokenLinkIdRequest;
-
-            localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokensDetailsPost";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
-            // authentication (x-api-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (x-app-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<MerchantTokenShortResponse>("/secure/tokens/details", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("SecureTokensDetailsPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

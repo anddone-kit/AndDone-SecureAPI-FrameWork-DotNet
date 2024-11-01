@@ -32,13 +32,54 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecurePaymentsExportPost(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0);
+        void SecurePaymentsExportPost(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// This API gets Secure payment by search criteria for the merchant.
@@ -49,25 +90,66 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecurePaymentsExportPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0);
+        ApiResponse<Object> SecurePaymentsExportPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0);
         /// <summary>
         /// This API posts new Secure payment request for the merchant.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PaymentDetailsResponse</returns>
-        PaymentDetailsResponse SecurePaymentsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0);
+        /// <returns>TransactionDetailResponse</returns>
+        TransactionDetailResponse SecurePaymentsPost(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API posts new Secure payment request for the merchant.
@@ -78,25 +160,66 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PaymentDetailsResponse</returns>
-        ApiResponse<PaymentDetailsResponse> SecurePaymentsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of TransactionDetailResponse</returns>
+        ApiResponse<TransactionDetailResponse> SecurePaymentsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0);
         /// <summary>
         /// This API gets Secure payment by search criteria for the merchant.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AdminTransactionEntityResponse</returns>
-        AdminTransactionEntityResponse SecurePaymentsSearchPost(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0);
+        AdminTransactionEntityResponse SecurePaymentsSearchPost(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// This API gets Secure payment by search criteria for the merchant.
@@ -107,25 +230,66 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AdminTransactionEntityResponse</returns>
-        ApiResponse<AdminTransactionEntityResponse> SecurePaymentsSearchPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0);
+        ApiResponse<AdminTransactionEntityResponse> SecurePaymentsSearchPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0);
         /// <summary>
         /// This API is used for getting details of Payments
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecurePaymentDetailsResponse</returns>
-        SecurePaymentDetailsResponse SecurePaymentsdetailsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0);
+        SecurePaymentDetailsResponse SecurePaymentsdetailsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting details of Payments
@@ -136,12 +300,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecurePaymentDetailsResponse</returns>
-        ApiResponse<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0);
+        ApiResponse<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -160,14 +324,55 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecurePaymentsExportPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecurePaymentsExportPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API gets Secure payment by search criteria for the merchant.
@@ -178,14 +383,55 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecurePaymentsExportPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecurePaymentsExportPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API posts new Secure payment request for the merchant.
         /// </summary>
@@ -195,13 +441,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PaymentDetailsResponse</returns>
-        System.Threading.Tasks.Task<PaymentDetailsResponse> SecurePaymentsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of TransactionDetailResponse</returns>
+        System.Threading.Tasks.Task<TransactionDetailResponse> SecurePaymentsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API posts new Secure payment request for the merchant.
@@ -212,13 +458,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PaymentDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentDetailsResponse>> SecurePaymentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TransactionDetailResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TransactionDetailResponse>> SecurePaymentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API gets Secure payment by search criteria for the merchant.
         /// </summary>
@@ -228,14 +474,55 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AdminTransactionEntityResponse</returns>
-        System.Threading.Tasks.Task<AdminTransactionEntityResponse> SecurePaymentsSearchPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AdminTransactionEntityResponse> SecurePaymentsSearchPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API gets Secure payment by search criteria for the merchant.
@@ -246,14 +533,55 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AdminTransactionEntityResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AdminTransactionEntityResponse>> SecurePaymentsSearchPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AdminTransactionEntityResponse>> SecurePaymentsSearchPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used for getting details of Payments
         /// </summary>
@@ -263,13 +591,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecurePaymentDetailsResponse</returns>
-        System.Threading.Tasks.Task<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting details of Payments
@@ -280,13 +608,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecurePaymentDetailsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecurePaymentDetailsResponse>> SecurePaymentsdetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecurePaymentDetailsResponse>> SecurePaymentsdetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -413,15 +741,56 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecurePaymentsExportPost(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0)
+        public void SecurePaymentsExportPost(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0)
         {
-            SecurePaymentsExportPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, adminTransactionSearchCriteria, pageInfo);
+            SecurePaymentsExportPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
         }
 
         /// <summary>
@@ -430,13 +799,54 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecurePaymentsExportPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecurePaymentsExportPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -450,16 +860,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsExportPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsExportPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsExportPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsExportPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -469,6 +879,7 @@ namespace Org.OpenAPITools.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "text/csv"
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -483,27 +894,186 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (adminTransactionSearchCriteria != null)
+            if (startDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "adminTransactionSearchCriteria", adminTransactionSearchCriteria));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startDate", startDate));
             }
-            if (pageInfo != null)
+            if (endDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageInfo", pageInfo));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "endDate", endDate));
+            }
+            if (transactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionId", transactionId));
+            }
+            if (referenceTransactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceTransactionId", referenceTransactionId));
+            }
+            if (transactionStatuses != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionStatuses", transactionStatuses));
+            }
+            if (customerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerIds", customerIds));
+            }
+            if (transactionType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionType", transactionType));
+            }
+            if (authCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "authCode", authCode));
+            }
+            if (cardHolderName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "cardHolderName", cardHolderName));
+            }
+            if (shopperName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "shopperName", shopperName));
+            }
+            if (amount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "amount", amount));
+            }
+            if (fromAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromAmount", fromAmount));
+            }
+            if (toAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toAmount", toAmount));
+            }
+            if (channelTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "channelTypes", channelTypes));
+            }
+            if (maskAccount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "maskAccount", maskAccount));
+            }
+            if (customerName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerName", customerName));
+            }
+            if (binNumber != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "binNumber", binNumber));
+            }
+            if (referenceNo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceNo", referenceNo));
+            }
+            if (recurringId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "recurringId", recurringId));
+            }
+            if (transactionSourceType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionSourceType", transactionSourceType));
+            }
+            if (resellerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "resellerIds", resellerIds));
+            }
+            if (merchantIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantIds", merchantIds));
+            }
+            if (traceNumbers != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "traceNumbers", traceNumbers));
+            }
+            if (searchText != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+            }
+            if (merchantReference != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantReference", merchantReference));
+            }
+            if (additionalFields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "additionalFields", additionalFields));
+            }
+            if (paymentMethod != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentMethod", paymentMethod));
+            }
+            if (exportToCsv != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToCsv", exportToCsv));
+            }
+            if (exportToPDF != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToPDF", exportToPDF));
+            }
+            if (skipRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "skipRecordCount", skipRecordCount));
+            }
+            if (totalRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "totalRecordCount", totalRecordCount));
+            }
+            if (batchSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchSize", batchSize));
+            }
+            if (paymentTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentTypes", paymentTypes));
+            }
+            if (merchantDBAName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantDBAName", merchantDBAName));
+            }
+            if (paymentCategory != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentCategory", paymentCategory));
+            }
+            if (sortField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
+            }
+            if (emailIdToReceiveExportedTransactions != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "emailIdToReceiveExportedTransactions", emailIdToReceiveExportedTransactions));
+            }
+            if (isTransactionCostBreakDown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "isTransactionCostBreakDown", isTransactionCostBreakDown));
+            }
+            if (batchId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchId", batchId));
+            }
+            if (suppressTechnologyFee != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "suppressTechnologyFee", suppressTechnologyFee));
+            }
+            if (startRow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
+            }
+            if (asc != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsExportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -535,16 +1105,57 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecurePaymentsExportPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecurePaymentsExportPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SecurePaymentsExportPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, adminTransactionSearchCriteria, pageInfo, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SecurePaymentsExportPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -553,14 +1164,55 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecurePaymentsExportPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecurePaymentsExportPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -574,16 +1226,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsExportPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsExportPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsExportPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsExportPost");
             }
 
 
@@ -594,6 +1246,7 @@ namespace Org.OpenAPITools.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
+                "text/csv"
             };
 
             var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -608,27 +1261,186 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (adminTransactionSearchCriteria != null)
+            if (startDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "adminTransactionSearchCriteria", adminTransactionSearchCriteria));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startDate", startDate));
             }
-            if (pageInfo != null)
+            if (endDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageInfo", pageInfo));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "endDate", endDate));
+            }
+            if (transactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionId", transactionId));
+            }
+            if (referenceTransactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceTransactionId", referenceTransactionId));
+            }
+            if (transactionStatuses != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionStatuses", transactionStatuses));
+            }
+            if (customerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerIds", customerIds));
+            }
+            if (transactionType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionType", transactionType));
+            }
+            if (authCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "authCode", authCode));
+            }
+            if (cardHolderName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "cardHolderName", cardHolderName));
+            }
+            if (shopperName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "shopperName", shopperName));
+            }
+            if (amount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "amount", amount));
+            }
+            if (fromAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromAmount", fromAmount));
+            }
+            if (toAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toAmount", toAmount));
+            }
+            if (channelTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "channelTypes", channelTypes));
+            }
+            if (maskAccount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "maskAccount", maskAccount));
+            }
+            if (customerName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerName", customerName));
+            }
+            if (binNumber != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "binNumber", binNumber));
+            }
+            if (referenceNo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceNo", referenceNo));
+            }
+            if (recurringId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "recurringId", recurringId));
+            }
+            if (transactionSourceType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionSourceType", transactionSourceType));
+            }
+            if (resellerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "resellerIds", resellerIds));
+            }
+            if (merchantIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantIds", merchantIds));
+            }
+            if (traceNumbers != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "traceNumbers", traceNumbers));
+            }
+            if (searchText != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+            }
+            if (merchantReference != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantReference", merchantReference));
+            }
+            if (additionalFields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "additionalFields", additionalFields));
+            }
+            if (paymentMethod != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentMethod", paymentMethod));
+            }
+            if (exportToCsv != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToCsv", exportToCsv));
+            }
+            if (exportToPDF != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToPDF", exportToPDF));
+            }
+            if (skipRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "skipRecordCount", skipRecordCount));
+            }
+            if (totalRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "totalRecordCount", totalRecordCount));
+            }
+            if (batchSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchSize", batchSize));
+            }
+            if (paymentTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentTypes", paymentTypes));
+            }
+            if (merchantDBAName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantDBAName", merchantDBAName));
+            }
+            if (paymentCategory != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentCategory", paymentCategory));
+            }
+            if (sortField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
+            }
+            if (emailIdToReceiveExportedTransactions != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "emailIdToReceiveExportedTransactions", emailIdToReceiveExportedTransactions));
+            }
+            if (isTransactionCostBreakDown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "isTransactionCostBreakDown", isTransactionCostBreakDown));
+            }
+            if (batchId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchId", batchId));
+            }
+            if (suppressTechnologyFee != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "suppressTechnologyFee", suppressTechnologyFee));
+            }
+            if (startRow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
+            }
+            if (asc != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsExportPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -661,14 +1473,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PaymentDetailsResponse</returns>
-        public PaymentDetailsResponse SecurePaymentsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0)
+        /// <returns>TransactionDetailResponse</returns>
+        public TransactionDetailResponse SecurePaymentsPost(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<PaymentDetailsResponse> localVarResponse = SecurePaymentsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, paymentRequest);
+            Org.OpenAPITools.Client.ApiResponse<TransactionDetailResponse> localVarResponse = SecurePaymentsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, paymentRequest);
             return localVarResponse.Data;
         }
 
@@ -678,12 +1490,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PaymentDetailsResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentDetailsResponse> SecurePaymentsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of TransactionDetailResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<TransactionDetailResponse> SecurePaymentsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -697,16 +1509,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsPost");
             }
 
             // verify the required parameter 'paymentRequest' is set
@@ -740,18 +1552,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -764,7 +1571,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<PaymentDetailsResponse>("/secure/payments", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TransactionDetailResponse>("/secure/payments", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecurePaymentsPost", localVarResponse);
@@ -783,15 +1590,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PaymentDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentDetailsResponse> SecurePaymentsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of TransactionDetailResponse</returns>
+        public async System.Threading.Tasks.Task<TransactionDetailResponse> SecurePaymentsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<PaymentDetailsResponse> localVarResponse = await SecurePaymentsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, paymentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<TransactionDetailResponse> localVarResponse = await SecurePaymentsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, paymentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -801,13 +1608,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentRequest">payment Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentRequest">Payment Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PaymentDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentDetailsResponse>> SecurePaymentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TransactionDetailResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<TransactionDetailResponse>> SecurePaymentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -821,16 +1628,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsPost");
             }
 
             // verify the required parameter 'paymentRequest' is set
@@ -865,18 +1672,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -889,7 +1691,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<PaymentDetailsResponse>("/secure/payments", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionDetailResponse>("/secure/payments", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -909,15 +1711,56 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>AdminTransactionEntityResponse</returns>
-        public AdminTransactionEntityResponse SecurePaymentsSearchPost(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0)
+        public AdminTransactionEntityResponse SecurePaymentsSearchPost(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse> localVarResponse = SecurePaymentsSearchPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, adminTransactionSearchCriteria, pageInfo);
+            Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse> localVarResponse = SecurePaymentsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
             return localVarResponse.Data;
         }
 
@@ -927,13 +1770,54 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of AdminTransactionEntityResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse> SecurePaymentsSearchPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse> SecurePaymentsSearchPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -947,16 +1831,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -981,27 +1865,186 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (adminTransactionSearchCriteria != null)
+            if (startDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "adminTransactionSearchCriteria", adminTransactionSearchCriteria));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startDate", startDate));
             }
-            if (pageInfo != null)
+            if (endDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageInfo", pageInfo));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "endDate", endDate));
+            }
+            if (transactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionId", transactionId));
+            }
+            if (referenceTransactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceTransactionId", referenceTransactionId));
+            }
+            if (transactionStatuses != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionStatuses", transactionStatuses));
+            }
+            if (customerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerIds", customerIds));
+            }
+            if (transactionType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionType", transactionType));
+            }
+            if (authCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "authCode", authCode));
+            }
+            if (cardHolderName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "cardHolderName", cardHolderName));
+            }
+            if (shopperName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "shopperName", shopperName));
+            }
+            if (amount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "amount", amount));
+            }
+            if (fromAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromAmount", fromAmount));
+            }
+            if (toAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toAmount", toAmount));
+            }
+            if (channelTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "channelTypes", channelTypes));
+            }
+            if (maskAccount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "maskAccount", maskAccount));
+            }
+            if (customerName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerName", customerName));
+            }
+            if (binNumber != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "binNumber", binNumber));
+            }
+            if (referenceNo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceNo", referenceNo));
+            }
+            if (recurringId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "recurringId", recurringId));
+            }
+            if (transactionSourceType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionSourceType", transactionSourceType));
+            }
+            if (resellerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "resellerIds", resellerIds));
+            }
+            if (merchantIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantIds", merchantIds));
+            }
+            if (traceNumbers != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "traceNumbers", traceNumbers));
+            }
+            if (searchText != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+            }
+            if (merchantReference != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantReference", merchantReference));
+            }
+            if (additionalFields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "additionalFields", additionalFields));
+            }
+            if (paymentMethod != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentMethod", paymentMethod));
+            }
+            if (exportToCsv != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToCsv", exportToCsv));
+            }
+            if (exportToPDF != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToPDF", exportToPDF));
+            }
+            if (skipRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "skipRecordCount", skipRecordCount));
+            }
+            if (totalRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "totalRecordCount", totalRecordCount));
+            }
+            if (batchSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchSize", batchSize));
+            }
+            if (paymentTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentTypes", paymentTypes));
+            }
+            if (merchantDBAName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantDBAName", merchantDBAName));
+            }
+            if (paymentCategory != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentCategory", paymentCategory));
+            }
+            if (sortField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
+            }
+            if (emailIdToReceiveExportedTransactions != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "emailIdToReceiveExportedTransactions", emailIdToReceiveExportedTransactions));
+            }
+            if (isTransactionCostBreakDown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "isTransactionCostBreakDown", isTransactionCostBreakDown));
+            }
+            if (batchId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchId", batchId));
+            }
+            if (suppressTechnologyFee != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "suppressTechnologyFee", suppressTechnologyFee));
+            }
+            if (startRow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
+            }
+            if (asc != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsSearchPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1033,16 +2076,57 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AdminTransactionEntityResponse</returns>
-        public async System.Threading.Tasks.Task<AdminTransactionEntityResponse> SecurePaymentsSearchPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AdminTransactionEntityResponse> SecurePaymentsSearchPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse> localVarResponse = await SecurePaymentsSearchPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, adminTransactionSearchCriteria, pageInfo, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse> localVarResponse = await SecurePaymentsSearchPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1052,14 +2136,55 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="adminTransactionSearchCriteria">Transaction search criteria (optional)</param>
-        /// <param name="pageInfo">Set Page Info (optional)</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="startDate">Start date for the transaction search (optional)</param>
+        /// <param name="endDate">End date for the transaction search (optional)</param>
+        /// <param name="transactionId">Transaction identifier (optional)</param>
+        /// <param name="referenceTransactionId">Reference transaction identifier (optional)</param>
+        /// <param name="transactionStatuses">Status of the transaction (optional)</param>
+        /// <param name="customerIds">Customer IDs associated with the transaction (optional)</param>
+        /// <param name="transactionType">Type of the transaction (optional)</param>
+        /// <param name="authCode">Authorization code of the transaction (optional)</param>
+        /// <param name="cardHolderName">Name of the cardholder (optional)</param>
+        /// <param name="shopperName">ShopperName of the cardholder (optional)</param>
+        /// <param name="amount">Transaction amount (optional)</param>
+        /// <param name="fromAmount">Minimum transaction amount (optional)</param>
+        /// <param name="toAmount">Maximum transaction amount (optional)</param>
+        /// <param name="channelTypes">Channel types used for the transaction (optional)</param>
+        /// <param name="maskAccount">Masked account number (optional)</param>
+        /// <param name="customerName">Name of the customer (optional)</param>
+        /// <param name="binNumber">BinNumber (optional)</param>
+        /// <param name="referenceNo">Reference number (optional)</param>
+        /// <param name="recurringId">Recurring payment ID (optional)</param>
+        /// <param name="transactionSourceType">Transaction source type of the transaction (optional)</param>
+        /// <param name="resellerIds">Reseller IDs associated with the transaction (optional)</param>
+        /// <param name="merchantIds">Merchant IDs associated with the transaction (optional)</param>
+        /// <param name="traceNumbers">TraceNumbers associated with the transaction (optional)</param>
+        /// <param name="searchText">SearchText of the transaction (optional)</param>
+        /// <param name="merchantReference">Merchant Reference of the transaction (optional)</param>
+        /// <param name="additionalFields">Additional Fields (optional)</param>
+        /// <param name="paymentMethod">Payment Method (optional)</param>
+        /// <param name="exportToCsv">Export To Csv (optional)</param>
+        /// <param name="exportToPDF">Export To PDF (optional)</param>
+        /// <param name="skipRecordCount">SkipRecordCount (optional)</param>
+        /// <param name="totalRecordCount">TotalRecordCount (optional)</param>
+        /// <param name="batchSize">BatchSize (optional)</param>
+        /// <param name="paymentTypes">Type of payment used in the transaction (optional)</param>
+        /// <param name="merchantDBAName">MerchantDBAName (optional)</param>
+        /// <param name="paymentCategory">Category of payment used in the transaction (optional)</param>
+        /// <param name="sortField">SortField (optional)</param>
+        /// <param name="emailIdToReceiveExportedTransactions">EmailIdToReceiveExportedTransactions (optional)</param>
+        /// <param name="isTransactionCostBreakDown">IsTransactionCostBreakDown (optional)</param>
+        /// <param name="batchId">BatchId (optional)</param>
+        /// <param name="suppressTechnologyFee">SuppressTechnologyFee (optional)</param>
+        /// <param name="startRow">Set StartRow (optional)</param>
+        /// <param name="pageSize">Set PageSize (optional)</param>
+        /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AdminTransactionEntityResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse>> SecurePaymentsSearchPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, Object? adminTransactionSearchCriteria = default(Object?), Object? pageInfo = default(Object?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<AdminTransactionEntityResponse>> SecurePaymentsSearchPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = default(string?), string? endDate = default(string?), string? transactionId = default(string?), string? referenceTransactionId = default(string?), string? transactionStatuses = default(string?), string? customerIds = default(string?), string? transactionType = default(string?), string? authCode = default(string?), string? cardHolderName = default(string?), string? shopperName = default(string?), decimal? amount = default(decimal?), decimal? fromAmount = default(decimal?), decimal? toAmount = default(decimal?), string? channelTypes = default(string?), string? maskAccount = default(string?), string? customerName = default(string?), string? binNumber = default(string?), string? referenceNo = default(string?), string? recurringId = default(string?), string? transactionSourceType = default(string?), string? resellerIds = default(string?), string? merchantIds = default(string?), string? traceNumbers = default(string?), string? searchText = default(string?), string? merchantReference = default(string?), string? additionalFields = default(string?), string? paymentMethod = default(string?), bool? exportToCsv = default(bool?), bool? exportToPDF = default(bool?), int? skipRecordCount = default(int?), int? totalRecordCount = default(int?), int? batchSize = default(int?), string? paymentTypes = default(string?), string? merchantDBAName = default(string?), string? paymentCategory = default(string?), string? sortField = default(string?), string? emailIdToReceiveExportedTransactions = default(string?), bool? isTransactionCostBreakDown = default(bool?), string? batchId = default(string?), bool? suppressTechnologyFee = default(bool?), decimal? startRow = default(decimal?), decimal? pageSize = default(decimal?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1073,16 +2198,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsSearchPost");
             }
 
 
@@ -1108,27 +2233,186 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            if (adminTransactionSearchCriteria != null)
+            if (startDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "adminTransactionSearchCriteria", adminTransactionSearchCriteria));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startDate", startDate));
             }
-            if (pageInfo != null)
+            if (endDate != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageInfo", pageInfo));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "endDate", endDate));
+            }
+            if (transactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionId", transactionId));
+            }
+            if (referenceTransactionId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceTransactionId", referenceTransactionId));
+            }
+            if (transactionStatuses != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionStatuses", transactionStatuses));
+            }
+            if (customerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerIds", customerIds));
+            }
+            if (transactionType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionType", transactionType));
+            }
+            if (authCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "authCode", authCode));
+            }
+            if (cardHolderName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "cardHolderName", cardHolderName));
+            }
+            if (shopperName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "shopperName", shopperName));
+            }
+            if (amount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "amount", amount));
+            }
+            if (fromAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromAmount", fromAmount));
+            }
+            if (toAmount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toAmount", toAmount));
+            }
+            if (channelTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "channelTypes", channelTypes));
+            }
+            if (maskAccount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "maskAccount", maskAccount));
+            }
+            if (customerName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "customerName", customerName));
+            }
+            if (binNumber != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "binNumber", binNumber));
+            }
+            if (referenceNo != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "referenceNo", referenceNo));
+            }
+            if (recurringId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "recurringId", recurringId));
+            }
+            if (transactionSourceType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "transactionSourceType", transactionSourceType));
+            }
+            if (resellerIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "resellerIds", resellerIds));
+            }
+            if (merchantIds != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantIds", merchantIds));
+            }
+            if (traceNumbers != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "traceNumbers", traceNumbers));
+            }
+            if (searchText != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "searchText", searchText));
+            }
+            if (merchantReference != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantReference", merchantReference));
+            }
+            if (additionalFields != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "additionalFields", additionalFields));
+            }
+            if (paymentMethod != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentMethod", paymentMethod));
+            }
+            if (exportToCsv != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToCsv", exportToCsv));
+            }
+            if (exportToPDF != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "ExportToPDF", exportToPDF));
+            }
+            if (skipRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "skipRecordCount", skipRecordCount));
+            }
+            if (totalRecordCount != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "totalRecordCount", totalRecordCount));
+            }
+            if (batchSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchSize", batchSize));
+            }
+            if (paymentTypes != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentTypes", paymentTypes));
+            }
+            if (merchantDBAName != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "merchantDBAName", merchantDBAName));
+            }
+            if (paymentCategory != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentCategory", paymentCategory));
+            }
+            if (sortField != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
+            }
+            if (emailIdToReceiveExportedTransactions != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "emailIdToReceiveExportedTransactions", emailIdToReceiveExportedTransactions));
+            }
+            if (isTransactionCostBreakDown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "isTransactionCostBreakDown", isTransactionCostBreakDown));
+            }
+            if (batchId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "batchId", batchId));
+            }
+            if (suppressTechnologyFee != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "suppressTechnologyFee", suppressTechnologyFee));
+            }
+            if (startRow != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
+            }
+            if (pageSize != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
+            }
+            if (asc != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsSearchPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1161,14 +2445,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecurePaymentDetailsResponse</returns>
-        public SecurePaymentDetailsResponse SecurePaymentsdetailsPost(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0)
+        public SecurePaymentDetailsResponse SecurePaymentsdetailsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse> localVarResponse = SecurePaymentsdetailsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, securePaymentDetailsRequest);
+            Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse> localVarResponse = SecurePaymentsdetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest);
             return localVarResponse.Data;
         }
 
@@ -1178,12 +2462,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecurePaymentDetailsResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1197,16 +2481,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
             }
 
             // verify the required parameter 'securePaymentDetailsRequest' is set
@@ -1240,18 +2524,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = securePaymentDetailsRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsdetailsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -1283,15 +2562,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecurePaymentDetailsResponse</returns>
-        public async System.Threading.Tasks.Task<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecurePaymentDetailsResponse> SecurePaymentsdetailsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse> localVarResponse = await SecurePaymentsdetailsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, securePaymentDetailsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse> localVarResponse = await SecurePaymentsdetailsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1301,13 +2580,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="securePaymentDetailsRequest">Payment Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecurePaymentDetailsResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse>> SecurePaymentsdetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecurePaymentDetailsResponse>> SecurePaymentsdetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1321,16 +2600,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentsApi->SecurePaymentsdetailsPost");
             }
 
             // verify the required parameter 'securePaymentDetailsRequest' is set
@@ -1365,18 +2644,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = securePaymentDetailsRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentsApi.SecurePaymentsdetailsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {

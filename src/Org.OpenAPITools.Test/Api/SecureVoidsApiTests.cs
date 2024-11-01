@@ -63,11 +63,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //TransactionCancelRequest cancelRequest = null;
-            //var response = instance.SecureCancellationsPost(xApiKey, xAppKey, origin, xVersion, cancelRequest);
-            //Assert.IsType<CancelledTransactionResponse>(response);
+            //string origin = null;
+            //SecureTransactionCancelRequest secureTransactionCancelRequest = null;
+            //var response = instance.SecureCancellationsPost(xApiKey, xAppKey, xVersion, origin, secureTransactionCancelRequest);
+            //Assert.IsType<SecureCancelledTransactionResponse>(response);
         }
     }
 }

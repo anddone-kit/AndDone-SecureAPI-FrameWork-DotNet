@@ -27,73 +27,17 @@ namespace Org.OpenAPITools.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This API expires the payment Intent or link.
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PaymentIntentExpiresResponse</returns>
-        PaymentIntentExpiresResponse SecurePaymentintentsExpirationsididPost(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0);
-
-        /// <summary>
-        /// This API expires the payment Intent or link.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PaymentIntentExpiresResponse</returns>
-        ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsididPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0);
-        /// <summary>
-        /// This API is use to create Secure payment Intent.
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PaymentIntentResponse</returns>
-        PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0);
-
-        /// <summary>
-        /// This API is use to create Secure payment Intent.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PaymentIntentResponse</returns>
-        ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0);
-        /// <summary>
         /// This API is use update the amount of payment intent.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="updateIntentRequest">Update Intent Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecurePaymentintentsPut(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0);
+        void SecureEpfUpdateintentPut(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is use update the amount of payment intent.
@@ -104,12 +48,68 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="updateIntentRequest">Update Intent Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecurePaymentintentsPutWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0);
+        ApiResponse<Object> SecureEpfUpdateintentPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0);
+        /// <summary>
+        /// This API expires the payment Intent or link.
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PaymentIntentExpiresResponse</returns>
+        PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API expires the payment Intent or link.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PaymentIntentExpiresResponse</returns>
+        ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0);
+        /// <summary>
+        /// This API is use to create Secure payment Intent.
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PaymentIntentResponse</returns>
+        PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0);
+
+        /// <summary>
+        /// This API is use to create Secure payment Intent.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PaymentIntentResponse</returns>
+        ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -120,72 +120,6 @@ namespace Org.OpenAPITools.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// This API expires the payment Intent or link.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PaymentIntentExpiresResponse</returns>
-        System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsididPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// This API expires the payment Intent or link.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PaymentIntentExpiresResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsididPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
-        /// This API is use to create Secure payment Intent.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PaymentIntentResponse</returns>
-        System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-
-        /// <summary>
-        /// This API is use to create Secure payment Intent.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PaymentIntentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        /// <summary>
         /// This API is use update the amount of payment intent.
         /// </summary>
         /// <remarks>
@@ -194,13 +128,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="updateIntentRequest">Update Intent Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecurePaymentintentsPutAsync(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureEpfUpdateintentPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is use update the amount of payment intent.
@@ -211,13 +145,79 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="updateIntentRequest">Update Intent Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecurePaymentintentsPutWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureEpfUpdateintentPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API expires the payment Intent or link.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PaymentIntentExpiresResponse</returns>
+        System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API expires the payment Intent or link.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PaymentIntentExpiresResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// This API is use to create Secure payment Intent.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PaymentIntentResponse</returns>
+        System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// This API is use to create Secure payment Intent.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PaymentIntentResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -339,19 +339,253 @@ namespace Org.OpenAPITools.Api
         }
 
         /// <summary>
+        /// This API is use update the amount of payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="updateIntentRequest">Update Intent Request</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void SecureEpfUpdateintentPut(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0)
+        {
+            SecureEpfUpdateintentPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, updateIntentRequest);
+        }
+
+        /// <summary>
+        /// This API is use update the amount of payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="updateIntentRequest">Update Intent Request</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureEpfUpdateintentPutWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0)
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'updateIntentRequest' is set
+            if (updateIntentRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'updateIntentRequest' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = updateIntentRequest;
+
+            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecureEpfUpdateintentPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<Object>("/secure/epf/updateintent", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfUpdateintentPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// This API is use update the amount of payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="updateIntentRequest">Update Intent Request</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SecureEpfUpdateintentPutAsync(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await SecureEpfUpdateintentPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, updateIntentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// This API is use update the amount of payment intent. 
+        /// </summary>
+        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xApiKey">an authorization header</param>
+        /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="updateIntentRequest">Update Intent Request</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureEpfUpdateintentPutWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'xApiKey' is set
+            if (xApiKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'xAppKey' is set
+            if (xAppKey == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'xVersion' is set
+            if (xVersion == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+            // verify the required parameter 'updateIntentRequest' is set
+            if (updateIntentRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'updateIntentRequest' when calling SecurePaymentIntentApi->SecureEpfUpdateintentPut");
+            }
+
+
+            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = updateIntentRequest;
+
+            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecureEpfUpdateintentPut";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (x-api-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
+            }
+            // authentication (x-app-key) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/secure/epf/updateintent", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SecureEpfUpdateintentPut", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// This API expires the payment Intent or link. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentIntentExpiresResponse</returns>
-        public PaymentIntentExpiresResponse SecurePaymentintentsExpirationsididPost(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0)
+        public PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> localVarResponse = SecurePaymentintentsExpirationsididPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, id);
+            Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> localVarResponse = SecurePaymentintentsExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, id);
             return localVarResponse.Data;
         }
 
@@ -361,41 +595,35 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentIntentExpiresResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsididPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
             // verify the required parameter 'xAppKey' is set
             if (xAppKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
-            // verify the required parameter 'id' is set
-            if (id == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'id' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -420,20 +648,18 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Org.OpenAPITools.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
-            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsExpirationsididPost";
+            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsExpirationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -446,10 +672,10 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<PaymentIntentExpiresResponse>("/secure/paymentintents/expirations?id={id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<PaymentIntentExpiresResponse>("/secure/paymentintents/expirations", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SecurePaymentintentsExpirationsididPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SecurePaymentintentsExpirationsPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -465,15 +691,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentIntentExpiresResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsididPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> localVarResponse = await SecurePaymentintentsExpirationsididPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, id, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> localVarResponse = await SecurePaymentintentsExpirationsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -483,42 +709,36 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="id">Payment Intent Id</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="id">Payment Intent Id (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentIntentExpiresResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsididPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, string? id = default(string?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
             // verify the required parameter 'xAppKey' is set
             if (xAppKey == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
-            // verify the required parameter 'id' is set
-            if (id == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'id' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsididPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsExpirationsPost");
             }
 
 
@@ -544,20 +764,18 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
-            localVarRequestOptions.PathParameters.Add("id", Org.OpenAPITools.Client.ClientUtils.ParameterToString(id)); // path parameter
+            if (id != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "id", id));
+            }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
-            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsExpirationsididPost";
+            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsExpirationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -570,11 +788,11 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<PaymentIntentExpiresResponse>("/secure/paymentintents/expirations?id={id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PaymentIntentExpiresResponse>("/secure/paymentintents/expirations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("SecurePaymentintentsExpirationsididPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("SecurePaymentintentsExpirationsPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;
@@ -590,14 +808,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentIntentResponse</returns>
-        public PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0)
+        public PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> localVarResponse = SecurePaymentintentsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, paymentIntentRequest);
+            Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> localVarResponse = SecurePaymentintentsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, paymentIntentRequest);
             return localVarResponse.Data;
         }
 
@@ -607,12 +825,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentIntentResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -626,22 +844,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
             }
 
-            // verify the required parameter 'paymentIntentRequest' is set
-            if (paymentIntentRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'paymentIntentRequest' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -669,18 +881,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentIntentRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -712,15 +919,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentIntentResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> localVarResponse = await SecurePaymentintentsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, paymentIntentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> localVarResponse = await SecurePaymentintentsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, paymentIntentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -730,13 +937,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="paymentIntentRequest">Payment Intent Request</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentIntentResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, PaymentIntentRequest paymentIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -750,22 +957,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
             }
 
-            // verify the required parameter 'paymentIntentRequest' is set
-            if (paymentIntentRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'paymentIntentRequest' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsPost");
             }
 
 
@@ -794,18 +995,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentIntentRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -823,250 +1019,6 @@ namespace Org.OpenAPITools.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecurePaymentintentsPost", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// This API is use update the amount of payment intent. 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="updateIntentRequest">Update Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns></returns>
-        public void SecurePaymentintentsPut(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0)
-        {
-            SecurePaymentintentsPutWithHttpInfo(xApiKey, xAppKey, origin, xVersion, updateIntentRequest);
-        }
-
-        /// <summary>
-        /// This API is use update the amount of payment intent. 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="updateIntentRequest">Update Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecurePaymentintentsPutWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0)
-        {
-            // verify the required parameter 'xApiKey' is set
-            if (xApiKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'xAppKey' is set
-            if (xAppKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'xVersion' is set
-            if (xVersion == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'updateIntentRequest' is set
-            if (updateIntentRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'updateIntentRequest' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = updateIntentRequest;
-
-            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
-            // authentication (x-api-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (x-app-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/secure/paymentintents", localVarRequestOptions, this.Configuration);
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("SecurePaymentintentsPut", localVarResponse);
-                if (_exception != null)
-                {
-                    throw _exception;
-                }
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// This API is use update the amount of payment intent. 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="updateIntentRequest">Update Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecurePaymentintentsPutAsync(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            await SecurePaymentintentsPutWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, updateIntentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// This API is use update the amount of payment intent. 
-        /// </summary>
-        /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
-        /// <param name="xVersion">x-version</param>
-        /// <param name="updateIntentRequest">Update Intent Request</param>
-        /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecurePaymentintentsPutWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, UpdateIntentRequest updateIntentRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
-        {
-            // verify the required parameter 'xApiKey' is set
-            if (xApiKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xApiKey' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'xAppKey' is set
-            if (xAppKey == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'xVersion' is set
-            if (xVersion == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-            // verify the required parameter 'updateIntentRequest' is set
-            if (updateIntentRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'updateIntentRequest' when calling SecurePaymentIntentApi->SecurePaymentintentsPut");
-            }
-
-
-            Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Org.OpenAPITools.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-            }
-
-            var localVarAccept = Org.OpenAPITools.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-            }
-
-            localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = updateIntentRequest;
-
-            localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsPut";
-            localVarRequestOptions.OperationIndex = operationIndex;
-
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
-            // authentication (x-api-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-api-key", this.Configuration.GetApiKeyWithPrefix("x-api-key"));
-            }
-            // authentication (x-app-key) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-app-key")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("x-app-key", this.Configuration.GetApiKeyWithPrefix("x-app-key"));
-            }
-
-            // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/secure/paymentintents", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("SecurePaymentintentsPut", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

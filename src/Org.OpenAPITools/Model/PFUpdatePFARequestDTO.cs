@@ -34,7 +34,12 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFUpdatePFARequestDTO" /> class.
         /// </summary>
-        /// <param name="quoteKey">This denotes the quoteKey..</param>
+        [JsonConstructorAttribute]
+        protected PFUpdatePFARequestDTO() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PFUpdatePFARequestDTO" /> class.
+        /// </summary>
+        /// <param name="quoteKey">This denotes the quoteKey. (required).</param>
         public PFUpdatePFARequestDTO(decimal quoteKey = default(decimal))
         {
             this.QuoteKey = quoteKey;
@@ -44,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// This denotes the quoteKey.
         /// </summary>
         /// <value>This denotes the quoteKey.</value>
-        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
+        [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
         public decimal QuoteKey { get; set; }
 
         /// <summary>
@@ -74,7 +79,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

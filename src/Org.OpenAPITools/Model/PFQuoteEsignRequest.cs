@@ -39,12 +39,21 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFQuoteEsignRequest" /> class.
         /// </summary>
+        /// <param name="merchantToken">This denotes the merchant token. (required).</param>
         /// <param name="quoteKey">This denotes the quoteKey. (required).</param>
         /// <param name="insuredName">This denotes the name of the insured. (required).</param>
-        /// <param name="ipAddress">This denotes the ip address of the client. (required).</param>
-        /// <param name="macAddress">This denotes the mac address of the client. (required).</param>
-        public PFQuoteEsignRequest(string quoteKey = default(string), string insuredName = default(string), string ipAddress = default(string), string macAddress = default(string))
+        /// <param name="ipAddress">This denotes the IP address of the client. (required).</param>
+        /// <param name="macAddress">This denotes the MAC address of the client. (required).</param>
+        /// <param name="captchaToken">This denotes the captchaToken..</param>
+        /// <param name="actionName">This denotes the action name..</param>
+        public PFQuoteEsignRequest(string merchantToken = default(string), string quoteKey = default(string), string insuredName = default(string), string ipAddress = default(string), string macAddress = default(string), string captchaToken = default(string), string actionName = default(string))
         {
+            // to ensure "merchantToken" is required (not null)
+            if (merchantToken == null)
+            {
+                throw new ArgumentNullException("merchantToken is a required property for PFQuoteEsignRequest and cannot be null");
+            }
+            this.MerchantToken = merchantToken;
             // to ensure "quoteKey" is required (not null)
             if (quoteKey == null)
             {
@@ -69,7 +78,16 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("macAddress is a required property for PFQuoteEsignRequest and cannot be null");
             }
             this.MacAddress = macAddress;
+            this.CaptchaToken = captchaToken;
+            this.ActionName = actionName;
         }
+
+        /// <summary>
+        /// This denotes the merchant token.
+        /// </summary>
+        /// <value>This denotes the merchant token.</value>
+        [DataMember(Name = "merchantToken", IsRequired = true, EmitDefaultValue = true)]
+        public string MerchantToken { get; set; }
 
         /// <summary>
         /// This denotes the quoteKey.
@@ -86,18 +104,32 @@ namespace Org.OpenAPITools.Model
         public string InsuredName { get; set; }
 
         /// <summary>
-        /// This denotes the ip address of the client.
+        /// This denotes the IP address of the client.
         /// </summary>
-        /// <value>This denotes the ip address of the client.</value>
+        /// <value>This denotes the IP address of the client.</value>
         [DataMember(Name = "ipAddress", IsRequired = true, EmitDefaultValue = true)]
         public string IpAddress { get; set; }
 
         /// <summary>
-        /// This denotes the mac address of the client.
+        /// This denotes the MAC address of the client.
         /// </summary>
-        /// <value>This denotes the mac address of the client.</value>
+        /// <value>This denotes the MAC address of the client.</value>
         [DataMember(Name = "macAddress", IsRequired = true, EmitDefaultValue = true)]
         public string MacAddress { get; set; }
+
+        /// <summary>
+        /// This denotes the captchaToken.
+        /// </summary>
+        /// <value>This denotes the captchaToken.</value>
+        [DataMember(Name = "captchaToken", EmitDefaultValue = false)]
+        public string CaptchaToken { get; set; }
+
+        /// <summary>
+        /// This denotes the action name.
+        /// </summary>
+        /// <value>This denotes the action name.</value>
+        [DataMember(Name = "actionName", EmitDefaultValue = false)]
+        public string ActionName { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -107,10 +139,13 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PFQuoteEsignRequest {\n");
+            sb.Append("  MerchantToken: ").Append(MerchantToken).Append("\n");
             sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
             sb.Append("  InsuredName: ").Append(InsuredName).Append("\n");
             sb.Append("  IpAddress: ").Append(IpAddress).Append("\n");
             sb.Append("  MacAddress: ").Append(MacAddress).Append("\n");
+            sb.Append("  CaptchaToken: ").Append(CaptchaToken).Append("\n");
+            sb.Append("  ActionName: ").Append(ActionName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,7 +164,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

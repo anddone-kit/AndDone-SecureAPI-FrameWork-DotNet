@@ -1,89 +1,101 @@
-# openapi_client.SecureEmbeddedPremiumFinanceApi
+# Org.OpenAPITools.Api.SecureEmbeddedPremiumFinanceApi
 
 All URIs are relative to *https://api.uat.anddone.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**secure_epf_quotes_booking_put**](SecureEmbeddedPremiumFinanceApi.md#secure_epf_quotes_booking_put) | **PUT** /secure/epf/quotes/booking | This API will update PFA to book a quote.
-[**secure_epf_quotes_captureesign_put**](SecureEmbeddedPremiumFinanceApi.md#secure_epf_quotes_captureesign_put) | **PUT** /secure/epf/quotes/captureesign | This API will eSign the pfa with insured name.
-[**secure_epf_quotes_generate_post**](SecureEmbeddedPremiumFinanceApi.md#secure_epf_quotes_generate_post) | **POST** /secure/epf/quotes/generate | This API is used to Generate Quotes
-[**secure_epf_quotes_intent_post**](SecureEmbeddedPremiumFinanceApi.md#secure_epf_quotes_intent_post) | **POST** /secure/epf/quotes/intent | This API will return quotes created againsts a payment intent.
-[**secure_epf_quotes_post**](SecureEmbeddedPremiumFinanceApi.md#secure_epf_quotes_post) | **POST** /secure/epf/quotes | This API will return quote by QuoteKey.
-[**secure_epf_retrievepfa_post**](SecureEmbeddedPremiumFinanceApi.md#secure_epf_retrievepfa_post) | **POST** /secure/epf/retrievepfa | This API will return PFA for given quoteKey.
-[**secure_merchants_epf_quotes_policy_put**](SecureEmbeddedPremiumFinanceApi.md#secure_merchants_epf_quotes_policy_put) | **PUT** /secure/merchants/epf/quotes/policy | This API is will update the policy number
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**SecureEpfQuotesBookingPut**](SecureEmbeddedPremiumFinanceApi.md#secureepfquotesbookingput) | **PUT** /secure/epf/quotes/booking | This API will update PFA to book a quote. |
+| [**SecureEpfQuotesCaptureesignPut**](SecureEmbeddedPremiumFinanceApi.md#secureepfquotescaptureesignput) | **PUT** /secure/epf/quotes/captureesign | This API will eSign the pfa with insured name. |
+| [**SecureEpfQuotesGeneratePost**](SecureEmbeddedPremiumFinanceApi.md#secureepfquotesgeneratepost) | **POST** /secure/epf/quotes/generate | This API is used to Generate Quotes |
+| [**SecureEpfQuotesIntentPost**](SecureEmbeddedPremiumFinanceApi.md#secureepfquotesintentpost) | **POST** /secure/epf/quotes/intent | This API will return quotes created againsts a payment intent. |
+| [**SecureEpfQuotesPost**](SecureEmbeddedPremiumFinanceApi.md#secureepfquotespost) | **POST** /secure/epf/quotes | This API will return quote by QuoteKey. |
+| [**SecureEpfRetrievepfaPost**](SecureEmbeddedPremiumFinanceApi.md#secureepfretrievepfapost) | **POST** /secure/epf/retrievepfa | This API will return PFA for given quoteKey. |
+| [**SecureMerchantsEpfQuotesPolicyPut**](SecureEmbeddedPremiumFinanceApi.md#securemerchantsepfquotespolicyput) | **PUT** /secure/merchants/epf/quotes/policy | This API is will update the policy number |
 
-
-# **secure_epf_quotes_booking_put**
-> PFUpdatePFAResponse secure_epf_quotes_booking_put(x_api_key, x_app_key, x_version, origin, pf_quote_booking_request)
+<a id="secureepfquotesbookingput"></a>
+# **SecureEpfQuotesBookingPut**
+> PFUpdatePFAResponse SecureEpfQuotesBookingPut (string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest)
 
 This API will update PFA to book a quote.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureEpfQuotesBookingPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.pf_quote_booking_request import PFQuoteBookingRequest
-from openapi_client.models.pf_update_pfa_response import PFUpdatePFAResponse
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var pFQuoteBookingRequest = new PFQuoteBookingRequest(); // PFQuoteBookingRequest | PFQuoteBooking Request details
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    pf_quote_booking_request = openapi_client.PFQuoteBookingRequest() # PFQuoteBookingRequest | PFQuoteBooking Request details
-
-    try:
-        # This API will update PFA to book a quote.
-        api_response = api_instance.secure_epf_quotes_booking_put(x_api_key, x_app_key, x_version, origin, pf_quote_booking_request)
-        print("The response of SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_booking_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_booking_put: %s\n" % e)
+            try
+            {
+                // This API will update PFA to book a quote.
+                PFUpdatePFAResponse result = apiInstance.SecureEpfQuotesBookingPut(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesBookingPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureEpfQuotesBookingPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will update PFA to book a quote.
+    ApiResponse<PFUpdatePFAResponse> response = apiInstance.SecureEpfQuotesBookingPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesBookingPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **pf_quote_booking_request** | [**PFQuoteBookingRequest**](PFQuoteBookingRequest.md)| PFQuoteBooking Request details | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **pFQuoteBookingRequest** | [**PFQuoteBookingRequest**](PFQuoteBookingRequest.md) | PFQuoteBooking Request details |  |
 
 ### Return type
 
@@ -98,85 +110,97 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_epf_quotes_captureesign_put**
-> secure_epf_quotes_captureesign_put(x_api_key, x_app_key, x_version, origin, pf_quote_esign_request=pf_quote_esign_request)
+<a id="secureepfquotescaptureesignput"></a>
+# **SecureEpfQuotesCaptureesignPut**
+> void SecureEpfQuotesCaptureesignPut (string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = null)
 
 This API will eSign the pfa with insured name.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureEpfQuotesCaptureesignPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.pf_quote_esign_request import PFQuoteEsignRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var pFQuoteEsignRequest = new PFQuoteEsignRequest?(); // PFQuoteEsignRequest? | PFQuote Request (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    pf_quote_esign_request = openapi_client.PFQuoteEsignRequest() # PFQuoteEsignRequest | PFQuote Request (optional)
-
-    try:
-        # This API will eSign the pfa with insured name.
-        api_instance.secure_epf_quotes_captureesign_put(x_api_key, x_app_key, x_version, origin, pf_quote_esign_request=pf_quote_esign_request)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_captureesign_put: %s\n" % e)
+            try
+            {
+                // This API will eSign the pfa with insured name.
+                apiInstance.SecureEpfQuotesCaptureesignPut(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesCaptureesignPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureEpfQuotesCaptureesignPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will eSign the pfa with insured name.
+    apiInstance.SecureEpfQuotesCaptureesignPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesCaptureesignPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **pf_quote_esign_request** | [**PFQuoteEsignRequest**](PFQuoteEsignRequest.md)| PFQuote Request | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **pFQuoteEsignRequest** | [**PFQuoteEsignRequest?**](PFQuoteEsignRequest?.md) | PFQuote Request | [optional]  |
 
 ### Return type
 
@@ -191,92 +215,105 @@ void (empty response body)
  - **Content-Type**: application/json
  - **Accept**: Not defined
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_epf_quotes_generate_post**
-> List[PFGenerateQuoteResponse] secure_epf_quotes_generate_post(x_api_key, x_app_key, x_version, origin, quote_request=quote_request)
+<a id="secureepfquotesgeneratepost"></a>
+# **SecureEpfQuotesGeneratePost**
+> List&lt;PFGenerateQuoteResponse&gt; SecureEpfQuotesGeneratePost (string xApiKey, string xAppKey, string xVersion, string origin, QuoteRequest? quoteRequest = null)
 
 This API is used to Generate Quotes
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureEpfQuotesGeneratePostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.pf_generate_quote_response import PFGenerateQuoteResponse
-from openapi_client.models.quote_request import QuoteRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var quoteRequest = new QuoteRequest?(); // QuoteRequest? | Quote Request (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    quote_request = openapi_client.QuoteRequest() # QuoteRequest | Quote Request (optional)
-
-    try:
-        # This API is used to Generate Quotes
-        api_response = api_instance.secure_epf_quotes_generate_post(x_api_key, x_app_key, x_version, origin, quote_request=quote_request)
-        print("The response of SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_generate_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_generate_post: %s\n" % e)
+            try
+            {
+                // This API is used to Generate Quotes
+                List<PFGenerateQuoteResponse> result = apiInstance.SecureEpfQuotesGeneratePost(xApiKey, xAppKey, xVersion, origin, quoteRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesGeneratePost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureEpfQuotesGeneratePostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API is used to Generate Quotes
+    ApiResponse<List<PFGenerateQuoteResponse>> response = apiInstance.SecureEpfQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, quoteRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesGeneratePostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **quote_request** | [**QuoteRequest**](QuoteRequest.md)| Quote Request | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **quoteRequest** | [**QuoteRequest?**](QuoteRequest?.md) | Quote Request | [optional]  |
 
 ### Return type
 
-[**List[PFGenerateQuoteResponse]**](PFGenerateQuoteResponse.md)
+[**List&lt;PFGenerateQuoteResponse&gt;**](PFGenerateQuoteResponse.md)
 
 ### Authorization
 
@@ -287,74 +324,96 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_epf_quotes_intent_post**
-> List[QuoteResponseIntent] secure_epf_quotes_intent_post(x_api_key, x_app_key, x_version, origin, get_quote_request=get_quote_request)
+<a id="secureepfquotesintentpost"></a>
+# **SecureEpfQuotesIntentPost**
+> List&lt;QuoteResponseIntent&gt; SecureEpfQuotesIntentPost (string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteRequest? getQuoteRequest = null)
 
 This API will return quotes created againsts a payment intent.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
+namespace Example
+{
+    public class SecureEpfQuotesIntentPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var getQuoteRequest = new GetQuoteRequest?(); // GetQuoteRequest? | Signature Request details (optional) 
 
-```python
-import openapi_client
-from openapi_client.models.get_quote_request import GetQuoteRequest
-from openapi_client.models.quote_response_intent import QuoteResponseIntent
-from openapi_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    get_quote_request = openapi_client.GetQuoteRequest() # GetQuoteRequest | Signature Request details (optional)
-
-    try:
-        # This API will return quotes created againsts a payment intent.
-        api_response = api_instance.secure_epf_quotes_intent_post(x_api_key, x_app_key, x_version, origin, get_quote_request=get_quote_request)
-        print("The response of SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_intent_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_intent_post: %s\n" % e)
+            try
+            {
+                // This API will return quotes created againsts a payment intent.
+                List<QuoteResponseIntent> result = apiInstance.SecureEpfQuotesIntentPost(xApiKey, xAppKey, xVersion, origin, getQuoteRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesIntentPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureEpfQuotesIntentPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will return quotes created againsts a payment intent.
+    ApiResponse<List<QuoteResponseIntent>> response = apiInstance.SecureEpfQuotesIntentPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesIntentPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **get_quote_request** | [**GetQuoteRequest**](GetQuoteRequest.md)| Signature Request details | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **getQuoteRequest** | [**GetQuoteRequest?**](GetQuoteRequest?.md) | Signature Request details | [optional]  |
 
 ### Return type
 
-[**List[QuoteResponseIntent]**](QuoteResponseIntent.md)
+[**List&lt;QuoteResponseIntent&gt;**](QuoteResponseIntent.md)
 
 ### Authorization
 
@@ -365,92 +424,105 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_epf_quotes_post**
-> List[QuoteResponse] secure_epf_quotes_post(x_api_key, x_app_key, x_version, origin, get_quote_key_request=get_quote_key_request)
+<a id="secureepfquotespost"></a>
+# **SecureEpfQuotesPost**
+> List&lt;QuoteResponse&gt; SecureEpfQuotesPost (string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = null)
 
 This API will return quote by QuoteKey.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureEpfQuotesPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.get_quote_key_request import GetQuoteKeyRequest
-from openapi_client.models.quote_response import QuoteResponse
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var getQuoteKeyRequest = new GetQuoteKeyRequest?(); // GetQuoteKeyRequest? | Signature Request details (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    get_quote_key_request = openapi_client.GetQuoteKeyRequest() # GetQuoteKeyRequest | Signature Request details (optional)
-
-    try:
-        # This API will return quote by QuoteKey.
-        api_response = api_instance.secure_epf_quotes_post(x_api_key, x_app_key, x_version, origin, get_quote_key_request=get_quote_key_request)
-        print("The response of SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_epf_quotes_post: %s\n" % e)
+            try
+            {
+                // This API will return quote by QuoteKey.
+                List<QuoteResponse> result = apiInstance.SecureEpfQuotesPost(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureEpfQuotesPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will return quote by QuoteKey.
+    ApiResponse<List<QuoteResponse>> response = apiInstance.SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **get_quote_key_request** | [**GetQuoteKeyRequest**](GetQuoteKeyRequest.md)| Signature Request details | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **getQuoteKeyRequest** | [**GetQuoteKeyRequest?**](GetQuoteKeyRequest?.md) | Signature Request details | [optional]  |
 
 ### Return type
 
-[**List[QuoteResponse]**](QuoteResponse.md)
+[**List&lt;QuoteResponse&gt;**](QuoteResponse.md)
 
 ### Authorization
 
@@ -461,91 +533,105 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_epf_retrievepfa_post**
-> str secure_epf_retrievepfa_post(x_api_key, x_app_key, x_version, origin, pf_retrieve_pfa_request_dto=pf_retrieve_pfa_request_dto)
+<a id="secureepfretrievepfapost"></a>
+# **SecureEpfRetrievepfaPost**
+> string SecureEpfRetrievepfaPost (string xApiKey, string xAppKey, string xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = null)
 
 This API will return PFA for given quoteKey.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureEpfRetrievepfaPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.pf_retrieve_pfa_request_dto import PFRetrievePFARequestDTO
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var pFRetrievePFARequestDTO = new PFRetrievePFARequestDTO?(); // PFRetrievePFARequestDTO? | PFRetrieve PFA Request (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    pf_retrieve_pfa_request_dto = openapi_client.PFRetrievePFARequestDTO() # PFRetrievePFARequestDTO | PFRetrieve PFA Request (optional)
-
-    try:
-        # This API will return PFA for given quoteKey.
-        api_response = api_instance.secure_epf_retrievepfa_post(x_api_key, x_app_key, x_version, origin, pf_retrieve_pfa_request_dto=pf_retrieve_pfa_request_dto)
-        print("The response of SecureEmbeddedPremiumFinanceApi->secure_epf_retrievepfa_post:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_epf_retrievepfa_post: %s\n" % e)
+            try
+            {
+                // This API will return PFA for given quoteKey.
+                string result = apiInstance.SecureEpfRetrievepfaPost(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfRetrievepfaPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureEpfRetrievepfaPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will return PFA for given quoteKey.
+    ApiResponse<string> response = apiInstance.SecureEpfRetrievepfaPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureEpfRetrievepfaPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **pf_retrieve_pfa_request_dto** | [**PFRetrievePFARequestDTO**](PFRetrievePFARequestDTO.md)| PFRetrieve PFA Request | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **pFRetrievePFARequestDTO** | [**PFRetrievePFARequestDTO?**](PFRetrievePFARequestDTO?.md) | PFRetrieve PFA Request | [optional]  |
 
 ### Return type
 
-**str**
+**string**
 
 ### Authorization
 
@@ -556,88 +642,101 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **secure_merchants_epf_quotes_policy_put**
-> PFPolicyUpdateResponse secure_merchants_epf_quotes_policy_put(x_api_key, x_app_key, x_version, origin, pf_policy_update_request_dto=pf_policy_update_request_dto)
+<a id="securemerchantsepfquotespolicyput"></a>
+# **SecureMerchantsEpfQuotesPolicyPut**
+> PFPolicyUpdateResponse SecureMerchantsEpfQuotesPolicyPut (string xApiKey, string xAppKey, string xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = null)
 
 This API is will update the policy number
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureMerchantsEpfQuotesPolicyPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.pf_policy_update_request_dto import PFPolicyUpdateRequestDTO
-from openapi_client.models.pf_policy_update_response import PFPolicyUpdateResponse
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var pFPolicyUpdateRequestDTO = new PFPolicyUpdateRequestDTO?(); // PFPolicyUpdateRequestDTO? | Signature Request details (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureEmbeddedPremiumFinanceApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    pf_policy_update_request_dto = openapi_client.PFPolicyUpdateRequestDTO() # PFPolicyUpdateRequestDTO | Signature Request details (optional)
-
-    try:
-        # This API is will update the policy number
-        api_response = api_instance.secure_merchants_epf_quotes_policy_put(x_api_key, x_app_key, x_version, origin, pf_policy_update_request_dto=pf_policy_update_request_dto)
-        print("The response of SecureEmbeddedPremiumFinanceApi->secure_merchants_epf_quotes_policy_put:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling SecureEmbeddedPremiumFinanceApi->secure_merchants_epf_quotes_policy_put: %s\n" % e)
+            try
+            {
+                // This API is will update the policy number
+                PFPolicyUpdateResponse result = apiInstance.SecureMerchantsEpfQuotesPolicyPut(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureMerchantsEpfQuotesPolicyPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureMerchantsEpfQuotesPolicyPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API is will update the policy number
+    ApiResponse<PFPolicyUpdateResponse> response = apiInstance.SecureMerchantsEpfQuotesPolicyPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureEmbeddedPremiumFinanceApi.SecureMerchantsEpfQuotesPolicyPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **pf_policy_update_request_dto** | [**PFPolicyUpdateRequestDTO**](PFPolicyUpdateRequestDTO.md)| Signature Request details | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **pFPolicyUpdateRequestDTO** | [**PFPolicyUpdateRequestDTO?**](PFPolicyUpdateRequestDTO?.md) | Signature Request details | [optional]  |
 
 ### Return type
 
@@ -652,14 +751,14 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful operation |  -  |
-**400** | Bad Request |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful operation |  -  |
+| **400** | Bad Request |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

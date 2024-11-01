@@ -32,6 +32,31 @@ namespace Org.OpenAPITools.Model
     public partial class SecureTokenLinkUpdateRequest : IValidatableObject
     {
         /// <summary>
+        /// Defines ResponseType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ResponseTypeEnum
+        {
+            /// <summary>
+            /// Enum OnScreen for value: OnScreen
+            /// </summary>
+            [EnumMember(Value = "OnScreen")]
+            OnScreen = 1,
+
+            /// <summary>
+            /// Enum CallBack for value: CallBack
+            /// </summary>
+            [EnumMember(Value = "CallBack")]
+            CallBack = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ResponseType
+        /// </summary>
+        [DataMember(Name = "responseType", EmitDefaultValue = false)]
+        public ResponseTypeEnum? ResponseType { get; set; }
+        /// <summary>
         /// Defines ExpireInUnit
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -73,12 +98,14 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="tokenLinkId">tokenLinkId.</param>
         /// <param name="expireIn">expireIn.</param>
+        /// <param name="responseType">responseType.</param>
         /// <param name="expireInUnit">expireInUnit.</param>
         /// <param name="intent">intent.</param>
-        public SecureTokenLinkUpdateRequest(string tokenLinkId = default(string), decimal expireIn = default(decimal), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), PaymentLinkResponseDisplaySettingsIntent intent = default(PaymentLinkResponseDisplaySettingsIntent))
+        public SecureTokenLinkUpdateRequest(string tokenLinkId = default(string), decimal expireIn = default(decimal), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent))
         {
             this.TokenLinkId = tokenLinkId;
             this.ExpireIn = expireIn;
+            this.ResponseType = responseType;
             this.ExpireInUnit = expireInUnit;
             this.Intent = intent;
         }
@@ -99,7 +126,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Intent
         /// </summary>
         [DataMember(Name = "intent", EmitDefaultValue = false)]
-        public PaymentLinkResponseDisplaySettingsIntent Intent { get; set; }
+        public PaymentIntentRequestIntent Intent { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -111,6 +138,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("class SecureTokenLinkUpdateRequest {\n");
             sb.Append("  TokenLinkId: ").Append(TokenLinkId).Append("\n");
             sb.Append("  ExpireIn: ").Append(ExpireIn).Append("\n");
+            sb.Append("  ResponseType: ").Append(ResponseType).Append("\n");
             sb.Append("  ExpireInUnit: ").Append(ExpireInUnit).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
             sb.Append("}\n");
@@ -131,7 +159,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

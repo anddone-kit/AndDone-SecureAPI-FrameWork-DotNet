@@ -73,6 +73,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ResponseType'
+        /// </summary>
+        [Fact]
+        public void ResponseTypeTest()
+        {
+            // TODO unit test for the property 'ResponseType'
+        }
+
+        /// <summary>
         /// Test the property 'ExpireInUnit'
         /// </summary>
         [Fact]

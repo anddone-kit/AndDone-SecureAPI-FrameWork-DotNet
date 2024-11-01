@@ -71,5 +71,14 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'QuoteKey'
         }
+
+        /// <summary>
+        /// Test the property 'MerchantToken'
+        /// </summary>
+        [Fact]
+        public void MerchantTokenTest()
+        {
+            // TODO unit test for the property 'MerchantToken'
+        }
     }
 }

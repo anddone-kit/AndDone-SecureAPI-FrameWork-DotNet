@@ -71,5 +71,77 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'Intent'
         }
+
+        /// <summary>
+        /// Test the property 'SelectedCustomerFields'
+        /// </summary>
+        [Fact]
+        public void SelectedCustomerFieldsTest()
+        {
+            // TODO unit test for the property 'SelectedCustomerFields'
+        }
+
+        /// <summary>
+        /// Test the property 'DisplaySummary'
+        /// </summary>
+        [Fact]
+        public void DisplaySummaryTest()
+        {
+            // TODO unit test for the property 'DisplaySummary'
+        }
+
+        /// <summary>
+        /// Test the property 'AcceptCustomerInfo'
+        /// </summary>
+        [Fact]
+        public void AcceptCustomerInfoTest()
+        {
+            // TODO unit test for the property 'AcceptCustomerInfo'
+        }
+
+        /// <summary>
+        /// Test the property 'RemoveHeader'
+        /// </summary>
+        [Fact]
+        public void RemoveHeaderTest()
+        {
+            // TODO unit test for the property 'RemoveHeader'
+        }
+
+        /// <summary>
+        /// Test the property 'AcceptCard'
+        /// </summary>
+        [Fact]
+        public void AcceptCardTest()
+        {
+            // TODO unit test for the property 'AcceptCard'
+        }
+
+        /// <summary>
+        /// Test the property 'AcceptBankAccount'
+        /// </summary>
+        [Fact]
+        public void AcceptBankAccountTest()
+        {
+            // TODO unit test for the property 'AcceptBankAccount'
+        }
+
+        /// <summary>
+        /// Test the property 'SaveCustomer'
+        /// </summary>
+        [Fact]
+        public void SaveCustomerTest()
+        {
+            // TODO unit test for the property 'SaveCustomer'
+        }
+
+        /// <summary>
+        /// Test the property 'SaveCustomerAccount'
+        /// </summary>
+        [Fact]
+        public void SaveCustomerAccountTest()
+        {
+            // TODO unit test for the property 'SaveCustomerAccount'
+        }
     }
 }

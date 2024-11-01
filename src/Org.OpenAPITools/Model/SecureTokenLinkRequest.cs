@@ -32,96 +32,19 @@ namespace Org.OpenAPITools.Model
     public partial class SecureTokenLinkRequest : IValidatableObject
     {
         /// <summary>
-        /// Defines ExpireInUnit
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ExpireInUnitEnum
-        {
-            /// <summary>
-            /// Enum _0 for value: 0
-            /// </summary>
-            [EnumMember(Value = "0")]
-            _0 = 1,
-
-            /// <summary>
-            /// Enum _1 for value: 1
-            /// </summary>
-            [EnumMember(Value = "1")]
-            _1 = 2,
-
-            /// <summary>
-            /// Enum _2 for value: 2
-            /// </summary>
-            [EnumMember(Value = "2")]
-            _2 = 3,
-
-            /// <summary>
-            /// Enum _3 for value: 3
-            /// </summary>
-            [EnumMember(Value = "3")]
-            _3 = 4,
-
-            /// <summary>
-            /// Enum _4 for value: 4
-            /// </summary>
-            [EnumMember(Value = "4")]
-            _4 = 5
-        }
-
-
-        /// <summary>
-        /// Gets or Sets ExpireInUnit
-        /// </summary>
-        [DataMember(Name = "expireInUnit", EmitDefaultValue = false)]
-        public ExpireInUnitEnum? ExpireInUnit { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="SecureTokenLinkRequest" /> class.
         /// </summary>
-        /// <param name="merchantId">merchantId.</param>
-        /// <param name="title">title.</param>
-        /// <param name="expireIn">expireIn.</param>
-        /// <param name="expireInUnit">expireInUnit.</param>
-        /// <param name="intent">intent.</param>
-        /// <param name="customers">customers.</param>
-        public SecureTokenLinkRequest(string merchantId = default(string), string title = default(string), string expireIn = default(string), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), PaymentLinkResponseDisplaySettingsIntent intent = default(PaymentLinkResponseDisplaySettingsIntent), List<SecureTokenLinkRequestCustomersInner> customers = default(List<SecureTokenLinkRequestCustomersInner>))
+        /// <param name="tokenLinkId">tokenLinkId.</param>
+        public SecureTokenLinkRequest(string tokenLinkId = default(string))
         {
-            this.MerchantId = merchantId;
-            this.Title = title;
-            this.ExpireIn = expireIn;
-            this.ExpireInUnit = expireInUnit;
-            this.Intent = intent;
-            this.Customers = customers;
+            this.TokenLinkId = tokenLinkId;
         }
 
         /// <summary>
-        /// Gets or Sets MerchantId
+        /// Gets or Sets TokenLinkId
         /// </summary>
-        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
-        public string MerchantId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Title
-        /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
-        public string Title { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExpireIn
-        /// </summary>
-        [DataMember(Name = "expireIn", EmitDefaultValue = false)]
-        public string ExpireIn { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Intent
-        /// </summary>
-        [DataMember(Name = "intent", EmitDefaultValue = false)]
-        public PaymentLinkResponseDisplaySettingsIntent Intent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Customers
-        /// </summary>
-        [DataMember(Name = "customers", EmitDefaultValue = false)]
-        public List<SecureTokenLinkRequestCustomersInner> Customers { get; set; }
+        [DataMember(Name = "tokenLinkId", EmitDefaultValue = false)]
+        public string TokenLinkId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -131,12 +54,7 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SecureTokenLinkRequest {\n");
-            sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  ExpireIn: ").Append(ExpireIn).Append("\n");
-            sb.Append("  ExpireInUnit: ").Append(ExpireInUnit).Append("\n");
-            sb.Append("  Intent: ").Append(Intent).Append("\n");
-            sb.Append("  Customers: ").Append(Customers).Append("\n");
+            sb.Append("  TokenLinkId: ").Append(TokenLinkId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -155,7 +73,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

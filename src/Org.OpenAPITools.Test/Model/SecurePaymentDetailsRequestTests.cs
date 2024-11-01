@@ -80,5 +80,14 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'Type'
         }
+
+        /// <summary>
+        /// Test the property 'IncludeRefundTransactions'
+        /// </summary>
+        [Fact]
+        public void IncludeRefundTransactionsTest()
+        {
+            // TODO unit test for the property 'IncludeRefundTransactions'
+        }
     }
 }

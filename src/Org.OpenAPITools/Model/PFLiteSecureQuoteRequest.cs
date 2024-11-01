@@ -34,17 +34,25 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequest" /> class.
         /// </summary>
+        /// <param name="merchantId">merchantId.</param>
         /// <param name="merchant">merchant.</param>
         /// <param name="insured">insured.</param>
         /// <param name="program">program.</param>
         /// <param name="policies">policies.</param>
-        public PFLiteSecureQuoteRequest(PFLiteSecureQuoteRequestMerchant merchant = default(PFLiteSecureQuoteRequestMerchant), PFLiteSecureQuoteRequestInsured insured = default(PFLiteSecureQuoteRequestInsured), PFLiteSecureQuoteRequestProgram program = default(PFLiteSecureQuoteRequestProgram), List<PFLiteSecureQuoteRequestPoliciesInner> policies = default(List<PFLiteSecureQuoteRequestPoliciesInner>))
+        public PFLiteSecureQuoteRequest(string merchantId = default(string), PFLiteSecureQuoteRequestMerchant merchant = default(PFLiteSecureQuoteRequestMerchant), PFLiteSecureQuoteRequestInsured insured = default(PFLiteSecureQuoteRequestInsured), PFLiteSecureQuoteRequestProgram program = default(PFLiteSecureQuoteRequestProgram), List<PFLiteSecureQuoteRequestPoliciesInner> policies = default(List<PFLiteSecureQuoteRequestPoliciesInner>))
         {
+            this.MerchantId = merchantId;
             this.Merchant = merchant;
             this.Insured = insured;
             this.Program = program;
             this.Policies = policies;
         }
+
+        /// <summary>
+        /// Gets or Sets MerchantId
+        /// </summary>
+        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
+        public string MerchantId { get; set; }
 
         /// <summary>
         /// Gets or Sets Merchant
@@ -78,6 +86,7 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PFLiteSecureQuoteRequest {\n");
+            sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
             sb.Append("  Merchant: ").Append(Merchant).Append("\n");
             sb.Append("  Insured: ").Append(Insured).Append("\n");
             sb.Append("  Program: ").Append(Program).Append("\n");
@@ -100,7 +109,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

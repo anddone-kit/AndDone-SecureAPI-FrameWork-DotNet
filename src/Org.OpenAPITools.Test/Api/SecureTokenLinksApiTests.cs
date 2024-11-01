@@ -63,11 +63,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //SecureTokenLinkIdRequest secureTokenLinkIdRequest = null;
-            //var response = instance.SecureTokenlinksDetailsPost(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest);
-            //Assert.IsType<TokenLinkByIdResponse>(response);
+            //string origin = null;
+            //SecureTokenLinkRequest secureTokenLinkRequest = null;
+            //var response = instance.SecureTokenlinksDetailsPost(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+            //Assert.IsType<SecureTokenLinkByIdResponse>(response);
         }
 
         /// <summary>
@@ -79,11 +79,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //SecureTokenLinkIdRequest secureTokenLinkIdRequest = null;
-            //var response = instance.SecureTokenlinksExpirationsPost(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest);
-            //Assert.IsType<Object>(response);
+            //string origin = null;
+            //SecureTokenLinkRequest secureTokenLinkRequest = null;
+            //var response = instance.SecureTokenlinksExpirationsPost(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
+            //Assert.IsType<SecureTokenLinkExpiredResponse>(response);
         }
 
         /// <summary>
@@ -95,12 +95,28 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //Object? tokenLinkSearchCriteria = null;
-            //Object? pageInfo = null;
-            //var response = instance.SecureTokenlinksListPost(xApiKey, xAppKey, origin, xVersion, tokenLinkSearchCriteria, pageInfo);
-            //Assert.IsType<TokenLinkResponse>(response);
+            //string origin = null;
+            //string? email = null;
+            //string? status = null;
+            //string? phone = null;
+            //string? statuses = null;
+            //string? title = null;
+            //string? paymentDescription = null;
+            //string? invoiceNumber = null;
+            //string? expiryDate = null;
+            //string? fromExpiryDate = null;
+            //string? freeTextSearch = null;
+            //string? tokenLinkId = null;
+            //string? toExpiryDate = null;
+            //string? fromDate = null;
+            //string? toDate = null;
+            //int? startRow = null;
+            //int? pageSize = null;
+            //string? sortField = null;
+            //bool? asc = null;
+            //var response = instance.SecureTokenlinksListPost(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
+            //Assert.IsType<SecureTokenLinkResponse>(response);
         }
 
         /// <summary>
@@ -112,11 +128,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //SecureTokenLinkRequest secureTokenLinkRequest = null;
-            //var response = instance.SecureTokenlinksPost(xApiKey, xAppKey, origin, xVersion, secureTokenLinkRequest);
-            //Assert.IsType<TokenLinkResponse>(response);
+            //string origin = null;
+            //TokenLinkSecureRequest tokenLinkSecureRequest = null;
+            //var response = instance.SecureTokenlinksPost(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest);
+            //Assert.IsType<SecureTokenLinkResponse>(response);
         }
 
         /// <summary>
@@ -128,26 +144,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest = null;
-            //instance.SecureTokenlinksPut(xApiKey, xAppKey, origin, xVersion, secureTokenLinkUpdateRequest);
-        }
-
-        /// <summary>
-        /// Test SecureTokensDetailsPost
-        /// </summary>
-        [Fact]
-        public void SecureTokensDetailsPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string xApiKey = null;
-            //string xAppKey = null;
-            //string origin = null;
-            //string xVersion = null;
-            //SecureTokenLinkIdRequest secureTokenLinkIdRequest = null;
-            //var response = instance.SecureTokensDetailsPost(xApiKey, xAppKey, origin, xVersion, secureTokenLinkIdRequest);
-            //Assert.IsType<MerchantTokenShortResponse>(response);
+            //instance.SecureTokenlinksPut(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest);
         }
     }
 }

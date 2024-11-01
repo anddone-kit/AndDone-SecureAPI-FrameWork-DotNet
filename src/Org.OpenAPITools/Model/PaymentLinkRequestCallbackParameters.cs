@@ -36,10 +36,26 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="callbackApiUrl">callbackApiUrl.</param>
         /// <param name="callbackMessage">callbackMessage.</param>
-        public PaymentLinkRequestCallbackParameters(string callbackApiUrl = default(string), string callbackMessage = default(string))
+        /// <param name="callbackSuccessUrl">callbackSuccessUrl.</param>
+        /// <param name="callbackFailureUrl">callbackFailureUrl.</param>
+        /// <param name="accessKey">accessKey.</param>
+        /// <param name="secretKey">secretKey.</param>
+        /// <param name="referenceNo">referenceNo.</param>
+        /// <param name="referenceType">referenceType.</param>
+        /// <param name="transactionId">transactionId.</param>
+        /// <param name="redirectionTime">redirectionTime.</param>
+        public PaymentLinkRequestCallbackParameters(string callbackApiUrl = default(string), string callbackMessage = default(string), string callbackSuccessUrl = default(string), string callbackFailureUrl = default(string), string accessKey = default(string), string secretKey = default(string), string referenceNo = default(string), string referenceType = default(string), string transactionId = default(string), int redirectionTime = default(int))
         {
             this.CallbackApiUrl = callbackApiUrl;
             this.CallbackMessage = callbackMessage;
+            this.CallbackSuccessUrl = callbackSuccessUrl;
+            this.CallbackFailureUrl = callbackFailureUrl;
+            this.AccessKey = accessKey;
+            this.SecretKey = secretKey;
+            this.ReferenceNo = referenceNo;
+            this.ReferenceType = referenceType;
+            this.TransactionId = transactionId;
+            this.RedirectionTime = redirectionTime;
         }
 
         /// <summary>
@@ -55,6 +71,54 @@ namespace Org.OpenAPITools.Model
         public string CallbackMessage { get; set; }
 
         /// <summary>
+        /// Gets or Sets CallbackSuccessUrl
+        /// </summary>
+        [DataMember(Name = "callbackSuccessUrl", EmitDefaultValue = false)]
+        public string CallbackSuccessUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CallbackFailureUrl
+        /// </summary>
+        [DataMember(Name = "callbackFailureUrl", EmitDefaultValue = false)]
+        public string CallbackFailureUrl { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccessKey
+        /// </summary>
+        [DataMember(Name = "accessKey", EmitDefaultValue = false)]
+        public string AccessKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SecretKey
+        /// </summary>
+        [DataMember(Name = "secretKey", EmitDefaultValue = false)]
+        public string SecretKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferenceNo
+        /// </summary>
+        [DataMember(Name = "referenceNo", EmitDefaultValue = false)]
+        public string ReferenceNo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferenceType
+        /// </summary>
+        [DataMember(Name = "referenceType", EmitDefaultValue = false)]
+        public string ReferenceType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TransactionId
+        /// </summary>
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
+        public string TransactionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RedirectionTime
+        /// </summary>
+        [DataMember(Name = "redirectionTime", EmitDefaultValue = false)]
+        public int RedirectionTime { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +128,14 @@ namespace Org.OpenAPITools.Model
             sb.Append("class PaymentLinkRequestCallbackParameters {\n");
             sb.Append("  CallbackApiUrl: ").Append(CallbackApiUrl).Append("\n");
             sb.Append("  CallbackMessage: ").Append(CallbackMessage).Append("\n");
+            sb.Append("  CallbackSuccessUrl: ").Append(CallbackSuccessUrl).Append("\n");
+            sb.Append("  CallbackFailureUrl: ").Append(CallbackFailureUrl).Append("\n");
+            sb.Append("  AccessKey: ").Append(AccessKey).Append("\n");
+            sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
+            sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
+            sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
+            sb.Append("  RedirectionTime: ").Append(RedirectionTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -82,7 +154,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

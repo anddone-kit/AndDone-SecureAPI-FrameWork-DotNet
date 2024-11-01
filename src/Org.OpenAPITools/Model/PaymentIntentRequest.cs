@@ -40,13 +40,9 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentDescription">paymentDescription.</param>
         /// <param name="invoiceNumber">invoiceNumber.</param>
         /// <param name="expiresIn">expiresIn.</param>
+        /// <param name="merchantToken">merchantToken.</param>
         /// <param name="intent">intent.</param>
-        /// <param name="saveForFuture">saveForFuture.</param>
-        /// <param name="accountNumber">accountNumber.</param>
-        /// <param name="enablePremiumFinance">enablePremiumFinance.</param>
-        /// <param name="quoteKey">quoteKey.</param>
-        /// <param name="splits">splits.</param>
-        public PaymentIntentRequest(decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresIn = default(string), PaymentLinkResponseDisplaySettingsIntent intent = default(PaymentLinkResponseDisplaySettingsIntent), bool saveForFuture = default(bool), string accountNumber = default(string), bool enablePremiumFinance = default(bool), string quoteKey = default(string), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>))
+        public PaymentIntentRequest(decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresIn = default(string), string merchantToken = default(string), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent))
         {
             this.Amount = amount;
             this.Title = title;
@@ -54,12 +50,8 @@ namespace Org.OpenAPITools.Model
             this.PaymentDescription = paymentDescription;
             this.InvoiceNumber = invoiceNumber;
             this.ExpiresIn = expiresIn;
+            this.MerchantToken = merchantToken;
             this.Intent = intent;
-            this.SaveForFuture = saveForFuture;
-            this.AccountNumber = accountNumber;
-            this.EnablePremiumFinance = enablePremiumFinance;
-            this.QuoteKey = quoteKey;
-            this.Splits = splits;
         }
 
         /// <summary>
@@ -99,40 +91,16 @@ namespace Org.OpenAPITools.Model
         public string ExpiresIn { get; set; }
 
         /// <summary>
+        /// Gets or Sets MerchantToken
+        /// </summary>
+        [DataMember(Name = "merchantToken", EmitDefaultValue = false)]
+        public string MerchantToken { get; set; }
+
+        /// <summary>
         /// Gets or Sets Intent
         /// </summary>
         [DataMember(Name = "intent", EmitDefaultValue = false)]
-        public PaymentLinkResponseDisplaySettingsIntent Intent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SaveForFuture
-        /// </summary>
-        [DataMember(Name = "saveForFuture", EmitDefaultValue = true)]
-        public bool SaveForFuture { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AccountNumber
-        /// </summary>
-        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
-        public string AccountNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnablePremiumFinance
-        /// </summary>
-        [DataMember(Name = "enablePremiumFinance", EmitDefaultValue = true)]
-        public bool EnablePremiumFinance { get; set; }
-
-        /// <summary>
-        /// Gets or Sets QuoteKey
-        /// </summary>
-        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public string QuoteKey { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Splits
-        /// </summary>
-        [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
+        public PaymentIntentRequestIntent Intent { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -148,12 +116,8 @@ namespace Org.OpenAPITools.Model
             sb.Append("  PaymentDescription: ").Append(PaymentDescription).Append("\n");
             sb.Append("  InvoiceNumber: ").Append(InvoiceNumber).Append("\n");
             sb.Append("  ExpiresIn: ").Append(ExpiresIn).Append("\n");
+            sb.Append("  MerchantToken: ").Append(MerchantToken).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
-            sb.Append("  SaveForFuture: ").Append(SaveForFuture).Append("\n");
-            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
-            sb.Append("  EnablePremiumFinance: ").Append(EnablePremiumFinance).Append("\n");
-            sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
-            sb.Append("  Splits: ").Append(Splits).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,7 +136,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

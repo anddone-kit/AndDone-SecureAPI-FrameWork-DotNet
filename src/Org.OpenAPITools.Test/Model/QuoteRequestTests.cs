@@ -55,12 +55,57 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'QuoteKey'
+        /// Test the property 'MerchantId'
         /// </summary>
         [Fact]
-        public void QuoteKeyTest()
+        public void MerchantIdTest()
         {
-            // TODO unit test for the property 'QuoteKey'
+            // TODO unit test for the property 'MerchantId'
+        }
+
+        /// <summary>
+        /// Test the property 'PaymentIntentId'
+        /// </summary>
+        [Fact]
+        public void PaymentIntentIdTest()
+        {
+            // TODO unit test for the property 'PaymentIntentId'
+        }
+
+        /// <summary>
+        /// Test the property 'Details'
+        /// </summary>
+        [Fact]
+        public void DetailsTest()
+        {
+            // TODO unit test for the property 'Details'
+        }
+
+        /// <summary>
+        /// Test the property 'Insured'
+        /// </summary>
+        [Fact]
+        public void InsuredTest()
+        {
+            // TODO unit test for the property 'Insured'
+        }
+
+        /// <summary>
+        /// Test the property 'Agent'
+        /// </summary>
+        [Fact]
+        public void AgentTest()
+        {
+            // TODO unit test for the property 'Agent'
+        }
+
+        /// <summary>
+        /// Test the property 'Policies'
+        /// </summary>
+        [Fact]
+        public void PoliciesTest()
+        {
+            // TODO unit test for the property 'Policies'
         }
     }
 }

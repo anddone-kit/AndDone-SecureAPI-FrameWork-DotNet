@@ -1,80 +1,91 @@
-# openapi_client.SecureReportsApi
+# Org.OpenAPITools.Api.SecureReportsApi
 
 All URIs are relative to *https://api.uat.anddone.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**secure_reports_downloads_post**](SecureReportsApi.md#secure_reports_downloads_post) | **POST** /secure/reports/downloads | This API will add system report.
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**SecureReportsDownloadsPost**](SecureReportsApi.md#securereportsdownloadspost) | **POST** /secure/reports/downloads | This API will add system report. |
 
-
-# **secure_reports_downloads_post**
-> secure_reports_downloads_post(x_api_key, x_app_key, x_version, origin, report_download_request=report_download_request)
+<a id="securereportsdownloadspost"></a>
+# **SecureReportsDownloadsPost**
+> void SecureReportsDownloadsPost (string xApiKey, string xAppKey, string xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = null)
 
 This API will add system report.
 
 ### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
 
-* Api Key Authentication (x-api-key):
-* Api Key Authentication (x-app-key):
+namespace Example
+{
+    public class SecureReportsDownloadsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.uat.anddone.com";
+            // Configure API key authorization: x-api-key
+            config.AddApiKey("x-api-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-api-key", "Bearer");
+            // Configure API key authorization: x-app-key
+            config.AddApiKey("x-app-key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("x-app-key", "Bearer");
 
-```python
-import openapi_client
-from openapi_client.models.report_download_request import ReportDownloadRequest
-from openapi_client.rest import ApiException
-from pprint import pprint
+            var apiInstance = new SecureReportsApi(config);
+            var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = "xVersion_example";  // string | x-version
+            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var reportDownloadRequest = new ReportDownloadRequest?(); // ReportDownloadRequest? | ReportDownloadRequest (optional) 
 
-# Defining the host is optional and defaults to https://api.uat.anddone.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
-    host = "https://api.uat.anddone.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure API key authorization: x-api-key
-configuration.api_key['x-api-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# Configure API key authorization: x-app-key
-configuration.api_key['x-app-key'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['x-app-key'] = 'Bearer'
-
-# Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = openapi_client.SecureReportsApi(api_client)
-    x_api_key = 'x_api_key_example' # str | an authorization header
-    x_app_key = 'x_app_key_example' # str | an authorization header
-    x_version = 'x_version_example' # str | x-version
-    origin = 'origin_example' # str | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-    report_download_request = openapi_client.ReportDownloadRequest() # ReportDownloadRequest | ReportDownloadRequest (optional)
-
-    try:
-        # This API will add system report.
-        api_instance.secure_reports_downloads_post(x_api_key, x_app_key, x_version, origin, report_download_request=report_download_request)
-    except Exception as e:
-        print("Exception when calling SecureReportsApi->secure_reports_downloads_post: %s\n" % e)
+            try
+            {
+                // This API will add system report.
+                apiInstance.SecureReportsDownloadsPost(xApiKey, xAppKey, xVersion, origin, reportDownloadRequest);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SecureReportsApi.SecureReportsDownloadsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
 ```
 
+#### Using the SecureReportsDownloadsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
 
+```csharp
+try
+{
+    // This API will add system report.
+    apiInstance.SecureReportsDownloadsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, reportDownloadRequest);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling SecureReportsApi.SecureReportsDownloadsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **x_api_key** | **str**| an authorization header | 
- **x_app_key** | **str**| an authorization header | 
- **x_version** | **str**| x-version | 
- **origin** | **str**| an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration | 
- **report_download_request** | [**ReportDownloadRequest**](ReportDownloadRequest.md)| ReportDownloadRequest | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **xApiKey** | **string** | an authorization header |  |
+| **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **string** | x-version |  |
+| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **reportDownloadRequest** | [**ReportDownloadRequest?**](ReportDownloadRequest?.md) | ReportDownloadRequest | [optional]  |
 
 ### Return type
 
@@ -89,13 +100,13 @@ void (empty response body)
  - **Content-Type**: application/json
  - **Accept**: text/csv
 
-### HTTP response details
 
+### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Successful CSV file download |  -  |
-**404** | Not Found |  -  |
-**500** | Server Error |  -  |
+| **200** | Successful CSV file download |  -  |
+| **404** | Not Found |  -  |
+| **500** | Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

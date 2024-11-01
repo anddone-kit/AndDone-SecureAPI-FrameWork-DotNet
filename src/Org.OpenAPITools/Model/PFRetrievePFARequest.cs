@@ -34,19 +34,9 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFRetrievePFARequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PFRetrievePFARequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PFRetrievePFARequest" /> class.
-        /// </summary>
-        /// <param name="quoteKey">This denotes the quoteKey. (required).</param>
+        /// <param name="quoteKey">This denotes the quoteKey..</param>
         public PFRetrievePFARequest(string quoteKey = default(string))
         {
-            // to ensure "quoteKey" is required (not null)
-            if (quoteKey == null)
-            {
-                throw new ArgumentNullException("quoteKey is a required property for PFRetrievePFARequest and cannot be null");
-            }
             this.QuoteKey = quoteKey;
         }
 
@@ -54,7 +44,7 @@ namespace Org.OpenAPITools.Model
         /// This denotes the quoteKey.
         /// </summary>
         /// <value>This denotes the quoteKey.</value>
-        [DataMember(Name = "QuoteKey", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "QuoteKey", EmitDefaultValue = false)]
         public string QuoteKey { get; set; }
 
         /// <summary>
@@ -84,7 +74,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

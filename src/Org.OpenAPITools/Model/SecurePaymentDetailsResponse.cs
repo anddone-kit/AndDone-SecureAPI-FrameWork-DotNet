@@ -82,6 +82,31 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "transactionOrigin", EmitDefaultValue = false)]
         public TransactionOriginEnum? TransactionOrigin { get; set; }
         /// <summary>
+        /// Defines RefundOrigin
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RefundOriginEnum
+        {
+            /// <summary>
+            /// Enum API for value: API
+            /// </summary>
+            [EnumMember(Value = "API")]
+            API = 1,
+
+            /// <summary>
+            /// Enum Callback for value: Callback
+            /// </summary>
+            [EnumMember(Value = "Callback")]
+            Callback = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets RefundOrigin
+        /// </summary>
+        [DataMember(Name = "refundOrigin", EmitDefaultValue = false)]
+        public RefundOriginEnum? RefundOrigin { get; set; }
+        /// <summary>
         /// Defines TransactionStatus
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -355,7 +380,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentType">paymentType.</param>
         /// <param name="paymentCategory">paymentCategory.</param>
         /// <param name="transactionEntitySplitResponses">transactionEntitySplitResponses.</param>
-        public SecurePaymentDetailsResponse(string transactionId = default(string), TransactionResponseBillingContact billingContact = default(TransactionResponseBillingContact), string transactionDate = default(string), string merchantId = default(string), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), decimal refundOrigin = default(decimal), SecurePaymentDetailsResponseAchTenderInfo achTenderInfo = default(SecurePaymentDetailsResponseAchTenderInfo), SecurePaymentDetailsResponseCcTenderInfo ccTenderInfo = default(SecurePaymentDetailsResponseCcTenderInfo), string debitCardTenderInfo = default(string), string referenceCustomerId = default(string), string customerAccountId = default(string), string invoiceNo = default(string), string remarks = default(string), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), SecurePaymentDetailsResponseTransactionResult transactionResult = default(SecurePaymentDetailsResponseTransactionResult), string invoiceId = default(string), string paymentLinkId = default(string), string additionalFields = default(string), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), List<SecurePaymentDetailsResponseTransactionEntitySplitResponsesInner> transactionEntitySplitResponses = default(List<SecurePaymentDetailsResponseTransactionEntitySplitResponsesInner>))
+        public SecurePaymentDetailsResponse(string transactionId = default(string), PaymentRequestBillingContact billingContact = default(PaymentRequestBillingContact), string transactionDate = default(string), string merchantId = default(string), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), RefundOriginEnum? refundOrigin = default(RefundOriginEnum?), SecurePaymentDetailsResponseAchTenderInfo achTenderInfo = default(SecurePaymentDetailsResponseAchTenderInfo), SecurePaymentDetailsResponseCcTenderInfo ccTenderInfo = default(SecurePaymentDetailsResponseCcTenderInfo), string debitCardTenderInfo = default(string), string referenceCustomerId = default(string), string customerAccountId = default(string), string invoiceNo = default(string), string remarks = default(string), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), SecurePaymentDetailsResponseTransactionResult transactionResult = default(SecurePaymentDetailsResponseTransactionResult), string invoiceId = default(string), string paymentLinkId = default(string), Dictionary<string, string> additionalFields = default(Dictionary<string, string>), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), List<SecurePaymentDetailsResponseTransactionEntitySplitResponsesInner> transactionEntitySplitResponses = default(List<SecurePaymentDetailsResponseTransactionEntitySplitResponsesInner>))
         {
             this.TransactionId = transactionId;
             this.BillingContact = billingContact;
@@ -391,7 +416,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets BillingContact
         /// </summary>
         [DataMember(Name = "billingContact", EmitDefaultValue = false)]
-        public TransactionResponseBillingContact BillingContact { get; set; }
+        public PaymentRequestBillingContact BillingContact { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionDate
@@ -404,12 +429,6 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "merchantId", EmitDefaultValue = false)]
         public string MerchantId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RefundOrigin
-        /// </summary>
-        [DataMember(Name = "refundOrigin", EmitDefaultValue = false)]
-        public decimal RefundOrigin { get; set; }
 
         /// <summary>
         /// Gets or Sets AchTenderInfo
@@ -475,7 +494,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets AdditionalFields
         /// </summary>
         [DataMember(Name = "additionalFields", EmitDefaultValue = false)]
-        public string AdditionalFields { get; set; }
+        public Dictionary<string, string> AdditionalFields { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionEntitySplitResponses
@@ -531,7 +550,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

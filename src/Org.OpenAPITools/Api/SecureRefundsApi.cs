@@ -32,12 +32,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundEligibility</returns>
-        RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
+        RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API return refund eligibility of a transaction.
@@ -48,24 +48,24 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundEligibility</returns>
-        ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
+        ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
         /// <summary>
         /// This API return refund a transaction.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionResponse</returns>
-        TransactionResponse SecureRefundsPost(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0);
+        /// <returns>SecureTransactionDetailDTO</returns>
+        SecureTransactionDetailDTO SecureRefundsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API return refund a transaction.
@@ -76,12 +76,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionResponse</returns>
-        ApiResponse<TransactionResponse> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0);
+        /// <returns>ApiResponse of SecureTransactionDetailDTO</returns>
+        ApiResponse<SecureTransactionDetailDTO> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -100,13 +100,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundEligibility</returns>
-        System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API return refund eligibility of a transaction.
@@ -117,13 +117,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundEligibility)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API return refund a transaction.
         /// </summary>
@@ -133,13 +133,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionResponse</returns>
-        System.Threading.Tasks.Task<TransactionResponse> SecureRefundsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of SecureTransactionDetailDTO</returns>
+        System.Threading.Tasks.Task<SecureTransactionDetailDTO> SecureRefundsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API return refund a transaction.
@@ -150,13 +150,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TransactionResponse>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (SecureTransactionDetailDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SecureTransactionDetailDTO>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -283,14 +283,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundEligibility</returns>
-        public RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
+        public RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<RefundEligibility> localVarResponse = SecureRefundsEligibilityPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, transactionRefundEligibilityRequest);
+            Org.OpenAPITools.Client.ApiResponse<RefundEligibility> localVarResponse = SecureRefundsEligibilityPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, transactionRefundEligibilityRequest);
             return localVarResponse.Data;
         }
 
@@ -300,12 +300,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundEligibility</returns>
-        public Org.OpenAPITools.Client.ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -319,16 +319,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
             }
 
             // verify the required parameter 'transactionRefundEligibilityRequest' is set
@@ -362,18 +362,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = transactionRefundEligibilityRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsEligibilityPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -405,15 +400,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundEligibility</returns>
-        public async System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<RefundEligibility> localVarResponse = await SecureRefundsEligibilityPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, transactionRefundEligibilityRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<RefundEligibility> localVarResponse = await SecureRefundsEligibilityPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, transactionRefundEligibilityRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -423,13 +418,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundEligibility)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -443,16 +438,16 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsEligibilityPost");
             }
 
             // verify the required parameter 'transactionRefundEligibilityRequest' is set
@@ -487,18 +482,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = transactionRefundEligibilityRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsEligibilityPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -531,14 +521,14 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>TransactionResponse</returns>
-        public TransactionResponse SecureRefundsPost(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0)
+        /// <returns>SecureTransactionDetailDTO</returns>
+        public SecureTransactionDetailDTO SecureRefundsPost(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<TransactionResponse> localVarResponse = SecureRefundsPostWithHttpInfo(xApiKey, xAppKey, origin, xVersion, transactionRefundRequest);
+            Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> localVarResponse = SecureRefundsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest);
             return localVarResponse.Data;
         }
 
@@ -548,12 +538,12 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of TransactionResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<TransactionResponse> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0)
+        /// <returns>ApiResponse of SecureTransactionDetailDTO</returns>
+        public Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -567,22 +557,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureRefundsApi->SecureRefundsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureRefundsApi->SecureRefundsPost");
             }
 
-            // verify the required parameter 'transactionRefundRequest' is set
-            if (transactionRefundRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'transactionRefundRequest' when calling SecureRefundsApi->SecureRefundsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsPost");
+            }
+
+            // verify the required parameter 'secureTransactionRefundRequest' is set
+            if (secureTransactionRefundRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTransactionRefundRequest' when calling SecureRefundsApi->SecureRefundsPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -610,18 +600,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = transactionRefundRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = secureTransactionRefundRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -634,7 +619,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TransactionResponse>("/secure/refunds", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<SecureTransactionDetailDTO>("/secure/refunds", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureRefundsPost", localVarResponse);
@@ -653,15 +638,15 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TransactionResponse</returns>
-        public async System.Threading.Tasks.Task<TransactionResponse> SecureRefundsPostAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of SecureTransactionDetailDTO</returns>
+        public async System.Threading.Tasks.Task<SecureTransactionDetailDTO> SecureRefundsPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<TransactionResponse> localVarResponse = await SecureRefundsPostWithHttpInfoAsync(xApiKey, xAppKey, origin, xVersion, transactionRefundRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> localVarResponse = await SecureRefundsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -671,13 +656,13 @@ namespace Org.OpenAPITools.Api
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
         /// <param name="xAppKey">an authorization header</param>
-        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="xVersion">x-version</param>
-        /// <param name="transactionRefundRequest">refund Detail</param>
+        /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
+        /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<TransactionResponse>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string origin, string xVersion, TransactionRefundRequest transactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (SecureTransactionDetailDTO)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -691,22 +676,22 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureRefundsApi->SecureRefundsPost");
             }
 
-            // verify the required parameter 'origin' is set
-            if (origin == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsPost");
-            }
-
             // verify the required parameter 'xVersion' is set
             if (xVersion == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xVersion' when calling SecureRefundsApi->SecureRefundsPost");
             }
 
-            // verify the required parameter 'transactionRefundRequest' is set
-            if (transactionRefundRequest == null)
+            // verify the required parameter 'origin' is set
+            if (origin == null)
             {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'transactionRefundRequest' when calling SecureRefundsApi->SecureRefundsPost");
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureRefundsApi->SecureRefundsPost");
+            }
+
+            // verify the required parameter 'secureTransactionRefundRequest' is set
+            if (secureTransactionRefundRequest == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'secureTransactionRefundRequest' when calling SecureRefundsApi->SecureRefundsPost");
             }
 
 
@@ -735,18 +720,13 @@ namespace Org.OpenAPITools.Api
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.Data = transactionRefundRequest;
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.Data = secureTransactionRefundRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
 
-            // authentication (Origin) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Origin")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Origin", this.Configuration.GetApiKeyWithPrefix("Origin"));
-            }
             // authentication (x-api-key) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("x-api-key")))
             {
@@ -759,7 +739,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TransactionResponse>("/secure/refunds", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<SecureTransactionDetailDTO>("/secure/refunds", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

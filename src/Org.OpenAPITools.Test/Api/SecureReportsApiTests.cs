@@ -63,10 +63,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //ReportDownloadRequest? reportDownloadRequest = null;
-            //instance.SecureReportsDownloadsPost(xApiKey, xAppKey, origin, xVersion, reportDownloadRequest);
+            //instance.SecureReportsDownloadsPost(xApiKey, xAppKey, xVersion, origin, reportDownloadRequest);
         }
     }
 }

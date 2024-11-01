@@ -55,6 +55,101 @@ namespace Org.OpenAPITools.Test.Api
         }
 
         /// <summary>
+        /// Test SecureEpfQuotesBookingPut
+        /// </summary>
+        [Fact]
+        public void SecureEpfQuotesBookingPutTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //PFQuoteBookingRequest pFQuoteBookingRequest = null;
+            //var response = instance.SecureEpfQuotesBookingPut(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest);
+            //Assert.IsType<PFUpdatePFAResponse>(response);
+        }
+
+        /// <summary>
+        /// Test SecureEpfQuotesCaptureesignPut
+        /// </summary>
+        [Fact]
+        public void SecureEpfQuotesCaptureesignPutTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //PFQuoteEsignRequest? pFQuoteEsignRequest = null;
+            //instance.SecureEpfQuotesCaptureesignPut(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest);
+        }
+
+        /// <summary>
+        /// Test SecureEpfQuotesGeneratePost
+        /// </summary>
+        [Fact]
+        public void SecureEpfQuotesGeneratePostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //QuoteRequest? quoteRequest = null;
+            //var response = instance.SecureEpfQuotesGeneratePost(xApiKey, xAppKey, xVersion, origin, quoteRequest);
+            //Assert.IsType<List<PFGenerateQuoteResponse>>(response);
+        }
+
+        /// <summary>
+        /// Test SecureEpfQuotesIntentPost
+        /// </summary>
+        [Fact]
+        public void SecureEpfQuotesIntentPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //GetQuoteRequest? getQuoteRequest = null;
+            //var response = instance.SecureEpfQuotesIntentPost(xApiKey, xAppKey, xVersion, origin, getQuoteRequest);
+            //Assert.IsType<List<QuoteResponseIntent>>(response);
+        }
+
+        /// <summary>
+        /// Test SecureEpfQuotesPost
+        /// </summary>
+        [Fact]
+        public void SecureEpfQuotesPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //GetQuoteKeyRequest? getQuoteKeyRequest = null;
+            //var response = instance.SecureEpfQuotesPost(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+            //Assert.IsType<List<QuoteResponse>>(response);
+        }
+
+        /// <summary>
+        /// Test SecureEpfRetrievepfaPost
+        /// </summary>
+        [Fact]
+        public void SecureEpfRetrievepfaPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = null;
+            //var response = instance.SecureEpfRetrievepfaPost(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+            //Assert.IsType<string>(response);
+        }
+
+        /// <summary>
         /// Test SecureMerchantsEpfQuotesPolicyPut
         /// </summary>
         [Fact]
@@ -63,27 +158,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //string parentId = null;
-            //PFPolicyUpdateRequestDTO policyUpdateRequest = null;
-            //instance.SecureMerchantsEpfQuotesPolicyPut(xApiKey, xAppKey, origin, xVersion, parentId, policyUpdateRequest);
-        }
-
-        /// <summary>
-        /// Test SecureTokensActivationsPost
-        /// </summary>
-        [Fact]
-        public void SecureTokensActivationsPostTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string xApiKey = null;
-            //string xAppKey = null;
             //string origin = null;
-            //string xVersion = null;
-            //GetQuoteRequest quoteRequest = null;
-            //var response = instance.SecureTokensActivationsPost(xApiKey, xAppKey, origin, xVersion, quoteRequest);
-            //Assert.IsType<Object>(response);
+            //PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = null;
+            //var response = instance.SecureMerchantsEpfQuotesPolicyPut(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO);
+            //Assert.IsType<PFPolicyUpdateResponse>(response);
         }
     }
 }

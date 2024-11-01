@@ -55,57 +55,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MerchantId'
+        /// Test the property 'TokenLinkId'
         /// </summary>
         [Fact]
-        public void MerchantIdTest()
+        public void TokenLinkIdTest()
         {
-            // TODO unit test for the property 'MerchantId'
-        }
-
-        /// <summary>
-        /// Test the property 'Title'
-        /// </summary>
-        [Fact]
-        public void TitleTest()
-        {
-            // TODO unit test for the property 'Title'
-        }
-
-        /// <summary>
-        /// Test the property 'ExpireIn'
-        /// </summary>
-        [Fact]
-        public void ExpireInTest()
-        {
-            // TODO unit test for the property 'ExpireIn'
-        }
-
-        /// <summary>
-        /// Test the property 'ExpireInUnit'
-        /// </summary>
-        [Fact]
-        public void ExpireInUnitTest()
-        {
-            // TODO unit test for the property 'ExpireInUnit'
-        }
-
-        /// <summary>
-        /// Test the property 'Intent'
-        /// </summary>
-        [Fact]
-        public void IntentTest()
-        {
-            // TODO unit test for the property 'Intent'
-        }
-
-        /// <summary>
-        /// Test the property 'Customers'
-        /// </summary>
-        [Fact]
-        public void CustomersTest()
-        {
-            // TODO unit test for the property 'Customers'
+            // TODO unit test for the property 'TokenLinkId'
         }
     }
 }

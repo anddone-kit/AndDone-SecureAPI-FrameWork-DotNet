@@ -28,7 +28,7 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// PFEndorsementResponseItemQuoteESignResult
     /// </summary>
-    [DataContract(Name = "PFEndorsementResponse_item_quote_ESignResult")]
+    [DataContract(Name = "PFEndorsementResponse_item_quote_eSignResult")]
     public partial class PFEndorsementResponseItemQuoteESignResult : IValidatableObject
     {
         /// <summary>
@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="agentURL">agentURL.</param>
         /// <param name="insuredURL">insuredURL.</param>
         /// <param name="eSignOption">eSignOption.</param>
-        public PFEndorsementResponseItemQuoteESignResult(Object processed = default(Object), Object message = default(Object), Object batchID = default(Object), Object agentURL = default(Object), Object insuredURL = default(Object), Object eSignOption = default(Object))
+        public PFEndorsementResponseItemQuoteESignResult(bool processed = default(bool), string message = default(string), string batchID = default(string), string agentURL = default(string), string insuredURL = default(string), decimal eSignOption = default(decimal))
         {
             this.Processed = processed;
             this.Message = message;
@@ -53,38 +53,38 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Processed
         /// </summary>
-        [DataMember(Name = "Processed", EmitDefaultValue = false)]
-        public Object Processed { get; set; }
+        [DataMember(Name = "processed", EmitDefaultValue = true)]
+        public bool Processed { get; set; }
 
         /// <summary>
         /// Gets or Sets Message
         /// </summary>
-        [DataMember(Name = "Message", EmitDefaultValue = false)]
-        public Object Message { get; set; }
+        [DataMember(Name = "message", EmitDefaultValue = false)]
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets BatchID
         /// </summary>
-        [DataMember(Name = "BatchID", EmitDefaultValue = false)]
-        public Object BatchID { get; set; }
+        [DataMember(Name = "batchID", EmitDefaultValue = false)]
+        public string BatchID { get; set; }
 
         /// <summary>
         /// Gets or Sets AgentURL
         /// </summary>
-        [DataMember(Name = "AgentURL", EmitDefaultValue = false)]
-        public Object AgentURL { get; set; }
+        [DataMember(Name = "agentURL", EmitDefaultValue = false)]
+        public string AgentURL { get; set; }
 
         /// <summary>
         /// Gets or Sets InsuredURL
         /// </summary>
-        [DataMember(Name = "InsuredURL", EmitDefaultValue = false)]
-        public Object InsuredURL { get; set; }
+        [DataMember(Name = "insuredURL", EmitDefaultValue = false)]
+        public string InsuredURL { get; set; }
 
         /// <summary>
         /// Gets or Sets ESignOption
         /// </summary>
-        [DataMember(Name = "ESignOption", EmitDefaultValue = false)]
-        public Object ESignOption { get; set; }
+        [DataMember(Name = "eSignOption", EmitDefaultValue = false)]
+        public decimal ESignOption { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -118,7 +118,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -38,22 +38,34 @@ namespace Org.OpenAPITools.Model
         public enum PaymentTypesEnum
         {
             /// <summary>
-            /// Enum CreditCard for value: CreditCard
+            /// Enum NotDefined for value: NotDefined
             /// </summary>
-            [EnumMember(Value = "CreditCard")]
-            CreditCard = 1,
-
-            /// <summary>
-            /// Enum DebitCard for value: DebitCard
-            /// </summary>
-            [EnumMember(Value = "DebitCard")]
-            DebitCard = 2,
+            [EnumMember(Value = "NotDefined")]
+            NotDefined = 1,
 
             /// <summary>
             /// Enum ACH for value: ACH
             /// </summary>
             [EnumMember(Value = "ACH")]
-            ACH = 3
+            ACH = 2,
+
+            /// <summary>
+            /// Enum CreditCard for value: CreditCard
+            /// </summary>
+            [EnumMember(Value = "CreditCard")]
+            CreditCard = 3,
+
+            /// <summary>
+            /// Enum DebitCard for value: DebitCard
+            /// </summary>
+            [EnumMember(Value = "DebitCard")]
+            DebitCard = 4,
+
+            /// <summary>
+            /// Enum RTP for value: RTP
+            /// </summary>
+            [EnumMember(Value = "RTP")]
+            RTP = 5
         }
 
         /// <summary>
@@ -98,7 +110,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

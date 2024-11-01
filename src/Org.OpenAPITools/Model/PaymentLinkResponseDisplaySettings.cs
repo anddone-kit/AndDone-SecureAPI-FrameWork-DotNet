@@ -32,6 +32,37 @@ namespace Org.OpenAPITools.Model
     public partial class PaymentLinkResponseDisplaySettings : IValidatableObject
     {
         /// <summary>
+        /// Defines AdditionalDetailsPreference
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AdditionalDetailsPreferenceEnum
+        {
+            /// <summary>
+            /// Enum AskShopper for value: AskShopper
+            /// </summary>
+            [EnumMember(Value = "AskShopper")]
+            AskShopper = 1,
+
+            /// <summary>
+            /// Enum ManualEnter for value: ManualEnter
+            /// </summary>
+            [EnumMember(Value = "ManualEnter")]
+            ManualEnter = 2,
+
+            /// <summary>
+            /// Enum NoAdditionalDetails for value: NoAdditionalDetails
+            /// </summary>
+            [EnumMember(Value = "NoAdditionalDetails")]
+            NoAdditionalDetails = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets AdditionalDetailsPreference
+        /// </summary>
+        [DataMember(Name = "additionalDetailsPreference", EmitDefaultValue = false)]
+        public AdditionalDetailsPreferenceEnum? AdditionalDetailsPreference { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLinkResponseDisplaySettings" /> class.
         /// </summary>
         /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
@@ -44,7 +75,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="saveCustomer">saveCustomer.</param>
         /// <param name="saveCustomerAccount">saveCustomerAccount.</param>
         /// <param name="intent">intent.</param>
-        public PaymentLinkResponseDisplaySettings(string selectedCustomerFields = default(string), string additionalDetailsPreference = default(string), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool), PaymentLinkResponseDisplaySettingsIntent intent = default(PaymentLinkResponseDisplaySettingsIntent))
+        public PaymentLinkResponseDisplaySettings(string selectedCustomerFields = default(string), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool), PaymentLinkResponseDisplaySettingsIntent intent = default(PaymentLinkResponseDisplaySettingsIntent))
         {
             this.SelectedCustomerFields = selectedCustomerFields;
             this.AdditionalDetailsPreference = additionalDetailsPreference;
@@ -63,12 +94,6 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "selectedCustomerFields", EmitDefaultValue = false)]
         public string SelectedCustomerFields { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AdditionalDetailsPreference
-        /// </summary>
-        [DataMember(Name = "additionalDetailsPreference", EmitDefaultValue = false)]
-        public string AdditionalDetailsPreference { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplaySummary
@@ -154,7 +179,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

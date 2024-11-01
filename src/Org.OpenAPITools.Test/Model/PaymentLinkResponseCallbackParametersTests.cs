@@ -134,5 +134,14 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'CallbackMessage'
         }
+
+        /// <summary>
+        /// Test the property 'RedirectionTime'
+        /// </summary>
+        [Fact]
+        public void RedirectionTimeTest()
+        {
+            // TODO unit test for the property 'RedirectionTime'
+        }
     }
 }

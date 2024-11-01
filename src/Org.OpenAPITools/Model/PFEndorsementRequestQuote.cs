@@ -39,13 +39,15 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFEndorsementRequestQuote" /> class.
         /// </summary>
-        /// <param name="agreementId">This denotes the agreementId recieved in check endorsement api. (required).</param>
+        /// <param name="merchantReference">This denotes the unique merchantReference of the agent..</param>
+        /// <param name="accountNumber">This denotes the accountNumber received in check endorsement API..</param>
+        /// <param name="agreementId">This denotes the agreementId received in check endorsement API. (required).</param>
         /// <param name="policies">policies (required).</param>
         /// <param name="details">details.</param>
         /// <param name="insured">insured (required).</param>
         /// <param name="agent">agent.</param>
         /// <param name="communication">communication.</param>
-        public PFEndorsementRequestQuote(string agreementId = default(string), List<PFEndorsementRequestQuotePoliciesInner> policies = default(List<PFEndorsementRequestQuotePoliciesInner>), PFEndorsementRequestQuoteDetails details = default(PFEndorsementRequestQuoteDetails), PFEndorsementRequestQuoteInsured insured = default(PFEndorsementRequestQuoteInsured), PFEndorsementRequestQuoteAgent agent = default(PFEndorsementRequestQuoteAgent), PFEndorsementRequestQuoteCommunication communication = default(PFEndorsementRequestQuoteCommunication))
+        public PFEndorsementRequestQuote(string merchantReference = default(string), string accountNumber = default(string), string agreementId = default(string), List<PFEndorsementRequestQuotePoliciesInner> policies = default(List<PFEndorsementRequestQuotePoliciesInner>), PFEndorsementRequestQuoteDetails details = default(PFEndorsementRequestQuoteDetails), PFEndorsementRequestQuoteInsured insured = default(PFEndorsementRequestQuoteInsured), PFEndorsementRequestQuoteAgent agent = default(PFEndorsementRequestQuoteAgent), PFEndorsementRequestQuoteCommunication communication = default(PFEndorsementRequestQuoteCommunication))
         {
             // to ensure "agreementId" is required (not null)
             if (agreementId == null)
@@ -65,15 +67,31 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("insured is a required property for PFEndorsementRequestQuote and cannot be null");
             }
             this.Insured = insured;
+            this.MerchantReference = merchantReference;
+            this.AccountNumber = accountNumber;
             this.Details = details;
             this.Agent = agent;
             this.Communication = communication;
         }
 
         /// <summary>
-        /// This denotes the agreementId recieved in check endorsement api.
+        /// This denotes the unique merchantReference of the agent.
         /// </summary>
-        /// <value>This denotes the agreementId recieved in check endorsement api.</value>
+        /// <value>This denotes the unique merchantReference of the agent.</value>
+        [DataMember(Name = "merchantReference", EmitDefaultValue = false)]
+        public string MerchantReference { get; set; }
+
+        /// <summary>
+        /// This denotes the accountNumber received in check endorsement API.
+        /// </summary>
+        /// <value>This denotes the accountNumber received in check endorsement API.</value>
+        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
+        public string AccountNumber { get; set; }
+
+        /// <summary>
+        /// This denotes the agreementId received in check endorsement API.
+        /// </summary>
+        /// <value>This denotes the agreementId received in check endorsement API.</value>
         [DataMember(Name = "agreementId", IsRequired = true, EmitDefaultValue = true)]
         public string AgreementId { get; set; }
 
@@ -115,6 +133,8 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PFEndorsementRequestQuote {\n");
+            sb.Append("  MerchantReference: ").Append(MerchantReference).Append("\n");
+            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
             sb.Append("  AgreementId: ").Append(AgreementId).Append("\n");
             sb.Append("  Policies: ").Append(Policies).Append("\n");
             sb.Append("  Details: ").Append(Details).Append("\n");
@@ -139,7 +159,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

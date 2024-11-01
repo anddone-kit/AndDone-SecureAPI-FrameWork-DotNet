@@ -55,6 +55,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'MerchantToken'
+        /// </summary>
+        [Fact]
+        public void MerchantTokenTest()
+        {
+            // TODO unit test for the property 'MerchantToken'
+        }
+
+        /// <summary>
         /// Test the property 'QuoteKey'
         /// </summary>
         [Fact]
@@ -88,6 +97,24 @@ namespace Org.OpenAPITools.Test.Model
         public void MacAddressTest()
         {
             // TODO unit test for the property 'MacAddress'
+        }
+
+        /// <summary>
+        /// Test the property 'CaptchaToken'
+        /// </summary>
+        [Fact]
+        public void CaptchaTokenTest()
+        {
+            // TODO unit test for the property 'CaptchaToken'
+        }
+
+        /// <summary>
+        /// Test the property 'ActionName'
+        /// </summary>
+        [Fact]
+        public void ActionNameTest()
+        {
+            // TODO unit test for the property 'ActionName'
         }
     }
 }

@@ -42,11 +42,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="invoiceNumber">invoiceNumber.</param>
         /// <param name="expiresOn">expiresOn.</param>
         /// <param name="intent">intent.</param>
-        /// <param name="saveForFuture">saveForFuture.</param>
-        /// <param name="accountNumber">accountNumber.</param>
-        /// <param name="quoteKey">quoteKey.</param>
-        /// <param name="splits">splits.</param>
-        public PaymentIntentResponse(string paymentToken = default(string), decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresOn = default(string), PaymentLinkResponseDisplaySettingsIntent intent = default(PaymentLinkResponseDisplaySettingsIntent), bool saveForFuture = default(bool), bool accountNumber = default(bool), bool quoteKey = default(bool), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>))
+        public PaymentIntentResponse(string paymentToken = default(string), decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresOn = default(string), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent))
         {
             this.PaymentToken = paymentToken;
             this.Amount = amount;
@@ -56,10 +52,6 @@ namespace Org.OpenAPITools.Model
             this.InvoiceNumber = invoiceNumber;
             this.ExpiresOn = expiresOn;
             this.Intent = intent;
-            this.SaveForFuture = saveForFuture;
-            this.AccountNumber = accountNumber;
-            this.QuoteKey = quoteKey;
-            this.Splits = splits;
         }
 
         /// <summary>
@@ -108,31 +100,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Intent
         /// </summary>
         [DataMember(Name = "intent", EmitDefaultValue = false)]
-        public PaymentLinkResponseDisplaySettingsIntent Intent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SaveForFuture
-        /// </summary>
-        [DataMember(Name = "saveForFuture", EmitDefaultValue = true)]
-        public bool SaveForFuture { get; set; }
-
-        /// <summary>
-        /// Gets or Sets AccountNumber
-        /// </summary>
-        [DataMember(Name = "accountNumber", EmitDefaultValue = true)]
-        public bool AccountNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets QuoteKey
-        /// </summary>
-        [DataMember(Name = "quoteKey", EmitDefaultValue = true)]
-        public bool QuoteKey { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Splits
-        /// </summary>
-        [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
+        public PaymentIntentRequestIntent Intent { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -150,10 +118,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  InvoiceNumber: ").Append(InvoiceNumber).Append("\n");
             sb.Append("  ExpiresOn: ").Append(ExpiresOn).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
-            sb.Append("  SaveForFuture: ").Append(SaveForFuture).Append("\n");
-            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
-            sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
-            sb.Append("  Splits: ").Append(Splits).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -172,7 +136,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

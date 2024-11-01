@@ -113,7 +113,7 @@ namespace Org.OpenAPITools.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration()
         {
             Proxy = null;
@@ -127,7 +127,7 @@ namespace Org.OpenAPITools.Client
                 {
                     new Dictionary<string, object> {
                         {"url", "https://api.uat.anddone.com"},
-                        {"description", "No description provided"},
+                        {"description", "The qat API server"},
                     }
                 }
             };
@@ -142,7 +142,7 @@ namespace Org.OpenAPITools.Client
         /// <summary>
         /// Initializes a new instance of the <see cref="Configuration" /> class
         /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("ReSharper", "VirtualMemberCallInConstructor")]
         public Configuration(
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,

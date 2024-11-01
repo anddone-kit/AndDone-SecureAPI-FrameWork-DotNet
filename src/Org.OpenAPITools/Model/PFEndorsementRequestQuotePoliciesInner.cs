@@ -42,7 +42,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="policyId">This denotes the policy identifier. (required).</param>
         /// <param name="premium">This denotes the premium amount. (required).</param>
         /// <param name="down">This denotes the down amount..</param>
-        /// <param name="downPercent">This denotes the down amount..</param>
+        /// <param name="downPercent">This denotes the down percentage..</param>
         /// <param name="fee">This denotes the fee amount..</param>
         /// <param name="tax">This denotes the tax amount..</param>
         /// <param name="number">This denotes the policy number..</param>
@@ -52,18 +52,18 @@ namespace Org.OpenAPITools.Model
         /// <param name="coverage">This denotes the coverage and it is required if adding new policy..</param>
         /// <param name="effectiveDate">This denotes the effective date. (required).</param>
         /// <param name="expirationDate">This denotes the expiration date and it is required if adding new policy. (required).</param>
-        /// <param name="term">This denotes the number of term. (required).</param>
-        /// <param name="minimumEarned">This denotes the minimum Earned amount..</param>
-        /// <param name="minimumEarnedPercent">This denotes the minimum Earned percent..</param>
-        /// <param name="auditable">This denotes the flag if its auditable or not..</param>
+        /// <param name="term">This denotes the number of terms. (required).</param>
+        /// <param name="minimumEarned">This denotes the minimum earned amount..</param>
+        /// <param name="minimumEarnedPercent">This denotes the minimum earned percent..</param>
+        /// <param name="auditable">This denotes the flag if it is auditable or not..</param>
         /// <param name="cancelDays">This denotes the cancel days..</param>
         /// <param name="lossPayeeRequested">This denotes the flag of loss payee requested..</param>
-        /// <param name="minimumLiability">This denotes the minimum laibility..</param>
-        /// <param name="maximumLiability">This denotes the maximum laibility..</param>
+        /// <param name="minimumLiability">This denotes the minimum liability..</param>
+        /// <param name="maximumLiability">This denotes the maximum liability..</param>
         /// <param name="totalPayFunding">totalPayFunding.</param>
         /// <param name="policyFee">policyFee.</param>
         /// <param name="invoiceNumber">This denotes the invoice number..</param>
-        public PFEndorsementRequestQuotePoliciesInner(string policyId = default(string), decimal premium = default(decimal), decimal down = default(decimal), decimal downPercent = default(decimal), decimal fee = default(decimal), decimal tax = default(decimal), string number = default(string), PFEndorsementRequestQuotePoliciesInnerCompany company = default(PFEndorsementRequestQuotePoliciesInnerCompany), PFEndorsementRequestQuotePoliciesInnerGa ga = default(PFEndorsementRequestQuotePoliciesInnerGa), PFEndorsementRequestQuotePoliciesInnerGa broker = default(PFEndorsementRequestQuotePoliciesInnerGa), string coverage = default(string), string effectiveDate = default(string), string expirationDate = default(string), decimal term = default(decimal), decimal minimumEarned = default(decimal), decimal minimumEarnedPercent = default(decimal), bool auditable = default(bool), string cancelDays = default(string), bool lossPayeeRequested = default(bool), decimal minimumLiability = default(decimal), decimal maximumLiability = default(decimal), List<PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner> totalPayFunding = default(List<PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner>), List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner> policyFee = default(List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner>), string invoiceNumber = default(string))
+        public PFEndorsementRequestQuotePoliciesInner(string policyId = default(string), decimal premium = default(decimal), decimal down = default(decimal), decimal downPercent = default(decimal), decimal fee = default(decimal), decimal tax = default(decimal), string number = default(string), PFEndorsementRequestQuotePoliciesInnerCompany company = default(PFEndorsementRequestQuotePoliciesInnerCompany), PFEndorsementRequestQuotePoliciesInnerGa ga = default(PFEndorsementRequestQuotePoliciesInnerGa), PFEndorsementRequestQuotePoliciesInnerGa broker = default(PFEndorsementRequestQuotePoliciesInnerGa), string coverage = default(string), string effectiveDate = default(string), string expirationDate = default(string), decimal term = default(decimal), decimal minimumEarned = default(decimal), decimal minimumEarnedPercent = default(decimal), bool auditable = default(bool), string cancelDays = default(string), bool lossPayeeRequested = default(bool), decimal minimumLiability = default(decimal), decimal maximumLiability = default(decimal), List<PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner> totalPayFunding = default(List<PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner>), List<QuoteRequestPoliciesInnerPolicyFeesInner> policyFee = default(List<QuoteRequestPoliciesInnerPolicyFeesInner>), string invoiceNumber = default(string))
         {
             // to ensure "policyId" is required (not null)
             if (policyId == null)
@@ -128,9 +128,9 @@ namespace Org.OpenAPITools.Model
         public decimal Down { get; set; }
 
         /// <summary>
-        /// This denotes the down amount.
+        /// This denotes the down percentage.
         /// </summary>
-        /// <value>This denotes the down amount.</value>
+        /// <value>This denotes the down percentage.</value>
         [DataMember(Name = "downPercent", EmitDefaultValue = false)]
         public decimal DownPercent { get; set; }
 
@@ -195,30 +195,30 @@ namespace Org.OpenAPITools.Model
         public string ExpirationDate { get; set; }
 
         /// <summary>
-        /// This denotes the number of term.
+        /// This denotes the number of terms.
         /// </summary>
-        /// <value>This denotes the number of term.</value>
+        /// <value>This denotes the number of terms.</value>
         [DataMember(Name = "term", IsRequired = true, EmitDefaultValue = true)]
         public decimal Term { get; set; }
 
         /// <summary>
-        /// This denotes the minimum Earned amount.
+        /// This denotes the minimum earned amount.
         /// </summary>
-        /// <value>This denotes the minimum Earned amount.</value>
+        /// <value>This denotes the minimum earned amount.</value>
         [DataMember(Name = "minimumEarned", EmitDefaultValue = false)]
         public decimal MinimumEarned { get; set; }
 
         /// <summary>
-        /// This denotes the minimum Earned percent.
+        /// This denotes the minimum earned percent.
         /// </summary>
-        /// <value>This denotes the minimum Earned percent.</value>
+        /// <value>This denotes the minimum earned percent.</value>
         [DataMember(Name = "MinimumEarnedPercent", EmitDefaultValue = false)]
         public decimal MinimumEarnedPercent { get; set; }
 
         /// <summary>
-        /// This denotes the flag if its auditable or not.
+        /// This denotes the flag if it is auditable or not.
         /// </summary>
-        /// <value>This denotes the flag if its auditable or not.</value>
+        /// <value>This denotes the flag if it is auditable or not.</value>
         [DataMember(Name = "auditable", EmitDefaultValue = true)]
         public bool Auditable { get; set; }
 
@@ -237,16 +237,16 @@ namespace Org.OpenAPITools.Model
         public bool LossPayeeRequested { get; set; }
 
         /// <summary>
-        /// This denotes the minimum laibility.
+        /// This denotes the minimum liability.
         /// </summary>
-        /// <value>This denotes the minimum laibility.</value>
+        /// <value>This denotes the minimum liability.</value>
         [DataMember(Name = "minimumLiability", EmitDefaultValue = false)]
         public decimal MinimumLiability { get; set; }
 
         /// <summary>
-        /// This denotes the maximum laibility.
+        /// This denotes the maximum liability.
         /// </summary>
-        /// <value>This denotes the maximum laibility.</value>
+        /// <value>This denotes the maximum liability.</value>
         [DataMember(Name = "maximumLiability", EmitDefaultValue = false)]
         public decimal MaximumLiability { get; set; }
 
@@ -260,7 +260,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets PolicyFee
         /// </summary>
         [DataMember(Name = "policyFee", EmitDefaultValue = false)]
-        public List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner> PolicyFee { get; set; }
+        public List<QuoteRequestPoliciesInnerPolicyFeesInner> PolicyFee { get; set; }
 
         /// <summary>
         /// This denotes the invoice number.
@@ -319,7 +319,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

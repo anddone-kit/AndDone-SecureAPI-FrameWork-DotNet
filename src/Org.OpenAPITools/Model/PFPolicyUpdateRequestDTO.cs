@@ -42,7 +42,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="quoteKey">This denotes the quote key. (required).</param>
         /// <param name="accountNumber">This denotes the loan account number..</param>
         /// <param name="premium">This denotes the premium amount. (required).</param>
-        /// <param name="category">This denotes the coverage Type. (required).</param>
+        /// <param name="category">This denotes the coverage type. (required).</param>
         /// <param name="newPolicyNumber">This denotes the new policy number. (required).</param>
         public PFPolicyUpdateRequestDTO(decimal quoteKey = default(decimal), string accountNumber = default(string), decimal premium = default(decimal), string category = default(string), string newPolicyNumber = default(string))
         {
@@ -85,9 +85,9 @@ namespace Org.OpenAPITools.Model
         public decimal Premium { get; set; }
 
         /// <summary>
-        /// This denotes the coverage Type.
+        /// This denotes the coverage type.
         /// </summary>
-        /// <value>This denotes the coverage Type.</value>
+        /// <value>This denotes the coverage type.</value>
         [DataMember(Name = "category", IsRequired = true, EmitDefaultValue = true)]
         public string Category { get; set; }
 
@@ -129,7 +129,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

@@ -40,7 +40,8 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="GetQuoteRequest" /> class.
         /// </summary>
         /// <param name="paymentIntentId">This denotes the payment intent id. (required).</param>
-        public GetQuoteRequest(string paymentIntentId = default(string))
+        /// <param name="merchantToken">merchantToken.</param>
+        public GetQuoteRequest(string paymentIntentId = default(string), string merchantToken = default(string))
         {
             // to ensure "paymentIntentId" is required (not null)
             if (paymentIntentId == null)
@@ -48,6 +49,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("paymentIntentId is a required property for GetQuoteRequest and cannot be null");
             }
             this.PaymentIntentId = paymentIntentId;
+            this.MerchantToken = merchantToken;
         }
 
         /// <summary>
@@ -58,6 +60,12 @@ namespace Org.OpenAPITools.Model
         public string PaymentIntentId { get; set; }
 
         /// <summary>
+        /// Gets or Sets MerchantToken
+        /// </summary>
+        [DataMember(Name = "merchantToken", EmitDefaultValue = false)]
+        public string MerchantToken { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +74,7 @@ namespace Org.OpenAPITools.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetQuoteRequest {\n");
             sb.Append("  PaymentIntentId: ").Append(PaymentIntentId).Append("\n");
+            sb.Append("  MerchantToken: ").Append(MerchantToken).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,7 +93,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

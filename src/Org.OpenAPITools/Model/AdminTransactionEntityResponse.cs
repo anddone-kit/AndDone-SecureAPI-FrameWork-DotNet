@@ -32,6 +32,513 @@ namespace Org.OpenAPITools.Model
     public partial class AdminTransactionEntityResponse : IValidatableObject
     {
         /// <summary>
+        /// Defines OperationType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum OperationTypeEnum
+        {
+            /// <summary>
+            /// Enum Sale for value: Sale
+            /// </summary>
+            [EnumMember(Value = "Sale")]
+            Sale = 1,
+
+            /// <summary>
+            /// Enum VerifyOnly for value: VerifyOnly
+            /// </summary>
+            [EnumMember(Value = "VerifyOnly")]
+            VerifyOnly = 2,
+
+            /// <summary>
+            /// Enum ForceSale for value: ForceSale
+            /// </summary>
+            [EnumMember(Value = "ForceSale")]
+            ForceSale = 3,
+
+            /// <summary>
+            /// Enum Adjust for value: Adjust
+            /// </summary>
+            [EnumMember(Value = "Adjust")]
+            Adjust = 4,
+
+            /// <summary>
+            /// Enum Activate for value: Activate
+            /// </summary>
+            [EnumMember(Value = "Activate")]
+            Activate = 5,
+
+            /// <summary>
+            /// Enum Deactivate for value: Deactivate
+            /// </summary>
+            [EnumMember(Value = "Deactivate")]
+            Deactivate = 6,
+
+            /// <summary>
+            /// Enum Reload for value: Reload
+            /// </summary>
+            [EnumMember(Value = "Reload")]
+            Reload = 7,
+
+            /// <summary>
+            /// Enum Refund for value: Refund
+            /// </summary>
+            [EnumMember(Value = "Refund")]
+            Refund = 8,
+
+            /// <summary>
+            /// Enum Inquire for value: Inquire
+            /// </summary>
+            [EnumMember(Value = "Inquire")]
+            Inquire = 9,
+
+            /// <summary>
+            /// Enum ReverseAuth for value: ReverseAuth
+            /// </summary>
+            [EnumMember(Value = "ReverseAuth")]
+            ReverseAuth = 10
+        }
+
+
+        /// <summary>
+        /// Gets or Sets OperationType
+        /// </summary>
+        [DataMember(Name = "operationType", EmitDefaultValue = false)]
+        public OperationTypeEnum? OperationType { get; set; }
+        /// <summary>
+        /// Defines ChannelType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ChannelTypeEnum
+        {
+            /// <summary>
+            /// Enum NotDefined for value: NotDefined
+            /// </summary>
+            [EnumMember(Value = "NotDefined")]
+            NotDefined = 1,
+
+            /// <summary>
+            /// Enum ACH for value: ACH
+            /// </summary>
+            [EnumMember(Value = "ACH")]
+            ACH = 2,
+
+            /// <summary>
+            /// Enum CreditCard for value: CreditCard
+            /// </summary>
+            [EnumMember(Value = "CreditCard")]
+            CreditCard = 3,
+
+            /// <summary>
+            /// Enum DebitCard for value: DebitCard
+            /// </summary>
+            [EnumMember(Value = "DebitCard")]
+            DebitCard = 4
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ChannelType
+        /// </summary>
+        [DataMember(Name = "channelType", EmitDefaultValue = false)]
+        public ChannelTypeEnum? ChannelType { get; set; }
+        /// <summary>
+        /// Defines ProcessMethod
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ProcessMethodEnum
+        {
+            /// <summary>
+            /// Enum NotDefined for value: NotDefined
+            /// </summary>
+            [EnumMember(Value = "NotDefined")]
+            NotDefined = 1,
+
+            /// <summary>
+            /// Enum ACH for value: ACH
+            /// </summary>
+            [EnumMember(Value = "ACH")]
+            ACH = 2,
+
+            /// <summary>
+            /// Enum CardNotPresent for value: CardNotPresent
+            /// </summary>
+            [EnumMember(Value = "CardNotPresent")]
+            CardNotPresent = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ProcessMethod
+        /// </summary>
+        [DataMember(Name = "processMethod", EmitDefaultValue = false)]
+        public ProcessMethodEnum? ProcessMethod { get; set; }
+        /// <summary>
+        /// Defines TransactionStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TransactionStatusEnum
+        {
+            /// <summary>
+            /// Enum Created for value: Created
+            /// </summary>
+            [EnumMember(Value = "Created")]
+            Created = 1,
+
+            /// <summary>
+            /// Enum PendingForAuthorized for value: PendingForAuthorized
+            /// </summary>
+            [EnumMember(Value = "PendingForAuthorized")]
+            PendingForAuthorized = 2,
+
+            /// <summary>
+            /// Enum Authorized for value: Authorized
+            /// </summary>
+            [EnumMember(Value = "Authorized")]
+            Authorized = 3,
+
+            /// <summary>
+            /// Enum Posted for value: Posted
+            /// </summary>
+            [EnumMember(Value = "Posted")]
+            Posted = 4,
+
+            /// <summary>
+            /// Enum Captured for value: Captured
+            /// </summary>
+            [EnumMember(Value = "Captured")]
+            Captured = 5,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 6,
+
+            /// <summary>
+            /// Enum Returned for value: Returned
+            /// </summary>
+            [EnumMember(Value = "Returned")]
+            Returned = 7,
+
+            /// <summary>
+            /// Enum Chargeback for value: Chargeback
+            /// </summary>
+            [EnumMember(Value = "Chargeback")]
+            Chargeback = 8,
+
+            /// <summary>
+            /// Enum Cancelled for value: Cancelled
+            /// </summary>
+            [EnumMember(Value = "Cancelled")]
+            Cancelled = 9,
+
+            /// <summary>
+            /// Enum Refunded for value: Refunded
+            /// </summary>
+            [EnumMember(Value = "Refunded")]
+            Refunded = 10,
+
+            /// <summary>
+            /// Enum Approved for value: Approved
+            /// </summary>
+            [EnumMember(Value = "Approved")]
+            Approved = 11,
+
+            /// <summary>
+            /// Enum CancelAttempt for value: CancelAttempt
+            /// </summary>
+            [EnumMember(Value = "CancelAttempt")]
+            CancelAttempt = 12,
+
+            /// <summary>
+            /// Enum RefundAttempt for value: RefundAttempt
+            /// </summary>
+            [EnumMember(Value = "RefundAttempt")]
+            RefundAttempt = 13,
+
+            /// <summary>
+            /// Enum Hold for value: Hold
+            /// </summary>
+            [EnumMember(Value = "Hold")]
+            Hold = 14,
+
+            /// <summary>
+            /// Enum Denied for value: Denied
+            /// </summary>
+            [EnumMember(Value = "Denied")]
+            Denied = 15,
+
+            /// <summary>
+            /// Enum SettlementHold for value: SettlementHold
+            /// </summary>
+            [EnumMember(Value = "SettlementHold")]
+            SettlementHold = 16,
+
+            /// <summary>
+            /// Enum Success for value: Success
+            /// </summary>
+            [EnumMember(Value = "Success")]
+            Success = 17,
+
+            /// <summary>
+            /// Enum Retried for value: Retried
+            /// </summary>
+            [EnumMember(Value = "Retried")]
+            Retried = 18,
+
+            /// <summary>
+            /// Enum ReprocessAttempt for value: ReprocessAttempt
+            /// </summary>
+            [EnumMember(Value = "ReprocessAttempt")]
+            ReprocessAttempt = 19,
+
+            /// <summary>
+            /// Enum Reprocessed for value: Reprocessed
+            /// </summary>
+            [EnumMember(Value = "Reprocessed")]
+            Reprocessed = 20,
+
+            /// <summary>
+            /// Enum ChargebackReversed for value: ChargebackReversed
+            /// </summary>
+            [EnumMember(Value = "ChargebackReversed")]
+            ChargebackReversed = 21,
+
+            /// <summary>
+            /// Enum RefundedReversed for value: RefundedReversed
+            /// </summary>
+            [EnumMember(Value = "RefundedReversed")]
+            RefundedReversed = 22,
+
+            /// <summary>
+            /// Enum Paid for value: Paid
+            /// </summary>
+            [EnumMember(Value = "Paid")]
+            Paid = 23,
+
+            /// <summary>
+            /// Enum PaidChargeback for value: PaidChargeback
+            /// </summary>
+            [EnumMember(Value = "PaidChargeback")]
+            PaidChargeback = 24,
+
+            /// <summary>
+            /// Enum PaidChargebackReversed for value: PaidChargebackReversed
+            /// </summary>
+            [EnumMember(Value = "PaidChargebackReversed")]
+            PaidChargebackReversed = 25,
+
+            /// <summary>
+            /// Enum PaidRefunded for value: PaidRefunded
+            /// </summary>
+            [EnumMember(Value = "PaidRefunded")]
+            PaidRefunded = 26,
+
+            /// <summary>
+            /// Enum PaidRefundedReversed for value: PaidRefundedReversed
+            /// </summary>
+            [EnumMember(Value = "PaidRefundedReversed")]
+            PaidRefundedReversed = 27,
+
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 28,
+
+            /// <summary>
+            /// Enum Unknown for value: Unknown
+            /// </summary>
+            [EnumMember(Value = "Unknown")]
+            Unknown = 29
+        }
+
+
+        /// <summary>
+        /// Gets or Sets TransactionStatus
+        /// </summary>
+        [DataMember(Name = "transactionStatus", EmitDefaultValue = false)]
+        public TransactionStatusEnum? TransactionStatus { get; set; }
+        /// <summary>
+        /// Defines AccountCategory
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AccountCategoryEnum
+        {
+            /// <summary>
+            /// Enum Unknown for value: Unknown
+            /// </summary>
+            [EnumMember(Value = "Unknown")]
+            Unknown,
+
+            /// <summary>
+            /// Enum Personal for value: Personal
+            /// </summary>
+            [EnumMember(Value = "Personal")]
+            Personal,
+
+            /// <summary>
+            /// Enum Business for value: Business
+            /// </summary>
+            [EnumMember(Value = "Business")]
+            Business
+        }
+
+
+        /// <summary>
+        /// Gets or Sets AccountCategory
+        /// </summary>
+        [DataMember(Name = "accountCategory", EmitDefaultValue = false)]
+        public AccountCategoryEnum? AccountCategory { get; set; }
+        /// <summary>
+        /// Defines TransactionOrigin
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TransactionOriginEnum
+        {
+            /// <summary>
+            /// Enum Terminal for value: Terminal
+            /// </summary>
+            [EnumMember(Value = "Terminal")]
+            Terminal = 1,
+
+            /// <summary>
+            /// Enum VirtualTerminal for value: VirtualTerminal
+            /// </summary>
+            [EnumMember(Value = "VirtualTerminal")]
+            VirtualTerminal = 2,
+
+            /// <summary>
+            /// Enum WebForm for value: WebForm
+            /// </summary>
+            [EnumMember(Value = "WebForm")]
+            WebForm = 3,
+
+            /// <summary>
+            /// Enum API for value: API
+            /// </summary>
+            [EnumMember(Value = "API")]
+            API = 4,
+
+            /// <summary>
+            /// Enum Schedule for value: Schedule
+            /// </summary>
+            [EnumMember(Value = "Schedule")]
+            Schedule = 5,
+
+            /// <summary>
+            /// Enum Batch for value: Batch
+            /// </summary>
+            [EnumMember(Value = "Batch")]
+            Batch = 6,
+
+            /// <summary>
+            /// Enum PaymentIntent for value: PaymentIntent
+            /// </summary>
+            [EnumMember(Value = "PaymentIntent")]
+            PaymentIntent = 7
+        }
+
+
+        /// <summary>
+        /// Gets or Sets TransactionOrigin
+        /// </summary>
+        [DataMember(Name = "transactionOrigin", EmitDefaultValue = false)]
+        public TransactionOriginEnum? TransactionOrigin { get; set; }
+        /// <summary>
+        /// Defines CommissionType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CommissionTypeEnum
+        {
+            /// <summary>
+            /// Enum Fixed for value: Fixed
+            /// </summary>
+            [EnumMember(Value = "Fixed")]
+            Fixed = 1,
+
+            /// <summary>
+            /// Enum Percentage for value: Percentage
+            /// </summary>
+            [EnumMember(Value = "Percentage")]
+            Percentage = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets CommissionType
+        /// </summary>
+        [DataMember(Name = "commissionType", EmitDefaultValue = false)]
+        public CommissionTypeEnum? CommissionType { get; set; }
+        /// <summary>
+        /// Defines AdjustmentValueType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AdjustmentValueTypeEnum
+        {
+            /// <summary>
+            /// Enum Fixed for value: Fixed
+            /// </summary>
+            [EnumMember(Value = "Fixed")]
+            Fixed = 1,
+
+            /// <summary>
+            /// Enum Percentage for value: Percentage
+            /// </summary>
+            [EnumMember(Value = "Percentage")]
+            Percentage = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets AdjustmentValueType
+        /// </summary>
+        [DataMember(Name = "adjustmentValueType", EmitDefaultValue = false)]
+        public AdjustmentValueTypeEnum? AdjustmentValueType { get; set; }
+        /// <summary>
+        /// Defines PaymentAdjustmentType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentAdjustmentTypeEnum
+        {
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum CashIncentive for value: CashIncentive
+            /// </summary>
+            [EnumMember(Value = "CashIncentive")]
+            CashIncentive = 2,
+
+            /// <summary>
+            /// Enum Surcharge for value: Surcharge
+            /// </summary>
+            [EnumMember(Value = "Surcharge")]
+            Surcharge = 3,
+
+            /// <summary>
+            /// Enum ConvenienceFee for value: ConvenienceFee
+            /// </summary>
+            [EnumMember(Value = "ConvenienceFee")]
+            ConvenienceFee = 4,
+
+            /// <summary>
+            /// Enum CashDiscount for value: CashDiscount
+            /// </summary>
+            [EnumMember(Value = "CashDiscount")]
+            CashDiscount = 5
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PaymentAdjustmentType
+        /// </summary>
+        [DataMember(Name = "paymentAdjustmentType", EmitDefaultValue = false)]
+        public PaymentAdjustmentTypeEnum? PaymentAdjustmentType { get; set; }
+        /// <summary>
         /// Defines PaymentType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -140,9 +647,11 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="transactionId">transactionId.</param>
         /// <param name="merchantId">merchantId.</param>
+        /// <param name="merchantName">merchantName.</param>
         /// <param name="transactionDate">transactionDate.</param>
         /// <param name="operationType">operationType.</param>
         /// <param name="channelType">channelType.</param>
+        /// <param name="processMethod">processMethod.</param>
         /// <param name="isDebit">isDebit.</param>
         /// <param name="referenceTransactionId">referenceTransactionId.</param>
         /// <param name="referenceCustomerId">referenceCustomerId.</param>
@@ -159,46 +668,51 @@ namespace Org.OpenAPITools.Model
         /// <param name="nameOnCheckOrCard">nameOnCheckOrCard.</param>
         /// <param name="accountHolderName">accountHolderName.</param>
         /// <param name="accountCategory">accountCategory.</param>
-        /// <param name="trainingMode">trainingMode.</param>
         /// <param name="amount">amount.</param>
-        /// <param name="tipAmount">tipAmount.</param>
         /// <param name="convenienceAmount">convenienceAmount.</param>
         /// <param name="captureAmount">captureAmount.</param>
-        /// <param name="yaxAmount">yaxAmount.</param>
-        /// <param name="surchagePercent">surchagePercent.</param>
-        /// <param name="surchageAmount">surchageAmount.</param>
-        /// <param name="cashDiscountPercent">cashDiscountPercent.</param>
-        /// <param name="cashDiscountAmount">cashDiscountAmount.</param>
-        /// <param name="cashIncentiveType">cashIncentiveType.</param>
-        /// <param name="cashIncentivePercent">cashIncentivePercent.</param>
-        /// <param name="cashIncentiveAmount">cashIncentiveAmount.</param>
-        /// <param name="clinicAmount">clinicAmount.</param>
-        /// <param name="dentalAmount">dentalAmount.</param>
-        /// <param name="rxAmount">rxAmount.</param>
-        /// <param name="visionAmount">visionAmount.</param>
+        /// <param name="taxPercent">taxPercent.</param>
+        /// <param name="taxAmount">taxAmount.</param>
         /// <param name="cardType">cardType.</param>
+        /// <param name="customerName">customerName.</param>
+        /// <param name="maskedInvoiceId">maskedInvoiceId.</param>
+        /// <param name="maskedPaymentLinkId">maskedPaymentLinkId.</param>
+        /// <param name="referenceNo">referenceNo.</param>
+        /// <param name="processorName">processorName.</param>
+        /// <param name="processorDisplayName">processorDisplayName.</param>
+        /// <param name="processorCode">processorCode.</param>
+        /// <param name="verification2Code">verification2Code.</param>
+        /// <param name="transactionOrigin">transactionOrigin.</param>
+        /// <param name="commissionType">commissionType.</param>
+        /// <param name="commissionValue">commissionValue.</param>
+        /// <param name="commissionFixedValue">commissionFixedValue.</param>
+        /// <param name="adjustmentFixedValue">adjustmentFixedValue.</param>
+        /// <param name="adjustmentValue">adjustmentValue.</param>
+        /// <param name="adjustmentValueType">adjustmentValueType.</param>
+        /// <param name="adjustmentAmount">adjustmentAmount.</param>
+        /// <param name="adjustmentDisplayName">adjustmentDisplayName.</param>
+        /// <param name="adjustmentDescriptorMessage">adjustmentDescriptorMessage.</param>
+        /// <param name="paymentAdjustmentType">paymentAdjustmentType.</param>
+        /// <param name="traceNumber">traceNumber.</param>
         /// <param name="createdOn">createdOn.</param>
         /// <param name="createdBy">createdBy.</param>
         /// <param name="modifiedOn">modifiedOn.</param>
         /// <param name="modifiedBy">modifiedBy.</param>
-        /// <param name="customerName">customerName.</param>
-        /// <param name="partnerId">partnerId.</param>
-        /// <param name="partnerName">partnerName.</param>
-        /// <param name="orderId">orderId.</param>
-        /// <param name="invoiceId">invoiceId.</param>
-        /// <param name="paymentLinkId">paymentLinkId.</param>
-        /// <param name="referenceNo">referenceNo.</param>
-        /// <param name="processorName">processorName.</param>
-        /// <param name="verification2Code">verification2Code.</param>
+        /// <param name="merchantReference">merchantReference.</param>
+        /// <param name="additionaFields">additionaFields.</param>
         /// <param name="paymentType">paymentType.</param>
         /// <param name="paymentCategory">paymentCategory.</param>
-        public AdminTransactionEntityResponse(string transactionId = default(string), string merchantId = default(string), string transactionDate = default(string), decimal operationType = default(decimal), decimal channelType = default(decimal), bool isDebit = default(bool), string referenceTransactionId = default(string), string referenceCustomerId = default(string), string customerAccountId = default(string), string recurringId = default(string), decimal batchId = default(decimal), decimal transactionStatus = default(decimal), string settlementDate = default(string), string authCode = default(string), string cardNumber = default(string), string accountNumber = default(string), string chequeNumber = default(string), string routingNumber = default(string), string nameOnCheckOrCard = default(string), string accountHolderName = default(string), decimal accountCategory = default(decimal), bool trainingMode = default(bool), decimal amount = default(decimal), decimal tipAmount = default(decimal), decimal convenienceAmount = default(decimal), decimal captureAmount = default(decimal), decimal yaxAmount = default(decimal), decimal surchagePercent = default(decimal), decimal surchageAmount = default(decimal), decimal cashDiscountPercent = default(decimal), decimal cashDiscountAmount = default(decimal), decimal cashIncentiveType = default(decimal), decimal cashIncentivePercent = default(decimal), decimal cashIncentiveAmount = default(decimal), decimal clinicAmount = default(decimal), decimal dentalAmount = default(decimal), decimal rxAmount = default(decimal), decimal visionAmount = default(decimal), string cardType = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string customerName = default(string), string partnerId = default(string), string partnerName = default(string), string orderId = default(string), string invoiceId = default(string), string paymentLinkId = default(string), string referenceNo = default(string), string processorName = default(string), string verification2Code = default(string), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?))
+        /// <param name="merchantDBAName">merchantDBAName.</param>
+        /// <param name="fullAccountNumber">fullAccountNumber.</param>
+        public AdminTransactionEntityResponse(string transactionId = default(string), string merchantId = default(string), string merchantName = default(string), string transactionDate = default(string), OperationTypeEnum? operationType = default(OperationTypeEnum?), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), bool isDebit = default(bool), string referenceTransactionId = default(string), string referenceCustomerId = default(string), string customerAccountId = default(string), string recurringId = default(string), string batchId = default(string), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), string settlementDate = default(string), string authCode = default(string), string cardNumber = default(string), string accountNumber = default(string), string chequeNumber = default(string), string routingNumber = default(string), string nameOnCheckOrCard = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), decimal amount = default(decimal), decimal convenienceAmount = default(decimal), decimal captureAmount = default(decimal), decimal taxPercent = default(decimal), decimal taxAmount = default(decimal), string cardType = default(string), string customerName = default(string), string maskedInvoiceId = default(string), string maskedPaymentLinkId = default(string), string referenceNo = default(string), string processorName = default(string), string processorDisplayName = default(string), string processorCode = default(string), string verification2Code = default(string), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), decimal commissionValue = default(decimal), decimal commissionFixedValue = default(decimal), decimal adjustmentFixedValue = default(decimal), decimal adjustmentValue = default(decimal), AdjustmentValueTypeEnum? adjustmentValueType = default(AdjustmentValueTypeEnum?), decimal adjustmentAmount = default(decimal), string adjustmentDisplayName = default(string), string adjustmentDescriptorMessage = default(string), PaymentAdjustmentTypeEnum? paymentAdjustmentType = default(PaymentAdjustmentTypeEnum?), string traceNumber = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string merchantReference = default(string), string additionaFields = default(string), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), string merchantDBAName = default(string), string fullAccountNumber = default(string))
         {
             this.TransactionId = transactionId;
             this.MerchantId = merchantId;
+            this.MerchantName = merchantName;
             this.TransactionDate = transactionDate;
             this.OperationType = operationType;
             this.ChannelType = channelType;
+            this.ProcessMethod = processMethod;
             this.IsDebit = isDebit;
             this.ReferenceTransactionId = referenceTransactionId;
             this.ReferenceCustomerId = referenceCustomerId;
@@ -215,39 +729,42 @@ namespace Org.OpenAPITools.Model
             this.NameOnCheckOrCard = nameOnCheckOrCard;
             this.AccountHolderName = accountHolderName;
             this.AccountCategory = accountCategory;
-            this.TrainingMode = trainingMode;
             this.Amount = amount;
-            this.TipAmount = tipAmount;
             this.ConvenienceAmount = convenienceAmount;
             this.CaptureAmount = captureAmount;
-            this.YaxAmount = yaxAmount;
-            this.SurchagePercent = surchagePercent;
-            this.SurchageAmount = surchageAmount;
-            this.CashDiscountPercent = cashDiscountPercent;
-            this.CashDiscountAmount = cashDiscountAmount;
-            this.CashIncentiveType = cashIncentiveType;
-            this.CashIncentivePercent = cashIncentivePercent;
-            this.CashIncentiveAmount = cashIncentiveAmount;
-            this.ClinicAmount = clinicAmount;
-            this.DentalAmount = dentalAmount;
-            this.RxAmount = rxAmount;
-            this.VisionAmount = visionAmount;
+            this.TaxPercent = taxPercent;
+            this.TaxAmount = taxAmount;
             this.CardType = cardType;
+            this.CustomerName = customerName;
+            this.MaskedInvoiceId = maskedInvoiceId;
+            this.MaskedPaymentLinkId = maskedPaymentLinkId;
+            this.ReferenceNo = referenceNo;
+            this.ProcessorName = processorName;
+            this.ProcessorDisplayName = processorDisplayName;
+            this.ProcessorCode = processorCode;
+            this.Verification2Code = verification2Code;
+            this.TransactionOrigin = transactionOrigin;
+            this.CommissionType = commissionType;
+            this.CommissionValue = commissionValue;
+            this.CommissionFixedValue = commissionFixedValue;
+            this.AdjustmentFixedValue = adjustmentFixedValue;
+            this.AdjustmentValue = adjustmentValue;
+            this.AdjustmentValueType = adjustmentValueType;
+            this.AdjustmentAmount = adjustmentAmount;
+            this.AdjustmentDisplayName = adjustmentDisplayName;
+            this.AdjustmentDescriptorMessage = adjustmentDescriptorMessage;
+            this.PaymentAdjustmentType = paymentAdjustmentType;
+            this.TraceNumber = traceNumber;
             this.CreatedOn = createdOn;
             this.CreatedBy = createdBy;
             this.ModifiedOn = modifiedOn;
             this.ModifiedBy = modifiedBy;
-            this.CustomerName = customerName;
-            this.PartnerId = partnerId;
-            this.PartnerName = partnerName;
-            this.OrderId = orderId;
-            this.InvoiceId = invoiceId;
-            this.PaymentLinkId = paymentLinkId;
-            this.ReferenceNo = referenceNo;
-            this.ProcessorName = processorName;
-            this.Verification2Code = verification2Code;
+            this.MerchantReference = merchantReference;
+            this.AdditionaFields = additionaFields;
             this.PaymentType = paymentType;
             this.PaymentCategory = paymentCategory;
+            this.MerchantDBAName = merchantDBAName;
+            this.FullAccountNumber = fullAccountNumber;
         }
 
         /// <summary>
@@ -263,22 +780,16 @@ namespace Org.OpenAPITools.Model
         public string MerchantId { get; set; }
 
         /// <summary>
+        /// Gets or Sets MerchantName
+        /// </summary>
+        [DataMember(Name = "merchantName", EmitDefaultValue = false)]
+        public string MerchantName { get; set; }
+
+        /// <summary>
         /// Gets or Sets TransactionDate
         /// </summary>
         [DataMember(Name = "transactionDate", EmitDefaultValue = false)]
         public string TransactionDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets OperationType
-        /// </summary>
-        [DataMember(Name = "operationType", EmitDefaultValue = false)]
-        public decimal OperationType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ChannelType
-        /// </summary>
-        [DataMember(Name = "channelType", EmitDefaultValue = false)]
-        public decimal ChannelType { get; set; }
 
         /// <summary>
         /// Gets or Sets IsDebit
@@ -314,13 +825,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets BatchId
         /// </summary>
         [DataMember(Name = "batchId", EmitDefaultValue = false)]
-        public decimal BatchId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TransactionStatus
-        /// </summary>
-        [DataMember(Name = "transactionStatus", EmitDefaultValue = false)]
-        public decimal TransactionStatus { get; set; }
+        public string BatchId { get; set; }
 
         /// <summary>
         /// Gets or Sets SettlementDate
@@ -371,28 +876,10 @@ namespace Org.OpenAPITools.Model
         public string AccountHolderName { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountCategory
-        /// </summary>
-        [DataMember(Name = "accountCategory", EmitDefaultValue = false)]
-        public decimal AccountCategory { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TrainingMode
-        /// </summary>
-        [DataMember(Name = "trainingMode", EmitDefaultValue = true)]
-        public bool TrainingMode { get; set; }
-
-        /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
         public decimal Amount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TipAmount
-        /// </summary>
-        [DataMember(Name = "tipAmount", EmitDefaultValue = false)]
-        public decimal TipAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvenienceAmount
@@ -407,82 +894,118 @@ namespace Org.OpenAPITools.Model
         public decimal CaptureAmount { get; set; }
 
         /// <summary>
-        /// Gets or Sets YaxAmount
+        /// Gets or Sets TaxPercent
         /// </summary>
-        [DataMember(Name = "yaxAmount", EmitDefaultValue = false)]
-        public decimal YaxAmount { get; set; }
+        [DataMember(Name = "taxPercent", EmitDefaultValue = false)]
+        public decimal TaxPercent { get; set; }
 
         /// <summary>
-        /// Gets or Sets SurchagePercent
+        /// Gets or Sets TaxAmount
         /// </summary>
-        [DataMember(Name = "surchagePercent", EmitDefaultValue = false)]
-        public decimal SurchagePercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SurchageAmount
-        /// </summary>
-        [DataMember(Name = "surchageAmount", EmitDefaultValue = false)]
-        public decimal SurchageAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashDiscountPercent
-        /// </summary>
-        [DataMember(Name = "cashDiscountPercent", EmitDefaultValue = false)]
-        public decimal CashDiscountPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashDiscountAmount
-        /// </summary>
-        [DataMember(Name = "cashDiscountAmount", EmitDefaultValue = false)]
-        public decimal CashDiscountAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashIncentiveType
-        /// </summary>
-        [DataMember(Name = "cashIncentiveType", EmitDefaultValue = false)]
-        public decimal CashIncentiveType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashIncentivePercent
-        /// </summary>
-        [DataMember(Name = "cashIncentivePercent", EmitDefaultValue = false)]
-        public decimal CashIncentivePercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CashIncentiveAmount
-        /// </summary>
-        [DataMember(Name = "cashIncentiveAmount", EmitDefaultValue = false)]
-        public decimal CashIncentiveAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ClinicAmount
-        /// </summary>
-        [DataMember(Name = "clinicAmount", EmitDefaultValue = false)]
-        public decimal ClinicAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DentalAmount
-        /// </summary>
-        [DataMember(Name = "dentalAmount", EmitDefaultValue = false)]
-        public decimal DentalAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RxAmount
-        /// </summary>
-        [DataMember(Name = "rxAmount", EmitDefaultValue = false)]
-        public decimal RxAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets VisionAmount
-        /// </summary>
-        [DataMember(Name = "visionAmount", EmitDefaultValue = false)]
-        public decimal VisionAmount { get; set; }
+        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
+        public decimal TaxAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets CardType
         /// </summary>
         [DataMember(Name = "cardType", EmitDefaultValue = false)]
         public string CardType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CustomerName
+        /// </summary>
+        [DataMember(Name = "customerName", EmitDefaultValue = false)]
+        public string CustomerName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaskedInvoiceId
+        /// </summary>
+        [DataMember(Name = "maskedInvoiceId", EmitDefaultValue = false)]
+        public string MaskedInvoiceId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MaskedPaymentLinkId
+        /// </summary>
+        [DataMember(Name = "maskedPaymentLinkId", EmitDefaultValue = false)]
+        public string MaskedPaymentLinkId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferenceNo
+        /// </summary>
+        [DataMember(Name = "referenceNo", EmitDefaultValue = false)]
+        public string ReferenceNo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessorName
+        /// </summary>
+        [DataMember(Name = "processorName", EmitDefaultValue = false)]
+        public string ProcessorName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessorDisplayName
+        /// </summary>
+        [DataMember(Name = "processorDisplayName", EmitDefaultValue = false)]
+        public string ProcessorDisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessorCode
+        /// </summary>
+        [DataMember(Name = "processorCode", EmitDefaultValue = false)]
+        public string ProcessorCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Verification2Code
+        /// </summary>
+        [DataMember(Name = "verification2Code", EmitDefaultValue = false)]
+        public string Verification2Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CommissionValue
+        /// </summary>
+        [DataMember(Name = "commissionValue", EmitDefaultValue = false)]
+        public decimal CommissionValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CommissionFixedValue
+        /// </summary>
+        [DataMember(Name = "commissionFixedValue", EmitDefaultValue = false)]
+        public decimal CommissionFixedValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdjustmentFixedValue
+        /// </summary>
+        [DataMember(Name = "adjustmentFixedValue", EmitDefaultValue = false)]
+        public decimal AdjustmentFixedValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdjustmentValue
+        /// </summary>
+        [DataMember(Name = "adjustmentValue", EmitDefaultValue = false)]
+        public decimal AdjustmentValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdjustmentAmount
+        /// </summary>
+        [DataMember(Name = "adjustmentAmount", EmitDefaultValue = false)]
+        public decimal AdjustmentAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdjustmentDisplayName
+        /// </summary>
+        [DataMember(Name = "adjustmentDisplayName", EmitDefaultValue = false)]
+        public string AdjustmentDisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdjustmentDescriptorMessage
+        /// </summary>
+        [DataMember(Name = "adjustmentDescriptorMessage", EmitDefaultValue = false)]
+        public string AdjustmentDescriptorMessage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TraceNumber
+        /// </summary>
+        [DataMember(Name = "traceNumber", EmitDefaultValue = false)]
+        public string TraceNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedOn
@@ -509,58 +1032,28 @@ namespace Org.OpenAPITools.Model
         public string ModifiedBy { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomerName
+        /// Gets or Sets MerchantReference
         /// </summary>
-        [DataMember(Name = "customerName", EmitDefaultValue = false)]
-        public string CustomerName { get; set; }
+        [DataMember(Name = "merchantReference", EmitDefaultValue = false)]
+        public string MerchantReference { get; set; }
 
         /// <summary>
-        /// Gets or Sets PartnerId
+        /// Gets or Sets AdditionaFields
         /// </summary>
-        [DataMember(Name = "partnerId", EmitDefaultValue = false)]
-        public string PartnerId { get; set; }
+        [DataMember(Name = "additionaFields", EmitDefaultValue = false)]
+        public string AdditionaFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets PartnerName
+        /// Gets or Sets MerchantDBAName
         /// </summary>
-        [DataMember(Name = "partnerName", EmitDefaultValue = false)]
-        public string PartnerName { get; set; }
+        [DataMember(Name = "merchantDBAName", EmitDefaultValue = false)]
+        public string MerchantDBAName { get; set; }
 
         /// <summary>
-        /// Gets or Sets OrderId
+        /// Gets or Sets FullAccountNumber
         /// </summary>
-        [DataMember(Name = "orderId", EmitDefaultValue = false)]
-        public string OrderId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets InvoiceId
-        /// </summary>
-        [DataMember(Name = "invoiceId", EmitDefaultValue = false)]
-        public string InvoiceId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentLinkId
-        /// </summary>
-        [DataMember(Name = "paymentLinkId", EmitDefaultValue = false)]
-        public string PaymentLinkId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ReferenceNo
-        /// </summary>
-        [DataMember(Name = "referenceNo", EmitDefaultValue = false)]
-        public string ReferenceNo { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProcessorName
-        /// </summary>
-        [DataMember(Name = "processorName", EmitDefaultValue = false)]
-        public string ProcessorName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Verification2Code
-        /// </summary>
-        [DataMember(Name = "verification2Code", EmitDefaultValue = false)]
-        public string Verification2Code { get; set; }
+        [DataMember(Name = "fullAccountNumber", EmitDefaultValue = false)]
+        public string FullAccountNumber { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -572,9 +1065,11 @@ namespace Org.OpenAPITools.Model
             sb.Append("class AdminTransactionEntityResponse {\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
+            sb.Append("  MerchantName: ").Append(MerchantName).Append("\n");
             sb.Append("  TransactionDate: ").Append(TransactionDate).Append("\n");
             sb.Append("  OperationType: ").Append(OperationType).Append("\n");
             sb.Append("  ChannelType: ").Append(ChannelType).Append("\n");
+            sb.Append("  ProcessMethod: ").Append(ProcessMethod).Append("\n");
             sb.Append("  IsDebit: ").Append(IsDebit).Append("\n");
             sb.Append("  ReferenceTransactionId: ").Append(ReferenceTransactionId).Append("\n");
             sb.Append("  ReferenceCustomerId: ").Append(ReferenceCustomerId).Append("\n");
@@ -591,39 +1086,42 @@ namespace Org.OpenAPITools.Model
             sb.Append("  NameOnCheckOrCard: ").Append(NameOnCheckOrCard).Append("\n");
             sb.Append("  AccountHolderName: ").Append(AccountHolderName).Append("\n");
             sb.Append("  AccountCategory: ").Append(AccountCategory).Append("\n");
-            sb.Append("  TrainingMode: ").Append(TrainingMode).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  TipAmount: ").Append(TipAmount).Append("\n");
             sb.Append("  ConvenienceAmount: ").Append(ConvenienceAmount).Append("\n");
             sb.Append("  CaptureAmount: ").Append(CaptureAmount).Append("\n");
-            sb.Append("  YaxAmount: ").Append(YaxAmount).Append("\n");
-            sb.Append("  SurchagePercent: ").Append(SurchagePercent).Append("\n");
-            sb.Append("  SurchageAmount: ").Append(SurchageAmount).Append("\n");
-            sb.Append("  CashDiscountPercent: ").Append(CashDiscountPercent).Append("\n");
-            sb.Append("  CashDiscountAmount: ").Append(CashDiscountAmount).Append("\n");
-            sb.Append("  CashIncentiveType: ").Append(CashIncentiveType).Append("\n");
-            sb.Append("  CashIncentivePercent: ").Append(CashIncentivePercent).Append("\n");
-            sb.Append("  CashIncentiveAmount: ").Append(CashIncentiveAmount).Append("\n");
-            sb.Append("  ClinicAmount: ").Append(ClinicAmount).Append("\n");
-            sb.Append("  DentalAmount: ").Append(DentalAmount).Append("\n");
-            sb.Append("  RxAmount: ").Append(RxAmount).Append("\n");
-            sb.Append("  VisionAmount: ").Append(VisionAmount).Append("\n");
+            sb.Append("  TaxPercent: ").Append(TaxPercent).Append("\n");
+            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
             sb.Append("  CardType: ").Append(CardType).Append("\n");
+            sb.Append("  CustomerName: ").Append(CustomerName).Append("\n");
+            sb.Append("  MaskedInvoiceId: ").Append(MaskedInvoiceId).Append("\n");
+            sb.Append("  MaskedPaymentLinkId: ").Append(MaskedPaymentLinkId).Append("\n");
+            sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
+            sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
+            sb.Append("  ProcessorDisplayName: ").Append(ProcessorDisplayName).Append("\n");
+            sb.Append("  ProcessorCode: ").Append(ProcessorCode).Append("\n");
+            sb.Append("  Verification2Code: ").Append(Verification2Code).Append("\n");
+            sb.Append("  TransactionOrigin: ").Append(TransactionOrigin).Append("\n");
+            sb.Append("  CommissionType: ").Append(CommissionType).Append("\n");
+            sb.Append("  CommissionValue: ").Append(CommissionValue).Append("\n");
+            sb.Append("  CommissionFixedValue: ").Append(CommissionFixedValue).Append("\n");
+            sb.Append("  AdjustmentFixedValue: ").Append(AdjustmentFixedValue).Append("\n");
+            sb.Append("  AdjustmentValue: ").Append(AdjustmentValue).Append("\n");
+            sb.Append("  AdjustmentValueType: ").Append(AdjustmentValueType).Append("\n");
+            sb.Append("  AdjustmentAmount: ").Append(AdjustmentAmount).Append("\n");
+            sb.Append("  AdjustmentDisplayName: ").Append(AdjustmentDisplayName).Append("\n");
+            sb.Append("  AdjustmentDescriptorMessage: ").Append(AdjustmentDescriptorMessage).Append("\n");
+            sb.Append("  PaymentAdjustmentType: ").Append(PaymentAdjustmentType).Append("\n");
+            sb.Append("  TraceNumber: ").Append(TraceNumber).Append("\n");
             sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  ModifiedOn: ").Append(ModifiedOn).Append("\n");
             sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
-            sb.Append("  CustomerName: ").Append(CustomerName).Append("\n");
-            sb.Append("  PartnerId: ").Append(PartnerId).Append("\n");
-            sb.Append("  PartnerName: ").Append(PartnerName).Append("\n");
-            sb.Append("  OrderId: ").Append(OrderId).Append("\n");
-            sb.Append("  InvoiceId: ").Append(InvoiceId).Append("\n");
-            sb.Append("  PaymentLinkId: ").Append(PaymentLinkId).Append("\n");
-            sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
-            sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
-            sb.Append("  Verification2Code: ").Append(Verification2Code).Append("\n");
+            sb.Append("  MerchantReference: ").Append(MerchantReference).Append("\n");
+            sb.Append("  AdditionaFields: ").Append(AdditionaFields).Append("\n");
             sb.Append("  PaymentType: ").Append(PaymentType).Append("\n");
             sb.Append("  PaymentCategory: ").Append(PaymentCategory).Append("\n");
+            sb.Append("  MerchantDBAName: ").Append(MerchantDBAName).Append("\n");
+            sb.Append("  FullAccountNumber: ").Append(FullAccountNumber).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -642,7 +1140,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

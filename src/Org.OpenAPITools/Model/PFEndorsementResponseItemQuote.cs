@@ -49,7 +49,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentsRetained">paymentsRetained.</param>
         /// <param name="paymentRetainedAmount">paymentRetainedAmount.</param>
         /// <param name="eSignResult">eSignResult.</param>
-        public PFEndorsementResponseItemQuote(Object pfa = default(Object), Object quoteKey = default(Object), Object premium = default(Object), Object downAmount = default(Object), Object amountFinanced = default(Object), Object financeCharge = default(Object), Object totalPayments = default(Object), Object paymentAmount = default(Object), Object docStamp = default(Object), Object firstDueDate = default(Object), Object apr = default(Object), Object installments = default(Object), Object paymentsRetained = default(Object), Object paymentRetainedAmount = default(Object), PFEndorsementResponseItemQuoteESignResult eSignResult = default(PFEndorsementResponseItemQuoteESignResult))
+        public PFEndorsementResponseItemQuote(string pfa = default(string), decimal quoteKey = default(decimal), decimal premium = default(decimal), decimal downAmount = default(decimal), decimal amountFinanced = default(decimal), decimal financeCharge = default(decimal), decimal totalPayments = default(decimal), decimal paymentAmount = default(decimal), decimal docStamp = default(decimal), string firstDueDate = default(string), decimal apr = default(decimal), decimal installments = default(decimal), decimal paymentsRetained = default(decimal), decimal paymentRetainedAmount = default(decimal), PFEndorsementResponseItemQuoteESignResult eSignResult = default(PFEndorsementResponseItemQuoteESignResult))
         {
             this.Pfa = pfa;
             this.QuoteKey = quoteKey;
@@ -72,90 +72,90 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Pfa
         /// </summary>
         [DataMember(Name = "pfa", EmitDefaultValue = false)]
-        public Object Pfa { get; set; }
+        public string Pfa { get; set; }
 
         /// <summary>
         /// Gets or Sets QuoteKey
         /// </summary>
         [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public Object QuoteKey { get; set; }
+        public decimal QuoteKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Premium
         /// </summary>
-        [DataMember(Name = "Premium", EmitDefaultValue = false)]
-        public Object Premium { get; set; }
+        [DataMember(Name = "premium", EmitDefaultValue = false)]
+        public decimal Premium { get; set; }
 
         /// <summary>
         /// Gets or Sets DownAmount
         /// </summary>
-        [DataMember(Name = "DownAmount", EmitDefaultValue = false)]
-        public Object DownAmount { get; set; }
+        [DataMember(Name = "downAmount", EmitDefaultValue = false)]
+        public decimal DownAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AmountFinanced
         /// </summary>
-        [DataMember(Name = "AmountFinanced", EmitDefaultValue = false)]
-        public Object AmountFinanced { get; set; }
+        [DataMember(Name = "amountFinanced", EmitDefaultValue = false)]
+        public decimal AmountFinanced { get; set; }
 
         /// <summary>
         /// Gets or Sets FinanceCharge
         /// </summary>
-        [DataMember(Name = "FinanceCharge", EmitDefaultValue = false)]
-        public Object FinanceCharge { get; set; }
+        [DataMember(Name = "financeCharge", EmitDefaultValue = false)]
+        public decimal FinanceCharge { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPayments
         /// </summary>
-        [DataMember(Name = "TotalPayments", EmitDefaultValue = false)]
-        public Object TotalPayments { get; set; }
+        [DataMember(Name = "totalPayments", EmitDefaultValue = false)]
+        public decimal TotalPayments { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentAmount
         /// </summary>
-        [DataMember(Name = "PaymentAmount", EmitDefaultValue = false)]
-        public Object PaymentAmount { get; set; }
+        [DataMember(Name = "paymentAmount", EmitDefaultValue = false)]
+        public decimal PaymentAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets DocStamp
         /// </summary>
-        [DataMember(Name = "DocStamp", EmitDefaultValue = false)]
-        public Object DocStamp { get; set; }
+        [DataMember(Name = "docStamp", EmitDefaultValue = false)]
+        public decimal DocStamp { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstDueDate
         /// </summary>
-        [DataMember(Name = "FirstDueDate", EmitDefaultValue = false)]
-        public Object FirstDueDate { get; set; }
+        [DataMember(Name = "firstDueDate", EmitDefaultValue = false)]
+        public string FirstDueDate { get; set; }
 
         /// <summary>
         /// Gets or Sets Apr
         /// </summary>
-        [DataMember(Name = "Apr", EmitDefaultValue = false)]
-        public Object Apr { get; set; }
+        [DataMember(Name = "apr", EmitDefaultValue = false)]
+        public decimal Apr { get; set; }
 
         /// <summary>
         /// Gets or Sets Installments
         /// </summary>
-        [DataMember(Name = "Installments", EmitDefaultValue = false)]
-        public Object Installments { get; set; }
+        [DataMember(Name = "installments", EmitDefaultValue = false)]
+        public decimal Installments { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentsRetained
         /// </summary>
-        [DataMember(Name = "PaymentsRetained", EmitDefaultValue = false)]
-        public Object PaymentsRetained { get; set; }
+        [DataMember(Name = "paymentsRetained", EmitDefaultValue = false)]
+        public decimal PaymentsRetained { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentRetainedAmount
         /// </summary>
-        [DataMember(Name = "PaymentRetainedAmount", EmitDefaultValue = false)]
-        public Object PaymentRetainedAmount { get; set; }
+        [DataMember(Name = "paymentRetainedAmount", EmitDefaultValue = false)]
+        public decimal PaymentRetainedAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets ESignResult
         /// </summary>
-        [DataMember(Name = "ESignResult", EmitDefaultValue = false)]
+        [DataMember(Name = "eSignResult", EmitDefaultValue = false)]
         public PFEndorsementResponseItemQuoteESignResult ESignResult { get; set; }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

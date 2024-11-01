@@ -55,18 +55,33 @@ namespace Org.OpenAPITools.Test.Api
         }
 
         /// <summary>
-        /// Test SecurePaymentintentsExpirationsididPost
+        /// Test SecureEpfUpdateintentPut
         /// </summary>
         [Fact]
-        public void SecurePaymentintentsExpirationsididPostTest()
+        public void SecureEpfUpdateintentPutTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //string id = null;
-            //var response = instance.SecurePaymentintentsExpirationsididPost(xApiKey, xAppKey, origin, xVersion, id);
+            //string origin = null;
+            //UpdateIntentRequest updateIntentRequest = null;
+            //instance.SecureEpfUpdateintentPut(xApiKey, xAppKey, xVersion, origin, updateIntentRequest);
+        }
+
+        /// <summary>
+        /// Test SecurePaymentintentsExpirationsPost
+        /// </summary>
+        [Fact]
+        public void SecurePaymentintentsExpirationsPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string xApiKey = null;
+            //string xAppKey = null;
+            //string xVersion = null;
+            //string origin = null;
+            //string? id = null;
+            //var response = instance.SecurePaymentintentsExpirationsPost(xApiKey, xAppKey, xVersion, origin, id);
             //Assert.IsType<PaymentIntentExpiresResponse>(response);
         }
 
@@ -79,26 +94,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //PaymentIntentRequest paymentIntentRequest = null;
-            //var response = instance.SecurePaymentintentsPost(xApiKey, xAppKey, origin, xVersion, paymentIntentRequest);
+            //string origin = null;
+            //PaymentIntentRequest? paymentIntentRequest = null;
+            //var response = instance.SecurePaymentintentsPost(xApiKey, xAppKey, xVersion, origin, paymentIntentRequest);
             //Assert.IsType<PaymentIntentResponse>(response);
-        }
-
-        /// <summary>
-        /// Test SecurePaymentintentsPut
-        /// </summary>
-        [Fact]
-        public void SecurePaymentintentsPutTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string xApiKey = null;
-            //string xAppKey = null;
-            //string origin = null;
-            //string xVersion = null;
-            //UpdateIntentRequest updateIntentRequest = null;
-            //instance.SecurePaymentintentsPut(xApiKey, xAppKey, origin, xVersion, updateIntentRequest);
         }
     }
 }

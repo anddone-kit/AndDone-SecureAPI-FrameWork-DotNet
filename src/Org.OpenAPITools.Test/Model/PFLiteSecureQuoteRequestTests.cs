@@ -55,6 +55,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'MerchantId'
+        /// </summary>
+        [Fact]
+        public void MerchantIdTest()
+        {
+            // TODO unit test for the property 'MerchantId'
+        }
+
+        /// <summary>
         /// Test the property 'Merchant'
         /// </summary>
         [Fact]

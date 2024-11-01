@@ -63,10 +63,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //SecurePaymentLinkRequest securePaymentLinkRequest = null;
-            //var response = instance.SecurePaymentlinksDetailsPost(xApiKey, xAppKey, origin, xVersion, securePaymentLinkRequest);
+            //var response = instance.SecurePaymentlinksDetailsPost(xApiKey, xAppKey, xVersion, origin, securePaymentLinkRequest);
             //Assert.IsType<PaymentLinkResponse>(response);
         }
 
@@ -79,10 +79,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
-            //SecurePaymentLinkRequest securePaymentLinkRequest = null;
-            //var response = instance.SecurePaymentlinksExpirationsPost(xApiKey, xAppKey, origin, xVersion, securePaymentLinkRequest);
+            //string origin = null;
+            //SecurePaymentLinkRequest? securePaymentLinkRequest = null;
+            //var response = instance.SecurePaymentlinksExpirationsPost(xApiKey, xAppKey, xVersion, origin, securePaymentLinkRequest);
             //Assert.IsType<PaymentIntentExpiresResponse>(response);
         }
 
@@ -95,11 +95,11 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //string id = null;
             //PaymentLinkRequest paymentLinkRequest = null;
-            //var response = instance.SecurePaymentlinksIdPut(xApiKey, xAppKey, origin, xVersion, id, paymentLinkRequest);
+            //var response = instance.SecurePaymentlinksIdPut(xApiKey, xAppKey, xVersion, origin, id, paymentLinkRequest);
             //Assert.IsType<PaymentLinkResponse>(response);
         }
 
@@ -112,10 +112,10 @@ namespace Org.OpenAPITools.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string xApiKey = null;
             //string xAppKey = null;
-            //string origin = null;
             //string xVersion = null;
+            //string origin = null;
             //PaymentLinkRequest paymentLinkRequest = null;
-            //var response = instance.SecurePaymentlinksPost(xApiKey, xAppKey, origin, xVersion, paymentLinkRequest);
+            //var response = instance.SecurePaymentlinksPost(xApiKey, xAppKey, xVersion, origin, paymentLinkRequest);
             //Assert.IsType<PaymentLinkResponse>(response);
         }
     }

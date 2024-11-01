@@ -98,7 +98,6 @@ namespace Org.OpenAPITools.Model
         /// <param name="taxAmount">taxAmount.</param>
         /// <param name="taxAfterDiscount">taxAfterDiscount.</param>
         /// <param name="taxPercent">taxPercent.</param>
-        /// <param name="healthCareAccountType">healthCareAccountType.</param>
         /// <param name="adjustmentPercentValue">adjustmentPercentValue.</param>
         /// <param name="adjustmentFixedValue">adjustmentFixedValue.</param>
         /// <param name="adjustmentAmount">adjustmentAmount.</param>
@@ -115,7 +114,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="discountAmount">discountAmount.</param>
         /// <param name="commissionType">commissionType.</param>
         /// <param name="commissionValue">commissionValue.</param>
-        public SecurePaymentDetailsResponseAchTenderInfo(string bankName = default(string), string routingNumber = default(string), string checkType = default(string), string checkNumber = default(string), string nameOnCheck = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), decimal captureAmount = default(decimal), decimal amount = default(decimal), decimal convenienceAmount = default(decimal), string binNumber = default(string), decimal taxAmount = default(decimal), decimal taxAfterDiscount = default(decimal), decimal taxPercent = default(decimal), string healthCareAccountType = default(string), decimal adjustmentPercentValue = default(decimal), decimal adjustmentFixedValue = default(decimal), decimal adjustmentAmount = default(decimal), decimal adjustmentDisplayName = default(decimal), decimal adjustmentDescriptorMessage = default(decimal), decimal paymentAdjustmentType = default(decimal), decimal preAuthCode = default(decimal), decimal maskAccount = default(decimal), decimal accountToken = default(decimal), string accountTokenMessage = default(string), string createAccountToken = default(string), string discountType = default(string), string discountPercent = default(string), decimal discountAmount = default(decimal), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), decimal commissionValue = default(decimal))
+        public SecurePaymentDetailsResponseAchTenderInfo(string bankName = default(string), string routingNumber = default(string), string checkType = default(string), string checkNumber = default(string), string nameOnCheck = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), decimal captureAmount = default(decimal), decimal amount = default(decimal), decimal convenienceAmount = default(decimal), string binNumber = default(string), decimal taxAmount = default(decimal), bool taxAfterDiscount = default(bool), decimal taxPercent = default(decimal), decimal adjustmentPercentValue = default(decimal), decimal adjustmentFixedValue = default(decimal), decimal adjustmentAmount = default(decimal), decimal adjustmentDisplayName = default(decimal), decimal adjustmentDescriptorMessage = default(decimal), decimal paymentAdjustmentType = default(decimal), decimal preAuthCode = default(decimal), decimal maskAccount = default(decimal), decimal accountToken = default(decimal), string accountTokenMessage = default(string), string createAccountToken = default(string), string discountType = default(string), string discountPercent = default(string), decimal discountAmount = default(decimal), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), decimal commissionValue = default(decimal))
         {
             this.BankName = bankName;
             this.RoutingNumber = routingNumber;
@@ -131,7 +130,6 @@ namespace Org.OpenAPITools.Model
             this.TaxAmount = taxAmount;
             this.TaxAfterDiscount = taxAfterDiscount;
             this.TaxPercent = taxPercent;
-            this.HealthCareAccountType = healthCareAccountType;
             this.AdjustmentPercentValue = adjustmentPercentValue;
             this.AdjustmentFixedValue = adjustmentFixedValue;
             this.AdjustmentAmount = adjustmentAmount;
@@ -219,20 +217,14 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets TaxAfterDiscount
         /// </summary>
-        [DataMember(Name = "taxAfterDiscount", EmitDefaultValue = false)]
-        public decimal TaxAfterDiscount { get; set; }
+        [DataMember(Name = "taxAfterDiscount", EmitDefaultValue = true)]
+        public bool TaxAfterDiscount { get; set; }
 
         /// <summary>
         /// Gets or Sets TaxPercent
         /// </summary>
         [DataMember(Name = "taxPercent", EmitDefaultValue = false)]
         public decimal TaxPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets HealthCareAccountType
-        /// </summary>
-        [DataMember(Name = "healthCareAccountType", EmitDefaultValue = false)]
-        public string HealthCareAccountType { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentPercentValue
@@ -346,7 +338,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
             sb.Append("  TaxAfterDiscount: ").Append(TaxAfterDiscount).Append("\n");
             sb.Append("  TaxPercent: ").Append(TaxPercent).Append("\n");
-            sb.Append("  HealthCareAccountType: ").Append(HealthCareAccountType).Append("\n");
             sb.Append("  AdjustmentPercentValue: ").Append(AdjustmentPercentValue).Append("\n");
             sb.Append("  AdjustmentFixedValue: ").Append(AdjustmentFixedValue).Append("\n");
             sb.Append("  AdjustmentAmount: ").Append(AdjustmentAmount).Append("\n");
@@ -381,7 +372,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }

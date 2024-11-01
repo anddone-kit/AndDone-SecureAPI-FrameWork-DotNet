@@ -35,23 +35,39 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="ReportDownloadRequest" /> class.
         /// </summary>
         /// <param name="reportId">reportId.</param>
+        /// <param name="reportGenerationLogId">reportGenerationLogId.</param>
+        /// <param name="fileCompress">fileCompress.</param>
         /// <param name="date">date.</param>
-        public ReportDownloadRequest(string reportId = default(string), string date = default(string))
+        public ReportDownloadRequest(string reportId = default(string), string reportGenerationLogId = default(string), bool fileCompress = default(bool), string date = default(string))
         {
             this.ReportId = reportId;
+            this.ReportGenerationLogId = reportGenerationLogId;
+            this.FileCompress = fileCompress;
             this.Date = date;
         }
 
         /// <summary>
         /// Gets or Sets ReportId
         /// </summary>
-        [DataMember(Name = "ReportId", EmitDefaultValue = false)]
+        [DataMember(Name = "reportId", EmitDefaultValue = false)]
         public string ReportId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReportGenerationLogId
+        /// </summary>
+        [DataMember(Name = "reportGenerationLogId", EmitDefaultValue = false)]
+        public string ReportGenerationLogId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FileCompress
+        /// </summary>
+        [DataMember(Name = "fileCompress", EmitDefaultValue = true)]
+        public bool FileCompress { get; set; }
 
         /// <summary>
         /// Gets or Sets Date
         /// </summary>
-        [DataMember(Name = "Date", EmitDefaultValue = false)]
+        [DataMember(Name = "date", EmitDefaultValue = false)]
         public string Date { get; set; }
 
         /// <summary>
@@ -63,6 +79,8 @@ namespace Org.OpenAPITools.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ReportDownloadRequest {\n");
             sb.Append("  ReportId: ").Append(ReportId).Append("\n");
+            sb.Append("  ReportGenerationLogId: ").Append(ReportGenerationLogId).Append("\n");
+            sb.Append("  FileCompress: ").Append(FileCompress).Append("\n");
             sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -82,7 +100,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             yield break;
         }
