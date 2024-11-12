@@ -42,7 +42,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="expiresIn">expiresIn.</param>
         /// <param name="merchantToken">merchantToken.</param>
         /// <param name="intent">intent.</param>
-        public PaymentIntentRequest(decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresIn = default(string), string merchantToken = default(string), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent))
+        /// <param name="enablePremiumFinance">enablePremiumFinance.</param>
+        public PaymentIntentRequest(decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresIn = default(string), string merchantToken = default(string), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent), bool enablePremiumFinance = default(bool))
         {
             this.Amount = amount;
             this.Title = title;
@@ -52,6 +53,7 @@ namespace Org.OpenAPITools.Model
             this.ExpiresIn = expiresIn;
             this.MerchantToken = merchantToken;
             this.Intent = intent;
+            this.EnablePremiumFinance = enablePremiumFinance;
         }
 
         /// <summary>
@@ -103,6 +105,12 @@ namespace Org.OpenAPITools.Model
         public PaymentIntentRequestIntent Intent { get; set; }
 
         /// <summary>
+        /// Gets or Sets EnablePremiumFinance
+        /// </summary>
+        [DataMember(Name = "enablePremiumFinance", EmitDefaultValue = true)]
+        public bool EnablePremiumFinance { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -118,6 +126,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  ExpiresIn: ").Append(ExpiresIn).Append("\n");
             sb.Append("  MerchantToken: ").Append(MerchantToken).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
+            sb.Append("  EnablePremiumFinance: ").Append(EnablePremiumFinance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

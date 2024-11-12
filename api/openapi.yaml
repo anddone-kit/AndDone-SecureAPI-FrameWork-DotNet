@@ -6564,6 +6564,8 @@ components:
           type: string
         intent:
           $ref: '#/components/schemas/PaymentIntentRequest_intent'
+        enablePremiumFinance:
+          type: boolean
       type: object
     PaymentIntentResponse:
       example:
