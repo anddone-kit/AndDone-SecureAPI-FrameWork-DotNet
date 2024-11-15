@@ -4846,7 +4846,7 @@ components:
         quoteKey: testQuoteKey
       properties:
         quoteKey:
-          type: number
+          type: integer
       type: object
     ReportDownloadRequest:
       example:
@@ -7398,7 +7398,7 @@ components:
           type: number
         programIDs:
           items:
-            type: number
+            type: integer
           type: array
         batchID:
           type: string

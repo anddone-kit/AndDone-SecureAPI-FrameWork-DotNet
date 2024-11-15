@@ -35,7 +35,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="GetQuoteKeyRequest" /> class.
         /// </summary>
         /// <param name="quoteKey">quoteKey.</param>
-        public GetQuoteKeyRequest(decimal quoteKey = default(decimal))
+        public GetQuoteKeyRequest(int quoteKey = default(int))
         {
             this.QuoteKey = quoteKey;
         }
@@ -44,7 +44,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets QuoteKey
         /// </summary>
         [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public decimal QuoteKey { get; set; }
+        public int QuoteKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

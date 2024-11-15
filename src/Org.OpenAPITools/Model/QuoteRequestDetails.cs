@@ -245,7 +245,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="interval">interval.</param>
         /// <param name="downPaymentMethod">downPaymentMethod.</param>
         /// <param name="downPaymentPaidBy">downPaymentPaidBy.</param>
-        public QuoteRequestDetails(bool couponInvoicePrinted = default(bool), decimal installments = default(decimal), List<decimal> programIDs = default(List<decimal>), string batchID = default(string), CommercialEnum? commercial = default(CommercialEnum?), CouponEnum? coupon = default(CouponEnum?), IntervalEnum? interval = default(IntervalEnum?), DownPaymentMethodEnum? downPaymentMethod = default(DownPaymentMethodEnum?), DownPaymentPaidByEnum? downPaymentPaidBy = default(DownPaymentPaidByEnum?))
+        public QuoteRequestDetails(bool couponInvoicePrinted = default(bool), decimal installments = default(decimal), List<int> programIDs = default(List<int>), string batchID = default(string), CommercialEnum? commercial = default(CommercialEnum?), CouponEnum? coupon = default(CouponEnum?), IntervalEnum? interval = default(IntervalEnum?), DownPaymentMethodEnum? downPaymentMethod = default(DownPaymentMethodEnum?), DownPaymentPaidByEnum? downPaymentPaidBy = default(DownPaymentPaidByEnum?))
         {
             // to ensure "programIDs" is required (not null)
             if (programIDs == null)
@@ -279,7 +279,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ProgramIDs
         /// </summary>
         [DataMember(Name = "programIDs", IsRequired = true, EmitDefaultValue = true)]
-        public List<decimal> ProgramIDs { get; set; }
+        public List<int> ProgramIDs { get; set; }
 
         /// <summary>
         /// Gets or Sets BatchID
