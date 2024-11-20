@@ -437,7 +437,7 @@ No authorization required
 
 <a id="secureepfquotespost"></a>
 # **SecureEpfQuotesPost**
-> List&lt;QuoteResponse&gt; SecureEpfQuotesPost (string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = null)
+> QuoteResponse SecureEpfQuotesPost (string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = null)
 
 This API will return quote by QuoteKey.
 
@@ -476,7 +476,7 @@ namespace Example
             try
             {
                 // This API will return quote by QuoteKey.
-                List<QuoteResponse> result = apiInstance.SecureEpfQuotesPost(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+                QuoteResponse result = apiInstance.SecureEpfQuotesPost(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -497,7 +497,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API will return quote by QuoteKey.
-    ApiResponse<List<QuoteResponse>> response = apiInstance.SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+    ApiResponse<QuoteResponse> response = apiInstance.SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -522,7 +522,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;QuoteResponse&gt;**](QuoteResponse.md)
+[**QuoteResponse**](QuoteResponse.md)
 
 ### Authorization
 

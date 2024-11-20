@@ -148,8 +148,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;QuoteResponse&gt;</returns>
-        List<QuoteResponse> SecureEpfQuotesPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
+        /// <returns>QuoteResponse</returns>
+        QuoteResponse SecureEpfQuotesPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API will return quote by QuoteKey.
@@ -164,8 +164,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;QuoteResponse&gt;</returns>
-        ApiResponse<List<QuoteResponse>> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of QuoteResponse</returns>
+        ApiResponse<QuoteResponse> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
         /// <summary>
         /// This API will return PFA for given quoteKey.
         /// </summary>
@@ -377,8 +377,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;QuoteResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of QuoteResponse</returns>
+        System.Threading.Tasks.Task<QuoteResponse> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will return quote by QuoteKey.
@@ -394,8 +394,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;QuoteResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<QuoteResponse>>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (QuoteResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<QuoteResponse>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will return PFA for given quoteKey.
         /// </summary>
@@ -1484,10 +1484,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;QuoteResponse&gt;</returns>
-        public List<QuoteResponse> SecureEpfQuotesPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
+        /// <returns>QuoteResponse</returns>
+        public QuoteResponse SecureEpfQuotesPost(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> localVarResponse = SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
+            Org.OpenAPITools.Client.ApiResponse<QuoteResponse> localVarResponse = SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
             return localVarResponse.Data;
         }
 
@@ -1501,8 +1501,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration</param>
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;QuoteResponse&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of QuoteResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<QuoteResponse> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1572,7 +1572,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<QuoteResponse>>("/secure/epf/quotes", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<QuoteResponse>("/secure/epf/quotes", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureEpfQuotesPost", localVarResponse);
@@ -1596,10 +1596,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;QuoteResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of QuoteResponse</returns>
+        public async System.Threading.Tasks.Task<QuoteResponse> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> localVarResponse = await SecureEpfQuotesPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<QuoteResponse> localVarResponse = await SecureEpfQuotesPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1614,8 +1614,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;QuoteResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (QuoteResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<QuoteResponse>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, string xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1686,7 +1686,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<QuoteResponse>>("/secure/epf/quotes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<QuoteResponse>("/secure/epf/quotes", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

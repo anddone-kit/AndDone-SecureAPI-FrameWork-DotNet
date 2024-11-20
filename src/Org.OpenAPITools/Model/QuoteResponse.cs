@@ -153,7 +153,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="modifiedBy">The user who last modified the quote..</param>
         /// <param name="unSignPFA">The unsigned PFA document..</param>
         /// <param name="signPFA">The signed PFA document..</param>
-        public QuoteResponse(string id = default(string), decimal quoteKey = default(decimal), string pFType = default(string), bool isEndorsement = default(bool), string merchantId = default(string), int programId = default(int), string paymentIntentId = default(string), string accountNumber = default(string), QuoteStatusEnum? quoteStatus = default(QuoteStatusEnum?), bool isActive = true, decimal premium = default(decimal), decimal additionalFees = default(decimal), decimal downAmount = default(decimal), decimal amountFinanced = default(decimal), decimal financeCharge = default(decimal), decimal totalPayments = default(decimal), decimal paymentAmount = default(decimal), decimal docStamp = default(decimal), string firstDueDate = default(string), decimal apr = default(decimal), int installments = default(int), string batchId = default(string), int paymentsRetained = default(int), decimal paymentRetainedAmount = default(decimal), string retailAgentRegisterLoginURL = default(string), string insuredName = default(string), bool isEsignPFA = default(bool), string nextPaymentDueDate = default(string), string lastPaymentDate = default(string), bool isDownPaymentRequired = default(bool), bool isEsignRequired = default(bool), bool isDeleted = default(bool), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string unSignPFA = default(string), string signPFA = default(string))
+        public QuoteResponse(string id = default(string), string quoteKey = default(string), string pFType = default(string), bool isEndorsement = default(bool), string merchantId = default(string), List<int> programId = default(List<int>), string paymentIntentId = default(string), string accountNumber = default(string), QuoteStatusEnum? quoteStatus = default(QuoteStatusEnum?), bool isActive = true, decimal premium = default(decimal), decimal additionalFees = default(decimal), decimal downAmount = default(decimal), decimal amountFinanced = default(decimal), decimal financeCharge = default(decimal), decimal totalPayments = default(decimal), decimal paymentAmount = default(decimal), decimal docStamp = default(decimal), string firstDueDate = default(string), decimal apr = default(decimal), int installments = default(int), string batchId = default(string), int paymentsRetained = default(int), decimal paymentRetainedAmount = default(decimal), string retailAgentRegisterLoginURL = default(string), string insuredName = default(string), bool isEsignPFA = default(bool), string nextPaymentDueDate = default(string), string lastPaymentDate = default(string), bool isDownPaymentRequired = default(bool), bool isEsignRequired = default(bool), bool isDeleted = default(bool), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string unSignPFA = default(string), string signPFA = default(string))
         {
             this.Id = id;
             this.QuoteKey = quoteKey;
@@ -207,7 +207,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The key associated with the quote.</value>
         [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public decimal QuoteKey { get; set; }
+        public string QuoteKey { get; set; }
 
         /// <summary>
         /// The type of premium finance.
@@ -235,7 +235,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The ID of the program.</value>
         [DataMember(Name = "programId", EmitDefaultValue = false)]
-        public int ProgramId { get; set; }
+        public List<int> ProgramId { get; set; }
 
         /// <summary>
         /// The ID of the payment intent.

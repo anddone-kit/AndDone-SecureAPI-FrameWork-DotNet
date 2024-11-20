@@ -525,9 +525,7 @@ paths:
           content:
             application/json:
               schema:
-                items:
-                  $ref: '#/components/schemas/QuoteResponse'
-                type: array
+                $ref: '#/components/schemas/QuoteResponse'
           description: Successful operation
         "400":
           description: Bad Request
@@ -3745,7 +3743,7 @@ components:
           type: string
         quoteKey:
           description: The key associated with the quote.
-          type: number
+          type: string
         pFType:
           description: The type of premium finance.
           type: string
@@ -3757,7 +3755,9 @@ components:
           type: string
         programId:
           description: The ID of the program.
-          type: integer
+          items:
+            type: integer
+          type: array
         paymentIntentId:
           description: The ID of the payment intent.
           type: string
@@ -7617,32 +7617,32 @@ components:
       type: object
     PFCheckEndorsementsResponse_item_policies_inner:
       properties:
-        PolicyID:
+        policyID:
           type: number
-        CompanyName:
+        companyName:
           type: string
-        PolicyNumber:
+        policyNumber:
           type: string
-        Premium:
+        premium:
           type: number
-        CoverageType:
+        coverageType:
           type: string
-        CoverageTypeDescription:
+        coverageTypeDescription:
           type: string
-        CompanyTypeID:
+        companyTypeID:
           type: number
       type: object
     PFCheckEndorsementsResponse_item:
       properties:
-        AgreementID:
+        agreementID:
           type: number
-        ClientID:
+        clientID:
           type: number
-        AccountNumber:
+        accountNumber:
           type: string
-        ClientName:
+        clientName:
           type: string
-        IsCommercial:
+        isCommercial:
           type: boolean
         policies:
           items:

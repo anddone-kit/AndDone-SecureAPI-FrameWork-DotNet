@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The unique identifier for the quote. | [optional] 
-**QuoteKey** | **decimal** | The key associated with the quote. | [optional] 
+**QuoteKey** | **string** | The key associated with the quote. | [optional] 
 **PFType** | **string** | The type of premium finance. | [optional] 
 **IsEndorsement** | **bool** | Indicates if the quote is an endorsement. | [optional] 
 **MerchantId** | **string** | The ID of the merchant. | [optional] 
-**ProgramId** | **int** | The ID of the program. | [optional] 
+**ProgramId** | **List&lt;int&gt;** | The ID of the program. | [optional] 
 **PaymentIntentId** | **string** | The ID of the payment intent. | [optional] 
 **AccountNumber** | **string** | The account number. | [optional] 
 **QuoteStatus** | **string** | The status of the quote. | [optional] 

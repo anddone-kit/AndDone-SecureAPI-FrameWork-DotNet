@@ -53,31 +53,31 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets AgreementID
         /// </summary>
-        [DataMember(Name = "AgreementID", EmitDefaultValue = false)]
+        [DataMember(Name = "agreementID", EmitDefaultValue = false)]
         public decimal AgreementID { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientID
         /// </summary>
-        [DataMember(Name = "ClientID", EmitDefaultValue = false)]
+        [DataMember(Name = "clientID", EmitDefaultValue = false)]
         public decimal ClientID { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountNumber
         /// </summary>
-        [DataMember(Name = "AccountNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientName
         /// </summary>
-        [DataMember(Name = "ClientName", EmitDefaultValue = false)]
+        [DataMember(Name = "clientName", EmitDefaultValue = false)]
         public string ClientName { get; set; }
 
         /// <summary>
         /// Gets or Sets IsCommercial
         /// </summary>
-        [DataMember(Name = "IsCommercial", EmitDefaultValue = true)]
+        [DataMember(Name = "isCommercial", EmitDefaultValue = true)]
         public bool IsCommercial { get; set; }
 
         /// <summary>
