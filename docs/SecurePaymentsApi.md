@@ -11,7 +11,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securepaymentsexportpost"></a>
 # **SecurePaymentsExportPost**
-> void SecurePaymentsExportPost (string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = null, string? endDate = null, string? transactionId = null, string? referenceTransactionId = null, string? transactionStatuses = null, string? customerIds = null, string? transactionType = null, string? authCode = null, string? cardHolderName = null, string? shopperName = null, decimal? amount = null, decimal? fromAmount = null, decimal? toAmount = null, string? channelTypes = null, string? maskAccount = null, string? customerName = null, string? binNumber = null, string? referenceNo = null, string? recurringId = null, string? transactionSourceType = null, string? resellerIds = null, string? merchantIds = null, string? traceNumbers = null, string? searchText = null, string? merchantReference = null, string? additionalFields = null, string? paymentMethod = null, bool? exportToCsv = null, bool? exportToPDF = null, int? skipRecordCount = null, int? totalRecordCount = null, int? batchSize = null, string? paymentTypes = null, string? merchantDBAName = null, string? paymentCategory = null, string? sortField = null, string? emailIdToReceiveExportedTransactions = null, bool? isTransactionCostBreakDown = null, string? batchId = null, bool? suppressTechnologyFee = null, decimal? startRow = null, decimal? pageSize = null, bool? asc = null)
+> void SecurePaymentsExportPost (string xApiKey, string xAppKey, float xVersion, string origin, string? startDate = null, string? endDate = null, string? transactionIds = null, string? referenceTransactionId = null, string? transactionStatuses = null, string? customerIds = null, string? transactionType = null, string? authCode = null, string? cardHolderName = null, string? shopperName = null, float? amount = null, float? fromAmount = null, float? toAmount = null, string? channelTypes = null, string? maskAccount = null, string? customerName = null, string? recurringId = null, string? referenceNo = null, bool? exportToCsv = null, bool? exportToPDF = null, string? transactionOrigins = null, string? transactionSourceType = null, float? sourceId = null, string? traceNumbers = null, string? binNumber = null, string? processMethod = null, string? searchText = null, string? merchantReference = null, string? additionalFields = null, string? additionalFieldValue = null, string? paymentMethod = null, string? accountAlias = null, bool? isPaid = null, string? paymentTypes = null, string? merchantId = null, string? paymentCategories = null, bool? suppressTechnologyFee = null, string? batchId = null, string? sortField = null, int? startRow = null, float? pageSize = null, bool? asc = null)
 
 This API gets Secure payment by search criteria for the merchant.
 
@@ -43,11 +43,11 @@ namespace Example
             var apiInstance = new SecurePaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var startDate = "startDate_example";  // string? | Start date for the transaction search (optional) 
             var endDate = "endDate_example";  // string? | End date for the transaction search (optional) 
-            var transactionId = "transactionId_example";  // string? | Transaction identifier (optional) 
+            var transactionIds = "transactionIds_example";  // string? | Transaction identifier (optional) 
             var referenceTransactionId = "referenceTransactionId_example";  // string? | Reference transaction identifier (optional) 
             var transactionStatuses = "transactionStatuses_example";  // string? | Status of the transaction (optional) 
             var customerIds = "customerIds_example";  // string? | Customer IDs associated with the transaction (optional) 
@@ -55,44 +55,43 @@ namespace Example
             var authCode = "authCode_example";  // string? | Authorization code of the transaction (optional) 
             var cardHolderName = "cardHolderName_example";  // string? | Name of the cardholder (optional) 
             var shopperName = "shopperName_example";  // string? | ShopperName of the cardholder (optional) 
-            var amount = 8.14D;  // decimal? | Transaction amount (optional) 
-            var fromAmount = 8.14D;  // decimal? | Minimum transaction amount (optional) 
-            var toAmount = 8.14D;  // decimal? | Maximum transaction amount (optional) 
+            var amount = 8.14D;  // float? | Transaction amount (optional) 
+            var fromAmount = 8.14D;  // float? | Minimum transaction amount (optional) 
+            var toAmount = 8.14D;  // float? | Maximum transaction amount (optional) 
             var channelTypes = "channelTypes_example";  // string? | Channel types used for the transaction (optional) 
             var maskAccount = "maskAccount_example";  // string? | Masked account number (optional) 
             var customerName = "customerName_example";  // string? | Name of the customer (optional) 
-            var binNumber = "binNumber_example";  // string? | BinNumber (optional) 
-            var referenceNo = "referenceNo_example";  // string? | Reference number (optional) 
             var recurringId = "recurringId_example";  // string? | Recurring payment ID (optional) 
+            var referenceNo = "referenceNo_example";  // string? | Reference number (optional) 
+            var exportToCsv = true;  // bool? | Export To Csv (optional) 
+            var exportToPDF = true;  // bool? | Export To PDF (optional) 
+            var transactionOrigins = "transactionOrigins_example";  // string? | Type of origin used in the transaction (optional) 
             var transactionSourceType = "Independent";  // string? | Transaction source type of the transaction (optional) 
-            var resellerIds = "resellerIds_example";  // string? | Reseller IDs associated with the transaction (optional) 
-            var merchantIds = "merchantIds_example";  // string? | Merchant IDs associated with the transaction (optional) 
+            var sourceId = 8.14D;  // float? | Set SourceId (optional) 
             var traceNumbers = "traceNumbers_example";  // string? | TraceNumbers associated with the transaction (optional) 
+            var binNumber = "binNumber_example";  // string? | BinNumber (optional) 
+            var processMethod = "NotDefined";  // string? | Process Method used for the transaction (optional) 
             var searchText = "searchText_example";  // string? | SearchText of the transaction (optional) 
             var merchantReference = "merchantReference_example";  // string? | Merchant Reference of the transaction (optional) 
             var additionalFields = "additionalFields_example";  // string? | Additional Fields (optional) 
+            var additionalFieldValue = "additionalFieldValue_example";  // string? | AdditionalFieldValue (optional) 
             var paymentMethod = "paymentMethod_example";  // string? | Payment Method (optional) 
-            var exportToCsv = true;  // bool? | Export To Csv (optional) 
-            var exportToPDF = true;  // bool? | Export To PDF (optional) 
-            var skipRecordCount = 56;  // int? | SkipRecordCount (optional) 
-            var totalRecordCount = 56;  // int? | TotalRecordCount (optional) 
-            var batchSize = 56;  // int? | BatchSize (optional) 
+            var accountAlias = "accountAlias_example";  // string? | Set AccountAlias (optional) 
+            var isPaid = true;  // bool? | Set IsPaid (optional) 
             var paymentTypes = "paymentTypes_example";  // string? | Type of payment used in the transaction (optional) 
-            var merchantDBAName = "merchantDBAName_example";  // string? | MerchantDBAName (optional) 
-            var paymentCategory = "paymentCategory_example";  // string? | Category of payment used in the transaction (optional) 
-            var sortField = "sortField_example";  // string? | SortField (optional) 
-            var emailIdToReceiveExportedTransactions = "emailIdToReceiveExportedTransactions_example";  // string? | EmailIdToReceiveExportedTransactions (optional) 
-            var isTransactionCostBreakDown = true;  // bool? | IsTransactionCostBreakDown (optional) 
-            var batchId = "batchId_example";  // string? | BatchId (optional) 
+            var merchantId = "merchantId_example";  // string? | Search with Merchant Id (optional) 
+            var paymentCategories = "paymentCategories_example";  // string? | Set PaymentCategories (optional) 
             var suppressTechnologyFee = true;  // bool? | SuppressTechnologyFee (optional) 
-            var startRow = 8.14D;  // decimal? | Set StartRow (optional) 
-            var pageSize = 8.14D;  // decimal? | Set PageSize (optional) 
+            var batchId = "batchId_example";  // string? | BatchId (optional) 
+            var sortField = "sortField_example";  // string? | SortField (optional) 
+            var startRow = 56;  // int? | Set StartRow (optional) 
+            var pageSize = 8.14D;  // float? | Set PageSize (optional) 
             var asc = true;  // bool? | Set Asc (optional) 
 
             try
             {
                 // This API gets Secure payment by search criteria for the merchant.
-                apiInstance.SecurePaymentsExportPost(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
+                apiInstance.SecurePaymentsExportPost(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionIds, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, recurringId, referenceNo, exportToCsv, exportToPDF, transactionOrigins, transactionSourceType, sourceId, traceNumbers, binNumber, processMethod, searchText, merchantReference, additionalFields, additionalFieldValue, paymentMethod, accountAlias, isPaid, paymentTypes, merchantId, paymentCategories, suppressTechnologyFee, batchId, sortField, startRow, pageSize, asc);
             }
             catch (ApiException  e)
             {
@@ -112,7 +111,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API gets Secure payment by search criteria for the merchant.
-    apiInstance.SecurePaymentsExportPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
+    apiInstance.SecurePaymentsExportPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionIds, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, recurringId, referenceNo, exportToCsv, exportToPDF, transactionOrigins, transactionSourceType, sourceId, traceNumbers, binNumber, processMethod, searchText, merchantReference, additionalFields, additionalFieldValue, paymentMethod, accountAlias, isPaid, paymentTypes, merchantId, paymentCategories, suppressTechnologyFee, batchId, sortField, startRow, pageSize, asc);
 }
 catch (ApiException e)
 {
@@ -128,11 +127,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **startDate** | **string?** | Start date for the transaction search | [optional]  |
 | **endDate** | **string?** | End date for the transaction search | [optional]  |
-| **transactionId** | **string?** | Transaction identifier | [optional]  |
+| **transactionIds** | **string?** | Transaction identifier | [optional]  |
 | **referenceTransactionId** | **string?** | Reference transaction identifier | [optional]  |
 | **transactionStatuses** | **string?** | Status of the transaction | [optional]  |
 | **customerIds** | **string?** | Customer IDs associated with the transaction | [optional]  |
@@ -140,38 +139,37 @@ catch (ApiException e)
 | **authCode** | **string?** | Authorization code of the transaction | [optional]  |
 | **cardHolderName** | **string?** | Name of the cardholder | [optional]  |
 | **shopperName** | **string?** | ShopperName of the cardholder | [optional]  |
-| **amount** | **decimal?** | Transaction amount | [optional]  |
-| **fromAmount** | **decimal?** | Minimum transaction amount | [optional]  |
-| **toAmount** | **decimal?** | Maximum transaction amount | [optional]  |
+| **amount** | **float?** | Transaction amount | [optional]  |
+| **fromAmount** | **float?** | Minimum transaction amount | [optional]  |
+| **toAmount** | **float?** | Maximum transaction amount | [optional]  |
 | **channelTypes** | **string?** | Channel types used for the transaction | [optional]  |
 | **maskAccount** | **string?** | Masked account number | [optional]  |
 | **customerName** | **string?** | Name of the customer | [optional]  |
-| **binNumber** | **string?** | BinNumber | [optional]  |
-| **referenceNo** | **string?** | Reference number | [optional]  |
 | **recurringId** | **string?** | Recurring payment ID | [optional]  |
+| **referenceNo** | **string?** | Reference number | [optional]  |
+| **exportToCsv** | **bool?** | Export To Csv | [optional]  |
+| **exportToPDF** | **bool?** | Export To PDF | [optional]  |
+| **transactionOrigins** | **string?** | Type of origin used in the transaction | [optional]  |
 | **transactionSourceType** | **string?** | Transaction source type of the transaction | [optional]  |
-| **resellerIds** | **string?** | Reseller IDs associated with the transaction | [optional]  |
-| **merchantIds** | **string?** | Merchant IDs associated with the transaction | [optional]  |
+| **sourceId** | **float?** | Set SourceId | [optional]  |
 | **traceNumbers** | **string?** | TraceNumbers associated with the transaction | [optional]  |
+| **binNumber** | **string?** | BinNumber | [optional]  |
+| **processMethod** | **string?** | Process Method used for the transaction | [optional]  |
 | **searchText** | **string?** | SearchText of the transaction | [optional]  |
 | **merchantReference** | **string?** | Merchant Reference of the transaction | [optional]  |
 | **additionalFields** | **string?** | Additional Fields | [optional]  |
+| **additionalFieldValue** | **string?** | AdditionalFieldValue | [optional]  |
 | **paymentMethod** | **string?** | Payment Method | [optional]  |
-| **exportToCsv** | **bool?** | Export To Csv | [optional]  |
-| **exportToPDF** | **bool?** | Export To PDF | [optional]  |
-| **skipRecordCount** | **int?** | SkipRecordCount | [optional]  |
-| **totalRecordCount** | **int?** | TotalRecordCount | [optional]  |
-| **batchSize** | **int?** | BatchSize | [optional]  |
+| **accountAlias** | **string?** | Set AccountAlias | [optional]  |
+| **isPaid** | **bool?** | Set IsPaid | [optional]  |
 | **paymentTypes** | **string?** | Type of payment used in the transaction | [optional]  |
-| **merchantDBAName** | **string?** | MerchantDBAName | [optional]  |
-| **paymentCategory** | **string?** | Category of payment used in the transaction | [optional]  |
-| **sortField** | **string?** | SortField | [optional]  |
-| **emailIdToReceiveExportedTransactions** | **string?** | EmailIdToReceiveExportedTransactions | [optional]  |
-| **isTransactionCostBreakDown** | **bool?** | IsTransactionCostBreakDown | [optional]  |
-| **batchId** | **string?** | BatchId | [optional]  |
+| **merchantId** | **string?** | Search with Merchant Id | [optional]  |
+| **paymentCategories** | **string?** | Set PaymentCategories | [optional]  |
 | **suppressTechnologyFee** | **bool?** | SuppressTechnologyFee | [optional]  |
-| **startRow** | **decimal?** | Set StartRow | [optional]  |
-| **pageSize** | **decimal?** | Set PageSize | [optional]  |
+| **batchId** | **string?** | BatchId | [optional]  |
+| **sortField** | **string?** | SortField | [optional]  |
+| **startRow** | **int?** | Set StartRow | [optional]  |
+| **pageSize** | **float?** | Set PageSize | [optional]  |
 | **asc** | **bool?** | Set Asc | [optional]  |
 
 ### Return type
@@ -200,7 +198,7 @@ void (empty response body)
 
 <a id="securepaymentspost"></a>
 # **SecurePaymentsPost**
-> TransactionDetailResponse SecurePaymentsPost (string xApiKey, string xAppKey, string xVersion, string origin, PaymentRequest paymentRequest)
+> TransactionDetailResponse SecurePaymentsPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentRequest paymentRequest)
 
 This API posts new Secure payment request for the merchant.
 
@@ -232,8 +230,8 @@ namespace Example
             var apiInstance = new SecurePaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var paymentRequest = new PaymentRequest(); // PaymentRequest | Payment Detail
 
             try
@@ -279,8 +277,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **paymentRequest** | [**PaymentRequest**](PaymentRequest.md) | Payment Detail |  |
 
 ### Return type
@@ -309,7 +307,7 @@ catch (ApiException e)
 
 <a id="securepaymentssearchpost"></a>
 # **SecurePaymentsSearchPost**
-> AdminTransactionEntityResponse SecurePaymentsSearchPost (string xApiKey, string xAppKey, string xVersion, string origin, string? startDate = null, string? endDate = null, string? transactionId = null, string? referenceTransactionId = null, string? transactionStatuses = null, string? customerIds = null, string? transactionType = null, string? authCode = null, string? cardHolderName = null, string? shopperName = null, decimal? amount = null, decimal? fromAmount = null, decimal? toAmount = null, string? channelTypes = null, string? maskAccount = null, string? customerName = null, string? binNumber = null, string? referenceNo = null, string? recurringId = null, string? transactionSourceType = null, string? resellerIds = null, string? merchantIds = null, string? traceNumbers = null, string? searchText = null, string? merchantReference = null, string? additionalFields = null, string? paymentMethod = null, bool? exportToCsv = null, bool? exportToPDF = null, int? skipRecordCount = null, int? totalRecordCount = null, int? batchSize = null, string? paymentTypes = null, string? merchantDBAName = null, string? paymentCategory = null, string? sortField = null, string? emailIdToReceiveExportedTransactions = null, bool? isTransactionCostBreakDown = null, string? batchId = null, bool? suppressTechnologyFee = null, decimal? startRow = null, decimal? pageSize = null, bool? asc = null)
+> MerchantTransactionEntityResponse SecurePaymentsSearchPost (string xApiKey, string xAppKey, float xVersion, string origin, string? startDate = null, string? endDate = null, string? transactionIds = null, string? referenceTransactionId = null, string? transactionStatuses = null, string? customerIds = null, string? transactionType = null, string? authCode = null, string? cardHolderName = null, string? shopperName = null, float? amount = null, float? fromAmount = null, float? toAmount = null, string? channelTypes = null, string? maskAccount = null, string? customerName = null, string? recurringId = null, string? referenceNo = null, bool? exportToCsv = null, bool? exportToPDF = null, string? transactionOrigins = null, string? transactionSourceType = null, float? sourceId = null, string? traceNumbers = null, string? binNumber = null, string? processMethod = null, string? searchText = null, string? merchantReference = null, string? additionalFields = null, string? additionalFieldValue = null, string? paymentMethod = null, string? accountAlias = null, bool? isPaid = null, string? paymentTypes = null, string? merchantId = null, string? paymentCategories = null, bool? suppressTechnologyFee = null, string? batchId = null, string? sortField = null, int? startRow = null, float? pageSize = null, bool? asc = null)
 
 This API gets Secure payment by search criteria for the merchant.
 
@@ -341,11 +339,11 @@ namespace Example
             var apiInstance = new SecurePaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var startDate = "startDate_example";  // string? | Start date for the transaction search (optional) 
             var endDate = "endDate_example";  // string? | End date for the transaction search (optional) 
-            var transactionId = "transactionId_example";  // string? | Transaction identifier (optional) 
+            var transactionIds = "transactionIds_example";  // string? | Transaction identifier (optional) 
             var referenceTransactionId = "referenceTransactionId_example";  // string? | Reference transaction identifier (optional) 
             var transactionStatuses = "transactionStatuses_example";  // string? | Status of the transaction (optional) 
             var customerIds = "customerIds_example";  // string? | Customer IDs associated with the transaction (optional) 
@@ -353,44 +351,43 @@ namespace Example
             var authCode = "authCode_example";  // string? | Authorization code of the transaction (optional) 
             var cardHolderName = "cardHolderName_example";  // string? | Name of the cardholder (optional) 
             var shopperName = "shopperName_example";  // string? | ShopperName of the cardholder (optional) 
-            var amount = 8.14D;  // decimal? | Transaction amount (optional) 
-            var fromAmount = 8.14D;  // decimal? | Minimum transaction amount (optional) 
-            var toAmount = 8.14D;  // decimal? | Maximum transaction amount (optional) 
+            var amount = 8.14D;  // float? | Transaction amount (optional) 
+            var fromAmount = 8.14D;  // float? | Minimum transaction amount (optional) 
+            var toAmount = 8.14D;  // float? | Maximum transaction amount (optional) 
             var channelTypes = "channelTypes_example";  // string? | Channel types used for the transaction (optional) 
             var maskAccount = "maskAccount_example";  // string? | Masked account number (optional) 
             var customerName = "customerName_example";  // string? | Name of the customer (optional) 
-            var binNumber = "binNumber_example";  // string? | BinNumber (optional) 
-            var referenceNo = "referenceNo_example";  // string? | Reference number (optional) 
             var recurringId = "recurringId_example";  // string? | Recurring payment ID (optional) 
+            var referenceNo = "referenceNo_example";  // string? | Reference number (optional) 
+            var exportToCsv = true;  // bool? | Export To Csv (optional) 
+            var exportToPDF = true;  // bool? | Export To PDF (optional) 
+            var transactionOrigins = "transactionOrigins_example";  // string? | Type of origin used in the transaction (optional) 
             var transactionSourceType = "Independent";  // string? | Transaction source type of the transaction (optional) 
-            var resellerIds = "resellerIds_example";  // string? | Reseller IDs associated with the transaction (optional) 
-            var merchantIds = "merchantIds_example";  // string? | Merchant IDs associated with the transaction (optional) 
+            var sourceId = 8.14D;  // float? | Set SourceId (optional) 
             var traceNumbers = "traceNumbers_example";  // string? | TraceNumbers associated with the transaction (optional) 
+            var binNumber = "binNumber_example";  // string? | BinNumber (optional) 
+            var processMethod = "NotDefined";  // string? | Process Method used for the transaction (optional) 
             var searchText = "searchText_example";  // string? | SearchText of the transaction (optional) 
             var merchantReference = "merchantReference_example";  // string? | Merchant Reference of the transaction (optional) 
             var additionalFields = "additionalFields_example";  // string? | Additional Fields (optional) 
+            var additionalFieldValue = "additionalFieldValue_example";  // string? | AdditionalFieldValue (optional) 
             var paymentMethod = "paymentMethod_example";  // string? | Payment Method (optional) 
-            var exportToCsv = true;  // bool? | Export To Csv (optional) 
-            var exportToPDF = true;  // bool? | Export To PDF (optional) 
-            var skipRecordCount = 56;  // int? | SkipRecordCount (optional) 
-            var totalRecordCount = 56;  // int? | TotalRecordCount (optional) 
-            var batchSize = 56;  // int? | BatchSize (optional) 
+            var accountAlias = "accountAlias_example";  // string? | Set AccountAlias (optional) 
+            var isPaid = true;  // bool? | Set IsPaid (optional) 
             var paymentTypes = "paymentTypes_example";  // string? | Type of payment used in the transaction (optional) 
-            var merchantDBAName = "merchantDBAName_example";  // string? | MerchantDBAName (optional) 
-            var paymentCategory = "paymentCategory_example";  // string? | Category of payment used in the transaction (optional) 
-            var sortField = "sortField_example";  // string? | SortField (optional) 
-            var emailIdToReceiveExportedTransactions = "emailIdToReceiveExportedTransactions_example";  // string? | EmailIdToReceiveExportedTransactions (optional) 
-            var isTransactionCostBreakDown = true;  // bool? | IsTransactionCostBreakDown (optional) 
-            var batchId = "batchId_example";  // string? | BatchId (optional) 
+            var merchantId = "merchantId_example";  // string? | Search with Merchant Id (optional) 
+            var paymentCategories = "paymentCategories_example";  // string? | Set PaymentCategories (optional) 
             var suppressTechnologyFee = true;  // bool? | SuppressTechnologyFee (optional) 
-            var startRow = 8.14D;  // decimal? | Set StartRow (optional) 
-            var pageSize = 8.14D;  // decimal? | Set PageSize (optional) 
+            var batchId = "batchId_example";  // string? | BatchId (optional) 
+            var sortField = "sortField_example";  // string? | SortField (optional) 
+            var startRow = 56;  // int? | Set StartRow (optional) 
+            var pageSize = 8.14D;  // float? | Set PageSize (optional) 
             var asc = true;  // bool? | Set Asc (optional) 
 
             try
             {
                 // This API gets Secure payment by search criteria for the merchant.
-                AdminTransactionEntityResponse result = apiInstance.SecurePaymentsSearchPost(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
+                MerchantTransactionEntityResponse result = apiInstance.SecurePaymentsSearchPost(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionIds, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, recurringId, referenceNo, exportToCsv, exportToPDF, transactionOrigins, transactionSourceType, sourceId, traceNumbers, binNumber, processMethod, searchText, merchantReference, additionalFields, additionalFieldValue, paymentMethod, accountAlias, isPaid, paymentTypes, merchantId, paymentCategories, suppressTechnologyFee, batchId, sortField, startRow, pageSize, asc);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -411,7 +408,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API gets Secure payment by search criteria for the merchant.
-    ApiResponse<AdminTransactionEntityResponse> response = apiInstance.SecurePaymentsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionId, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, binNumber, referenceNo, recurringId, transactionSourceType, resellerIds, merchantIds, traceNumbers, searchText, merchantReference, additionalFields, paymentMethod, exportToCsv, exportToPDF, skipRecordCount, totalRecordCount, batchSize, paymentTypes, merchantDBAName, paymentCategory, sortField, emailIdToReceiveExportedTransactions, isTransactionCostBreakDown, batchId, suppressTechnologyFee, startRow, pageSize, asc);
+    ApiResponse<MerchantTransactionEntityResponse> response = apiInstance.SecurePaymentsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startDate, endDate, transactionIds, referenceTransactionId, transactionStatuses, customerIds, transactionType, authCode, cardHolderName, shopperName, amount, fromAmount, toAmount, channelTypes, maskAccount, customerName, recurringId, referenceNo, exportToCsv, exportToPDF, transactionOrigins, transactionSourceType, sourceId, traceNumbers, binNumber, processMethod, searchText, merchantReference, additionalFields, additionalFieldValue, paymentMethod, accountAlias, isPaid, paymentTypes, merchantId, paymentCategories, suppressTechnologyFee, batchId, sortField, startRow, pageSize, asc);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -430,11 +427,11 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **startDate** | **string?** | Start date for the transaction search | [optional]  |
 | **endDate** | **string?** | End date for the transaction search | [optional]  |
-| **transactionId** | **string?** | Transaction identifier | [optional]  |
+| **transactionIds** | **string?** | Transaction identifier | [optional]  |
 | **referenceTransactionId** | **string?** | Reference transaction identifier | [optional]  |
 | **transactionStatuses** | **string?** | Status of the transaction | [optional]  |
 | **customerIds** | **string?** | Customer IDs associated with the transaction | [optional]  |
@@ -442,43 +439,42 @@ catch (ApiException e)
 | **authCode** | **string?** | Authorization code of the transaction | [optional]  |
 | **cardHolderName** | **string?** | Name of the cardholder | [optional]  |
 | **shopperName** | **string?** | ShopperName of the cardholder | [optional]  |
-| **amount** | **decimal?** | Transaction amount | [optional]  |
-| **fromAmount** | **decimal?** | Minimum transaction amount | [optional]  |
-| **toAmount** | **decimal?** | Maximum transaction amount | [optional]  |
+| **amount** | **float?** | Transaction amount | [optional]  |
+| **fromAmount** | **float?** | Minimum transaction amount | [optional]  |
+| **toAmount** | **float?** | Maximum transaction amount | [optional]  |
 | **channelTypes** | **string?** | Channel types used for the transaction | [optional]  |
 | **maskAccount** | **string?** | Masked account number | [optional]  |
 | **customerName** | **string?** | Name of the customer | [optional]  |
-| **binNumber** | **string?** | BinNumber | [optional]  |
-| **referenceNo** | **string?** | Reference number | [optional]  |
 | **recurringId** | **string?** | Recurring payment ID | [optional]  |
+| **referenceNo** | **string?** | Reference number | [optional]  |
+| **exportToCsv** | **bool?** | Export To Csv | [optional]  |
+| **exportToPDF** | **bool?** | Export To PDF | [optional]  |
+| **transactionOrigins** | **string?** | Type of origin used in the transaction | [optional]  |
 | **transactionSourceType** | **string?** | Transaction source type of the transaction | [optional]  |
-| **resellerIds** | **string?** | Reseller IDs associated with the transaction | [optional]  |
-| **merchantIds** | **string?** | Merchant IDs associated with the transaction | [optional]  |
+| **sourceId** | **float?** | Set SourceId | [optional]  |
 | **traceNumbers** | **string?** | TraceNumbers associated with the transaction | [optional]  |
+| **binNumber** | **string?** | BinNumber | [optional]  |
+| **processMethod** | **string?** | Process Method used for the transaction | [optional]  |
 | **searchText** | **string?** | SearchText of the transaction | [optional]  |
 | **merchantReference** | **string?** | Merchant Reference of the transaction | [optional]  |
 | **additionalFields** | **string?** | Additional Fields | [optional]  |
+| **additionalFieldValue** | **string?** | AdditionalFieldValue | [optional]  |
 | **paymentMethod** | **string?** | Payment Method | [optional]  |
-| **exportToCsv** | **bool?** | Export To Csv | [optional]  |
-| **exportToPDF** | **bool?** | Export To PDF | [optional]  |
-| **skipRecordCount** | **int?** | SkipRecordCount | [optional]  |
-| **totalRecordCount** | **int?** | TotalRecordCount | [optional]  |
-| **batchSize** | **int?** | BatchSize | [optional]  |
+| **accountAlias** | **string?** | Set AccountAlias | [optional]  |
+| **isPaid** | **bool?** | Set IsPaid | [optional]  |
 | **paymentTypes** | **string?** | Type of payment used in the transaction | [optional]  |
-| **merchantDBAName** | **string?** | MerchantDBAName | [optional]  |
-| **paymentCategory** | **string?** | Category of payment used in the transaction | [optional]  |
-| **sortField** | **string?** | SortField | [optional]  |
-| **emailIdToReceiveExportedTransactions** | **string?** | EmailIdToReceiveExportedTransactions | [optional]  |
-| **isTransactionCostBreakDown** | **bool?** | IsTransactionCostBreakDown | [optional]  |
-| **batchId** | **string?** | BatchId | [optional]  |
+| **merchantId** | **string?** | Search with Merchant Id | [optional]  |
+| **paymentCategories** | **string?** | Set PaymentCategories | [optional]  |
 | **suppressTechnologyFee** | **bool?** | SuppressTechnologyFee | [optional]  |
-| **startRow** | **decimal?** | Set StartRow | [optional]  |
-| **pageSize** | **decimal?** | Set PageSize | [optional]  |
+| **batchId** | **string?** | BatchId | [optional]  |
+| **sortField** | **string?** | SortField | [optional]  |
+| **startRow** | **int?** | Set StartRow | [optional]  |
+| **pageSize** | **float?** | Set PageSize | [optional]  |
 | **asc** | **bool?** | Set Asc | [optional]  |
 
 ### Return type
 
-[**AdminTransactionEntityResponse**](AdminTransactionEntityResponse.md)
+[**MerchantTransactionEntityResponse**](MerchantTransactionEntityResponse.md)
 
 ### Authorization
 
@@ -502,7 +498,7 @@ catch (ApiException e)
 
 <a id="securepaymentsdetailspost"></a>
 # **SecurePaymentsdetailsPost**
-> SecurePaymentDetailsResponse SecurePaymentsdetailsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest)
+> TransactionPaymentResponse SecurePaymentsdetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentDetailsRequest securePaymentDetailsRequest)
 
 This API is used for getting details of Payments
 
@@ -534,14 +530,14 @@ namespace Example
             var apiInstance = new SecurePaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var securePaymentDetailsRequest = new SecurePaymentDetailsRequest(); // SecurePaymentDetailsRequest | Payment Details Request
 
             try
             {
                 // This API is used for getting details of Payments
-                SecurePaymentDetailsResponse result = apiInstance.SecurePaymentsdetailsPost(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest);
+                TransactionPaymentResponse result = apiInstance.SecurePaymentsdetailsPost(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -562,7 +558,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API is used for getting details of Payments
-    ApiResponse<SecurePaymentDetailsResponse> response = apiInstance.SecurePaymentsdetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest);
+    ApiResponse<TransactionPaymentResponse> response = apiInstance.SecurePaymentsdetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentDetailsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -581,13 +577,13 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **securePaymentDetailsRequest** | [**SecurePaymentDetailsRequest**](SecurePaymentDetailsRequest.md) | Payment Details Request |  |
 
 ### Return type
 
-[**SecurePaymentDetailsResponse**](SecurePaymentDetailsResponse.md)
+[**TransactionPaymentResponse**](TransactionPaymentResponse.md)
 
 ### Authorization
 

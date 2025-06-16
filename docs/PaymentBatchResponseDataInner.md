@@ -17,10 +17,10 @@ Name | Type | Description | Notes
 **CreatedBy** | **string** |  | [optional] 
 **ModifiedOn** | **string** |  | [optional] 
 **ModifiedBy** | **string** |  | [optional] 
-**CaptureCount** | **decimal** |  | [optional] 
-**CaptureAmount** | **decimal** |  | [optional] 
-**VoidedCount** | **decimal** |  | [optional] 
-**VoidedAmount** | **decimal** |  | [optional] 
+**CaptureCount** | **float** |  | [optional] 
+**CaptureAmount** | **float** |  | [optional] 
+**VoidedCount** | **float** |  | [optional] 
+**VoidedAmount** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

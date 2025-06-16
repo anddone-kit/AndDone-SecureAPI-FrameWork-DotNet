@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PaymentTypes** | **List&lt;string&gt;** |  | [optional] 
+**PaymentTypes** | **List&lt;PaymentLinkRequestSettingsIntent.PaymentTypesEnum&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

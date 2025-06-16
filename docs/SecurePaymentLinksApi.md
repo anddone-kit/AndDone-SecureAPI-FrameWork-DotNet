@@ -11,7 +11,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securepaymentlinksdetailspost"></a>
 # **SecurePaymentlinksDetailsPost**
-> PaymentLinkResponse SecurePaymentlinksDetailsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentLinkRequest securePaymentLinkRequest)
+> PaymentLinkResponse SecurePaymentlinksDetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentLinkRequest securePaymentLinkRequest)
 
 This API is used for getting Payment Links by PaymentLink ID
 
@@ -43,8 +43,8 @@ namespace Example
             var apiInstance = new SecurePaymentLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var securePaymentLinkRequest = new SecurePaymentLinkRequest(); // SecurePaymentLinkRequest | Secure Payment Link Request
 
             try
@@ -90,8 +90,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **securePaymentLinkRequest** | [**SecurePaymentLinkRequest**](SecurePaymentLinkRequest.md) | Secure Payment Link Request |  |
 
 ### Return type
@@ -120,7 +120,7 @@ catch (ApiException e)
 
 <a id="securepaymentlinksexpirationspost"></a>
 # **SecurePaymentlinksExpirationsPost**
-> PaymentIntentExpiresResponse SecurePaymentlinksExpirationsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentLinkRequest? securePaymentLinkRequest = null)
+> PaymentLinkExpiresResponse SecurePaymentlinksExpirationsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentLinkRequest? securePaymentLinkRequest = null)
 
 This API is used for to set expired payment link
 
@@ -152,14 +152,14 @@ namespace Example
             var apiInstance = new SecurePaymentLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var securePaymentLinkRequest = new SecurePaymentLinkRequest?(); // SecurePaymentLinkRequest? | Secure Payment Link Request (optional) 
 
             try
             {
                 // This API is used for to set expired payment link
-                PaymentIntentExpiresResponse result = apiInstance.SecurePaymentlinksExpirationsPost(xApiKey, xAppKey, xVersion, origin, securePaymentLinkRequest);
+                PaymentLinkExpiresResponse result = apiInstance.SecurePaymentlinksExpirationsPost(xApiKey, xAppKey, xVersion, origin, securePaymentLinkRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -180,7 +180,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API is used for to set expired payment link
-    ApiResponse<PaymentIntentExpiresResponse> response = apiInstance.SecurePaymentlinksExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentLinkRequest);
+    ApiResponse<PaymentLinkExpiresResponse> response = apiInstance.SecurePaymentlinksExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentLinkRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -199,13 +199,13 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **securePaymentLinkRequest** | [**SecurePaymentLinkRequest?**](SecurePaymentLinkRequest?.md) | Secure Payment Link Request | [optional]  |
 
 ### Return type
 
-[**PaymentIntentExpiresResponse**](PaymentIntentExpiresResponse.md)
+[**PaymentLinkExpiresResponse**](PaymentLinkExpiresResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ catch (ApiException e)
 
 <a id="securepaymentlinksidput"></a>
 # **SecurePaymentlinksIdPut**
-> PaymentLinkResponse SecurePaymentlinksIdPut (string xApiKey, string xAppKey, string xVersion, string origin, string id, PaymentLinkRequest paymentLinkRequest)
+> PaymentLinkResponse SecurePaymentlinksIdPut (string xApiKey, string xAppKey, float xVersion, string origin, string id, SecureUpdatePaymentLinkRequest secureUpdatePaymentLinkRequest)
 
 This API is used to update Payment Links
 
@@ -260,15 +260,15 @@ namespace Example
             var apiInstance = new SecurePaymentLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var id = "id_example";  // string | PaymentLink identifier
-            var paymentLinkRequest = new PaymentLinkRequest(); // PaymentLinkRequest | Payment Link Request
+            var secureUpdatePaymentLinkRequest = new SecureUpdatePaymentLinkRequest(); // SecureUpdatePaymentLinkRequest | Payment Link Request
 
             try
             {
                 // This API is used to update Payment Links
-                PaymentLinkResponse result = apiInstance.SecurePaymentlinksIdPut(xApiKey, xAppKey, xVersion, origin, id, paymentLinkRequest);
+                PaymentLinkResponse result = apiInstance.SecurePaymentlinksIdPut(xApiKey, xAppKey, xVersion, origin, id, secureUpdatePaymentLinkRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -289,7 +289,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API is used to update Payment Links
-    ApiResponse<PaymentLinkResponse> response = apiInstance.SecurePaymentlinksIdPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, id, paymentLinkRequest);
+    ApiResponse<PaymentLinkResponse> response = apiInstance.SecurePaymentlinksIdPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, id, secureUpdatePaymentLinkRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -308,10 +308,10 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **id** | **string** | PaymentLink identifier |  |
-| **paymentLinkRequest** | [**PaymentLinkRequest**](PaymentLinkRequest.md) | Payment Link Request |  |
+| **secureUpdatePaymentLinkRequest** | [**SecureUpdatePaymentLinkRequest**](SecureUpdatePaymentLinkRequest.md) | Payment Link Request |  |
 
 ### Return type
 
@@ -330,7 +330,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful operation |  -  |
+| **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Server Error |  -  |
@@ -339,7 +339,7 @@ catch (ApiException e)
 
 <a id="securepaymentlinkspost"></a>
 # **SecurePaymentlinksPost**
-> PaymentLinkResponse SecurePaymentlinksPost (string xApiKey, string xAppKey, string xVersion, string origin, PaymentLinkRequest paymentLinkRequest)
+> PaymentLinkResponse SecurePaymentlinksPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentLinkRequest paymentLinkRequest)
 
 This API is used to create Payment Links
 
@@ -371,8 +371,8 @@ namespace Example
             var apiInstance = new SecurePaymentLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var paymentLinkRequest = new PaymentLinkRequest(); // PaymentLinkRequest | Payment Link Request
 
             try
@@ -418,8 +418,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **paymentLinkRequest** | [**PaymentLinkRequest**](PaymentLinkRequest.md) | Payment Link Request |  |
 
 ### Return type

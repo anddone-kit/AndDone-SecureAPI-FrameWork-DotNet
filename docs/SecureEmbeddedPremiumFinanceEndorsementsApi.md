@@ -10,7 +10,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="secureepfendorsementspost"></a>
 # **SecureEpfEndorsementsPost**
-> PFCheckEndorsementsResponse SecureEpfEndorsementsPost (string xApiKey, string xAppKey, string xVersion, string origin, PFCheckEndorsementsRequest pFCheckEndorsementsRequest)
+> PFCheckEndorsementsResponse SecureEpfEndorsementsPost (string xApiKey, string xAppKey, float xVersion, string origin, PFCheckEndorsementsRequest pFCheckEndorsementsRequest)
 
 This API will do a check of eligibility of account
 
@@ -42,8 +42,8 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var pFCheckEndorsementsRequest = new PFCheckEndorsementsRequest(); // PFCheckEndorsementsRequest | PF Check Endorsement Request details
 
             try
@@ -89,8 +89,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **pFCheckEndorsementsRequest** | [**PFCheckEndorsementsRequest**](PFCheckEndorsementsRequest.md) | PF Check Endorsement Request details |  |
 
 ### Return type
@@ -119,7 +119,7 @@ catch (ApiException e)
 
 <a id="secureepfquoteendorsementbookingput"></a>
 # **SecureEpfQuoteEndorsementBookingPut**
-> PFUpdatePFAResponse SecureEpfQuoteEndorsementBookingPut (string xApiKey, string xAppKey, string xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest)
+> PFUpdatePFAResponse SecureEpfQuoteEndorsementBookingPut (string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest)
 
 This API will update PFA to book a endorsement quote.
 
@@ -151,8 +151,8 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var pFQuoteBookingRequest = new PFQuoteBookingRequest(); // PFQuoteBookingRequest | PFQuoteBooking Request details
 
             try
@@ -198,8 +198,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **pFQuoteBookingRequest** | [**PFQuoteBookingRequest**](PFQuoteBookingRequest.md) | PFQuoteBooking Request details |  |
 
 ### Return type
@@ -228,7 +228,7 @@ catch (ApiException e)
 
 <a id="secureepfquoteendorsementpost"></a>
 # **SecureEpfQuoteEndorsementPost**
-> PFEndorsementResponse SecureEpfQuoteEndorsementPost (string xApiKey, string xAppKey, string xVersion, string origin, PFEndorsementRequest pFEndorsementRequest)
+> PFEndorsementResponse SecureEpfQuoteEndorsementPost (string xApiKey, string xAppKey, float xVersion, string origin, PFEndorsementRequest pFEndorsementRequest)
 
 This API will do return a quote for an existing policy or new policy for an existing account
 
@@ -260,8 +260,8 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var pFEndorsementRequest = new PFEndorsementRequest(); // PFEndorsementRequest | PF Endorsement Request details
 
             try
@@ -307,8 +307,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **pFEndorsementRequest** | [**PFEndorsementRequest**](PFEndorsementRequest.md) | PF Endorsement Request details |  |
 
 ### Return type

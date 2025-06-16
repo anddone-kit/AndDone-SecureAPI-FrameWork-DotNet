@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **BatchID** | **string** |  | [optional] 
 **AgentURL** | **string** |  | [optional] 
 **InsuredURL** | **string** |  | [optional] 
-**ESignOption** | **decimal** |  | [optional] 
+**ESignOption** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

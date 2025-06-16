@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CouponInvoicePrinted** | **bool** |  | [optional] 
-**Installments** | **decimal** |  | [optional] 
-**ProgramIDs** | **List&lt;int&gt;** |  | 
+**Installments** | **int** |  | [optional] 
+**ProgramIDs** | **List&lt;int&gt;** |  | [optional] 
 **BatchID** | **string** |  | [optional] 
 **Commercial** | **string** |  | [optional] 
 **Coupon** | **string** |  | [optional] 

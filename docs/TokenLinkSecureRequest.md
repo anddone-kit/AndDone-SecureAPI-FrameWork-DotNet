@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MerchantId** | **string** |  | [optional] 
-**Title** | **string** |  | [optional] 
-**ExpireIn** | **decimal** |  | [optional] 
-**ExpireInUnit** | **string** |  | [optional] 
+**Title** | **string** |  | 
+**ExpireIn** | **int** |  | 
+**ExpireInUnit** | **string** |  | 
 **ResponseType** | **string** |  | [optional] 
-**Intent** | [**PaymentIntentRequestIntent**](PaymentIntentRequestIntent.md) |  | [optional] 
+**Intent** | [**TokenLinkSecureRequestIntent**](TokenLinkSecureRequestIntent.md) |  | 
 **CallbackParameters** | [**PaymentLinkResponseCallbackParameters**](PaymentLinkResponseCallbackParameters.md) |  | [optional] 
 **Customers** | [**List&lt;TokenLinkSecureRequestCustomersInner&gt;**](TokenLinkSecureRequestCustomersInner.md) |  | [optional] 
 

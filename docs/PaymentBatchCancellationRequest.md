@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantId** | **string** |  | [optional] 
-**BatchId** | **string** |  | [optional] 
-**VoidReason** | **string** |  | [optional] 
-**TransactionIds** | **List&lt;string&gt;** |  | [optional] 
+**MerchantId** | **string** |  | 
+**BatchId** | **string** |  | 
+**VoidReason** | **string** |  | 
+**TransactionIds** | **List&lt;string&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

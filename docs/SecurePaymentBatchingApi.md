@@ -12,7 +12,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securebatchesdetailspost"></a>
 # **SecureBatchesDetailsPost**
-> List&lt;PaymentBatchDetailsResponse&gt; SecureBatchesDetailsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest)
+> List&lt;PaymentBatchDetailsResponse&gt; SecureBatchesDetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest)
 
 This API is used for getting Secure Payment Batch Details
 
@@ -44,8 +44,8 @@ namespace Example
             var apiInstance = new SecurePaymentBatchingApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var securePaymentBatchDetailsRequest = new SecurePaymentBatchDetailsRequest(); // SecurePaymentBatchDetailsRequest | Secure Payment Batch Details Request
 
             try
@@ -91,8 +91,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **securePaymentBatchDetailsRequest** | [**SecurePaymentBatchDetailsRequest**](SecurePaymentBatchDetailsRequest.md) | Secure Payment Batch Details Request |  |
 
 ### Return type
@@ -121,7 +121,7 @@ catch (ApiException e)
 
 <a id="securebatchesexecutepost"></a>
 # **SecureBatchesExecutePost**
-> void SecureBatchesExecutePost (string xApiKey, string xAppKey, string xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest)
+> void SecureBatchesExecutePost (string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest)
 
 This API execute on-demand batch transaction.
 
@@ -153,8 +153,8 @@ namespace Example
             var apiInstance = new SecurePaymentBatchingApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var secureBatchExecuteRequest = new SecureBatchExecuteRequest(); // SecureBatchExecuteRequest | Payment Batch Execution Request
 
             try
@@ -196,8 +196,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **secureBatchExecuteRequest** | [**SecureBatchExecuteRequest**](SecureBatchExecuteRequest.md) | Payment Batch Execution Request |  |
 
 ### Return type
@@ -226,7 +226,7 @@ void (empty response body)
 
 <a id="securebatchespost"></a>
 # **SecureBatchesPost**
-> PaymentBatchResponse SecureBatchesPost (string xApiKey, string xAppKey, string xVersion, string origin, int? startRow = null, int? pageSize = null, string? sortField = null, bool? asc = null)
+> PaymentBatchResponse SecureBatchesPost (string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = null, float? pageSize = null, string? sortField = null, bool? asc = null)
 
 This API is used for getting Secure Payment Batches
 
@@ -258,10 +258,10 @@ namespace Example
             var apiInstance = new SecurePaymentBatchingApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var startRow = 56;  // int? | Set StartRow (optional) 
-            var pageSize = 56;  // int? | Set PageSize (optional) 
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
+            var startRow = 8.14D;  // float? | Set StartRow (optional) 
+            var pageSize = 8.14D;  // float? | Set PageSize (optional) 
             var sortField = "sortField_example";  // string? | Set SortField (optional) 
             var asc = true;  // bool? | Set Asc (optional) 
 
@@ -308,10 +308,10 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
-| **startRow** | **int?** | Set StartRow | [optional]  |
-| **pageSize** | **int?** | Set PageSize | [optional]  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
+| **startRow** | **float?** | Set StartRow | [optional]  |
+| **pageSize** | **float?** | Set PageSize | [optional]  |
 | **sortField** | **string?** | Set SortField | [optional]  |
 | **asc** | **bool?** | Set Asc | [optional]  |
 
@@ -341,7 +341,7 @@ catch (ApiException e)
 
 <a id="securebatchestimelinespost"></a>
 # **SecureBatchesTimelinesPost**
-> List&lt;PaymentBatchEventLogResponse&gt; SecureBatchesTimelinesPost (string xApiKey, string xAppKey, string xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest)
+> List&lt;PaymentBatchEventLogResponse&gt; SecureBatchesTimelinesPost (string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest)
 
 This API will returns batch timeline.
 
@@ -373,8 +373,8 @@ namespace Example
             var apiInstance = new SecurePaymentBatchingApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var securePaymentBatchDetailsRequest = new SecurePaymentBatchDetailsRequest(); // SecurePaymentBatchDetailsRequest | Payment Batch Timeline Request
 
             try
@@ -420,8 +420,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **securePaymentBatchDetailsRequest** | [**SecurePaymentBatchDetailsRequest**](SecurePaymentBatchDetailsRequest.md) | Payment Batch Timeline Request |  |
 
 ### Return type
@@ -450,7 +450,7 @@ catch (ApiException e)
 
 <a id="securebatchestransactionscancelpost"></a>
 # **SecureBatchesTransactionsCancelPost**
-> void SecureBatchesTransactionsCancelPost (string xApiKey, string xAppKey, string xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest)
+> void SecureBatchesTransactionsCancelPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest)
 
 This API cancels transactions from an active batch.
 
@@ -482,8 +482,8 @@ namespace Example
             var apiInstance = new SecurePaymentBatchingApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var paymentBatchCancellationRequest = new PaymentBatchCancellationRequest(); // PaymentBatchCancellationRequest | Payment Batch Cancellation Request
 
             try
@@ -525,8 +525,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **paymentBatchCancellationRequest** | [**PaymentBatchCancellationRequest**](PaymentBatchCancellationRequest.md) | Payment Batch Cancellation Request |  |
 
 ### Return type

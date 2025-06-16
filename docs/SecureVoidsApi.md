@@ -8,7 +8,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securecancellationspost"></a>
 # **SecureCancellationsPost**
-> SecureCancelledTransactionResponse SecureCancellationsPost (string xApiKey, string xAppKey, string xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest)
+> SecureCancelledTransactionResponse SecureCancellationsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest)
 
 This API cancel a transaction.
 
@@ -40,8 +40,8 @@ namespace Example
             var apiInstance = new SecureVoidsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = "xVersion_example";  // string | x-version
-            var origin = "origin_example";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var secureTransactionCancelRequest = new SecureTransactionCancelRequest(); // SecureTransactionCancelRequest | Cancel Detail
 
             try
@@ -87,8 +87,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **string** | x-version |  |
-| **origin** | **string** | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **secureTransactionCancelRequest** | [**SecureTransactionCancelRequest**](SecureTransactionCancelRequest.md) | Cancel Detail |  |
 
 ### Return type

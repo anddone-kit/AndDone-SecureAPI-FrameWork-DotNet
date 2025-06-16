@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantReference** | **string** | This denotes the unique merchantReference of the agent. | [optional] 
-**AccountNumber** | **string** | This denotes the accountNumber received in check endorsement API. | [optional] 
+**AccountNumber** | **string** |  | [optional] 
 **AgreementId** | **string** | This denotes the agreementId received in check endorsement API. | 
+**MerchantReference** | **string** |  | 
 **Policies** | [**List&lt;PFEndorsementRequestQuotePoliciesInner&gt;**](PFEndorsementRequestQuotePoliciesInner.md) |  | 
 **Details** | [**PFEndorsementRequestQuoteDetails**](PFEndorsementRequestQuoteDetails.md) |  | [optional] 
-**Insured** | [**PFEndorsementRequestQuoteInsured**](PFEndorsementRequestQuoteInsured.md) |  | 
+**Insured** | [**PFEndorsementRequestQuoteInsured**](PFEndorsementRequestQuoteInsured.md) |  | [optional] 
 **Agent** | [**PFEndorsementRequestQuoteAgent**](PFEndorsementRequestQuoteAgent.md) |  | [optional] 
 **Communication** | [**PFEndorsementRequestQuoteCommunication**](PFEndorsementRequestQuoteCommunication.md) |  | [optional] 
 

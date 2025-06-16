@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **MaskedAccountNumber** | **string** |  | [optional] 
 **ProcessMethod** | **string** |  | [optional] 
 **ChannelType** | **string** |  | [optional] 
-**Address** | [**PaymentRequestBillingContactAddress**](PaymentRequestBillingContactAddress.md) |  | [optional] 
+**Address** | [**TransactionPaymentResponseBillingContactAddress**](TransactionPaymentResponseBillingContactAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
