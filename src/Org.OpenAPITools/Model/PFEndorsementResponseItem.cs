@@ -36,12 +36,10 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="saveStatus">saveStatus.</param>
         /// <param name="quote">quote.</param>
-        /// <param name="paymentIntent">paymentIntent.</param>
-        public PFEndorsementResponseItem(string saveStatus = default(string), PFEndorsementResponseItemQuote quote = default(PFEndorsementResponseItemQuote), PFEndorsementResponseItemPaymentIntent paymentIntent = default(PFEndorsementResponseItemPaymentIntent))
+        public PFEndorsementResponseItem(string saveStatus = default(string), PFEndorsementResponseItemQuote quote = default(PFEndorsementResponseItemQuote))
         {
             this.SaveStatus = saveStatus;
             this.Quote = quote;
-            this.PaymentIntent = paymentIntent;
         }
 
         /// <summary>
@@ -57,12 +55,6 @@ namespace Org.OpenAPITools.Model
         public PFEndorsementResponseItemQuote Quote { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentIntent
-        /// </summary>
-        [DataMember(Name = "paymentIntent", EmitDefaultValue = false)]
-        public PFEndorsementResponseItemPaymentIntent PaymentIntent { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -72,7 +64,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("class PFEndorsementResponseItem {\n");
             sb.Append("  SaveStatus: ").Append(SaveStatus).Append("\n");
             sb.Append("  Quote: ").Append(Quote).Append("\n");
-            sb.Append("  PaymentIntent: ").Append(PaymentIntent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

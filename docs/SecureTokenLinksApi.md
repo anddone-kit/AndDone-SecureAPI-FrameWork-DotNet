@@ -12,7 +12,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securetokenlinksdetailspost"></a>
 # **SecureTokenlinksDetailsPost**
-> SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
+> SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
 
 This API is used for getting Token Links by TokenLink ID
 
@@ -44,7 +44,7 @@ namespace Example
             var apiInstance = new SecureTokenLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var secureTokenLinkRequest = new SecureTokenLinkRequest(); // SecureTokenLinkRequest | Secure Token Link Id Request
 
@@ -91,7 +91,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureTokenLinkRequest** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md) | Secure Token Link Id Request |  |
 
@@ -121,7 +121,7 @@ catch (ApiException e)
 
 <a id="securetokenlinksexpirationspost"></a>
 # **SecureTokenlinksExpirationsPost**
-> SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
+> SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
 
 This API expires the token link.
 
@@ -153,7 +153,7 @@ namespace Example
             var apiInstance = new SecureTokenLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var secureTokenLinkRequest = new SecureTokenLinkRequest(); // SecureTokenLinkRequest | Secure Token Link Id Request
 
@@ -200,7 +200,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureTokenLinkRequest** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md) | Secure Token Link Id Request |  |
 
@@ -229,7 +229,7 @@ catch (ApiException e)
 
 <a id="securetokenlinkslistpost"></a>
 # **SecureTokenlinksListPost**
-> TokenLinkResponse SecureTokenlinksListPost (string xApiKey, string xAppKey, float xVersion, string origin, string? email = null, string? status = null, string? phone = null, string? statuses = null, string? title = null, string? paymentDescription = null, string? invoiceNumber = null, string? expiryDate = null, string? fromExpiryDate = null, string? freeTextSearch = null, string? tokenLinkId = null, string? toExpiryDate = null, string? fromDate = null, string? toDate = null, float? startRow = null, float? pageSize = null, string? sortField = null, bool? asc = null)
+> SecureTokenLinkResponse SecureTokenlinksListPost (string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = null, string? status = null, string? phone = null, string? statuses = null, string? title = null, string? paymentDescription = null, string? invoiceNumber = null, string? expiryDate = null, string? fromExpiryDate = null, string? freeTextSearch = null, string? tokenLinkId = null, string? toExpiryDate = null, string? fromDate = null, string? toDate = null, int? startRow = null, int? pageSize = null, string? sortField = null, bool? asc = null)
 
 This API is used for getting all Token Links for Merchant
 
@@ -261,7 +261,7 @@ namespace Example
             var apiInstance = new SecureTokenLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var email = "email_example";  // string? | email (optional) 
             var status = "NA";  // string? | status (optional) 
@@ -277,15 +277,15 @@ namespace Example
             var toExpiryDate = "toExpiryDate_example";  // string? | toExpiryDate (optional) 
             var fromDate = "fromDate_example";  // string? | fromDate (optional) 
             var toDate = "toDate_example";  // string? | toDate (optional) 
-            var startRow = 8.14D;  // float? | Set StartRow (optional) 
-            var pageSize = 8.14D;  // float? | Set PageSize (optional) 
+            var startRow = 56;  // int? | Set StartRow (optional) 
+            var pageSize = 56;  // int? | Set PageSize (optional) 
             var sortField = "sortField_example";  // string? | Set SortField (optional) 
             var asc = true;  // bool? | Set Asc (optional) 
 
             try
             {
                 // This API is used for getting all Token Links for Merchant
-                TokenLinkResponse result = apiInstance.SecureTokenlinksListPost(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
+                SecureTokenLinkResponse result = apiInstance.SecureTokenlinksListPost(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -306,7 +306,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API is used for getting all Token Links for Merchant
-    ApiResponse<TokenLinkResponse> response = apiInstance.SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
+    ApiResponse<SecureTokenLinkResponse> response = apiInstance.SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -325,7 +325,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **email** | **string?** | email | [optional]  |
 | **status** | **string?** | status | [optional]  |
@@ -341,14 +341,14 @@ catch (ApiException e)
 | **toExpiryDate** | **string?** | toExpiryDate | [optional]  |
 | **fromDate** | **string?** | fromDate | [optional]  |
 | **toDate** | **string?** | toDate | [optional]  |
-| **startRow** | **float?** | Set StartRow | [optional]  |
-| **pageSize** | **float?** | Set PageSize | [optional]  |
+| **startRow** | **int?** | Set StartRow | [optional]  |
+| **pageSize** | **int?** | Set PageSize | [optional]  |
 | **sortField** | **string?** | Set SortField | [optional]  |
 | **asc** | **bool?** | Set Asc | [optional]  |
 
 ### Return type
 
-[**TokenLinkResponse**](TokenLinkResponse.md)
+[**SecureTokenLinkResponse**](SecureTokenLinkResponse.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ catch (ApiException e)
 
 <a id="securetokenlinkspost"></a>
 # **SecureTokenlinksPost**
-> SecureTokenLinkResponse SecureTokenlinksPost (string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest)
+> SecureTokenLinkResponse SecureTokenlinksPost (string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest)
 
 This API is use to create Secure Token Links
 
@@ -403,7 +403,7 @@ namespace Example
             var apiInstance = new SecureTokenLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var tokenLinkSecureRequest = new TokenLinkSecureRequest(); // TokenLinkSecureRequest | Secure Token Link Request
 
@@ -450,7 +450,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **tokenLinkSecureRequest** | [**TokenLinkSecureRequest**](TokenLinkSecureRequest.md) | Secure Token Link Request |  |
 
@@ -480,7 +480,7 @@ catch (ApiException e)
 
 <a id="securetokenlinksput"></a>
 # **SecureTokenlinksPut**
-> void SecureTokenlinksPut (string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest)
+> void SecureTokenlinksPut (string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest)
 
 This API will update the expireIn and paymentType of Token Link.
 
@@ -512,7 +512,7 @@ namespace Example
             var apiInstance = new SecureTokenLinksApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var secureTokenLinkUpdateRequest = new SecureTokenLinkUpdateRequest(); // SecureTokenLinkUpdateRequest | Secure Token Link Update Request
 
@@ -555,7 +555,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureTokenLinkUpdateRequest** | [**SecureTokenLinkUpdateRequest**](SecureTokenLinkUpdateRequest.md) | Secure Token Link Update Request |  |
 

@@ -63,105 +63,70 @@ namespace Org.OpenAPITools.Model
         public enum ExpireInUnitEnum
         {
             /// <summary>
-            /// Enum Seconds for value: Seconds
-            /// </summary>
-            [EnumMember(Value = "Seconds")]
-            Seconds = 1,
-
-            /// <summary>
             /// Enum Minutes for value: Minutes
             /// </summary>
             [EnumMember(Value = "Minutes")]
-            Minutes = 2,
+            Minutes = 1,
 
             /// <summary>
             /// Enum Hours for value: Hours
             /// </summary>
             [EnumMember(Value = "Hours")]
-            Hours = 3,
+            Hours = 2,
 
             /// <summary>
             /// Enum Days for value: Days
             /// </summary>
             [EnumMember(Value = "Days")]
-            Days = 4,
+            Days = 3,
 
             /// <summary>
             /// Enum Weeks for value: Weeks
             /// </summary>
             [EnumMember(Value = "Weeks")]
-            Weeks = 5,
-
-            /// <summary>
-            /// Enum NA for value: NA
-            /// </summary>
-            [EnumMember(Value = "NA")]
-            NA = 6
+            Weeks = 4
         }
 
 
         /// <summary>
         /// Gets or Sets ExpireInUnit
         /// </summary>
-        [DataMember(Name = "expireInUnit", IsRequired = true, EmitDefaultValue = true)]
-        public ExpireInUnitEnum ExpireInUnit { get; set; }
+        [DataMember(Name = "expireInUnit", EmitDefaultValue = false)]
+        public ExpireInUnitEnum? ExpireInUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureTokenLinkUpdateRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SecureTokenLinkUpdateRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecureTokenLinkUpdateRequest" /> class.
-        /// </summary>
-        /// <param name="tokenLinkId">tokenLinkId (required).</param>
-        /// <param name="expireIn">expireIn (required).</param>
+        /// <param name="tokenLinkId">tokenLinkId.</param>
+        /// <param name="expireIn">expireIn.</param>
         /// <param name="responseType">responseType.</param>
-        /// <param name="expireInUnit">expireInUnit (required).</param>
-        /// <param name="intent">intent (required).</param>
-        /// <param name="callBackParameters">callBackParameters.</param>
-        public SecureTokenLinkUpdateRequest(string tokenLinkId = default(string), int expireIn = default(int), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), ExpireInUnitEnum expireInUnit = default(ExpireInUnitEnum), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent), PaymentLinkResponseCallbackParameters callBackParameters = default(PaymentLinkResponseCallbackParameters))
+        /// <param name="expireInUnit">expireInUnit.</param>
+        /// <param name="intent">intent.</param>
+        public SecureTokenLinkUpdateRequest(string tokenLinkId = default(string), decimal expireIn = default(decimal), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), PaymentIntentResponseIntent intent = default(PaymentIntentResponseIntent))
         {
-            // to ensure "tokenLinkId" is required (not null)
-            if (tokenLinkId == null)
-            {
-                throw new ArgumentNullException("tokenLinkId is a required property for SecureTokenLinkUpdateRequest and cannot be null");
-            }
             this.TokenLinkId = tokenLinkId;
             this.ExpireIn = expireIn;
-            this.ExpireInUnit = expireInUnit;
-            // to ensure "intent" is required (not null)
-            if (intent == null)
-            {
-                throw new ArgumentNullException("intent is a required property for SecureTokenLinkUpdateRequest and cannot be null");
-            }
-            this.Intent = intent;
             this.ResponseType = responseType;
-            this.CallBackParameters = callBackParameters;
+            this.ExpireInUnit = expireInUnit;
+            this.Intent = intent;
         }
 
         /// <summary>
         /// Gets or Sets TokenLinkId
         /// </summary>
-        [DataMember(Name = "tokenLinkId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "tokenLinkId", EmitDefaultValue = false)]
         public string TokenLinkId { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpireIn
         /// </summary>
-        [DataMember(Name = "expireIn", IsRequired = true, EmitDefaultValue = true)]
-        public int ExpireIn { get; set; }
+        [DataMember(Name = "expireIn", EmitDefaultValue = false)]
+        public decimal ExpireIn { get; set; }
 
         /// <summary>
         /// Gets or Sets Intent
         /// </summary>
-        [DataMember(Name = "intent", IsRequired = true, EmitDefaultValue = true)]
-        public PaymentIntentRequestIntent Intent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CallBackParameters
-        /// </summary>
-        [DataMember(Name = "callBackParameters", EmitDefaultValue = false)]
-        public PaymentLinkResponseCallbackParameters CallBackParameters { get; set; }
+        [DataMember(Name = "intent", EmitDefaultValue = false)]
+        public PaymentIntentResponseIntent Intent { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -176,7 +141,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  ResponseType: ").Append(ResponseType).Append("\n");
             sb.Append("  ExpireInUnit: ").Append(ExpireInUnit).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
-            sb.Append("  CallBackParameters: ").Append(CallBackParameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

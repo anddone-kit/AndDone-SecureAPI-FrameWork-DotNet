@@ -38,7 +38,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="transactionStatus">transactionStatus.</param>
         /// <param name="transactionDateTime">transactionDateTime.</param>
         /// <param name="transactionAmount">transactionAmount.</param>
-        public PaymentBatchDetailsResponseTransactionDetailsInner(string transactionId = default(string), string transactionStatus = default(string), string transactionDateTime = default(string), float transactionAmount = default(float))
+        public PaymentBatchDetailsResponseTransactionDetailsInner(string transactionId = default(string), string transactionStatus = default(string), string transactionDateTime = default(string), decimal transactionAmount = default(decimal))
         {
             this.TransactionId = transactionId;
             this.TransactionStatus = transactionStatus;
@@ -68,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets TransactionAmount
         /// </summary>
         [DataMember(Name = "transactionAmount", EmitDefaultValue = false)]
-        public float TransactionAmount { get; set; }
+        public decimal TransactionAmount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

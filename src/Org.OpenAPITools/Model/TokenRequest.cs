@@ -34,26 +34,16 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TokenRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TokenRequest" /> class.
-        /// </summary>
-        /// <param name="token">token (required).</param>
+        /// <param name="token">token.</param>
         public TokenRequest(string token = default(string))
         {
-            // to ensure "token" is required (not null)
-            if (token == null)
-            {
-                throw new ArgumentNullException("token is a required property for TokenRequest and cannot be null");
-            }
             this.Token = token;
         }
 
         /// <summary>
         /// Gets or Sets Token
         /// </summary>
-        [DataMember(Name = "token", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "token", EmitDefaultValue = false)]
         public string Token { get; set; }
 
         /// <summary>

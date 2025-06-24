@@ -4,12 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TokenLinkId** | **string** |  | 
-**ExpireIn** | **int** |  | 
+**TokenLinkId** | **string** |  | [optional] 
+**ExpireIn** | **decimal** |  | [optional] 
 **ResponseType** | **string** |  | [optional] 
-**ExpireInUnit** | **string** |  | 
-**Intent** | [**PaymentIntentRequestIntent**](PaymentIntentRequestIntent.md) |  | 
-**CallBackParameters** | [**PaymentLinkResponseCallbackParameters**](PaymentLinkResponseCallbackParameters.md) |  | [optional] 
+**ExpireInUnit** | **string** |  | [optional] 
+**Intent** | [**PaymentIntentResponseIntent**](PaymentIntentResponseIntent.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

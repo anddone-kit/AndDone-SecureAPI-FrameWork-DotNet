@@ -57,7 +57,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="associatedAccountNumber">This denotes the associated account number..</param>
         /// <param name="channel">This denotes the channel..</param>
         /// <param name="channelVersion">This denotes the channel version..</param>
-        public PFEndorsementRequestQuoteDetails(string commercial = default(string), string coupon = default(string), bool couponInvoicePrinted = default(bool), float crd = default(float), string interval = default(string), int installments = default(int), float programID = default(float), float brokerFee = default(float), string eSignOption = default(string), bool processDownPayment = default(bool), string processDownPaymentNoReason = default(string), string downPaymentMethod = default(string), string downPaymentPaidBy = default(string), PFEndorsementRequestQuoteDetailsRecurringACH recurringACH = default(PFEndorsementRequestQuoteDetailsRecurringACH), string batchID = default(string), bool returnPFA = default(bool), string equalPayments = default(string), float quoteExpirationDays = default(float), bool bypassCADNB = default(bool), bool allowZeroAPR = default(bool), string associatedAccountNumber = default(string), string channel = default(string), string channelVersion = default(string))
+        public PFEndorsementRequestQuoteDetails(string commercial = default(string), string coupon = default(string), bool couponInvoicePrinted = default(bool), decimal crd = default(decimal), string interval = default(string), decimal installments = default(decimal), decimal programID = default(decimal), decimal brokerFee = default(decimal), string eSignOption = default(string), bool processDownPayment = default(bool), string processDownPaymentNoReason = default(string), string downPaymentMethod = default(string), string downPaymentPaidBy = default(string), PFEndorsementRequestQuoteDetailsRecurringACH recurringACH = default(PFEndorsementRequestQuoteDetailsRecurringACH), string batchID = default(string), bool returnPFA = default(bool), string equalPayments = default(string), decimal quoteExpirationDays = default(decimal), bool bypassCADNB = default(bool), bool allowZeroAPR = default(bool), string associatedAccountNumber = default(string), string channel = default(string), string channelVersion = default(string))
         {
             this.Commercial = commercial;
             this.Coupon = coupon;
@@ -110,7 +110,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>This denotes the Crd.</value>
         [DataMember(Name = "Crd", EmitDefaultValue = false)]
-        public float Crd { get; set; }
+        public decimal Crd { get; set; }
 
         /// <summary>
         /// This denotes the Interval.
@@ -124,21 +124,21 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>This denotes the number of installments.</value>
         [DataMember(Name = "Installments", EmitDefaultValue = false)]
-        public int Installments { get; set; }
+        public decimal Installments { get; set; }
 
         /// <summary>
         /// This denotes the program ID.
         /// </summary>
         /// <value>This denotes the program ID.</value>
         [DataMember(Name = "ProgramID", EmitDefaultValue = false)]
-        public float ProgramID { get; set; }
+        public decimal ProgramID { get; set; }
 
         /// <summary>
         /// This denotes the broker fees.
         /// </summary>
         /// <value>This denotes the broker fees.</value>
         [DataMember(Name = "BrokerFee", EmitDefaultValue = false)]
-        public float BrokerFee { get; set; }
+        public decimal BrokerFee { get; set; }
 
         /// <summary>
         /// This denotes the eSign Option.
@@ -207,7 +207,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>This denotes the number of days to expire.</value>
         [DataMember(Name = "QuoteExpirationDays", EmitDefaultValue = false)]
-        public float QuoteExpirationDays { get; set; }
+        public decimal QuoteExpirationDays { get; set; }
 
         /// <summary>
         /// This denotes the flag whether to bypass CADNB.

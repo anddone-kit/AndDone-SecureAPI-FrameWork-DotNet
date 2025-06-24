@@ -98,7 +98,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFPolicyUpdateRequestDTO = new PFPolicyUpdateRequestDTO?(); // PFPolicyUpdateRequestDTO? | Signature Request details (optional) 
 
@@ -163,7 +163,7 @@ Class | Method | HTTP request | Description
 *SecurePremiumFinanceLiteApi* | [**SecureEpfliteQuotesLinkPost**](docs/SecurePremiumFinanceLiteApi.md#secureepflitequoteslinkpost) | **POST** /secure/epflite/quotes/link | This API will return quotes created againsts a payment link.
 *SecurePremiumFinanceLiteApi* | [**SecureEpfliteQuotesPaymentlinksPost**](docs/SecurePremiumFinanceLiteApi.md#secureepflitequotespaymentlinkspost) | **POST** /secure/epflite/quotes/paymentlinks | This API is used to create Payment Links
 *SecureRefundsApi* | [**SecureRefundsEligibilityPost**](docs/SecureRefundsApi.md#securerefundseligibilitypost) | **POST** /secure/refunds/eligibility | This API return refund eligibility of a transaction.
-*SecureRefundsApi* | [**SecureRefundsPost**](docs/SecureRefundsApi.md#securerefundspost) | **POST** /secure/refunds | This API will refund a transaction which has been settled by the processor.
+*SecureRefundsApi* | [**SecureRefundsPost**](docs/SecureRefundsApi.md#securerefundspost) | **POST** /secure/refunds | This API return refund a transaction.
 *SecureReportsApi* | [**SecureReportsDownloadsPost**](docs/SecureReportsApi.md#securereportsdownloadspost) | **POST** /secure/reports/downloads | This API will add system report.
 *SecureTokenLinksApi* | [**SecureTokenlinksDetailsPost**](docs/SecureTokenLinksApi.md#securetokenlinksdetailspost) | **POST** /secure/tokenlinks/details | This API is used for getting Token Links by TokenLink ID
 *SecureTokenLinksApi* | [**SecureTokenlinksExpirationsPost**](docs/SecureTokenLinksApi.md#securetokenlinksexpirationspost) | **POST** /secure/tokenlinks/expirations | This API expires the token link.
@@ -215,26 +215,16 @@ Class | Method | HTTP request | Description
  - [Model.PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner](docs/PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner.md)
  - [Model.PFEndorsementResponse](docs/PFEndorsementResponse.md)
  - [Model.PFEndorsementResponseItem](docs/PFEndorsementResponseItem.md)
- - [Model.PFEndorsementResponseItemPaymentIntent](docs/PFEndorsementResponseItemPaymentIntent.md)
- - [Model.PFEndorsementResponseItemPaymentIntentIntent](docs/PFEndorsementResponseItemPaymentIntentIntent.md)
  - [Model.PFEndorsementResponseItemQuote](docs/PFEndorsementResponseItemQuote.md)
  - [Model.PFEndorsementResponseItemQuoteESignResult](docs/PFEndorsementResponseItemQuoteESignResult.md)
  - [Model.PFGenerateQuoteResponse](docs/PFGenerateQuoteResponse.md)
  - [Model.PFGenerateQuoteResponseItem](docs/PFGenerateQuoteResponseItem.md)
  - [Model.PFGenerateQuoteResponseItemESignResult](docs/PFGenerateQuoteResponseItemESignResult.md)
- - [Model.PFLiteGenerateQuoteResponse](docs/PFLiteGenerateQuoteResponse.md)
- - [Model.PFLiteGenerateQuoteResponseItem](docs/PFLiteGenerateQuoteResponseItem.md)
- - [Model.PFLiteGenerateQuoteResponseItemESignResult](docs/PFLiteGenerateQuoteResponseItemESignResult.md)
  - [Model.PFLiteGetQuoteRequest](docs/PFLiteGetQuoteRequest.md)
  - [Model.PFLitePaymentLinkRequest](docs/PFLitePaymentLinkRequest.md)
  - [Model.PFLitePaymentLinkRequestCallbackParameters](docs/PFLitePaymentLinkRequestCallbackParameters.md)
- - [Model.PFLitePaymentLinkRequestCustomersInner](docs/PFLitePaymentLinkRequestCustomersInner.md)
- - [Model.PFLitePaymentLinkRequestCustomersInnerAddress](docs/PFLitePaymentLinkRequestCustomersInnerAddress.md)
- - [Model.PFLitePaymentLinkRequestReferenceDataListInner](docs/PFLitePaymentLinkRequestReferenceDataListInner.md)
  - [Model.PFLitePaymentLinkRequestSettings](docs/PFLitePaymentLinkRequestSettings.md)
  - [Model.PFLiteQuoteByPaymentLinkResponse](docs/PFLiteQuoteByPaymentLinkResponse.md)
- - [Model.PFLiteQuoteByPaymentLinkResponsePoliciesInner](docs/PFLiteQuoteByPaymentLinkResponsePoliciesInner.md)
- - [Model.PFLiteQuoteByPaymentLinkResponsePoliciesInnerCarrier](docs/PFLiteQuoteByPaymentLinkResponsePoliciesInnerCarrier.md)
  - [Model.PFLiteSecureQuoteRequest](docs/PFLiteSecureQuoteRequest.md)
  - [Model.PFLiteSecureQuoteRequestInsured](docs/PFLiteSecureQuoteRequestInsured.md)
  - [Model.PFLiteSecureQuoteRequestInsuredAddress](docs/PFLiteSecureQuoteRequestInsuredAddress.md)
@@ -248,6 +238,7 @@ Class | Method | HTTP request | Description
  - [Model.PFQuoteEsignRequest](docs/PFQuoteEsignRequest.md)
  - [Model.PFRetrievePFARequest](docs/PFRetrievePFARequest.md)
  - [Model.PFRetrievePFARequestDTO](docs/PFRetrievePFARequestDTO.md)
+ - [Model.PFRetrievePFAResponse](docs/PFRetrievePFAResponse.md)
  - [Model.PFUpdatePFARequestDTO](docs/PFUpdatePFARequestDTO.md)
  - [Model.PFUpdatePFAResponse](docs/PFUpdatePFAResponse.md)
  - [Model.PagePaymentListResponseDTO](docs/PagePaymentListResponseDTO.md)
@@ -264,25 +255,23 @@ Class | Method | HTTP request | Description
  - [Model.PaymentIntentExpiresResponse](docs/PaymentIntentExpiresResponse.md)
  - [Model.PaymentIntentRequest](docs/PaymentIntentRequest.md)
  - [Model.PaymentIntentRequestCustomersInner](docs/PaymentIntentRequestCustomersInner.md)
- - [Model.PaymentIntentRequestIntent](docs/PaymentIntentRequestIntent.md)
- - [Model.PaymentIntentRequestPfr](docs/PaymentIntentRequestPfr.md)
  - [Model.PaymentIntentRequestReferenceDataListInner](docs/PaymentIntentRequestReferenceDataListInner.md)
- - [Model.PaymentIntentRequestSplitsInner](docs/PaymentIntentRequestSplitsInner.md)
  - [Model.PaymentIntentResponse](docs/PaymentIntentResponse.md)
  - [Model.PaymentIntentResponseCustomersInner](docs/PaymentIntentResponseCustomersInner.md)
+ - [Model.PaymentIntentResponseIntent](docs/PaymentIntentResponseIntent.md)
+ - [Model.PaymentIntentResponseSplitsInner](docs/PaymentIntentResponseSplitsInner.md)
  - [Model.PaymentLinkExpiresResponse](docs/PaymentLinkExpiresResponse.md)
  - [Model.PaymentLinkRequest](docs/PaymentLinkRequest.md)
+ - [Model.PaymentLinkRequestCallbackParameters](docs/PaymentLinkRequestCallbackParameters.md)
  - [Model.PaymentLinkRequestSettings](docs/PaymentLinkRequestSettings.md)
  - [Model.PaymentLinkRequestSettingsIntent](docs/PaymentLinkRequestSettingsIntent.md)
+ - [Model.PaymentLinkRequestSplitsInner](docs/PaymentLinkRequestSplitsInner.md)
  - [Model.PaymentLinkResponse](docs/PaymentLinkResponse.md)
  - [Model.PaymentLinkResponseCallbackParameters](docs/PaymentLinkResponseCallbackParameters.md)
  - [Model.PaymentLinkResponseCustomersInner](docs/PaymentLinkResponseCustomersInner.md)
- - [Model.PaymentLinkResponseCustomersInnerAccountsInner](docs/PaymentLinkResponseCustomersInnerAccountsInner.md)
- - [Model.PaymentLinkResponseDisplaySettings](docs/PaymentLinkResponseDisplaySettings.md)
- - [Model.PaymentLinkResponseDisplaySettingsIntent](docs/PaymentLinkResponseDisplaySettingsIntent.md)
  - [Model.PaymentLinkResponseLineItemsInner](docs/PaymentLinkResponseLineItemsInner.md)
- - [Model.PaymentLinkResponsePaymentsInner](docs/PaymentLinkResponsePaymentsInner.md)
- - [Model.PaymentLinkResponseReferenceDataListInner](docs/PaymentLinkResponseReferenceDataListInner.md)
+ - [Model.PaymentLinkResponsePfr](docs/PaymentLinkResponsePfr.md)
+ - [Model.PaymentLinkResponseSplitsInner](docs/PaymentLinkResponseSplitsInner.md)
  - [Model.PaymentListResponseDTO](docs/PaymentListResponseDTO.md)
  - [Model.PaymentRequest](docs/PaymentRequest.md)
  - [Model.PaymentRequestDetailDTO](docs/PaymentRequestDetailDTO.md)
@@ -294,14 +283,12 @@ Class | Method | HTTP request | Description
  - [Model.PaymentTimeLineRequestDto](docs/PaymentTimeLineRequestDto.md)
  - [Model.QuoteRequest](docs/QuoteRequest.md)
  - [Model.QuoteRequestAgent](docs/QuoteRequestAgent.md)
- - [Model.QuoteRequestAgentAddress](docs/QuoteRequestAgentAddress.md)
  - [Model.QuoteRequestDetails](docs/QuoteRequestDetails.md)
  - [Model.QuoteRequestInsured](docs/QuoteRequestInsured.md)
  - [Model.QuoteRequestInsuredAddress](docs/QuoteRequestInsuredAddress.md)
  - [Model.QuoteRequestPoliciesInner](docs/QuoteRequestPoliciesInner.md)
  - [Model.QuoteRequestPoliciesInnerCompany](docs/QuoteRequestPoliciesInnerCompany.md)
  - [Model.QuoteRequestPoliciesInnerGa](docs/QuoteRequestPoliciesInnerGa.md)
- - [Model.QuoteRequestPoliciesInnerGaAddress](docs/QuoteRequestPoliciesInnerGaAddress.md)
  - [Model.QuoteResponse](docs/QuoteResponse.md)
  - [Model.RefundEligibility](docs/RefundEligibility.md)
  - [Model.RemittanceDataDto](docs/RemittanceDataDto.md)
@@ -315,6 +302,7 @@ Class | Method | HTTP request | Description
  - [Model.SecurePaymentLinkRequest](docs/SecurePaymentLinkRequest.md)
  - [Model.SecureTokenLinkByIdResponse](docs/SecureTokenLinkByIdResponse.md)
  - [Model.SecureTokenLinkByIdResponseAccountToken](docs/SecureTokenLinkByIdResponseAccountToken.md)
+ - [Model.SecureTokenLinkByIdResponseIntent](docs/SecureTokenLinkByIdResponseIntent.md)
  - [Model.SecureTokenLinkByIdResponseTimeLineInner](docs/SecureTokenLinkByIdResponseTimeLineInner.md)
  - [Model.SecureTokenLinkExpiredResponse](docs/SecureTokenLinkExpiredResponse.md)
  - [Model.SecureTokenLinkRequest](docs/SecureTokenLinkRequest.md)
@@ -328,37 +316,36 @@ Class | Method | HTTP request | Description
  - [Model.SecureTransactionRefundRequest](docs/SecureTransactionRefundRequest.md)
  - [Model.SecureUpdatePaymentLinkRequest](docs/SecureUpdatePaymentLinkRequest.md)
  - [Model.SecureUpdatePaymentLinkRequestSettings](docs/SecureUpdatePaymentLinkRequestSettings.md)
- - [Model.SecureUpdatePaymentLinkRequestSettingsIntent](docs/SecureUpdatePaymentLinkRequestSettingsIntent.md)
  - [Model.SecureVendorRequestDTO](docs/SecureVendorRequestDTO.md)
  - [Model.SecureVendorResponseDTO](docs/SecureVendorResponseDTO.md)
+ - [Model.SecureVendorResponseDTOPhysicalAddress](docs/SecureVendorResponseDTOPhysicalAddress.md)
  - [Model.SecureVendorResponseDTORemittanceAddress](docs/SecureVendorResponseDTORemittanceAddress.md)
  - [Model.SecureVendorStatusRequestDTO](docs/SecureVendorStatusRequestDTO.md)
  - [Model.SecureVendorTimelineRequestDTO](docs/SecureVendorTimelineRequestDTO.md)
  - [Model.SecureVendorUpdateRequestDTO](docs/SecureVendorUpdateRequestDTO.md)
  - [Model.SecureVendorUpdateRequestDTORemittanceAddress](docs/SecureVendorUpdateRequestDTORemittanceAddress.md)
- - [Model.TokenLinkResponse](docs/TokenLinkResponse.md)
- - [Model.TokenLinkResponseDataInner](docs/TokenLinkResponseDataInner.md)
  - [Model.TokenLinkSecureRequest](docs/TokenLinkSecureRequest.md)
+ - [Model.TokenLinkSecureRequestCallbackParameters](docs/TokenLinkSecureRequestCallbackParameters.md)
  - [Model.TokenLinkSecureRequestCustomersInner](docs/TokenLinkSecureRequestCustomersInner.md)
- - [Model.TokenLinkSecureRequestIntent](docs/TokenLinkSecureRequestIntent.md)
+ - [Model.TokenLinkSecureRequestCustomersInnerAddress](docs/TokenLinkSecureRequestCustomersInnerAddress.md)
  - [Model.TokenRequest](docs/TokenRequest.md)
  - [Model.TransactionDetailResponse](docs/TransactionDetailResponse.md)
+ - [Model.TransactionDetailResponseRefundTransactions](docs/TransactionDetailResponseRefundTransactions.md)
+ - [Model.TransactionDetailResponseRefundTransactionsDataInner](docs/TransactionDetailResponseRefundTransactionsDataInner.md)
  - [Model.TransactionDetailResponseSplitsInner](docs/TransactionDetailResponseSplitsInner.md)
  - [Model.TransactionDetailResponseTenderInfo](docs/TransactionDetailResponseTenderInfo.md)
+ - [Model.TransactionDetailResponseTransactionResult](docs/TransactionDetailResponseTransactionResult.md)
  - [Model.TransactionPaymentResponse](docs/TransactionPaymentResponse.md)
  - [Model.TransactionPaymentResponseAchTenderInfo](docs/TransactionPaymentResponseAchTenderInfo.md)
  - [Model.TransactionPaymentResponseBillingContact](docs/TransactionPaymentResponseBillingContact.md)
  - [Model.TransactionPaymentResponseBillingContactAddress](docs/TransactionPaymentResponseBillingContactAddress.md)
  - [Model.TransactionPaymentResponseBillingContactName](docs/TransactionPaymentResponseBillingContactName.md)
  - [Model.TransactionPaymentResponseCcTenderInfo](docs/TransactionPaymentResponseCcTenderInfo.md)
- - [Model.TransactionPaymentResponseRefundTransactions](docs/TransactionPaymentResponseRefundTransactions.md)
- - [Model.TransactionPaymentResponseRefundTransactionsDataInner](docs/TransactionPaymentResponseRefundTransactionsDataInner.md)
  - [Model.TransactionPaymentResponseTransactionEntitySplitResponsesInner](docs/TransactionPaymentResponseTransactionEntitySplitResponsesInner.md)
  - [Model.TransactionPaymentResponseTransactionResult](docs/TransactionPaymentResponseTransactionResult.md)
  - [Model.TransactionRefundEligibilityRequest](docs/TransactionRefundEligibilityRequest.md)
  - [Model.UpdateIntentRequest](docs/UpdateIntentRequest.md)
  - [Model.VendorRequestDTO](docs/VendorRequestDTO.md)
- - [Model.VendorRequestDTOPhysicalAddress](docs/VendorRequestDTOPhysicalAddress.md)
  - [Model.VendorRequestDTORemittanceAddress](docs/VendorRequestDTORemittanceAddress.md)
  - [Model.VendorResponseDTO](docs/VendorResponseDTO.md)
  - [Model.VendorResponseDTORemittanceAddress](docs/VendorResponseDTORemittanceAddress.md)
@@ -391,17 +378,10 @@ Authentication schemes defined for the API:
 - **API key parameter name**: x-app-key
 - **Location**: HTTP header
 
-<a id="x-version"></a>
-### x-version
+<a id="Origin"></a>
+### Origin
 
 - **Type**: API key
-- **API key parameter name**: x-version
-- **Location**: HTTP header
-
-<a id="origin"></a>
-### origin
-
-- **Type**: API key
-- **API key parameter name**: origin
+- **API key parameter name**: Origin
 - **Location**: HTTP header
 

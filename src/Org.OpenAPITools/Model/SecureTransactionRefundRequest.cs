@@ -72,50 +72,30 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets RefundType
         /// </summary>
-        [DataMember(Name = "refundType", IsRequired = true, EmitDefaultValue = true)]
-        public RefundTypeEnum RefundType { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecureTransactionRefundRequest" /> class.
-        /// </summary>
-        [JsonConstructorAttribute]
-        protected SecureTransactionRefundRequest() { }
+        [DataMember(Name = "refundType", EmitDefaultValue = false)]
+        public RefundTypeEnum? RefundType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureTransactionRefundRequest" /> class.
         /// </summary>
         /// <param name="invoiceNumber">invoiceNumber.</param>
         /// <param name="pONumber">pONumber.</param>
-        /// <param name="refundAmount">refundAmount (required).</param>
-        /// <param name="transactionId">transactionId (required).</param>
+        /// <param name="refundAmount">refundAmount.</param>
+        /// <param name="transactionId">transactionId.</param>
         /// <param name="remarks">remarks.</param>
-        /// <param name="refundReason">refundReason (required).</param>
-        /// <param name="refundDetail">refundDetail (required).</param>
-        /// <param name="refundType">refundType (required).</param>
+        /// <param name="refundReason">refundReason.</param>
+        /// <param name="refundDetail">refundDetail.</param>
+        /// <param name="refundType">refundType.</param>
         /// <param name="splits">splits.</param>
-        public SecureTransactionRefundRequest(string invoiceNumber = default(string), string pONumber = default(string), float refundAmount = default(float), string transactionId = default(string), string remarks = default(string), string refundReason = default(string), string refundDetail = default(string), RefundTypeEnum refundType = default(RefundTypeEnum), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>))
+        public SecureTransactionRefundRequest(string invoiceNumber = default(string), string pONumber = default(string), decimal refundAmount = default(decimal), string transactionId = default(string), string remarks = default(string), string refundReason = default(string), string refundDetail = default(string), RefundTypeEnum? refundType = default(RefundTypeEnum?), List<PaymentIntentResponseSplitsInner> splits = default(List<PaymentIntentResponseSplitsInner>))
         {
-            this.RefundAmount = refundAmount;
-            // to ensure "transactionId" is required (not null)
-            if (transactionId == null)
-            {
-                throw new ArgumentNullException("transactionId is a required property for SecureTransactionRefundRequest and cannot be null");
-            }
-            this.TransactionId = transactionId;
-            // to ensure "refundReason" is required (not null)
-            if (refundReason == null)
-            {
-                throw new ArgumentNullException("refundReason is a required property for SecureTransactionRefundRequest and cannot be null");
-            }
-            this.RefundReason = refundReason;
-            // to ensure "refundDetail" is required (not null)
-            if (refundDetail == null)
-            {
-                throw new ArgumentNullException("refundDetail is a required property for SecureTransactionRefundRequest and cannot be null");
-            }
-            this.RefundDetail = refundDetail;
-            this.RefundType = refundType;
             this.InvoiceNumber = invoiceNumber;
             this.PONumber = pONumber;
+            this.RefundAmount = refundAmount;
+            this.TransactionId = transactionId;
             this.Remarks = remarks;
+            this.RefundReason = refundReason;
+            this.RefundDetail = refundDetail;
+            this.RefundType = refundType;
             this.Splits = splits;
         }
 
@@ -134,13 +114,13 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets RefundAmount
         /// </summary>
-        [DataMember(Name = "refundAmount", IsRequired = true, EmitDefaultValue = true)]
-        public float RefundAmount { get; set; }
+        [DataMember(Name = "refundAmount", EmitDefaultValue = false)]
+        public decimal RefundAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionId
         /// </summary>
-        [DataMember(Name = "transactionId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
         /// <summary>
@@ -152,20 +132,20 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets RefundReason
         /// </summary>
-        [DataMember(Name = "refundReason", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "refundReason", EmitDefaultValue = false)]
         public string RefundReason { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundDetail
         /// </summary>
-        [DataMember(Name = "refundDetail", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "refundDetail", EmitDefaultValue = false)]
         public string RefundDetail { get; set; }
 
         /// <summary>
         /// Gets or Sets Splits
         /// </summary>
         [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
+        public List<PaymentIntentResponseSplitsInner> Splits { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

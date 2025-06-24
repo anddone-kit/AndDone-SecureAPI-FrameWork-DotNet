@@ -32,6 +32,31 @@ namespace Org.OpenAPITools.Model
     public partial class PFLiteSecureQuoteRequestProgram : IValidatableObject
     {
         /// <summary>
+        /// Defines LoanType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LoanTypeEnum
+        {
+            /// <summary>
+            /// Enum Commercial for value: Commercial
+            /// </summary>
+            [EnumMember(Value = "Commercial")]
+            Commercial = 1,
+
+            /// <summary>
+            /// Enum Personal for value: Personal
+            /// </summary>
+            [EnumMember(Value = "Personal")]
+            Personal = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets LoanType
+        /// </summary>
+        [DataMember(Name = "loanType", IsRequired = true, EmitDefaultValue = true)]
+        public LoanTypeEnum LoanType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequestProgram" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -39,30 +64,27 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequestProgram" /> class.
         /// </summary>
-        /// <param name="programId">programId.</param>
+        /// <param name="programId">programId (required).</param>
         /// <param name="loanType">loanType (required).</param>
-        public PFLiteSecureQuoteRequestProgram(float programId = default(float), string loanType = default(string))
+        /// <param name="brokerFee">brokerFee.</param>
+        public PFLiteSecureQuoteRequestProgram(decimal programId = default(decimal), LoanTypeEnum loanType = default(LoanTypeEnum), string brokerFee = default(string))
         {
-            // to ensure "loanType" is required (not null)
-            if (loanType == null)
-            {
-                throw new ArgumentNullException("loanType is a required property for PFLiteSecureQuoteRequestProgram and cannot be null");
-            }
-            this.LoanType = loanType;
             this.ProgramId = programId;
+            this.LoanType = loanType;
+            this.BrokerFee = brokerFee;
         }
 
         /// <summary>
         /// Gets or Sets ProgramId
         /// </summary>
-        [DataMember(Name = "programId", EmitDefaultValue = false)]
-        public float ProgramId { get; set; }
+        [DataMember(Name = "programId", IsRequired = true, EmitDefaultValue = true)]
+        public decimal ProgramId { get; set; }
 
         /// <summary>
-        /// Gets or Sets LoanType
+        /// Gets or Sets BrokerFee
         /// </summary>
-        [DataMember(Name = "loanType", IsRequired = true, EmitDefaultValue = true)]
-        public string LoanType { get; set; }
+        [DataMember(Name = "brokerFee", EmitDefaultValue = false)]
+        public string BrokerFee { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,6 +96,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("class PFLiteSecureQuoteRequestProgram {\n");
             sb.Append("  ProgramId: ").Append(ProgramId).Append("\n");
             sb.Append("  LoanType: ").Append(LoanType).Append("\n");
+            sb.Append("  BrokerFee: ").Append(BrokerFee).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

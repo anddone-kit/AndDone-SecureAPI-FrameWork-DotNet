@@ -9,7 +9,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securepaymentintentsexpirationspost"></a>
 # **SecurePaymentintentsExpirationsPost**
-> PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost (string xApiKey, string xAppKey, float xVersion, string origin, string id)
+> PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, string id)
 
 This API expires the payment Intent or link.
 
@@ -41,7 +41,7 @@ namespace Example
             var apiInstance = new SecurePaymentIntentApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var id = "id_example";  // string | Payment Intent Id
 
@@ -88,7 +88,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **id** | **string** | Payment Intent Id |  |
 
@@ -117,7 +117,7 @@ catch (ApiException e)
 
 <a id="securepaymentintentspost"></a>
 # **SecurePaymentintentsPost**
-> PaymentIntentResponse SecurePaymentintentsPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = null)
+> PaymentIntentResponse SecurePaymentintentsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = null)
 
 This API is use to create Secure payment Intent.
 
@@ -149,7 +149,7 @@ namespace Example
             var apiInstance = new SecurePaymentIntentApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var paymentIntentRequest = new PaymentIntentRequest?(); // PaymentIntentRequest? | Payment Intent Request (optional) 
 
@@ -196,7 +196,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **paymentIntentRequest** | [**PaymentIntentRequest?**](PaymentIntentRequest?.md) | Payment Intent Request | [optional]  |
 

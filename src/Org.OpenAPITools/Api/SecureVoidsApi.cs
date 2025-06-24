@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionCancelRequest">Cancel Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureCancelledTransactionResponse</returns>
-        SecureCancelledTransactionResponse SecureCancellationsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0);
+        SecureCancelledTransactionResponse SecureCancellationsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API cancel a transaction.
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionCancelRequest">Cancel Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureCancelledTransactionResponse</returns>
-        ApiResponse<SecureCancelledTransactionResponse> SecureCancellationsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0);
+        ApiResponse<SecureCancelledTransactionResponse> SecureCancellationsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -78,7 +78,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureCancelledTransactionResponse</returns>
-        System.Threading.Tasks.Task<SecureCancelledTransactionResponse> SecureCancellationsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureCancelledTransactionResponse> SecureCancellationsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API cancel a transaction.
@@ -95,7 +95,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureCancelledTransactionResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureCancelledTransactionResponse>> SecureCancellationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureCancelledTransactionResponse>> SecureCancellationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -227,7 +227,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionCancelRequest">Cancel Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureCancelledTransactionResponse</returns>
-        public SecureCancelledTransactionResponse SecureCancellationsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0)
+        public SecureCancelledTransactionResponse SecureCancellationsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<SecureCancelledTransactionResponse> localVarResponse = SecureCancellationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTransactionCancelRequest);
             return localVarResponse.Data;
@@ -244,7 +244,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionCancelRequest">Cancel Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureCancelledTransactionResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureCancelledTransactionResponse> SecureCancellationsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureCancelledTransactionResponse> SecureCancellationsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -296,7 +296,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTransactionCancelRequest;
 
             localVarRequestOptions.Operation = "SecureVoidsApi.SecureCancellationsPost";
@@ -339,7 +339,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureCancelledTransactionResponse</returns>
-        public async System.Threading.Tasks.Task<SecureCancelledTransactionResponse> SecureCancellationsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureCancelledTransactionResponse> SecureCancellationsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<SecureCancelledTransactionResponse> localVarResponse = await SecureCancellationsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTransactionCancelRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -357,7 +357,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureCancelledTransactionResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureCancelledTransactionResponse>> SecureCancellationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureCancelledTransactionResponse>> SecureCancellationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -410,7 +410,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTransactionCancelRequest;
 
             localVarRequestOptions.Operation = "SecureVoidsApi.SecureCancellationsPost";

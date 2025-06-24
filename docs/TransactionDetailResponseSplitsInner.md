@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VirtualAccount** | **string** |  | [optional] 
-**Amount** | **float** |  | [optional] 
+**Amount** | **decimal** |  | [optional] 
 **AccountNumber** | **string** |  | [optional] 
 **ChargeIndicator** | **bool** |  | [optional] 
 

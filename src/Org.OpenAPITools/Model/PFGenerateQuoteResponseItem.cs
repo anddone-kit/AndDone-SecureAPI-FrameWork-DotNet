@@ -52,9 +52,9 @@ namespace Org.OpenAPITools.Model
         /// <param name="retailAgentRegisterLoginURL">The URL for the retail agent register login..</param>
         /// <param name="eSignResult">eSignResult.</param>
         /// <param name="errors">Any errors associated with the quote generation..</param>
-        /// <param name="pfa">The PFA document content..</param>
+        /// <param name="pFA">The PFA document content..</param>
         /// <param name="electronicSignatureURL">The URL for the electronic signature..</param>
-        public PFGenerateQuoteResponseItem(float quoteKey = default(float), float premium = default(float), float downAmount = default(float), float amountFinanced = default(float), float financeCharge = default(float), float totalPayments = default(float), float paymentAmount = default(float), float docStamp = default(float), string firstDueDate = default(string), float apr = default(float), int installments = default(int), string batchId = default(string), float paymentsRetained = default(float), float paymentRetainedAmount = default(float), string unsignedPFAUrl = default(string), string retailAgentRegisterLoginURL = default(string), PFGenerateQuoteResponseItemESignResult eSignResult = default(PFGenerateQuoteResponseItemESignResult), string errors = default(string), string pfa = default(string), string electronicSignatureURL = default(string))
+        public PFGenerateQuoteResponseItem(int quoteKey = default(int), decimal premium = default(decimal), decimal downAmount = default(decimal), decimal amountFinanced = default(decimal), decimal financeCharge = default(decimal), decimal totalPayments = default(decimal), decimal paymentAmount = default(decimal), decimal docStamp = default(decimal), string firstDueDate = default(string), decimal apr = default(decimal), int installments = default(int), string batchId = default(string), int paymentsRetained = default(int), decimal paymentRetainedAmount = default(decimal), string unsignedPFAUrl = default(string), string retailAgentRegisterLoginURL = default(string), PFGenerateQuoteResponseItemESignResult eSignResult = default(PFGenerateQuoteResponseItemESignResult), string errors = default(string), string pFA = default(string), string electronicSignatureURL = default(string))
         {
             this.QuoteKey = quoteKey;
             this.Premium = premium;
@@ -74,7 +74,7 @@ namespace Org.OpenAPITools.Model
             this.RetailAgentRegisterLoginURL = retailAgentRegisterLoginURL;
             this.ESignResult = eSignResult;
             this.Errors = errors;
-            this.Pfa = pfa;
+            this.PFA = pFA;
             this.ElectronicSignatureURL = electronicSignatureURL;
         }
 
@@ -83,56 +83,56 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The key associated with the quote.</value>
         [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public float QuoteKey { get; set; }
+        public int QuoteKey { get; set; }
 
         /// <summary>
         /// The premium amount.
         /// </summary>
         /// <value>The premium amount.</value>
         [DataMember(Name = "premium", EmitDefaultValue = false)]
-        public float Premium { get; set; }
+        public decimal Premium { get; set; }
 
         /// <summary>
         /// The down payment amount.
         /// </summary>
         /// <value>The down payment amount.</value>
         [DataMember(Name = "downAmount", EmitDefaultValue = false)]
-        public float DownAmount { get; set; }
+        public decimal DownAmount { get; set; }
 
         /// <summary>
         /// The amount financed.
         /// </summary>
         /// <value>The amount financed.</value>
         [DataMember(Name = "amountFinanced", EmitDefaultValue = false)]
-        public float AmountFinanced { get; set; }
+        public decimal AmountFinanced { get; set; }
 
         /// <summary>
         /// The finance charge.
         /// </summary>
         /// <value>The finance charge.</value>
         [DataMember(Name = "financeCharge", EmitDefaultValue = false)]
-        public float FinanceCharge { get; set; }
+        public decimal FinanceCharge { get; set; }
 
         /// <summary>
         /// The total payments.
         /// </summary>
         /// <value>The total payments.</value>
         [DataMember(Name = "totalPayments", EmitDefaultValue = false)]
-        public float TotalPayments { get; set; }
+        public decimal TotalPayments { get; set; }
 
         /// <summary>
         /// The payment amount.
         /// </summary>
         /// <value>The payment amount.</value>
         [DataMember(Name = "paymentAmount", EmitDefaultValue = false)]
-        public float PaymentAmount { get; set; }
+        public decimal PaymentAmount { get; set; }
 
         /// <summary>
         /// The document stamp amount.
         /// </summary>
         /// <value>The document stamp amount.</value>
         [DataMember(Name = "docStamp", EmitDefaultValue = false)]
-        public float DocStamp { get; set; }
+        public decimal DocStamp { get; set; }
 
         /// <summary>
         /// The first due date.
@@ -146,7 +146,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The annual percentage rate (APR).</value>
         [DataMember(Name = "apr", EmitDefaultValue = false)]
-        public float Apr { get; set; }
+        public decimal Apr { get; set; }
 
         /// <summary>
         /// The number of installments.
@@ -167,14 +167,14 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The number of payments retained.</value>
         [DataMember(Name = "paymentsRetained", EmitDefaultValue = false)]
-        public float PaymentsRetained { get; set; }
+        public int PaymentsRetained { get; set; }
 
         /// <summary>
         /// The amount retained from the payment.
         /// </summary>
         /// <value>The amount retained from the payment.</value>
         [DataMember(Name = "paymentRetainedAmount", EmitDefaultValue = false)]
-        public float PaymentRetainedAmount { get; set; }
+        public decimal PaymentRetainedAmount { get; set; }
 
         /// <summary>
         /// The URL for the unsigned PFA document.
@@ -207,8 +207,8 @@ namespace Org.OpenAPITools.Model
         /// The PFA document content.
         /// </summary>
         /// <value>The PFA document content.</value>
-        [DataMember(Name = "pfa", EmitDefaultValue = false)]
-        public string Pfa { get; set; }
+        [DataMember(Name = "pFA", EmitDefaultValue = false)]
+        public string PFA { get; set; }
 
         /// <summary>
         /// The URL for the electronic signature.
@@ -243,7 +243,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  RetailAgentRegisterLoginURL: ").Append(RetailAgentRegisterLoginURL).Append("\n");
             sb.Append("  ESignResult: ").Append(ESignResult).Append("\n");
             sb.Append("  Errors: ").Append(Errors).Append("\n");
-            sb.Append("  Pfa: ").Append(Pfa).Append("\n");
+            sb.Append("  PFA: ").Append(PFA).Append("\n");
             sb.Append("  ElectronicSignatureURL: ").Append(ElectronicSignatureURL).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

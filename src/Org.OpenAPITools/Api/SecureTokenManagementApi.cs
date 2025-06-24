@@ -31,13 +31,12 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureTokensActivationsDelete(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0);
+        void SecureTokensActivationsDelete(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0);
 
         /// <summary>
         /// This API is used for deactivating merchant token securely
@@ -47,13 +46,12 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureTokensActivationsDeleteWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0);
+        ApiResponse<Object> SecureTokensActivationsDeleteWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0);
         /// <summary>
         /// This API is used for getting details of Merchant Token by Token link.
         /// </summary>
@@ -65,7 +63,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureMerchantTokenShortResponse</returns>
-        SecureMerchantTokenShortResponse SecureTokensDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        SecureMerchantTokenShortResponse SecureTokensDetailsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting details of Merchant Token by Token link.
@@ -81,7 +79,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureMerchantTokenShortResponse</returns>
-        ApiResponse<SecureMerchantTokenShortResponse> SecureTokensDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        ApiResponse<SecureMerchantTokenShortResponse> SecureTokensDetailsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -99,14 +97,13 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureTokensActivationsDeleteAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureTokensActivationsDeleteAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for deactivating merchant token securely
@@ -116,14 +113,13 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokensActivationsDeleteWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokensActivationsDeleteWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used for getting details of Merchant Token by Token link.
         /// </summary>
@@ -139,7 +135,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureMerchantTokenShortResponse</returns>
-        System.Threading.Tasks.Task<SecureMerchantTokenShortResponse> SecureTokensDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureMerchantTokenShortResponse> SecureTokensDetailsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting details of Merchant Token by Token link.
@@ -156,7 +152,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureMerchantTokenShortResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureMerchantTokenShortResponse>> SecureTokensDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureMerchantTokenShortResponse>> SecureTokensDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -282,15 +278,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureTokensActivationsDelete(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0)
+        public void SecureTokensActivationsDelete(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0)
         {
-            SecureTokensActivationsDeleteWithHttpInfo(xApiKey, xAppKey, xVersion, origin, tokenRequest);
+            SecureTokensActivationsDeleteWithHttpInfo(xApiKey, xVersion, xAppKey, origin);
         }
 
         /// <summary>
@@ -298,13 +293,12 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokensActivationsDeleteWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokensActivationsDeleteWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -324,16 +318,9 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenManagementApi->SecureTokensActivationsDelete");
             }
 
-            // verify the required parameter 'tokenRequest' is set
-            if (tokenRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'tokenRequest' when calling SecureTokenManagementApi->SecureTokensActivationsDelete");
-            }
-
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -353,10 +340,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.Data = tokenRequest;
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecureTokenManagementApi.SecureTokensActivationsDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -391,16 +377,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureTokensActivationsDeleteAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureTokensActivationsDeleteAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await SecureTokensActivationsDeleteWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, tokenRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            await SecureTokensActivationsDeleteWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -408,14 +393,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xAppKey">an authorization header</param>
         /// <param name="xVersion">x-version</param>
+        /// <param name="xAppKey">an authorization header</param>
         /// <param name="origin">origin</param>
-        /// <param name="tokenRequest">secure merchant token request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokensActivationsDeleteWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokensActivationsDeleteWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -435,17 +419,10 @@ namespace Org.OpenAPITools.Api
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureTokenManagementApi->SecureTokensActivationsDelete");
             }
 
-            // verify the required parameter 'tokenRequest' is set
-            if (tokenRequest == null)
-            {
-                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'tokenRequest' when calling SecureTokenManagementApi->SecureTokensActivationsDelete");
-            }
-
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -465,10 +442,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            localVarRequestOptions.Data = tokenRequest;
+            localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecureTokenManagementApi.SecureTokensActivationsDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -510,7 +486,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureMerchantTokenShortResponse</returns>
-        public SecureMerchantTokenShortResponse SecureTokensDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        public SecureMerchantTokenShortResponse SecureTokensDetailsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<SecureMerchantTokenShortResponse> localVarResponse = SecureTokensDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
             return localVarResponse.Data;
@@ -527,7 +503,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureMerchantTokenShortResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureMerchantTokenShortResponse> SecureTokensDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureMerchantTokenShortResponse> SecureTokensDetailsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -579,7 +555,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenManagementApi.SecureTokensDetailsPost";
@@ -622,7 +598,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureMerchantTokenShortResponse</returns>
-        public async System.Threading.Tasks.Task<SecureMerchantTokenShortResponse> SecureTokensDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureMerchantTokenShortResponse> SecureTokensDetailsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<SecureMerchantTokenShortResponse> localVarResponse = await SecureTokensDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -640,7 +616,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureMerchantTokenShortResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureMerchantTokenShortResponse>> SecureTokensDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureMerchantTokenShortResponse>> SecureTokensDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -693,7 +669,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenManagementApi.SecureTokensDetailsPost";

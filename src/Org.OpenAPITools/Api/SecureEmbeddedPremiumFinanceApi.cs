@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PFPolicyUpdateResponse</returns>
-        PFPolicyUpdateResponse SecureEpfMerchantsQuotesPolicyPut(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0);
+        PFPolicyUpdateResponse SecureEpfMerchantsQuotesPolicyPut(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0);
 
         /// <summary>
         /// This API is will update the policy number
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PFPolicyUpdateResponse</returns>
-        ApiResponse<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0);
+        ApiResponse<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0);
         /// <summary>
         /// This API will update PFA to book a quote.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PFUpdatePFAResponse</returns>
-        PFUpdatePFAResponse SecureEpfQuotesBookingPut(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0);
+        PFUpdatePFAResponse SecureEpfQuotesBookingPut(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API will update PFA to book a quote.
@@ -81,7 +81,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PFUpdatePFAResponse</returns>
-        ApiResponse<PFUpdatePFAResponse> SecureEpfQuotesBookingPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0);
+        ApiResponse<PFUpdatePFAResponse> SecureEpfQuotesBookingPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0);
         /// <summary>
         /// This API will eSign the pfa with insured name.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureEpfQuotesCaptureesignPut(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0);
+        void SecureEpfQuotesCaptureesignPut(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API will eSign the pfa with insured name.
@@ -109,7 +109,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureEpfQuotesCaptureesignPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0);
+        ApiResponse<Object> SecureEpfQuotesCaptureesignPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0);
         /// <summary>
         /// This API is used to Generate Quotes
         /// </summary>
@@ -121,7 +121,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="quoteRequest">Quote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PFGenerateQuoteResponse&gt;</returns>
-        List<PFGenerateQuoteResponse> SecureEpfQuotesGeneratePost(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0);
+        List<PFGenerateQuoteResponse> SecureEpfQuotesGeneratePost(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API is used to Generate Quotes
@@ -137,7 +137,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="quoteRequest">Quote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PFGenerateQuoteResponse&gt;</returns>
-        ApiResponse<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0);
+        ApiResponse<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0);
         /// <summary>
         /// This API will return quotes created againsts a payment intent.
         /// </summary>
@@ -149,7 +149,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;QuoteResponse&gt;</returns>
-        List<QuoteResponse> SecureEpfQuotesIntentPost(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0);
+        List<QuoteResponse> SecureEpfQuotesIntentPost(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API will return quotes created againsts a payment intent.
@@ -165,7 +165,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;QuoteResponse&gt;</returns>
-        ApiResponse<List<QuoteResponse>> SecureEpfQuotesIntentPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0);
+        ApiResponse<List<QuoteResponse>> SecureEpfQuotesIntentPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0);
         /// <summary>
         /// This API will return quote by QuoteKey.
         /// </summary>
@@ -177,7 +177,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>QuoteResponse</returns>
-        QuoteResponse SecureEpfQuotesPost(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
+        QuoteResponse SecureEpfQuotesPost(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API will return quote by QuoteKey.
@@ -193,7 +193,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of QuoteResponse</returns>
-        ApiResponse<QuoteResponse> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
+        ApiResponse<QuoteResponse> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0);
         /// <summary>
         /// This API will return PFA for given quoteKey.
         /// </summary>
@@ -204,8 +204,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        string SecureEpfRetrievepfaPost(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0);
+        /// <returns>PFRetrievePFAResponse</returns>
+        PFRetrievePFAResponse SecureEpfRetrievepfaPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0);
 
         /// <summary>
         /// This API will return PFA for given quoteKey.
@@ -220,8 +220,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        ApiResponse<string> SecureEpfRetrievepfaPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0);
+        /// <returns>ApiResponse of PFRetrievePFAResponse</returns>
+        ApiResponse<PFRetrievePFAResponse> SecureEpfRetrievepfaPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -246,7 +246,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PFPolicyUpdateResponse</returns>
-        System.Threading.Tasks.Task<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is will update the policy number
@@ -263,7 +263,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PFPolicyUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PFPolicyUpdateResponse>> SecureEpfMerchantsQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PFPolicyUpdateResponse>> SecureEpfMerchantsQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will update PFA to book a quote.
         /// </summary>
@@ -279,7 +279,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PFUpdatePFAResponse</returns>
-        System.Threading.Tasks.Task<PFUpdatePFAResponse> SecureEpfQuotesBookingPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PFUpdatePFAResponse> SecureEpfQuotesBookingPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will update PFA to book a quote.
@@ -296,7 +296,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PFUpdatePFAResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PFUpdatePFAResponse>> SecureEpfQuotesBookingPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PFUpdatePFAResponse>> SecureEpfQuotesBookingPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will eSign the pfa with insured name.
         /// </summary>
@@ -312,7 +312,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureEpfQuotesCaptureesignPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureEpfQuotesCaptureesignPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will eSign the pfa with insured name.
@@ -329,7 +329,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used to Generate Quotes
         /// </summary>
@@ -345,7 +345,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PFGenerateQuoteResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used to Generate Quotes
@@ -362,7 +362,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PFGenerateQuoteResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<PFGenerateQuoteResponse>>> SecureEpfQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<PFGenerateQuoteResponse>>> SecureEpfQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will return quotes created againsts a payment intent.
         /// </summary>
@@ -378,7 +378,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;QuoteResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesIntentPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesIntentPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will return quotes created againsts a payment intent.
@@ -395,7 +395,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;QuoteResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<QuoteResponse>>> SecureEpfQuotesIntentPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<QuoteResponse>>> SecureEpfQuotesIntentPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will return quote by QuoteKey.
         /// </summary>
@@ -411,7 +411,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuoteResponse</returns>
-        System.Threading.Tasks.Task<QuoteResponse> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QuoteResponse> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will return quote by QuoteKey.
@@ -428,7 +428,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuoteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QuoteResponse>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QuoteResponse>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will return PFA for given quoteKey.
         /// </summary>
@@ -443,8 +443,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> SecureEpfRetrievepfaPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of PFRetrievePFAResponse</returns>
+        System.Threading.Tasks.Task<PFRetrievePFAResponse> SecureEpfRetrievepfaPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will return PFA for given quoteKey.
@@ -460,8 +460,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> SecureEpfRetrievepfaPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (PFRetrievePFAResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PFRetrievePFAResponse>> SecureEpfRetrievepfaPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -593,7 +593,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PFPolicyUpdateResponse</returns>
-        public PFPolicyUpdateResponse SecureEpfMerchantsQuotesPolicyPut(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0)
+        public PFPolicyUpdateResponse SecureEpfMerchantsQuotesPolicyPut(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> localVarResponse = SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO);
             return localVarResponse.Data;
@@ -610,7 +610,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFPolicyUpdateRequestDTO">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PFPolicyUpdateResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -656,7 +656,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFPolicyUpdateRequestDTO;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfMerchantsQuotesPolicyPut";
@@ -699,7 +699,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PFPolicyUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PFPolicyUpdateResponse> SecureEpfMerchantsQuotesPolicyPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse> localVarResponse = await SecureEpfMerchantsQuotesPolicyPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFPolicyUpdateRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -717,7 +717,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PFPolicyUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse>> SecureEpfMerchantsQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFPolicyUpdateResponse>> SecureEpfMerchantsQuotesPolicyPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = default(PFPolicyUpdateRequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -764,7 +764,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFPolicyUpdateRequestDTO;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfMerchantsQuotesPolicyPut";
@@ -807,7 +807,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PFUpdatePFAResponse</returns>
-        public PFUpdatePFAResponse SecureEpfQuotesBookingPut(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0)
+        public PFUpdatePFAResponse SecureEpfQuotesBookingPut(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> localVarResponse = SecureEpfQuotesBookingPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest);
             return localVarResponse.Data;
@@ -824,7 +824,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteBookingRequest">PFQuoteBooking Request details</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PFUpdatePFAResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> SecureEpfQuotesBookingPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> SecureEpfQuotesBookingPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -876,7 +876,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFQuoteBookingRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesBookingPut";
@@ -919,7 +919,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PFUpdatePFAResponse</returns>
-        public async System.Threading.Tasks.Task<PFUpdatePFAResponse> SecureEpfQuotesBookingPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PFUpdatePFAResponse> SecureEpfQuotesBookingPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse> localVarResponse = await SecureEpfQuotesBookingPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFQuoteBookingRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -937,7 +937,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PFUpdatePFAResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse>> SecureEpfQuotesBookingPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFUpdatePFAResponse>> SecureEpfQuotesBookingPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -990,7 +990,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFQuoteBookingRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesBookingPut";
@@ -1033,7 +1033,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureEpfQuotesCaptureesignPut(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0)
+        public void SecureEpfQuotesCaptureesignPut(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0)
         {
             SecureEpfQuotesCaptureesignPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest);
         }
@@ -1049,7 +1049,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFQuoteEsignRequest">PFQuote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureEpfQuotesCaptureesignPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureEpfQuotesCaptureesignPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1094,7 +1094,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFQuoteEsignRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesCaptureesignPut";
@@ -1137,7 +1137,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureEpfQuotesCaptureesignPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureEpfQuotesCaptureesignPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFQuoteEsignRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1154,7 +1154,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureEpfQuotesCaptureesignPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = default(PFQuoteEsignRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1200,7 +1200,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFQuoteEsignRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesCaptureesignPut";
@@ -1243,7 +1243,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="quoteRequest">Quote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PFGenerateQuoteResponse&gt;</returns>
-        public List<PFGenerateQuoteResponse> SecureEpfQuotesGeneratePost(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0)
+        public List<PFGenerateQuoteResponse> SecureEpfQuotesGeneratePost(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> localVarResponse = SecureEpfQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, quoteRequest);
             return localVarResponse.Data;
@@ -1260,7 +1260,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="quoteRequest">Quote Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PFGenerateQuoteResponse&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1306,7 +1306,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = quoteRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesGeneratePost";
@@ -1349,7 +1349,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PFGenerateQuoteResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<PFGenerateQuoteResponse>> SecureEpfQuotesGeneratePostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>> localVarResponse = await SecureEpfQuotesGeneratePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, quoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1367,7 +1367,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PFGenerateQuoteResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>>> SecureEpfQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PFGenerateQuoteResponse>>> SecureEpfQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = default(QuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1414,7 +1414,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = quoteRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesGeneratePost";
@@ -1457,7 +1457,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;QuoteResponse&gt;</returns>
-        public List<QuoteResponse> SecureEpfQuotesIntentPost(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0)
+        public List<QuoteResponse> SecureEpfQuotesIntentPost(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> localVarResponse = SecureEpfQuotesIntentPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteRequest);
             return localVarResponse.Data;
@@ -1474,7 +1474,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;QuoteResponse&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> SecureEpfQuotesIntentPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> SecureEpfQuotesIntentPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1520,7 +1520,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = getQuoteRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesIntentPost";
@@ -1553,7 +1553,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;QuoteResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesIntentPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<QuoteResponse>> SecureEpfQuotesIntentPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>> localVarResponse = await SecureEpfQuotesIntentPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, getQuoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1571,7 +1571,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;QuoteResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>>> SecureEpfQuotesIntentPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<QuoteResponse>>> SecureEpfQuotesIntentPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = default(GetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1618,7 +1618,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = getQuoteRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesIntentPost";
@@ -1651,7 +1651,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>QuoteResponse</returns>
-        public QuoteResponse SecureEpfQuotesPost(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
+        public QuoteResponse SecureEpfQuotesPost(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<QuoteResponse> localVarResponse = SecureEpfQuotesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest);
             return localVarResponse.Data;
@@ -1668,7 +1668,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="getQuoteKeyRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of QuoteResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<QuoteResponse> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<QuoteResponse> SecureEpfQuotesPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1714,7 +1714,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = getQuoteKeyRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesPost";
@@ -1757,7 +1757,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QuoteResponse</returns>
-        public async System.Threading.Tasks.Task<QuoteResponse> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QuoteResponse> SecureEpfQuotesPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<QuoteResponse> localVarResponse = await SecureEpfQuotesPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, getQuoteKeyRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1775,7 +1775,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QuoteResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<QuoteResponse>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<QuoteResponse>> SecureEpfQuotesPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = default(GetQuoteKeyRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1822,7 +1822,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = getQuoteKeyRequest;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfQuotesPost";
@@ -1864,10 +1864,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>string</returns>
-        public string SecureEpfRetrievepfaPost(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0)
+        /// <returns>PFRetrievePFAResponse</returns>
+        public PFRetrievePFAResponse SecureEpfRetrievepfaPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<string> localVarResponse = SecureEpfRetrievepfaPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+            Org.OpenAPITools.Client.ApiResponse<PFRetrievePFAResponse> localVarResponse = SecureEpfRetrievepfaPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
             return localVarResponse.Data;
         }
 
@@ -1881,8 +1881,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of string</returns>
-        public Org.OpenAPITools.Client.ApiResponse<string> SecureEpfRetrievepfaPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0)
+        /// <returns>ApiResponse of PFRetrievePFAResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<PFRetrievePFAResponse> SecureEpfRetrievepfaPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1928,7 +1928,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFRetrievePFARequestDTO;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfRetrievepfaPost";
@@ -1946,7 +1946,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<string>("/secure/epf/retrievepfa", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<PFRetrievePFAResponse>("/secure/epf/retrievepfa", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureEpfRetrievepfaPost", localVarResponse);
@@ -1970,10 +1970,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> SecureEpfRetrievepfaPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of PFRetrievePFAResponse</returns>
+        public async System.Threading.Tasks.Task<PFRetrievePFAResponse> SecureEpfRetrievepfaPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<string> localVarResponse = await SecureEpfRetrievepfaPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<PFRetrievePFAResponse> localVarResponse = await SecureEpfRetrievepfaPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1988,8 +1988,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFRetrievePFARequestDTO">PFRetrieve PFA Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<string>> SecureEpfRetrievepfaPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (PFRetrievePFAResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFRetrievePFAResponse>> SecureEpfRetrievepfaPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = default(PFRetrievePFARequestDTO?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2036,7 +2036,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFRetrievePFARequestDTO;
 
             localVarRequestOptions.Operation = "SecureEmbeddedPremiumFinanceApi.SecureEpfRetrievepfaPost";
@@ -2054,7 +2054,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/secure/epf/retrievepfa", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PFRetrievePFAResponse>("/secure/epf/retrievepfa", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

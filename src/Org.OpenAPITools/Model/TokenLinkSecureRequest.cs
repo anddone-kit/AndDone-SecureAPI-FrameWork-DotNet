@@ -38,48 +38,36 @@ namespace Org.OpenAPITools.Model
         public enum ExpireInUnitEnum
         {
             /// <summary>
-            /// Enum Seconds for value: Seconds
-            /// </summary>
-            [EnumMember(Value = "Seconds")]
-            Seconds = 1,
-
-            /// <summary>
             /// Enum Minutes for value: Minutes
             /// </summary>
             [EnumMember(Value = "Minutes")]
-            Minutes = 2,
+            Minutes = 1,
 
             /// <summary>
             /// Enum Hours for value: Hours
             /// </summary>
             [EnumMember(Value = "Hours")]
-            Hours = 3,
+            Hours = 2,
 
             /// <summary>
             /// Enum Days for value: Days
             /// </summary>
             [EnumMember(Value = "Days")]
-            Days = 4,
+            Days = 3,
 
             /// <summary>
             /// Enum Weeks for value: Weeks
             /// </summary>
             [EnumMember(Value = "Weeks")]
-            Weeks = 5,
-
-            /// <summary>
-            /// Enum NA for value: NA
-            /// </summary>
-            [EnumMember(Value = "NA")]
-            NA = 6
+            Weeks = 4
         }
 
 
         /// <summary>
         /// Gets or Sets ExpireInUnit
         /// </summary>
-        [DataMember(Name = "expireInUnit", IsRequired = true, EmitDefaultValue = true)]
-        public ExpireInUnitEnum ExpireInUnit { get; set; }
+        [DataMember(Name = "expireInUnit", EmitDefaultValue = false)]
+        public ExpireInUnitEnum? ExpireInUnit { get; set; }
         /// <summary>
         /// Defines ResponseType
         /// </summary>
@@ -108,37 +96,22 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenLinkSecureRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TokenLinkSecureRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TokenLinkSecureRequest" /> class.
-        /// </summary>
         /// <param name="merchantId">merchantId.</param>
-        /// <param name="title">title (required).</param>
-        /// <param name="expireIn">expireIn (required).</param>
-        /// <param name="expireInUnit">expireInUnit (required).</param>
+        /// <param name="title">title.</param>
+        /// <param name="expireIn">expireIn.</param>
+        /// <param name="expireInUnit">expireInUnit.</param>
         /// <param name="responseType">responseType.</param>
-        /// <param name="intent">intent (required).</param>
+        /// <param name="intent">intent.</param>
         /// <param name="callbackParameters">callbackParameters.</param>
         /// <param name="customers">customers.</param>
-        public TokenLinkSecureRequest(string merchantId = default(string), string title = default(string), int expireIn = default(int), ExpireInUnitEnum expireInUnit = default(ExpireInUnitEnum), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), TokenLinkSecureRequestIntent intent = default(TokenLinkSecureRequestIntent), PaymentLinkResponseCallbackParameters callbackParameters = default(PaymentLinkResponseCallbackParameters), List<TokenLinkSecureRequestCustomersInner> customers = default(List<TokenLinkSecureRequestCustomersInner>))
+        public TokenLinkSecureRequest(string merchantId = default(string), string title = default(string), decimal expireIn = default(decimal), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), PaymentIntentResponseIntent intent = default(PaymentIntentResponseIntent), TokenLinkSecureRequestCallbackParameters callbackParameters = default(TokenLinkSecureRequestCallbackParameters), List<TokenLinkSecureRequestCustomersInner> customers = default(List<TokenLinkSecureRequestCustomersInner>))
         {
-            // to ensure "title" is required (not null)
-            if (title == null)
-            {
-                throw new ArgumentNullException("title is a required property for TokenLinkSecureRequest and cannot be null");
-            }
+            this.MerchantId = merchantId;
             this.Title = title;
             this.ExpireIn = expireIn;
             this.ExpireInUnit = expireInUnit;
-            // to ensure "intent" is required (not null)
-            if (intent == null)
-            {
-                throw new ArgumentNullException("intent is a required property for TokenLinkSecureRequest and cannot be null");
-            }
-            this.Intent = intent;
-            this.MerchantId = merchantId;
             this.ResponseType = responseType;
+            this.Intent = intent;
             this.CallbackParameters = callbackParameters;
             this.Customers = customers;
         }
@@ -152,26 +125,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpireIn
         /// </summary>
-        [DataMember(Name = "expireIn", IsRequired = true, EmitDefaultValue = true)]
-        public int ExpireIn { get; set; }
+        [DataMember(Name = "expireIn", EmitDefaultValue = false)]
+        public decimal ExpireIn { get; set; }
 
         /// <summary>
         /// Gets or Sets Intent
         /// </summary>
-        [DataMember(Name = "intent", IsRequired = true, EmitDefaultValue = true)]
-        public TokenLinkSecureRequestIntent Intent { get; set; }
+        [DataMember(Name = "intent", EmitDefaultValue = false)]
+        public PaymentIntentResponseIntent Intent { get; set; }
 
         /// <summary>
         /// Gets or Sets CallbackParameters
         /// </summary>
         [DataMember(Name = "callbackParameters", EmitDefaultValue = false)]
-        public PaymentLinkResponseCallbackParameters CallbackParameters { get; set; }
+        public TokenLinkSecureRequestCallbackParameters CallbackParameters { get; set; }
 
         /// <summary>
         /// Gets or Sets Customers

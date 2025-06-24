@@ -34,41 +34,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequestPoliciesInnerCompany" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected QuoteRequestPoliciesInnerCompany() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuoteRequestPoliciesInnerCompany" /> class.
-        /// </summary>
         /// <param name="bestNumber">bestNumber.</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="name">name.</param>
         /// <param name="address1">address1.</param>
         /// <param name="address2">address2.</param>
         /// <param name="city">city.</param>
         /// <param name="state">state.</param>
         /// <param name="zip">zip.</param>
         /// <param name="phone">phone.</param>
-        /// <param name="uniqueId">uniqueId (required).</param>
+        /// <param name="uniqueId">uniqueId.</param>
         public QuoteRequestPoliciesInnerCompany(string bestNumber = default(string), string name = default(string), string address1 = default(string), string address2 = default(string), string city = default(string), string state = default(string), string zip = default(string), string phone = default(string), string uniqueId = default(string))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for QuoteRequestPoliciesInnerCompany and cannot be null");
-            }
-            this.Name = name;
-            // to ensure "uniqueId" is required (not null)
-            if (uniqueId == null)
-            {
-                throw new ArgumentNullException("uniqueId is a required property for QuoteRequestPoliciesInnerCompany and cannot be null");
-            }
-            this.UniqueId = uniqueId;
             this.BestNumber = bestNumber;
+            this.Name = name;
             this.Address1 = address1;
             this.Address2 = address2;
             this.City = city;
             this.State = state;
             this.Zip = zip;
             this.Phone = phone;
+            this.UniqueId = uniqueId;
         }
 
         /// <summary>
@@ -80,7 +65,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
         /// <summary>
@@ -122,7 +107,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets UniqueId
         /// </summary>
-        [DataMember(Name = "uniqueId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "uniqueId", EmitDefaultValue = false)]
         public string UniqueId { get; set; }
 
         /// <summary>

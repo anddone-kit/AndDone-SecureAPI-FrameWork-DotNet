@@ -9,7 +9,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securetokensactivationsdelete"></a>
 # **SecureTokensActivationsDelete**
-> void SecureTokensActivationsDelete (string xApiKey, string xAppKey, float xVersion, string origin, TokenRequest tokenRequest)
+> void SecureTokensActivationsDelete (string xApiKey, decimal xVersion, string xAppKey, string origin)
 
 This API is used for deactivating merchant token securely
 
@@ -40,15 +40,14 @@ namespace Example
 
             var apiInstance = new SecureTokenManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
-            var tokenRequest = new TokenRequest(); // TokenRequest | secure merchant token request
 
             try
             {
                 // This API is used for deactivating merchant token securely
-                apiInstance.SecureTokensActivationsDelete(xApiKey, xAppKey, xVersion, origin, tokenRequest);
+                apiInstance.SecureTokensActivationsDelete(xApiKey, xVersion, xAppKey, origin);
             }
             catch (ApiException  e)
             {
@@ -68,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API is used for deactivating merchant token securely
-    apiInstance.SecureTokensActivationsDeleteWithHttpInfo(xApiKey, xAppKey, xVersion, origin, tokenRequest);
+    apiInstance.SecureTokensActivationsDeleteWithHttpInfo(xApiKey, xVersion, xAppKey, origin);
 }
 catch (ApiException e)
 {
@@ -83,10 +82,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
+| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
-| **tokenRequest** | [**TokenRequest**](TokenRequest.md) | secure merchant token request |  |
 
 ### Return type
 
@@ -98,7 +96,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: Not defined
 
 
@@ -114,7 +112,7 @@ void (empty response body)
 
 <a id="securetokensdetailspost"></a>
 # **SecureTokensDetailsPost**
-> SecureMerchantTokenShortResponse SecureTokensDetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
+> SecureMerchantTokenShortResponse SecureTokensDetailsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest)
 
 This API is used for getting details of Merchant Token by Token link.
 
@@ -146,7 +144,7 @@ namespace Example
             var apiInstance = new SecureTokenManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var secureTokenLinkRequest = new SecureTokenLinkRequest(); // SecureTokenLinkRequest | Secure Token Link Id Request
 
@@ -193,7 +191,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureTokenLinkRequest** | [**SecureTokenLinkRequest**](SecureTokenLinkRequest.md) | Secure Token Link Id Request |  |
 

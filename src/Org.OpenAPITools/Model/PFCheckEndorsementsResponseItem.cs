@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="clientName">clientName.</param>
         /// <param name="isCommercial">isCommercial.</param>
         /// <param name="policies">policies.</param>
-        public PFCheckEndorsementsResponseItem(float agreementID = default(float), float clientID = default(float), string accountNumber = default(string), string clientName = default(string), bool isCommercial = default(bool), List<PFCheckEndorsementsResponseItemPoliciesInner> policies = default(List<PFCheckEndorsementsResponseItemPoliciesInner>))
+        public PFCheckEndorsementsResponseItem(decimal agreementID = default(decimal), decimal clientID = default(decimal), string accountNumber = default(string), string clientName = default(string), bool isCommercial = default(bool), List<PFCheckEndorsementsResponseItemPoliciesInner> policies = default(List<PFCheckEndorsementsResponseItemPoliciesInner>))
         {
             this.AgreementID = agreementID;
             this.ClientID = clientID;
@@ -53,31 +53,31 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets AgreementID
         /// </summary>
-        [DataMember(Name = "agreementID", EmitDefaultValue = false)]
-        public float AgreementID { get; set; }
+        [DataMember(Name = "AgreementID", EmitDefaultValue = false)]
+        public decimal AgreementID { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientID
         /// </summary>
-        [DataMember(Name = "clientID", EmitDefaultValue = false)]
-        public float ClientID { get; set; }
+        [DataMember(Name = "ClientID", EmitDefaultValue = false)]
+        public decimal ClientID { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountNumber
         /// </summary>
-        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "AccountNumber", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ClientName
         /// </summary>
-        [DataMember(Name = "clientName", EmitDefaultValue = false)]
+        [DataMember(Name = "ClientName", EmitDefaultValue = false)]
         public string ClientName { get; set; }
 
         /// <summary>
         /// Gets or Sets IsCommercial
         /// </summary>
-        [DataMember(Name = "isCommercial", EmitDefaultValue = true)]
+        [DataMember(Name = "IsCommercial", EmitDefaultValue = true)]
         public bool IsCommercial { get; set; }
 
         /// <summary>

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AgreementID** | **float** |  | [optional] 
-**ClientID** | **float** |  | [optional] 
+**AgreementID** | **decimal** |  | [optional] 
+**ClientID** | **decimal** |  | [optional] 
 **AccountNumber** | **string** |  | [optional] 
 **ClientName** | **string** |  | [optional] 
 **IsCommercial** | **bool** |  | [optional] 

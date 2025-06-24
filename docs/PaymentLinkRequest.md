@@ -4,38 +4,39 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MerchantId** | **string** |  | 
-**Title** | **string** |  | 
-**Amount** | **float** |  | 
-**PaymentDescription** | **string** |  | [optional] 
-**Customers** | [**List&lt;PaymentLinkResponseCustomersInner&gt;**](PaymentLinkResponseCustomersInner.md) |  | [optional] 
-**InvoiceNumber** | **string** |  | [optional] 
-**ExpireBy** | **float** |  | [optional] 
-**ExpireIn** | **int** |  | 
-**ExpireInUnit** | **string** |  | 
-**ExpireOn** | **string** |  | [optional] 
-**LineItems** | [**List&lt;PaymentLinkResponseLineItemsInner&gt;**](PaymentLinkResponseLineItemsInner.md) |  | [optional] 
+**Title** | **string** |  | [optional] 
+**MerchantId** | **string** |  | [optional] 
 **ShortDescription** | **string** |  | [optional] 
-**ResponseType** | **string** |  | [optional] 
-**CallbackParameters** | [**PaymentLinkResponseCallbackParameters**](PaymentLinkResponseCallbackParameters.md) |  | [optional] 
-**Settings** | [**PaymentLinkRequestSettings**](PaymentLinkRequestSettings.md) |  | 
-**PaymentLinkType** | **string** |  | [optional] 
 **SaveForFuture** | **bool** |  | [optional] 
-**Splits** | [**List&lt;PaymentIntentRequestSplitsInner&gt;**](PaymentIntentRequestSplitsInner.md) |  | [optional] 
-**QuoteKey** | **string** |  | [optional] 
-**AccountNumber** | **string** |  | [optional] 
+**PaymentDescription** | **string** |  | [optional] 
+**IsPayInFull** | **bool** |  | [optional] 
+**Amount** | **decimal** |  | [optional] 
+**InvoiceNumber** | **string** |  | [optional] 
+**EnablePartialPayment** | **bool** |  | [optional] 
+**EnableMultiplePayment** | **bool** |  | [optional] 
+**EnableProtection** | **bool** |  | [optional] 
+**ProtectionMode** | **string** |  | [optional] 
+**DisplayReceipt** | **bool** |  | [optional] 
+**ExpireIn** | **int** |  | [optional] 
+**ExpireBy** | **int** |  | [optional] 
+**ExpireOn** | **string** |  | [optional] 
 **ReferenceType** | **string** |  | [optional] 
+**ExpireInUnit** | **string** |  | [optional] 
 **ReferenceNumber** | **string** |  | [optional] 
 **ReferenceKey** | **string** |  | [optional] 
-**ReferenceDataList** | [**List&lt;PaymentLinkResponseReferenceDataListInner&gt;**](PaymentLinkResponseReferenceDataListInner.md) |  | 
 **EnablePremiumFinance** | **bool** |  | [optional] 
-**SuppressTechnologyFee** | **bool** |  | [optional] 
-**OverrideTechnologyFee** | **float** |  | [optional] 
 **PlatformSettlementStatus** | **string** |  | [optional] 
-**IsPayInFull** | **bool** |  | [optional] 
-**IsPremiumFinancier** | **bool** |  | [optional] 
-**Pfr** | [**PaymentIntentRequestPfr**](PaymentIntentRequestPfr.md) |  | [optional] 
-**PfType** | **string** |  | [optional] 
+**ReferenceDataList** | [**List&lt;PaymentIntentRequestReferenceDataListInner&gt;**](PaymentIntentRequestReferenceDataListInner.md) |  | [optional] 
+**AccountNumber** | **string** |  | [optional] 
+**ResponseType** | **string** |  | [optional] 
+**CallbackParameters** | [**PaymentLinkRequestCallbackParameters**](PaymentLinkRequestCallbackParameters.md) |  | [optional] 
+**PaymentLinkType** | **string** |  | [optional] 
+**ApplyPaymentAdjustments** | **bool** |  | [optional] 
+**QuoteKey** | **string** |  | [optional] 
+**Customers** | [**List&lt;PaymentLinkResponseCustomersInner&gt;**](PaymentLinkResponseCustomersInner.md) |  | [optional] 
+**Splits** | [**List&lt;PaymentLinkRequestSplitsInner&gt;**](PaymentLinkRequestSplitsInner.md) |  | [optional] 
+**LineItems** | [**List&lt;PaymentLinkResponseLineItemsInner&gt;**](PaymentLinkResponseLineItemsInner.md) |  | [optional] 
+**Settings** | [**PaymentLinkRequestSettings**](PaymentLinkRequestSettings.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -129,12 +129,6 @@ namespace Org.OpenAPITools.Client
                         {"url", "https://api.uat.anddone.com"},
                         {"description", "No description provided"},
                     }
-                },
-                {
-                    new Dictionary<string, object> {
-                        {"url", "https://api2.uat.anddone.com"},
-                        {"description", "No description provided"},
-                    }
                 }
             };
             OperationServers = new Dictionary<string, List<IReadOnlyDictionary<string, object>>>()

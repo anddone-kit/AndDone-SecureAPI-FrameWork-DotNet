@@ -32,43 +32,15 @@ namespace Org.OpenAPITools.Model
     public partial class PFEndorsementRequestQuoteInsured : IValidatableObject
     {
         /// <summary>
-        /// This denotes the PFType (enum or string depending on your definition).
+        /// Initializes a new instance of the <see cref="PFEndorsementRequestQuoteInsured" /> class.
         /// </summary>
-        /// <value>This denotes the PFType (enum or string depending on your definition).</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PFTypeEnum
-        {
-            /// <summary>
-            /// Enum None for value: None
-            /// </summary>
-            [EnumMember(Value = "None")]
-            None = 1,
-
-            /// <summary>
-            /// Enum EPF for value: EPF
-            /// </summary>
-            [EnumMember(Value = "EPF")]
-            EPF = 2,
-
-            /// <summary>
-            /// Enum PFLite for value: PFLite
-            /// </summary>
-            [EnumMember(Value = "PFLite")]
-            PFLite = 3
-        }
-
-
-        /// <summary>
-        /// This denotes the PFType (enum or string depending on your definition).
-        /// </summary>
-        /// <value>This denotes the PFType (enum or string depending on your definition).</value>
-        [DataMember(Name = "PFType", EmitDefaultValue = false)]
-        public PFTypeEnum? PFType { get; set; }
+        [JsonConstructorAttribute]
+        protected PFEndorsementRequestQuoteInsured() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="PFEndorsementRequestQuoteInsured" /> class.
         /// </summary>
         /// <param name="agentCustomerNumber">This denotes the Agent Customer Number..</param>
-        /// <param name="email">This denotes the email..</param>
+        /// <param name="email">This denotes the email. (required).</param>
         /// <param name="careOf">This denotes the care of..</param>
         /// <param name="uniqueID">This denotes a unique identifier for the insured..</param>
         /// <param name="mobilePhoneNumber">This denotes the mobile phone number..</param>
@@ -76,7 +48,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="faxNumber">This denotes the fax number..</param>
         /// <param name="emailAddress">This denotes an alternate email address..</param>
         /// <param name="pFType">This denotes the PFType (enum or string depending on your definition)..</param>
-        /// <param name="address">address.</param>
+        /// <param name="address">address (required).</param>
         /// <param name="hasDataChangeAgentCustomerNumber">hasDataChangeAgentCustomerNumber.</param>
         /// <param name="hasDataChangeName">hasDataChangeName.</param>
         /// <param name="hasDataChangeAddress1">hasDataChangeAddress1.</param>
@@ -88,10 +60,21 @@ namespace Org.OpenAPITools.Model
         /// <param name="hasDataChangeEmail">hasDataChangeEmail.</param>
         /// <param name="hasDataChangeCareOf">hasDataChangeCareOf.</param>
         /// <param name="hasDataChangeInsured">hasDataChangeInsured.</param>
-        public PFEndorsementRequestQuoteInsured(string agentCustomerNumber = default(string), string email = default(string), string careOf = default(string), string uniqueID = default(string), string mobilePhoneNumber = default(string), bool isCancellationWarningEnabled = default(bool), string faxNumber = default(string), string emailAddress = default(string), PFTypeEnum? pFType = default(PFTypeEnum?), PFEndorsementRequestQuoteInsuredAddress address = default(PFEndorsementRequestQuoteInsuredAddress), bool hasDataChangeAgentCustomerNumber = default(bool), bool hasDataChangeName = default(bool), bool hasDataChangeAddress1 = default(bool), bool hasDataChangeAddress2 = default(bool), bool hasDataChangeCity = default(bool), bool hasDataChangeState = default(bool), bool hasDataChangeZip = default(bool), bool hasDataChangePhone = default(bool), bool hasDataChangeEmail = default(bool), bool hasDataChangeCareOf = default(bool), bool hasDataChangeInsured = default(bool))
+        public PFEndorsementRequestQuoteInsured(string agentCustomerNumber = default(string), string email = default(string), string careOf = default(string), string uniqueID = default(string), string mobilePhoneNumber = default(string), bool isCancellationWarningEnabled = default(bool), string faxNumber = default(string), string emailAddress = default(string), string pFType = default(string), PFEndorsementRequestQuoteInsuredAddress address = default(PFEndorsementRequestQuoteInsuredAddress), bool hasDataChangeAgentCustomerNumber = default(bool), bool hasDataChangeName = default(bool), bool hasDataChangeAddress1 = default(bool), bool hasDataChangeAddress2 = default(bool), bool hasDataChangeCity = default(bool), bool hasDataChangeState = default(bool), bool hasDataChangeZip = default(bool), bool hasDataChangePhone = default(bool), bool hasDataChangeEmail = default(bool), bool hasDataChangeCareOf = default(bool), bool hasDataChangeInsured = default(bool))
         {
-            this.AgentCustomerNumber = agentCustomerNumber;
+            // to ensure "email" is required (not null)
+            if (email == null)
+            {
+                throw new ArgumentNullException("email is a required property for PFEndorsementRequestQuoteInsured and cannot be null");
+            }
             this.Email = email;
+            // to ensure "address" is required (not null)
+            if (address == null)
+            {
+                throw new ArgumentNullException("address is a required property for PFEndorsementRequestQuoteInsured and cannot be null");
+            }
+            this.Address = address;
+            this.AgentCustomerNumber = agentCustomerNumber;
             this.CareOf = careOf;
             this.UniqueID = uniqueID;
             this.MobilePhoneNumber = mobilePhoneNumber;
@@ -99,7 +82,6 @@ namespace Org.OpenAPITools.Model
             this.FaxNumber = faxNumber;
             this.EmailAddress = emailAddress;
             this.PFType = pFType;
-            this.Address = address;
             this.HasDataChangeAgentCustomerNumber = hasDataChangeAgentCustomerNumber;
             this.HasDataChangeName = hasDataChangeName;
             this.HasDataChangeAddress1 = hasDataChangeAddress1;
@@ -124,7 +106,7 @@ namespace Org.OpenAPITools.Model
         /// This denotes the email.
         /// </summary>
         /// <value>This denotes the email.</value>
-        [DataMember(Name = "Email", EmitDefaultValue = false)]
+        [DataMember(Name = "Email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
@@ -170,9 +152,16 @@ namespace Org.OpenAPITools.Model
         public string EmailAddress { get; set; }
 
         /// <summary>
+        /// This denotes the PFType (enum or string depending on your definition).
+        /// </summary>
+        /// <value>This denotes the PFType (enum or string depending on your definition).</value>
+        [DataMember(Name = "PFType", EmitDefaultValue = false)]
+        public string PFType { get; set; }
+
+        /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name = "Address", EmitDefaultValue = false)]
+        [DataMember(Name = "Address", IsRequired = true, EmitDefaultValue = true)]
         public PFEndorsementRequestQuoteInsuredAddress Address { get; set; }
 
         /// <summary>

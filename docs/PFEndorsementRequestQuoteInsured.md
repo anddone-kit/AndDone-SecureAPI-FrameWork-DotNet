@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AgentCustomerNumber** | **string** | This denotes the Agent Customer Number. | [optional] 
-**Email** | **string** | This denotes the email. | [optional] 
+**Email** | **string** | This denotes the email. | 
 **CareOf** | **string** | This denotes the care of. | [optional] 
 **UniqueID** | **string** | This denotes a unique identifier for the insured. | [optional] 
 **MobilePhoneNumber** | **string** | This denotes the mobile phone number. | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **FaxNumber** | **string** | This denotes the fax number. | [optional] 
 **EmailAddress** | **string** | This denotes an alternate email address. | [optional] 
 **PFType** | **string** | This denotes the PFType (enum or string depending on your definition). | [optional] 
-**Address** | [**PFEndorsementRequestQuoteInsuredAddress**](PFEndorsementRequestQuoteInsuredAddress.md) |  | [optional] 
+**Address** | [**PFEndorsementRequestQuoteInsuredAddress**](PFEndorsementRequestQuoteInsuredAddress.md) |  | 
 **HasDataChangeAgentCustomerNumber** | **bool** |  | [optional] 
 **HasDataChangeName** | **bool** |  | [optional] 
 **HasDataChangeAddress1** | **bool** |  | [optional] 

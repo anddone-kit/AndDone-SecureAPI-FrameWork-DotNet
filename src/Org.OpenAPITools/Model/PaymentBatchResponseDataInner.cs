@@ -51,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="captureAmount">captureAmount.</param>
         /// <param name="voidedCount">voidedCount.</param>
         /// <param name="voidedAmount">voidedAmount.</param>
-        public PaymentBatchResponseDataInner(string id = default(string), string merchantId = default(string), string batchStatus = default(string), string processMethods = default(string), string processorName = default(string), bool isDefault = default(bool), bool executedOnDemand = default(bool), string executionTime = default(string), string completionTime = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), float captureCount = default(float), float captureAmount = default(float), float voidedCount = default(float), float voidedAmount = default(float))
+        public PaymentBatchResponseDataInner(string id = default(string), string merchantId = default(string), string batchStatus = default(string), string processMethods = default(string), string processorName = default(string), bool isDefault = default(bool), bool executedOnDemand = default(bool), string executionTime = default(string), string completionTime = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), decimal captureCount = default(decimal), decimal captureAmount = default(decimal), decimal voidedCount = default(decimal), decimal voidedAmount = default(decimal))
         {
             this.Id = id;
             this.MerchantId = merchantId;
@@ -154,25 +154,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets CaptureCount
         /// </summary>
         [DataMember(Name = "captureCount", EmitDefaultValue = false)]
-        public float CaptureCount { get; set; }
+        public decimal CaptureCount { get; set; }
 
         /// <summary>
         /// Gets or Sets CaptureAmount
         /// </summary>
         [DataMember(Name = "captureAmount", EmitDefaultValue = false)]
-        public float CaptureAmount { get; set; }
+        public decimal CaptureAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets VoidedCount
         /// </summary>
         [DataMember(Name = "voidedCount", EmitDefaultValue = false)]
-        public float VoidedCount { get; set; }
+        public decimal VoidedCount { get; set; }
 
         /// <summary>
         /// Gets or Sets VoidedAmount
         /// </summary>
         [DataMember(Name = "voidedAmount", EmitDefaultValue = false)]
-        public float VoidedAmount { get; set; }
+        public decimal VoidedAmount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

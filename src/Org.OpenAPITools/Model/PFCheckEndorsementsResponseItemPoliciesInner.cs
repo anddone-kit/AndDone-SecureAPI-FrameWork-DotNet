@@ -41,7 +41,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="coverageType">coverageType.</param>
         /// <param name="coverageTypeDescription">coverageTypeDescription.</param>
         /// <param name="companyTypeID">companyTypeID.</param>
-        public PFCheckEndorsementsResponseItemPoliciesInner(float policyID = default(float), string companyName = default(string), string policyNumber = default(string), float premium = default(float), string coverageType = default(string), string coverageTypeDescription = default(string), float companyTypeID = default(float))
+        public PFCheckEndorsementsResponseItemPoliciesInner(decimal policyID = default(decimal), string companyName = default(string), string policyNumber = default(string), decimal premium = default(decimal), string coverageType = default(string), string coverageTypeDescription = default(string), decimal companyTypeID = default(decimal))
         {
             this.PolicyID = policyID;
             this.CompanyName = companyName;
@@ -55,44 +55,44 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets PolicyID
         /// </summary>
-        [DataMember(Name = "policyID", EmitDefaultValue = false)]
-        public float PolicyID { get; set; }
+        [DataMember(Name = "PolicyID", EmitDefaultValue = false)]
+        public decimal PolicyID { get; set; }
 
         /// <summary>
         /// Gets or Sets CompanyName
         /// </summary>
-        [DataMember(Name = "companyName", EmitDefaultValue = false)]
+        [DataMember(Name = "CompanyName", EmitDefaultValue = false)]
         public string CompanyName { get; set; }
 
         /// <summary>
         /// Gets or Sets PolicyNumber
         /// </summary>
-        [DataMember(Name = "policyNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "PolicyNumber", EmitDefaultValue = false)]
         public string PolicyNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Premium
         /// </summary>
-        [DataMember(Name = "premium", EmitDefaultValue = false)]
-        public float Premium { get; set; }
+        [DataMember(Name = "Premium", EmitDefaultValue = false)]
+        public decimal Premium { get; set; }
 
         /// <summary>
         /// Gets or Sets CoverageType
         /// </summary>
-        [DataMember(Name = "coverageType", EmitDefaultValue = false)]
+        [DataMember(Name = "CoverageType", EmitDefaultValue = false)]
         public string CoverageType { get; set; }
 
         /// <summary>
         /// Gets or Sets CoverageTypeDescription
         /// </summary>
-        [DataMember(Name = "coverageTypeDescription", EmitDefaultValue = false)]
+        [DataMember(Name = "CoverageTypeDescription", EmitDefaultValue = false)]
         public string CoverageTypeDescription { get; set; }
 
         /// <summary>
         /// Gets or Sets CompanyTypeID
         /// </summary>
-        [DataMember(Name = "companyTypeID", EmitDefaultValue = false)]
-        public float CompanyTypeID { get; set; }
+        [DataMember(Name = "CompanyTypeID", EmitDefaultValue = false)]
+        public decimal CompanyTypeID { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

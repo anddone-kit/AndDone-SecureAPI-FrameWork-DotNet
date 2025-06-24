@@ -14,7 +14,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="secureepfmerchantsquotespolicyput"></a>
 # **SecureEpfMerchantsQuotesPolicyPut**
-> PFPolicyUpdateResponse SecureEpfMerchantsQuotesPolicyPut (string xApiKey, string xAppKey, float xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = null)
+> PFPolicyUpdateResponse SecureEpfMerchantsQuotesPolicyPut (string xApiKey, string xAppKey, decimal xVersion, string origin, PFPolicyUpdateRequestDTO? pFPolicyUpdateRequestDTO = null)
 
 This API is will update the policy number
 
@@ -46,7 +46,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFPolicyUpdateRequestDTO = new PFPolicyUpdateRequestDTO?(); // PFPolicyUpdateRequestDTO? | Signature Request details (optional) 
 
@@ -93,7 +93,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFPolicyUpdateRequestDTO** | [**PFPolicyUpdateRequestDTO?**](PFPolicyUpdateRequestDTO?.md) | Signature Request details | [optional]  |
 
@@ -123,7 +123,7 @@ catch (ApiException e)
 
 <a id="secureepfquotesbookingput"></a>
 # **SecureEpfQuotesBookingPut**
-> PFUpdatePFAResponse SecureEpfQuotesBookingPut (string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest)
+> PFUpdatePFAResponse SecureEpfQuotesBookingPut (string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteBookingRequest pFQuoteBookingRequest)
 
 This API will update PFA to book a quote.
 
@@ -155,7 +155,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFQuoteBookingRequest = new PFQuoteBookingRequest(); // PFQuoteBookingRequest | PFQuoteBooking Request details
 
@@ -202,7 +202,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFQuoteBookingRequest** | [**PFQuoteBookingRequest**](PFQuoteBookingRequest.md) | PFQuoteBooking Request details |  |
 
@@ -232,7 +232,7 @@ catch (ApiException e)
 
 <a id="secureepfquotescaptureesignput"></a>
 # **SecureEpfQuotesCaptureesignPut**
-> void SecureEpfQuotesCaptureesignPut (string xApiKey, string xAppKey, float xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = null)
+> void SecureEpfQuotesCaptureesignPut (string xApiKey, string xAppKey, decimal xVersion, string origin, PFQuoteEsignRequest? pFQuoteEsignRequest = null)
 
 This API will eSign the pfa with insured name.
 
@@ -264,7 +264,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFQuoteEsignRequest = new PFQuoteEsignRequest?(); // PFQuoteEsignRequest? | PFQuote Request (optional) 
 
@@ -307,7 +307,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFQuoteEsignRequest** | [**PFQuoteEsignRequest?**](PFQuoteEsignRequest?.md) | PFQuote Request | [optional]  |
 
@@ -337,7 +337,7 @@ void (empty response body)
 
 <a id="secureepfquotesgeneratepost"></a>
 # **SecureEpfQuotesGeneratePost**
-> List&lt;PFGenerateQuoteResponse&gt; SecureEpfQuotesGeneratePost (string xApiKey, string xAppKey, float xVersion, string origin, QuoteRequest? quoteRequest = null)
+> List&lt;PFGenerateQuoteResponse&gt; SecureEpfQuotesGeneratePost (string xApiKey, string xAppKey, decimal xVersion, string origin, QuoteRequest? quoteRequest = null)
 
 This API is used to Generate Quotes
 
@@ -369,7 +369,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var quoteRequest = new QuoteRequest?(); // QuoteRequest? | Quote Request (optional) 
 
@@ -416,7 +416,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **quoteRequest** | [**QuoteRequest?**](QuoteRequest?.md) | Quote Request | [optional]  |
 
@@ -446,7 +446,7 @@ catch (ApiException e)
 
 <a id="secureepfquotesintentpost"></a>
 # **SecureEpfQuotesIntentPost**
-> List&lt;QuoteResponse&gt; SecureEpfQuotesIntentPost (string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteRequest? getQuoteRequest = null)
+> List&lt;QuoteResponse&gt; SecureEpfQuotesIntentPost (string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteRequest? getQuoteRequest = null)
 
 This API will return quotes created againsts a payment intent.
 
@@ -469,7 +469,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var getQuoteRequest = new GetQuoteRequest?(); // GetQuoteRequest? | Signature Request details (optional) 
 
@@ -516,7 +516,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **getQuoteRequest** | [**GetQuoteRequest?**](GetQuoteRequest?.md) | Signature Request details | [optional]  |
 
@@ -546,7 +546,7 @@ No authorization required
 
 <a id="secureepfquotespost"></a>
 # **SecureEpfQuotesPost**
-> QuoteResponse SecureEpfQuotesPost (string xApiKey, string xAppKey, float xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = null)
+> QuoteResponse SecureEpfQuotesPost (string xApiKey, string xAppKey, decimal xVersion, string origin, GetQuoteKeyRequest? getQuoteKeyRequest = null)
 
 This API will return quote by QuoteKey.
 
@@ -578,7 +578,7 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var getQuoteKeyRequest = new GetQuoteKeyRequest?(); // GetQuoteKeyRequest? | Signature Request details (optional) 
 
@@ -625,7 +625,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **getQuoteKeyRequest** | [**GetQuoteKeyRequest?**](GetQuoteKeyRequest?.md) | Signature Request details | [optional]  |
 
@@ -655,7 +655,7 @@ catch (ApiException e)
 
 <a id="secureepfretrievepfapost"></a>
 # **SecureEpfRetrievepfaPost**
-> string SecureEpfRetrievepfaPost (string xApiKey, string xAppKey, float xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = null)
+> PFRetrievePFAResponse SecureEpfRetrievepfaPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PFRetrievePFARequestDTO? pFRetrievePFARequestDTO = null)
 
 This API will return PFA for given quoteKey.
 
@@ -687,14 +687,14 @@ namespace Example
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFRetrievePFARequestDTO = new PFRetrievePFARequestDTO?(); // PFRetrievePFARequestDTO? | PFRetrieve PFA Request (optional) 
 
             try
             {
                 // This API will return PFA for given quoteKey.
-                string result = apiInstance.SecureEpfRetrievepfaPost(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+                PFRetrievePFAResponse result = apiInstance.SecureEpfRetrievepfaPost(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -715,7 +715,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API will return PFA for given quoteKey.
-    ApiResponse<string> response = apiInstance.SecureEpfRetrievepfaPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
+    ApiResponse<PFRetrievePFAResponse> response = apiInstance.SecureEpfRetrievepfaPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFRetrievePFARequestDTO);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -734,13 +734,13 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFRetrievePFARequestDTO** | [**PFRetrievePFARequestDTO?**](PFRetrievePFARequestDTO?.md) | PFRetrieve PFA Request | [optional]  |
 
 ### Return type
 
-**string**
+[**PFRetrievePFAResponse**](PFRetrievePFAResponse.md)
 
 ### Authorization
 

@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="reportDownloadRequest">ReportDownloadRequest (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureReportsDownloadsPost(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0);
+        void SecureReportsDownloadsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API will add system report.
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="reportDownloadRequest">ReportDownloadRequest (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureReportsDownloadsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0);
+        ApiResponse<Object> SecureReportsDownloadsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -78,7 +78,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureReportsDownloadsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureReportsDownloadsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will add system report.
@@ -95,7 +95,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureReportsDownloadsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureReportsDownloadsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -227,7 +227,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="reportDownloadRequest">ReportDownloadRequest (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureReportsDownloadsPost(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0)
+        public void SecureReportsDownloadsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0)
         {
             SecureReportsDownloadsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, reportDownloadRequest);
         }
@@ -243,7 +243,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="reportDownloadRequest">ReportDownloadRequest (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureReportsDownloadsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureReportsDownloadsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -289,7 +289,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = reportDownloadRequest;
 
             localVarRequestOptions.Operation = "SecureReportsApi.SecureReportsDownloadsPost";
@@ -332,7 +332,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureReportsDownloadsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureReportsDownloadsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SecureReportsDownloadsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, reportDownloadRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -349,7 +349,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureReportsDownloadsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureReportsDownloadsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = default(ReportDownloadRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -396,7 +396,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = reportDownloadRequest;
 
             localVarRequestOptions.Operation = "SecureReportsApi.SecureReportsDownloadsPost";

@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MerchantId** | **string** |  | [optional] 
-**Title** | **string** |  | 
-**ExpireIn** | **int** |  | 
-**ExpireInUnit** | **string** |  | 
+**Title** | **string** |  | [optional] 
+**ExpireIn** | **decimal** |  | [optional] 
+**ExpireInUnit** | **string** |  | [optional] 
 **ResponseType** | **string** |  | [optional] 
-**Intent** | [**TokenLinkSecureRequestIntent**](TokenLinkSecureRequestIntent.md) |  | 
-**CallbackParameters** | [**PaymentLinkResponseCallbackParameters**](PaymentLinkResponseCallbackParameters.md) |  | [optional] 
+**Intent** | [**PaymentIntentResponseIntent**](PaymentIntentResponseIntent.md) |  | [optional] 
+**CallbackParameters** | [**TokenLinkSecureRequestCallbackParameters**](TokenLinkSecureRequestCallbackParameters.md) |  | [optional] 
 **Customers** | [**List&lt;TokenLinkSecureRequestCustomersInner&gt;**](TokenLinkSecureRequestCustomersInner.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

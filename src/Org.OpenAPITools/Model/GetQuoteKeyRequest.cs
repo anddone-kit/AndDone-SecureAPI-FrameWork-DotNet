@@ -34,26 +34,16 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetQuoteKeyRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected GetQuoteKeyRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GetQuoteKeyRequest" /> class.
-        /// </summary>
-        /// <param name="quoteKey">quoteKey (required).</param>
+        /// <param name="quoteKey">quoteKey.</param>
         public GetQuoteKeyRequest(string quoteKey = default(string))
         {
-            // to ensure "quoteKey" is required (not null)
-            if (quoteKey == null)
-            {
-                throw new ArgumentNullException("quoteKey is a required property for GetQuoteKeyRequest and cannot be null");
-            }
             this.QuoteKey = quoteKey;
         }
 
         /// <summary>
         /// Gets or Sets QuoteKey
         /// </summary>
-        [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
         public string QuoteKey { get; set; }
 
         /// <summary>

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AgentCustomerNumber** | **string** |  | [optional] 
+**AgentCustomerNumber** | **string** |  | 
 **Email** | **string** |  | 
-**CareOf** | **string** |  | [optional] 
+**CareOf** | **string** |  | 
 **UniqueId** | **string** |  | [optional] 
 **Address** | [**QuoteRequestInsuredAddress**](QuoteRequestInsuredAddress.md) |  | 
 **HasDataChangeAgentCustomerNumber** | **bool** |  | [optional] 

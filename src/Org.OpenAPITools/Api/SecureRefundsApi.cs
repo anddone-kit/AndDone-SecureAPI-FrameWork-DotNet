@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundEligibility</returns>
-        RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
+        RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API return refund eligibility of a transaction.
@@ -53,9 +53,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundEligibility</returns>
-        ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
+        ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0);
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor.
+        /// This API return refund a transaction.
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
@@ -65,10 +65,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTransactionDetailDTO</returns>
-        SecureTransactionDetailDTO SecureRefundsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0);
+        SecureTransactionDetailDTO SecureRefundsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0);
 
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor.
+        /// This API return refund a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -81,7 +81,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTransactionDetailDTO</returns>
-        ApiResponse<SecureTransactionDetailDTO> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0);
+        ApiResponse<SecureTransactionDetailDTO> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -106,7 +106,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundEligibility</returns>
-        System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API return refund eligibility of a transaction.
@@ -123,9 +123,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundEligibility)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor.
+        /// This API return refund a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -139,10 +139,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTransactionDetailDTO</returns>
-        System.Threading.Tasks.Task<SecureTransactionDetailDTO> SecureRefundsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureTransactionDetailDTO> SecureRefundsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor.
+        /// This API return refund a transaction.
         /// </summary>
         /// <remarks>
         /// 
@@ -156,7 +156,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTransactionDetailDTO)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureTransactionDetailDTO>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureTransactionDetailDTO>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -288,7 +288,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>RefundEligibility</returns>
-        public RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
+        public RefundEligibility SecureRefundsEligibilityPost(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<RefundEligibility> localVarResponse = SecureRefundsEligibilityPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, transactionRefundEligibilityRequest);
             return localVarResponse.Data;
@@ -305,7 +305,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="transactionRefundEligibilityRequest">refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of RefundEligibility</returns>
-        public Org.OpenAPITools.Client.ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<RefundEligibility> SecureRefundsEligibilityPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -357,7 +357,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = transactionRefundEligibilityRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsEligibilityPost";
@@ -400,7 +400,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of RefundEligibility</returns>
-        public async System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<RefundEligibility> SecureRefundsEligibilityPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<RefundEligibility> localVarResponse = await SecureRefundsEligibilityPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, transactionRefundEligibilityRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -418,7 +418,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (RefundEligibility)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<RefundEligibility>> SecureRefundsEligibilityPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -471,7 +471,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = transactionRefundEligibilityRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsEligibilityPost";
@@ -504,7 +504,7 @@ namespace Org.OpenAPITools.Api
         }
 
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor. 
+        /// This API return refund a transaction. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
@@ -514,14 +514,14 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTransactionDetailDTO</returns>
-        public SecureTransactionDetailDTO SecureRefundsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0)
+        public SecureTransactionDetailDTO SecureRefundsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> localVarResponse = SecureRefundsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor. 
+        /// This API return refund a transaction. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
@@ -531,7 +531,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTransactionRefundRequest">Refund Detail</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTransactionDetailDTO</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> SecureRefundsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -583,7 +583,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTransactionRefundRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsPost";
@@ -615,7 +615,7 @@ namespace Org.OpenAPITools.Api
         }
 
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor. 
+        /// This API return refund a transaction. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
@@ -626,14 +626,14 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTransactionDetailDTO</returns>
-        public async System.Threading.Tasks.Task<SecureTransactionDetailDTO> SecureRefundsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureTransactionDetailDTO> SecureRefundsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO> localVarResponse = await SecureRefundsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// This API will refund a transaction which has been settled by the processor. 
+        /// This API return refund a transaction. 
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
@@ -644,7 +644,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTransactionDetailDTO)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTransactionDetailDTO>> SecureRefundsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -697,7 +697,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTransactionRefundRequest;
 
             localVarRequestOptions.Operation = "SecureRefundsApi.SecureRefundsPost";

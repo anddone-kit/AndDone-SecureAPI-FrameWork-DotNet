@@ -34,26 +34,16 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureTokenLinkRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SecureTokenLinkRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecureTokenLinkRequest" /> class.
-        /// </summary>
-        /// <param name="tokenLinkId">tokenLinkId (required).</param>
+        /// <param name="tokenLinkId">tokenLinkId.</param>
         public SecureTokenLinkRequest(string tokenLinkId = default(string))
         {
-            // to ensure "tokenLinkId" is required (not null)
-            if (tokenLinkId == null)
-            {
-                throw new ArgumentNullException("tokenLinkId is a required property for SecureTokenLinkRequest and cannot be null");
-            }
             this.TokenLinkId = tokenLinkId;
         }
 
         /// <summary>
         /// Gets or Sets TokenLinkId
         /// </summary>
-        [DataMember(Name = "tokenLinkId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "tokenLinkId", EmitDefaultValue = false)]
         public string TokenLinkId { get; set; }
 
         /// <summary>

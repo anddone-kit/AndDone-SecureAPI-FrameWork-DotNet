@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyID** | **float** |  | [optional] 
+**PolicyID** | **decimal** |  | [optional] 
 **CompanyName** | **string** |  | [optional] 
 **PolicyNumber** | **string** |  | [optional] 
-**Premium** | **float** |  | [optional] 
+**Premium** | **decimal** |  | [optional] 
 **CoverageType** | **string** |  | [optional] 
 **CoverageTypeDescription** | **string** |  | [optional] 
-**CompanyTypeID** | **float** |  | [optional] 
+**CompanyTypeID** | **decimal** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

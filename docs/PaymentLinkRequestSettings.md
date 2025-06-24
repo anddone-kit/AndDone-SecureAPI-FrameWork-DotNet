@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SelectedCustomerFields** | **string** |  | [optional] 
 **AdditionalDetailsPreference** | **string** |  | [optional] 
+**Intent** | [**PaymentLinkRequestSettingsIntent**](PaymentLinkRequestSettingsIntent.md) |  | [optional] 
+**SelectedCustomerFields** | **string** |  | [optional] 
 **DisplaySummary** | **bool** |  | [optional] 
 **AcceptCustomerInfo** | **bool** |  | [optional] 
 **RemoveHeader** | **bool** |  | [optional] 
@@ -13,7 +14,6 @@ Name | Type | Description | Notes
 **AcceptBankAccount** | **bool** |  | [optional] 
 **SaveCustomer** | **bool** |  | [optional] 
 **SaveCustomerAccount** | **bool** |  | [optional] 
-**Intent** | [**PaymentLinkRequestSettingsIntent**](PaymentLinkRequestSettingsIntent.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

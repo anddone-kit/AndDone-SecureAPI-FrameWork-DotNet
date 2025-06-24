@@ -36,8 +36,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PFLiteGenerateQuoteResponse</returns>
-        PFLiteGenerateQuoteResponse SecureEpfliteQuotesGeneratePost(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0);
+        /// <returns>PFGenerateQuoteResponse</returns>
+        PFGenerateQuoteResponse SecureEpfliteQuotesGeneratePost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API is used to generate the quote from the provider.
@@ -52,8 +52,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PFLiteGenerateQuoteResponse</returns>
-        ApiResponse<PFLiteGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0);
+        /// <returns>ApiResponse of PFGenerateQuoteResponse</returns>
+        ApiResponse<PFGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0);
         /// <summary>
         /// This API will return quotes created againsts a payment link.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteGetQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PFLiteQuoteByPaymentLinkResponse&gt;</returns>
-        List<PFLiteQuoteByPaymentLinkResponse> SecureEpfliteQuotesLinkPost(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0);
+        List<PFLiteQuoteByPaymentLinkResponse> SecureEpfliteQuotesLinkPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API will return quotes created againsts a payment link.
@@ -81,7 +81,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteGetQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PFLiteQuoteByPaymentLinkResponse&gt;</returns>
-        ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0);
+        ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0);
         /// <summary>
         /// This API is used to create Payment Links
         /// </summary>
@@ -93,7 +93,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLitePaymentLinkRequest">Payment Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentLinkResponse</returns>
-        PaymentLinkResponse SecureEpfliteQuotesPaymentlinksPost(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0);
+        PaymentLinkResponse SecureEpfliteQuotesPaymentlinksPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is used to create Payment Links
@@ -109,7 +109,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLitePaymentLinkRequest">Payment Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentLinkResponse</returns>
-        ApiResponse<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0);
+        ApiResponse<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -133,8 +133,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PFLiteGenerateQuoteResponse</returns>
-        System.Threading.Tasks.Task<PFLiteGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of PFGenerateQuoteResponse</returns>
+        System.Threading.Tasks.Task<PFGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used to generate the quote from the provider.
@@ -150,8 +150,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PFLiteGenerateQuoteResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PFLiteGenerateQuoteResponse>> SecureEpfliteQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (PFGenerateQuoteResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PFGenerateQuoteResponse>> SecureEpfliteQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will return quotes created againsts a payment link.
         /// </summary>
@@ -167,7 +167,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PFLiteQuoteByPaymentLinkResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will return quotes created againsts a payment link.
@@ -184,7 +184,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PFLiteQuoteByPaymentLinkResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>>> SecureEpfliteQuotesLinkPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>>> SecureEpfliteQuotesLinkPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used to create Payment Links
         /// </summary>
@@ -200,7 +200,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentLinkResponse</returns>
-        System.Threading.Tasks.Task<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used to create Payment Links
@@ -217,7 +217,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentLinkResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentLinkResponse>> SecureEpfliteQuotesPaymentlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaymentLinkResponse>> SecureEpfliteQuotesPaymentlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -348,10 +348,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>PFLiteGenerateQuoteResponse</returns>
-        public PFLiteGenerateQuoteResponse SecureEpfliteQuotesGeneratePost(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0)
+        /// <returns>PFGenerateQuoteResponse</returns>
+        public PFGenerateQuoteResponse SecureEpfliteQuotesGeneratePost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<PFLiteGenerateQuoteResponse> localVarResponse = SecureEpfliteQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest);
+            Org.OpenAPITools.Client.ApiResponse<PFGenerateQuoteResponse> localVarResponse = SecureEpfliteQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest);
             return localVarResponse.Data;
         }
 
@@ -365,8 +365,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="origin">origin</param>
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of PFLiteGenerateQuoteResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PFLiteGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0)
+        /// <returns>ApiResponse of PFGenerateQuoteResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<PFGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -412,7 +412,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFLiteSecureQuoteRequest;
 
             localVarRequestOptions.Operation = "SecurePremiumFinanceLiteApi.SecureEpfliteQuotesGeneratePost";
@@ -430,7 +430,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<PFLiteGenerateQuoteResponse>("/secure/epflite/quotes/generate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<PFGenerateQuoteResponse>("/secure/epflite/quotes/generate", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureEpfliteQuotesGeneratePost", localVarResponse);
@@ -454,10 +454,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of PFLiteGenerateQuoteResponse</returns>
-        public async System.Threading.Tasks.Task<PFLiteGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of PFGenerateQuoteResponse</returns>
+        public async System.Threading.Tasks.Task<PFGenerateQuoteResponse> SecureEpfliteQuotesGeneratePostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<PFLiteGenerateQuoteResponse> localVarResponse = await SecureEpfliteQuotesGeneratePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<PFGenerateQuoteResponse> localVarResponse = await SecureEpfliteQuotesGeneratePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -472,8 +472,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteSecureQuoteRequest">PFLite Quote Secure Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (PFLiteGenerateQuoteResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFLiteGenerateQuoteResponse>> SecureEpfliteQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (PFGenerateQuoteResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PFGenerateQuoteResponse>> SecureEpfliteQuotesGeneratePostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = default(PFLiteSecureQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -520,7 +520,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFLiteSecureQuoteRequest;
 
             localVarRequestOptions.Operation = "SecurePremiumFinanceLiteApi.SecureEpfliteQuotesGeneratePost";
@@ -538,7 +538,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<PFLiteGenerateQuoteResponse>("/secure/epflite/quotes/generate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PFGenerateQuoteResponse>("/secure/epflite/quotes/generate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -563,7 +563,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteGetQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PFLiteQuoteByPaymentLinkResponse&gt;</returns>
-        public List<PFLiteQuoteByPaymentLinkResponse> SecureEpfliteQuotesLinkPost(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0)
+        public List<PFLiteQuoteByPaymentLinkResponse> SecureEpfliteQuotesLinkPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>> localVarResponse = SecureEpfliteQuotesLinkPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFLiteGetQuoteRequest);
             return localVarResponse.Data;
@@ -580,7 +580,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLiteGetQuoteRequest">Signature Request details (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PFLiteQuoteByPaymentLinkResponse&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -626,7 +626,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFLiteGetQuoteRequest;
 
             localVarRequestOptions.Operation = "SecurePremiumFinanceLiteApi.SecureEpfliteQuotesLinkPost";
@@ -669,7 +669,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PFLiteQuoteByPaymentLinkResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<PFLiteQuoteByPaymentLinkResponse>> SecureEpfliteQuotesLinkPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>> localVarResponse = await SecureEpfliteQuotesLinkPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFLiteGetQuoteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -687,7 +687,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PFLiteQuoteByPaymentLinkResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>>> SecureEpfliteQuotesLinkPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PFLiteQuoteByPaymentLinkResponse>>> SecureEpfliteQuotesLinkPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = default(PFLiteGetQuoteRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -734,7 +734,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFLiteGetQuoteRequest;
 
             localVarRequestOptions.Operation = "SecurePremiumFinanceLiteApi.SecureEpfliteQuotesLinkPost";
@@ -777,7 +777,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLitePaymentLinkRequest">Payment Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentLinkResponse</returns>
-        public PaymentLinkResponse SecureEpfliteQuotesPaymentlinksPost(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0)
+        public PaymentLinkResponse SecureEpfliteQuotesPaymentlinksPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentLinkResponse> localVarResponse = SecureEpfliteQuotesPaymentlinksPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFLitePaymentLinkRequest);
             return localVarResponse.Data;
@@ -794,7 +794,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="pFLitePaymentLinkRequest">Payment Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentLinkResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -846,7 +846,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFLitePaymentLinkRequest;
 
             localVarRequestOptions.Operation = "SecurePremiumFinanceLiteApi.SecureEpfliteQuotesPaymentlinksPost";
@@ -889,7 +889,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentLinkResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentLinkResponse> SecureEpfliteQuotesPaymentlinksPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentLinkResponse> localVarResponse = await SecureEpfliteQuotesPaymentlinksPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, pFLitePaymentLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -907,7 +907,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentLinkResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentLinkResponse>> SecureEpfliteQuotesPaymentlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentLinkResponse>> SecureEpfliteQuotesPaymentlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -960,7 +960,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = pFLitePaymentLinkRequest;
 
             localVarRequestOptions.Operation = "SecurePremiumFinanceLiteApi.SecureEpfliteQuotesPaymentlinksPost";

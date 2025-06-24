@@ -40,31 +40,56 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="PFEndorsementRequestQuotePoliciesInnerCompany" /> class.
         /// </summary>
         /// <param name="bestNumber">bestNumber.</param>
-        /// <param name="uniqueID">uniqueID.</param>
+        /// <param name="uniqueID">uniqueID (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="careOf">careOf.</param>
-        /// <param name="address1">address1.</param>
+        /// <param name="address1">address1 (required).</param>
         /// <param name="address2">address2.</param>
-        /// <param name="city">city.</param>
-        /// <param name="state">state.</param>
-        /// <param name="zip">zip.</param>
+        /// <param name="city">city (required).</param>
+        /// <param name="state">state (required).</param>
+        /// <param name="zip">zip (required).</param>
         /// <param name="phone">phone.</param>
         public PFEndorsementRequestQuotePoliciesInnerCompany(string bestNumber = default(string), string uniqueID = default(string), string name = default(string), string careOf = default(string), string address1 = default(string), string address2 = default(string), string city = default(string), string state = default(string), string zip = default(string), string phone = default(string))
         {
+            // to ensure "uniqueID" is required (not null)
+            if (uniqueID == null)
+            {
+                throw new ArgumentNullException("uniqueID is a required property for PFEndorsementRequestQuotePoliciesInnerCompany and cannot be null");
+            }
+            this.UniqueID = uniqueID;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for PFEndorsementRequestQuotePoliciesInnerCompany and cannot be null");
             }
             this.Name = name;
-            this.BestNumber = bestNumber;
-            this.UniqueID = uniqueID;
-            this.CareOf = careOf;
+            // to ensure "address1" is required (not null)
+            if (address1 == null)
+            {
+                throw new ArgumentNullException("address1 is a required property for PFEndorsementRequestQuotePoliciesInnerCompany and cannot be null");
+            }
             this.Address1 = address1;
-            this.Address2 = address2;
+            // to ensure "city" is required (not null)
+            if (city == null)
+            {
+                throw new ArgumentNullException("city is a required property for PFEndorsementRequestQuotePoliciesInnerCompany and cannot be null");
+            }
             this.City = city;
+            // to ensure "state" is required (not null)
+            if (state == null)
+            {
+                throw new ArgumentNullException("state is a required property for PFEndorsementRequestQuotePoliciesInnerCompany and cannot be null");
+            }
             this.State = state;
+            // to ensure "zip" is required (not null)
+            if (zip == null)
+            {
+                throw new ArgumentNullException("zip is a required property for PFEndorsementRequestQuotePoliciesInnerCompany and cannot be null");
+            }
             this.Zip = zip;
+            this.BestNumber = bestNumber;
+            this.CareOf = careOf;
+            this.Address2 = address2;
             this.Phone = phone;
         }
 
@@ -77,7 +102,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets UniqueID
         /// </summary>
-        [DataMember(Name = "UniqueID", EmitDefaultValue = false)]
+        [DataMember(Name = "UniqueID", IsRequired = true, EmitDefaultValue = true)]
         public string UniqueID { get; set; }
 
         /// <summary>
@@ -95,7 +120,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Address1
         /// </summary>
-        [DataMember(Name = "Address1", EmitDefaultValue = false)]
+        [DataMember(Name = "Address1", IsRequired = true, EmitDefaultValue = true)]
         public string Address1 { get; set; }
 
         /// <summary>
@@ -107,19 +132,19 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        [DataMember(Name = "City", EmitDefaultValue = false)]
+        [DataMember(Name = "City", IsRequired = true, EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "State", EmitDefaultValue = false)]
+        [DataMember(Name = "State", IsRequired = true, EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets Zip
         /// </summary>
-        [DataMember(Name = "Zip", EmitDefaultValue = false)]
+        [DataMember(Name = "Zip", IsRequired = true, EmitDefaultValue = true)]
         public string Zip { get; set; }
 
         /// <summary>

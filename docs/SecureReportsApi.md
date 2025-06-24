@@ -8,7 +8,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securereportsdownloadspost"></a>
 # **SecureReportsDownloadsPost**
-> void SecureReportsDownloadsPost (string xApiKey, string xAppKey, float xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = null)
+> void SecureReportsDownloadsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, ReportDownloadRequest? reportDownloadRequest = null)
 
 This API will add system report.
 
@@ -40,7 +40,7 @@ namespace Example
             var apiInstance = new SecureReportsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var reportDownloadRequest = new ReportDownloadRequest?(); // ReportDownloadRequest? | ReportDownloadRequest (optional) 
 
@@ -83,7 +83,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **reportDownloadRequest** | [**ReportDownloadRequest?**](ReportDownloadRequest?.md) | ReportDownloadRequest | [optional]  |
 

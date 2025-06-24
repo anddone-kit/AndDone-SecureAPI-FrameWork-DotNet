@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **LastName** | **string** |  | 
 **NamedInsured** | **string** |  | [optional] 
 **MobilePhoneNumber** | **string** |  | [optional] 
-**EmailAddress** | **string** |  | 
+**EmailAddress** | **string** |  | [optional] 
 **IsCancellationWarningViaTextEnabled** | **bool** |  | [optional] 
 **FaxNumber** | **string** |  | [optional] 
 **Address** | [**PFLiteSecureQuoteRequestInsuredAddress**](PFLiteSecureQuoteRequestInsuredAddress.md) |  | 

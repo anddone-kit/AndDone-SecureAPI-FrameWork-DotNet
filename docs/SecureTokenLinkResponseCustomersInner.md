@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **LastName** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **Phone** | **string** |  | [optional] 
-**Address** | [**TransactionPaymentResponseBillingContactAddress**](TransactionPaymentResponseBillingContactAddress.md) |  | [optional] 
+**Address** | [**TokenLinkSecureRequestCustomersInnerAddress**](TokenLinkSecureRequestCustomersInnerAddress.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

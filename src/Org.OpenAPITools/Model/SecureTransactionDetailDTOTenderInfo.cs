@@ -106,6 +106,31 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "paymentAdjustmentType", EmitDefaultValue = false)]
         public PaymentAdjustmentTypeEnum? PaymentAdjustmentType { get; set; }
         /// <summary>
+        /// Defines DiscountType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DiscountTypeEnum
+        {
+            /// <summary>
+            /// Enum Fixed for value: Fixed
+            /// </summary>
+            [EnumMember(Value = "Fixed")]
+            Fixed = 1,
+
+            /// <summary>
+            /// Enum Percentage for value: Percentage
+            /// </summary>
+            [EnumMember(Value = "Percentage")]
+            Percentage = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets DiscountType
+        /// </summary>
+        [DataMember(Name = "discountType", EmitDefaultValue = false)]
+        public DiscountTypeEnum? DiscountType { get; set; }
+        /// <summary>
         /// Defines CommissionType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -135,6 +160,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="bankName">bankName.</param>
         /// <param name="routingNumber">routingNumber.</param>
+        /// <param name="rawMICRLine">rawMICRLine.</param>
         /// <param name="accountType">accountType.</param>
         /// <param name="checkType">checkType.</param>
         /// <param name="checkNumber">checkNumber.</param>
@@ -148,10 +174,19 @@ namespace Org.OpenAPITools.Model
         /// <param name="cardExpiry">cardExpiry.</param>
         /// <param name="cVData">cVData.</param>
         /// <param name="cVDataStatus">cVDataStatus.</param>
+        /// <param name="trackData">trackData.</param>
+        /// <param name="rxAmount">rxAmount.</param>
+        /// <param name="visionAmount">visionAmount.</param>
+        /// <param name="dentalAmount">dentalAmount.</param>
+        /// <param name="clinicAmount">clinicAmount.</param>
         /// <param name="isCheckCard">isCheckCard.</param>
         /// <param name="captureAmount">captureAmount.</param>
         /// <param name="amount">amount.</param>
+        /// <param name="tipAmount">tipAmount.</param>
         /// <param name="convenienceAmount">convenienceAmount.</param>
+        /// <param name="taxAmount">taxAmount.</param>
+        /// <param name="taxAfterDiscount">taxAfterDiscount.</param>
+        /// <param name="taxPercent">taxPercent.</param>
         /// <param name="adjustmentPercentValue">adjustmentPercentValue.</param>
         /// <param name="adjustmentFixedValue">adjustmentFixedValue.</param>
         /// <param name="adjustmentAmount">adjustmentAmount.</param>
@@ -160,19 +195,23 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentAdjustmentType">paymentAdjustmentType.</param>
         /// <param name="preAuthCode">preAuthCode.</param>
         /// <param name="maskAccount">maskAccount.</param>
-        /// <param name="epb">epb.</param>
-        /// <param name="ksn">ksn.</param>
+        /// <param name="ePB">ePB.</param>
+        /// <param name="kSN">kSN.</param>
         /// <param name="cashBackAmount">cashBackAmount.</param>
         /// <param name="accountToken">accountToken.</param>
         /// <param name="accountTokenMessage">accountTokenMessage.</param>
         /// <param name="createAccountToken">createAccountToken.</param>
+        /// <param name="discountType">discountType.</param>
+        /// <param name="discountPercent">discountPercent.</param>
+        /// <param name="discountAmount">discountAmount.</param>
         /// <param name="commissionType">commissionType.</param>
         /// <param name="commissionValue">commissionValue.</param>
         /// <param name="commissionFixedValue">commissionFixedValue.</param>
-        public SecureTransactionDetailDTOTenderInfo(string bankName = default(string), string routingNumber = default(string), string accountType = default(string), string checkType = default(string), string checkNumber = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), string accountHolderName = default(string), string nameOnCheck = default(string), string cardHolderName = default(string), string cardType = default(string), string maskCardNumber = default(string), string binNumber = default(string), string cardExpiry = default(string), string cVData = default(string), string cVDataStatus = default(string), bool isCheckCard = default(bool), float captureAmount = default(float), float amount = default(float), float convenienceAmount = default(float), float adjustmentPercentValue = default(float), float adjustmentFixedValue = default(float), float adjustmentAmount = default(float), string adjustmentDisplayName = default(string), string adjustmentDescriptorMessage = default(string), PaymentAdjustmentTypeEnum? paymentAdjustmentType = default(PaymentAdjustmentTypeEnum?), string preAuthCode = default(string), string maskAccount = default(string), string epb = default(string), string ksn = default(string), float cashBackAmount = default(float), string accountToken = default(string), string accountTokenMessage = default(string), bool createAccountToken = default(bool), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), float commissionValue = default(float), float commissionFixedValue = default(float))
+        public SecureTransactionDetailDTOTenderInfo(string bankName = default(string), string routingNumber = default(string), string rawMICRLine = default(string), string accountType = default(string), string checkType = default(string), string checkNumber = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), string accountHolderName = default(string), string nameOnCheck = default(string), string cardHolderName = default(string), string cardType = default(string), string maskCardNumber = default(string), string binNumber = default(string), string cardExpiry = default(string), string cVData = default(string), string cVDataStatus = default(string), string trackData = default(string), decimal rxAmount = default(decimal), decimal visionAmount = default(decimal), decimal dentalAmount = default(decimal), decimal clinicAmount = default(decimal), bool isCheckCard = default(bool), decimal captureAmount = default(decimal), decimal amount = default(decimal), decimal tipAmount = default(decimal), decimal convenienceAmount = default(decimal), decimal taxAmount = default(decimal), bool taxAfterDiscount = default(bool), decimal taxPercent = default(decimal), decimal adjustmentPercentValue = default(decimal), decimal adjustmentFixedValue = default(decimal), decimal adjustmentAmount = default(decimal), string adjustmentDisplayName = default(string), string adjustmentDescriptorMessage = default(string), PaymentAdjustmentTypeEnum? paymentAdjustmentType = default(PaymentAdjustmentTypeEnum?), string preAuthCode = default(string), string maskAccount = default(string), string ePB = default(string), string kSN = default(string), decimal cashBackAmount = default(decimal), string accountToken = default(string), string accountTokenMessage = default(string), bool createAccountToken = default(bool), DiscountTypeEnum? discountType = default(DiscountTypeEnum?), decimal discountPercent = default(decimal), decimal discountAmount = default(decimal), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), decimal commissionValue = default(decimal), decimal commissionFixedValue = default(decimal))
         {
             this.BankName = bankName;
             this.RoutingNumber = routingNumber;
+            this.RawMICRLine = rawMICRLine;
             this.AccountType = accountType;
             this.CheckType = checkType;
             this.CheckNumber = checkNumber;
@@ -186,10 +225,19 @@ namespace Org.OpenAPITools.Model
             this.CardExpiry = cardExpiry;
             this.CVData = cVData;
             this.CVDataStatus = cVDataStatus;
+            this.TrackData = trackData;
+            this.RxAmount = rxAmount;
+            this.VisionAmount = visionAmount;
+            this.DentalAmount = dentalAmount;
+            this.ClinicAmount = clinicAmount;
             this.IsCheckCard = isCheckCard;
             this.CaptureAmount = captureAmount;
             this.Amount = amount;
+            this.TipAmount = tipAmount;
             this.ConvenienceAmount = convenienceAmount;
+            this.TaxAmount = taxAmount;
+            this.TaxAfterDiscount = taxAfterDiscount;
+            this.TaxPercent = taxPercent;
             this.AdjustmentPercentValue = adjustmentPercentValue;
             this.AdjustmentFixedValue = adjustmentFixedValue;
             this.AdjustmentAmount = adjustmentAmount;
@@ -198,12 +246,15 @@ namespace Org.OpenAPITools.Model
             this.PaymentAdjustmentType = paymentAdjustmentType;
             this.PreAuthCode = preAuthCode;
             this.MaskAccount = maskAccount;
-            this.Epb = epb;
-            this.Ksn = ksn;
+            this.EPB = ePB;
+            this.KSN = kSN;
             this.CashBackAmount = cashBackAmount;
             this.AccountToken = accountToken;
             this.AccountTokenMessage = accountTokenMessage;
             this.CreateAccountToken = createAccountToken;
+            this.DiscountType = discountType;
+            this.DiscountPercent = discountPercent;
+            this.DiscountAmount = discountAmount;
             this.CommissionType = commissionType;
             this.CommissionValue = commissionValue;
             this.CommissionFixedValue = commissionFixedValue;
@@ -220,6 +271,12 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "routingNumber", EmitDefaultValue = false)]
         public string RoutingNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RawMICRLine
+        /// </summary>
+        [DataMember(Name = "rawMICRLine", EmitDefaultValue = false)]
+        public string RawMICRLine { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountType
@@ -294,6 +351,36 @@ namespace Org.OpenAPITools.Model
         public string CVDataStatus { get; set; }
 
         /// <summary>
+        /// Gets or Sets TrackData
+        /// </summary>
+        [DataMember(Name = "trackData", EmitDefaultValue = false)]
+        public string TrackData { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RxAmount
+        /// </summary>
+        [DataMember(Name = "rxAmount", EmitDefaultValue = false)]
+        public decimal RxAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VisionAmount
+        /// </summary>
+        [DataMember(Name = "visionAmount", EmitDefaultValue = false)]
+        public decimal VisionAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DentalAmount
+        /// </summary>
+        [DataMember(Name = "dentalAmount", EmitDefaultValue = false)]
+        public decimal DentalAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ClinicAmount
+        /// </summary>
+        [DataMember(Name = "clinicAmount", EmitDefaultValue = false)]
+        public decimal ClinicAmount { get; set; }
+
+        /// <summary>
         /// Gets or Sets IsCheckCard
         /// </summary>
         [DataMember(Name = "isCheckCard", EmitDefaultValue = true)]
@@ -303,37 +390,61 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets CaptureAmount
         /// </summary>
         [DataMember(Name = "captureAmount", EmitDefaultValue = false)]
-        public float CaptureAmount { get; set; }
+        public decimal CaptureAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public float Amount { get; set; }
+        public decimal Amount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TipAmount
+        /// </summary>
+        [DataMember(Name = "tipAmount", EmitDefaultValue = false)]
+        public decimal TipAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvenienceAmount
         /// </summary>
         [DataMember(Name = "convenienceAmount", EmitDefaultValue = false)]
-        public float ConvenienceAmount { get; set; }
+        public decimal ConvenienceAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxAmount
+        /// </summary>
+        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
+        public decimal TaxAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxAfterDiscount
+        /// </summary>
+        [DataMember(Name = "taxAfterDiscount", EmitDefaultValue = true)]
+        public bool TaxAfterDiscount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TaxPercent
+        /// </summary>
+        [DataMember(Name = "taxPercent", EmitDefaultValue = false)]
+        public decimal TaxPercent { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentPercentValue
         /// </summary>
         [DataMember(Name = "adjustmentPercentValue", EmitDefaultValue = false)]
-        public float AdjustmentPercentValue { get; set; }
+        public decimal AdjustmentPercentValue { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentFixedValue
         /// </summary>
         [DataMember(Name = "adjustmentFixedValue", EmitDefaultValue = false)]
-        public float AdjustmentFixedValue { get; set; }
+        public decimal AdjustmentFixedValue { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentAmount
         /// </summary>
         [DataMember(Name = "adjustmentAmount", EmitDefaultValue = false)]
-        public float AdjustmentAmount { get; set; }
+        public decimal AdjustmentAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentDisplayName
@@ -360,22 +471,22 @@ namespace Org.OpenAPITools.Model
         public string MaskAccount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Epb
+        /// Gets or Sets EPB
         /// </summary>
-        [DataMember(Name = "epb", EmitDefaultValue = false)]
-        public string Epb { get; set; }
+        [DataMember(Name = "ePB", EmitDefaultValue = false)]
+        public string EPB { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ksn
+        /// Gets or Sets KSN
         /// </summary>
-        [DataMember(Name = "ksn", EmitDefaultValue = false)]
-        public string Ksn { get; set; }
+        [DataMember(Name = "kSN", EmitDefaultValue = false)]
+        public string KSN { get; set; }
 
         /// <summary>
         /// Gets or Sets CashBackAmount
         /// </summary>
         [DataMember(Name = "cashBackAmount", EmitDefaultValue = false)]
-        public float CashBackAmount { get; set; }
+        public decimal CashBackAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountToken
@@ -396,16 +507,28 @@ namespace Org.OpenAPITools.Model
         public bool CreateAccountToken { get; set; }
 
         /// <summary>
+        /// Gets or Sets DiscountPercent
+        /// </summary>
+        [DataMember(Name = "discountPercent", EmitDefaultValue = false)]
+        public decimal DiscountPercent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DiscountAmount
+        /// </summary>
+        [DataMember(Name = "discountAmount", EmitDefaultValue = false)]
+        public decimal DiscountAmount { get; set; }
+
+        /// <summary>
         /// Gets or Sets CommissionValue
         /// </summary>
         [DataMember(Name = "commissionValue", EmitDefaultValue = false)]
-        public float CommissionValue { get; set; }
+        public decimal CommissionValue { get; set; }
 
         /// <summary>
         /// Gets or Sets CommissionFixedValue
         /// </summary>
         [DataMember(Name = "commissionFixedValue", EmitDefaultValue = false)]
-        public float CommissionFixedValue { get; set; }
+        public decimal CommissionFixedValue { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -417,6 +540,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("class SecureTransactionDetailDTOTenderInfo {\n");
             sb.Append("  BankName: ").Append(BankName).Append("\n");
             sb.Append("  RoutingNumber: ").Append(RoutingNumber).Append("\n");
+            sb.Append("  RawMICRLine: ").Append(RawMICRLine).Append("\n");
             sb.Append("  AccountType: ").Append(AccountType).Append("\n");
             sb.Append("  CheckType: ").Append(CheckType).Append("\n");
             sb.Append("  CheckNumber: ").Append(CheckNumber).Append("\n");
@@ -430,10 +554,19 @@ namespace Org.OpenAPITools.Model
             sb.Append("  CardExpiry: ").Append(CardExpiry).Append("\n");
             sb.Append("  CVData: ").Append(CVData).Append("\n");
             sb.Append("  CVDataStatus: ").Append(CVDataStatus).Append("\n");
+            sb.Append("  TrackData: ").Append(TrackData).Append("\n");
+            sb.Append("  RxAmount: ").Append(RxAmount).Append("\n");
+            sb.Append("  VisionAmount: ").Append(VisionAmount).Append("\n");
+            sb.Append("  DentalAmount: ").Append(DentalAmount).Append("\n");
+            sb.Append("  ClinicAmount: ").Append(ClinicAmount).Append("\n");
             sb.Append("  IsCheckCard: ").Append(IsCheckCard).Append("\n");
             sb.Append("  CaptureAmount: ").Append(CaptureAmount).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  TipAmount: ").Append(TipAmount).Append("\n");
             sb.Append("  ConvenienceAmount: ").Append(ConvenienceAmount).Append("\n");
+            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
+            sb.Append("  TaxAfterDiscount: ").Append(TaxAfterDiscount).Append("\n");
+            sb.Append("  TaxPercent: ").Append(TaxPercent).Append("\n");
             sb.Append("  AdjustmentPercentValue: ").Append(AdjustmentPercentValue).Append("\n");
             sb.Append("  AdjustmentFixedValue: ").Append(AdjustmentFixedValue).Append("\n");
             sb.Append("  AdjustmentAmount: ").Append(AdjustmentAmount).Append("\n");
@@ -442,12 +575,15 @@ namespace Org.OpenAPITools.Model
             sb.Append("  PaymentAdjustmentType: ").Append(PaymentAdjustmentType).Append("\n");
             sb.Append("  PreAuthCode: ").Append(PreAuthCode).Append("\n");
             sb.Append("  MaskAccount: ").Append(MaskAccount).Append("\n");
-            sb.Append("  Epb: ").Append(Epb).Append("\n");
-            sb.Append("  Ksn: ").Append(Ksn).Append("\n");
+            sb.Append("  EPB: ").Append(EPB).Append("\n");
+            sb.Append("  KSN: ").Append(KSN).Append("\n");
             sb.Append("  CashBackAmount: ").Append(CashBackAmount).Append("\n");
             sb.Append("  AccountToken: ").Append(AccountToken).Append("\n");
             sb.Append("  AccountTokenMessage: ").Append(AccountTokenMessage).Append("\n");
             sb.Append("  CreateAccountToken: ").Append(CreateAccountToken).Append("\n");
+            sb.Append("  DiscountType: ").Append(DiscountType).Append("\n");
+            sb.Append("  DiscountPercent: ").Append(DiscountPercent).Append("\n");
+            sb.Append("  DiscountAmount: ").Append(DiscountAmount).Append("\n");
             sb.Append("  CommissionType: ").Append(CommissionType).Append("\n");
             sb.Append("  CommissionValue: ").Append(CommissionValue).Append("\n");
             sb.Append("  CommissionFixedValue: ").Append(CommissionFixedValue).Append("\n");

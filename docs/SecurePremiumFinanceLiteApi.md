@@ -10,7 +10,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="secureepflitequotesgeneratepost"></a>
 # **SecureEpfliteQuotesGeneratePost**
-> PFLiteGenerateQuoteResponse SecureEpfliteQuotesGeneratePost (string xApiKey, string xAppKey, float xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = null)
+> PFGenerateQuoteResponse SecureEpfliteQuotesGeneratePost (string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteSecureQuoteRequest? pFLiteSecureQuoteRequest = null)
 
 This API is used to generate the quote from the provider.
 
@@ -42,14 +42,14 @@ namespace Example
             var apiInstance = new SecurePremiumFinanceLiteApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFLiteSecureQuoteRequest = new PFLiteSecureQuoteRequest?(); // PFLiteSecureQuoteRequest? | PFLite Quote Secure Request details (optional) 
 
             try
             {
                 // This API is used to generate the quote from the provider.
-                PFLiteGenerateQuoteResponse result = apiInstance.SecureEpfliteQuotesGeneratePost(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest);
+                PFGenerateQuoteResponse result = apiInstance.SecureEpfliteQuotesGeneratePost(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API is used to generate the quote from the provider.
-    ApiResponse<PFLiteGenerateQuoteResponse> response = apiInstance.SecureEpfliteQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest);
+    ApiResponse<PFGenerateQuoteResponse> response = apiInstance.SecureEpfliteQuotesGeneratePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, pFLiteSecureQuoteRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -89,13 +89,13 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFLiteSecureQuoteRequest** | [**PFLiteSecureQuoteRequest?**](PFLiteSecureQuoteRequest?.md) | PFLite Quote Secure Request details | [optional]  |
 
 ### Return type
 
-[**PFLiteGenerateQuoteResponse**](PFLiteGenerateQuoteResponse.md)
+[**PFGenerateQuoteResponse**](PFGenerateQuoteResponse.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Successful operation |  -  |
+| **200** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Server Error |  -  |
@@ -119,7 +119,7 @@ catch (ApiException e)
 
 <a id="secureepflitequoteslinkpost"></a>
 # **SecureEpfliteQuotesLinkPost**
-> List&lt;PFLiteQuoteByPaymentLinkResponse&gt; SecureEpfliteQuotesLinkPost (string xApiKey, string xAppKey, float xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = null)
+> List&lt;PFLiteQuoteByPaymentLinkResponse&gt; SecureEpfliteQuotesLinkPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PFLiteGetQuoteRequest? pFLiteGetQuoteRequest = null)
 
 This API will return quotes created againsts a payment link.
 
@@ -151,7 +151,7 @@ namespace Example
             var apiInstance = new SecurePremiumFinanceLiteApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFLiteGetQuoteRequest = new PFLiteGetQuoteRequest?(); // PFLiteGetQuoteRequest? | Signature Request details (optional) 
 
@@ -198,7 +198,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFLiteGetQuoteRequest** | [**PFLiteGetQuoteRequest?**](PFLiteGetQuoteRequest?.md) | Signature Request details | [optional]  |
 
@@ -228,7 +228,7 @@ catch (ApiException e)
 
 <a id="secureepflitequotespaymentlinkspost"></a>
 # **SecureEpfliteQuotesPaymentlinksPost**
-> PaymentLinkResponse SecureEpfliteQuotesPaymentlinksPost (string xApiKey, string xAppKey, float xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest)
+> PaymentLinkResponse SecureEpfliteQuotesPaymentlinksPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PFLitePaymentLinkRequest pFLitePaymentLinkRequest)
 
 This API is used to create Payment Links
 
@@ -260,7 +260,7 @@ namespace Example
             var apiInstance = new SecurePremiumFinanceLiteApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // float | x-version
+            var xVersion = 8.14D;  // decimal | x-version
             var origin = "origin_example";  // string | origin
             var pFLitePaymentLinkRequest = new PFLitePaymentLinkRequest(); // PFLitePaymentLinkRequest | Payment Link Request
 
@@ -307,7 +307,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **float** | x-version |  |
+| **xVersion** | **decimal** | x-version |  |
 | **origin** | **string** | origin |  |
 | **pFLitePaymentLinkRequest** | [**PFLitePaymentLinkRequest**](PFLitePaymentLinkRequest.md) | Payment Link Request |  |
 

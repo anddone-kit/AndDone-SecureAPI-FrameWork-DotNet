@@ -34,26 +34,16 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurePaymentBatchDetailsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SecurePaymentBatchDetailsRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecurePaymentBatchDetailsRequest" /> class.
-        /// </summary>
-        /// <param name="batchId">batchId (required).</param>
+        /// <param name="batchId">batchId.</param>
         public SecurePaymentBatchDetailsRequest(string batchId = default(string))
         {
-            // to ensure "batchId" is required (not null)
-            if (batchId == null)
-            {
-                throw new ArgumentNullException("batchId is a required property for SecurePaymentBatchDetailsRequest and cannot be null");
-            }
             this.BatchId = batchId;
         }
 
         /// <summary>
         /// Gets or Sets BatchId
         /// </summary>
-        [DataMember(Name = "batchId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "batchId", EmitDefaultValue = false)]
         public string BatchId { get; set; }
 
         /// <summary>

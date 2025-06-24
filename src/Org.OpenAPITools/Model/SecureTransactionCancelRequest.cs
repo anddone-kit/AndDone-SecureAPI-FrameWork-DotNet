@@ -34,39 +34,24 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureTransactionCancelRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SecureTransactionCancelRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SecureTransactionCancelRequest" /> class.
-        /// </summary>
-        /// <param name="transactionId">transactionId (required).</param>
-        /// <param name="voidReason">voidReason (required).</param>
+        /// <param name="transactionId">transactionId.</param>
+        /// <param name="voidReason">voidReason.</param>
         public SecureTransactionCancelRequest(string transactionId = default(string), string voidReason = default(string))
         {
-            // to ensure "transactionId" is required (not null)
-            if (transactionId == null)
-            {
-                throw new ArgumentNullException("transactionId is a required property for SecureTransactionCancelRequest and cannot be null");
-            }
             this.TransactionId = transactionId;
-            // to ensure "voidReason" is required (not null)
-            if (voidReason == null)
-            {
-                throw new ArgumentNullException("voidReason is a required property for SecureTransactionCancelRequest and cannot be null");
-            }
             this.VoidReason = voidReason;
         }
 
         /// <summary>
         /// Gets or Sets TransactionId
         /// </summary>
-        [DataMember(Name = "transactionId", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
 
         /// <summary>
         /// Gets or Sets VoidReason
         /// </summary>
-        [DataMember(Name = "voidReason", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "voidReason", EmitDefaultValue = false)]
         public string VoidReason { get; set; }
 
         /// <summary>

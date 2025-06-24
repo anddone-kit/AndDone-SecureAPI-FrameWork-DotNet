@@ -38,34 +38,22 @@ namespace Org.OpenAPITools.Model
         public enum AdditionalDetailsPreferenceEnum
         {
             /// <summary>
-            /// Enum None for value: None
-            /// </summary>
-            [EnumMember(Value = "None")]
-            None = 1,
-
-            /// <summary>
             /// Enum AskShopper for value: AskShopper
             /// </summary>
             [EnumMember(Value = "AskShopper")]
-            AskShopper = 2,
+            AskShopper = 1,
 
             /// <summary>
             /// Enum ManualEnter for value: ManualEnter
             /// </summary>
             [EnumMember(Value = "ManualEnter")]
-            ManualEnter = 3,
+            ManualEnter = 2,
 
             /// <summary>
             /// Enum NoAdditionalDetails for value: NoAdditionalDetails
             /// </summary>
             [EnumMember(Value = "NoAdditionalDetails")]
-            NoAdditionalDetails = 4,
-
-            /// <summary>
-            /// Enum ManualEnterEditNotAllowed for value: ManualEnterEditNotAllowed
-            /// </summary>
-            [EnumMember(Value = "ManualEnterEditNotAllowed")]
-            ManualEnterEditNotAllowed = 5
+            NoAdditionalDetails = 3
         }
 
 
@@ -77,13 +65,9 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLinkRequestSettings" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PaymentLinkRequestSettings() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PaymentLinkRequestSettings" /> class.
-        /// </summary>
-        /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
         /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
+        /// <param name="intent">intent.</param>
+        /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
         /// <param name="displaySummary">displaySummary.</param>
         /// <param name="acceptCustomerInfo">acceptCustomerInfo.</param>
         /// <param name="removeHeader">removeHeader.</param>
@@ -91,17 +75,11 @@ namespace Org.OpenAPITools.Model
         /// <param name="acceptBankAccount">acceptBankAccount.</param>
         /// <param name="saveCustomer">saveCustomer.</param>
         /// <param name="saveCustomerAccount">saveCustomerAccount.</param>
-        /// <param name="intent">intent (required).</param>
-        public PaymentLinkRequestSettings(string selectedCustomerFields = default(string), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool), PaymentLinkRequestSettingsIntent intent = default(PaymentLinkRequestSettingsIntent))
+        public PaymentLinkRequestSettings(AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), PaymentLinkRequestSettingsIntent intent = default(PaymentLinkRequestSettingsIntent), string selectedCustomerFields = default(string), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool))
         {
-            // to ensure "intent" is required (not null)
-            if (intent == null)
-            {
-                throw new ArgumentNullException("intent is a required property for PaymentLinkRequestSettings and cannot be null");
-            }
+            this.AdditionalDetailsPreference = additionalDetailsPreference;
             this.Intent = intent;
             this.SelectedCustomerFields = selectedCustomerFields;
-            this.AdditionalDetailsPreference = additionalDetailsPreference;
             this.DisplaySummary = displaySummary;
             this.AcceptCustomerInfo = acceptCustomerInfo;
             this.RemoveHeader = removeHeader;
@@ -110,6 +88,12 @@ namespace Org.OpenAPITools.Model
             this.SaveCustomer = saveCustomer;
             this.SaveCustomerAccount = saveCustomerAccount;
         }
+
+        /// <summary>
+        /// Gets or Sets Intent
+        /// </summary>
+        [DataMember(Name = "intent", EmitDefaultValue = false)]
+        public PaymentLinkRequestSettingsIntent Intent { get; set; }
 
         /// <summary>
         /// Gets or Sets SelectedCustomerFields
@@ -160,12 +144,6 @@ namespace Org.OpenAPITools.Model
         public bool SaveCustomerAccount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Intent
-        /// </summary>
-        [DataMember(Name = "intent", IsRequired = true, EmitDefaultValue = true)]
-        public PaymentLinkRequestSettingsIntent Intent { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -173,8 +151,9 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentLinkRequestSettings {\n");
-            sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
             sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
+            sb.Append("  Intent: ").Append(Intent).Append("\n");
+            sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
             sb.Append("  DisplaySummary: ").Append(DisplaySummary).Append("\n");
             sb.Append("  AcceptCustomerInfo: ").Append(AcceptCustomerInfo).Append("\n");
             sb.Append("  RemoveHeader: ").Append(RemoveHeader).Append("\n");
@@ -182,7 +161,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  AcceptBankAccount: ").Append(AcceptBankAccount).Append("\n");
             sb.Append("  SaveCustomer: ").Append(SaveCustomer).Append("\n");
             sb.Append("  SaveCustomerAccount: ").Append(SaveCustomerAccount).Append("\n");
-            sb.Append("  Intent: ").Append(Intent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

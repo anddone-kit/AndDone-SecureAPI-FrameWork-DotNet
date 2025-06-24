@@ -40,49 +40,42 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequestPoliciesInner" /> class.
         /// </summary>
         /// <param name="id">id.</param>
-        /// <param name="policyNumber">policyNumber.</param>
-        /// <param name="premium">premium (required).</param>
+        /// <param name="policyNumber">policyNumber (required).</param>
+        /// <param name="premium">premium.</param>
         /// <param name="additionalFees">additionalFees.</param>
         /// <param name="tax">tax.</param>
-        /// <param name="coverageType">coverageType (required).</param>
+        /// <param name="coverageType">coverageType.</param>
         /// <param name="effectiveDate">effectiveDate (required).</param>
-        /// <param name="minimumEarnedPercent">minimumEarnedPercent.</param>
-        /// <param name="cancelDays">cancelDays (required).</param>
-        /// <param name="carrier">carrier (required).</param>
-        /// <param name="expirationDate">expirationDate.</param>
-        public PFLiteSecureQuoteRequestPoliciesInner(string id = default(string), string policyNumber = default(string), float premium = default(float), float additionalFees = default(float), float tax = default(float), string coverageType = default(string), string effectiveDate = default(string), float minimumEarnedPercent = default(float), string cancelDays = default(string), PFLiteSecureQuoteRequestPoliciesInnerCarrier carrier = default(PFLiteSecureQuoteRequestPoliciesInnerCarrier), string expirationDate = default(string))
+        /// <param name="minimumEarnedPercent">minimumEarnedPercent (required).</param>
+        /// <param name="carrier">carrier.</param>
+        /// <param name="expirationDate">expirationDate (required).</param>
+        public PFLiteSecureQuoteRequestPoliciesInner(string id = default(string), string policyNumber = default(string), decimal premium = default(decimal), decimal additionalFees = default(decimal), decimal tax = default(decimal), string coverageType = default(string), string effectiveDate = default(string), decimal minimumEarnedPercent = default(decimal), PFLiteSecureQuoteRequestPoliciesInnerCarrier carrier = default(PFLiteSecureQuoteRequestPoliciesInnerCarrier), string expirationDate = default(string))
         {
-            this.Premium = premium;
-            // to ensure "coverageType" is required (not null)
-            if (coverageType == null)
+            // to ensure "policyNumber" is required (not null)
+            if (policyNumber == null)
             {
-                throw new ArgumentNullException("coverageType is a required property for PFLiteSecureQuoteRequestPoliciesInner and cannot be null");
+                throw new ArgumentNullException("policyNumber is a required property for PFLiteSecureQuoteRequestPoliciesInner and cannot be null");
             }
-            this.CoverageType = coverageType;
+            this.PolicyNumber = policyNumber;
             // to ensure "effectiveDate" is required (not null)
             if (effectiveDate == null)
             {
                 throw new ArgumentNullException("effectiveDate is a required property for PFLiteSecureQuoteRequestPoliciesInner and cannot be null");
             }
             this.EffectiveDate = effectiveDate;
-            // to ensure "cancelDays" is required (not null)
-            if (cancelDays == null)
+            this.MinimumEarnedPercent = minimumEarnedPercent;
+            // to ensure "expirationDate" is required (not null)
+            if (expirationDate == null)
             {
-                throw new ArgumentNullException("cancelDays is a required property for PFLiteSecureQuoteRequestPoliciesInner and cannot be null");
+                throw new ArgumentNullException("expirationDate is a required property for PFLiteSecureQuoteRequestPoliciesInner and cannot be null");
             }
-            this.CancelDays = cancelDays;
-            // to ensure "carrier" is required (not null)
-            if (carrier == null)
-            {
-                throw new ArgumentNullException("carrier is a required property for PFLiteSecureQuoteRequestPoliciesInner and cannot be null");
-            }
-            this.Carrier = carrier;
+            this.ExpirationDate = expirationDate;
             this.Id = id;
-            this.PolicyNumber = policyNumber;
+            this.Premium = premium;
             this.AdditionalFees = additionalFees;
             this.Tax = tax;
-            this.MinimumEarnedPercent = minimumEarnedPercent;
-            this.ExpirationDate = expirationDate;
+            this.CoverageType = coverageType;
+            this.Carrier = carrier;
         }
 
         /// <summary>
@@ -94,31 +87,31 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets PolicyNumber
         /// </summary>
-        [DataMember(Name = "policyNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "policyNumber", IsRequired = true, EmitDefaultValue = true)]
         public string PolicyNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Premium
         /// </summary>
-        [DataMember(Name = "premium", IsRequired = true, EmitDefaultValue = true)]
-        public float Premium { get; set; }
+        [DataMember(Name = "premium", EmitDefaultValue = false)]
+        public decimal Premium { get; set; }
 
         /// <summary>
         /// Gets or Sets AdditionalFees
         /// </summary>
         [DataMember(Name = "additionalFees", EmitDefaultValue = false)]
-        public float AdditionalFees { get; set; }
+        public decimal AdditionalFees { get; set; }
 
         /// <summary>
         /// Gets or Sets Tax
         /// </summary>
         [DataMember(Name = "tax", EmitDefaultValue = false)]
-        public float Tax { get; set; }
+        public decimal Tax { get; set; }
 
         /// <summary>
         /// Gets or Sets CoverageType
         /// </summary>
-        [DataMember(Name = "coverageType", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "coverageType", EmitDefaultValue = false)]
         public string CoverageType { get; set; }
 
         /// <summary>
@@ -130,25 +123,19 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets MinimumEarnedPercent
         /// </summary>
-        [DataMember(Name = "minimumEarnedPercent", EmitDefaultValue = false)]
-        public float MinimumEarnedPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CancelDays
-        /// </summary>
-        [DataMember(Name = "cancelDays", IsRequired = true, EmitDefaultValue = true)]
-        public string CancelDays { get; set; }
+        [DataMember(Name = "minimumEarnedPercent", IsRequired = true, EmitDefaultValue = true)]
+        public decimal MinimumEarnedPercent { get; set; }
 
         /// <summary>
         /// Gets or Sets Carrier
         /// </summary>
-        [DataMember(Name = "carrier", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "carrier", EmitDefaultValue = false)]
         public PFLiteSecureQuoteRequestPoliciesInnerCarrier Carrier { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpirationDate
         /// </summary>
-        [DataMember(Name = "expirationDate", EmitDefaultValue = false)]
+        [DataMember(Name = "expirationDate", IsRequired = true, EmitDefaultValue = true)]
         public string ExpirationDate { get; set; }
 
         /// <summary>
@@ -167,7 +154,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  CoverageType: ").Append(CoverageType).Append("\n");
             sb.Append("  EffectiveDate: ").Append(EffectiveDate).Append("\n");
             sb.Append("  MinimumEarnedPercent: ").Append(MinimumEarnedPercent).Append("\n");
-            sb.Append("  CancelDays: ").Append(CancelDays).Append("\n");
             sb.Append("  Carrier: ").Append(Carrier).Append("\n");
             sb.Append("  ExpirationDate: ").Append(ExpirationDate).Append("\n");
             sb.Append("}\n");
