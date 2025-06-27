@@ -217,12 +217,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'PFA'
+        /// Test the property 'Pfa'
         /// </summary>
         [Fact]
-        public void PFATest()
+        public void PfaTest()
         {
-            // TODO unit test for the property 'PFA'
+            // TODO unit test for the property 'Pfa'
         }
 
         /// <summary>

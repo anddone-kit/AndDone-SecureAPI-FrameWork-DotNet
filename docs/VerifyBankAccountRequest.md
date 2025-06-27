@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountNumber** | **string** |  | [optional] 
-**RoutingNumber** | **string** |  | [optional] 
-**AccountHolderName** | **string** |  | [optional] 
+**AccountNumber** | **string** |  | 
+**RoutingNumber** | **string** |  | 
+**AccountHolderName** | **string** |  | 
 **StatementDisplayName** | **string** |  | [optional] 
 **BankAccountEntity** | [**VerifyBankAccountRequestBankAccountEntity**](VerifyBankAccountRequestBankAccountEntity.md) |  | [optional] 
 

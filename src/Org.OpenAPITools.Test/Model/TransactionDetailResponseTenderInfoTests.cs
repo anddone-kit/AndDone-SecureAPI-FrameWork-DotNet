@@ -73,15 +73,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'RawMICRLine'
-        /// </summary>
-        [Fact]
-        public void RawMICRLineTest()
-        {
-            // TODO unit test for the property 'RawMICRLine'
-        }
-
-        /// <summary>
         /// Test the property 'AccountType'
         /// </summary>
         [Fact]
@@ -163,6 +154,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'BinNumber'
+        /// </summary>
+        [Fact]
+        public void BinNumberTest()
+        {
+            // TODO unit test for the property 'BinNumber'
+        }
+
+        /// <summary>
         /// Test the property 'CardExpiry'
         /// </summary>
         [Fact]
@@ -190,48 +190,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'TipAmount'
-        /// </summary>
-        [Fact]
-        public void TipAmountTest()
-        {
-            // TODO unit test for the property 'TipAmount'
-        }
-
-        /// <summary>
         /// Test the property 'ConvenienceAmount'
         /// </summary>
         [Fact]
         public void ConvenienceAmountTest()
         {
             // TODO unit test for the property 'ConvenienceAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAmount'
-        /// </summary>
-        [Fact]
-        public void TaxAmountTest()
-        {
-            // TODO unit test for the property 'TaxAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAfterDiscount'
-        /// </summary>
-        [Fact]
-        public void TaxAfterDiscountTest()
-        {
-            // TODO unit test for the property 'TaxAfterDiscount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxPercent'
-        /// </summary>
-        [Fact]
-        public void TaxPercentTest()
-        {
-            // TODO unit test for the property 'TaxPercent'
         }
 
         /// <summary>
@@ -331,33 +295,6 @@ namespace Org.OpenAPITools.Test.Model
         public void CreateAccountTokenTest()
         {
             // TODO unit test for the property 'CreateAccountToken'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountType'
-        /// </summary>
-        [Fact]
-        public void DiscountTypeTest()
-        {
-            // TODO unit test for the property 'DiscountType'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountPercent'
-        /// </summary>
-        [Fact]
-        public void DiscountPercentTest()
-        {
-            // TODO unit test for the property 'DiscountPercent'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountAmount'
-        /// </summary>
-        [Fact]
-        public void DiscountAmountTest()
-        {
-            // TODO unit test for the property 'DiscountAmount'
         }
 
         /// <summary>

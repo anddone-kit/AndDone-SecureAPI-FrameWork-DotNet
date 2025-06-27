@@ -34,19 +34,25 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentIntentRequestCustomersInner" /> class.
         /// </summary>
+        /// <param name="customerId">customerId.</param>
         /// <param name="firstName">firstName.</param>
         /// <param name="lastName">lastName.</param>
         /// <param name="email">email.</param>
         /// <param name="phone">phone.</param>
-        /// <param name="customerId">customerId.</param>
-        public PaymentIntentRequestCustomersInner(string firstName = default(string), string lastName = default(string), string email = default(string), string phone = default(string), string customerId = default(string))
+        public PaymentIntentRequestCustomersInner(string customerId = default(string), string firstName = default(string), string lastName = default(string), string email = default(string), string phone = default(string))
         {
+            this.CustomerId = customerId;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.Email = email;
             this.Phone = phone;
-            this.CustomerId = customerId;
         }
+
+        /// <summary>
+        /// Gets or Sets CustomerId
+        /// </summary>
+        [DataMember(Name = "customerId", EmitDefaultValue = false)]
+        public string CustomerId { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstName
@@ -73,12 +79,6 @@ namespace Org.OpenAPITools.Model
         public string Phone { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomerId
-        /// </summary>
-        [DataMember(Name = "customerId", EmitDefaultValue = false)]
-        public string CustomerId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -86,11 +86,11 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentIntentRequestCustomersInner {\n");
+            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("  FirstName: ").Append(FirstName).Append("\n");
             sb.Append("  LastName: ").Append(LastName).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Phone: ").Append(Phone).Append("\n");
-            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

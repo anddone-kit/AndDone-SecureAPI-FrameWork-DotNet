@@ -5,15 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
-**PolicyNumber** | **string** |  | 
-**Premium** | **decimal** |  | [optional] 
-**AdditionalFees** | **decimal** |  | [optional] 
-**Tax** | **decimal** |  | [optional] 
-**CoverageType** | **string** |  | [optional] 
+**PolicyNumber** | **string** |  | [optional] 
+**Premium** | **float** |  | 
+**AdditionalFees** | **float** |  | [optional] 
+**Tax** | **float** |  | [optional] 
+**CoverageType** | **string** |  | 
 **EffectiveDate** | **string** |  | 
-**MinimumEarnedPercent** | **decimal** |  | 
-**Carrier** | [**PFLiteSecureQuoteRequestPoliciesInnerCarrier**](PFLiteSecureQuoteRequestPoliciesInnerCarrier.md) |  | [optional] 
-**ExpirationDate** | **string** |  | 
+**MinimumEarnedPercent** | **float** |  | [optional] 
+**CancelDays** | **string** |  | 
+**Carrier** | [**PFLiteSecureQuoteRequestPoliciesInnerCarrier**](PFLiteSecureQuoteRequestPoliciesInnerCarrier.md) |  | 
+**ExpirationDate** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

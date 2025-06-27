@@ -34,56 +34,86 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequest" /> class.
         /// </summary>
-        /// <param name="merchantId">merchantId.</param>
+        [JsonConstructorAttribute]
+        protected PFLiteSecureQuoteRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequest" /> class.
+        /// </summary>
+        /// <param name="merchantId">merchantId (required).</param>
         /// <param name="brokerFee">brokerFee.</param>
-        /// <param name="merchant">merchant.</param>
-        /// <param name="insured">insured.</param>
-        /// <param name="program">program.</param>
-        /// <param name="policies">policies.</param>
-        public PFLiteSecureQuoteRequest(string merchantId = default(string), decimal brokerFee = default(decimal), PFLiteSecureQuoteRequestMerchant merchant = default(PFLiteSecureQuoteRequestMerchant), PFLiteSecureQuoteRequestInsured insured = default(PFLiteSecureQuoteRequestInsured), PFLiteSecureQuoteRequestProgram program = default(PFLiteSecureQuoteRequestProgram), List<PFLiteSecureQuoteRequestPoliciesInner> policies = default(List<PFLiteSecureQuoteRequestPoliciesInner>))
+        /// <param name="merchant">merchant (required).</param>
+        /// <param name="insured">insured (required).</param>
+        /// <param name="program">program (required).</param>
+        /// <param name="policies">policies (required).</param>
+        public PFLiteSecureQuoteRequest(string merchantId = default(string), float brokerFee = default(float), PFLiteSecureQuoteRequestMerchant merchant = default(PFLiteSecureQuoteRequestMerchant), PFLiteSecureQuoteRequestInsured insured = default(PFLiteSecureQuoteRequestInsured), PFLiteSecureQuoteRequestProgram program = default(PFLiteSecureQuoteRequestProgram), List<PFLiteSecureQuoteRequestPoliciesInner> policies = default(List<PFLiteSecureQuoteRequestPoliciesInner>))
         {
+            // to ensure "merchantId" is required (not null)
+            if (merchantId == null)
+            {
+                throw new ArgumentNullException("merchantId is a required property for PFLiteSecureQuoteRequest and cannot be null");
+            }
             this.MerchantId = merchantId;
-            this.BrokerFee = brokerFee;
+            // to ensure "merchant" is required (not null)
+            if (merchant == null)
+            {
+                throw new ArgumentNullException("merchant is a required property for PFLiteSecureQuoteRequest and cannot be null");
+            }
             this.Merchant = merchant;
+            // to ensure "insured" is required (not null)
+            if (insured == null)
+            {
+                throw new ArgumentNullException("insured is a required property for PFLiteSecureQuoteRequest and cannot be null");
+            }
             this.Insured = insured;
+            // to ensure "program" is required (not null)
+            if (program == null)
+            {
+                throw new ArgumentNullException("program is a required property for PFLiteSecureQuoteRequest and cannot be null");
+            }
             this.Program = program;
+            // to ensure "policies" is required (not null)
+            if (policies == null)
+            {
+                throw new ArgumentNullException("policies is a required property for PFLiteSecureQuoteRequest and cannot be null");
+            }
             this.Policies = policies;
+            this.BrokerFee = brokerFee;
         }
 
         /// <summary>
         /// Gets or Sets MerchantId
         /// </summary>
-        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
+        [DataMember(Name = "merchantId", IsRequired = true, EmitDefaultValue = true)]
         public string MerchantId { get; set; }
 
         /// <summary>
         /// Gets or Sets BrokerFee
         /// </summary>
         [DataMember(Name = "brokerFee", EmitDefaultValue = false)]
-        public decimal BrokerFee { get; set; }
+        public float BrokerFee { get; set; }
 
         /// <summary>
         /// Gets or Sets Merchant
         /// </summary>
-        [DataMember(Name = "merchant", EmitDefaultValue = false)]
+        [DataMember(Name = "merchant", IsRequired = true, EmitDefaultValue = true)]
         public PFLiteSecureQuoteRequestMerchant Merchant { get; set; }
 
         /// <summary>
         /// Gets or Sets Insured
         /// </summary>
-        [DataMember(Name = "insured", EmitDefaultValue = false)]
+        [DataMember(Name = "insured", IsRequired = true, EmitDefaultValue = true)]
         public PFLiteSecureQuoteRequestInsured Insured { get; set; }
 
         /// <summary>
         /// Gets or Sets Program
         /// </summary>
-        [DataMember(Name = "program", EmitDefaultValue = false)]
+        [DataMember(Name = "program", IsRequired = true, EmitDefaultValue = true)]
         public PFLiteSecureQuoteRequestProgram Program { get; set; }
 
         /// <summary>
         /// Gets or Sets Policies
         /// </summary>
-        [DataMember(Name = "policies", EmitDefaultValue = false)]
+        [DataMember(Name = "policies", IsRequired = true, EmitDefaultValue = true)]
         public List<PFLiteSecureQuoteRequestPoliciesInner> Policies { get; set; }
 
         /// <summary>

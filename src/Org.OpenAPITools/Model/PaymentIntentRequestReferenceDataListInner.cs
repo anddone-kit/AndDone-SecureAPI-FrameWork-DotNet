@@ -38,34 +38,40 @@ namespace Org.OpenAPITools.Model
         public enum ReferenceTypeEnum
         {
             /// <summary>
-            /// Enum QuoteNumber for value: QuoteNumber
+            /// Enum None for value: None
             /// </summary>
-            [EnumMember(Value = "QuoteNumber")]
-            QuoteNumber = 1,
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum QuoteId for value: QuoteId
+            /// </summary>
+            [EnumMember(Value = "QuoteId")]
+            QuoteId = 2,
 
             /// <summary>
             /// Enum AccountNumber for value: AccountNumber
             /// </summary>
             [EnumMember(Value = "AccountNumber")]
-            AccountNumber = 2,
+            AccountNumber = 3,
 
             /// <summary>
             /// Enum PolicyNumber for value: PolicyNumber
             /// </summary>
             [EnumMember(Value = "PolicyNumber")]
-            PolicyNumber = 3,
+            PolicyNumber = 4,
 
             /// <summary>
             /// Enum InvoiceNumber for value: InvoiceNumber
             /// </summary>
             [EnumMember(Value = "InvoiceNumber")]
-            InvoiceNumber = 4,
+            InvoiceNumber = 5,
 
             /// <summary>
-            /// Enum OtherNumber for value: OtherNumber
+            /// Enum Other for value: Other
             /// </summary>
-            [EnumMember(Value = "OtherNumber")]
-            OtherNumber = 5
+            [EnumMember(Value = "Other")]
+            Other = 6
         }
 
 

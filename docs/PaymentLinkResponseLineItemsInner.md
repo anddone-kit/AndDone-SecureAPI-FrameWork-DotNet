@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LineItemType** | **decimal** |  | [optional] 
+**LineItemType** | **string** |  | [optional] 
 **ProductId** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Quantity** | **decimal** |  | [optional] 
-**Rate** | **decimal** |  | [optional] 
+**Quantity** | **int** |  | [optional] 
+**Rate** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

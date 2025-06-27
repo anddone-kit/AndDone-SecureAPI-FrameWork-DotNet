@@ -32,19 +32,54 @@ namespace Org.OpenAPITools.Model
     public partial class PaymentLinkRequestSettingsIntent : IValidatableObject
     {
         /// <summary>
+        /// Defines PaymentTypes
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentTypesEnum
+        {
+            /// <summary>
+            /// Enum ACH for value: ACH
+            /// </summary>
+            [EnumMember(Value = "ACH")]
+            ACH = 1,
+
+            /// <summary>
+            /// Enum CreditCard for value: CreditCard
+            /// </summary>
+            [EnumMember(Value = "CreditCard")]
+            CreditCard = 2,
+
+            /// <summary>
+            /// Enum DebitCard for value: DebitCard
+            /// </summary>
+            [EnumMember(Value = "DebitCard")]
+            DebitCard = 3
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLinkRequestSettingsIntent" /> class.
         /// </summary>
-        /// <param name="paymentTypes">paymentTypes.</param>
-        public PaymentLinkRequestSettingsIntent(List<string> paymentTypes = default(List<string>))
+        [JsonConstructorAttribute]
+        protected PaymentLinkRequestSettingsIntent() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentLinkRequestSettingsIntent" /> class.
+        /// </summary>
+        /// <param name="paymentTypes">paymentTypes (required).</param>
+        public PaymentLinkRequestSettingsIntent(List<PaymentTypesEnum> paymentTypes = default(List<PaymentTypesEnum>))
         {
+            // to ensure "paymentTypes" is required (not null)
+            if (paymentTypes == null)
+            {
+                throw new ArgumentNullException("paymentTypes is a required property for PaymentLinkRequestSettingsIntent and cannot be null");
+            }
             this.PaymentTypes = paymentTypes;
         }
 
         /// <summary>
         /// Gets or Sets PaymentTypes
         /// </summary>
-        [DataMember(Name = "paymentTypes", EmitDefaultValue = false)]
-        public List<string> PaymentTypes { get; set; }
+        [DataMember(Name = "paymentTypes", IsRequired = true, EmitDefaultValue = true)]
+        public List<PaymentLinkRequestSettingsIntent.PaymentTypesEnum> PaymentTypes { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

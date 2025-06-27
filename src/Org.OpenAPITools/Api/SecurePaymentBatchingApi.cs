@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Secure Payment Batch Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PaymentBatchDetailsResponse&gt;</returns>
-        List<PaymentBatchDetailsResponse> SecureBatchesDetailsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
+        List<PaymentBatchDetailsResponse> SecureBatchesDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting Secure Payment Batch Details
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Secure Payment Batch Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PaymentBatchDetailsResponse&gt;</returns>
-        ApiResponse<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
+        ApiResponse<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
         /// <summary>
         /// This API execute on-demand batch transaction.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureBatchExecuteRequest">Payment Batch Execution Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureBatchesExecutePost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0);
+        void SecureBatchesExecutePost(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API execute on-demand batch transaction.
@@ -81,7 +81,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureBatchExecuteRequest">Payment Batch Execution Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureBatchesExecutePostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0);
+        ApiResponse<Object> SecureBatchesExecutePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0);
         /// <summary>
         /// This API is used for getting Secure Payment Batches
         /// </summary>
@@ -96,7 +96,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentBatchResponse</returns>
-        PaymentBatchResponse SecureBatchesPost(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
+        PaymentBatchResponse SecureBatchesPost(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting Secure Payment Batches
@@ -115,7 +115,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentBatchResponse</returns>
-        ApiResponse<PaymentBatchResponse> SecureBatchesPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
+        ApiResponse<PaymentBatchResponse> SecureBatchesPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
         /// <summary>
         /// This API will returns batch timeline.
         /// </summary>
@@ -127,7 +127,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Payment Batch Timeline Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PaymentBatchEventLogResponse&gt;</returns>
-        List<PaymentBatchEventLogResponse> SecureBatchesTimelinesPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
+        List<PaymentBatchEventLogResponse> SecureBatchesTimelinesPost(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API will returns batch timeline.
@@ -143,7 +143,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Payment Batch Timeline Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PaymentBatchEventLogResponse&gt;</returns>
-        ApiResponse<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
+        ApiResponse<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0);
         /// <summary>
         /// This API cancels transactions from an active batch.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentBatchCancellationRequest">Payment Batch Cancellation Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureBatchesTransactionsCancelPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0);
+        void SecureBatchesTransactionsCancelPost(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API cancels transactions from an active batch.
@@ -171,7 +171,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentBatchCancellationRequest">Payment Batch Cancellation Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureBatchesTransactionsCancelPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0);
+        ApiResponse<Object> SecureBatchesTransactionsCancelPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -196,7 +196,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PaymentBatchDetailsResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting Secure Payment Batch Details
@@ -213,7 +213,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PaymentBatchDetailsResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<PaymentBatchDetailsResponse>>> SecureBatchesDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<PaymentBatchDetailsResponse>>> SecureBatchesDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API execute on-demand batch transaction.
         /// </summary>
@@ -229,7 +229,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureBatchesExecutePostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureBatchesExecutePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API execute on-demand batch transaction.
@@ -246,7 +246,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureBatchesExecutePostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureBatchesExecutePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used for getting Secure Payment Batches
         /// </summary>
@@ -265,7 +265,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentBatchResponse</returns>
-        System.Threading.Tasks.Task<PaymentBatchResponse> SecureBatchesPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaymentBatchResponse> SecureBatchesPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting Secure Payment Batches
@@ -285,7 +285,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentBatchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentBatchResponse>> SecureBatchesPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaymentBatchResponse>> SecureBatchesPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will returns batch timeline.
         /// </summary>
@@ -301,7 +301,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PaymentBatchEventLogResponse&gt;</returns>
-        System.Threading.Tasks.Task<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will returns batch timeline.
@@ -318,7 +318,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PaymentBatchEventLogResponse&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<PaymentBatchEventLogResponse>>> SecureBatchesTimelinesPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<PaymentBatchEventLogResponse>>> SecureBatchesTimelinesPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API cancels transactions from an active batch.
         /// </summary>
@@ -334,7 +334,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureBatchesTransactionsCancelPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureBatchesTransactionsCancelPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API cancels transactions from an active batch.
@@ -351,7 +351,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureBatchesTransactionsCancelPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureBatchesTransactionsCancelPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -483,7 +483,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Secure Payment Batch Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PaymentBatchDetailsResponse&gt;</returns>
-        public List<PaymentBatchDetailsResponse> SecureBatchesDetailsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
+        public List<PaymentBatchDetailsResponse> SecureBatchesDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchDetailsResponse>> localVarResponse = SecureBatchesDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentBatchDetailsRequest);
             return localVarResponse.Data;
@@ -500,7 +500,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Secure Payment Batch Details Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PaymentBatchDetailsResponse&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -552,7 +552,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = securePaymentBatchDetailsRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesDetailsPost";
@@ -595,7 +595,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PaymentBatchDetailsResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<PaymentBatchDetailsResponse>> SecureBatchesDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchDetailsResponse>> localVarResponse = await SecureBatchesDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, securePaymentBatchDetailsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -613,7 +613,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PaymentBatchDetailsResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchDetailsResponse>>> SecureBatchesDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchDetailsResponse>>> SecureBatchesDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -666,7 +666,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = securePaymentBatchDetailsRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesDetailsPost";
@@ -709,7 +709,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureBatchExecuteRequest">Payment Batch Execution Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureBatchesExecutePost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0)
+        public void SecureBatchesExecutePost(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0)
         {
             SecureBatchesExecutePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureBatchExecuteRequest);
         }
@@ -725,7 +725,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureBatchExecuteRequest">Payment Batch Execution Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureBatchesExecutePostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureBatchesExecutePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -776,7 +776,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureBatchExecuteRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesExecutePost";
@@ -819,7 +819,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureBatchesExecutePostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureBatchesExecutePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SecureBatchesExecutePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureBatchExecuteRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -836,7 +836,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureBatchesExecutePostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureBatchesExecutePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureBatchExecuteRequest secureBatchExecuteRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -888,7 +888,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureBatchExecuteRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesExecutePost";
@@ -934,7 +934,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentBatchResponse</returns>
-        public PaymentBatchResponse SecureBatchesPost(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
+        public PaymentBatchResponse SecureBatchesPost(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentBatchResponse> localVarResponse = SecureBatchesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, startRow, pageSize, sortField, asc);
             return localVarResponse.Data;
@@ -954,7 +954,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentBatchResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentBatchResponse> SecureBatchesPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PaymentBatchResponse> SecureBatchesPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -998,15 +998,15 @@ namespace Org.OpenAPITools.Api
 
             if (startRow != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (sortField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
             }
             if (asc != null)
             {
@@ -1015,7 +1015,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1060,7 +1060,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentBatchResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentBatchResponse> SecureBatchesPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentBatchResponse> SecureBatchesPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentBatchResponse> localVarResponse = await SecureBatchesPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, startRow, pageSize, sortField, asc, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1081,7 +1081,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentBatchResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentBatchResponse>> SecureBatchesPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentBatchResponse>> SecureBatchesPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1126,15 +1126,15 @@ namespace Org.OpenAPITools.Api
 
             if (startRow != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (sortField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
             }
             if (asc != null)
             {
@@ -1143,7 +1143,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1185,7 +1185,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Payment Batch Timeline Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;PaymentBatchEventLogResponse&gt;</returns>
-        public List<PaymentBatchEventLogResponse> SecureBatchesTimelinesPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
+        public List<PaymentBatchEventLogResponse> SecureBatchesTimelinesPost(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchEventLogResponse>> localVarResponse = SecureBatchesTimelinesPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, securePaymentBatchDetailsRequest);
             return localVarResponse.Data;
@@ -1202,7 +1202,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="securePaymentBatchDetailsRequest">Payment Batch Timeline Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;PaymentBatchEventLogResponse&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1254,7 +1254,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = securePaymentBatchDetailsRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesTimelinesPost";
@@ -1297,7 +1297,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;PaymentBatchEventLogResponse&gt;</returns>
-        public async System.Threading.Tasks.Task<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<PaymentBatchEventLogResponse>> SecureBatchesTimelinesPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchEventLogResponse>> localVarResponse = await SecureBatchesTimelinesPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, securePaymentBatchDetailsRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1315,7 +1315,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;PaymentBatchEventLogResponse&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchEventLogResponse>>> SecureBatchesTimelinesPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<PaymentBatchEventLogResponse>>> SecureBatchesTimelinesPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecurePaymentBatchDetailsRequest securePaymentBatchDetailsRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1368,7 +1368,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = securePaymentBatchDetailsRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesTimelinesPost";
@@ -1411,7 +1411,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentBatchCancellationRequest">Payment Batch Cancellation Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureBatchesTransactionsCancelPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0)
+        public void SecureBatchesTransactionsCancelPost(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0)
         {
             SecureBatchesTransactionsCancelPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, paymentBatchCancellationRequest);
         }
@@ -1427,7 +1427,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentBatchCancellationRequest">Payment Batch Cancellation Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureBatchesTransactionsCancelPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureBatchesTransactionsCancelPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1478,7 +1478,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentBatchCancellationRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesTransactionsCancelPost";
@@ -1521,7 +1521,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureBatchesTransactionsCancelPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureBatchesTransactionsCancelPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SecureBatchesTransactionsCancelPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, paymentBatchCancellationRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1538,7 +1538,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureBatchesTransactionsCancelPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureBatchesTransactionsCancelPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentBatchCancellationRequest paymentBatchCancellationRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1590,7 +1590,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentBatchCancellationRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentBatchingApi.SecureBatchesTransactionsCancelPost";

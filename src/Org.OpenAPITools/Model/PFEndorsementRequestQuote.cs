@@ -41,10 +41,10 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="accountNumber">accountNumber.</param>
         /// <param name="agreementId">This denotes the agreementId received in check endorsement API. (required).</param>
-        /// <param name="merchantReference">merchantReference.</param>
+        /// <param name="merchantReference">merchantReference (required).</param>
         /// <param name="policies">policies (required).</param>
         /// <param name="details">details.</param>
-        /// <param name="insured">insured (required).</param>
+        /// <param name="insured">insured.</param>
         /// <param name="agent">agent.</param>
         /// <param name="communication">communication.</param>
         public PFEndorsementRequestQuote(string accountNumber = default(string), string agreementId = default(string), string merchantReference = default(string), List<PFEndorsementRequestQuotePoliciesInner> policies = default(List<PFEndorsementRequestQuotePoliciesInner>), PFEndorsementRequestQuoteDetails details = default(PFEndorsementRequestQuoteDetails), PFEndorsementRequestQuoteInsured insured = default(PFEndorsementRequestQuoteInsured), PFEndorsementRequestQuoteAgent agent = default(PFEndorsementRequestQuoteAgent), PFEndorsementRequestQuoteCommunication communication = default(PFEndorsementRequestQuoteCommunication))
@@ -55,21 +55,21 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("agreementId is a required property for PFEndorsementRequestQuote and cannot be null");
             }
             this.AgreementId = agreementId;
+            // to ensure "merchantReference" is required (not null)
+            if (merchantReference == null)
+            {
+                throw new ArgumentNullException("merchantReference is a required property for PFEndorsementRequestQuote and cannot be null");
+            }
+            this.MerchantReference = merchantReference;
             // to ensure "policies" is required (not null)
             if (policies == null)
             {
                 throw new ArgumentNullException("policies is a required property for PFEndorsementRequestQuote and cannot be null");
             }
             this.Policies = policies;
-            // to ensure "insured" is required (not null)
-            if (insured == null)
-            {
-                throw new ArgumentNullException("insured is a required property for PFEndorsementRequestQuote and cannot be null");
-            }
-            this.Insured = insured;
             this.AccountNumber = accountNumber;
-            this.MerchantReference = merchantReference;
             this.Details = details;
+            this.Insured = insured;
             this.Agent = agent;
             this.Communication = communication;
         }
@@ -90,7 +90,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets MerchantReference
         /// </summary>
-        [DataMember(Name = "merchantReference", EmitDefaultValue = false)]
+        [DataMember(Name = "merchantReference", IsRequired = true, EmitDefaultValue = true)]
         public string MerchantReference { get; set; }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Insured
         /// </summary>
-        [DataMember(Name = "Insured", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "Insured", EmitDefaultValue = false)]
         public PFEndorsementRequestQuoteInsured Insured { get; set; }
 
         /// <summary>

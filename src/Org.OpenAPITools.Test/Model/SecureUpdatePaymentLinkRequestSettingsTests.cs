@@ -55,6 +55,24 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'SelectedCustomerFields'
+        /// </summary>
+        [Fact]
+        public void SelectedCustomerFieldsTest()
+        {
+            // TODO unit test for the property 'SelectedCustomerFields'
+        }
+
+        /// <summary>
+        /// Test the property 'AdditionalDetailsPreference'
+        /// </summary>
+        [Fact]
+        public void AdditionalDetailsPreferenceTest()
+        {
+            // TODO unit test for the property 'AdditionalDetailsPreference'
+        }
+
+        /// <summary>
         /// Test the property 'DisplaySummary'
         /// </summary>
         [Fact]
@@ -118,12 +136,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'AdditionalDetailsPreference'
+        /// Test the property 'Intent'
         /// </summary>
         [Fact]
-        public void AdditionalDetailsPreferenceTest()
+        public void IntentTest()
         {
-            // TODO unit test for the property 'AdditionalDetailsPreference'
+            // TODO unit test for the property 'Intent'
         }
     }
 }

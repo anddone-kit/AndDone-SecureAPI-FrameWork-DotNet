@@ -38,34 +38,46 @@ namespace Org.OpenAPITools.Model
         public enum LegalEntityTypeEnum
         {
             /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
             /// Enum Corporation for value: Corporation
             /// </summary>
             [EnumMember(Value = "Corporation")]
-            Corporation = 1,
+            Corporation = 2,
 
             /// <summary>
             /// Enum LimitedLiabilityCompany for value: LimitedLiabilityCompany
             /// </summary>
             [EnumMember(Value = "LimitedLiabilityCompany")]
-            LimitedLiabilityCompany = 2,
+            LimitedLiabilityCompany = 3,
 
             /// <summary>
             /// Enum LimitedLiabilityPartnership for value: LimitedLiabilityPartnership
             /// </summary>
             [EnumMember(Value = "LimitedLiabilityPartnership")]
-            LimitedLiabilityPartnership = 3,
+            LimitedLiabilityPartnership = 4,
 
             /// <summary>
             /// Enum LimitedPartnership for value: LimitedPartnership
             /// </summary>
             [EnumMember(Value = "LimitedPartnership")]
-            LimitedPartnership = 4,
+            LimitedPartnership = 5,
 
             /// <summary>
             /// Enum Partnership for value: Partnership
             /// </summary>
             [EnumMember(Value = "Partnership")]
-            Partnership = 5
+            Partnership = 6,
+
+            /// <summary>
+            /// Enum Individual for value: Individual
+            /// </summary>
+            [EnumMember(Value = "Individual")]
+            Individual = 7
         }
 
 
@@ -81,10 +93,10 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodTypeEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 
@@ -106,16 +118,10 @@ namespace Org.OpenAPITools.Model
             NA = 1,
 
             /// <summary>
-            /// Enum Fax for value: Fax
+            /// Enum Email for value: Email
             /// </summary>
-            [EnumMember(Value = "Fax")]
-            Fax = 2,
-
-            /// <summary>
-            /// Enum Email for value: email
-            /// </summary>
-            [EnumMember(Value = "email")]
-            Email = 3
+            [EnumMember(Value = "Email")]
+            Email = 2
         }
 
 

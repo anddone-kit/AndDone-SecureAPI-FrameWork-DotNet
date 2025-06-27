@@ -78,8 +78,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TypeEnum? Type { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public TypeEnum Type { get; set; }
         /// <summary>
         /// Defines ChannelType
         /// </summary>
@@ -109,8 +109,39 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets ChannelType
         /// </summary>
-        [DataMember(Name = "channelType", EmitDefaultValue = false)]
-        public ChannelTypeEnum? ChannelType { get; set; }
+        [DataMember(Name = "channelType", IsRequired = true, EmitDefaultValue = true)]
+        public ChannelTypeEnum ChannelType { get; set; }
+        /// <summary>
+        /// Defines ProcessMethod
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ProcessMethodEnum
+        {
+            /// <summary>
+            /// Enum NotDefined for value: NotDefined
+            /// </summary>
+            [EnumMember(Value = "NotDefined")]
+            NotDefined = 1,
+
+            /// <summary>
+            /// Enum ACH for value: ACH
+            /// </summary>
+            [EnumMember(Value = "ACH")]
+            ACH = 2,
+
+            /// <summary>
+            /// Enum CardNotPresent for value: CardNotPresent
+            /// </summary>
+            [EnumMember(Value = "CardNotPresent")]
+            CardNotPresent = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ProcessMethod
+        /// </summary>
+        [DataMember(Name = "processMethod", EmitDefaultValue = false)]
+        public ProcessMethodEnum? ProcessMethod { get; set; }
         /// <summary>
         /// Defines OperationType
         /// </summary>
@@ -187,15 +218,20 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected PaymentRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentRequest" /> class.
+        /// </summary>
         /// <param name="token">token.</param>
-        /// <param name="type">type.</param>
-        /// <param name="transactionCode">transactionCode.</param>
+        /// <param name="type">type (required).</param>
+        /// <param name="transactionCode">transactionCode (required).</param>
         /// <param name="billingContact">billingContact.</param>
         /// <param name="phoneCountryCode">phoneCountryCode.</param>
-        /// <param name="channelType">channelType.</param>
-        /// <param name="tenderInfo">tenderInfo.</param>
+        /// <param name="channelType">channelType (required).</param>
+        /// <param name="processMethod">processMethod.</param>
+        /// <param name="tenderInfo">tenderInfo (required).</param>
         /// <param name="invoiceNo">invoiceNo.</param>
-        /// <param name="poNo">poNo.</param>
         /// <param name="referenceNo">referenceNo.</param>
         /// <param name="paymentReference">paymentReference.</param>
         /// <param name="remarks">remarks.</param>
@@ -203,25 +239,34 @@ namespace Org.OpenAPITools.Model
         /// <param name="captchaToken">captchaToken.</param>
         /// <param name="actionName">actionName.</param>
         /// <param name="additionalFields">additionalFields.</param>
-        /// <param name="waitForApproval">waitForApproval.</param>
         /// <param name="issuer">issuer.</param>
         /// <param name="splits">splits.</param>
         /// <param name="operationType">operationType.</param>
         /// <param name="suppressTechnologyFee">suppressTechnologyFee.</param>
         /// <param name="overrideTechnologyFee">overrideTechnologyFee.</param>
         /// <param name="isPremiumFinancier">isPremiumFinancier.</param>
-        /// <param name="pFR">pFR.</param>
-        public PaymentRequest(string token = default(string), TypeEnum? type = default(TypeEnum?), string transactionCode = default(string), TransactionPaymentResponseBillingContact billingContact = default(TransactionPaymentResponseBillingContact), string phoneCountryCode = default(string), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), PaymentRequestTenderInfo tenderInfo = default(PaymentRequestTenderInfo), string invoiceNo = default(string), string poNo = default(string), string referenceNo = default(string), string paymentReference = default(string), string remarks = default(string), bool saveCustomer = default(bool), string captchaToken = default(string), string actionName = default(string), Dictionary<string, string> additionalFields = default(Dictionary<string, string>), bool waitForApproval = default(bool), string issuer = default(string), List<PaymentIntentResponseSplitsInner> splits = default(List<PaymentIntentResponseSplitsInner>), OperationTypeEnum? operationType = default(OperationTypeEnum?), bool suppressTechnologyFee = default(bool), decimal overrideTechnologyFee = default(decimal), bool isPremiumFinancier = default(bool), PaymentLinkResponsePfr pFR = default(PaymentLinkResponsePfr))
+        /// <param name="pfr">pfr.</param>
+        public PaymentRequest(string token = default(string), TypeEnum type = default(TypeEnum), string transactionCode = default(string), TransactionPaymentResponseBillingContact billingContact = default(TransactionPaymentResponseBillingContact), string phoneCountryCode = default(string), ChannelTypeEnum channelType = default(ChannelTypeEnum), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), PaymentRequestTenderInfo tenderInfo = default(PaymentRequestTenderInfo), string invoiceNo = default(string), string referenceNo = default(string), string paymentReference = default(string), string remarks = default(string), bool saveCustomer = default(bool), string captchaToken = default(string), string actionName = default(string), Dictionary<string, string> additionalFields = default(Dictionary<string, string>), string issuer = default(string), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>), OperationTypeEnum? operationType = default(OperationTypeEnum?), bool suppressTechnologyFee = default(bool), float overrideTechnologyFee = default(float), bool isPremiumFinancier = default(bool), PaymentIntentRequestPfr pfr = default(PaymentIntentRequestPfr))
         {
-            this.Token = token;
             this.Type = type;
+            // to ensure "transactionCode" is required (not null)
+            if (transactionCode == null)
+            {
+                throw new ArgumentNullException("transactionCode is a required property for PaymentRequest and cannot be null");
+            }
             this.TransactionCode = transactionCode;
+            this.ChannelType = channelType;
+            // to ensure "tenderInfo" is required (not null)
+            if (tenderInfo == null)
+            {
+                throw new ArgumentNullException("tenderInfo is a required property for PaymentRequest and cannot be null");
+            }
+            this.TenderInfo = tenderInfo;
+            this.Token = token;
             this.BillingContact = billingContact;
             this.PhoneCountryCode = phoneCountryCode;
-            this.ChannelType = channelType;
-            this.TenderInfo = tenderInfo;
+            this.ProcessMethod = processMethod;
             this.InvoiceNo = invoiceNo;
-            this.PoNo = poNo;
             this.ReferenceNo = referenceNo;
             this.PaymentReference = paymentReference;
             this.Remarks = remarks;
@@ -229,14 +274,13 @@ namespace Org.OpenAPITools.Model
             this.CaptchaToken = captchaToken;
             this.ActionName = actionName;
             this.AdditionalFields = additionalFields;
-            this.WaitForApproval = waitForApproval;
             this.Issuer = issuer;
             this.Splits = splits;
             this.OperationType = operationType;
             this.SuppressTechnologyFee = suppressTechnologyFee;
             this.OverrideTechnologyFee = overrideTechnologyFee;
             this.IsPremiumFinancier = isPremiumFinancier;
-            this.PFR = pFR;
+            this.Pfr = pfr;
         }
 
         /// <summary>
@@ -248,7 +292,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets TransactionCode
         /// </summary>
-        [DataMember(Name = "transactionCode", EmitDefaultValue = false)]
+        [DataMember(Name = "transactionCode", IsRequired = true, EmitDefaultValue = true)]
         public string TransactionCode { get; set; }
 
         /// <summary>
@@ -266,7 +310,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets TenderInfo
         /// </summary>
-        [DataMember(Name = "tenderInfo", EmitDefaultValue = false)]
+        [DataMember(Name = "tenderInfo", IsRequired = true, EmitDefaultValue = true)]
         public PaymentRequestTenderInfo TenderInfo { get; set; }
 
         /// <summary>
@@ -274,12 +318,6 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "invoiceNo", EmitDefaultValue = false)]
         public string InvoiceNo { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PoNo
-        /// </summary>
-        [DataMember(Name = "poNo", EmitDefaultValue = false)]
-        public string PoNo { get; set; }
 
         /// <summary>
         /// Gets or Sets ReferenceNo
@@ -324,12 +362,6 @@ namespace Org.OpenAPITools.Model
         public Dictionary<string, string> AdditionalFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets WaitForApproval
-        /// </summary>
-        [DataMember(Name = "waitForApproval", EmitDefaultValue = true)]
-        public bool WaitForApproval { get; set; }
-
-        /// <summary>
         /// Gets or Sets Issuer
         /// </summary>
         [DataMember(Name = "issuer", EmitDefaultValue = false)]
@@ -339,7 +371,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Splits
         /// </summary>
         [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentIntentResponseSplitsInner> Splits { get; set; }
+        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
 
         /// <summary>
         /// Gets or Sets SuppressTechnologyFee
@@ -351,7 +383,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets OverrideTechnologyFee
         /// </summary>
         [DataMember(Name = "overrideTechnologyFee", EmitDefaultValue = false)]
-        public decimal OverrideTechnologyFee { get; set; }
+        public float OverrideTechnologyFee { get; set; }
 
         /// <summary>
         /// Gets or Sets IsPremiumFinancier
@@ -360,10 +392,10 @@ namespace Org.OpenAPITools.Model
         public bool IsPremiumFinancier { get; set; }
 
         /// <summary>
-        /// Gets or Sets PFR
+        /// Gets or Sets Pfr
         /// </summary>
-        [DataMember(Name = "pFR", EmitDefaultValue = false)]
-        public PaymentLinkResponsePfr PFR { get; set; }
+        [DataMember(Name = "pfr", EmitDefaultValue = false)]
+        public PaymentIntentRequestPfr Pfr { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -379,9 +411,9 @@ namespace Org.OpenAPITools.Model
             sb.Append("  BillingContact: ").Append(BillingContact).Append("\n");
             sb.Append("  PhoneCountryCode: ").Append(PhoneCountryCode).Append("\n");
             sb.Append("  ChannelType: ").Append(ChannelType).Append("\n");
+            sb.Append("  ProcessMethod: ").Append(ProcessMethod).Append("\n");
             sb.Append("  TenderInfo: ").Append(TenderInfo).Append("\n");
             sb.Append("  InvoiceNo: ").Append(InvoiceNo).Append("\n");
-            sb.Append("  PoNo: ").Append(PoNo).Append("\n");
             sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
             sb.Append("  PaymentReference: ").Append(PaymentReference).Append("\n");
             sb.Append("  Remarks: ").Append(Remarks).Append("\n");
@@ -389,14 +421,13 @@ namespace Org.OpenAPITools.Model
             sb.Append("  CaptchaToken: ").Append(CaptchaToken).Append("\n");
             sb.Append("  ActionName: ").Append(ActionName).Append("\n");
             sb.Append("  AdditionalFields: ").Append(AdditionalFields).Append("\n");
-            sb.Append("  WaitForApproval: ").Append(WaitForApproval).Append("\n");
             sb.Append("  Issuer: ").Append(Issuer).Append("\n");
             sb.Append("  Splits: ").Append(Splits).Append("\n");
             sb.Append("  OperationType: ").Append(OperationType).Append("\n");
             sb.Append("  SuppressTechnologyFee: ").Append(SuppressTechnologyFee).Append("\n");
             sb.Append("  OverrideTechnologyFee: ").Append(OverrideTechnologyFee).Append("\n");
             sb.Append("  IsPremiumFinancier: ").Append(IsPremiumFinancier).Append("\n");
-            sb.Append("  PFR: ").Append(PFR).Append("\n");
+            sb.Append("  Pfr: ").Append(Pfr).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

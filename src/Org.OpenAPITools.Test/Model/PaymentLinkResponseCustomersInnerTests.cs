@@ -107,5 +107,32 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'NotifyViaEmail'
         }
+
+        /// <summary>
+        /// Test the property 'CreatedOn'
+        /// </summary>
+        [Fact]
+        public void CreatedOnTest()
+        {
+            // TODO unit test for the property 'CreatedOn'
+        }
+
+        /// <summary>
+        /// Test the property 'Accounts'
+        /// </summary>
+        [Fact]
+        public void AccountsTest()
+        {
+            // TODO unit test for the property 'Accounts'
+        }
+
+        /// <summary>
+        /// Test the property 'Address'
+        /// </summary>
+        [Fact]
+        public void AddressTest()
+        {
+            // TODO unit test for the property 'Address'
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="agentURL">agentURL.</param>
         /// <param name="insuredURL">insuredURL.</param>
         /// <param name="eSignOption">eSignOption.</param>
-        public PFEndorsementResponseItemQuoteESignResult(bool processed = default(bool), string message = default(string), string batchID = default(string), string agentURL = default(string), string insuredURL = default(string), decimal eSignOption = default(decimal))
+        public PFEndorsementResponseItemQuoteESignResult(bool processed = default(bool), string message = default(string), string batchID = default(string), string agentURL = default(string), string insuredURL = default(string), float eSignOption = default(float))
         {
             this.Processed = processed;
             this.Message = message;
@@ -84,7 +84,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ESignOption
         /// </summary>
         [DataMember(Name = "eSignOption", EmitDefaultValue = false)]
-        public decimal ESignOption { get; set; }
+        public float ESignOption { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

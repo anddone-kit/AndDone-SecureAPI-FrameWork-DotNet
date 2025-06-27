@@ -231,30 +231,20 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequestDetails" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected QuoteRequestDetails() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuoteRequestDetails" /> class.
-        /// </summary>
         /// <param name="couponInvoicePrinted">couponInvoicePrinted.</param>
         /// <param name="installments">installments.</param>
-        /// <param name="programIDs">programIDs (required).</param>
+        /// <param name="programIDs">programIDs.</param>
         /// <param name="batchID">batchID.</param>
         /// <param name="commercial">commercial.</param>
         /// <param name="coupon">coupon.</param>
         /// <param name="interval">interval.</param>
         /// <param name="downPaymentMethod">downPaymentMethod.</param>
         /// <param name="downPaymentPaidBy">downPaymentPaidBy.</param>
-        public QuoteRequestDetails(bool couponInvoicePrinted = default(bool), decimal installments = default(decimal), List<decimal> programIDs = default(List<decimal>), string batchID = default(string), CommercialEnum? commercial = default(CommercialEnum?), CouponEnum? coupon = default(CouponEnum?), IntervalEnum? interval = default(IntervalEnum?), DownPaymentMethodEnum? downPaymentMethod = default(DownPaymentMethodEnum?), DownPaymentPaidByEnum? downPaymentPaidBy = default(DownPaymentPaidByEnum?))
+        public QuoteRequestDetails(bool couponInvoicePrinted = default(bool), int installments = default(int), List<int> programIDs = default(List<int>), string batchID = default(string), CommercialEnum? commercial = default(CommercialEnum?), CouponEnum? coupon = default(CouponEnum?), IntervalEnum? interval = default(IntervalEnum?), DownPaymentMethodEnum? downPaymentMethod = default(DownPaymentMethodEnum?), DownPaymentPaidByEnum? downPaymentPaidBy = default(DownPaymentPaidByEnum?))
         {
-            // to ensure "programIDs" is required (not null)
-            if (programIDs == null)
-            {
-                throw new ArgumentNullException("programIDs is a required property for QuoteRequestDetails and cannot be null");
-            }
-            this.ProgramIDs = programIDs;
             this.CouponInvoicePrinted = couponInvoicePrinted;
             this.Installments = installments;
+            this.ProgramIDs = programIDs;
             this.BatchID = batchID;
             this.Commercial = commercial;
             this.Coupon = coupon;
@@ -273,13 +263,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Installments
         /// </summary>
         [DataMember(Name = "installments", EmitDefaultValue = false)]
-        public decimal Installments { get; set; }
+        public int Installments { get; set; }
 
         /// <summary>
         /// Gets or Sets ProgramIDs
         /// </summary>
-        [DataMember(Name = "programIDs", IsRequired = true, EmitDefaultValue = true)]
-        public List<decimal> ProgramIDs { get; set; }
+        [DataMember(Name = "programIDs", EmitDefaultValue = false)]
+        public List<int> ProgramIDs { get; set; }
 
         /// <summary>
         /// Gets or Sets BatchID

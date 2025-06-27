@@ -71,7 +71,13 @@ namespace Org.OpenAPITools.Model
             /// Enum Partnership for value: Partnership
             /// </summary>
             [EnumMember(Value = "Partnership")]
-            Partnership = 6
+            Partnership = 6,
+
+            /// <summary>
+            /// Enum Individual for value: Individual
+            /// </summary>
+            [EnumMember(Value = "Individual")]
+            Individual = 7
         }
 
 
@@ -87,10 +93,10 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodTypeEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 
@@ -99,6 +105,55 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "paymentMethodType", EmitDefaultValue = false)]
         public PaymentMethodTypeEnum? PaymentMethodType { get; set; }
+        /// <summary>
+        /// Defines VendorStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum VendorStatusEnum
+        {
+            /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
+            /// Enum Reviewing for value: Reviewing
+            /// </summary>
+            [EnumMember(Value = "Reviewing")]
+            Reviewing = 2,
+
+            /// <summary>
+            /// Enum Approved for value: Approved
+            /// </summary>
+            [EnumMember(Value = "Approved")]
+            Approved = 3,
+
+            /// <summary>
+            /// Enum Denied for value: Denied
+            /// </summary>
+            [EnumMember(Value = "Denied")]
+            Denied = 4,
+
+            /// <summary>
+            /// Enum Suspend for value: Suspend
+            /// </summary>
+            [EnumMember(Value = "Suspend")]
+            Suspend = 5,
+
+            /// <summary>
+            /// Enum Deleted for value: Deleted
+            /// </summary>
+            [EnumMember(Value = "Deleted")]
+            Deleted = 6
+        }
+
+
+        /// <summary>
+        /// Gets or Sets VendorStatus
+        /// </summary>
+        [DataMember(Name = "vendorStatus", EmitDefaultValue = false)]
+        public VendorStatusEnum? VendorStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureVendorResponseDTO" /> class.
         /// </summary>
@@ -119,7 +174,12 @@ namespace Org.OpenAPITools.Model
         /// <param name="url">url.</param>
         /// <param name="remittanceAddress">remittanceAddress.</param>
         /// <param name="physicalAddress">physicalAddress.</param>
-        public SecureVendorResponseDTO(string id = default(string), string paymentBasedId = default(string), LegalEntityTypeEnum? legalEntityType = default(LegalEntityTypeEnum?), string merchantId = default(string), string vendorName = default(string), string vendorAliasName = default(string), string vendorDbName = default(string), PaymentMethodTypeEnum? paymentMethodType = default(PaymentMethodTypeEnum?), string notificationType = default(string), string vendorNotes = default(string), string phoneNumber = default(string), bool isMobileNumber = default(bool), bool useSameAsPhysicalAddress = default(bool), string email = default(string), string url = default(string), SecureVendorResponseDTORemittanceAddress remittanceAddress = default(SecureVendorResponseDTORemittanceAddress), SecureVendorResponseDTOPhysicalAddress physicalAddress = default(SecureVendorResponseDTOPhysicalAddress))
+        /// <param name="vendorStatus">vendorStatus.</param>
+        /// <param name="createdBy">createdBy.</param>
+        /// <param name="modifiedBy">modifiedBy.</param>
+        /// <param name="createdOn">createdOn.</param>
+        /// <param name="modifiedOn">modifiedOn.</param>
+        public SecureVendorResponseDTO(string id = default(string), string paymentBasedId = default(string), LegalEntityTypeEnum? legalEntityType = default(LegalEntityTypeEnum?), string merchantId = default(string), string vendorName = default(string), string vendorAliasName = default(string), string vendorDbName = default(string), PaymentMethodTypeEnum? paymentMethodType = default(PaymentMethodTypeEnum?), string notificationType = default(string), string vendorNotes = default(string), string phoneNumber = default(string), bool isMobileNumber = default(bool), bool useSameAsPhysicalAddress = default(bool), string email = default(string), string url = default(string), SecureVendorResponseDTORemittanceAddress remittanceAddress = default(SecureVendorResponseDTORemittanceAddress), SecureVendorResponseDTORemittanceAddress physicalAddress = default(SecureVendorResponseDTORemittanceAddress), VendorStatusEnum? vendorStatus = default(VendorStatusEnum?), string createdBy = default(string), string modifiedBy = default(string), string createdOn = default(string), string modifiedOn = default(string))
         {
             this.Id = id;
             this.PaymentBasedId = paymentBasedId;
@@ -138,6 +198,11 @@ namespace Org.OpenAPITools.Model
             this.Url = url;
             this.RemittanceAddress = remittanceAddress;
             this.PhysicalAddress = physicalAddress;
+            this.VendorStatus = vendorStatus;
+            this.CreatedBy = createdBy;
+            this.ModifiedBy = modifiedBy;
+            this.CreatedOn = createdOn;
+            this.ModifiedOn = modifiedOn;
         }
 
         /// <summary>
@@ -228,7 +293,31 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets PhysicalAddress
         /// </summary>
         [DataMember(Name = "physicalAddress", EmitDefaultValue = false)]
-        public SecureVendorResponseDTOPhysicalAddress PhysicalAddress { get; set; }
+        public SecureVendorResponseDTORemittanceAddress PhysicalAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+        public string CreatedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedBy
+        /// </summary>
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+        public string ModifiedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedOn
+        /// </summary>
+        [DataMember(Name = "createdOn", EmitDefaultValue = false)]
+        public string CreatedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedOn
+        /// </summary>
+        [DataMember(Name = "modifiedOn", EmitDefaultValue = false)]
+        public string ModifiedOn { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -255,6 +344,11 @@ namespace Org.OpenAPITools.Model
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  RemittanceAddress: ").Append(RemittanceAddress).Append("\n");
             sb.Append("  PhysicalAddress: ").Append(PhysicalAddress).Append("\n");
+            sb.Append("  VendorStatus: ").Append(VendorStatus).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
+            sb.Append("  ModifiedOn: ").Append(ModifiedOn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

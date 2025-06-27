@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="PFUpdatePFARequestDTO" /> class.
         /// </summary>
         /// <param name="quoteKey">This denotes the quoteKey. (required).</param>
-        public PFUpdatePFARequestDTO(decimal quoteKey = default(decimal))
+        public PFUpdatePFARequestDTO(float quoteKey = default(float))
         {
             this.QuoteKey = quoteKey;
         }
@@ -50,7 +50,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>This denotes the quoteKey.</value>
         [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
-        public decimal QuoteKey { get; set; }
+        public float QuoteKey { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

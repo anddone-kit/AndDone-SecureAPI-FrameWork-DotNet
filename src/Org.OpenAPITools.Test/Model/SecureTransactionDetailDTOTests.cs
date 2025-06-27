@@ -91,6 +91,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'RefundOrigin'
+        /// </summary>
+        [Fact]
+        public void RefundOriginTest()
+        {
+            // TODO unit test for the property 'RefundOrigin'
+        }
+
+        /// <summary>
         /// Test the property 'BillingContact'
         /// </summary>
         [Fact]
@@ -208,48 +217,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MaskedReferenceCustomerId'
-        /// </summary>
-        [Fact]
-        public void MaskedReferenceCustomerIdTest()
-        {
-            // TODO unit test for the property 'MaskedReferenceCustomerId'
-        }
-
-        /// <summary>
-        /// Test the property 'CustomerAccountId'
-        /// </summary>
-        [Fact]
-        public void CustomerAccountIdTest()
-        {
-            // TODO unit test for the property 'CustomerAccountId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedCustomerAccountId'
-        /// </summary>
-        [Fact]
-        public void MaskedCustomerAccountIdTest()
-        {
-            // TODO unit test for the property 'MaskedCustomerAccountId'
-        }
-
-        /// <summary>
         /// Test the property 'InvoiceNo'
         /// </summary>
         [Fact]
         public void InvoiceNoTest()
         {
             // TODO unit test for the property 'InvoiceNo'
-        }
-
-        /// <summary>
-        /// Test the property 'PoNo'
-        /// </summary>
-        [Fact]
-        public void PoNoTest()
-        {
-            // TODO unit test for the property 'PoNo'
         }
 
         /// <summary>
@@ -286,15 +259,6 @@ namespace Org.OpenAPITools.Test.Model
         public void RecurringIdTest()
         {
             // TODO unit test for the property 'RecurringId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedRecurringId'
-        /// </summary>
-        [Fact]
-        public void MaskedRecurringIdTest()
-        {
-            // TODO unit test for the property 'MaskedRecurringId'
         }
 
         /// <summary>
@@ -424,30 +388,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MaskedPartnerId'
-        /// </summary>
-        [Fact]
-        public void MaskedPartnerIdTest()
-        {
-            // TODO unit test for the property 'MaskedPartnerId'
-        }
-
-        /// <summary>
         /// Test the property 'OrderId'
         /// </summary>
         [Fact]
         public void OrderIdTest()
         {
             // TODO unit test for the property 'OrderId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedOrderId'
-        /// </summary>
-        [Fact]
-        public void MaskedOrderIdTest()
-        {
-            // TODO unit test for the property 'MaskedOrderId'
         }
 
         /// <summary>
@@ -460,30 +406,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MaskedInvoiceId'
-        /// </summary>
-        [Fact]
-        public void MaskedInvoiceIdTest()
-        {
-            // TODO unit test for the property 'MaskedInvoiceId'
-        }
-
-        /// <summary>
         /// Test the property 'PaymentLinkId'
         /// </summary>
         [Fact]
         public void PaymentLinkIdTest()
         {
             // TODO unit test for the property 'PaymentLinkId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedPaymentLinkId'
-        /// </summary>
-        [Fact]
-        public void MaskedPaymentLinkIdTest()
-        {
-            // TODO unit test for the property 'MaskedPaymentLinkId'
         }
 
         /// <summary>

@@ -31,13 +31,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void VendorapiSecureMerchantsVendorsDeletePost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
+        void VendorapiSecureMerchantsVendorsDeletePost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API deletes vendor into system
@@ -47,25 +47,25 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
+        ApiResponse<Object> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
         /// <summary>
         /// This API gets details of particular vendor
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VendorResponseDTO</returns>
-        VendorResponseDTO VendorapiSecureMerchantsVendorsDetailsPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0);
+        VendorResponseDTO VendorapiSecureMerchantsVendorsDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API gets details of particular vendor
@@ -75,25 +75,25 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VendorResponseDTO</returns>
-        ApiResponse<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0);
+        ApiResponse<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0);
         /// <summary>
         /// This API Updates the existing vendor
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureVendorResponseDTO</returns>
-        SecureVendorResponseDTO VendorapiSecureMerchantsVendorsEditPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0);
+        SecureVendorResponseDTO VendorapiSecureMerchantsVendorsEditPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API Updates the existing vendor
@@ -103,25 +103,25 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureVendorResponseDTO</returns>
-        ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0);
+        ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0);
         /// <summary>
         /// This API creates vendor into system
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureVendorResponseDTO</returns>
-        SecureVendorResponseDTO VendorapiSecureMerchantsVendorsPost(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0);
+        SecureVendorResponseDTO VendorapiSecureMerchantsVendorsPost(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API creates vendor into system
@@ -131,20 +131,21 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureVendorResponseDTO</returns>
-        ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0);
+        ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0);
         /// <summary>
         /// This API returns list of all the Vendors of Merchant
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -160,7 +161,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PageVendorResponseDTO</returns>
-        PageVendorResponseDTO VendorapiSecureMerchantsVendorsSearchPost(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0);
+        PageVendorResponseDTO VendorapiSecureMerchantsVendorsSearchPost(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// This API returns list of all the Vendors of Merchant
@@ -170,8 +171,9 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -187,19 +189,19 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PageVendorResponseDTO</returns>
-        ApiResponse<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0);
+        ApiResponse<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0);
         /// <summary>
         /// This API suspends vendor into system
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void VendorapiSecureMerchantsVendorsSuspendPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
+        void VendorapiSecureMerchantsVendorsSuspendPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API suspends vendor into system
@@ -209,25 +211,25 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
+        ApiResponse<Object> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
         /// <summary>
         /// This API gets timeline of particular vendor
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;VendorTimelineResponseListInner&gt;</returns>
-        List<VendorTimelineResponseListInner> VendorapiSecureMerchantsVendorsTimelinePost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0);
+        List<VendorTimelineResponseListInner> VendorapiSecureMerchantsVendorsTimelinePost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API gets timeline of particular vendor
@@ -237,25 +239,25 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;VendorTimelineResponseListInner&gt;</returns>
-        ApiResponse<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0);
+        ApiResponse<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0);
         /// <summary>
         /// This API unsuspends vendor into system
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void VendorapiSecureMerchantsVendorsUnsuspendPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
+        void VendorapiSecureMerchantsVendorsUnsuspendPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
 
         /// <summary>
         /// This API unsuspends vendor into system
@@ -265,13 +267,13 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
+        ApiResponse<Object> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -289,14 +291,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsDeletePostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsDeletePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API deletes vendor into system
@@ -306,14 +308,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API gets details of particular vendor
         /// </summary>
@@ -322,14 +324,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VendorResponseDTO</returns>
-        System.Threading.Tasks.Task<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API gets details of particular vendor
@@ -339,14 +341,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VendorResponseDTO)</returns>
-        System.Threading.Tasks.Task<ApiResponse<VendorResponseDTO>> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<VendorResponseDTO>> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API Updates the existing vendor
         /// </summary>
@@ -355,14 +357,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureVendorResponseDTO</returns>
-        System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API Updates the existing vendor
@@ -372,14 +374,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureVendorResponseDTO)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsEditPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsEditPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API creates vendor into system
         /// </summary>
@@ -388,14 +390,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureVendorResponseDTO</returns>
-        System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API creates vendor into system
@@ -405,14 +407,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureVendorResponseDTO)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API returns list of all the Vendors of Merchant
         /// </summary>
@@ -421,8 +423,9 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -439,7 +442,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PageVendorResponseDTO</returns>
-        System.Threading.Tasks.Task<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostAsync(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API returns list of all the Vendors of Merchant
@@ -449,8 +452,9 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -467,7 +471,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PageVendorResponseDTO)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PageVendorResponseDTO>> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PageVendorResponseDTO>> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API suspends vendor into system
         /// </summary>
@@ -476,14 +480,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsSuspendPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsSuspendPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API suspends vendor into system
@@ -493,14 +497,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API gets timeline of particular vendor
         /// </summary>
@@ -509,14 +513,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;VendorTimelineResponseListInner&gt;</returns>
-        System.Threading.Tasks.Task<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API gets timeline of particular vendor
@@ -526,14 +530,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;VendorTimelineResponseListInner&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<VendorTimelineResponseListInner>>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<VendorTimelineResponseListInner>>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API unsuspends vendor into system
         /// </summary>
@@ -542,14 +546,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsUnsuspendPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsUnsuspendPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API unsuspends vendor into system
@@ -559,14 +563,14 @@ namespace Org.OpenAPITools.Api
         /// </remarks>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -692,15 +696,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void VendorapiSecureMerchantsVendorsDeletePost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
+        public void VendorapiSecureMerchantsVendorsDeletePost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
         {
-            VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+            VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
         }
 
         /// <summary>
@@ -708,13 +712,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -763,9 +767,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorStatusRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsDeletePost";
@@ -801,16 +805,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsDeletePostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsDeletePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await VendorapiSecureMerchantsVendorsDeletePostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            await VendorapiSecureMerchantsVendorsDeletePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -818,14 +822,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> VendorapiSecureMerchantsVendorsDeletePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -875,9 +879,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorStatusRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsDeletePost";
@@ -914,15 +918,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>VendorResponseDTO</returns>
-        public VendorResponseDTO VendorapiSecureMerchantsVendorsDetailsPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0)
+        public VendorResponseDTO VendorapiSecureMerchantsVendorsDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorRequestDTO);
+            Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorRequestDTO);
             return localVarResponse.Data;
         }
 
@@ -931,13 +935,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of VendorResponseDTO</returns>
-        public Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -987,9 +991,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsDetailsPost";
@@ -1025,16 +1029,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of VendorResponseDTO</returns>
-        public async System.Threading.Tasks.Task<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<VendorResponseDTO> VendorapiSecureMerchantsVendorsDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, secureVendorRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureVendorRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1043,14 +1047,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorRequestDTO">SecureVendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (VendorResponseDTO)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO>> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<VendorResponseDTO>> VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1101,9 +1105,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsDetailsPost";
@@ -1140,15 +1144,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureVendorResponseDTO</returns>
-        public SecureVendorResponseDTO VendorapiSecureMerchantsVendorsEditPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0)
+        public SecureVendorResponseDTO VendorapiSecureMerchantsVendorsEditPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorUpdateRequestDTO);
+            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorUpdateRequestDTO);
             return localVarResponse.Data;
         }
 
@@ -1157,13 +1161,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureVendorResponseDTO</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1213,9 +1217,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorUpdateRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsEditPost";
@@ -1251,16 +1255,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureVendorResponseDTO</returns>
-        public async System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsEditPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsEditPostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, secureVendorUpdateRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsEditPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureVendorUpdateRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1269,14 +1273,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorUpdateRequestDTO">SecureVendorUpdateRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureVendorResponseDTO)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsEditPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsEditPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1327,9 +1331,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorUpdateRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsEditPost";
@@ -1366,15 +1370,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureVendorResponseDTO</returns>
-        public SecureVendorResponseDTO VendorapiSecureMerchantsVendorsPost(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0)
+        public SecureVendorResponseDTO VendorapiSecureMerchantsVendorsPost(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, vendorRequestDTO);
+            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, vendorRequestDTO);
             return localVarResponse.Data;
         }
 
@@ -1383,13 +1387,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureVendorResponseDTO</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1439,9 +1443,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = vendorRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsPost";
@@ -1477,16 +1481,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureVendorResponseDTO</returns>
-        public async System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureVendorResponseDTO> VendorapiSecureMerchantsVendorsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsPostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, vendorRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, vendorRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1495,14 +1499,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="vendorRequestDTO">VendorRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureVendorResponseDTO)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureVendorResponseDTO>> VendorapiSecureMerchantsVendorsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1553,9 +1557,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = vendorRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsPost";
@@ -1592,8 +1596,9 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -1609,9 +1614,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PageVendorResponseDTO</returns>
-        public PageVendorResponseDTO VendorapiSecureMerchantsVendorsSearchPost(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0)
+        public PageVendorResponseDTO VendorapiSecureMerchantsVendorsSearchPost(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(xApiKey, xVersion, xAppKey, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc);
+            Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO> localVarResponse = VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc);
             return localVarResponse.Data;
         }
 
@@ -1620,8 +1625,9 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -1637,7 +1643,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PageVendorResponseDTO</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1649,6 +1655,12 @@ namespace Org.OpenAPITools.Api
             if (xAppKey == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureVendorManagementApi->VendorapiSecureMerchantsVendorsSearchPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureVendorManagementApi->VendorapiSecureMerchantsVendorsSearchPost");
             }
 
             Org.OpenAPITools.Client.RequestOptions localVarRequestOptions = new Org.OpenAPITools.Client.RequestOptions();
@@ -1707,7 +1719,7 @@ namespace Org.OpenAPITools.Api
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (searchText != null)
             {
@@ -1715,19 +1727,20 @@ namespace Org.OpenAPITools.Api
             }
             if (sortField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
             }
             if (startRow != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
             }
             if (asc != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "Asc", asc));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsSearchPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1762,8 +1775,9 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -1780,9 +1794,9 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PageVendorResponseDTO</returns>
-        public async System.Threading.Tasks.Task<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostAsync(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PageVendorResponseDTO> VendorapiSecureMerchantsVendorsSearchPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsSearchPostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO> localVarResponse = await VendorapiSecureMerchantsVendorsSearchPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1791,8 +1805,9 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
+        /// <param name="origin">origin</param>
         /// <param name="paymentMethodType">Set paymentMethodType (optional)</param>
         /// <param name="attention">Set attention (optional)</param>
         /// <param name="vendorId">Set vendorId (optional)</param>
@@ -1809,7 +1824,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PageVendorResponseDTO)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO>> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), int? pageSize = default(int?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PageVendorResponseDTO>> VendorapiSecureMerchantsVendorsSearchPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = default(string?), string? attention = default(string?), string? vendorId = default(string?), string? vendorName = default(string?), string? vendorStatus = default(string?), string? createdBy = default(string?), string? startDate = default(string?), string? endDate = default(string?), float? pageSize = default(float?), string? searchText = default(string?), string? sortField = default(string?), string? startRow = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1821,6 +1836,12 @@ namespace Org.OpenAPITools.Api
             if (xAppKey == null)
             {
                 throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'xAppKey' when calling SecureVendorManagementApi->VendorapiSecureMerchantsVendorsSearchPost");
+            }
+
+            // verify the required parameter 'origin' is set
+            if (origin == null)
+            {
+                throw new Org.OpenAPITools.Client.ApiException(400, "Missing required parameter 'origin' when calling SecureVendorManagementApi->VendorapiSecureMerchantsVendorsSearchPost");
             }
 
 
@@ -1880,7 +1901,7 @@ namespace Org.OpenAPITools.Api
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (searchText != null)
             {
@@ -1888,19 +1909,20 @@ namespace Org.OpenAPITools.Api
             }
             if (sortField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
             }
             if (startRow != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
             }
             if (asc != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "Asc", asc));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsSearchPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1936,15 +1958,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void VendorapiSecureMerchantsVendorsSuspendPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
+        public void VendorapiSecureMerchantsVendorsSuspendPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
         {
-            VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+            VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
         }
 
         /// <summary>
@@ -1952,13 +1974,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2007,9 +2029,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorStatusRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsSuspendPost";
@@ -2045,16 +2067,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsSuspendPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsSuspendPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            await VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2062,14 +2084,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2119,9 +2141,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorStatusRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsSuspendPost";
@@ -2158,15 +2180,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;VendorTimelineResponseListInner&gt;</returns>
-        public List<VendorTimelineResponseListInner> VendorapiSecureMerchantsVendorsTimelinePost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0)
+        public List<VendorTimelineResponseListInner> VendorapiSecureMerchantsVendorsTimelinePost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>> localVarResponse = VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorTimelineRequestDTO);
+            Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>> localVarResponse = VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorTimelineRequestDTO);
             return localVarResponse.Data;
         }
 
@@ -2175,13 +2197,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;VendorTimelineResponseListInner&gt;</returns>
-        public Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2231,9 +2253,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorTimelineRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsTimelinePost";
@@ -2269,16 +2291,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;VendorTimelineResponseListInner&gt;</returns>
-        public async System.Threading.Tasks.Task<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<VendorTimelineResponseListInner>> VendorapiSecureMerchantsVendorsTimelinePostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>> localVarResponse = await VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, secureVendorTimelineRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>> localVarResponse = await VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureVendorTimelineRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -2287,14 +2309,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorTimelineRequestDTO">SecureVendorTimelineRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;VendorTimelineResponseListInner&gt;)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<List<VendorTimelineResponseListInner>>> VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2345,9 +2367,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorTimelineRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsTimelinePost";
@@ -2384,15 +2406,15 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void VendorapiSecureMerchantsVendorsUnsuspendPost(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
+        public void VendorapiSecureMerchantsVendorsUnsuspendPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
         {
-            VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+            VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
         }
 
         /// <summary>
@@ -2400,13 +2422,13 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2455,9 +2477,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorStatusRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsUnsuspendPost";
@@ -2493,16 +2515,16 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsUnsuspendPostAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task VendorapiSecureMerchantsVendorsUnsuspendPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            await VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfoAsync(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
+            await VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO, operationIndex, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -2510,14 +2532,14 @@ namespace Org.OpenAPITools.Api
         /// </summary>
         /// <exception cref="Org.OpenAPITools.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xApiKey">an authorization header</param>
-        /// <param name="xVersion">x-version</param>
         /// <param name="xAppKey">an authorization header</param>
+        /// <param name="xVersion">x-version</param>
         /// <param name="origin">origin</param>
         /// <param name="secureVendorStatusRequestDTO">SecureVendorStatusRequestDTO</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfoAsync(string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -2567,9 +2589,9 @@ namespace Org.OpenAPITools.Api
             }
 
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureVendorStatusRequestDTO;
 
             localVarRequestOptions.Operation = "SecureVendorManagementApi.VendorapiSecureMerchantsVendorsUnsuspendPost";

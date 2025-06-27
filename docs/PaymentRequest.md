@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Token** | **string** |  | [optional] 
-**Type** | **string** |  | [optional] 
-**TransactionCode** | **string** |  | [optional] 
+**Type** | **string** |  | 
+**TransactionCode** | **string** |  | 
 **BillingContact** | [**TransactionPaymentResponseBillingContact**](TransactionPaymentResponseBillingContact.md) |  | [optional] 
 **PhoneCountryCode** | **string** |  | [optional] 
-**ChannelType** | **string** |  | [optional] 
-**TenderInfo** | [**PaymentRequestTenderInfo**](PaymentRequestTenderInfo.md) |  | [optional] 
+**ChannelType** | **string** |  | 
+**ProcessMethod** | **string** |  | [optional] 
+**TenderInfo** | [**PaymentRequestTenderInfo**](PaymentRequestTenderInfo.md) |  | 
 **InvoiceNo** | **string** |  | [optional] 
-**PoNo** | **string** |  | [optional] 
 **ReferenceNo** | **string** |  | [optional] 
 **PaymentReference** | **string** |  | [optional] 
 **Remarks** | **string** |  | [optional] 
@@ -20,14 +20,13 @@ Name | Type | Description | Notes
 **CaptchaToken** | **string** |  | [optional] 
 **ActionName** | **string** |  | [optional] 
 **AdditionalFields** | **Dictionary&lt;string, string&gt;** |  | [optional] 
-**WaitForApproval** | **bool** |  | [optional] 
 **Issuer** | **string** |  | [optional] 
-**Splits** | [**List&lt;PaymentIntentResponseSplitsInner&gt;**](PaymentIntentResponseSplitsInner.md) |  | [optional] 
+**Splits** | [**List&lt;PaymentIntentRequestSplitsInner&gt;**](PaymentIntentRequestSplitsInner.md) |  | [optional] 
 **OperationType** | **string** |  | [optional] 
 **SuppressTechnologyFee** | **bool** |  | [optional] 
-**OverrideTechnologyFee** | **decimal** |  | [optional] 
+**OverrideTechnologyFee** | **float** |  | [optional] 
 **IsPremiumFinancier** | **bool** |  | [optional] 
-**PFR** | [**PaymentLinkResponsePfr**](PaymentLinkResponsePfr.md) |  | [optional] 
+**Pfr** | [**PaymentIntentRequestPfr**](PaymentIntentRequestPfr.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

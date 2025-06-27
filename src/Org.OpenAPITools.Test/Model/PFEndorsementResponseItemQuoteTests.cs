@@ -188,5 +188,32 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'ESignResult'
         }
+
+        /// <summary>
+        /// Test the property 'IsDownPaymentRequired'
+        /// </summary>
+        [Fact]
+        public void IsDownPaymentRequiredTest()
+        {
+            // TODO unit test for the property 'IsDownPaymentRequired'
+        }
+
+        /// <summary>
+        /// Test the property 'IsEsignRequired'
+        /// </summary>
+        [Fact]
+        public void IsEsignRequiredTest()
+        {
+            // TODO unit test for the property 'IsEsignRequired'
+        }
+
+        /// <summary>
+        /// Test the property 'IsEndorsement'
+        /// </summary>
+        [Fact]
+        public void IsEndorsementTest()
+        {
+            // TODO unit test for the property 'IsEndorsement'
+        }
     }
 }

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address1** | **string** |  | 
-**Address2** | **string** |  | 
+**Address2** | **string** |  | [optional] 
 **City** | **string** |  | 
 **State** | **string** |  | 
 **Zip** | **string** |  | 

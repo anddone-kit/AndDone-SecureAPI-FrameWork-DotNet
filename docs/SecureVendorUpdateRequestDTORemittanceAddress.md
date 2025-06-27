@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **State** | **string** |  | [optional] 
 **Country** | **string** |  | [optional] 
 **PostalCode** | **string** |  | [optional] 
-**AddressType** | **string** |  | [optional] 
 **AddressSource** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

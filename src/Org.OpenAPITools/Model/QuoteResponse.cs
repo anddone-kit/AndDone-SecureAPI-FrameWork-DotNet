@@ -102,7 +102,13 @@ namespace Org.OpenAPITools.Model
             /// Enum Drafted for value: Drafted
             /// </summary>
             [EnumMember(Value = "Drafted")]
-            Drafted = 11
+            Drafted = 11,
+
+            /// <summary>
+            /// Enum PaidInFull for value: PaidInFull
+            /// </summary>
+            [EnumMember(Value = "PaidInFull")]
+            PaidInFull = 12
         }
 
 
@@ -129,6 +135,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="premium">The premium amount..</param>
         /// <param name="tax">tax.</param>
         /// <param name="additionalFees">Additional fees associated with the quote..</param>
+        /// <param name="brokerFee">broker fees associated with the quote..</param>
         /// <param name="downAmount">The down payment amount..</param>
         /// <param name="amountFinanced">The amount financed..</param>
         /// <param name="financeCharge">The finance charge..</param>
@@ -156,7 +163,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="modifiedBy">The user who last modified the quote..</param>
         /// <param name="unSignPFA">The unsigned PFA document..</param>
         /// <param name="signPFA">The signed PFA document..</param>
-        public QuoteResponse(string id = default(string), string quoteKey = default(string), string pFType = default(string), bool isEndorsement = default(bool), string merchantId = default(string), int programId = default(int), string programName = default(string), string paymentIntentId = default(string), string accountNumber = default(string), QuoteStatusEnum? quoteStatus = default(QuoteStatusEnum?), bool isActive = true, decimal premium = default(decimal), decimal tax = default(decimal), decimal additionalFees = default(decimal), decimal downAmount = default(decimal), decimal amountFinanced = default(decimal), decimal financeCharge = default(decimal), decimal totalPayments = default(decimal), decimal paymentAmount = default(decimal), decimal totalAmount = default(decimal), int docStamp = default(int), string firstDueDate = default(string), decimal apr = default(decimal), int installments = default(int), string batchId = default(string), int paymentsRetained = default(int), decimal paymentRetainedAmount = default(decimal), string retailAgentRegisterLoginURL = default(string), string insuredName = default(string), bool isEsignPFA = default(bool), string nextPaymentDueDate = default(string), string lastPaymentDate = default(string), bool isDownPaymentRequired = default(bool), bool isEsignRequired = default(bool), bool isDeleted = default(bool), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string unSignPFA = default(string), string signPFA = default(string))
+        public QuoteResponse(string id = default(string), string quoteKey = default(string), string pFType = default(string), bool isEndorsement = default(bool), string merchantId = default(string), float programId = default(float), string programName = default(string), string paymentIntentId = default(string), string accountNumber = default(string), QuoteStatusEnum? quoteStatus = default(QuoteStatusEnum?), bool isActive = true, float premium = default(float), float tax = default(float), float additionalFees = default(float), float brokerFee = default(float), float downAmount = default(float), float amountFinanced = default(float), float financeCharge = default(float), float totalPayments = default(float), float paymentAmount = default(float), float totalAmount = default(float), float docStamp = default(float), string firstDueDate = default(string), float apr = default(float), int installments = default(int), string batchId = default(string), float paymentsRetained = default(float), float paymentRetainedAmount = default(float), string retailAgentRegisterLoginURL = default(string), string insuredName = default(string), bool isEsignPFA = default(bool), string nextPaymentDueDate = default(string), string lastPaymentDate = default(string), bool isDownPaymentRequired = default(bool), bool isEsignRequired = default(bool), bool isDeleted = default(bool), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string unSignPFA = default(string), string signPFA = default(string))
         {
             this.Id = id;
             this.QuoteKey = quoteKey;
@@ -172,6 +179,7 @@ namespace Org.OpenAPITools.Model
             this.Premium = premium;
             this.Tax = tax;
             this.AdditionalFees = additionalFees;
+            this.BrokerFee = brokerFee;
             this.DownAmount = downAmount;
             this.AmountFinanced = amountFinanced;
             this.FinanceCharge = financeCharge;
@@ -241,7 +249,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The ID of the program.</value>
         [DataMember(Name = "programId", EmitDefaultValue = false)]
-        public int ProgramId { get; set; }
+        public float ProgramId { get; set; }
 
         /// <summary>
         /// The name of the program.
@@ -276,69 +284,76 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The premium amount.</value>
         [DataMember(Name = "premium", EmitDefaultValue = false)]
-        public decimal Premium { get; set; }
+        public float Premium { get; set; }
 
         /// <summary>
         /// Gets or Sets Tax
         /// </summary>
         [DataMember(Name = "tax", EmitDefaultValue = false)]
-        public decimal Tax { get; set; }
+        public float Tax { get; set; }
 
         /// <summary>
         /// Additional fees associated with the quote.
         /// </summary>
         /// <value>Additional fees associated with the quote.</value>
         [DataMember(Name = "additionalFees", EmitDefaultValue = false)]
-        public decimal AdditionalFees { get; set; }
+        public float AdditionalFees { get; set; }
+
+        /// <summary>
+        /// broker fees associated with the quote.
+        /// </summary>
+        /// <value>broker fees associated with the quote.</value>
+        [DataMember(Name = "brokerFee", EmitDefaultValue = false)]
+        public float BrokerFee { get; set; }
 
         /// <summary>
         /// The down payment amount.
         /// </summary>
         /// <value>The down payment amount.</value>
         [DataMember(Name = "downAmount", EmitDefaultValue = false)]
-        public decimal DownAmount { get; set; }
+        public float DownAmount { get; set; }
 
         /// <summary>
         /// The amount financed.
         /// </summary>
         /// <value>The amount financed.</value>
         [DataMember(Name = "amountFinanced", EmitDefaultValue = false)]
-        public decimal AmountFinanced { get; set; }
+        public float AmountFinanced { get; set; }
 
         /// <summary>
         /// The finance charge.
         /// </summary>
         /// <value>The finance charge.</value>
         [DataMember(Name = "financeCharge", EmitDefaultValue = false)]
-        public decimal FinanceCharge { get; set; }
+        public float FinanceCharge { get; set; }
 
         /// <summary>
         /// The total payments.
         /// </summary>
         /// <value>The total payments.</value>
         [DataMember(Name = "totalPayments", EmitDefaultValue = false)]
-        public decimal TotalPayments { get; set; }
+        public float TotalPayments { get; set; }
 
         /// <summary>
         /// The payment amount.
         /// </summary>
         /// <value>The payment amount.</value>
         [DataMember(Name = "paymentAmount", EmitDefaultValue = false)]
-        public decimal PaymentAmount { get; set; }
+        public float PaymentAmount { get; set; }
 
         /// <summary>
         /// Total amount.
         /// </summary>
         /// <value>Total amount.</value>
         [DataMember(Name = "totalAmount", EmitDefaultValue = false)]
-        public decimal TotalAmount { get; set; }
+        public float TotalAmount { get; set; }
 
         /// <summary>
         /// The document stamp.
         /// </summary>
         /// <value>The document stamp.</value>
         [DataMember(Name = "docStamp", EmitDefaultValue = false)]
-        public int DocStamp { get; set; }
+        public float DocStamp { get; set; }
 
         /// <summary>
         /// The first due date.
@@ -352,7 +367,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The annual percentage rate (APR).</value>
         [DataMember(Name = "apr", EmitDefaultValue = false)]
-        public decimal Apr { get; set; }
+        public float Apr { get; set; }
 
         /// <summary>
         /// The number of installments.
@@ -373,14 +388,14 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The number of payments retained.</value>
         [DataMember(Name = "paymentsRetained", EmitDefaultValue = false)]
-        public int PaymentsRetained { get; set; }
+        public float PaymentsRetained { get; set; }
 
         /// <summary>
         /// The amount retained from the payment.
         /// </summary>
         /// <value>The amount retained from the payment.</value>
         [DataMember(Name = "paymentRetainedAmount", EmitDefaultValue = false)]
-        public decimal PaymentRetainedAmount { get; set; }
+        public float PaymentRetainedAmount { get; set; }
 
         /// <summary>
         /// The URL for the retail agent register login.
@@ -502,6 +517,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  Premium: ").Append(Premium).Append("\n");
             sb.Append("  Tax: ").Append(Tax).Append("\n");
             sb.Append("  AdditionalFees: ").Append(AdditionalFees).Append("\n");
+            sb.Append("  BrokerFee: ").Append(BrokerFee).Append("\n");
             sb.Append("  DownAmount: ").Append(DownAmount).Append("\n");
             sb.Append("  AmountFinanced: ").Append(AmountFinanced).Append("\n");
             sb.Append("  FinanceCharge: ").Append(FinanceCharge).Append("\n");

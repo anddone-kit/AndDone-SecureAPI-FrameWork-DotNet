@@ -40,7 +40,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="phone">phone.</param>
         /// <param name="notifyViaSMS">notifyViaSMS.</param>
         /// <param name="notifyViaEmail">notifyViaEmail.</param>
-        public PaymentLinkResponseCustomersInner(string firstName = default(string), string lastName = default(string), string email = default(string), string phone = default(string), bool notifyViaSMS = default(bool), bool notifyViaEmail = default(bool))
+        /// <param name="createdOn">createdOn.</param>
+        /// <param name="accounts">accounts.</param>
+        /// <param name="address">address.</param>
+        public PaymentLinkResponseCustomersInner(string firstName = default(string), string lastName = default(string), string email = default(string), string phone = default(string), bool notifyViaSMS = default(bool), bool notifyViaEmail = default(bool), string createdOn = default(string), List<PaymentLinkResponseCustomersInnerAccountsInner> accounts = default(List<PaymentLinkResponseCustomersInnerAccountsInner>), TransactionPaymentResponseBillingContactAddress address = default(TransactionPaymentResponseBillingContactAddress))
         {
             this.FirstName = firstName;
             this.LastName = lastName;
@@ -48,6 +51,9 @@ namespace Org.OpenAPITools.Model
             this.Phone = phone;
             this.NotifyViaSMS = notifyViaSMS;
             this.NotifyViaEmail = notifyViaEmail;
+            this.CreatedOn = createdOn;
+            this.Accounts = accounts;
+            this.Address = address;
         }
 
         /// <summary>
@@ -87,6 +93,24 @@ namespace Org.OpenAPITools.Model
         public bool NotifyViaEmail { get; set; }
 
         /// <summary>
+        /// Gets or Sets CreatedOn
+        /// </summary>
+        [DataMember(Name = "createdOn", EmitDefaultValue = false)]
+        public string CreatedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Accounts
+        /// </summary>
+        [DataMember(Name = "accounts", EmitDefaultValue = false)]
+        public List<PaymentLinkResponseCustomersInnerAccountsInner> Accounts { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Address
+        /// </summary>
+        [DataMember(Name = "address", EmitDefaultValue = false)]
+        public TransactionPaymentResponseBillingContactAddress Address { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -100,6 +124,9 @@ namespace Org.OpenAPITools.Model
             sb.Append("  Phone: ").Append(Phone).Append("\n");
             sb.Append("  NotifyViaSMS: ").Append(NotifyViaSMS).Append("\n");
             sb.Append("  NotifyViaEmail: ").Append(NotifyViaEmail).Append("\n");
+            sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
+            sb.Append("  Accounts: ").Append(Accounts).Append("\n");
+            sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

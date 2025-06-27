@@ -64,6 +64,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'BatchId'
+        /// </summary>
+        [Fact]
+        public void BatchIdTest()
+        {
+            // TODO unit test for the property 'BatchId'
+        }
+
+        /// <summary>
         /// Test the property 'TransactionCode'
         /// </summary>
         [Fact]
@@ -208,15 +217,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'CustomerAccountId'
-        /// </summary>
-        [Fact]
-        public void CustomerAccountIdTest()
-        {
-            // TODO unit test for the property 'CustomerAccountId'
-        }
-
-        /// <summary>
         /// Test the property 'InvoiceNo'
         /// </summary>
         [Fact]
@@ -280,24 +280,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'PartnerId'
-        /// </summary>
-        [Fact]
-        public void PartnerIdTest()
-        {
-            // TODO unit test for the property 'PartnerId'
-        }
-
-        /// <summary>
-        /// Test the property 'OrderId'
-        /// </summary>
-        [Fact]
-        public void OrderIdTest()
-        {
-            // TODO unit test for the property 'OrderId'
-        }
-
-        /// <summary>
         /// Test the property 'InvoiceId'
         /// </summary>
         [Fact]
@@ -307,12 +289,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MaskedInvoiceId'
+        /// Test the property 'TokenLinkId'
         /// </summary>
         [Fact]
-        public void MaskedInvoiceIdTest()
+        public void TokenLinkIdTest()
         {
-            // TODO unit test for the property 'MaskedInvoiceId'
+            // TODO unit test for the property 'TokenLinkId'
         }
 
         /// <summary>
@@ -322,24 +304,6 @@ namespace Org.OpenAPITools.Test.Model
         public void PaymentLinkIdTest()
         {
             // TODO unit test for the property 'PaymentLinkId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedTokenLinkId'
-        /// </summary>
-        [Fact]
-        public void MaskedTokenLinkIdTest()
-        {
-            // TODO unit test for the property 'MaskedTokenLinkId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedPaymentLinkId'
-        /// </summary>
-        [Fact]
-        public void MaskedPaymentLinkIdTest()
-        {
-            // TODO unit test for the property 'MaskedPaymentLinkId'
         }
 
         /// <summary>
@@ -475,6 +439,51 @@ namespace Org.OpenAPITools.Test.Model
         public void CompanyNameTest()
         {
             // TODO unit test for the property 'CompanyName'
+        }
+
+        /// <summary>
+        /// Test the property 'ApiVersion'
+        /// </summary>
+        [Fact]
+        public void ApiVersionTest()
+        {
+            // TODO unit test for the property 'ApiVersion'
+        }
+
+        /// <summary>
+        /// Test the property 'ChargeBackAmount'
+        /// </summary>
+        [Fact]
+        public void ChargeBackAmountTest()
+        {
+            // TODO unit test for the property 'ChargeBackAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'SuppressTechnologyFee'
+        /// </summary>
+        [Fact]
+        public void SuppressTechnologyFeeTest()
+        {
+            // TODO unit test for the property 'SuppressTechnologyFee'
+        }
+
+        /// <summary>
+        /// Test the property 'IsPremiumFinancier'
+        /// </summary>
+        [Fact]
+        public void IsPremiumFinancierTest()
+        {
+            // TODO unit test for the property 'IsPremiumFinancier'
+        }
+
+        /// <summary>
+        /// Test the property 'Pfr'
+        /// </summary>
+        [Fact]
+        public void PfrTest()
+        {
+            // TODO unit test for the property 'Pfr'
         }
     }
 }

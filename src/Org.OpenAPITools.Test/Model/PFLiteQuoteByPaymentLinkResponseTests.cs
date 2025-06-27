@@ -136,6 +136,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Policies'
+        /// </summary>
+        [Fact]
+        public void PoliciesTest()
+        {
+            // TODO unit test for the property 'Policies'
+        }
+
+        /// <summary>
         /// Test the property 'IsActive'
         /// </summary>
         [Fact]

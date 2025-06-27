@@ -48,7 +48,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="createdBy">createdBy.</param>
         /// <param name="modifiedOn">modifiedOn.</param>
         /// <param name="modifiedBy">modifiedBy.</param>
-        public PaymentBatchEventLogResponse(string id = default(string), string batchId = default(string), string merchantId = default(string), string previousEventStatus = default(string), string eventStatus = default(string), decimal voidedCount = default(decimal), decimal voidedAmount = default(decimal), string closedOn = default(string), string eventDate = default(string), decimal closingAmount = default(decimal), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string))
+        public PaymentBatchEventLogResponse(string id = default(string), string batchId = default(string), string merchantId = default(string), string previousEventStatus = default(string), string eventStatus = default(string), float voidedCount = default(float), float voidedAmount = default(float), string closedOn = default(string), string eventDate = default(string), float closingAmount = default(float), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string))
         {
             this.Id = id;
             this.BatchId = batchId;
@@ -100,13 +100,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets VoidedCount
         /// </summary>
         [DataMember(Name = "voidedCount", EmitDefaultValue = false)]
-        public decimal VoidedCount { get; set; }
+        public float VoidedCount { get; set; }
 
         /// <summary>
         /// Gets or Sets VoidedAmount
         /// </summary>
         [DataMember(Name = "voidedAmount", EmitDefaultValue = false)]
-        public decimal VoidedAmount { get; set; }
+        public float VoidedAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets ClosedOn
@@ -124,7 +124,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets ClosingAmount
         /// </summary>
         [DataMember(Name = "closingAmount", EmitDefaultValue = false)]
-        public decimal ClosingAmount { get; set; }
+        public float ClosingAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedOn

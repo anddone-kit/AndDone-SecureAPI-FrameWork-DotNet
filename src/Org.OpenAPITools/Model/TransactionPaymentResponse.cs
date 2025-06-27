@@ -32,6 +32,43 @@ namespace Org.OpenAPITools.Model
     public partial class TransactionPaymentResponse : IValidatableObject
     {
         /// <summary>
+        /// Defines ChannelType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ChannelTypeEnum
+        {
+            /// <summary>
+            /// Enum NotDefined for value: NotDefined
+            /// </summary>
+            [EnumMember(Value = "NotDefined")]
+            NotDefined = 1,
+
+            /// <summary>
+            /// Enum ACH for value: ACH
+            /// </summary>
+            [EnumMember(Value = "ACH")]
+            ACH = 2,
+
+            /// <summary>
+            /// Enum CreditCard for value: CreditCard
+            /// </summary>
+            [EnumMember(Value = "CreditCard")]
+            CreditCard = 3,
+
+            /// <summary>
+            /// Enum DebitCard for value: DebitCard
+            /// </summary>
+            [EnumMember(Value = "DebitCard")]
+            DebitCard = 4
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ChannelType
+        /// </summary>
+        [DataMember(Name = "channelType", EmitDefaultValue = false)]
+        public ChannelTypeEnum? ChannelType { get; set; }
+        /// <summary>
         /// Defines ProcessMethod
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -334,53 +371,77 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="TransactionPaymentResponse" /> class.
         /// </summary>
         /// <param name="transactionId">transactionId.</param>
+        /// <param name="transactionCode">transactionCode.</param>
         /// <param name="billingContact">billingContact.</param>
         /// <param name="transactionDate">transactionDate.</param>
         /// <param name="merchantId">merchantId.</param>
+        /// <param name="ipAddress">ipAddress.</param>
+        /// <param name="channelType">channelType.</param>
         /// <param name="processMethod">processMethod.</param>
+        /// <param name="processorName">processorName.</param>
         /// <param name="transactionOrigin">transactionOrigin.</param>
         /// <param name="refundOrigin">refundOrigin.</param>
         /// <param name="achTenderInfo">achTenderInfo.</param>
         /// <param name="ccTenderInfo">ccTenderInfo.</param>
         /// <param name="debitCardTenderInfo">debitCardTenderInfo.</param>
         /// <param name="referenceCustomerId">referenceCustomerId.</param>
-        /// <param name="customerAccountId">customerAccountId.</param>
         /// <param name="invoiceNo">invoiceNo.</param>
+        /// <param name="referenceNo">referenceNo.</param>
         /// <param name="remarks">remarks.</param>
+        /// <param name="terminalId">terminalId.</param>
         /// <param name="transactionStatus">transactionStatus.</param>
         /// <param name="transactionResult">transactionResult.</param>
         /// <param name="invoiceId">invoiceId.</param>
         /// <param name="paymentLinkId">paymentLinkId.</param>
         /// <param name="additionalFields">additionalFields.</param>
+        /// <param name="settlementDate">settlementDate.</param>
+        /// <param name="issuer">issuer.</param>
         /// <param name="paymentType">paymentType.</param>
         /// <param name="paymentCategory">paymentCategory.</param>
         /// <param name="transactionEntitySplitResponses">transactionEntitySplitResponses.</param>
+        /// <param name="paymentDescription">paymentDescription.</param>
+        /// <param name="refundTransactions">refundTransactions.</param>
+        /// <param name="chargebackTargetAccount">chargebackTargetAccount.</param>
+        /// <param name="userId">userId.</param>
+        /// <param name="userName">userName.</param>
         /// <param name="chargeBackAmount">chargeBackAmount.</param>
         /// <param name="suppressTechnologyFee">suppressTechnologyFee.</param>
-        public TransactionPaymentResponse(string transactionId = default(string), TransactionPaymentResponseBillingContact billingContact = default(TransactionPaymentResponseBillingContact), string transactionDate = default(string), string merchantId = default(string), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), int refundOrigin = default(int), TransactionPaymentResponseAchTenderInfo achTenderInfo = default(TransactionPaymentResponseAchTenderInfo), TransactionPaymentResponseCcTenderInfo ccTenderInfo = default(TransactionPaymentResponseCcTenderInfo), string debitCardTenderInfo = default(string), string referenceCustomerId = default(string), string customerAccountId = default(string), string invoiceNo = default(string), string remarks = default(string), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), TransactionPaymentResponseTransactionResult transactionResult = default(TransactionPaymentResponseTransactionResult), string invoiceId = default(string), string paymentLinkId = default(string), Dictionary<string, string> additionalFields = default(Dictionary<string, string>), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), List<TransactionPaymentResponseTransactionEntitySplitResponsesInner> transactionEntitySplitResponses = default(List<TransactionPaymentResponseTransactionEntitySplitResponsesInner>), decimal chargeBackAmount = default(decimal), bool suppressTechnologyFee = default(bool))
+        public TransactionPaymentResponse(string transactionId = default(string), string transactionCode = default(string), TransactionPaymentResponseBillingContact billingContact = default(TransactionPaymentResponseBillingContact), string transactionDate = default(string), string merchantId = default(string), string ipAddress = default(string), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), string processorName = default(string), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), int refundOrigin = default(int), TransactionPaymentResponseAchTenderInfo achTenderInfo = default(TransactionPaymentResponseAchTenderInfo), TransactionPaymentResponseCcTenderInfo ccTenderInfo = default(TransactionPaymentResponseCcTenderInfo), TransactionPaymentResponseCcTenderInfo debitCardTenderInfo = default(TransactionPaymentResponseCcTenderInfo), string referenceCustomerId = default(string), string invoiceNo = default(string), string referenceNo = default(string), string remarks = default(string), string terminalId = default(string), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), TransactionPaymentResponseTransactionResult transactionResult = default(TransactionPaymentResponseTransactionResult), string invoiceId = default(string), string paymentLinkId = default(string), string additionalFields = default(string), string settlementDate = default(string), string issuer = default(string), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), List<TransactionPaymentResponseTransactionEntitySplitResponsesInner> transactionEntitySplitResponses = default(List<TransactionPaymentResponseTransactionEntitySplitResponsesInner>), string paymentDescription = default(string), TransactionPaymentResponseRefundTransactions refundTransactions = default(TransactionPaymentResponseRefundTransactions), string chargebackTargetAccount = default(string), string userId = default(string), string userName = default(string), float chargeBackAmount = default(float), bool suppressTechnologyFee = default(bool))
         {
             this.TransactionId = transactionId;
+            this.TransactionCode = transactionCode;
             this.BillingContact = billingContact;
             this.TransactionDate = transactionDate;
             this.MerchantId = merchantId;
+            this.IpAddress = ipAddress;
+            this.ChannelType = channelType;
             this.ProcessMethod = processMethod;
+            this.ProcessorName = processorName;
             this.TransactionOrigin = transactionOrigin;
             this.RefundOrigin = refundOrigin;
             this.AchTenderInfo = achTenderInfo;
             this.CcTenderInfo = ccTenderInfo;
             this.DebitCardTenderInfo = debitCardTenderInfo;
             this.ReferenceCustomerId = referenceCustomerId;
-            this.CustomerAccountId = customerAccountId;
             this.InvoiceNo = invoiceNo;
+            this.ReferenceNo = referenceNo;
             this.Remarks = remarks;
+            this.TerminalId = terminalId;
             this.TransactionStatus = transactionStatus;
             this.TransactionResult = transactionResult;
             this.InvoiceId = invoiceId;
             this.PaymentLinkId = paymentLinkId;
             this.AdditionalFields = additionalFields;
+            this.SettlementDate = settlementDate;
+            this.Issuer = issuer;
             this.PaymentType = paymentType;
             this.PaymentCategory = paymentCategory;
             this.TransactionEntitySplitResponses = transactionEntitySplitResponses;
+            this.PaymentDescription = paymentDescription;
+            this.RefundTransactions = refundTransactions;
+            this.ChargebackTargetAccount = chargebackTargetAccount;
+            this.UserId = userId;
+            this.UserName = userName;
             this.ChargeBackAmount = chargeBackAmount;
             this.SuppressTechnologyFee = suppressTechnologyFee;
         }
@@ -390,6 +451,12 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "transactionId", EmitDefaultValue = false)]
         public string TransactionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TransactionCode
+        /// </summary>
+        [DataMember(Name = "transactionCode", EmitDefaultValue = false)]
+        public string TransactionCode { get; set; }
 
         /// <summary>
         /// Gets or Sets BillingContact
@@ -408,6 +475,18 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "merchantId", EmitDefaultValue = false)]
         public string MerchantId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IpAddress
+        /// </summary>
+        [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
+        public string IpAddress { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessorName
+        /// </summary>
+        [DataMember(Name = "processorName", EmitDefaultValue = false)]
+        public string ProcessorName { get; set; }
 
         /// <summary>
         /// Gets or Sets RefundOrigin
@@ -431,7 +510,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DebitCardTenderInfo
         /// </summary>
         [DataMember(Name = "debitCardTenderInfo", EmitDefaultValue = false)]
-        public string DebitCardTenderInfo { get; set; }
+        public TransactionPaymentResponseCcTenderInfo DebitCardTenderInfo { get; set; }
 
         /// <summary>
         /// Gets or Sets ReferenceCustomerId
@@ -440,22 +519,28 @@ namespace Org.OpenAPITools.Model
         public string ReferenceCustomerId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomerAccountId
-        /// </summary>
-        [DataMember(Name = "customerAccountId", EmitDefaultValue = false)]
-        public string CustomerAccountId { get; set; }
-
-        /// <summary>
         /// Gets or Sets InvoiceNo
         /// </summary>
         [DataMember(Name = "invoiceNo", EmitDefaultValue = false)]
         public string InvoiceNo { get; set; }
 
         /// <summary>
+        /// Gets or Sets ReferenceNo
+        /// </summary>
+        [DataMember(Name = "referenceNo", EmitDefaultValue = false)]
+        public string ReferenceNo { get; set; }
+
+        /// <summary>
         /// Gets or Sets Remarks
         /// </summary>
         [DataMember(Name = "remarks", EmitDefaultValue = false)]
         public string Remarks { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TerminalId
+        /// </summary>
+        [DataMember(Name = "terminalId", EmitDefaultValue = false)]
+        public string TerminalId { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionResult
@@ -479,7 +564,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets AdditionalFields
         /// </summary>
         [DataMember(Name = "additionalFields", EmitDefaultValue = false)]
-        public Dictionary<string, string> AdditionalFields { get; set; }
+        public string AdditionalFields { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SettlementDate
+        /// </summary>
+        [DataMember(Name = "settlementDate", EmitDefaultValue = false)]
+        public string SettlementDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Issuer
+        /// </summary>
+        [DataMember(Name = "issuer", EmitDefaultValue = false)]
+        public string Issuer { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionEntitySplitResponses
@@ -488,10 +585,40 @@ namespace Org.OpenAPITools.Model
         public List<TransactionPaymentResponseTransactionEntitySplitResponsesInner> TransactionEntitySplitResponses { get; set; }
 
         /// <summary>
+        /// Gets or Sets PaymentDescription
+        /// </summary>
+        [DataMember(Name = "paymentDescription", EmitDefaultValue = false)]
+        public string PaymentDescription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefundTransactions
+        /// </summary>
+        [DataMember(Name = "refundTransactions", EmitDefaultValue = false)]
+        public TransactionPaymentResponseRefundTransactions RefundTransactions { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ChargebackTargetAccount
+        /// </summary>
+        [DataMember(Name = "chargebackTargetAccount", EmitDefaultValue = false)]
+        public string ChargebackTargetAccount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserId
+        /// </summary>
+        [DataMember(Name = "userId", EmitDefaultValue = false)]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UserName
+        /// </summary>
+        [DataMember(Name = "userName", EmitDefaultValue = false)]
+        public string UserName { get; set; }
+
+        /// <summary>
         /// Gets or Sets ChargeBackAmount
         /// </summary>
         [DataMember(Name = "chargeBackAmount", EmitDefaultValue = false)]
-        public decimal ChargeBackAmount { get; set; }
+        public float ChargeBackAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets SuppressTechnologyFee
@@ -508,27 +635,39 @@ namespace Org.OpenAPITools.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TransactionPaymentResponse {\n");
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
+            sb.Append("  TransactionCode: ").Append(TransactionCode).Append("\n");
             sb.Append("  BillingContact: ").Append(BillingContact).Append("\n");
             sb.Append("  TransactionDate: ").Append(TransactionDate).Append("\n");
             sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
+            sb.Append("  IpAddress: ").Append(IpAddress).Append("\n");
+            sb.Append("  ChannelType: ").Append(ChannelType).Append("\n");
             sb.Append("  ProcessMethod: ").Append(ProcessMethod).Append("\n");
+            sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
             sb.Append("  TransactionOrigin: ").Append(TransactionOrigin).Append("\n");
             sb.Append("  RefundOrigin: ").Append(RefundOrigin).Append("\n");
             sb.Append("  AchTenderInfo: ").Append(AchTenderInfo).Append("\n");
             sb.Append("  CcTenderInfo: ").Append(CcTenderInfo).Append("\n");
             sb.Append("  DebitCardTenderInfo: ").Append(DebitCardTenderInfo).Append("\n");
             sb.Append("  ReferenceCustomerId: ").Append(ReferenceCustomerId).Append("\n");
-            sb.Append("  CustomerAccountId: ").Append(CustomerAccountId).Append("\n");
             sb.Append("  InvoiceNo: ").Append(InvoiceNo).Append("\n");
+            sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
             sb.Append("  Remarks: ").Append(Remarks).Append("\n");
+            sb.Append("  TerminalId: ").Append(TerminalId).Append("\n");
             sb.Append("  TransactionStatus: ").Append(TransactionStatus).Append("\n");
             sb.Append("  TransactionResult: ").Append(TransactionResult).Append("\n");
             sb.Append("  InvoiceId: ").Append(InvoiceId).Append("\n");
             sb.Append("  PaymentLinkId: ").Append(PaymentLinkId).Append("\n");
             sb.Append("  AdditionalFields: ").Append(AdditionalFields).Append("\n");
+            sb.Append("  SettlementDate: ").Append(SettlementDate).Append("\n");
+            sb.Append("  Issuer: ").Append(Issuer).Append("\n");
             sb.Append("  PaymentType: ").Append(PaymentType).Append("\n");
             sb.Append("  PaymentCategory: ").Append(PaymentCategory).Append("\n");
             sb.Append("  TransactionEntitySplitResponses: ").Append(TransactionEntitySplitResponses).Append("\n");
+            sb.Append("  PaymentDescription: ").Append(PaymentDescription).Append("\n");
+            sb.Append("  RefundTransactions: ").Append(RefundTransactions).Append("\n");
+            sb.Append("  ChargebackTargetAccount: ").Append(ChargebackTargetAccount).Append("\n");
+            sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("  UserName: ").Append(UserName).Append("\n");
             sb.Append("  ChargeBackAmount: ").Append(ChargeBackAmount).Append("\n");
             sb.Append("  SuppressTechnologyFee: ").Append(SuppressTechnologyFee).Append("\n");
             sb.Append("}\n");

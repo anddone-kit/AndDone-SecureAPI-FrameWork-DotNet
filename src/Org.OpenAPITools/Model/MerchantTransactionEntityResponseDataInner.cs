@@ -860,7 +860,6 @@ namespace Org.OpenAPITools.Model
         /// <param name="isDebit">isDebit.</param>
         /// <param name="referenceTransactionId">referenceTransactionId.</param>
         /// <param name="referenceCustomerId">referenceCustomerId.</param>
-        /// <param name="customerAccountId">customerAccountId.</param>
         /// <param name="recurringId">recurringId.</param>
         /// <param name="batchId">batchId.</param>
         /// <param name="transactionStatus">transactionStatus.</param>
@@ -876,11 +875,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="accountCategory">accountCategory.</param>
         /// <param name="trainingMode">trainingMode.</param>
         /// <param name="amount">amount.</param>
-        /// <param name="tipAmount">tipAmount.</param>
         /// <param name="convenienceAmount">convenienceAmount.</param>
         /// <param name="captureAmount">captureAmount.</param>
-        /// <param name="taxPercent">taxPercent.</param>
-        /// <param name="taxAmount">taxAmount.</param>
         /// <param name="cardType">cardType.</param>
         /// <param name="createdOn">createdOn.</param>
         /// <param name="createdBy">createdBy.</param>
@@ -894,6 +890,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentLinkId">paymentLinkId.</param>
         /// <param name="referenceNo">referenceNo.</param>
         /// <param name="processorName">processorName.</param>
+        /// <param name="processorDisplayName">processorDisplayName.</param>
         /// <param name="verification2Code">verification2Code.</param>
         /// <param name="transactionOrigin">transactionOrigin.</param>
         /// <param name="previousTransactionStatus">previousTransactionStatus.</param>
@@ -909,12 +906,15 @@ namespace Org.OpenAPITools.Model
         /// <param name="commissionType">commissionType.</param>
         /// <param name="commissionValue">commissionValue.</param>
         /// <param name="commissionFixedValue">commissionFixedValue.</param>
+        /// <param name="accountToken">accountToken.</param>
         /// <param name="paymentType">paymentType.</param>
         /// <param name="paymentCategory">paymentCategory.</param>
+        /// <param name="refundReason">refundReason.</param>
+        /// <param name="refundDetail">refundDetail.</param>
         /// <param name="fullAccountNumber">fullAccountNumber.</param>
         /// <param name="refundType">refundType.</param>
         /// <param name="suppressTechnologyFee">suppressTechnologyFee.</param>
-        public MerchantTransactionEntityResponseDataInner(string transactionId = default(string), string merchantId = default(string), string ipAddress = default(string), string transactionDate = default(string), OperationTypeEnum? operationType = default(OperationTypeEnum?), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), bool isDebit = default(bool), string referenceTransactionId = default(string), string referenceCustomerId = default(string), string customerAccountId = default(string), string recurringId = default(string), string batchId = default(string), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), string settlementDate = default(string), string authCode = default(string), string cardNumber = default(string), string accountNumber = default(string), string binNumber = default(string), string chequeNumber = default(string), string routingNumber = default(string), string nameOnCheckOrCard = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), bool trainingMode = default(bool), decimal amount = default(decimal), decimal tipAmount = default(decimal), decimal convenienceAmount = default(decimal), decimal captureAmount = default(decimal), decimal taxPercent = default(decimal), decimal taxAmount = default(decimal), string cardType = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string customerName = default(string), string partnerId = default(string), string partnerName = default(string), string orderId = default(string), string invoiceId = default(string), string paymentLinkId = default(string), string referenceNo = default(string), string processorName = default(string), string verification2Code = default(string), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), PreviousTransactionStatusEnum? previousTransactionStatus = default(PreviousTransactionStatusEnum?), string traceNumber = default(string), string merchantReference = default(string), string additionaFields = default(string), decimal adjustmentValue = default(decimal), decimal adjustmentFixedValue = default(decimal), decimal adjustmentAmount = default(decimal), string adjustmentDisplayName = default(string), string adjustmentDescriptorMessage = default(string), PaymentAdjustmentTypeEnum? paymentAdjustmentType = default(PaymentAdjustmentTypeEnum?), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), decimal commissionValue = default(decimal), decimal commissionFixedValue = default(decimal), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), string fullAccountNumber = default(string), RefundTypeEnum? refundType = default(RefundTypeEnum?), bool suppressTechnologyFee = default(bool))
+        public MerchantTransactionEntityResponseDataInner(string transactionId = default(string), string merchantId = default(string), string ipAddress = default(string), string transactionDate = default(string), OperationTypeEnum? operationType = default(OperationTypeEnum?), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), bool isDebit = default(bool), string referenceTransactionId = default(string), string referenceCustomerId = default(string), string recurringId = default(string), float batchId = default(float), TransactionStatusEnum? transactionStatus = default(TransactionStatusEnum?), string settlementDate = default(string), string authCode = default(string), string cardNumber = default(string), string accountNumber = default(string), string binNumber = default(string), string chequeNumber = default(string), string routingNumber = default(string), string nameOnCheckOrCard = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), bool trainingMode = default(bool), float amount = default(float), float convenienceAmount = default(float), float captureAmount = default(float), string cardType = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string customerName = default(string), string partnerId = default(string), string partnerName = default(string), string orderId = default(string), string invoiceId = default(string), string paymentLinkId = default(string), string referenceNo = default(string), string processorName = default(string), string processorDisplayName = default(string), string verification2Code = default(string), TransactionOriginEnum? transactionOrigin = default(TransactionOriginEnum?), PreviousTransactionStatusEnum? previousTransactionStatus = default(PreviousTransactionStatusEnum?), string traceNumber = default(string), string merchantReference = default(string), string additionaFields = default(string), float adjustmentValue = default(float), float adjustmentFixedValue = default(float), float adjustmentAmount = default(float), string adjustmentDisplayName = default(string), string adjustmentDescriptorMessage = default(string), PaymentAdjustmentTypeEnum? paymentAdjustmentType = default(PaymentAdjustmentTypeEnum?), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), float commissionValue = default(float), float commissionFixedValue = default(float), string accountToken = default(string), PaymentTypeEnum? paymentType = default(PaymentTypeEnum?), PaymentCategoryEnum? paymentCategory = default(PaymentCategoryEnum?), string refundReason = default(string), string refundDetail = default(string), string fullAccountNumber = default(string), RefundTypeEnum? refundType = default(RefundTypeEnum?), bool suppressTechnologyFee = default(bool))
         {
             this.TransactionId = transactionId;
             this.MerchantId = merchantId;
@@ -926,7 +926,6 @@ namespace Org.OpenAPITools.Model
             this.IsDebit = isDebit;
             this.ReferenceTransactionId = referenceTransactionId;
             this.ReferenceCustomerId = referenceCustomerId;
-            this.CustomerAccountId = customerAccountId;
             this.RecurringId = recurringId;
             this.BatchId = batchId;
             this.TransactionStatus = transactionStatus;
@@ -942,11 +941,8 @@ namespace Org.OpenAPITools.Model
             this.AccountCategory = accountCategory;
             this.TrainingMode = trainingMode;
             this.Amount = amount;
-            this.TipAmount = tipAmount;
             this.ConvenienceAmount = convenienceAmount;
             this.CaptureAmount = captureAmount;
-            this.TaxPercent = taxPercent;
-            this.TaxAmount = taxAmount;
             this.CardType = cardType;
             this.CreatedOn = createdOn;
             this.CreatedBy = createdBy;
@@ -960,6 +956,7 @@ namespace Org.OpenAPITools.Model
             this.PaymentLinkId = paymentLinkId;
             this.ReferenceNo = referenceNo;
             this.ProcessorName = processorName;
+            this.ProcessorDisplayName = processorDisplayName;
             this.Verification2Code = verification2Code;
             this.TransactionOrigin = transactionOrigin;
             this.PreviousTransactionStatus = previousTransactionStatus;
@@ -975,8 +972,11 @@ namespace Org.OpenAPITools.Model
             this.CommissionType = commissionType;
             this.CommissionValue = commissionValue;
             this.CommissionFixedValue = commissionFixedValue;
+            this.AccountToken = accountToken;
             this.PaymentType = paymentType;
             this.PaymentCategory = paymentCategory;
+            this.RefundReason = refundReason;
+            this.RefundDetail = refundDetail;
             this.FullAccountNumber = fullAccountNumber;
             this.RefundType = refundType;
             this.SuppressTechnologyFee = suppressTechnologyFee;
@@ -1025,12 +1025,6 @@ namespace Org.OpenAPITools.Model
         public string ReferenceCustomerId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomerAccountId
-        /// </summary>
-        [DataMember(Name = "customerAccountId", EmitDefaultValue = false)]
-        public string CustomerAccountId { get; set; }
-
-        /// <summary>
         /// Gets or Sets RecurringId
         /// </summary>
         [DataMember(Name = "recurringId", EmitDefaultValue = false)]
@@ -1040,7 +1034,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets BatchId
         /// </summary>
         [DataMember(Name = "batchId", EmitDefaultValue = false)]
-        public string BatchId { get; set; }
+        public float BatchId { get; set; }
 
         /// <summary>
         /// Gets or Sets SettlementDate
@@ -1106,37 +1100,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TipAmount
-        /// </summary>
-        [DataMember(Name = "tipAmount", EmitDefaultValue = false)]
-        public decimal TipAmount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvenienceAmount
         /// </summary>
         [DataMember(Name = "convenienceAmount", EmitDefaultValue = false)]
-        public decimal ConvenienceAmount { get; set; }
+        public float ConvenienceAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets CaptureAmount
         /// </summary>
         [DataMember(Name = "captureAmount", EmitDefaultValue = false)]
-        public decimal CaptureAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxPercent
-        /// </summary>
-        [DataMember(Name = "taxPercent", EmitDefaultValue = false)]
-        public decimal TaxPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxAmount
-        /// </summary>
-        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
-        public decimal TaxAmount { get; set; }
+        public float CaptureAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets CardType
@@ -1217,6 +1193,12 @@ namespace Org.OpenAPITools.Model
         public string ProcessorName { get; set; }
 
         /// <summary>
+        /// Gets or Sets ProcessorDisplayName
+        /// </summary>
+        [DataMember(Name = "processorDisplayName", EmitDefaultValue = false)]
+        public string ProcessorDisplayName { get; set; }
+
+        /// <summary>
         /// Gets or Sets Verification2Code
         /// </summary>
         [DataMember(Name = "verification2Code", EmitDefaultValue = false)]
@@ -1244,19 +1226,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets AdjustmentValue
         /// </summary>
         [DataMember(Name = "adjustmentValue", EmitDefaultValue = false)]
-        public decimal AdjustmentValue { get; set; }
+        public float AdjustmentValue { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentFixedValue
         /// </summary>
         [DataMember(Name = "adjustmentFixedValue", EmitDefaultValue = false)]
-        public decimal AdjustmentFixedValue { get; set; }
+        public float AdjustmentFixedValue { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentAmount
         /// </summary>
         [DataMember(Name = "adjustmentAmount", EmitDefaultValue = false)]
-        public decimal AdjustmentAmount { get; set; }
+        public float AdjustmentAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentDisplayName
@@ -1274,13 +1256,31 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets CommissionValue
         /// </summary>
         [DataMember(Name = "commissionValue", EmitDefaultValue = false)]
-        public decimal CommissionValue { get; set; }
+        public float CommissionValue { get; set; }
 
         /// <summary>
         /// Gets or Sets CommissionFixedValue
         /// </summary>
         [DataMember(Name = "commissionFixedValue", EmitDefaultValue = false)]
-        public decimal CommissionFixedValue { get; set; }
+        public float CommissionFixedValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountToken
+        /// </summary>
+        [DataMember(Name = "accountToken", EmitDefaultValue = false)]
+        public string AccountToken { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefundReason
+        /// </summary>
+        [DataMember(Name = "refundReason", EmitDefaultValue = false)]
+        public string RefundReason { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefundDetail
+        /// </summary>
+        [DataMember(Name = "refundDetail", EmitDefaultValue = false)]
+        public string RefundDetail { get; set; }
 
         /// <summary>
         /// Gets or Sets FullAccountNumber
@@ -1312,7 +1312,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  IsDebit: ").Append(IsDebit).Append("\n");
             sb.Append("  ReferenceTransactionId: ").Append(ReferenceTransactionId).Append("\n");
             sb.Append("  ReferenceCustomerId: ").Append(ReferenceCustomerId).Append("\n");
-            sb.Append("  CustomerAccountId: ").Append(CustomerAccountId).Append("\n");
             sb.Append("  RecurringId: ").Append(RecurringId).Append("\n");
             sb.Append("  BatchId: ").Append(BatchId).Append("\n");
             sb.Append("  TransactionStatus: ").Append(TransactionStatus).Append("\n");
@@ -1328,11 +1327,8 @@ namespace Org.OpenAPITools.Model
             sb.Append("  AccountCategory: ").Append(AccountCategory).Append("\n");
             sb.Append("  TrainingMode: ").Append(TrainingMode).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  TipAmount: ").Append(TipAmount).Append("\n");
             sb.Append("  ConvenienceAmount: ").Append(ConvenienceAmount).Append("\n");
             sb.Append("  CaptureAmount: ").Append(CaptureAmount).Append("\n");
-            sb.Append("  TaxPercent: ").Append(TaxPercent).Append("\n");
-            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
             sb.Append("  CardType: ").Append(CardType).Append("\n");
             sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
             sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
@@ -1346,6 +1342,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  PaymentLinkId: ").Append(PaymentLinkId).Append("\n");
             sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
             sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
+            sb.Append("  ProcessorDisplayName: ").Append(ProcessorDisplayName).Append("\n");
             sb.Append("  Verification2Code: ").Append(Verification2Code).Append("\n");
             sb.Append("  TransactionOrigin: ").Append(TransactionOrigin).Append("\n");
             sb.Append("  PreviousTransactionStatus: ").Append(PreviousTransactionStatus).Append("\n");
@@ -1361,8 +1358,11 @@ namespace Org.OpenAPITools.Model
             sb.Append("  CommissionType: ").Append(CommissionType).Append("\n");
             sb.Append("  CommissionValue: ").Append(CommissionValue).Append("\n");
             sb.Append("  CommissionFixedValue: ").Append(CommissionFixedValue).Append("\n");
+            sb.Append("  AccountToken: ").Append(AccountToken).Append("\n");
             sb.Append("  PaymentType: ").Append(PaymentType).Append("\n");
             sb.Append("  PaymentCategory: ").Append(PaymentCategory).Append("\n");
+            sb.Append("  RefundReason: ").Append(RefundReason).Append("\n");
+            sb.Append("  RefundDetail: ").Append(RefundDetail).Append("\n");
             sb.Append("  FullAccountNumber: ").Append(FullAccountNumber).Append("\n");
             sb.Append("  RefundType: ").Append(RefundType).Append("\n");
             sb.Append("  SuppressTechnologyFee: ").Append(SuppressTechnologyFee).Append("\n");

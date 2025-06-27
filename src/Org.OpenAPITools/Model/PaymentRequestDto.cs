@@ -38,46 +38,61 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 
         /// <summary>
         /// Gets or Sets PaymentMethod
         /// </summary>
-        [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
-        public PaymentMethodEnum? PaymentMethod { get; set; }
+        [DataMember(Name = "paymentMethod", IsRequired = true, EmitDefaultValue = true)]
+        public PaymentMethodEnum PaymentMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentRequestDto" /> class.
         /// </summary>
-        /// <param name="vendorId">vendorId.</param>
-        /// <param name="paymentMethod">paymentMethod.</param>
-        /// <param name="amount">amount.</param>
+        [JsonConstructorAttribute]
+        protected PaymentRequestDto() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentRequestDto" /> class.
+        /// </summary>
+        /// <param name="vendorId">vendorId (required).</param>
+        /// <param name="paymentMethod">paymentMethod (required).</param>
+        /// <param name="amount">amount (required).</param>
         /// <param name="bankDetail">bankDetail.</param>
-        /// <param name="data">data.</param>
-        public PaymentRequestDto(string vendorId = default(string), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), decimal amount = default(decimal), BankDetailDto bankDetail = default(BankDetailDto), PaymentRequestDtoData data = default(PaymentRequestDtoData))
+        /// <param name="data">data (required).</param>
+        public PaymentRequestDto(string vendorId = default(string), PaymentMethodEnum paymentMethod = default(PaymentMethodEnum), float amount = default(float), BankDetailDto bankDetail = default(BankDetailDto), PaymentRequestDtoData data = default(PaymentRequestDtoData))
         {
+            // to ensure "vendorId" is required (not null)
+            if (vendorId == null)
+            {
+                throw new ArgumentNullException("vendorId is a required property for PaymentRequestDto and cannot be null");
+            }
             this.VendorId = vendorId;
             this.PaymentMethod = paymentMethod;
             this.Amount = amount;
-            this.BankDetail = bankDetail;
+            // to ensure "data" is required (not null)
+            if (data == null)
+            {
+                throw new ArgumentNullException("data is a required property for PaymentRequestDto and cannot be null");
+            }
             this.Data = data;
+            this.BankDetail = bankDetail;
         }
 
         /// <summary>
         /// Gets or Sets VendorId
         /// </summary>
-        [DataMember(Name = "vendorId", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorId", IsRequired = true, EmitDefaultValue = true)]
         public string VendorId { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets BankDetail
@@ -88,7 +103,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name = "Data", EmitDefaultValue = false)]
+        [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
         public PaymentRequestDtoData Data { get; set; }
 
         /// <summary>

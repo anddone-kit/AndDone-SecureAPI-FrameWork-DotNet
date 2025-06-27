@@ -34,13 +34,18 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequestPoliciesInner" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected QuoteRequestPoliciesInner() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuoteRequestPoliciesInner" /> class.
+        /// </summary>
         /// <param name="policyID">policyID.</param>
         /// <param name="policyNumber">policyNumber.</param>
-        /// <param name="premium">premium.</param>
+        /// <param name="premium">premium (required).</param>
         /// <param name="fee">fee.</param>
         /// <param name="tax">tax.</param>
-        /// <param name="coverage">coverage.</param>
-        /// <param name="effectiveDate">effectiveDate.</param>
+        /// <param name="coverage">coverage (required).</param>
+        /// <param name="effectiveDate">effectiveDate (required).</param>
         /// <param name="expirationDate">expirationDate.</param>
         /// <param name="term">term.</param>
         /// <param name="minimumEarned">minimumEarned.</param>
@@ -49,18 +54,34 @@ namespace Org.OpenAPITools.Model
         /// <param name="maximumLiability">maximumLiability.</param>
         /// <param name="invoiceNumber">invoiceNumber.</param>
         /// <param name="policyFees">policyFees.</param>
-        /// <param name="company">company.</param>
+        /// <param name="company">company (required).</param>
         /// <param name="ga">ga.</param>
         /// <param name="broker">broker.</param>
-        public QuoteRequestPoliciesInner(int policyID = default(int), int policyNumber = default(int), decimal premium = default(decimal), decimal fee = default(decimal), decimal tax = default(decimal), string coverage = default(string), string effectiveDate = default(string), string expirationDate = default(string), int term = default(int), decimal minimumEarned = default(decimal), decimal minimumEarnedPercent = default(decimal), decimal minimumLiability = default(decimal), decimal maximumLiability = default(decimal), string invoiceNumber = default(string), List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner> policyFees = default(List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner>), QuoteRequestPoliciesInnerCompany company = default(QuoteRequestPoliciesInnerCompany), QuoteRequestPoliciesInnerGa ga = default(QuoteRequestPoliciesInnerGa), QuoteRequestPoliciesInnerGa broker = default(QuoteRequestPoliciesInnerGa))
+        public QuoteRequestPoliciesInner(int policyID = default(int), float policyNumber = default(float), float premium = default(float), float fee = default(float), float tax = default(float), string coverage = default(string), string effectiveDate = default(string), string expirationDate = default(string), int term = default(int), float minimumEarned = default(float), float minimumEarnedPercent = default(float), float minimumLiability = default(float), float maximumLiability = default(float), string invoiceNumber = default(string), List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner> policyFees = default(List<PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner>), QuoteRequestPoliciesInnerCompany company = default(QuoteRequestPoliciesInnerCompany), QuoteRequestPoliciesInnerGa ga = default(QuoteRequestPoliciesInnerGa), QuoteRequestPoliciesInnerGa broker = default(QuoteRequestPoliciesInnerGa))
         {
+            this.Premium = premium;
+            // to ensure "coverage" is required (not null)
+            if (coverage == null)
+            {
+                throw new ArgumentNullException("coverage is a required property for QuoteRequestPoliciesInner and cannot be null");
+            }
+            this.Coverage = coverage;
+            // to ensure "effectiveDate" is required (not null)
+            if (effectiveDate == null)
+            {
+                throw new ArgumentNullException("effectiveDate is a required property for QuoteRequestPoliciesInner and cannot be null");
+            }
+            this.EffectiveDate = effectiveDate;
+            // to ensure "company" is required (not null)
+            if (company == null)
+            {
+                throw new ArgumentNullException("company is a required property for QuoteRequestPoliciesInner and cannot be null");
+            }
+            this.Company = company;
             this.PolicyID = policyID;
             this.PolicyNumber = policyNumber;
-            this.Premium = premium;
             this.Fee = fee;
             this.Tax = tax;
-            this.Coverage = coverage;
-            this.EffectiveDate = effectiveDate;
             this.ExpirationDate = expirationDate;
             this.Term = term;
             this.MinimumEarned = minimumEarned;
@@ -69,7 +90,6 @@ namespace Org.OpenAPITools.Model
             this.MaximumLiability = maximumLiability;
             this.InvoiceNumber = invoiceNumber;
             this.PolicyFees = policyFees;
-            this.Company = company;
             this.Ga = ga;
             this.Broker = broker;
         }
@@ -84,36 +104,36 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets PolicyNumber
         /// </summary>
         [DataMember(Name = "policyNumber", EmitDefaultValue = false)]
-        public int PolicyNumber { get; set; }
+        public float PolicyNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Premium
         /// </summary>
-        [DataMember(Name = "premium", EmitDefaultValue = false)]
-        public decimal Premium { get; set; }
+        [DataMember(Name = "premium", IsRequired = true, EmitDefaultValue = true)]
+        public float Premium { get; set; }
 
         /// <summary>
         /// Gets or Sets Fee
         /// </summary>
         [DataMember(Name = "fee", EmitDefaultValue = false)]
-        public decimal Fee { get; set; }
+        public float Fee { get; set; }
 
         /// <summary>
         /// Gets or Sets Tax
         /// </summary>
         [DataMember(Name = "tax", EmitDefaultValue = false)]
-        public decimal Tax { get; set; }
+        public float Tax { get; set; }
 
         /// <summary>
         /// Gets or Sets Coverage
         /// </summary>
-        [DataMember(Name = "coverage", EmitDefaultValue = false)]
+        [DataMember(Name = "coverage", IsRequired = true, EmitDefaultValue = true)]
         public string Coverage { get; set; }
 
         /// <summary>
         /// Gets or Sets EffectiveDate
         /// </summary>
-        [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
+        [DataMember(Name = "effectiveDate", IsRequired = true, EmitDefaultValue = true)]
         public string EffectiveDate { get; set; }
 
         /// <summary>
@@ -132,25 +152,25 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets MinimumEarned
         /// </summary>
         [DataMember(Name = "minimumEarned", EmitDefaultValue = false)]
-        public decimal MinimumEarned { get; set; }
+        public float MinimumEarned { get; set; }
 
         /// <summary>
         /// Gets or Sets MinimumEarnedPercent
         /// </summary>
         [DataMember(Name = "minimumEarnedPercent", EmitDefaultValue = false)]
-        public decimal MinimumEarnedPercent { get; set; }
+        public float MinimumEarnedPercent { get; set; }
 
         /// <summary>
         /// Gets or Sets MinimumLiability
         /// </summary>
         [DataMember(Name = "minimumLiability", EmitDefaultValue = false)]
-        public decimal MinimumLiability { get; set; }
+        public float MinimumLiability { get; set; }
 
         /// <summary>
         /// Gets or Sets MaximumLiability
         /// </summary>
         [DataMember(Name = "maximumLiability", EmitDefaultValue = false)]
-        public decimal MaximumLiability { get; set; }
+        public float MaximumLiability { get; set; }
 
         /// <summary>
         /// Gets or Sets InvoiceNumber
@@ -167,13 +187,13 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Company
         /// </summary>
-        [DataMember(Name = "company", EmitDefaultValue = false)]
+        [DataMember(Name = "company", IsRequired = true, EmitDefaultValue = true)]
         public QuoteRequestPoliciesInnerCompany Company { get; set; }
 
         /// <summary>
         /// Gets or Sets Ga
         /// </summary>
-        [DataMember(Name = "Ga", EmitDefaultValue = false)]
+        [DataMember(Name = "ga", EmitDefaultValue = false)]
         public QuoteRequestPoliciesInnerGa Ga { get; set; }
 
         /// <summary>

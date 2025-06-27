@@ -42,9 +42,9 @@ namespace Org.OpenAPITools.Model
         /// <param name="alternatePhone">alternatePhone.</param>
         /// <param name="mobile">mobile.</param>
         /// <param name="email">email.</param>
-        /// <param name="uRL">uRL.</param>
+        /// <param name="url">url.</param>
         /// <param name="address">address.</param>
-        public TransactionPaymentResponseBillingContact(TransactionPaymentResponseBillingContactName name = default(TransactionPaymentResponseBillingContactName), string companyName = default(string), string department = default(string), string fax = default(string), string phone = default(string), string alternatePhone = default(string), string mobile = default(string), string email = default(string), string uRL = default(string), TransactionPaymentResponseBillingContactAddress address = default(TransactionPaymentResponseBillingContactAddress))
+        public TransactionPaymentResponseBillingContact(TransactionPaymentResponseBillingContactName name = default(TransactionPaymentResponseBillingContactName), string companyName = default(string), string department = default(string), string fax = default(string), string phone = default(string), string alternatePhone = default(string), string mobile = default(string), string email = default(string), string url = default(string), TransactionPaymentResponseBillingContactAddress address = default(TransactionPaymentResponseBillingContactAddress))
         {
             this.Name = name;
             this.CompanyName = companyName;
@@ -54,7 +54,7 @@ namespace Org.OpenAPITools.Model
             this.AlternatePhone = alternatePhone;
             this.Mobile = mobile;
             this.Email = email;
-            this.URL = uRL;
+            this.Url = url;
             this.Address = address;
         }
 
@@ -107,10 +107,10 @@ namespace Org.OpenAPITools.Model
         public string Email { get; set; }
 
         /// <summary>
-        /// Gets or Sets URL
+        /// Gets or Sets Url
         /// </summary>
-        [DataMember(Name = "uRL", EmitDefaultValue = false)]
-        public string URL { get; set; }
+        [DataMember(Name = "url", EmitDefaultValue = false)]
+        public string Url { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
@@ -134,7 +134,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  AlternatePhone: ").Append(AlternatePhone).Append("\n");
             sb.Append("  Mobile: ").Append(Mobile).Append("\n");
             sb.Append("  Email: ").Append(Email).Append("\n");
-            sb.Append("  URL: ").Append(URL).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  Address: ").Append(Address).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

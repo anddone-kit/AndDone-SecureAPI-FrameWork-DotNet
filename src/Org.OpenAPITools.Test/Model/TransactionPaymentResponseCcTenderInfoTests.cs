@@ -64,6 +64,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CardType'
+        /// </summary>
+        [Fact]
+        public void CardTypeTest()
+        {
+            // TODO unit test for the property 'CardType'
+        }
+
+        /// <summary>
         /// Test the property 'MaskCardNumber'
         /// </summary>
         [Fact]
@@ -100,39 +109,21 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ConvenienceAmount'
+        /// </summary>
+        [Fact]
+        public void ConvenienceAmountTest()
+        {
+            // TODO unit test for the property 'ConvenienceAmount'
+        }
+
+        /// <summary>
         /// Test the property 'BinNumber'
         /// </summary>
         [Fact]
         public void BinNumberTest()
         {
             // TODO unit test for the property 'BinNumber'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAmount'
-        /// </summary>
-        [Fact]
-        public void TaxAmountTest()
-        {
-            // TODO unit test for the property 'TaxAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAfterDiscount'
-        /// </summary>
-        [Fact]
-        public void TaxAfterDiscountTest()
-        {
-            // TODO unit test for the property 'TaxAfterDiscount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxPercent'
-        /// </summary>
-        [Fact]
-        public void TaxPercentTest()
-        {
-            // TODO unit test for the property 'TaxPercent'
         }
 
         /// <summary>
@@ -235,42 +226,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'DiscountType'
-        /// </summary>
-        [Fact]
-        public void DiscountTypeTest()
-        {
-            // TODO unit test for the property 'DiscountType'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountPercent'
-        /// </summary>
-        [Fact]
-        public void DiscountPercentTest()
-        {
-            // TODO unit test for the property 'DiscountPercent'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountAmount'
-        /// </summary>
-        [Fact]
-        public void DiscountAmountTest()
-        {
-            // TODO unit test for the property 'DiscountAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'ConvenienceAmount'
-        /// </summary>
-        [Fact]
-        public void ConvenienceAmountTest()
-        {
-            // TODO unit test for the property 'ConvenienceAmount'
-        }
-
-        /// <summary>
         /// Test the property 'CommissionType'
         /// </summary>
         [Fact]
@@ -286,6 +241,15 @@ namespace Org.OpenAPITools.Test.Model
         public void CommissionValueTest()
         {
             // TODO unit test for the property 'CommissionValue'
+        }
+
+        /// <summary>
+        /// Test the property 'CommissionFixedValue'
+        /// </summary>
+        [Fact]
+        public void CommissionFixedValueTest()
+        {
+            // TODO unit test for the property 'CommissionFixedValue'
         }
     }
 }

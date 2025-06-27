@@ -38,17 +38,17 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 
         /// <summary>
         /// Gets or Sets PaymentMethod
         /// </summary>
-        [DataMember(Name = "PaymentMethod", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
         public PaymentMethodEnum? PaymentMethod { get; set; }
         /// <summary>
         /// Defines PaymentStatus
@@ -57,47 +57,53 @@ namespace Org.OpenAPITools.Model
         public enum PaymentStatusEnum
         {
             /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
             /// Enum Created for value: Created
             /// </summary>
             [EnumMember(Value = "Created")]
-            Created = 1,
+            Created = 2,
 
             /// <summary>
             /// Enum InProcess for value: InProcess
             /// </summary>
             [EnumMember(Value = "InProcess")]
-            InProcess = 2,
+            InProcess = 3,
 
             /// <summary>
             /// Enum Success for value: Success
             /// </summary>
             [EnumMember(Value = "Success")]
-            Success = 3,
+            Success = 4,
 
             /// <summary>
             /// Enum Cancelled for value: Cancelled
             /// </summary>
             [EnumMember(Value = "Cancelled")]
-            Cancelled = 4,
+            Cancelled = 5,
 
             /// <summary>
             /// Enum Failed for value: Failed
             /// </summary>
             [EnumMember(Value = "Failed")]
-            Failed = 5,
+            Failed = 6,
 
             /// <summary>
             /// Enum CancelRequested for value: CancelRequested
             /// </summary>
             [EnumMember(Value = "CancelRequested")]
-            CancelRequested = 6
+            CancelRequested = 7
         }
 
 
         /// <summary>
         /// Gets or Sets PaymentStatus
         /// </summary>
-        [DataMember(Name = "PaymentStatus", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentStatus", EmitDefaultValue = false)]
         public PaymentStatusEnum? PaymentStatus { get; set; }
         /// <summary>
         /// Defines PaymentMethodStatus
@@ -106,71 +112,83 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodStatusEnum
         {
             /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
             /// Enum Accepted for value: Accepted
             /// </summary>
             [EnumMember(Value = "Accepted")]
-            Accepted = 1,
+            Accepted = 2,
 
             /// <summary>
             /// Enum PrintQueued for value: PrintQueued
             /// </summary>
             [EnumMember(Value = "PrintQueued")]
-            PrintQueued = 2,
+            PrintQueued = 3,
 
             /// <summary>
             /// Enum Printed for value: Printed
             /// </summary>
             [EnumMember(Value = "Printed")]
-            Printed = 3,
+            Printed = 4,
 
             /// <summary>
             /// Enum Mailed for value: Mailed
             /// </summary>
             [EnumMember(Value = "Mailed")]
-            Mailed = 4,
+            Mailed = 5,
 
             /// <summary>
             /// Enum Delivered for value: Delivered
             /// </summary>
             [EnumMember(Value = "Delivered")]
-            Delivered = 5,
+            Delivered = 6,
 
             /// <summary>
             /// Enum Pdf for value: Pdf
             /// </summary>
             [EnumMember(Value = "Pdf")]
-            Pdf = 6,
+            Pdf = 7,
 
             /// <summary>
             /// Enum Cancelled for value: Cancelled
             /// </summary>
             [EnumMember(Value = "Cancelled")]
-            Cancelled = 7,
+            Cancelled = 8,
 
             /// <summary>
             /// Enum Warning for value: Warning
             /// </summary>
             [EnumMember(Value = "Warning")]
-            Warning = 8,
+            Warning = 9,
 
             /// <summary>
             /// Enum Failed for value: Failed
             /// </summary>
             [EnumMember(Value = "Failed")]
-            Failed = 9,
+            Failed = 10,
 
             /// <summary>
             /// Enum Returned for value: Returned
             /// </summary>
             [EnumMember(Value = "Returned")]
-            Returned = 10
+            Returned = 11,
+
+            /// <summary>
+            /// Enum Transit for value: Transit
+            /// </summary>
+            [EnumMember(Value = "Transit")]
+            Transit = 12
         }
 
 
         /// <summary>
         /// Gets or Sets PaymentMethodStatus
         /// </summary>
-        [DataMember(Name = "PaymentMethodStatus", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentMethodStatus", EmitDefaultValue = false)]
         public PaymentMethodStatusEnum? PaymentMethodStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentDetailResponseDTO" /> class.
@@ -188,7 +206,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentStatus">paymentStatus.</param>
         /// <param name="paymentMethodStatus">paymentMethodStatus.</param>
         /// <param name="remittanceData">remittanceData.</param>
-        public PaymentDetailResponseDTO(string merchantId = default(string), string vendorId = default(string), string vendorName = default(string), string merchantDBAName = default(string), string paymentId = default(string), int checkNumber = default(int), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), decimal amount = default(decimal), string bankName = default(string), string bankAccountNumber = default(string), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), PaymentMethodStatusEnum? paymentMethodStatus = default(PaymentMethodStatusEnum?), string remittanceData = default(string))
+        public PaymentDetailResponseDTO(string merchantId = default(string), string vendorId = default(string), string vendorName = default(string), string merchantDBAName = default(string), string paymentId = default(string), float checkNumber = default(float), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), float amount = default(float), string bankName = default(string), string bankAccountNumber = default(string), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), PaymentMethodStatusEnum? paymentMethodStatus = default(PaymentMethodStatusEnum?), string remittanceData = default(string))
         {
             this.MerchantId = merchantId;
             this.VendorId = vendorId;
@@ -208,55 +226,55 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets MerchantId
         /// </summary>
-        [DataMember(Name = "MerchantId", EmitDefaultValue = false)]
+        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
         public string MerchantId { get; set; }
 
         /// <summary>
         /// Gets or Sets VendorId
         /// </summary>
-        [DataMember(Name = "VendorId", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorId", EmitDefaultValue = false)]
         public string VendorId { get; set; }
 
         /// <summary>
         /// Gets or Sets VendorName
         /// </summary>
-        [DataMember(Name = "VendorName", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorName", EmitDefaultValue = false)]
         public string VendorName { get; set; }
 
         /// <summary>
         /// Gets or Sets MerchantDBAName
         /// </summary>
-        [DataMember(Name = "MerchantDBAName", EmitDefaultValue = false)]
+        [DataMember(Name = "merchantDBAName", EmitDefaultValue = false)]
         public string MerchantDBAName { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentId
         /// </summary>
-        [DataMember(Name = "PaymentId", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentId", EmitDefaultValue = false)]
         public string PaymentId { get; set; }
 
         /// <summary>
         /// Gets or Sets CheckNumber
         /// </summary>
-        [DataMember(Name = "CheckNumber", EmitDefaultValue = false)]
-        public int CheckNumber { get; set; }
+        [DataMember(Name = "checkNumber", EmitDefaultValue = false)]
+        public float CheckNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name = "Amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        [DataMember(Name = "amount", EmitDefaultValue = false)]
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets BankName
         /// </summary>
-        [DataMember(Name = "BankName", EmitDefaultValue = false)]
+        [DataMember(Name = "bankName", EmitDefaultValue = false)]
         public string BankName { get; set; }
 
         /// <summary>
         /// Gets or Sets BankAccountNumber
         /// </summary>
-        [DataMember(Name = "BankAccountNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "bankAccountNumber", EmitDefaultValue = false)]
         public string BankAccountNumber { get; set; }
 
         /// <summary>

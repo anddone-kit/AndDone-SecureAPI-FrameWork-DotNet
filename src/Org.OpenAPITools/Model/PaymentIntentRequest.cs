@@ -72,8 +72,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets AdditionalDetailsPreference
         /// </summary>
-        [DataMember(Name = "additionalDetailsPreference", EmitDefaultValue = false)]
-        public AdditionalDetailsPreferenceEnum? AdditionalDetailsPreference { get; set; }
+        [DataMember(Name = "additionalDetailsPreference", IsRequired = true, EmitDefaultValue = true)]
+        public AdditionalDetailsPreferenceEnum AdditionalDetailsPreference { get; set; }
         /// <summary>
         /// Defines ReferenceType
         /// </summary>
@@ -124,27 +124,211 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "referenceType", EmitDefaultValue = false)]
         public ReferenceTypeEnum? ReferenceType { get; set; }
         /// <summary>
+        /// Defines DisplayMode
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DisplayModeEnum
+        {
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum PremiumFinanceOnly for value: PremiumFinanceOnly
+            /// </summary>
+            [EnumMember(Value = "PremiumFinanceOnly")]
+            PremiumFinanceOnly = 2,
+
+            /// <summary>
+            /// Enum Both for value: Both
+            /// </summary>
+            [EnumMember(Value = "Both")]
+            Both = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets DisplayMode
+        /// </summary>
+        [DataMember(Name = "displayMode", EmitDefaultValue = false)]
+        public DisplayModeEnum? DisplayMode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentIntentRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected PaymentIntentRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentIntentRequest" /> class.
+        /// </summary>
+        /// <param name="title">title (required).</param>
+        /// <param name="amount">amount (required).</param>
+        /// <param name="invoiceNumber">invoiceNumber.</param>
+        /// <param name="expiresIn">expiresIn.</param>
+        /// <param name="shortDescription">shortDescription.</param>
+        /// <param name="paymentDescription">paymentDescription.</param>
+        /// <param name="merchantToken">merchantToken.</param>
+        /// <param name="intent">intent (required).</param>
+        /// <param name="saveForFuture">saveForFuture.</param>
+        /// <param name="enablePremiumFinance">enablePremiumFinance.</param>
+        /// <param name="splits">splits.</param>
+        /// <param name="quoteKey">quoteKey.</param>
+        /// <param name="accountNumber">accountNumber.</param>
+        /// <param name="suppressTechnologyFee">suppressTechnologyFee.</param>
+        /// <param name="overrideTechnologyFee">overrideTechnologyFee.</param>
+        /// <param name="isPremiumFinancier">isPremiumFinancier.</param>
+        /// <param name="pfr">pfr.</param>
         /// <param name="saveCustomer">saveCustomer.</param>
         /// <param name="customers">customers.</param>
-        /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
+        /// <param name="additionalDetailsPreference">additionalDetailsPreference (required).</param>
         /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
-        /// <param name="referenceDataList">referenceDataList.</param>
         /// <param name="referenceType">referenceType.</param>
         /// <param name="referenceNumber">referenceNumber.</param>
         /// <param name="referenceKey">referenceKey.</param>
-        public PaymentIntentRequest(bool saveCustomer = default(bool), List<PaymentIntentRequestCustomersInner> customers = default(List<PaymentIntentRequestCustomersInner>), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), string selectedCustomerFields = default(string), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>), ReferenceTypeEnum? referenceType = default(ReferenceTypeEnum?), string referenceNumber = default(string), string referenceKey = default(string))
+        /// <param name="referenceDataList">referenceDataList.</param>
+        /// <param name="displayMode">displayMode.</param>
+        public PaymentIntentRequest(string title = default(string), float amount = default(float), string invoiceNumber = default(string), string expiresIn = default(string), string shortDescription = default(string), string paymentDescription = default(string), string merchantToken = default(string), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent), bool saveForFuture = default(bool), bool enablePremiumFinance = default(bool), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>), string quoteKey = default(string), string accountNumber = default(string), bool suppressTechnologyFee = default(bool), float overrideTechnologyFee = default(float), bool isPremiumFinancier = default(bool), PaymentIntentRequestPfr pfr = default(PaymentIntentRequestPfr), bool saveCustomer = default(bool), List<PaymentIntentRequestCustomersInner> customers = default(List<PaymentIntentRequestCustomersInner>), AdditionalDetailsPreferenceEnum additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum), string selectedCustomerFields = default(string), ReferenceTypeEnum? referenceType = default(ReferenceTypeEnum?), string referenceNumber = default(string), string referenceKey = default(string), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>), DisplayModeEnum? displayMode = default(DisplayModeEnum?))
         {
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for PaymentIntentRequest and cannot be null");
+            }
+            this.Title = title;
+            this.Amount = amount;
+            // to ensure "intent" is required (not null)
+            if (intent == null)
+            {
+                throw new ArgumentNullException("intent is a required property for PaymentIntentRequest and cannot be null");
+            }
+            this.Intent = intent;
+            this.AdditionalDetailsPreference = additionalDetailsPreference;
+            this.InvoiceNumber = invoiceNumber;
+            this.ExpiresIn = expiresIn;
+            this.ShortDescription = shortDescription;
+            this.PaymentDescription = paymentDescription;
+            this.MerchantToken = merchantToken;
+            this.SaveForFuture = saveForFuture;
+            this.EnablePremiumFinance = enablePremiumFinance;
+            this.Splits = splits;
+            this.QuoteKey = quoteKey;
+            this.AccountNumber = accountNumber;
+            this.SuppressTechnologyFee = suppressTechnologyFee;
+            this.OverrideTechnologyFee = overrideTechnologyFee;
+            this.IsPremiumFinancier = isPremiumFinancier;
+            this.Pfr = pfr;
             this.SaveCustomer = saveCustomer;
             this.Customers = customers;
-            this.AdditionalDetailsPreference = additionalDetailsPreference;
             this.SelectedCustomerFields = selectedCustomerFields;
-            this.ReferenceDataList = referenceDataList;
             this.ReferenceType = referenceType;
             this.ReferenceNumber = referenceNumber;
             this.ReferenceKey = referenceKey;
+            this.ReferenceDataList = referenceDataList;
+            this.DisplayMode = displayMode;
         }
+
+        /// <summary>
+        /// Gets or Sets Title
+        /// </summary>
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Amount
+        /// </summary>
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
+        public float Amount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets InvoiceNumber
+        /// </summary>
+        [DataMember(Name = "invoiceNumber", EmitDefaultValue = false)]
+        public string InvoiceNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExpiresIn
+        /// </summary>
+        [DataMember(Name = "expiresIn", EmitDefaultValue = false)]
+        public string ExpiresIn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShortDescription
+        /// </summary>
+        [DataMember(Name = "shortDescription", EmitDefaultValue = false)]
+        public string ShortDescription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PaymentDescription
+        /// </summary>
+        [DataMember(Name = "paymentDescription", EmitDefaultValue = false)]
+        public string PaymentDescription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MerchantToken
+        /// </summary>
+        [DataMember(Name = "merchantToken", EmitDefaultValue = false)]
+        public string MerchantToken { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Intent
+        /// </summary>
+        [DataMember(Name = "intent", IsRequired = true, EmitDefaultValue = true)]
+        public PaymentIntentRequestIntent Intent { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SaveForFuture
+        /// </summary>
+        [DataMember(Name = "saveForFuture", EmitDefaultValue = true)]
+        public bool SaveForFuture { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EnablePremiumFinance
+        /// </summary>
+        [DataMember(Name = "enablePremiumFinance", EmitDefaultValue = true)]
+        public bool EnablePremiumFinance { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Splits
+        /// </summary>
+        [DataMember(Name = "splits", EmitDefaultValue = false)]
+        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
+
+        /// <summary>
+        /// Gets or Sets QuoteKey
+        /// </summary>
+        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
+        public string QuoteKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountNumber
+        /// </summary>
+        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
+        public string AccountNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SuppressTechnologyFee
+        /// </summary>
+        [DataMember(Name = "suppressTechnologyFee", EmitDefaultValue = true)]
+        public bool SuppressTechnologyFee { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OverrideTechnologyFee
+        /// </summary>
+        [DataMember(Name = "overrideTechnologyFee", EmitDefaultValue = false)]
+        public float OverrideTechnologyFee { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsPremiumFinancier
+        /// </summary>
+        [DataMember(Name = "isPremiumFinancier", EmitDefaultValue = true)]
+        public bool IsPremiumFinancier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pfr
+        /// </summary>
+        [DataMember(Name = "pfr", EmitDefaultValue = false)]
+        public PaymentIntentRequestPfr Pfr { get; set; }
 
         /// <summary>
         /// Gets or Sets SaveCustomer
@@ -165,12 +349,6 @@ namespace Org.OpenAPITools.Model
         public string SelectedCustomerFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceDataList
-        /// </summary>
-        [DataMember(Name = "referenceDataList", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestReferenceDataListInner> ReferenceDataList { get; set; }
-
-        /// <summary>
         /// Gets or Sets ReferenceNumber
         /// </summary>
         [DataMember(Name = "referenceNumber", EmitDefaultValue = false)]
@@ -183,6 +361,12 @@ namespace Org.OpenAPITools.Model
         public string ReferenceKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets ReferenceDataList
+        /// </summary>
+        [DataMember(Name = "referenceDataList", EmitDefaultValue = false)]
+        public List<PaymentIntentRequestReferenceDataListInner> ReferenceDataList { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -190,14 +374,32 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentIntentRequest {\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  InvoiceNumber: ").Append(InvoiceNumber).Append("\n");
+            sb.Append("  ExpiresIn: ").Append(ExpiresIn).Append("\n");
+            sb.Append("  ShortDescription: ").Append(ShortDescription).Append("\n");
+            sb.Append("  PaymentDescription: ").Append(PaymentDescription).Append("\n");
+            sb.Append("  MerchantToken: ").Append(MerchantToken).Append("\n");
+            sb.Append("  Intent: ").Append(Intent).Append("\n");
+            sb.Append("  SaveForFuture: ").Append(SaveForFuture).Append("\n");
+            sb.Append("  EnablePremiumFinance: ").Append(EnablePremiumFinance).Append("\n");
+            sb.Append("  Splits: ").Append(Splits).Append("\n");
+            sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
+            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
+            sb.Append("  SuppressTechnologyFee: ").Append(SuppressTechnologyFee).Append("\n");
+            sb.Append("  OverrideTechnologyFee: ").Append(OverrideTechnologyFee).Append("\n");
+            sb.Append("  IsPremiumFinancier: ").Append(IsPremiumFinancier).Append("\n");
+            sb.Append("  Pfr: ").Append(Pfr).Append("\n");
             sb.Append("  SaveCustomer: ").Append(SaveCustomer).Append("\n");
             sb.Append("  Customers: ").Append(Customers).Append("\n");
             sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
             sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
-            sb.Append("  ReferenceDataList: ").Append(ReferenceDataList).Append("\n");
             sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
             sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
             sb.Append("  ReferenceKey: ").Append(ReferenceKey).Append("\n");
+            sb.Append("  ReferenceDataList: ").Append(ReferenceDataList).Append("\n");
+            sb.Append("  DisplayMode: ").Append(DisplayMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

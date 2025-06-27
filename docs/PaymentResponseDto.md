@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **PaymentStatus** | **string** |  | [optional] 
 **PaymentMethodStatus** | **string** |  | [optional] 
 **PaymentMethod** | **string** |  | [optional] 
-**Amount** | **decimal** |  | [optional] 
+**Amount** | **float** |  | [optional] 
 **Data** | [**DataDto**](DataDto.md) |  | [optional] 
 **BankAccountDetails** | **string** | JSON-encoded string containing bank account details | [optional] 
 **VendorAddress** | **string** | JSON-encoded string containing vendor address | [optional] 

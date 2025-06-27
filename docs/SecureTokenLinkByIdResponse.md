@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ModifiedBy** | **string** |  | [optional] 
 **TokenLinkStatus** | **string** |  | [optional] 
 **AccountToken** | [**SecureTokenLinkByIdResponseAccountToken**](SecureTokenLinkByIdResponseAccountToken.md) |  | [optional] 
-**Intent** | [**SecureTokenLinkByIdResponseIntent**](SecureTokenLinkByIdResponseIntent.md) |  | [optional] 
+**Intent** | [**PFEndorsementResponseItemPaymentIntentIntent**](PFEndorsementResponseItemPaymentIntentIntent.md) |  | [optional] 
 **Customers** | [**List&lt;SecureTokenLinkResponseCustomersInner&gt;**](SecureTokenLinkResponseCustomersInner.md) |  | [optional] 
 **TimeLine** | [**List&lt;SecureTokenLinkByIdResponseTimeLineInner&gt;**](SecureTokenLinkByIdResponseTimeLineInner.md) |  | [optional] 
 

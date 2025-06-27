@@ -38,42 +38,54 @@ namespace Org.OpenAPITools.Model
         public enum LegalEntityTypeEnum
         {
             /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
             /// Enum Corporation for value: Corporation
             /// </summary>
             [EnumMember(Value = "Corporation")]
-            Corporation = 1,
+            Corporation = 2,
 
             /// <summary>
             /// Enum LimitedLiabilityCompany for value: LimitedLiabilityCompany
             /// </summary>
             [EnumMember(Value = "LimitedLiabilityCompany")]
-            LimitedLiabilityCompany = 2,
+            LimitedLiabilityCompany = 3,
 
             /// <summary>
             /// Enum LimitedLiabilityPartnership for value: LimitedLiabilityPartnership
             /// </summary>
             [EnumMember(Value = "LimitedLiabilityPartnership")]
-            LimitedLiabilityPartnership = 3,
+            LimitedLiabilityPartnership = 4,
 
             /// <summary>
             /// Enum LimitedPartnership for value: LimitedPartnership
             /// </summary>
             [EnumMember(Value = "LimitedPartnership")]
-            LimitedPartnership = 4,
+            LimitedPartnership = 5,
 
             /// <summary>
             /// Enum Partnership for value: Partnership
             /// </summary>
             [EnumMember(Value = "Partnership")]
-            Partnership = 5
+            Partnership = 6,
+
+            /// <summary>
+            /// Enum Individual for value: Individual
+            /// </summary>
+            [EnumMember(Value = "Individual")]
+            Individual = 7
         }
 
 
         /// <summary>
         /// Gets or Sets LegalEntityType
         /// </summary>
-        [DataMember(Name = "legalEntityType", EmitDefaultValue = false)]
-        public LegalEntityTypeEnum? LegalEntityType { get; set; }
+        [DataMember(Name = "legalEntityType", IsRequired = true, EmitDefaultValue = true)]
+        public LegalEntityTypeEnum LegalEntityType { get; set; }
         /// <summary>
         /// Defines PaymentMethodType
         /// </summary>
@@ -81,18 +93,18 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodTypeEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 
         /// <summary>
         /// Gets or Sets PaymentMethodType
         /// </summary>
-        [DataMember(Name = "paymentMethodType", EmitDefaultValue = false)]
-        public PaymentMethodTypeEnum? PaymentMethodType { get; set; }
+        [DataMember(Name = "paymentMethodType", IsRequired = true, EmitDefaultValue = true)]
+        public PaymentMethodTypeEnum PaymentMethodType { get; set; }
         /// <summary>
         /// Defines NotificationType
         /// </summary>
@@ -106,63 +118,87 @@ namespace Org.OpenAPITools.Model
             NA = 1,
 
             /// <summary>
-            /// Enum Fax for value: Fax
+            /// Enum Email for value: Email
             /// </summary>
-            [EnumMember(Value = "Fax")]
-            Fax = 2,
-
-            /// <summary>
-            /// Enum Email for value: email
-            /// </summary>
-            [EnumMember(Value = "email")]
-            Email = 3
+            [EnumMember(Value = "Email")]
+            Email = 2
         }
 
 
         /// <summary>
         /// Gets or Sets NotificationType
         /// </summary>
-        [DataMember(Name = "notificationType", EmitDefaultValue = false)]
-        public NotificationTypeEnum? NotificationType { get; set; }
+        [DataMember(Name = "notificationType", IsRequired = true, EmitDefaultValue = true)]
+        public NotificationTypeEnum NotificationType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="VendorRequestDTO" /> class.
         /// </summary>
-        /// <param name="vendorName">vendorName.</param>
+        [JsonConstructorAttribute]
+        protected VendorRequestDTO() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VendorRequestDTO" /> class.
+        /// </summary>
+        /// <param name="vendorName">vendorName (required).</param>
         /// <param name="vendorAliasName">vendorAliasName.</param>
-        /// <param name="vendorDbName">Database name of the vendor.</param>
-        /// <param name="legalEntityType">legalEntityType.</param>
-        /// <param name="paymentMethodType">paymentMethodType.</param>
-        /// <param name="notificationType">notificationType.</param>
+        /// <param name="vendorDbName">Database name of the vendor (required).</param>
+        /// <param name="legalEntityType">legalEntityType (required).</param>
+        /// <param name="paymentMethodType">paymentMethodType (required).</param>
+        /// <param name="notificationType">notificationType (required).</param>
         /// <param name="vendorNotes">vendorNotes.</param>
-        /// <param name="phoneNumber">phoneNumber.</param>
+        /// <param name="phoneNumber">phoneNumber (required).</param>
         /// <param name="isMobileNumber">isMobileNumber.</param>
         /// <param name="useSameAsPhysicalAddress">useSameAsPhysicalAddress.</param>
-        /// <param name="email">email.</param>
+        /// <param name="email">email (required).</param>
         /// <param name="url">url.</param>
         /// <param name="remittanceAddress">remittanceAddress.</param>
-        /// <param name="physicalAddress">physicalAddress.</param>
-        public VendorRequestDTO(string vendorName = default(string), string vendorAliasName = default(string), string vendorDbName = default(string), LegalEntityTypeEnum? legalEntityType = default(LegalEntityTypeEnum?), PaymentMethodTypeEnum? paymentMethodType = default(PaymentMethodTypeEnum?), NotificationTypeEnum? notificationType = default(NotificationTypeEnum?), string vendorNotes = default(string), string phoneNumber = default(string), bool isMobileNumber = default(bool), bool useSameAsPhysicalAddress = default(bool), string email = default(string), string url = default(string), VendorRequestDTORemittanceAddress remittanceAddress = default(VendorRequestDTORemittanceAddress), VendorRequestDTORemittanceAddress physicalAddress = default(VendorRequestDTORemittanceAddress))
+        /// <param name="physicalAddress">physicalAddress (required).</param>
+        public VendorRequestDTO(string vendorName = default(string), string vendorAliasName = default(string), string vendorDbName = default(string), LegalEntityTypeEnum legalEntityType = default(LegalEntityTypeEnum), PaymentMethodTypeEnum paymentMethodType = default(PaymentMethodTypeEnum), NotificationTypeEnum notificationType = default(NotificationTypeEnum), string vendorNotes = default(string), string phoneNumber = default(string), bool isMobileNumber = default(bool), bool useSameAsPhysicalAddress = default(bool), string email = default(string), string url = default(string), VendorRequestDTORemittanceAddress remittanceAddress = default(VendorRequestDTORemittanceAddress), VendorRequestDTOPhysicalAddress physicalAddress = default(VendorRequestDTOPhysicalAddress))
         {
+            // to ensure "vendorName" is required (not null)
+            if (vendorName == null)
+            {
+                throw new ArgumentNullException("vendorName is a required property for VendorRequestDTO and cannot be null");
+            }
             this.VendorName = vendorName;
-            this.VendorAliasName = vendorAliasName;
+            // to ensure "vendorDbName" is required (not null)
+            if (vendorDbName == null)
+            {
+                throw new ArgumentNullException("vendorDbName is a required property for VendorRequestDTO and cannot be null");
+            }
             this.VendorDbName = vendorDbName;
             this.LegalEntityType = legalEntityType;
             this.PaymentMethodType = paymentMethodType;
             this.NotificationType = notificationType;
-            this.VendorNotes = vendorNotes;
+            // to ensure "phoneNumber" is required (not null)
+            if (phoneNumber == null)
+            {
+                throw new ArgumentNullException("phoneNumber is a required property for VendorRequestDTO and cannot be null");
+            }
             this.PhoneNumber = phoneNumber;
+            // to ensure "email" is required (not null)
+            if (email == null)
+            {
+                throw new ArgumentNullException("email is a required property for VendorRequestDTO and cannot be null");
+            }
+            this.Email = email;
+            // to ensure "physicalAddress" is required (not null)
+            if (physicalAddress == null)
+            {
+                throw new ArgumentNullException("physicalAddress is a required property for VendorRequestDTO and cannot be null");
+            }
+            this.PhysicalAddress = physicalAddress;
+            this.VendorAliasName = vendorAliasName;
+            this.VendorNotes = vendorNotes;
             this.IsMobileNumber = isMobileNumber;
             this.UseSameAsPhysicalAddress = useSameAsPhysicalAddress;
-            this.Email = email;
             this.Url = url;
             this.RemittanceAddress = remittanceAddress;
-            this.PhysicalAddress = physicalAddress;
         }
 
         /// <summary>
         /// Gets or Sets VendorName
         /// </summary>
-        [DataMember(Name = "vendorName", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorName", IsRequired = true, EmitDefaultValue = true)]
         public string VendorName { get; set; }
 
         /// <summary>
@@ -175,7 +211,7 @@ namespace Org.OpenAPITools.Model
         /// Database name of the vendor
         /// </summary>
         /// <value>Database name of the vendor</value>
-        [DataMember(Name = "vendorDbName", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorDbName", IsRequired = true, EmitDefaultValue = true)]
         public string VendorDbName { get; set; }
 
         /// <summary>
@@ -187,7 +223,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets PhoneNumber
         /// </summary>
-        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "phoneNumber", IsRequired = true, EmitDefaultValue = true)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
@@ -205,7 +241,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name = "email", EmitDefaultValue = false)]
+        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
         public string Email { get; set; }
 
         /// <summary>
@@ -223,8 +259,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets PhysicalAddress
         /// </summary>
-        [DataMember(Name = "physicalAddress", EmitDefaultValue = false)]
-        public VendorRequestDTORemittanceAddress PhysicalAddress { get; set; }
+        [DataMember(Name = "physicalAddress", IsRequired = true, EmitDefaultValue = true)]
+        public VendorRequestDTOPhysicalAddress PhysicalAddress { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

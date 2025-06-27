@@ -8,7 +8,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securecancellationspost"></a>
 # **SecureCancellationsPost**
-> SecureCancelledTransactionResponse SecureCancellationsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest)
+> SecureCancelledTransactionResponse SecureCancellationsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionCancelRequest secureTransactionCancelRequest)
 
 This API cancel a transaction.
 
@@ -40,7 +40,7 @@ namespace Example
             var apiInstance = new SecureVoidsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureTransactionCancelRequest = new SecureTransactionCancelRequest(); // SecureTransactionCancelRequest | Cancel Detail
 
@@ -87,7 +87,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureTransactionCancelRequest** | [**SecureTransactionCancelRequest**](SecureTransactionCancelRequest.md) | Cancel Detail |  |
 

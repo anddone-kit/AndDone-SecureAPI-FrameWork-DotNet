@@ -43,7 +43,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="transactionId">transactionId.</param>
         /// <param name="callbackApiUrl">callbackApiUrl.</param>
         /// <param name="callbackMessage">callbackMessage.</param>
-        public PaymentLinkResponseCallbackParameters(string callbackSuccessUrl = default(string), string callbackFailureUrl = default(string), string accessKey = default(string), string secretKey = default(string), string referenceNo = default(string), string referenceType = default(string), string transactionId = default(string), string callbackApiUrl = default(string), string callbackMessage = default(string))
+        /// <param name="redirectionTime">redirectionTime.</param>
+        public PaymentLinkResponseCallbackParameters(string callbackSuccessUrl = default(string), string callbackFailureUrl = default(string), string accessKey = default(string), string secretKey = default(string), string referenceNo = default(string), string referenceType = default(string), string transactionId = default(string), string callbackApiUrl = default(string), string callbackMessage = default(string), float redirectionTime = default(float))
         {
             this.CallbackSuccessUrl = callbackSuccessUrl;
             this.CallbackFailureUrl = callbackFailureUrl;
@@ -54,6 +55,7 @@ namespace Org.OpenAPITools.Model
             this.TransactionId = transactionId;
             this.CallbackApiUrl = callbackApiUrl;
             this.CallbackMessage = callbackMessage;
+            this.RedirectionTime = redirectionTime;
         }
 
         /// <summary>
@@ -111,6 +113,12 @@ namespace Org.OpenAPITools.Model
         public string CallbackMessage { get; set; }
 
         /// <summary>
+        /// Gets or Sets RedirectionTime
+        /// </summary>
+        [DataMember(Name = "redirectionTime", EmitDefaultValue = false)]
+        public float RedirectionTime { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -127,6 +135,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
             sb.Append("  CallbackApiUrl: ").Append(CallbackApiUrl).Append("\n");
             sb.Append("  CallbackMessage: ").Append(CallbackMessage).Append("\n");
+            sb.Append("  RedirectionTime: ").Append(RedirectionTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

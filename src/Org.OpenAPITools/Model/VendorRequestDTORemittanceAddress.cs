@@ -26,7 +26,7 @@ using OpenAPIDateConverter = Org.OpenAPITools.Client.OpenAPIDateConverter;
 namespace Org.OpenAPITools.Model
 {
     /// <summary>
-    /// VendorRequestDTORemittanceAddress
+    /// Required if &#x60;useSameAsPhysicalAddress&#x60; is false or missing. 
     /// </summary>
     [DataContract(Name = "VendorRequestDTO_remittanceAddress")]
     public partial class VendorRequestDTORemittanceAddress : IValidatableObject
@@ -60,41 +60,76 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets AddressSource
         /// </summary>
-        [DataMember(Name = "addressSource", EmitDefaultValue = false)]
-        public AddressSourceEnum? AddressSource { get; set; }
+        [DataMember(Name = "addressSource", IsRequired = true, EmitDefaultValue = true)]
+        public AddressSourceEnum AddressSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="VendorRequestDTORemittanceAddress" /> class.
         /// </summary>
-        /// <param name="attention">attention.</param>
-        /// <param name="addressLine1">addressLine1.</param>
+        [JsonConstructorAttribute]
+        protected VendorRequestDTORemittanceAddress() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VendorRequestDTORemittanceAddress" /> class.
+        /// </summary>
+        /// <param name="attention">attention (required).</param>
+        /// <param name="addressLine1">addressLine1 (required).</param>
         /// <param name="addressLine2">addressLine2.</param>
-        /// <param name="city">city.</param>
-        /// <param name="state">state.</param>
-        /// <param name="country">country.</param>
-        /// <param name="postalCode">postalCode.</param>
-        /// <param name="addressSource">addressSource.</param>
-        public VendorRequestDTORemittanceAddress(string attention = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), AddressSourceEnum? addressSource = default(AddressSourceEnum?))
+        /// <param name="city">city (required).</param>
+        /// <param name="state">state (required).</param>
+        /// <param name="country">country (required).</param>
+        /// <param name="postalCode">postalCode (required).</param>
+        /// <param name="addressSource">addressSource (required).</param>
+        public VendorRequestDTORemittanceAddress(string attention = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), AddressSourceEnum addressSource = default(AddressSourceEnum))
         {
+            // to ensure "attention" is required (not null)
+            if (attention == null)
+            {
+                throw new ArgumentNullException("attention is a required property for VendorRequestDTORemittanceAddress and cannot be null");
+            }
             this.Attention = attention;
+            // to ensure "addressLine1" is required (not null)
+            if (addressLine1 == null)
+            {
+                throw new ArgumentNullException("addressLine1 is a required property for VendorRequestDTORemittanceAddress and cannot be null");
+            }
             this.AddressLine1 = addressLine1;
-            this.AddressLine2 = addressLine2;
+            // to ensure "city" is required (not null)
+            if (city == null)
+            {
+                throw new ArgumentNullException("city is a required property for VendorRequestDTORemittanceAddress and cannot be null");
+            }
             this.City = city;
+            // to ensure "state" is required (not null)
+            if (state == null)
+            {
+                throw new ArgumentNullException("state is a required property for VendorRequestDTORemittanceAddress and cannot be null");
+            }
             this.State = state;
+            // to ensure "country" is required (not null)
+            if (country == null)
+            {
+                throw new ArgumentNullException("country is a required property for VendorRequestDTORemittanceAddress and cannot be null");
+            }
             this.Country = country;
+            // to ensure "postalCode" is required (not null)
+            if (postalCode == null)
+            {
+                throw new ArgumentNullException("postalCode is a required property for VendorRequestDTORemittanceAddress and cannot be null");
+            }
             this.PostalCode = postalCode;
             this.AddressSource = addressSource;
+            this.AddressLine2 = addressLine2;
         }
 
         /// <summary>
         /// Gets or Sets Attention
         /// </summary>
-        [DataMember(Name = "attention", EmitDefaultValue = false)]
+        [DataMember(Name = "attention", IsRequired = true, EmitDefaultValue = true)]
         public string Attention { get; set; }
 
         /// <summary>
         /// Gets or Sets AddressLine1
         /// </summary>
-        [DataMember(Name = "addressLine1", EmitDefaultValue = false)]
+        [DataMember(Name = "addressLine1", IsRequired = true, EmitDefaultValue = true)]
         public string AddressLine1 { get; set; }
 
         /// <summary>
@@ -106,25 +141,25 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets City
         /// </summary>
-        [DataMember(Name = "city", EmitDefaultValue = false)]
+        [DataMember(Name = "city", IsRequired = true, EmitDefaultValue = true)]
         public string City { get; set; }
 
         /// <summary>
         /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public string State { get; set; }
 
         /// <summary>
         /// Gets or Sets Country
         /// </summary>
-        [DataMember(Name = "country", EmitDefaultValue = false)]
+        [DataMember(Name = "country", IsRequired = true, EmitDefaultValue = true)]
         public string Country { get; set; }
 
         /// <summary>
         /// Gets or Sets PostalCode
         /// </summary>
-        [DataMember(Name = "postalCode", EmitDefaultValue = false)]
+        [DataMember(Name = "postalCode", IsRequired = true, EmitDefaultValue = true)]
         public string PostalCode { get; set; }
 
         /// <summary>

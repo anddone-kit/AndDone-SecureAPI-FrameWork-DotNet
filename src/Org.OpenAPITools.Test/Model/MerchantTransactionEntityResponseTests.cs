@@ -55,12 +55,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'TotalRowCounts'
+        /// Test the property 'TotalRowCount'
         /// </summary>
         [Fact]
-        public void TotalRowCountsTest()
+        public void TotalRowCountTest()
         {
-            // TODO unit test for the property 'TotalRowCounts'
+            // TODO unit test for the property 'TotalRowCount'
         }
 
         /// <summary>

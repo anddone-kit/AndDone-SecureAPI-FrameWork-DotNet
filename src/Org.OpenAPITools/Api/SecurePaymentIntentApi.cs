@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="id">Payment Intent Id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentIntentExpiresResponse</returns>
-        PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0);
+        PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0);
 
         /// <summary>
         /// This API expires the payment Intent or link.
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="id">Payment Intent Id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentIntentExpiresResponse</returns>
-        ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0);
+        ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0);
         /// <summary>
         /// This API is use to create Secure payment Intent.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentIntentResponse</returns>
-        PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0);
+        PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0);
 
         /// <summary>
         /// This API is use to create Secure payment Intent.
@@ -81,7 +81,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentIntentResponse</returns>
-        ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0);
+        ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -106,7 +106,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentIntentExpiresResponse</returns>
-        System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API expires the payment Intent or link.
@@ -123,7 +123,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentIntentExpiresResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is use to create Secure payment Intent.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentIntentResponse</returns>
-        System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is use to create Secure payment Intent.
@@ -156,7 +156,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentIntentResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -288,7 +288,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="id">Payment Intent Id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentIntentExpiresResponse</returns>
-        public PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0)
+        public PaymentIntentExpiresResponse SecurePaymentintentsExpirationsPost(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> localVarResponse = SecurePaymentintentsExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, id);
             return localVarResponse.Data;
@@ -305,7 +305,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="id">Payment Intent Id</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentIntentExpiresResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -357,7 +357,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsExpirationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -399,7 +399,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentIntentExpiresResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentIntentExpiresResponse> SecurePaymentintentsExpirationsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse> localVarResponse = await SecurePaymentintentsExpirationsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, id, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -417,7 +417,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentIntentExpiresResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentExpiresResponse>> SecurePaymentintentsExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, string id, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -470,7 +470,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsExpirationsPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -512,7 +512,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>PaymentIntentResponse</returns>
-        public PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0)
+        public PaymentIntentResponse SecurePaymentintentsPost(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> localVarResponse = SecurePaymentintentsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, paymentIntentRequest);
             return localVarResponse.Data;
@@ -529,7 +529,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="paymentIntentRequest">Payment Intent Request (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PaymentIntentResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> SecurePaymentintentsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -575,7 +575,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentIntentRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsPost";
@@ -618,7 +618,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PaymentIntentResponse</returns>
-        public async System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PaymentIntentResponse> SecurePaymentintentsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse> localVarResponse = await SecurePaymentintentsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, paymentIntentRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -636,7 +636,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PaymentIntentResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<PaymentIntentResponse>> SecurePaymentintentsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, PaymentIntentRequest? paymentIntentRequest = default(PaymentIntentRequest?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -683,7 +683,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = paymentIntentRequest;
 
             localVarRequestOptions.Operation = "SecurePaymentIntentApi.SecurePaymentintentsPost";

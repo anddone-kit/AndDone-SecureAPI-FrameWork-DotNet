@@ -181,6 +181,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'HealthCareAccountType'
+        /// </summary>
+        [Fact]
+        public void HealthCareAccountTypeTest()
+        {
+            // TODO unit test for the property 'HealthCareAccountType'
+        }
+
+        /// <summary>
         /// Test the property 'AdjustmentPercentValue'
         /// </summary>
         [Fact]

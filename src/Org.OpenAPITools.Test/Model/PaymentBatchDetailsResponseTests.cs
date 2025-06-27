@@ -64,12 +64,57 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'MerchantId'
+        /// </summary>
+        [Fact]
+        public void MerchantIdTest()
+        {
+            // TODO unit test for the property 'MerchantId'
+        }
+
+        /// <summary>
         /// Test the property 'BatchStatus'
         /// </summary>
         [Fact]
         public void BatchStatusTest()
         {
             // TODO unit test for the property 'BatchStatus'
+        }
+
+        /// <summary>
+        /// Test the property 'ProcessMethods'
+        /// </summary>
+        [Fact]
+        public void ProcessMethodsTest()
+        {
+            // TODO unit test for the property 'ProcessMethods'
+        }
+
+        /// <summary>
+        /// Test the property 'ProcessorName'
+        /// </summary>
+        [Fact]
+        public void ProcessorNameTest()
+        {
+            // TODO unit test for the property 'ProcessorName'
+        }
+
+        /// <summary>
+        /// Test the property 'IsDefault'
+        /// </summary>
+        [Fact]
+        public void IsDefaultTest()
+        {
+            // TODO unit test for the property 'IsDefault'
+        }
+
+        /// <summary>
+        /// Test the property 'ExecutedOnDemand'
+        /// </summary>
+        [Fact]
+        public void ExecutedOnDemandTest()
+        {
+            // TODO unit test for the property 'ExecutedOnDemand'
         }
 
         /// <summary>
@@ -88,6 +133,123 @@ namespace Org.OpenAPITools.Test.Model
         public void CompletionTimeTest()
         {
             // TODO unit test for the property 'CompletionTime'
+        }
+
+        /// <summary>
+        /// Test the property 'CreatedOn'
+        /// </summary>
+        [Fact]
+        public void CreatedOnTest()
+        {
+            // TODO unit test for the property 'CreatedOn'
+        }
+
+        /// <summary>
+        /// Test the property 'CreatedBy'
+        /// </summary>
+        [Fact]
+        public void CreatedByTest()
+        {
+            // TODO unit test for the property 'CreatedBy'
+        }
+
+        /// <summary>
+        /// Test the property 'ModifiedOn'
+        /// </summary>
+        [Fact]
+        public void ModifiedOnTest()
+        {
+            // TODO unit test for the property 'ModifiedOn'
+        }
+
+        /// <summary>
+        /// Test the property 'ModifiedBy'
+        /// </summary>
+        [Fact]
+        public void ModifiedByTest()
+        {
+            // TODO unit test for the property 'ModifiedBy'
+        }
+
+        /// <summary>
+        /// Test the property 'CaptureCount'
+        /// </summary>
+        [Fact]
+        public void CaptureCountTest()
+        {
+            // TODO unit test for the property 'CaptureCount'
+        }
+
+        /// <summary>
+        /// Test the property 'CaptureAmount'
+        /// </summary>
+        [Fact]
+        public void CaptureAmountTest()
+        {
+            // TODO unit test for the property 'CaptureAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'VoidedCount'
+        /// </summary>
+        [Fact]
+        public void VoidedCountTest()
+        {
+            // TODO unit test for the property 'VoidedCount'
+        }
+
+        /// <summary>
+        /// Test the property 'VoidedAmount'
+        /// </summary>
+        [Fact]
+        public void VoidedAmountTest()
+        {
+            // TODO unit test for the property 'VoidedAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'TotalLiveAmount'
+        /// </summary>
+        [Fact]
+        public void TotalLiveAmountTest()
+        {
+            // TODO unit test for the property 'TotalLiveAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'RefundedCount'
+        /// </summary>
+        [Fact]
+        public void RefundedCountTest()
+        {
+            // TODO unit test for the property 'RefundedCount'
+        }
+
+        /// <summary>
+        /// Test the property 'RefundedAmount'
+        /// </summary>
+        [Fact]
+        public void RefundedAmountTest()
+        {
+            // TODO unit test for the property 'RefundedAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'ChargebackCount'
+        /// </summary>
+        [Fact]
+        public void ChargebackCountTest()
+        {
+            // TODO unit test for the property 'ChargebackCount'
+        }
+
+        /// <summary>
+        /// Test the property 'ChargebackAmount'
+        /// </summary>
+        [Fact]
+        public void ChargebackAmountTest()
+        {
+            // TODO unit test for the property 'ChargebackAmount'
         }
 
         /// <summary>

@@ -5,21 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PolicyID** | **int** |  | [optional] 
-**PolicyNumber** | **int** |  | [optional] 
-**Premium** | **decimal** |  | [optional] 
-**Fee** | **decimal** |  | [optional] 
-**Tax** | **decimal** |  | [optional] 
-**Coverage** | **string** |  | [optional] 
-**EffectiveDate** | **string** |  | [optional] 
+**PolicyNumber** | **float** |  | [optional] 
+**Premium** | **float** |  | 
+**Fee** | **float** |  | [optional] 
+**Tax** | **float** |  | [optional] 
+**Coverage** | **string** |  | 
+**EffectiveDate** | **string** |  | 
 **ExpirationDate** | **string** |  | [optional] 
 **Term** | **int** |  | [optional] 
-**MinimumEarned** | **decimal** |  | [optional] 
-**MinimumEarnedPercent** | **decimal** |  | [optional] 
-**MinimumLiability** | **decimal** |  | [optional] 
-**MaximumLiability** | **decimal** |  | [optional] 
+**MinimumEarned** | **float** |  | [optional] 
+**MinimumEarnedPercent** | **float** |  | [optional] 
+**MinimumLiability** | **float** |  | [optional] 
+**MaximumLiability** | **float** |  | [optional] 
 **InvoiceNumber** | **string** |  | [optional] 
 **PolicyFees** | [**List&lt;PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner&gt;**](PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner.md) |  | [optional] 
-**Company** | [**QuoteRequestPoliciesInnerCompany**](QuoteRequestPoliciesInnerCompany.md) |  | [optional] 
+**Company** | [**QuoteRequestPoliciesInnerCompany**](QuoteRequestPoliciesInnerCompany.md) |  | 
 **Ga** | [**QuoteRequestPoliciesInnerGa**](QuoteRequestPoliciesInnerGa.md) |  | [optional] 
 **Broker** | [**QuoteRequestPoliciesInnerGa**](QuoteRequestPoliciesInnerGa.md) |  | [optional] 
 

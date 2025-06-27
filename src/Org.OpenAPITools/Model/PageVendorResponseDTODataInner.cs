@@ -71,7 +71,13 @@ namespace Org.OpenAPITools.Model
             /// Enum Partnership for value: Partnership
             /// </summary>
             [EnumMember(Value = "Partnership")]
-            Partnership = 6
+            Partnership = 6,
+
+            /// <summary>
+            /// Enum Individual for value: Individual
+            /// </summary>
+            [EnumMember(Value = "Individual")]
+            Individual = 7
         }
 
 
@@ -87,10 +93,10 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodTypeEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 

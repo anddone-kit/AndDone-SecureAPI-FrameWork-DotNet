@@ -71,14 +71,5 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'LoanType'
         }
-
-        /// <summary>
-        /// Test the property 'BrokerFee'
-        /// </summary>
-        [Fact]
-        public void BrokerFeeTest()
-        {
-            // TODO unit test for the property 'BrokerFee'
-        }
     }
 }

@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTokenLinkByIdResponse</returns>
-        SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting Token Links by TokenLink ID
@@ -53,7 +53,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTokenLinkByIdResponse</returns>
-        ApiResponse<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        ApiResponse<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
         /// <summary>
         /// This API expires the token link.
         /// </summary>
@@ -65,7 +65,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTokenLinkExpiredResponse</returns>
-        SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API expires the token link.
@@ -81,7 +81,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTokenLinkExpiredResponse</returns>
-        ApiResponse<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
+        ApiResponse<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0);
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
         /// </summary>
@@ -109,8 +109,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="sortField">Set SortField (optional)</param>
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SecureTokenLinkResponse</returns>
-        SecureTokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
+        /// <returns>TokenLinkResponse</returns>
+        TokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
@@ -142,8 +142,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="sortField">Set SortField (optional)</param>
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
-        ApiResponse<SecureTokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of TokenLinkResponse</returns>
+        ApiResponse<TokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0);
         /// <summary>
         /// This API is use to create Secure Token Links
         /// </summary>
@@ -155,7 +155,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTokenLinkResponse</returns>
-        SecureTokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0);
+        SecureTokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API is use to create Secure Token Links
@@ -171,7 +171,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
-        ApiResponse<SecureTokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0);
+        ApiResponse<SecureTokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0);
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        void SecureTokenlinksPut(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
+        void SecureTokenlinksPut(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
 
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
@@ -199,7 +199,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
+        ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -224,7 +224,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTokenLinkByIdResponse</returns>
-        System.Threading.Tasks.Task<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting Token Links by TokenLink ID
@@ -241,7 +241,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTokenLinkByIdResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API expires the token link.
         /// </summary>
@@ -257,7 +257,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTokenLinkExpiredResponse</returns>
-        System.Threading.Tasks.Task<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API expires the token link.
@@ -274,7 +274,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTokenLinkExpiredResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkExpiredResponse>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkExpiredResponse>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
         /// </summary>
@@ -306,8 +306,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SecureTokenLinkResponse</returns>
-        System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of TokenLinkResponse</returns>
+        System.Threading.Tasks.Task<TokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is used for getting all Token Links for Merchant
@@ -340,8 +340,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (TokenLinkResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API is use to create Secure Token Links
         /// </summary>
@@ -357,7 +357,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTokenLinkResponse</returns>
-        System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API is use to create Secure Token Links
@@ -374,7 +374,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
         /// </summary>
@@ -390,7 +390,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// This API will update the expireIn and paymentType of Token Link.
@@ -407,7 +407,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -539,7 +539,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTokenLinkByIdResponse</returns>
-        public SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        public SecureTokenLinkByIdResponse SecureTokenlinksDetailsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> localVarResponse = SecureTokenlinksDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
             return localVarResponse.Data;
@@ -556,7 +556,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTokenLinkByIdResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -608,7 +608,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksDetailsPost";
@@ -651,7 +651,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTokenLinkByIdResponse</returns>
-        public async System.Threading.Tasks.Task<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureTokenLinkByIdResponse> SecureTokenlinksDetailsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse> localVarResponse = await SecureTokenlinksDetailsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -669,7 +669,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTokenLinkByIdResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkByIdResponse>> SecureTokenlinksDetailsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -722,7 +722,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksDetailsPost";
@@ -765,7 +765,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTokenLinkExpiredResponse</returns>
-        public SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        public SecureTokenLinkExpiredResponse SecureTokenlinksExpirationsPost(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> localVarResponse = SecureTokenlinksExpirationsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest);
             return localVarResponse.Data;
@@ -782,7 +782,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkRequest">Secure Token Link Id Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTokenLinkExpiredResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -834,7 +834,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksExpirationsPost";
@@ -877,7 +877,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTokenLinkExpiredResponse</returns>
-        public async System.Threading.Tasks.Task<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureTokenLinkExpiredResponse> SecureTokenlinksExpirationsPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse> localVarResponse = await SecureTokenlinksExpirationsPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -895,7 +895,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTokenLinkExpiredResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkExpiredResponse>> SecureTokenlinksExpirationsPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkRequest secureTokenLinkRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -948,7 +948,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksExpirationsPost";
@@ -1007,10 +1007,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="sortField">Set SortField (optional)</param>
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>SecureTokenLinkResponse</returns>
-        public SecureTokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
+        /// <returns>TokenLinkResponse</returns>
+        public TokenLinkResponse SecureTokenlinksListPost(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
-            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
+            Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> localVarResponse = SecureTokenlinksListPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc);
             return localVarResponse.Data;
         }
 
@@ -1041,8 +1041,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="sortField">Set SortField (optional)</param>
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of TokenLinkResponse</returns>
+        public Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> SecureTokenlinksListPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1084,6 +1084,54 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (email != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "email", email));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (phone != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "phone", phone));
+            }
+            if (statuses != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "statuses", statuses));
+            }
+            if (title != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "title", title));
+            }
+            if (paymentDescription != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentDescription", paymentDescription));
+            }
+            if (invoiceNumber != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "invoiceNumber", invoiceNumber));
+            }
+            if (expiryDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "expiryDate", expiryDate));
+            }
+            if (fromExpiryDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromExpiryDate", fromExpiryDate));
+            }
+            if (freeTextSearch != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "freeTextSearch", freeTextSearch));
+            }
+            if (tokenLinkId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "tokenLinkId", tokenLinkId));
+            }
+            if (toExpiryDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toExpiryDate", toExpiryDate));
+            }
             if (fromDate != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromDate", fromDate));
@@ -1094,72 +1142,24 @@ namespace Org.OpenAPITools.Api
             }
             if (startRow != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (sortField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
             }
             if (asc != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "Asc", asc));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            if (email != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("email", Org.OpenAPITools.Client.ClientUtils.ParameterToString(email)); // header parameter
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("status", Org.OpenAPITools.Client.ClientUtils.ParameterToString(status)); // header parameter
-            }
-            if (phone != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("phone", Org.OpenAPITools.Client.ClientUtils.ParameterToString(phone)); // header parameter
-            }
-            if (statuses != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("statuses", Org.OpenAPITools.Client.ClientUtils.ParameterToString(statuses)); // header parameter
-            }
-            if (title != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("title", Org.OpenAPITools.Client.ClientUtils.ParameterToString(title)); // header parameter
-            }
-            if (paymentDescription != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("paymentDescription", Org.OpenAPITools.Client.ClientUtils.ParameterToString(paymentDescription)); // header parameter
-            }
-            if (invoiceNumber != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("invoiceNumber", Org.OpenAPITools.Client.ClientUtils.ParameterToString(invoiceNumber)); // header parameter
-            }
-            if (expiryDate != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("expiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(expiryDate)); // header parameter
-            }
-            if (fromExpiryDate != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("fromExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(fromExpiryDate)); // header parameter
-            }
-            if (freeTextSearch != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("freeTextSearch", Org.OpenAPITools.Client.ClientUtils.ParameterToString(freeTextSearch)); // header parameter
-            }
-            if (tokenLinkId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("tokenLinkId", Org.OpenAPITools.Client.ClientUtils.ParameterToString(tokenLinkId)); // header parameter
-            }
-            if (toExpiryDate != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("toExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(toExpiryDate)); // header parameter
-            }
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksListPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1176,7 +1176,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<SecureTokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SecureTokenlinksListPost", localVarResponse);
@@ -1217,10 +1217,10 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of SecureTokenLinkResponse</returns>
-        public async System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of TokenLinkResponse</returns>
+        public async System.Threading.Tasks.Task<TokenLinkResponse> SecureTokenlinksListPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = await SecureTokenlinksListPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc, operationIndex, cancellationToken).ConfigureAwait(false);
+            Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse> localVarResponse = await SecureTokenlinksListPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, email, status, phone, statuses, title, paymentDescription, invoiceNumber, expiryDate, fromExpiryDate, freeTextSearch, tokenLinkId, toExpiryDate, fromDate, toDate, startRow, pageSize, sortField, asc, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1252,8 +1252,8 @@ namespace Org.OpenAPITools.Api
         /// <param name="asc">Set Asc (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), int? startRow = default(int?), int? pageSize = default(int?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (TokenLinkResponse)</returns>
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<TokenLinkResponse>> SecureTokenlinksListPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, string? email = default(string?), string? status = default(string?), string? phone = default(string?), string? statuses = default(string?), string? title = default(string?), string? paymentDescription = default(string?), string? invoiceNumber = default(string?), string? expiryDate = default(string?), string? fromExpiryDate = default(string?), string? freeTextSearch = default(string?), string? tokenLinkId = default(string?), string? toExpiryDate = default(string?), string? fromDate = default(string?), string? toDate = default(string?), float? startRow = default(float?), float? pageSize = default(float?), string? sortField = default(string?), bool? asc = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1296,6 +1296,54 @@ namespace Org.OpenAPITools.Api
                 localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
             }
 
+            if (email != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "email", email));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (phone != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "phone", phone));
+            }
+            if (statuses != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "statuses", statuses));
+            }
+            if (title != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "title", title));
+            }
+            if (paymentDescription != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "paymentDescription", paymentDescription));
+            }
+            if (invoiceNumber != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "invoiceNumber", invoiceNumber));
+            }
+            if (expiryDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "expiryDate", expiryDate));
+            }
+            if (fromExpiryDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromExpiryDate", fromExpiryDate));
+            }
+            if (freeTextSearch != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "freeTextSearch", freeTextSearch));
+            }
+            if (tokenLinkId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "tokenLinkId", tokenLinkId));
+            }
+            if (toExpiryDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "toExpiryDate", toExpiryDate));
+            }
             if (fromDate != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "fromDate", fromDate));
@@ -1306,72 +1354,24 @@ namespace Org.OpenAPITools.Api
             }
             if (startRow != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "StartRow", startRow));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "startRow", startRow));
             }
             if (pageSize != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "PageSize", pageSize));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
             }
             if (sortField != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "SortField", sortField));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "sortField", sortField));
             }
             if (asc != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "Asc", asc));
+                localVarRequestOptions.QueryParameters.Add(Org.OpenAPITools.Client.ClientUtils.ParameterToMultiMap("", "asc", asc));
             }
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
-            if (email != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("email", Org.OpenAPITools.Client.ClientUtils.ParameterToString(email)); // header parameter
-            }
-            if (status != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("status", Org.OpenAPITools.Client.ClientUtils.ParameterToString(status)); // header parameter
-            }
-            if (phone != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("phone", Org.OpenAPITools.Client.ClientUtils.ParameterToString(phone)); // header parameter
-            }
-            if (statuses != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("statuses", Org.OpenAPITools.Client.ClientUtils.ParameterToString(statuses)); // header parameter
-            }
-            if (title != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("title", Org.OpenAPITools.Client.ClientUtils.ParameterToString(title)); // header parameter
-            }
-            if (paymentDescription != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("paymentDescription", Org.OpenAPITools.Client.ClientUtils.ParameterToString(paymentDescription)); // header parameter
-            }
-            if (invoiceNumber != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("invoiceNumber", Org.OpenAPITools.Client.ClientUtils.ParameterToString(invoiceNumber)); // header parameter
-            }
-            if (expiryDate != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("expiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(expiryDate)); // header parameter
-            }
-            if (fromExpiryDate != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("fromExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(fromExpiryDate)); // header parameter
-            }
-            if (freeTextSearch != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("freeTextSearch", Org.OpenAPITools.Client.ClientUtils.ParameterToString(freeTextSearch)); // header parameter
-            }
-            if (tokenLinkId != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("tokenLinkId", Org.OpenAPITools.Client.ClientUtils.ParameterToString(tokenLinkId)); // header parameter
-            }
-            if (toExpiryDate != null)
-            {
-                localVarRequestOptions.HeaderParameters.Add("toExpiryDate", Org.OpenAPITools.Client.ClientUtils.ParameterToString(toExpiryDate)); // header parameter
-            }
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksListPost";
             localVarRequestOptions.OperationIndex = operationIndex;
@@ -1388,7 +1388,7 @@ namespace Org.OpenAPITools.Api
             }
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.PostAsync<SecureTokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TokenLinkResponse>("/secure/tokenlinks/list", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1413,7 +1413,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>SecureTokenLinkResponse</returns>
-        public SecureTokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0)
+        public SecureTokenLinkResponse SecureTokenlinksPost(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0)
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = SecureTokenlinksPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest);
             return localVarResponse.Data;
@@ -1430,7 +1430,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="tokenLinkSecureRequest">Secure Token Link Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of SecureTokenLinkResponse</returns>
-        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> SecureTokenlinksPostWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1482,7 +1482,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = tokenLinkSecureRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPost";
@@ -1525,7 +1525,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SecureTokenLinkResponse</returns>
-        public async System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SecureTokenLinkResponse> SecureTokenlinksPostAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse> localVarResponse = await SecureTokenlinksPostWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, tokenLinkSecureRequest, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1543,7 +1543,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SecureTokenLinkResponse)</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<SecureTokenLinkResponse>> SecureTokenlinksPostWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, TokenLinkSecureRequest tokenLinkSecureRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1596,7 +1596,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = tokenLinkSecureRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPost";
@@ -1639,7 +1639,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns></returns>
-        public void SecureTokenlinksPut(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
+        public void SecureTokenlinksPut(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
         {
             SecureTokenlinksPutWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest);
         }
@@ -1655,7 +1655,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="secureTokenLinkUpdateRequest">Secure Token Link Update Request</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
+        public Org.OpenAPITools.Client.ApiResponse<Object> SecureTokenlinksPutWithHttpInfo(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0)
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1706,7 +1706,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkUpdateRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPut";
@@ -1749,7 +1749,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SecureTokenlinksPutAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SecureTokenlinksPutWithHttpInfoAsync(xApiKey, xAppKey, xVersion, origin, secureTokenLinkUpdateRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1766,7 +1766,7 @@ namespace Org.OpenAPITools.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Org.OpenAPITools.Client.ApiResponse<Object>> SecureTokenlinksPutWithHttpInfoAsync(string xApiKey, string xAppKey, float xVersion, string origin, SecureTokenLinkUpdateRequest secureTokenLinkUpdateRequest, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'xApiKey' is set
             if (xApiKey == null)
@@ -1818,7 +1818,7 @@ namespace Org.OpenAPITools.Api
             localVarRequestOptions.HeaderParameters.Add("x-api-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xApiKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-app-key", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xAppKey)); // header parameter
             localVarRequestOptions.HeaderParameters.Add("x-version", Org.OpenAPITools.Client.ClientUtils.ParameterToString(xVersion)); // header parameter
-            localVarRequestOptions.HeaderParameters.Add("Origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("origin", Org.OpenAPITools.Client.ClientUtils.ParameterToString(origin)); // header parameter
             localVarRequestOptions.Data = secureTokenLinkUpdateRequest;
 
             localVarRequestOptions.Operation = "SecureTokenLinksApi.SecureTokenlinksPut";

@@ -96,7 +96,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="intent">intent.</param>
         /// <param name="customers">customers.</param>
         /// <param name="timeLine">timeLine.</param>
-        public SecureTokenLinkByIdResponse(string tokenLinkId = default(string), string title = default(string), string tokenLink = default(string), string expireOn = default(string), string createdOn = default(string), string modifiedOn = default(string), string createdBy = default(string), string modifiedBy = default(string), TokenLinkStatusEnum? tokenLinkStatus = default(TokenLinkStatusEnum?), SecureTokenLinkByIdResponseAccountToken accountToken = default(SecureTokenLinkByIdResponseAccountToken), SecureTokenLinkByIdResponseIntent intent = default(SecureTokenLinkByIdResponseIntent), List<SecureTokenLinkResponseCustomersInner> customers = default(List<SecureTokenLinkResponseCustomersInner>), List<SecureTokenLinkByIdResponseTimeLineInner> timeLine = default(List<SecureTokenLinkByIdResponseTimeLineInner>))
+        public SecureTokenLinkByIdResponse(string tokenLinkId = default(string), string title = default(string), string tokenLink = default(string), string expireOn = default(string), string createdOn = default(string), string modifiedOn = default(string), string createdBy = default(string), string modifiedBy = default(string), TokenLinkStatusEnum? tokenLinkStatus = default(TokenLinkStatusEnum?), SecureTokenLinkByIdResponseAccountToken accountToken = default(SecureTokenLinkByIdResponseAccountToken), PFEndorsementResponseItemPaymentIntentIntent intent = default(PFEndorsementResponseItemPaymentIntentIntent), List<SecureTokenLinkResponseCustomersInner> customers = default(List<SecureTokenLinkResponseCustomersInner>), List<SecureTokenLinkByIdResponseTimeLineInner> timeLine = default(List<SecureTokenLinkByIdResponseTimeLineInner>))
         {
             this.TokenLinkId = tokenLinkId;
             this.Title = title;
@@ -171,7 +171,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Intent
         /// </summary>
         [DataMember(Name = "intent", EmitDefaultValue = false)]
-        public SecureTokenLinkByIdResponseIntent Intent { get; set; }
+        public PFEndorsementResponseItemPaymentIntentIntent Intent { get; set; }
 
         /// <summary>
         /// Gets or Sets Customers

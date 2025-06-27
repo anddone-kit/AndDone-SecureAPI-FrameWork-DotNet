@@ -39,13 +39,29 @@ namespace Org.OpenAPITools.Model
         /// <param name="traceNumber">traceNumber.</param>
         /// <param name="reasonCode">reasonCode.</param>
         /// <param name="reasonMessage">reasonMessage.</param>
-        public TransactionPaymentResponseTransactionResult(bool success = default(bool), string processorAuthCode = default(string), string traceNumber = default(string), string reasonCode = default(string), string reasonMessage = default(string))
+        /// <param name="additionResultData">additionResultData.</param>
+        /// <param name="additionResultData2">additionResultData2.</param>
+        /// <param name="verificationStatus">verificationStatus.</param>
+        /// <param name="verification1Code">verification1Code.</param>
+        /// <param name="verification2Code">verification2Code.</param>
+        /// <param name="errorCode">errorCode.</param>
+        /// <param name="errorMessage">errorMessage.</param>
+        /// <param name="merchantReference">merchantReference.</param>
+        public TransactionPaymentResponseTransactionResult(bool success = default(bool), string processorAuthCode = default(string), string traceNumber = default(string), string reasonCode = default(string), string reasonMessage = default(string), string additionResultData = default(string), string additionResultData2 = default(string), bool verificationStatus = default(bool), string verification1Code = default(string), string verification2Code = default(string), string errorCode = default(string), string errorMessage = default(string), string merchantReference = default(string))
         {
             this.Success = success;
             this.ProcessorAuthCode = processorAuthCode;
             this.TraceNumber = traceNumber;
             this.ReasonCode = reasonCode;
             this.ReasonMessage = reasonMessage;
+            this.AdditionResultData = additionResultData;
+            this.AdditionResultData2 = additionResultData2;
+            this.VerificationStatus = verificationStatus;
+            this.Verification1Code = verification1Code;
+            this.Verification2Code = verification2Code;
+            this.ErrorCode = errorCode;
+            this.ErrorMessage = errorMessage;
+            this.MerchantReference = merchantReference;
         }
 
         /// <summary>
@@ -79,6 +95,54 @@ namespace Org.OpenAPITools.Model
         public string ReasonMessage { get; set; }
 
         /// <summary>
+        /// Gets or Sets AdditionResultData
+        /// </summary>
+        [DataMember(Name = "additionResultData", EmitDefaultValue = false)]
+        public string AdditionResultData { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AdditionResultData2
+        /// </summary>
+        [DataMember(Name = "additionResultData2", EmitDefaultValue = false)]
+        public string AdditionResultData2 { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VerificationStatus
+        /// </summary>
+        [DataMember(Name = "verificationStatus", EmitDefaultValue = true)]
+        public bool VerificationStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Verification1Code
+        /// </summary>
+        [DataMember(Name = "verification1Code", EmitDefaultValue = false)]
+        public string Verification1Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Verification2Code
+        /// </summary>
+        [DataMember(Name = "verification2Code", EmitDefaultValue = false)]
+        public string Verification2Code { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ErrorCode
+        /// </summary>
+        [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+        public string ErrorCode { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ErrorMessage
+        /// </summary>
+        [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
+        public string ErrorMessage { get; set; }
+
+        /// <summary>
+        /// Gets or Sets MerchantReference
+        /// </summary>
+        [DataMember(Name = "merchantReference", EmitDefaultValue = false)]
+        public string MerchantReference { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -91,6 +155,14 @@ namespace Org.OpenAPITools.Model
             sb.Append("  TraceNumber: ").Append(TraceNumber).Append("\n");
             sb.Append("  ReasonCode: ").Append(ReasonCode).Append("\n");
             sb.Append("  ReasonMessage: ").Append(ReasonMessage).Append("\n");
+            sb.Append("  AdditionResultData: ").Append(AdditionResultData).Append("\n");
+            sb.Append("  AdditionResultData2: ").Append(AdditionResultData2).Append("\n");
+            sb.Append("  VerificationStatus: ").Append(VerificationStatus).Append("\n");
+            sb.Append("  Verification1Code: ").Append(Verification1Code).Append("\n");
+            sb.Append("  Verification2Code: ").Append(Verification2Code).Append("\n");
+            sb.Append("  ErrorCode: ").Append(ErrorCode).Append("\n");
+            sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
+            sb.Append("  MerchantReference: ").Append(MerchantReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -127,6 +127,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CancelDays'
+        /// </summary>
+        [Fact]
+        public void CancelDaysTest()
+        {
+            // TODO unit test for the property 'CancelDays'
+        }
+
+        /// <summary>
         /// Test the property 'Carrier'
         /// </summary>
         [Fact]

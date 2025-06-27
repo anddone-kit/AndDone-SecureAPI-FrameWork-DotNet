@@ -98,5 +98,77 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'ReasonMessage'
         }
+
+        /// <summary>
+        /// Test the property 'AdditionResultData'
+        /// </summary>
+        [Fact]
+        public void AdditionResultDataTest()
+        {
+            // TODO unit test for the property 'AdditionResultData'
+        }
+
+        /// <summary>
+        /// Test the property 'AdditionResultData2'
+        /// </summary>
+        [Fact]
+        public void AdditionResultData2Test()
+        {
+            // TODO unit test for the property 'AdditionResultData2'
+        }
+
+        /// <summary>
+        /// Test the property 'VerificationStatus'
+        /// </summary>
+        [Fact]
+        public void VerificationStatusTest()
+        {
+            // TODO unit test for the property 'VerificationStatus'
+        }
+
+        /// <summary>
+        /// Test the property 'Verification1Code'
+        /// </summary>
+        [Fact]
+        public void Verification1CodeTest()
+        {
+            // TODO unit test for the property 'Verification1Code'
+        }
+
+        /// <summary>
+        /// Test the property 'Verification2Code'
+        /// </summary>
+        [Fact]
+        public void Verification2CodeTest()
+        {
+            // TODO unit test for the property 'Verification2Code'
+        }
+
+        /// <summary>
+        /// Test the property 'ErrorCode'
+        /// </summary>
+        [Fact]
+        public void ErrorCodeTest()
+        {
+            // TODO unit test for the property 'ErrorCode'
+        }
+
+        /// <summary>
+        /// Test the property 'ErrorMessage'
+        /// </summary>
+        [Fact]
+        public void ErrorMessageTest()
+        {
+            // TODO unit test for the property 'ErrorMessage'
+        }
+
+        /// <summary>
+        /// Test the property 'MerchantReference'
+        /// </summary>
+        [Fact]
+        public void MerchantReferenceTest()
+        {
+            // TODO unit test for the property 'MerchantReference'
+        }
     }
 }

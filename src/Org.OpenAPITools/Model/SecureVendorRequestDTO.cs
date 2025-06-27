@@ -34,16 +34,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureVendorRequestDTO" /> class.
         /// </summary>
-        /// <param name="vendorId">vendorId.</param>
+        [JsonConstructorAttribute]
+        protected SecureVendorRequestDTO() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecureVendorRequestDTO" /> class.
+        /// </summary>
+        /// <param name="vendorId">vendorId (required).</param>
         public SecureVendorRequestDTO(string vendorId = default(string))
         {
+            // to ensure "vendorId" is required (not null)
+            if (vendorId == null)
+            {
+                throw new ArgumentNullException("vendorId is a required property for SecureVendorRequestDTO and cannot be null");
+            }
             this.VendorId = vendorId;
         }
 
         /// <summary>
         /// Gets or Sets VendorId
         /// </summary>
-        [DataMember(Name = "vendorId", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorId", IsRequired = true, EmitDefaultValue = true)]
         public string VendorId { get; set; }
 
         /// <summary>

@@ -49,7 +49,10 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentsRetained">paymentsRetained.</param>
         /// <param name="paymentRetainedAmount">paymentRetainedAmount.</param>
         /// <param name="eSignResult">eSignResult.</param>
-        public PFEndorsementResponseItemQuote(string pfa = default(string), decimal quoteKey = default(decimal), decimal premium = default(decimal), decimal downAmount = default(decimal), decimal amountFinanced = default(decimal), decimal financeCharge = default(decimal), decimal totalPayments = default(decimal), decimal paymentAmount = default(decimal), decimal docStamp = default(decimal), string firstDueDate = default(string), decimal apr = default(decimal), decimal installments = default(decimal), decimal paymentsRetained = default(decimal), decimal paymentRetainedAmount = default(decimal), PFEndorsementResponseItemQuoteESignResult eSignResult = default(PFEndorsementResponseItemQuoteESignResult))
+        /// <param name="isDownPaymentRequired">isDownPaymentRequired.</param>
+        /// <param name="isEsignRequired">isEsignRequired.</param>
+        /// <param name="isEndorsement">isEndorsement.</param>
+        public PFEndorsementResponseItemQuote(string pfa = default(string), float quoteKey = default(float), float premium = default(float), float downAmount = default(float), float amountFinanced = default(float), float financeCharge = default(float), float totalPayments = default(float), float paymentAmount = default(float), float docStamp = default(float), string firstDueDate = default(string), float apr = default(float), int installments = default(int), float paymentsRetained = default(float), float paymentRetainedAmount = default(float), PFEndorsementResponseItemQuoteESignResult eSignResult = default(PFEndorsementResponseItemQuoteESignResult), bool isDownPaymentRequired = default(bool), bool isEsignRequired = default(bool), bool isEndorsement = default(bool))
         {
             this.Pfa = pfa;
             this.QuoteKey = quoteKey;
@@ -66,6 +69,9 @@ namespace Org.OpenAPITools.Model
             this.PaymentsRetained = paymentsRetained;
             this.PaymentRetainedAmount = paymentRetainedAmount;
             this.ESignResult = eSignResult;
+            this.IsDownPaymentRequired = isDownPaymentRequired;
+            this.IsEsignRequired = isEsignRequired;
+            this.IsEndorsement = isEndorsement;
         }
 
         /// <summary>
@@ -78,49 +84,49 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets QuoteKey
         /// </summary>
         [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public decimal QuoteKey { get; set; }
+        public float QuoteKey { get; set; }
 
         /// <summary>
         /// Gets or Sets Premium
         /// </summary>
         [DataMember(Name = "premium", EmitDefaultValue = false)]
-        public decimal Premium { get; set; }
+        public float Premium { get; set; }
 
         /// <summary>
         /// Gets or Sets DownAmount
         /// </summary>
         [DataMember(Name = "downAmount", EmitDefaultValue = false)]
-        public decimal DownAmount { get; set; }
+        public float DownAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AmountFinanced
         /// </summary>
         [DataMember(Name = "amountFinanced", EmitDefaultValue = false)]
-        public decimal AmountFinanced { get; set; }
+        public float AmountFinanced { get; set; }
 
         /// <summary>
         /// Gets or Sets FinanceCharge
         /// </summary>
         [DataMember(Name = "financeCharge", EmitDefaultValue = false)]
-        public decimal FinanceCharge { get; set; }
+        public float FinanceCharge { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPayments
         /// </summary>
         [DataMember(Name = "totalPayments", EmitDefaultValue = false)]
-        public decimal TotalPayments { get; set; }
+        public float TotalPayments { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentAmount
         /// </summary>
         [DataMember(Name = "paymentAmount", EmitDefaultValue = false)]
-        public decimal PaymentAmount { get; set; }
+        public float PaymentAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets DocStamp
         /// </summary>
         [DataMember(Name = "docStamp", EmitDefaultValue = false)]
-        public decimal DocStamp { get; set; }
+        public float DocStamp { get; set; }
 
         /// <summary>
         /// Gets or Sets FirstDueDate
@@ -132,31 +138,49 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Apr
         /// </summary>
         [DataMember(Name = "apr", EmitDefaultValue = false)]
-        public decimal Apr { get; set; }
+        public float Apr { get; set; }
 
         /// <summary>
         /// Gets or Sets Installments
         /// </summary>
         [DataMember(Name = "installments", EmitDefaultValue = false)]
-        public decimal Installments { get; set; }
+        public int Installments { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentsRetained
         /// </summary>
         [DataMember(Name = "paymentsRetained", EmitDefaultValue = false)]
-        public decimal PaymentsRetained { get; set; }
+        public float PaymentsRetained { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentRetainedAmount
         /// </summary>
         [DataMember(Name = "paymentRetainedAmount", EmitDefaultValue = false)]
-        public decimal PaymentRetainedAmount { get; set; }
+        public float PaymentRetainedAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets ESignResult
         /// </summary>
         [DataMember(Name = "eSignResult", EmitDefaultValue = false)]
         public PFEndorsementResponseItemQuoteESignResult ESignResult { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDownPaymentRequired
+        /// </summary>
+        [DataMember(Name = "isDownPaymentRequired", EmitDefaultValue = true)]
+        public bool IsDownPaymentRequired { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsEsignRequired
+        /// </summary>
+        [DataMember(Name = "IsEsignRequired", EmitDefaultValue = true)]
+        public bool IsEsignRequired { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsEndorsement
+        /// </summary>
+        [DataMember(Name = "IsEndorsement", EmitDefaultValue = true)]
+        public bool IsEndorsement { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -181,6 +205,9 @@ namespace Org.OpenAPITools.Model
             sb.Append("  PaymentsRetained: ").Append(PaymentsRetained).Append("\n");
             sb.Append("  PaymentRetainedAmount: ").Append(PaymentRetainedAmount).Append("\n");
             sb.Append("  ESignResult: ").Append(ESignResult).Append("\n");
+            sb.Append("  IsDownPaymentRequired: ").Append(IsDownPaymentRequired).Append("\n");
+            sb.Append("  IsEsignRequired: ").Append(IsEsignRequired).Append("\n");
+            sb.Append("  IsEndorsement: ").Append(IsEndorsement).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -38,22 +38,34 @@ namespace Org.OpenAPITools.Model
         public enum AdditionalDetailsPreferenceEnum
         {
             /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
             /// Enum AskShopper for value: AskShopper
             /// </summary>
             [EnumMember(Value = "AskShopper")]
-            AskShopper = 1,
+            AskShopper = 2,
 
             /// <summary>
             /// Enum ManualEnter for value: ManualEnter
             /// </summary>
             [EnumMember(Value = "ManualEnter")]
-            ManualEnter = 2,
+            ManualEnter = 3,
 
             /// <summary>
             /// Enum NoAdditionalDetails for value: NoAdditionalDetails
             /// </summary>
             [EnumMember(Value = "NoAdditionalDetails")]
-            NoAdditionalDetails = 3
+            NoAdditionalDetails = 4,
+
+            /// <summary>
+            /// Enum ManualEnterEditNotAllowed for value: ManualEnterEditNotAllowed
+            /// </summary>
+            [EnumMember(Value = "ManualEnterEditNotAllowed")]
+            ManualEnterEditNotAllowed = 5
         }
 
 
@@ -65,6 +77,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureUpdatePaymentLinkRequestSettings" /> class.
         /// </summary>
+        /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
+        /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
         /// <param name="displaySummary">displaySummary.</param>
         /// <param name="acceptCustomerInfo">acceptCustomerInfo.</param>
         /// <param name="removeHeader">removeHeader.</param>
@@ -72,9 +86,11 @@ namespace Org.OpenAPITools.Model
         /// <param name="acceptBankAccount">acceptBankAccount.</param>
         /// <param name="saveCustomer">saveCustomer.</param>
         /// <param name="saveCustomerAccount">saveCustomerAccount.</param>
-        /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
-        public SecureUpdatePaymentLinkRequestSettings(bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?))
+        /// <param name="intent">intent.</param>
+        public SecureUpdatePaymentLinkRequestSettings(string selectedCustomerFields = default(string), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool), SecureUpdatePaymentLinkRequestSettingsIntent intent = default(SecureUpdatePaymentLinkRequestSettingsIntent))
         {
+            this.SelectedCustomerFields = selectedCustomerFields;
+            this.AdditionalDetailsPreference = additionalDetailsPreference;
             this.DisplaySummary = displaySummary;
             this.AcceptCustomerInfo = acceptCustomerInfo;
             this.RemoveHeader = removeHeader;
@@ -82,8 +98,14 @@ namespace Org.OpenAPITools.Model
             this.AcceptBankAccount = acceptBankAccount;
             this.SaveCustomer = saveCustomer;
             this.SaveCustomerAccount = saveCustomerAccount;
-            this.AdditionalDetailsPreference = additionalDetailsPreference;
+            this.Intent = intent;
         }
+
+        /// <summary>
+        /// Gets or Sets SelectedCustomerFields
+        /// </summary>
+        [DataMember(Name = "selectedCustomerFields", EmitDefaultValue = false)]
+        public string SelectedCustomerFields { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplaySummary
@@ -128,6 +150,12 @@ namespace Org.OpenAPITools.Model
         public bool SaveCustomerAccount { get; set; }
 
         /// <summary>
+        /// Gets or Sets Intent
+        /// </summary>
+        [DataMember(Name = "intent", EmitDefaultValue = false)]
+        public SecureUpdatePaymentLinkRequestSettingsIntent Intent { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -135,6 +163,8 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SecureUpdatePaymentLinkRequestSettings {\n");
+            sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
+            sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
             sb.Append("  DisplaySummary: ").Append(DisplaySummary).Append("\n");
             sb.Append("  AcceptCustomerInfo: ").Append(AcceptCustomerInfo).Append("\n");
             sb.Append("  RemoveHeader: ").Append(RemoveHeader).Append("\n");
@@ -142,7 +172,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  AcceptBankAccount: ").Append(AcceptBankAccount).Append("\n");
             sb.Append("  SaveCustomer: ").Append(SaveCustomer).Append("\n");
             sb.Append("  SaveCustomerAccount: ").Append(SaveCustomerAccount).Append("\n");
-            sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
+            sb.Append("  Intent: ").Append(Intent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

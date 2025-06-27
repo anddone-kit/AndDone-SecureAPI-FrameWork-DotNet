@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="totalRowCount">totalRowCount.</param>
         /// <param name="totalAmount">totalAmount.</param>
         /// <param name="data">data.</param>
-        public PagePaymentListResponseDTO(int totalRowCount = default(int), int totalAmount = default(int), List<PagePaymentListResponseDTODataInner> data = default(List<PagePaymentListResponseDTODataInner>))
+        public PagePaymentListResponseDTO(float totalRowCount = default(float), float totalAmount = default(float), List<PagePaymentListResponseDTODataInner> data = default(List<PagePaymentListResponseDTODataInner>))
         {
             this.TotalRowCount = totalRowCount;
             this.TotalAmount = totalAmount;
@@ -48,13 +48,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets TotalRowCount
         /// </summary>
         [DataMember(Name = "totalRowCount", EmitDefaultValue = false)]
-        public int TotalRowCount { get; set; }
+        public float TotalRowCount { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalAmount
         /// </summary>
         [DataMember(Name = "totalAmount", EmitDefaultValue = false)]
-        public int TotalAmount { get; set; }
+        public float TotalAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets Data

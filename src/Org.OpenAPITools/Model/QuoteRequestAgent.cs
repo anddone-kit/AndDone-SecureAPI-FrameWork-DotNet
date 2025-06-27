@@ -34,53 +34,33 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequestAgent" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected QuoteRequestAgent() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QuoteRequestAgent" /> class.
-        /// </summary>
-        /// <param name="uniqueID">uniqueID (required).</param>
-        /// <param name="email">email (required).</param>
-        /// <param name="address">address (required).</param>
-        public QuoteRequestAgent(string uniqueID = default(string), string email = default(string), QuoteRequestInsuredAddress address = default(QuoteRequestInsuredAddress))
+        /// <param name="uniqueID">uniqueID.</param>
+        /// <param name="email">email.</param>
+        /// <param name="address">address.</param>
+        public QuoteRequestAgent(string uniqueID = default(string), string email = default(string), QuoteRequestAgentAddress address = default(QuoteRequestAgentAddress))
         {
-            // to ensure "uniqueID" is required (not null)
-            if (uniqueID == null)
-            {
-                throw new ArgumentNullException("uniqueID is a required property for QuoteRequestAgent and cannot be null");
-            }
             this.UniqueID = uniqueID;
-            // to ensure "email" is required (not null)
-            if (email == null)
-            {
-                throw new ArgumentNullException("email is a required property for QuoteRequestAgent and cannot be null");
-            }
             this.Email = email;
-            // to ensure "address" is required (not null)
-            if (address == null)
-            {
-                throw new ArgumentNullException("address is a required property for QuoteRequestAgent and cannot be null");
-            }
             this.Address = address;
         }
 
         /// <summary>
         /// Gets or Sets UniqueID
         /// </summary>
-        [DataMember(Name = "uniqueID", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "uniqueID", EmitDefaultValue = false)]
         public string UniqueID { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
-        public QuoteRequestInsuredAddress Address { get; set; }
+        [DataMember(Name = "address", EmitDefaultValue = false)]
+        public QuoteRequestAgentAddress Address { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

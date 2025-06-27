@@ -37,7 +37,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="accountAlias">accountAlias.</param>
         /// <param name="amount">amount.</param>
         /// <param name="chargeIndicator">chargeIndicator.</param>
-        public TransactionPaymentResponseTransactionEntitySplitResponsesInner(string accountAlias = default(string), decimal amount = default(decimal), bool chargeIndicator = default(bool))
+        public TransactionPaymentResponseTransactionEntitySplitResponsesInner(string accountAlias = default(string), float amount = default(float), bool chargeIndicator = default(bool))
         {
             this.AccountAlias = accountAlias;
             this.Amount = amount;
@@ -54,7 +54,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets ChargeIndicator

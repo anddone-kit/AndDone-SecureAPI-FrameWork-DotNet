@@ -73,15 +73,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MerchantName'
-        /// </summary>
-        [Fact]
-        public void MerchantNameTest()
-        {
-            // TODO unit test for the property 'MerchantName'
-        }
-
-        /// <summary>
         /// Test the property 'TransactionDate'
         /// </summary>
         [Fact]
@@ -106,15 +97,6 @@ namespace Org.OpenAPITools.Test.Model
         public void ChannelTypeTest()
         {
             // TODO unit test for the property 'ChannelType'
-        }
-
-        /// <summary>
-        /// Test the property 'ProcessMethod'
-        /// </summary>
-        [Fact]
-        public void ProcessMethodTest()
-        {
-            // TODO unit test for the property 'ProcessMethod'
         }
 
         /// <summary>
@@ -262,12 +244,30 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'TrainingMode'
+        /// </summary>
+        [Fact]
+        public void TrainingModeTest()
+        {
+            // TODO unit test for the property 'TrainingMode'
+        }
+
+        /// <summary>
         /// Test the property 'Amount'
         /// </summary>
         [Fact]
         public void AmountTest()
         {
             // TODO unit test for the property 'Amount'
+        }
+
+        /// <summary>
+        /// Test the property 'TipAmount'
+        /// </summary>
+        [Fact]
+        public void TipAmountTest()
+        {
+            // TODO unit test for the property 'TipAmount'
         }
 
         /// <summary>
@@ -289,21 +289,111 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'TaxPercent'
+        /// Test the property 'YaxAmount'
         /// </summary>
         [Fact]
-        public void TaxPercentTest()
+        public void YaxAmountTest()
         {
-            // TODO unit test for the property 'TaxPercent'
+            // TODO unit test for the property 'YaxAmount'
         }
 
         /// <summary>
-        /// Test the property 'TaxAmount'
+        /// Test the property 'SurchagePercent'
         /// </summary>
         [Fact]
-        public void TaxAmountTest()
+        public void SurchagePercentTest()
         {
-            // TODO unit test for the property 'TaxAmount'
+            // TODO unit test for the property 'SurchagePercent'
+        }
+
+        /// <summary>
+        /// Test the property 'SurchageAmount'
+        /// </summary>
+        [Fact]
+        public void SurchageAmountTest()
+        {
+            // TODO unit test for the property 'SurchageAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'CashDiscountPercent'
+        /// </summary>
+        [Fact]
+        public void CashDiscountPercentTest()
+        {
+            // TODO unit test for the property 'CashDiscountPercent'
+        }
+
+        /// <summary>
+        /// Test the property 'CashDiscountAmount'
+        /// </summary>
+        [Fact]
+        public void CashDiscountAmountTest()
+        {
+            // TODO unit test for the property 'CashDiscountAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'CashIncentiveType'
+        /// </summary>
+        [Fact]
+        public void CashIncentiveTypeTest()
+        {
+            // TODO unit test for the property 'CashIncentiveType'
+        }
+
+        /// <summary>
+        /// Test the property 'CashIncentivePercent'
+        /// </summary>
+        [Fact]
+        public void CashIncentivePercentTest()
+        {
+            // TODO unit test for the property 'CashIncentivePercent'
+        }
+
+        /// <summary>
+        /// Test the property 'CashIncentiveAmount'
+        /// </summary>
+        [Fact]
+        public void CashIncentiveAmountTest()
+        {
+            // TODO unit test for the property 'CashIncentiveAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'ClinicAmount'
+        /// </summary>
+        [Fact]
+        public void ClinicAmountTest()
+        {
+            // TODO unit test for the property 'ClinicAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'DentalAmount'
+        /// </summary>
+        [Fact]
+        public void DentalAmountTest()
+        {
+            // TODO unit test for the property 'DentalAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'RxAmount'
+        /// </summary>
+        [Fact]
+        public void RxAmountTest()
+        {
+            // TODO unit test for the property 'RxAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'VisionAmount'
+        /// </summary>
+        [Fact]
+        public void VisionAmountTest()
+        {
+            // TODO unit test for the property 'VisionAmount'
         }
 
         /// <summary>
@@ -313,186 +403,6 @@ namespace Org.OpenAPITools.Test.Model
         public void CardTypeTest()
         {
             // TODO unit test for the property 'CardType'
-        }
-
-        /// <summary>
-        /// Test the property 'CustomerName'
-        /// </summary>
-        [Fact]
-        public void CustomerNameTest()
-        {
-            // TODO unit test for the property 'CustomerName'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedInvoiceId'
-        /// </summary>
-        [Fact]
-        public void MaskedInvoiceIdTest()
-        {
-            // TODO unit test for the property 'MaskedInvoiceId'
-        }
-
-        /// <summary>
-        /// Test the property 'MaskedPaymentLinkId'
-        /// </summary>
-        [Fact]
-        public void MaskedPaymentLinkIdTest()
-        {
-            // TODO unit test for the property 'MaskedPaymentLinkId'
-        }
-
-        /// <summary>
-        /// Test the property 'ReferenceNo'
-        /// </summary>
-        [Fact]
-        public void ReferenceNoTest()
-        {
-            // TODO unit test for the property 'ReferenceNo'
-        }
-
-        /// <summary>
-        /// Test the property 'ProcessorName'
-        /// </summary>
-        [Fact]
-        public void ProcessorNameTest()
-        {
-            // TODO unit test for the property 'ProcessorName'
-        }
-
-        /// <summary>
-        /// Test the property 'ProcessorDisplayName'
-        /// </summary>
-        [Fact]
-        public void ProcessorDisplayNameTest()
-        {
-            // TODO unit test for the property 'ProcessorDisplayName'
-        }
-
-        /// <summary>
-        /// Test the property 'ProcessorCode'
-        /// </summary>
-        [Fact]
-        public void ProcessorCodeTest()
-        {
-            // TODO unit test for the property 'ProcessorCode'
-        }
-
-        /// <summary>
-        /// Test the property 'Verification2Code'
-        /// </summary>
-        [Fact]
-        public void Verification2CodeTest()
-        {
-            // TODO unit test for the property 'Verification2Code'
-        }
-
-        /// <summary>
-        /// Test the property 'TransactionOrigin'
-        /// </summary>
-        [Fact]
-        public void TransactionOriginTest()
-        {
-            // TODO unit test for the property 'TransactionOrigin'
-        }
-
-        /// <summary>
-        /// Test the property 'CommissionType'
-        /// </summary>
-        [Fact]
-        public void CommissionTypeTest()
-        {
-            // TODO unit test for the property 'CommissionType'
-        }
-
-        /// <summary>
-        /// Test the property 'CommissionValue'
-        /// </summary>
-        [Fact]
-        public void CommissionValueTest()
-        {
-            // TODO unit test for the property 'CommissionValue'
-        }
-
-        /// <summary>
-        /// Test the property 'CommissionFixedValue'
-        /// </summary>
-        [Fact]
-        public void CommissionFixedValueTest()
-        {
-            // TODO unit test for the property 'CommissionFixedValue'
-        }
-
-        /// <summary>
-        /// Test the property 'AdjustmentFixedValue'
-        /// </summary>
-        [Fact]
-        public void AdjustmentFixedValueTest()
-        {
-            // TODO unit test for the property 'AdjustmentFixedValue'
-        }
-
-        /// <summary>
-        /// Test the property 'AdjustmentValue'
-        /// </summary>
-        [Fact]
-        public void AdjustmentValueTest()
-        {
-            // TODO unit test for the property 'AdjustmentValue'
-        }
-
-        /// <summary>
-        /// Test the property 'AdjustmentValueType'
-        /// </summary>
-        [Fact]
-        public void AdjustmentValueTypeTest()
-        {
-            // TODO unit test for the property 'AdjustmentValueType'
-        }
-
-        /// <summary>
-        /// Test the property 'AdjustmentAmount'
-        /// </summary>
-        [Fact]
-        public void AdjustmentAmountTest()
-        {
-            // TODO unit test for the property 'AdjustmentAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'AdjustmentDisplayName'
-        /// </summary>
-        [Fact]
-        public void AdjustmentDisplayNameTest()
-        {
-            // TODO unit test for the property 'AdjustmentDisplayName'
-        }
-
-        /// <summary>
-        /// Test the property 'AdjustmentDescriptorMessage'
-        /// </summary>
-        [Fact]
-        public void AdjustmentDescriptorMessageTest()
-        {
-            // TODO unit test for the property 'AdjustmentDescriptorMessage'
-        }
-
-        /// <summary>
-        /// Test the property 'PaymentAdjustmentType'
-        /// </summary>
-        [Fact]
-        public void PaymentAdjustmentTypeTest()
-        {
-            // TODO unit test for the property 'PaymentAdjustmentType'
-        }
-
-        /// <summary>
-        /// Test the property 'TraceNumber'
-        /// </summary>
-        [Fact]
-        public void TraceNumberTest()
-        {
-            // TODO unit test for the property 'TraceNumber'
         }
 
         /// <summary>
@@ -532,21 +442,84 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'MerchantReference'
+        /// Test the property 'CustomerName'
         /// </summary>
         [Fact]
-        public void MerchantReferenceTest()
+        public void CustomerNameTest()
         {
-            // TODO unit test for the property 'MerchantReference'
+            // TODO unit test for the property 'CustomerName'
         }
 
         /// <summary>
-        /// Test the property 'AdditionaFields'
+        /// Test the property 'PartnerId'
         /// </summary>
         [Fact]
-        public void AdditionaFieldsTest()
+        public void PartnerIdTest()
         {
-            // TODO unit test for the property 'AdditionaFields'
+            // TODO unit test for the property 'PartnerId'
+        }
+
+        /// <summary>
+        /// Test the property 'PartnerName'
+        /// </summary>
+        [Fact]
+        public void PartnerNameTest()
+        {
+            // TODO unit test for the property 'PartnerName'
+        }
+
+        /// <summary>
+        /// Test the property 'OrderId'
+        /// </summary>
+        [Fact]
+        public void OrderIdTest()
+        {
+            // TODO unit test for the property 'OrderId'
+        }
+
+        /// <summary>
+        /// Test the property 'InvoiceId'
+        /// </summary>
+        [Fact]
+        public void InvoiceIdTest()
+        {
+            // TODO unit test for the property 'InvoiceId'
+        }
+
+        /// <summary>
+        /// Test the property 'PaymentLinkId'
+        /// </summary>
+        [Fact]
+        public void PaymentLinkIdTest()
+        {
+            // TODO unit test for the property 'PaymentLinkId'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceNo'
+        /// </summary>
+        [Fact]
+        public void ReferenceNoTest()
+        {
+            // TODO unit test for the property 'ReferenceNo'
+        }
+
+        /// <summary>
+        /// Test the property 'ProcessorName'
+        /// </summary>
+        [Fact]
+        public void ProcessorNameTest()
+        {
+            // TODO unit test for the property 'ProcessorName'
+        }
+
+        /// <summary>
+        /// Test the property 'Verification2Code'
+        /// </summary>
+        [Fact]
+        public void Verification2CodeTest()
+        {
+            // TODO unit test for the property 'Verification2Code'
         }
 
         /// <summary>
@@ -565,24 +538,6 @@ namespace Org.OpenAPITools.Test.Model
         public void PaymentCategoryTest()
         {
             // TODO unit test for the property 'PaymentCategory'
-        }
-
-        /// <summary>
-        /// Test the property 'MerchantDBAName'
-        /// </summary>
-        [Fact]
-        public void MerchantDBANameTest()
-        {
-            // TODO unit test for the property 'MerchantDBAName'
-        }
-
-        /// <summary>
-        /// Test the property 'FullAccountNumber'
-        /// </summary>
-        [Fact]
-        public void FullAccountNumberTest()
-        {
-            // TODO unit test for the property 'FullAccountNumber'
         }
     }
 }

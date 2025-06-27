@@ -66,20 +66,25 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TypeEnum? Type { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurePaymentDetailsRequest" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected SecurePaymentDetailsRequest() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurePaymentDetailsRequest" /> class.
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="paymentToken">paymentToken.</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">type (required).</param>
         /// <param name="includeRefundTransactions">includeRefundTransactions.</param>
-        public SecurePaymentDetailsRequest(string id = default(string), string paymentToken = default(string), TypeEnum? type = default(TypeEnum?), bool includeRefundTransactions = default(bool))
+        public SecurePaymentDetailsRequest(string id = default(string), string paymentToken = default(string), TypeEnum type = default(TypeEnum), bool includeRefundTransactions = default(bool))
         {
+            this.Type = type;
             this.Id = id;
             this.PaymentToken = paymentToken;
-            this.Type = type;
             this.IncludeRefundTransactions = includeRefundTransactions;
         }
 

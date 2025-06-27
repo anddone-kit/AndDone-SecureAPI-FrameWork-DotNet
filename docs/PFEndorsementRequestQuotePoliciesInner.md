@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PolicyId** | **string** | This denotes the policy identifier. | 
-**Premium** | **decimal** | This denotes the premium amount. | 
-**Down** | **decimal** | This denotes the down amount. | [optional] 
-**DownPercent** | **decimal** | This denotes the down percentage. | [optional] 
-**Fee** | **decimal** | This denotes the fee amount. | [optional] 
-**Tax** | **decimal** | This denotes the tax amount. | [optional] 
+**PolicyId** | **string** | This denotes the policy identifier. | [optional] 
+**Premium** | **float** | This denotes the premium amount. | 
+**Down** | **float** | This denotes the down amount. | [optional] 
+**DownPercent** | **float** | This denotes the down percentage. | [optional] 
+**Fee** | **float** | This denotes the fee amount. | [optional] 
+**Tax** | **float** | This denotes the tax amount. | [optional] 
 **PolicyNumber** | **string** | This denotes the policy number. | [optional] 
 **Company** | [**PFEndorsementRequestQuotePoliciesInnerCompany**](PFEndorsementRequestQuotePoliciesInnerCompany.md) |  | [optional] 
 **Ga** | [**PFEndorsementRequestQuotePoliciesInnerGa**](PFEndorsementRequestQuotePoliciesInnerGa.md) |  | [optional] 
@@ -17,14 +17,14 @@ Name | Type | Description | Notes
 **Coverage** | **string** | This denotes the coverage and it is required if adding new policy. | [optional] 
 **EffectiveDate** | **string** | This denotes the effective date. | 
 **ExpirationDate** | **string** | This denotes the expiration date and it is required if adding new policy. | 
-**Term** | **decimal** | This denotes the number of terms. | 
-**MinimumEarned** | **decimal** | This denotes the minimum earned amount. | [optional] 
-**MinimumEarnedPercent** | **decimal** | This denotes the minimum earned percent. | [optional] 
+**Term** | **float** | This denotes the number of terms. | [optional] 
+**MinimumEarned** | **float** | This denotes the minimum earned amount. | [optional] 
+**MinimumEarnedPercent** | **float** | This denotes the minimum earned percent. | [optional] 
 **Auditable** | **bool** | This denotes the flag if it is auditable or not. | [optional] 
 **CancelDays** | **string** | This denotes the cancel days. | [optional] 
 **LossPayeeRequested** | **bool** | This denotes the flag of loss payee requested. | [optional] 
-**MinimumLiability** | **decimal** | This denotes the minimum liability. | [optional] 
-**MaximumLiability** | **decimal** | This denotes the maximum liability. | [optional] 
+**MinimumLiability** | **float** | This denotes the minimum liability. | [optional] 
+**MaximumLiability** | **float** | This denotes the maximum liability. | [optional] 
 **TotalPayFunding** | [**List&lt;PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner&gt;**](PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner.md) |  | [optional] 
 **PolicyFee** | [**List&lt;PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner&gt;**](PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner.md) |  | [optional] 
 **InvoiceNumber** | **string** | This denotes the invoice number. | [optional] 

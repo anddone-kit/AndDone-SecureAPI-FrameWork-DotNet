@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **BatchId** | **string** | The batch ID associated with the eSign process. | [optional] 
 **AgentUrl** | **string** | The URL for the agent to sign. | [optional] 
 **InsuredUrl** | **string** | The URL for the insured to sign. | [optional] 
-**ESignOption** | **int** | The option chosen for eSign. | [optional] 
+**ESignOption** | **float** | The option chosen for eSign. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

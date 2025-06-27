@@ -34,16 +34,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureBatchExecuteRequest" /> class.
         /// </summary>
-        /// <param name="batchId">batchId.</param>
+        [JsonConstructorAttribute]
+        protected SecureBatchExecuteRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecureBatchExecuteRequest" /> class.
+        /// </summary>
+        /// <param name="batchId">batchId (required).</param>
         public SecureBatchExecuteRequest(string batchId = default(string))
         {
+            // to ensure "batchId" is required (not null)
+            if (batchId == null)
+            {
+                throw new ArgumentNullException("batchId is a required property for SecureBatchExecuteRequest and cannot be null");
+            }
             this.BatchId = batchId;
         }
 
         /// <summary>
         /// Gets or Sets BatchId
         /// </summary>
-        [DataMember(Name = "batchId", EmitDefaultValue = false)]
+        [DataMember(Name = "batchId", IsRequired = true, EmitDefaultValue = true)]
         public string BatchId { get; set; }
 
         /// <summary>

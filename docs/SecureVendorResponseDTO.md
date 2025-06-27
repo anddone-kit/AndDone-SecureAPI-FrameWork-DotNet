@@ -20,7 +20,12 @@ Name | Type | Description | Notes
 **Email** | **string** |  | [optional] 
 **Url** | **string** |  | [optional] 
 **RemittanceAddress** | [**SecureVendorResponseDTORemittanceAddress**](SecureVendorResponseDTORemittanceAddress.md) |  | [optional] 
-**PhysicalAddress** | [**SecureVendorResponseDTOPhysicalAddress**](SecureVendorResponseDTOPhysicalAddress.md) |  | [optional] 
+**PhysicalAddress** | [**SecureVendorResponseDTORemittanceAddress**](SecureVendorResponseDTORemittanceAddress.md) |  | [optional] 
+**VendorStatus** | **string** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
+**ModifiedBy** | **string** |  | [optional] 
+**CreatedOn** | **string** |  | [optional] 
+**ModifiedOn** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

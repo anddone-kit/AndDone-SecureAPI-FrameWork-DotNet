@@ -148,7 +148,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="modifiedOn">modifiedOn.</param>
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="httpResponse">httpResponse.</param>
-        public VerifyBankAccountResponse(string id = default(string), string verificationEntityId = default(string), VerifyingEntityEnum? verifyingEntity = default(VerifyingEntityEnum?), VerificationStatusEnum? verificationStatus = default(VerificationStatusEnum?), string statusReason = default(string), string estimatedVerificationDate = default(string), string eventId = default(string), string eventType = default(string), int bankAccountEntityId = default(int), BankAccountEntityTypeEnum? bankAccountEntityType = default(BankAccountEntityTypeEnum?), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), VerifyBankAccountResponseHttpResponse httpResponse = default(VerifyBankAccountResponseHttpResponse))
+        public VerifyBankAccountResponse(string id = default(string), string verificationEntityId = default(string), VerifyingEntityEnum? verifyingEntity = default(VerifyingEntityEnum?), VerificationStatusEnum? verificationStatus = default(VerificationStatusEnum?), string statusReason = default(string), string estimatedVerificationDate = default(string), string eventId = default(string), string eventType = default(string), float bankAccountEntityId = default(float), BankAccountEntityTypeEnum? bankAccountEntityType = default(BankAccountEntityTypeEnum?), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), VerifyBankAccountResponseHttpResponse httpResponse = default(VerifyBankAccountResponseHttpResponse))
         {
             this.Id = id;
             this.VerificationEntityId = verificationEntityId;
@@ -207,7 +207,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets BankAccountEntityId
         /// </summary>
         [DataMember(Name = "bankAccountEntityId", EmitDefaultValue = false)]
-        public int BankAccountEntityId { get; set; }
+        public float BankAccountEntityId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedOn

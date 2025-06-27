@@ -34,16 +34,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="VerificationEntityRequest" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected VerificationEntityRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerificationEntityRequest" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         public VerificationEntityRequest(string id = default(string))
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for VerificationEntityRequest and cannot be null");
+            }
             this.Id = id;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>

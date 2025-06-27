@@ -36,7 +36,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="feeName">feeName.</param>
         /// <param name="feeAmount">feeAmount.</param>
-        public PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner(string feeName = default(string), decimal feeAmount = default(decimal))
+        public PFEndorsementRequestQuotePoliciesInnerPolicyFeeInner(string feeName = default(string), float feeAmount = default(float))
         {
             this.FeeName = feeName;
             this.FeeAmount = feeAmount;
@@ -52,7 +52,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets FeeAmount
         /// </summary>
         [DataMember(Name = "feeAmount", EmitDefaultValue = false)]
-        public decimal FeeAmount { get; set; }
+        public float FeeAmount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

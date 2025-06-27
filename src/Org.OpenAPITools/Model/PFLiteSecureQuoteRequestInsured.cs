@@ -44,7 +44,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="lastName">lastName (required).</param>
         /// <param name="namedInsured">namedInsured.</param>
         /// <param name="mobilePhoneNumber">mobilePhoneNumber.</param>
-        /// <param name="emailAddress">emailAddress.</param>
+        /// <param name="emailAddress">emailAddress (required).</param>
         /// <param name="isCancellationWarningViaTextEnabled">isCancellationWarningViaTextEnabled.</param>
         /// <param name="faxNumber">faxNumber.</param>
         /// <param name="address">address (required).</param>
@@ -62,6 +62,12 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("lastName is a required property for PFLiteSecureQuoteRequestInsured and cannot be null");
             }
             this.LastName = lastName;
+            // to ensure "emailAddress" is required (not null)
+            if (emailAddress == null)
+            {
+                throw new ArgumentNullException("emailAddress is a required property for PFLiteSecureQuoteRequestInsured and cannot be null");
+            }
+            this.EmailAddress = emailAddress;
             // to ensure "address" is required (not null)
             if (address == null)
             {
@@ -71,7 +77,6 @@ namespace Org.OpenAPITools.Model
             this.Id = id;
             this.NamedInsured = namedInsured;
             this.MobilePhoneNumber = mobilePhoneNumber;
-            this.EmailAddress = emailAddress;
             this.IsCancellationWarningViaTextEnabled = isCancellationWarningViaTextEnabled;
             this.FaxNumber = faxNumber;
         }
@@ -109,7 +114,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets EmailAddress
         /// </summary>
-        [DataMember(Name = "emailAddress", EmitDefaultValue = false)]
+        [DataMember(Name = "emailAddress", IsRequired = true, EmitDefaultValue = true)]
         public string EmailAddress { get; set; }
 
         /// <summary>

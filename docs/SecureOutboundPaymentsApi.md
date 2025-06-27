@@ -12,7 +12,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="vendorapisecureoutboundpaymentstimelinespost"></a>
 # **VendorapiSecureOutboundPaymentsTimelinesPost**
-> List&lt;OutboundPaymentTimelineResponseDTOInner&gt; VendorapiSecureOutboundPaymentsTimelinesPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentTimeLineRequestDto paymentTimeLineRequestDto)
+> List&lt;OutboundPaymentTimelineResponseDTOInner&gt; VendorapiSecureOutboundPaymentsTimelinesPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentTimeLineRequestDto paymentTimeLineRequestDto)
 
 This API gets outbound payment timelines
 
@@ -44,7 +44,7 @@ namespace Example
             var apiInstance = new SecureOutboundPaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var paymentTimeLineRequestDto = new PaymentTimeLineRequestDto(); // PaymentTimeLineRequestDto | PaymentTimeLineRequestDto
 
@@ -91,7 +91,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **paymentTimeLineRequestDto** | [**PaymentTimeLineRequestDto**](PaymentTimeLineRequestDto.md) | PaymentTimeLineRequestDto |  |
 
@@ -121,7 +121,7 @@ catch (ApiException e)
 
 <a id="vendorapisecureoutboundpaymentscancelpost"></a>
 # **VendorapiSecureOutboundpaymentsCancelPost**
-> void VendorapiSecureOutboundpaymentsCancelPost (string xApiKey, string xAppKey, decimal xVersion, string origin, CancelPaymentRequestDTO cancelPaymentRequestDTO)
+> void VendorapiSecureOutboundpaymentsCancelPost (string xApiKey, string xAppKey, float xVersion, string origin, CancelPaymentRequestDTO cancelPaymentRequestDTO)
 
 This API cancel outbound payment request
 
@@ -153,7 +153,7 @@ namespace Example
             var apiInstance = new SecureOutboundPaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var cancelPaymentRequestDTO = new CancelPaymentRequestDTO(); // CancelPaymentRequestDTO | CancelPaymentRequestDTO
 
@@ -196,7 +196,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **cancelPaymentRequestDTO** | [**CancelPaymentRequestDTO**](CancelPaymentRequestDTO.md) | CancelPaymentRequestDTO |  |
 
@@ -225,7 +225,7 @@ void (empty response body)
 
 <a id="vendorapisecureoutboundpaymentsdetailpost"></a>
 # **VendorapiSecureOutboundpaymentsDetailPost**
-> PaymentDetailResponseDTO VendorapiSecureOutboundpaymentsDetailPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentRequestDetailDTO paymentRequestDetailDTO)
+> PaymentDetailResponseDTO VendorapiSecureOutboundpaymentsDetailPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentRequestDetailDTO paymentRequestDetailDTO)
 
 This API fetch outbound payment by paymentId
 
@@ -257,7 +257,7 @@ namespace Example
             var apiInstance = new SecureOutboundPaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var paymentRequestDetailDTO = new PaymentRequestDetailDTO(); // PaymentRequestDetailDTO | PaymentRequestDetailDTO
 
@@ -304,7 +304,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **paymentRequestDetailDTO** | [**PaymentRequestDetailDTO**](PaymentRequestDetailDTO.md) | PaymentRequestDetailDTO |  |
 
@@ -333,7 +333,7 @@ catch (ApiException e)
 
 <a id="vendorapisecureoutboundpaymentspost"></a>
 # **VendorapiSecureOutboundpaymentsPost**
-> PaymentResponseDto VendorapiSecureOutboundpaymentsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, PaymentRequestDto paymentRequestDto)
+> PaymentResponseDto VendorapiSecureOutboundpaymentsPost (string xApiKey, string xAppKey, float xVersion, string origin, PaymentRequestDto paymentRequestDto)
 
 This API creates outbound payment request
 
@@ -365,7 +365,7 @@ namespace Example
             var apiInstance = new SecureOutboundPaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var paymentRequestDto = new PaymentRequestDto(); // PaymentRequestDto | PaymentRequestDto
 
@@ -412,7 +412,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **paymentRequestDto** | [**PaymentRequestDto**](PaymentRequestDto.md) | PaymentRequestDto |  |
 
@@ -442,7 +442,7 @@ catch (ApiException e)
 
 <a id="vendorapisecureoutboundpaymentssearchpost"></a>
 # **VendorapiSecureOutboundpaymentsSearchPost**
-> PagePaymentListResponseDTO VendorapiSecureOutboundpaymentsSearchPost (string xApiKey, string xAppKey, decimal xVersion, string? vendorId = null, string? paymentBasedId = null, string? paymentId = null, string? vendorName = null, string? paymentMethodType = null, string? paymentMethodStatus = null, string? amount = null, string? fromAmount = null, string? toAmount = null, string? startDate = null, string? endDate = null, string? searchText = null, string? sortField = null)
+> PagePaymentListResponseDTO VendorapiSecureOutboundpaymentsSearchPost (string xApiKey, string xAppKey, float xVersion, string origin, string? vendorId = null, string? paymentBasedId = null, string? paymentId = null, string? vendorName = null, string? paymentMethodType = null, string? paymentMethodStatus = null, float? amount = null, float? fromAmount = null, float? toAmount = null, string? startDate = null, string? endDate = null, string? searchText = null, string? sortField = null)
 
 This API gets all outbound payment
 
@@ -474,16 +474,17 @@ namespace Example
             var apiInstance = new SecureOutboundPaymentsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
             var vendorId = "vendorId_example";  // string? | sets vendorId (optional) 
             var paymentBasedId = "paymentBasedId_example";  // string? | sets paymentBasedId (optional) 
             var paymentId = "paymentId_example";  // string? | sets paymentId (optional) 
             var vendorName = "vendorName_example";  // string? | sets vendorName (optional) 
-            var paymentMethodType = "Checks";  // string? | sets paymentMethodType (optional) 
+            var paymentMethodType = "Check";  // string? | sets paymentMethodType (optional) 
             var paymentMethodStatus = "paymentMethodStatus_example";  // string? | sets paymentMethodStatus (optional) 
-            var amount = "amount_example";  // string? | sets amount (optional) 
-            var fromAmount = "fromAmount_example";  // string? | sets fromAmount (optional) 
-            var toAmount = "toAmount_example";  // string? | sets toAmount (optional) 
+            var amount = 8.14D;  // float? | sets amount (optional) 
+            var fromAmount = 8.14D;  // float? | sets fromAmount (optional) 
+            var toAmount = 8.14D;  // float? | sets toAmount (optional) 
             var startDate = "startDate_example";  // string? | sets startDate (optional) 
             var endDate = "endDate_example";  // string? | sets endDate (optional) 
             var searchText = "searchText_example";  // string? | sets searchText (optional) 
@@ -492,7 +493,7 @@ namespace Example
             try
             {
                 // This API gets all outbound payment
-                PagePaymentListResponseDTO result = apiInstance.VendorapiSecureOutboundpaymentsSearchPost(xApiKey, xAppKey, xVersion, vendorId, paymentBasedId, paymentId, vendorName, paymentMethodType, paymentMethodStatus, amount, fromAmount, toAmount, startDate, endDate, searchText, sortField);
+                PagePaymentListResponseDTO result = apiInstance.VendorapiSecureOutboundpaymentsSearchPost(xApiKey, xAppKey, xVersion, origin, vendorId, paymentBasedId, paymentId, vendorName, paymentMethodType, paymentMethodStatus, amount, fromAmount, toAmount, startDate, endDate, searchText, sortField);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -513,7 +514,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API gets all outbound payment
-    ApiResponse<PagePaymentListResponseDTO> response = apiInstance.VendorapiSecureOutboundpaymentsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, vendorId, paymentBasedId, paymentId, vendorName, paymentMethodType, paymentMethodStatus, amount, fromAmount, toAmount, startDate, endDate, searchText, sortField);
+    ApiResponse<PagePaymentListResponseDTO> response = apiInstance.VendorapiSecureOutboundpaymentsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, vendorId, paymentBasedId, paymentId, vendorName, paymentMethodType, paymentMethodStatus, amount, fromAmount, toAmount, startDate, endDate, searchText, sortField);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -532,16 +533,17 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **vendorId** | **string?** | sets vendorId | [optional]  |
 | **paymentBasedId** | **string?** | sets paymentBasedId | [optional]  |
 | **paymentId** | **string?** | sets paymentId | [optional]  |
 | **vendorName** | **string?** | sets vendorName | [optional]  |
 | **paymentMethodType** | **string?** | sets paymentMethodType | [optional]  |
 | **paymentMethodStatus** | **string?** | sets paymentMethodStatus | [optional]  |
-| **amount** | **string?** | sets amount | [optional]  |
-| **fromAmount** | **string?** | sets fromAmount | [optional]  |
-| **toAmount** | **string?** | sets toAmount | [optional]  |
+| **amount** | **float?** | sets amount | [optional]  |
+| **fromAmount** | **float?** | sets fromAmount | [optional]  |
+| **toAmount** | **float?** | sets toAmount | [optional]  |
 | **startDate** | **string?** | sets startDate | [optional]  |
 | **endDate** | **string?** | sets endDate | [optional]  |
 | **searchText** | **string?** | sets searchText | [optional]  |

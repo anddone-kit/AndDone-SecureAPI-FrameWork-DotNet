@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VendorId** | **string** |  | [optional] 
+**VendorId** | **string** |  | 
 **VendorName** | **string** |  | [optional] 
 **VendorAliasName** | **string** |  | [optional] 
 **VendorDbName** | **string** | Database name of the vendor | [optional] 

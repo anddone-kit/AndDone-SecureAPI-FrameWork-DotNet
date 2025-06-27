@@ -145,15 +145,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'CustomerAccountId'
-        /// </summary>
-        [Fact]
-        public void CustomerAccountIdTest()
-        {
-            // TODO unit test for the property 'CustomerAccountId'
-        }
-
-        /// <summary>
         /// Test the property 'RecurringId'
         /// </summary>
         [Fact]
@@ -289,15 +280,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'TipAmount'
-        /// </summary>
-        [Fact]
-        public void TipAmountTest()
-        {
-            // TODO unit test for the property 'TipAmount'
-        }
-
-        /// <summary>
         /// Test the property 'ConvenienceAmount'
         /// </summary>
         [Fact]
@@ -313,24 +295,6 @@ namespace Org.OpenAPITools.Test.Model
         public void CaptureAmountTest()
         {
             // TODO unit test for the property 'CaptureAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxPercent'
-        /// </summary>
-        [Fact]
-        public void TaxPercentTest()
-        {
-            // TODO unit test for the property 'TaxPercent'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAmount'
-        /// </summary>
-        [Fact]
-        public void TaxAmountTest()
-        {
-            // TODO unit test for the property 'TaxAmount'
         }
 
         /// <summary>
@@ -448,6 +412,15 @@ namespace Org.OpenAPITools.Test.Model
         public void ProcessorNameTest()
         {
             // TODO unit test for the property 'ProcessorName'
+        }
+
+        /// <summary>
+        /// Test the property 'ProcessorDisplayName'
+        /// </summary>
+        [Fact]
+        public void ProcessorDisplayNameTest()
+        {
+            // TODO unit test for the property 'ProcessorDisplayName'
         }
 
         /// <summary>
@@ -586,6 +559,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'AccountToken'
+        /// </summary>
+        [Fact]
+        public void AccountTokenTest()
+        {
+            // TODO unit test for the property 'AccountToken'
+        }
+
+        /// <summary>
         /// Test the property 'PaymentType'
         /// </summary>
         [Fact]
@@ -601,6 +583,24 @@ namespace Org.OpenAPITools.Test.Model
         public void PaymentCategoryTest()
         {
             // TODO unit test for the property 'PaymentCategory'
+        }
+
+        /// <summary>
+        /// Test the property 'RefundReason'
+        /// </summary>
+        [Fact]
+        public void RefundReasonTest()
+        {
+            // TODO unit test for the property 'RefundReason'
+        }
+
+        /// <summary>
+        /// Test the property 'RefundDetail'
+        /// </summary>
+        [Fact]
+        public void RefundDetailTest()
+        {
+            // TODO unit test for the property 'RefundDetail'
         }
 
         /// <summary>

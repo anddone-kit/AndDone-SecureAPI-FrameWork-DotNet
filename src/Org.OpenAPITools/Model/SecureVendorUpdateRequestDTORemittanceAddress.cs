@@ -32,43 +32,6 @@ namespace Org.OpenAPITools.Model
     public partial class SecureVendorUpdateRequestDTORemittanceAddress : IValidatableObject
     {
         /// <summary>
-        /// Defines AddressType
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AddressTypeEnum
-        {
-            /// <summary>
-            /// Enum NA for value: NA
-            /// </summary>
-            [EnumMember(Value = "NA")]
-            NA = 1,
-
-            /// <summary>
-            /// Enum Remittance for value: Remittance
-            /// </summary>
-            [EnumMember(Value = "Remittance")]
-            Remittance = 2,
-
-            /// <summary>
-            /// Enum Correspondence for value: Correspondence
-            /// </summary>
-            [EnumMember(Value = "Correspondence")]
-            Correspondence = 3,
-
-            /// <summary>
-            /// Enum Physical for value: Physical
-            /// </summary>
-            [EnumMember(Value = "Physical")]
-            Physical = 4
-        }
-
-
-        /// <summary>
-        /// Gets or Sets AddressType
-        /// </summary>
-        [DataMember(Name = "addressType", EmitDefaultValue = false)]
-        public AddressTypeEnum? AddressType { get; set; }
-        /// <summary>
         /// Defines AddressSource
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -78,7 +41,19 @@ namespace Org.OpenAPITools.Model
             /// Enum NA for value: NA
             /// </summary>
             [EnumMember(Value = "NA")]
-            NA = 1
+            NA = 1,
+
+            /// <summary>
+            /// Enum Manual for value: Manual
+            /// </summary>
+            [EnumMember(Value = "Manual")]
+            Manual = 2,
+
+            /// <summary>
+            /// Enum SmartyLookup for value: Smarty_lookup
+            /// </summary>
+            [EnumMember(Value = "Smarty_lookup")]
+            SmartyLookup = 3
         }
 
 
@@ -97,9 +72,8 @@ namespace Org.OpenAPITools.Model
         /// <param name="state">state.</param>
         /// <param name="country">country.</param>
         /// <param name="postalCode">postalCode.</param>
-        /// <param name="addressType">addressType.</param>
         /// <param name="addressSource">addressSource.</param>
-        public SecureVendorUpdateRequestDTORemittanceAddress(string attention = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), AddressTypeEnum? addressType = default(AddressTypeEnum?), AddressSourceEnum? addressSource = default(AddressSourceEnum?))
+        public SecureVendorUpdateRequestDTORemittanceAddress(string attention = default(string), string addressLine1 = default(string), string addressLine2 = default(string), string city = default(string), string state = default(string), string country = default(string), string postalCode = default(string), AddressSourceEnum? addressSource = default(AddressSourceEnum?))
         {
             this.Attention = attention;
             this.AddressLine1 = addressLine1;
@@ -108,7 +82,6 @@ namespace Org.OpenAPITools.Model
             this.State = state;
             this.Country = country;
             this.PostalCode = postalCode;
-            this.AddressType = addressType;
             this.AddressSource = addressSource;
         }
 
@@ -169,7 +142,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  PostalCode: ").Append(PostalCode).Append("\n");
-            sb.Append("  AddressType: ").Append(AddressType).Append("\n");
             sb.Append("  AddressSource: ").Append(AddressSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

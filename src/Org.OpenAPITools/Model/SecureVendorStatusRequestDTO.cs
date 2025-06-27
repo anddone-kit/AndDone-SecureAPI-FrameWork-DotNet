@@ -34,24 +34,39 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecureVendorStatusRequestDTO" /> class.
         /// </summary>
-        /// <param name="vendorId">vendorId.</param>
-        /// <param name="reason">reason.</param>
+        [JsonConstructorAttribute]
+        protected SecureVendorStatusRequestDTO() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecureVendorStatusRequestDTO" /> class.
+        /// </summary>
+        /// <param name="vendorId">vendorId (required).</param>
+        /// <param name="reason">reason (required).</param>
         public SecureVendorStatusRequestDTO(string vendorId = default(string), string reason = default(string))
         {
+            // to ensure "vendorId" is required (not null)
+            if (vendorId == null)
+            {
+                throw new ArgumentNullException("vendorId is a required property for SecureVendorStatusRequestDTO and cannot be null");
+            }
             this.VendorId = vendorId;
+            // to ensure "reason" is required (not null)
+            if (reason == null)
+            {
+                throw new ArgumentNullException("reason is a required property for SecureVendorStatusRequestDTO and cannot be null");
+            }
             this.Reason = reason;
         }
 
         /// <summary>
         /// Gets or Sets VendorId
         /// </summary>
-        [DataMember(Name = "vendorId", EmitDefaultValue = false)]
+        [DataMember(Name = "vendorId", IsRequired = true, EmitDefaultValue = true)]
         public string VendorId { get; set; }
 
         /// <summary>
         /// Gets or Sets Reason
         /// </summary>
-        [DataMember(Name = "reason", EmitDefaultValue = false)]
+        [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
 
         /// <summary>

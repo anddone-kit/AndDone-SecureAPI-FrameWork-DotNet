@@ -34,40 +34,65 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentBatchCancellationRequest" /> class.
         /// </summary>
-        /// <param name="merchantId">merchantId.</param>
-        /// <param name="batchId">batchId.</param>
-        /// <param name="voidReason">voidReason.</param>
-        /// <param name="transactionIds">transactionIds.</param>
+        [JsonConstructorAttribute]
+        protected PaymentBatchCancellationRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentBatchCancellationRequest" /> class.
+        /// </summary>
+        /// <param name="merchantId">merchantId (required).</param>
+        /// <param name="batchId">batchId (required).</param>
+        /// <param name="voidReason">voidReason (required).</param>
+        /// <param name="transactionIds">transactionIds (required).</param>
         public PaymentBatchCancellationRequest(string merchantId = default(string), string batchId = default(string), string voidReason = default(string), List<string> transactionIds = default(List<string>))
         {
+            // to ensure "merchantId" is required (not null)
+            if (merchantId == null)
+            {
+                throw new ArgumentNullException("merchantId is a required property for PaymentBatchCancellationRequest and cannot be null");
+            }
             this.MerchantId = merchantId;
+            // to ensure "batchId" is required (not null)
+            if (batchId == null)
+            {
+                throw new ArgumentNullException("batchId is a required property for PaymentBatchCancellationRequest and cannot be null");
+            }
             this.BatchId = batchId;
+            // to ensure "voidReason" is required (not null)
+            if (voidReason == null)
+            {
+                throw new ArgumentNullException("voidReason is a required property for PaymentBatchCancellationRequest and cannot be null");
+            }
             this.VoidReason = voidReason;
+            // to ensure "transactionIds" is required (not null)
+            if (transactionIds == null)
+            {
+                throw new ArgumentNullException("transactionIds is a required property for PaymentBatchCancellationRequest and cannot be null");
+            }
             this.TransactionIds = transactionIds;
         }
 
         /// <summary>
         /// Gets or Sets MerchantId
         /// </summary>
-        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
+        [DataMember(Name = "merchantId", IsRequired = true, EmitDefaultValue = true)]
         public string MerchantId { get; set; }
 
         /// <summary>
         /// Gets or Sets BatchId
         /// </summary>
-        [DataMember(Name = "batchId", EmitDefaultValue = false)]
+        [DataMember(Name = "batchId", IsRequired = true, EmitDefaultValue = true)]
         public string BatchId { get; set; }
 
         /// <summary>
         /// Gets or Sets VoidReason
         /// </summary>
-        [DataMember(Name = "voidReason", EmitDefaultValue = false)]
+        [DataMember(Name = "voidReason", IsRequired = true, EmitDefaultValue = true)]
         public string VoidReason { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionIds
         /// </summary>
-        [DataMember(Name = "transactionIds", EmitDefaultValue = false)]
+        [DataMember(Name = "transactionIds", IsRequired = true, EmitDefaultValue = true)]
         public List<string> TransactionIds { get; set; }
 
         /// <summary>

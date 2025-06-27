@@ -32,6 +32,61 @@ namespace Org.OpenAPITools.Model
     public partial class PaymentResponseDto : IValidatableObject
     {
         /// <summary>
+        /// Defines PaymentStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentStatusEnum
+        {
+            /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
+            /// Enum Created for value: Created
+            /// </summary>
+            [EnumMember(Value = "Created")]
+            Created = 2,
+
+            /// <summary>
+            /// Enum InProcess for value: InProcess
+            /// </summary>
+            [EnumMember(Value = "InProcess")]
+            InProcess = 3,
+
+            /// <summary>
+            /// Enum Success for value: Success
+            /// </summary>
+            [EnumMember(Value = "Success")]
+            Success = 4,
+
+            /// <summary>
+            /// Enum Cancelled for value: Cancelled
+            /// </summary>
+            [EnumMember(Value = "Cancelled")]
+            Cancelled = 5,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 6,
+
+            /// <summary>
+            /// Enum CancelRequested for value: CancelRequested
+            /// </summary>
+            [EnumMember(Value = "CancelRequested")]
+            CancelRequested = 7
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PaymentStatus
+        /// </summary>
+        [DataMember(Name = "paymentStatus", EmitDefaultValue = false)]
+        public PaymentStatusEnum? PaymentStatus { get; set; }
+        /// <summary>
         /// Defines PaymentMethodStatus
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -101,7 +156,13 @@ namespace Org.OpenAPITools.Model
             /// Enum Returned for value: Returned
             /// </summary>
             [EnumMember(Value = "Returned")]
-            Returned = 11
+            Returned = 11,
+
+            /// <summary>
+            /// Enum Transit for value: Transit
+            /// </summary>
+            [EnumMember(Value = "Transit")]
+            Transit = 12
         }
 
 
@@ -117,10 +178,10 @@ namespace Org.OpenAPITools.Model
         public enum PaymentMethodEnum
         {
             /// <summary>
-            /// Enum Checks for value: Checks
+            /// Enum Check for value: Check
             /// </summary>
-            [EnumMember(Value = "Checks")]
-            Checks = 1
+            [EnumMember(Value = "Check")]
+            Check = 1
         }
 
 
@@ -143,7 +204,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="data">data.</param>
         /// <param name="bankAccountDetails">JSON-encoded string containing bank account details.</param>
         /// <param name="vendorAddress">JSON-encoded string containing vendor address.</param>
-        public PaymentResponseDto(string id = default(string), string paymentId = default(string), string merchantId = default(string), string vendorId = default(string), string paymentStatus = default(string), PaymentMethodStatusEnum? paymentMethodStatus = default(PaymentMethodStatusEnum?), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), decimal amount = default(decimal), DataDto data = default(DataDto), string bankAccountDetails = default(string), string vendorAddress = default(string))
+        public PaymentResponseDto(string id = default(string), string paymentId = default(string), string merchantId = default(string), string vendorId = default(string), PaymentStatusEnum? paymentStatus = default(PaymentStatusEnum?), PaymentMethodStatusEnum? paymentMethodStatus = default(PaymentMethodStatusEnum?), PaymentMethodEnum? paymentMethod = default(PaymentMethodEnum?), float amount = default(float), DataDto data = default(DataDto), string bankAccountDetails = default(string), string vendorAddress = default(string))
         {
             this.Id = id;
             this.PaymentId = paymentId;
@@ -183,16 +244,10 @@ namespace Org.OpenAPITools.Model
         public string VendorId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentStatus
-        /// </summary>
-        [DataMember(Name = "paymentStatus", EmitDefaultValue = false)]
-        public string PaymentStatus { get; set; }
-
-        /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Data

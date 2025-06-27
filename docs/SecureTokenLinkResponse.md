@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **ModifiedBy** | **string** |  | [optional] 
 **TokenLinkStatus** | **string** |  | [optional] 
 **ResponseType** | **string** |  | [optional] 
-**CallBackParameters** | [**TokenLinkSecureRequestCallbackParameters**](TokenLinkSecureRequestCallbackParameters.md) |  | [optional] 
+**CallBackParameters** | [**PaymentLinkResponseCallbackParameters**](PaymentLinkResponseCallbackParameters.md) |  | [optional] 
 **Intent** | [**SecureTokenLinkResponseIntent**](SecureTokenLinkResponseIntent.md) |  | [optional] 
 **Customers** | [**List&lt;SecureTokenLinkResponseCustomersInner&gt;**](SecureTokenLinkResponseCustomersInner.md) |  | [optional] 
 

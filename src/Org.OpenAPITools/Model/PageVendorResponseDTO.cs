@@ -36,7 +36,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="totalRowCount">totalRowCount.</param>
         /// <param name="data">data.</param>
-        public PageVendorResponseDTO(int totalRowCount = default(int), List<PageVendorResponseDTODataInner> data = default(List<PageVendorResponseDTODataInner>))
+        public PageVendorResponseDTO(float totalRowCount = default(float), List<PageVendorResponseDTODataInner> data = default(List<PageVendorResponseDTODataInner>))
         {
             this.TotalRowCount = totalRowCount;
             this.Data = data;
@@ -46,7 +46,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets TotalRowCount
         /// </summary>
         [DataMember(Name = "totalRowCount", EmitDefaultValue = false)]
-        public int TotalRowCount { get; set; }
+        public float TotalRowCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Data

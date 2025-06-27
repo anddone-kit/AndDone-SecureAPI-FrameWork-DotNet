@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SelfToken** | **string** |  | [optional] 
 **TokenProvider** | **string** |  | [optional] 
 **AccountHolderName** | **string** |  | [optional] 
+**CardNumber** | **string** |  | [optional] 
 **CardExpiry** | **string** |  | [optional] 
 **RoutingNumber** | **string** |  | [optional] 
 **MaskedAccountNumber** | **string** |  | [optional] 

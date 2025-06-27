@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **EstimatedVerificationDate** | **string** |  | [optional] 
 **EventId** | **string** |  | [optional] 
 **EventType** | **string** |  | [optional] 
-**BankAccountEntityId** | **int** |  | [optional] 
+**BankAccountEntityId** | **float** |  | [optional] 
 **BankAccountEntityType** | **string** |  | [optional] 
 **CreatedOn** | **string** |  | [optional] 
 **CreatedBy** | **string** |  | [optional] 

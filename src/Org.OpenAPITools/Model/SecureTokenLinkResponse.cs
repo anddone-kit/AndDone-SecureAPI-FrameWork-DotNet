@@ -122,7 +122,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="callBackParameters">callBackParameters.</param>
         /// <param name="intent">intent.</param>
         /// <param name="customers">customers.</param>
-        public SecureTokenLinkResponse(string merchantId = default(string), string tokenLinkId = default(string), string title = default(string), string url = default(string), string expireOn = default(string), string createdOn = default(string), string modifiedOn = default(string), string createdBy = default(string), string modifiedBy = default(string), TokenLinkStatusEnum? tokenLinkStatus = default(TokenLinkStatusEnum?), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), TokenLinkSecureRequestCallbackParameters callBackParameters = default(TokenLinkSecureRequestCallbackParameters), SecureTokenLinkResponseIntent intent = default(SecureTokenLinkResponseIntent), List<SecureTokenLinkResponseCustomersInner> customers = default(List<SecureTokenLinkResponseCustomersInner>))
+        public SecureTokenLinkResponse(string merchantId = default(string), string tokenLinkId = default(string), string title = default(string), string url = default(string), string expireOn = default(string), string createdOn = default(string), string modifiedOn = default(string), string createdBy = default(string), string modifiedBy = default(string), TokenLinkStatusEnum? tokenLinkStatus = default(TokenLinkStatusEnum?), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), PaymentLinkResponseCallbackParameters callBackParameters = default(PaymentLinkResponseCallbackParameters), SecureTokenLinkResponseIntent intent = default(SecureTokenLinkResponseIntent), List<SecureTokenLinkResponseCustomersInner> customers = default(List<SecureTokenLinkResponseCustomersInner>))
         {
             this.MerchantId = merchantId;
             this.TokenLinkId = tokenLinkId;
@@ -198,7 +198,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets CallBackParameters
         /// </summary>
         [DataMember(Name = "callBackParameters", EmitDefaultValue = false)]
-        public TokenLinkSecureRequestCallbackParameters CallBackParameters { get; set; }
+        public PaymentLinkResponseCallbackParameters CallBackParameters { get; set; }
 
         /// <summary>
         /// Gets or Sets Intent

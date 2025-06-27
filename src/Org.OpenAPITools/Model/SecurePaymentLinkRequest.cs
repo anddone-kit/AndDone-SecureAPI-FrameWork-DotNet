@@ -34,16 +34,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SecurePaymentLinkRequest" /> class.
         /// </summary>
-        /// <param name="paymentLinkId">paymentLinkId.</param>
+        [JsonConstructorAttribute]
+        protected SecurePaymentLinkRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurePaymentLinkRequest" /> class.
+        /// </summary>
+        /// <param name="paymentLinkId">paymentLinkId (required).</param>
         public SecurePaymentLinkRequest(string paymentLinkId = default(string))
         {
+            // to ensure "paymentLinkId" is required (not null)
+            if (paymentLinkId == null)
+            {
+                throw new ArgumentNullException("paymentLinkId is a required property for SecurePaymentLinkRequest and cannot be null");
+            }
             this.PaymentLinkId = paymentLinkId;
         }
 
         /// <summary>
         /// Gets or Sets PaymentLinkId
         /// </summary>
-        [DataMember(Name = "paymentLinkId", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentLinkId", IsRequired = true, EmitDefaultValue = true)]
         public string PaymentLinkId { get; set; }
 
         /// <summary>

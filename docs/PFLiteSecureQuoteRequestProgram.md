@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProgramId** | **decimal** |  | 
+**ProgramId** | **string** |  | [optional] 
 **LoanType** | **string** |  | 
-**BrokerFee** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

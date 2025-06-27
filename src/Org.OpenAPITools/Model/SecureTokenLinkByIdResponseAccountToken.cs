@@ -114,13 +114,14 @@ namespace Org.OpenAPITools.Model
         /// <param name="selfToken">selfToken.</param>
         /// <param name="tokenProvider">tokenProvider.</param>
         /// <param name="accountHolderName">accountHolderName.</param>
+        /// <param name="cardNumber">cardNumber.</param>
         /// <param name="cardExpiry">cardExpiry.</param>
         /// <param name="routingNumber">routingNumber.</param>
         /// <param name="maskedAccountNumber">maskedAccountNumber.</param>
         /// <param name="processMethod">processMethod.</param>
         /// <param name="channelType">channelType.</param>
         /// <param name="address">address.</param>
-        public SecureTokenLinkByIdResponseAccountToken(string id = default(string), string tokenLinkId = default(string), string merchantId = default(string), string selfToken = default(string), string tokenProvider = default(string), string accountHolderName = default(string), string cardExpiry = default(string), string routingNumber = default(string), string maskedAccountNumber = default(string), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), TransactionPaymentResponseBillingContactAddress address = default(TransactionPaymentResponseBillingContactAddress))
+        public SecureTokenLinkByIdResponseAccountToken(string id = default(string), string tokenLinkId = default(string), string merchantId = default(string), string selfToken = default(string), string tokenProvider = default(string), string accountHolderName = default(string), string cardNumber = default(string), string cardExpiry = default(string), string routingNumber = default(string), string maskedAccountNumber = default(string), ProcessMethodEnum? processMethod = default(ProcessMethodEnum?), ChannelTypeEnum? channelType = default(ChannelTypeEnum?), TransactionPaymentResponseBillingContactAddress address = default(TransactionPaymentResponseBillingContactAddress))
         {
             this.Id = id;
             this.TokenLinkId = tokenLinkId;
@@ -128,6 +129,7 @@ namespace Org.OpenAPITools.Model
             this.SelfToken = selfToken;
             this.TokenProvider = tokenProvider;
             this.AccountHolderName = accountHolderName;
+            this.CardNumber = cardNumber;
             this.CardExpiry = cardExpiry;
             this.RoutingNumber = routingNumber;
             this.MaskedAccountNumber = maskedAccountNumber;
@@ -173,6 +175,12 @@ namespace Org.OpenAPITools.Model
         public string AccountHolderName { get; set; }
 
         /// <summary>
+        /// Gets or Sets CardNumber
+        /// </summary>
+        [DataMember(Name = "cardNumber", EmitDefaultValue = false)]
+        public string CardNumber { get; set; }
+
+        /// <summary>
         /// Gets or Sets CardExpiry
         /// </summary>
         [DataMember(Name = "cardExpiry", EmitDefaultValue = false)]
@@ -210,6 +218,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  SelfToken: ").Append(SelfToken).Append("\n");
             sb.Append("  TokenProvider: ").Append(TokenProvider).Append("\n");
             sb.Append("  AccountHolderName: ").Append(AccountHolderName).Append("\n");
+            sb.Append("  CardNumber: ").Append(CardNumber).Append("\n");
             sb.Append("  CardExpiry: ").Append(CardExpiry).Append("\n");
             sb.Append("  RoutingNumber: ").Append(RoutingNumber).Append("\n");
             sb.Append("  MaskedAccountNumber: ").Append(MaskedAccountNumber).Append("\n");

@@ -118,15 +118,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'AddressType'
-        /// </summary>
-        [Fact]
-        public void AddressTypeTest()
-        {
-            // TODO unit test for the property 'AddressType'
-        }
-
-        /// <summary>
         /// Test the property 'AddressSource'
         /// </summary>
         [Fact]

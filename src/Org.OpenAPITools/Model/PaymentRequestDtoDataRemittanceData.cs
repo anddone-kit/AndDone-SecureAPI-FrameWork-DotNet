@@ -28,7 +28,7 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// PaymentRequestDtoDataRemittanceData
     /// </summary>
-    [DataContract(Name = "PaymentRequestDto_Data_remittanceData")]
+    [DataContract(Name = "PaymentRequestDto_data_remittanceData")]
     public partial class PaymentRequestDtoDataRemittanceData : IValidatableObject
     {
         /// <summary>

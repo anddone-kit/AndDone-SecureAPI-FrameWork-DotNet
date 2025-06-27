@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequestInsuredAddress" /> class.
         /// </summary>
         /// <param name="address1">address1 (required).</param>
-        /// <param name="address2">address2 (required).</param>
+        /// <param name="address2">address2.</param>
         /// <param name="city">city (required).</param>
         /// <param name="state">state (required).</param>
         /// <param name="zip">zip (required).</param>
@@ -53,12 +53,6 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("address1 is a required property for PFLiteSecureQuoteRequestInsuredAddress and cannot be null");
             }
             this.Address1 = address1;
-            // to ensure "address2" is required (not null)
-            if (address2 == null)
-            {
-                throw new ArgumentNullException("address2 is a required property for PFLiteSecureQuoteRequestInsuredAddress and cannot be null");
-            }
-            this.Address2 = address2;
             // to ensure "city" is required (not null)
             if (city == null)
             {
@@ -77,6 +71,7 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("zip is a required property for PFLiteSecureQuoteRequestInsuredAddress and cannot be null");
             }
             this.Zip = zip;
+            this.Address2 = address2;
             this.PhoneNumber = phoneNumber;
         }
 
@@ -89,7 +84,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Address2
         /// </summary>
-        [DataMember(Name = "address2", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "address2", EmitDefaultValue = false)]
         public string Address2 { get; set; }
 
         /// <summary>

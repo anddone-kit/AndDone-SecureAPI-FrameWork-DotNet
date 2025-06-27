@@ -36,10 +36,22 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="callbackApiUrl">callbackApiUrl.</param>
         /// <param name="callbackMessage">callbackMessage.</param>
-        public PFLitePaymentLinkRequestCallbackParameters(string callbackApiUrl = default(string), string callbackMessage = default(string))
+        /// <param name="accessKey">accessKey.</param>
+        /// <param name="secretKey">secretKey.</param>
+        /// <param name="referenceNo">referenceNo.</param>
+        /// <param name="referenceType">referenceType.</param>
+        /// <param name="transactionId">transactionId.</param>
+        /// <param name="redirectionTime">redirectionTime.</param>
+        public PFLitePaymentLinkRequestCallbackParameters(string callbackApiUrl = default(string), string callbackMessage = default(string), string accessKey = default(string), string secretKey = default(string), string referenceNo = default(string), string referenceType = default(string), string transactionId = default(string), float redirectionTime = default(float))
         {
             this.CallbackApiUrl = callbackApiUrl;
             this.CallbackMessage = callbackMessage;
+            this.AccessKey = accessKey;
+            this.SecretKey = secretKey;
+            this.ReferenceNo = referenceNo;
+            this.ReferenceType = referenceType;
+            this.TransactionId = transactionId;
+            this.RedirectionTime = redirectionTime;
         }
 
         /// <summary>
@@ -55,6 +67,42 @@ namespace Org.OpenAPITools.Model
         public string CallbackMessage { get; set; }
 
         /// <summary>
+        /// Gets or Sets AccessKey
+        /// </summary>
+        [DataMember(Name = "accessKey", EmitDefaultValue = false)]
+        public string AccessKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SecretKey
+        /// </summary>
+        [DataMember(Name = "secretKey", EmitDefaultValue = false)]
+        public string SecretKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferenceNo
+        /// </summary>
+        [DataMember(Name = "referenceNo", EmitDefaultValue = false)]
+        public string ReferenceNo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferenceType
+        /// </summary>
+        [DataMember(Name = "referenceType", EmitDefaultValue = false)]
+        public string ReferenceType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TransactionId
+        /// </summary>
+        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
+        public string TransactionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RedirectionTime
+        /// </summary>
+        [DataMember(Name = "redirectionTime", EmitDefaultValue = false)]
+        public float RedirectionTime { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +112,12 @@ namespace Org.OpenAPITools.Model
             sb.Append("class PFLitePaymentLinkRequestCallbackParameters {\n");
             sb.Append("  CallbackApiUrl: ").Append(CallbackApiUrl).Append("\n");
             sb.Append("  CallbackMessage: ").Append(CallbackMessage).Append("\n");
+            sb.Append("  AccessKey: ").Append(AccessKey).Append("\n");
+            sb.Append("  SecretKey: ").Append(SecretKey).Append("\n");
+            sb.Append("  ReferenceNo: ").Append(ReferenceNo).Append("\n");
+            sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  TransactionId: ").Append(TransactionId).Append("\n");
+            sb.Append("  RedirectionTime: ").Append(RedirectionTime).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -127,12 +127,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'URL'
+        /// Test the property 'Url'
         /// </summary>
         [Fact]
-        public void URLTest()
+        public void UrlTest()
         {
-            // TODO unit test for the property 'URL'
+            // TODO unit test for the property 'Url'
         }
 
         /// <summary>

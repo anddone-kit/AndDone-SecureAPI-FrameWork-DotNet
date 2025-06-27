@@ -36,7 +36,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="id">id.</param>
         /// <param name="type">type.</param>
-        public VerifyBankAccountRequestBankAccountEntity(string id = default(string), string type = default(string))
+        public VerifyBankAccountRequestBankAccountEntity(int id = default(int), string type = default(string))
         {
             this.Id = id;
             this.Type = type;
@@ -46,7 +46,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Id
         /// </summary>
         [DataMember(Name = "id", EmitDefaultValue = false)]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Type

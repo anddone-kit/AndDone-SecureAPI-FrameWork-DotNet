@@ -9,7 +9,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="securebankaccountsdetailspost"></a>
 # **SecureBankaccountsDetailsPost**
-> List&lt;VerifyBankAccountResponse&gt; SecureBankaccountsDetailsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, decimal? id = null, string? type = null, VerificationEntityRequest? verificationEntityRequest = null)
+> List&lt;VerifyBankAccountResponse&gt; SecureBankaccountsDetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, string? id = null, string? type = null, VerificationEntityRequest? verificationEntityRequest = null)
 
 This API will request for verified bank account.
 
@@ -41,9 +41,9 @@ namespace Example
             var apiInstance = new SecureOrumApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
-            var id = 8.14D;  // decimal? | The Bank Account Entity Id (optional) 
+            var id = "id_example";  // string? | The Bank Account Entity Id (optional) 
             var type = "None";  // string? | Set Type (optional) 
             var verificationEntityRequest = new VerificationEntityRequest?(); // VerificationEntityRequest? | Verification Entity (optional) 
 
@@ -90,9 +90,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
-| **id** | **decimal?** | The Bank Account Entity Id | [optional]  |
+| **id** | **string?** | The Bank Account Entity Id | [optional]  |
 | **type** | **string?** | Set Type | [optional]  |
 | **verificationEntityRequest** | [**VerificationEntityRequest?**](VerificationEntityRequest?.md) | Verification Entity | [optional]  |
 
@@ -122,7 +122,7 @@ catch (ApiException e)
 
 <a id="securebankaccountsverifypost"></a>
 # **SecureBankaccountsVerifyPost**
-> List&lt;VerifyBankAccountResponse&gt; SecureBankaccountsVerifyPost (string xApiKey, string xAppKey, decimal xVersion, string origin, VerifyBankAccountRequest? verifyBankAccountRequest = null)
+> List&lt;VerifyBankAccountResponse&gt; SecureBankaccountsVerifyPost (string xApiKey, string xAppKey, float xVersion, string origin, VerifyBankAccountRequest? verifyBankAccountRequest = null)
 
 This API will request for account verification.
 
@@ -154,7 +154,7 @@ namespace Example
             var apiInstance = new SecureOrumApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var verifyBankAccountRequest = new VerifyBankAccountRequest?(); // VerifyBankAccountRequest? | Bank Accout detals (optional) 
 
@@ -201,7 +201,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **verifyBankAccountRequest** | [**VerifyBankAccountRequest?**](VerifyBankAccountRequest?.md) | Bank Accout detals | [optional]  |
 

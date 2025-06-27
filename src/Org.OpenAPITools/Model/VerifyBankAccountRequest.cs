@@ -34,15 +34,35 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="VerifyBankAccountRequest" /> class.
         /// </summary>
-        /// <param name="accountNumber">accountNumber.</param>
-        /// <param name="routingNumber">routingNumber.</param>
-        /// <param name="accountHolderName">accountHolderName.</param>
+        [JsonConstructorAttribute]
+        protected VerifyBankAccountRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerifyBankAccountRequest" /> class.
+        /// </summary>
+        /// <param name="accountNumber">accountNumber (required).</param>
+        /// <param name="routingNumber">routingNumber (required).</param>
+        /// <param name="accountHolderName">accountHolderName (required).</param>
         /// <param name="statementDisplayName">statementDisplayName.</param>
         /// <param name="bankAccountEntity">bankAccountEntity.</param>
         public VerifyBankAccountRequest(string accountNumber = default(string), string routingNumber = default(string), string accountHolderName = default(string), string statementDisplayName = default(string), VerifyBankAccountRequestBankAccountEntity bankAccountEntity = default(VerifyBankAccountRequestBankAccountEntity))
         {
+            // to ensure "accountNumber" is required (not null)
+            if (accountNumber == null)
+            {
+                throw new ArgumentNullException("accountNumber is a required property for VerifyBankAccountRequest and cannot be null");
+            }
             this.AccountNumber = accountNumber;
+            // to ensure "routingNumber" is required (not null)
+            if (routingNumber == null)
+            {
+                throw new ArgumentNullException("routingNumber is a required property for VerifyBankAccountRequest and cannot be null");
+            }
             this.RoutingNumber = routingNumber;
+            // to ensure "accountHolderName" is required (not null)
+            if (accountHolderName == null)
+            {
+                throw new ArgumentNullException("accountHolderName is a required property for VerifyBankAccountRequest and cannot be null");
+            }
             this.AccountHolderName = accountHolderName;
             this.StatementDisplayName = statementDisplayName;
             this.BankAccountEntity = bankAccountEntity;
@@ -51,19 +71,19 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets AccountNumber
         /// </summary>
-        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "accountNumber", IsRequired = true, EmitDefaultValue = true)]
         public string AccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets RoutingNumber
         /// </summary>
-        [DataMember(Name = "routingNumber", EmitDefaultValue = false)]
+        [DataMember(Name = "routingNumber", IsRequired = true, EmitDefaultValue = true)]
         public string RoutingNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountHolderName
         /// </summary>
-        [DataMember(Name = "accountHolderName", EmitDefaultValue = false)]
+        [DataMember(Name = "accountHolderName", IsRequired = true, EmitDefaultValue = true)]
         public string AccountHolderName { get; set; }
 
         /// <summary>

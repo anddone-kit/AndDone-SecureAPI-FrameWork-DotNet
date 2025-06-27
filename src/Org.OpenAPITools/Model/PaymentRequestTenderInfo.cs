@@ -63,37 +63,11 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "accountCategory", EmitDefaultValue = false)]
         public AccountCategoryEnum? AccountCategory { get; set; }
         /// <summary>
-        /// Defines DiscountType
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum DiscountTypeEnum
-        {
-            /// <summary>
-            /// Enum Fixed for value: Fixed
-            /// </summary>
-            [EnumMember(Value = "Fixed")]
-            Fixed = 1,
-
-            /// <summary>
-            /// Enum Percentage for value: Percentage
-            /// </summary>
-            [EnumMember(Value = "Percentage")]
-            Percentage = 2
-        }
-
-
-        /// <summary>
-        /// Gets or Sets DiscountType
-        /// </summary>
-        [DataMember(Name = "discountType", EmitDefaultValue = false)]
-        public DiscountTypeEnum? DiscountType { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentRequestTenderInfo" /> class.
         /// </summary>
         /// <param name="bankName">bankName.</param>
         /// <param name="accountNumber">accountNumber.</param>
         /// <param name="routingNumber">routingNumber.</param>
-        /// <param name="rawMICRLine">rawMICRLine.</param>
         /// <param name="accountType">accountType.</param>
         /// <param name="checkNumber">checkNumber.</param>
         /// <param name="accountCategory">accountCategory.</param>
@@ -103,34 +77,21 @@ namespace Org.OpenAPITools.Model
         /// <param name="cardType">cardType.</param>
         /// <param name="cardNumber">cardNumber.</param>
         /// <param name="cardExpiry">cardExpiry.</param>
-        /// <param name="cVData">cVData.</param>
-        /// <param name="cVDataStatus">cVDataStatus.</param>
+        /// <param name="cvv">cvv.</param>
+        /// <param name="cvDataStatus">cvDataStatus.</param>
         /// <param name="trackData">trackData.</param>
-        /// <param name="healthCareAccountType">healthCareAccountType.</param>
-        /// <param name="rxAmount">rxAmount.</param>
-        /// <param name="visionAmount">visionAmount.</param>
-        /// <param name="dentalAmount">dentalAmount.</param>
-        /// <param name="clinicAmount">clinicAmount.</param>
         /// <param name="removeDiscounting">removeDiscounting.</param>
         /// <param name="suppressCommission">suppressCommission.</param>
         /// <param name="amount">amount.</param>
-        /// <param name="tipAmount">tipAmount.</param>
         /// <param name="convenienceAmount">convenienceAmount.</param>
-        /// <param name="taxAmount">taxAmount.</param>
-        /// <param name="taxPercent">taxPercent.</param>
-        /// <param name="taxAfterDiscount">taxAfterDiscount.</param>
         /// <param name="preAuthCode">preAuthCode.</param>
         /// <param name="createAccountToken">createAccountToken.</param>
         /// <param name="accountToken">accountToken.</param>
-        /// <param name="discountType">discountType.</param>
-        /// <param name="discountPercent">discountPercent.</param>
-        /// <param name="discountAmount">discountAmount.</param>
-        public PaymentRequestTenderInfo(string bankName = default(string), string accountNumber = default(string), string routingNumber = default(string), string rawMICRLine = default(string), string accountType = default(string), string checkNumber = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), string accountHolderName = default(string), string nameOnCheck = default(string), string cardHolderName = default(string), string cardType = default(string), string cardNumber = default(string), string cardExpiry = default(string), string cVData = default(string), string cVDataStatus = default(string), string trackData = default(string), string healthCareAccountType = default(string), decimal rxAmount = default(decimal), decimal visionAmount = default(decimal), decimal dentalAmount = default(decimal), decimal clinicAmount = default(decimal), bool removeDiscounting = default(bool), bool suppressCommission = default(bool), decimal amount = default(decimal), decimal tipAmount = default(decimal), decimal convenienceAmount = default(decimal), decimal taxAmount = default(decimal), decimal taxPercent = default(decimal), bool taxAfterDiscount = default(bool), string preAuthCode = default(string), bool createAccountToken = default(bool), string accountToken = default(string), DiscountTypeEnum? discountType = default(DiscountTypeEnum?), decimal discountPercent = default(decimal), decimal discountAmount = default(decimal))
+        public PaymentRequestTenderInfo(string bankName = default(string), string accountNumber = default(string), string routingNumber = default(string), string accountType = default(string), string checkNumber = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), string accountHolderName = default(string), string nameOnCheck = default(string), string cardHolderName = default(string), string cardType = default(string), string cardNumber = default(string), string cardExpiry = default(string), string cvv = default(string), string cvDataStatus = default(string), string trackData = default(string), bool removeDiscounting = default(bool), bool suppressCommission = default(bool), float amount = default(float), float convenienceAmount = default(float), string preAuthCode = default(string), bool createAccountToken = default(bool), string accountToken = default(string))
         {
             this.BankName = bankName;
             this.AccountNumber = accountNumber;
             this.RoutingNumber = routingNumber;
-            this.RawMICRLine = rawMICRLine;
             this.AccountType = accountType;
             this.CheckNumber = checkNumber;
             this.AccountCategory = accountCategory;
@@ -140,28 +101,16 @@ namespace Org.OpenAPITools.Model
             this.CardType = cardType;
             this.CardNumber = cardNumber;
             this.CardExpiry = cardExpiry;
-            this.CVData = cVData;
-            this.CVDataStatus = cVDataStatus;
+            this.Cvv = cvv;
+            this.CvDataStatus = cvDataStatus;
             this.TrackData = trackData;
-            this.HealthCareAccountType = healthCareAccountType;
-            this.RxAmount = rxAmount;
-            this.VisionAmount = visionAmount;
-            this.DentalAmount = dentalAmount;
-            this.ClinicAmount = clinicAmount;
             this.RemoveDiscounting = removeDiscounting;
             this.SuppressCommission = suppressCommission;
             this.Amount = amount;
-            this.TipAmount = tipAmount;
             this.ConvenienceAmount = convenienceAmount;
-            this.TaxAmount = taxAmount;
-            this.TaxPercent = taxPercent;
-            this.TaxAfterDiscount = taxAfterDiscount;
             this.PreAuthCode = preAuthCode;
             this.CreateAccountToken = createAccountToken;
             this.AccountToken = accountToken;
-            this.DiscountType = discountType;
-            this.DiscountPercent = discountPercent;
-            this.DiscountAmount = discountAmount;
         }
 
         /// <summary>
@@ -181,12 +130,6 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "routingNumber", EmitDefaultValue = false)]
         public string RoutingNumber { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RawMICRLine
-        /// </summary>
-        [DataMember(Name = "rawMICRLine", EmitDefaultValue = false)]
-        public string RawMICRLine { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountType
@@ -237,52 +180,22 @@ namespace Org.OpenAPITools.Model
         public string CardExpiry { get; set; }
 
         /// <summary>
-        /// Gets or Sets CVData
+        /// Gets or Sets Cvv
         /// </summary>
-        [DataMember(Name = "cVData", EmitDefaultValue = false)]
-        public string CVData { get; set; }
+        [DataMember(Name = "cvv", EmitDefaultValue = false)]
+        public string Cvv { get; set; }
 
         /// <summary>
-        /// Gets or Sets CVDataStatus
+        /// Gets or Sets CvDataStatus
         /// </summary>
-        [DataMember(Name = "cVDataStatus", EmitDefaultValue = false)]
-        public string CVDataStatus { get; set; }
+        [DataMember(Name = "cvDataStatus", EmitDefaultValue = false)]
+        public string CvDataStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets TrackData
         /// </summary>
         [DataMember(Name = "trackData", EmitDefaultValue = false)]
         public string TrackData { get; set; }
-
-        /// <summary>
-        /// Gets or Sets HealthCareAccountType
-        /// </summary>
-        [DataMember(Name = "healthCareAccountType", EmitDefaultValue = false)]
-        public string HealthCareAccountType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RxAmount
-        /// </summary>
-        [DataMember(Name = "rxAmount", EmitDefaultValue = false)]
-        public decimal RxAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets VisionAmount
-        /// </summary>
-        [DataMember(Name = "visionAmount", EmitDefaultValue = false)]
-        public decimal VisionAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DentalAmount
-        /// </summary>
-        [DataMember(Name = "dentalAmount", EmitDefaultValue = false)]
-        public decimal DentalAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ClinicAmount
-        /// </summary>
-        [DataMember(Name = "clinicAmount", EmitDefaultValue = false)]
-        public decimal ClinicAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets RemoveDiscounting
@@ -300,37 +213,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TipAmount
-        /// </summary>
-        [DataMember(Name = "tipAmount", EmitDefaultValue = false)]
-        public decimal TipAmount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvenienceAmount
         /// </summary>
         [DataMember(Name = "convenienceAmount", EmitDefaultValue = false)]
-        public decimal ConvenienceAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxAmount
-        /// </summary>
-        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
-        public decimal TaxAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxPercent
-        /// </summary>
-        [DataMember(Name = "taxPercent", EmitDefaultValue = false)]
-        public decimal TaxPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxAfterDiscount
-        /// </summary>
-        [DataMember(Name = "taxAfterDiscount", EmitDefaultValue = true)]
-        public bool TaxAfterDiscount { get; set; }
+        public float ConvenienceAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets PreAuthCode
@@ -351,18 +240,6 @@ namespace Org.OpenAPITools.Model
         public string AccountToken { get; set; }
 
         /// <summary>
-        /// Gets or Sets DiscountPercent
-        /// </summary>
-        [DataMember(Name = "discountPercent", EmitDefaultValue = false)]
-        public decimal DiscountPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DiscountAmount
-        /// </summary>
-        [DataMember(Name = "discountAmount", EmitDefaultValue = false)]
-        public decimal DiscountAmount { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -373,7 +250,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  BankName: ").Append(BankName).Append("\n");
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
             sb.Append("  RoutingNumber: ").Append(RoutingNumber).Append("\n");
-            sb.Append("  RawMICRLine: ").Append(RawMICRLine).Append("\n");
             sb.Append("  AccountType: ").Append(AccountType).Append("\n");
             sb.Append("  CheckNumber: ").Append(CheckNumber).Append("\n");
             sb.Append("  AccountCategory: ").Append(AccountCategory).Append("\n");
@@ -383,28 +259,16 @@ namespace Org.OpenAPITools.Model
             sb.Append("  CardType: ").Append(CardType).Append("\n");
             sb.Append("  CardNumber: ").Append(CardNumber).Append("\n");
             sb.Append("  CardExpiry: ").Append(CardExpiry).Append("\n");
-            sb.Append("  CVData: ").Append(CVData).Append("\n");
-            sb.Append("  CVDataStatus: ").Append(CVDataStatus).Append("\n");
+            sb.Append("  Cvv: ").Append(Cvv).Append("\n");
+            sb.Append("  CvDataStatus: ").Append(CvDataStatus).Append("\n");
             sb.Append("  TrackData: ").Append(TrackData).Append("\n");
-            sb.Append("  HealthCareAccountType: ").Append(HealthCareAccountType).Append("\n");
-            sb.Append("  RxAmount: ").Append(RxAmount).Append("\n");
-            sb.Append("  VisionAmount: ").Append(VisionAmount).Append("\n");
-            sb.Append("  DentalAmount: ").Append(DentalAmount).Append("\n");
-            sb.Append("  ClinicAmount: ").Append(ClinicAmount).Append("\n");
             sb.Append("  RemoveDiscounting: ").Append(RemoveDiscounting).Append("\n");
             sb.Append("  SuppressCommission: ").Append(SuppressCommission).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  TipAmount: ").Append(TipAmount).Append("\n");
             sb.Append("  ConvenienceAmount: ").Append(ConvenienceAmount).Append("\n");
-            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
-            sb.Append("  TaxPercent: ").Append(TaxPercent).Append("\n");
-            sb.Append("  TaxAfterDiscount: ").Append(TaxAfterDiscount).Append("\n");
             sb.Append("  PreAuthCode: ").Append(PreAuthCode).Append("\n");
             sb.Append("  CreateAccountToken: ").Append(CreateAccountToken).Append("\n");
             sb.Append("  AccountToken: ").Append(AccountToken).Append("\n");
-            sb.Append("  DiscountType: ").Append(DiscountType).Append("\n");
-            sb.Append("  DiscountPercent: ").Append(DiscountPercent).Append("\n");
-            sb.Append("  DiscountAmount: ").Append(DiscountAmount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

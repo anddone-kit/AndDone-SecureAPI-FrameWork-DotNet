@@ -32,6 +32,110 @@ namespace Org.OpenAPITools.Model
     public partial class PagePaymentListResponseDTODataInner : IValidatableObject
     {
         /// <summary>
+        /// Defines PaymentMethodType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentMethodTypeEnum
+        {
+            /// <summary>
+            /// Enum Check for value: Check
+            /// </summary>
+            [EnumMember(Value = "Check")]
+            Check = 1
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PaymentMethodType
+        /// </summary>
+        [DataMember(Name = "paymentMethodType", EmitDefaultValue = false)]
+        public PaymentMethodTypeEnum? PaymentMethodType { get; set; }
+        /// <summary>
+        /// Defines PaymentMethodStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentMethodStatusEnum
+        {
+            /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
+            /// Enum Accepted for value: Accepted
+            /// </summary>
+            [EnumMember(Value = "Accepted")]
+            Accepted = 2,
+
+            /// <summary>
+            /// Enum PrintQueued for value: PrintQueued
+            /// </summary>
+            [EnumMember(Value = "PrintQueued")]
+            PrintQueued = 3,
+
+            /// <summary>
+            /// Enum Printed for value: Printed
+            /// </summary>
+            [EnumMember(Value = "Printed")]
+            Printed = 4,
+
+            /// <summary>
+            /// Enum Mailed for value: Mailed
+            /// </summary>
+            [EnumMember(Value = "Mailed")]
+            Mailed = 5,
+
+            /// <summary>
+            /// Enum Delivered for value: Delivered
+            /// </summary>
+            [EnumMember(Value = "Delivered")]
+            Delivered = 6,
+
+            /// <summary>
+            /// Enum Pdf for value: Pdf
+            /// </summary>
+            [EnumMember(Value = "Pdf")]
+            Pdf = 7,
+
+            /// <summary>
+            /// Enum Cancelled for value: Cancelled
+            /// </summary>
+            [EnumMember(Value = "Cancelled")]
+            Cancelled = 8,
+
+            /// <summary>
+            /// Enum Warning for value: Warning
+            /// </summary>
+            [EnumMember(Value = "Warning")]
+            Warning = 9,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 10,
+
+            /// <summary>
+            /// Enum Returned for value: Returned
+            /// </summary>
+            [EnumMember(Value = "Returned")]
+            Returned = 11,
+
+            /// <summary>
+            /// Enum Transit for value: Transit
+            /// </summary>
+            [EnumMember(Value = "Transit")]
+            Transit = 12
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PaymentMethodStatus
+        /// </summary>
+        [DataMember(Name = "paymentMethodStatus", EmitDefaultValue = false)]
+        public PaymentMethodStatusEnum? PaymentMethodStatus { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PagePaymentListResponseDTODataInner" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -45,7 +149,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="paymentMethodStatus">paymentMethodStatus.</param>
         /// <param name="requestedDate">requestedDate.</param>
         /// <param name="amount">amount.</param>
-        public PagePaymentListResponseDTODataInner(string id = default(string), string merchantId = default(string), string merchantDBAName = default(string), string paymentMethodType = default(string), string paymentBasedId = default(string), string vendorId = default(string), string vendorName = default(string), string paymentId = default(string), string paymentMethodStatus = default(string), string requestedDate = default(string), string amount = default(string))
+        public PagePaymentListResponseDTODataInner(string id = default(string), string merchantId = default(string), string merchantDBAName = default(string), PaymentMethodTypeEnum? paymentMethodType = default(PaymentMethodTypeEnum?), string paymentBasedId = default(string), string vendorId = default(string), string vendorName = default(string), string paymentId = default(string), PaymentMethodStatusEnum? paymentMethodStatus = default(PaymentMethodStatusEnum?), string requestedDate = default(string), string amount = default(string))
         {
             this.Id = id;
             this.MerchantId = merchantId;
@@ -79,12 +183,6 @@ namespace Org.OpenAPITools.Model
         public string MerchantDBAName { get; set; }
 
         /// <summary>
-        /// Gets or Sets PaymentMethodType
-        /// </summary>
-        [DataMember(Name = "paymentMethodType", EmitDefaultValue = false)]
-        public string PaymentMethodType { get; set; }
-
-        /// <summary>
         /// Gets or Sets PaymentBasedId
         /// </summary>
         [DataMember(Name = "paymentBasedId", EmitDefaultValue = false)]
@@ -107,12 +205,6 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "paymentId", EmitDefaultValue = false)]
         public string PaymentId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentMethodStatus
-        /// </summary>
-        [DataMember(Name = "paymentMethodStatus", EmitDefaultValue = false)]
-        public string PaymentMethodStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets RequestedDate

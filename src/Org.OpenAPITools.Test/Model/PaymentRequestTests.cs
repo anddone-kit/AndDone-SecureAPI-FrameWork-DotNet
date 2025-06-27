@@ -109,6 +109,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ProcessMethod'
+        /// </summary>
+        [Fact]
+        public void ProcessMethodTest()
+        {
+            // TODO unit test for the property 'ProcessMethod'
+        }
+
+        /// <summary>
         /// Test the property 'TenderInfo'
         /// </summary>
         [Fact]
@@ -124,15 +133,6 @@ namespace Org.OpenAPITools.Test.Model
         public void InvoiceNoTest()
         {
             // TODO unit test for the property 'InvoiceNo'
-        }
-
-        /// <summary>
-        /// Test the property 'PoNo'
-        /// </summary>
-        [Fact]
-        public void PoNoTest()
-        {
-            // TODO unit test for the property 'PoNo'
         }
 
         /// <summary>
@@ -199,15 +199,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'WaitForApproval'
-        /// </summary>
-        [Fact]
-        public void WaitForApprovalTest()
-        {
-            // TODO unit test for the property 'WaitForApproval'
-        }
-
-        /// <summary>
         /// Test the property 'Issuer'
         /// </summary>
         [Fact]
@@ -262,12 +253,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'PFR'
+        /// Test the property 'Pfr'
         /// </summary>
         [Fact]
-        public void PFRTest()
+        public void PfrTest()
         {
-            // TODO unit test for the property 'PFR'
+            // TODO unit test for the property 'Pfr'
         }
     }
 }

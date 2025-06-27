@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="agentUrl">The URL for the agent to sign..</param>
         /// <param name="insuredUrl">The URL for the insured to sign..</param>
         /// <param name="eSignOption">The option chosen for eSign..</param>
-        public PFGenerateQuoteResponseItemESignResult(bool processed = default(bool), string message = default(string), string batchId = default(string), string agentUrl = default(string), string insuredUrl = default(string), int eSignOption = default(int))
+        public PFGenerateQuoteResponseItemESignResult(bool processed = default(bool), string message = default(string), string batchId = default(string), string agentUrl = default(string), string insuredUrl = default(string), float eSignOption = default(float))
         {
             this.Processed = processed;
             this.Message = message;
@@ -90,7 +90,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>The option chosen for eSign.</value>
         [DataMember(Name = "eSignOption", EmitDefaultValue = false)]
-        public int ESignOption { get; set; }
+        public float ESignOption { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -34,16 +34,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentTimeLineRequestDto" /> class.
         /// </summary>
-        /// <param name="paymentId">paymentId.</param>
+        [JsonConstructorAttribute]
+        protected PaymentTimeLineRequestDto() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentTimeLineRequestDto" /> class.
+        /// </summary>
+        /// <param name="paymentId">paymentId (required).</param>
         public PaymentTimeLineRequestDto(string paymentId = default(string))
         {
+            // to ensure "paymentId" is required (not null)
+            if (paymentId == null)
+            {
+                throw new ArgumentNullException("paymentId is a required property for PaymentTimeLineRequestDto and cannot be null");
+            }
             this.PaymentId = paymentId;
         }
 
         /// <summary>
         /// Gets or Sets PaymentId
         /// </summary>
-        [DataMember(Name = "paymentId", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentId", IsRequired = true, EmitDefaultValue = true)]
         public string PaymentId { get; set; }
 
         /// <summary>

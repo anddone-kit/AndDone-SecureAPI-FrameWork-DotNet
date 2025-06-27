@@ -99,40 +99,70 @@ namespace Org.OpenAPITools.Model
             NA = 1,
 
             /// <summary>
-            /// Enum Processing for value: Processing
+            /// Enum Accepted for value: Accepted
             /// </summary>
-            [EnumMember(Value = "Processing")]
-            Processing = 2,
+            [EnumMember(Value = "Accepted")]
+            Accepted = 2,
+
+            /// <summary>
+            /// Enum PrintQueued for value: PrintQueued
+            /// </summary>
+            [EnumMember(Value = "PrintQueued")]
+            PrintQueued = 3,
 
             /// <summary>
             /// Enum Printed for value: Printed
             /// </summary>
             [EnumMember(Value = "Printed")]
-            Printed = 3,
+            Printed = 4,
 
             /// <summary>
             /// Enum Mailed for value: Mailed
             /// </summary>
             [EnumMember(Value = "Mailed")]
-            Mailed = 4,
+            Mailed = 5,
+
+            /// <summary>
+            /// Enum Delivered for value: Delivered
+            /// </summary>
+            [EnumMember(Value = "Delivered")]
+            Delivered = 6,
 
             /// <summary>
             /// Enum Pdf for value: Pdf
             /// </summary>
             [EnumMember(Value = "Pdf")]
-            Pdf = 5,
+            Pdf = 7,
+
+            /// <summary>
+            /// Enum Cancelled for value: Cancelled
+            /// </summary>
+            [EnumMember(Value = "Cancelled")]
+            Cancelled = 8,
+
+            /// <summary>
+            /// Enum Warning for value: Warning
+            /// </summary>
+            [EnumMember(Value = "Warning")]
+            Warning = 9,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 10,
 
             /// <summary>
             /// Enum Returned for value: Returned
             /// </summary>
             [EnumMember(Value = "Returned")]
-            Returned = 6,
+            Returned = 11,
 
             /// <summary>
-            /// Enum Canceled for value: Canceled
+            /// Enum Transit for value: Transit
             /// </summary>
-            [EnumMember(Value = "Canceled")]
-            Canceled = 7
+            [EnumMember(Value = "Transit")]
+            Transit = 12
         }
 
 

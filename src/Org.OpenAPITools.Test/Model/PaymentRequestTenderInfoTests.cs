@@ -82,15 +82,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'RawMICRLine'
-        /// </summary>
-        [Fact]
-        public void RawMICRLineTest()
-        {
-            // TODO unit test for the property 'RawMICRLine'
-        }
-
-        /// <summary>
         /// Test the property 'AccountType'
         /// </summary>
         [Fact]
@@ -172,21 +163,21 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'CVData'
+        /// Test the property 'Cvv'
         /// </summary>
         [Fact]
-        public void CVDataTest()
+        public void CvvTest()
         {
-            // TODO unit test for the property 'CVData'
+            // TODO unit test for the property 'Cvv'
         }
 
         /// <summary>
-        /// Test the property 'CVDataStatus'
+        /// Test the property 'CvDataStatus'
         /// </summary>
         [Fact]
-        public void CVDataStatusTest()
+        public void CvDataStatusTest()
         {
-            // TODO unit test for the property 'CVDataStatus'
+            // TODO unit test for the property 'CvDataStatus'
         }
 
         /// <summary>
@@ -196,51 +187,6 @@ namespace Org.OpenAPITools.Test.Model
         public void TrackDataTest()
         {
             // TODO unit test for the property 'TrackData'
-        }
-
-        /// <summary>
-        /// Test the property 'HealthCareAccountType'
-        /// </summary>
-        [Fact]
-        public void HealthCareAccountTypeTest()
-        {
-            // TODO unit test for the property 'HealthCareAccountType'
-        }
-
-        /// <summary>
-        /// Test the property 'RxAmount'
-        /// </summary>
-        [Fact]
-        public void RxAmountTest()
-        {
-            // TODO unit test for the property 'RxAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'VisionAmount'
-        /// </summary>
-        [Fact]
-        public void VisionAmountTest()
-        {
-            // TODO unit test for the property 'VisionAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'DentalAmount'
-        /// </summary>
-        [Fact]
-        public void DentalAmountTest()
-        {
-            // TODO unit test for the property 'DentalAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'ClinicAmount'
-        /// </summary>
-        [Fact]
-        public void ClinicAmountTest()
-        {
-            // TODO unit test for the property 'ClinicAmount'
         }
 
         /// <summary>
@@ -271,48 +217,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'TipAmount'
-        /// </summary>
-        [Fact]
-        public void TipAmountTest()
-        {
-            // TODO unit test for the property 'TipAmount'
-        }
-
-        /// <summary>
         /// Test the property 'ConvenienceAmount'
         /// </summary>
         [Fact]
         public void ConvenienceAmountTest()
         {
             // TODO unit test for the property 'ConvenienceAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAmount'
-        /// </summary>
-        [Fact]
-        public void TaxAmountTest()
-        {
-            // TODO unit test for the property 'TaxAmount'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxPercent'
-        /// </summary>
-        [Fact]
-        public void TaxPercentTest()
-        {
-            // TODO unit test for the property 'TaxPercent'
-        }
-
-        /// <summary>
-        /// Test the property 'TaxAfterDiscount'
-        /// </summary>
-        [Fact]
-        public void TaxAfterDiscountTest()
-        {
-            // TODO unit test for the property 'TaxAfterDiscount'
         }
 
         /// <summary>
@@ -340,33 +250,6 @@ namespace Org.OpenAPITools.Test.Model
         public void AccountTokenTest()
         {
             // TODO unit test for the property 'AccountToken'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountType'
-        /// </summary>
-        [Fact]
-        public void DiscountTypeTest()
-        {
-            // TODO unit test for the property 'DiscountType'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountPercent'
-        /// </summary>
-        [Fact]
-        public void DiscountPercentTest()
-        {
-            // TODO unit test for the property 'DiscountPercent'
-        }
-
-        /// <summary>
-        /// Test the property 'DiscountAmount'
-        /// </summary>
-        [Fact]
-        public void DiscountAmountTest()
-        {
-            // TODO unit test for the property 'DiscountAmount'
         }
     }
 }

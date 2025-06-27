@@ -42,7 +42,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="isCheckingAccount">isCheckingAccount.</param>
         /// <param name="amount">amount.</param>
         /// <param name="fundingDate">fundingDate.</param>
-        public PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner(string payTo = default(string), string paymentMethod = default(string), string fundingType = default(string), string bankRoutingNumber = default(string), string bankAcctNumber = default(string), bool isCheckingAccount = default(bool), decimal amount = default(decimal), string fundingDate = default(string))
+        public PFEndorsementRequestQuotePoliciesInnerTotalPayFundingInner(string payTo = default(string), string paymentMethod = default(string), string fundingType = default(string), string bankRoutingNumber = default(string), string bankAcctNumber = default(string), bool isCheckingAccount = default(bool), float amount = default(float), string fundingDate = default(string))
         {
             this.PayTo = payTo;
             this.PaymentMethod = paymentMethod;
@@ -94,7 +94,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "Amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets FundingDate

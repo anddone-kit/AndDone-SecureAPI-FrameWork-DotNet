@@ -39,21 +39,15 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFQuoteEsignRequest" /> class.
         /// </summary>
-        /// <param name="merchantToken">This denotes the merchant token. (required).</param>
+        /// <param name="merchantToken">This denotes the merchant token..</param>
         /// <param name="quoteKey">This denotes the quoteKey. (required).</param>
         /// <param name="insuredName">This denotes the name of the insured. (required).</param>
-        /// <param name="ipAddress">This denotes the IP address of the client. (required).</param>
-        /// <param name="macAddress">This denotes the MAC address of the client. (required).</param>
+        /// <param name="ipAddress">This denotes the IP address of the client..</param>
+        /// <param name="macAddress">This denotes the MAC address of the client..</param>
         /// <param name="captchaToken">This denotes the captchaToken..</param>
         /// <param name="actionName">This denotes the action name..</param>
         public PFQuoteEsignRequest(string merchantToken = default(string), string quoteKey = default(string), string insuredName = default(string), string ipAddress = default(string), string macAddress = default(string), string captchaToken = default(string), string actionName = default(string))
         {
-            // to ensure "merchantToken" is required (not null)
-            if (merchantToken == null)
-            {
-                throw new ArgumentNullException("merchantToken is a required property for PFQuoteEsignRequest and cannot be null");
-            }
-            this.MerchantToken = merchantToken;
             // to ensure "quoteKey" is required (not null)
             if (quoteKey == null)
             {
@@ -66,17 +60,8 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("insuredName is a required property for PFQuoteEsignRequest and cannot be null");
             }
             this.InsuredName = insuredName;
-            // to ensure "ipAddress" is required (not null)
-            if (ipAddress == null)
-            {
-                throw new ArgumentNullException("ipAddress is a required property for PFQuoteEsignRequest and cannot be null");
-            }
+            this.MerchantToken = merchantToken;
             this.IpAddress = ipAddress;
-            // to ensure "macAddress" is required (not null)
-            if (macAddress == null)
-            {
-                throw new ArgumentNullException("macAddress is a required property for PFQuoteEsignRequest and cannot be null");
-            }
             this.MacAddress = macAddress;
             this.CaptchaToken = captchaToken;
             this.ActionName = actionName;
@@ -86,7 +71,7 @@ namespace Org.OpenAPITools.Model
         /// This denotes the merchant token.
         /// </summary>
         /// <value>This denotes the merchant token.</value>
-        [DataMember(Name = "merchantToken", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "merchantToken", EmitDefaultValue = false)]
         public string MerchantToken { get; set; }
 
         /// <summary>
@@ -107,14 +92,14 @@ namespace Org.OpenAPITools.Model
         /// This denotes the IP address of the client.
         /// </summary>
         /// <value>This denotes the IP address of the client.</value>
-        [DataMember(Name = "ipAddress", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
 
         /// <summary>
         /// This denotes the MAC address of the client.
         /// </summary>
         /// <value>This denotes the MAC address of the client.</value>
-        [DataMember(Name = "macAddress", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "macAddress", EmitDefaultValue = false)]
         public string MacAddress { get; set; }
 
         /// <summary>

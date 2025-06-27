@@ -5,11 +5,11 @@ All URIs are relative to *https://api.uat.anddone.com*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**SecureRefundsEligibilityPost**](SecureRefundsApi.md#securerefundseligibilitypost) | **POST** /secure/refunds/eligibility | This API return refund eligibility of a transaction. |
-| [**SecureRefundsPost**](SecureRefundsApi.md#securerefundspost) | **POST** /secure/refunds | This API return refund a transaction. |
+| [**SecureRefundsPost**](SecureRefundsApi.md#securerefundspost) | **POST** /secure/refunds | This API will refund a transaction which has been settled by the processor. |
 
 <a id="securerefundseligibilitypost"></a>
 # **SecureRefundsEligibilityPost**
-> RefundEligibility SecureRefundsEligibilityPost (string xApiKey, string xAppKey, decimal xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest)
+> RefundEligibility SecureRefundsEligibilityPost (string xApiKey, string xAppKey, float xVersion, string origin, TransactionRefundEligibilityRequest transactionRefundEligibilityRequest)
 
 This API return refund eligibility of a transaction.
 
@@ -41,7 +41,7 @@ namespace Example
             var apiInstance = new SecureRefundsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var transactionRefundEligibilityRequest = new TransactionRefundEligibilityRequest(); // TransactionRefundEligibilityRequest | refund Detail
 
@@ -88,7 +88,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **transactionRefundEligibilityRequest** | [**TransactionRefundEligibilityRequest**](TransactionRefundEligibilityRequest.md) | refund Detail |  |
 
@@ -118,9 +118,9 @@ catch (ApiException e)
 
 <a id="securerefundspost"></a>
 # **SecureRefundsPost**
-> SecureTransactionDetailDTO SecureRefundsPost (string xApiKey, string xAppKey, decimal xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest)
+> SecureTransactionDetailDTO SecureRefundsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureTransactionRefundRequest secureTransactionRefundRequest)
 
-This API return refund a transaction.
+This API will refund a transaction which has been settled by the processor.
 
 ### Example
 ```csharp
@@ -150,13 +150,13 @@ namespace Example
             var apiInstance = new SecureRefundsApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureTransactionRefundRequest = new SecureTransactionRefundRequest(); // SecureTransactionRefundRequest | Refund Detail
 
             try
             {
-                // This API return refund a transaction.
+                // This API will refund a transaction which has been settled by the processor.
                 SecureTransactionDetailDTO result = apiInstance.SecureRefundsPost(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest);
                 Debug.WriteLine(result);
             }
@@ -177,7 +177,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // This API return refund a transaction.
+    // This API will refund a transaction which has been settled by the processor.
     ApiResponse<SecureTransactionDetailDTO> response = apiInstance.SecureRefundsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureTransactionRefundRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -197,7 +197,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
 | **xAppKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureTransactionRefundRequest** | [**SecureTransactionRefundRequest**](SecureTransactionRefundRequest.md) | Refund Detail |  |
 
@@ -218,7 +218,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful operation |  -  |
+| **201** | Successful operation |  -  |
 | **400** | Bad Request |  -  |
 | **404** | Not Found |  -  |
 | **500** | Server Error |  -  |

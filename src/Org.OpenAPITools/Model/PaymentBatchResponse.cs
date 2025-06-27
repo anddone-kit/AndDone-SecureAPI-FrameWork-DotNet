@@ -34,19 +34,19 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PaymentBatchResponse" /> class.
         /// </summary>
-        /// <param name="totalRowCounts">totalRowCounts.</param>
+        /// <param name="totalRowCount">totalRowCount.</param>
         /// <param name="data">data.</param>
-        public PaymentBatchResponse(decimal totalRowCounts = default(decimal), List<PaymentBatchResponseDataInner> data = default(List<PaymentBatchResponseDataInner>))
+        public PaymentBatchResponse(float totalRowCount = default(float), List<PaymentBatchResponseDataInner> data = default(List<PaymentBatchResponseDataInner>))
         {
-            this.TotalRowCounts = totalRowCounts;
+            this.TotalRowCount = totalRowCount;
             this.Data = data;
         }
 
         /// <summary>
-        /// Gets or Sets TotalRowCounts
+        /// Gets or Sets TotalRowCount
         /// </summary>
-        [DataMember(Name = "totalRowCounts", EmitDefaultValue = false)]
-        public decimal TotalRowCounts { get; set; }
+        [DataMember(Name = "totalRowCount", EmitDefaultValue = false)]
+        public float TotalRowCount { get; set; }
 
         /// <summary>
         /// Gets or Sets Data
@@ -62,7 +62,7 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentBatchResponse {\n");
-            sb.Append("  TotalRowCounts: ").Append(TotalRowCounts).Append("\n");
+            sb.Append("  TotalRowCount: ").Append(TotalRowCount).Append("\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

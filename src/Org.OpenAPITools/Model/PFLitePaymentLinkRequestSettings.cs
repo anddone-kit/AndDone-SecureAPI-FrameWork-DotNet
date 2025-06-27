@@ -38,53 +38,136 @@ namespace Org.OpenAPITools.Model
         public enum AdditionalDetailsPreferenceEnum
         {
             /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
             /// Enum AskShopper for value: AskShopper
             /// </summary>
             [EnumMember(Value = "AskShopper")]
-            AskShopper = 1,
+            AskShopper = 2,
 
             /// <summary>
             /// Enum ManualEnter for value: ManualEnter
             /// </summary>
             [EnumMember(Value = "ManualEnter")]
-            ManualEnter = 2,
+            ManualEnter = 3,
 
             /// <summary>
             /// Enum NoAdditionalDetails for value: NoAdditionalDetails
             /// </summary>
             [EnumMember(Value = "NoAdditionalDetails")]
-            NoAdditionalDetails = 3
+            NoAdditionalDetails = 4,
+
+            /// <summary>
+            /// Enum ManualEnterEditNotAllowed for value: ManualEnterEditNotAllowed
+            /// </summary>
+            [EnumMember(Value = "ManualEnterEditNotAllowed")]
+            ManualEnterEditNotAllowed = 5
         }
 
 
         /// <summary>
         /// Gets or Sets AdditionalDetailsPreference
         /// </summary>
-        [DataMember(Name = "additionalDetailsPreference", EmitDefaultValue = false)]
-        public AdditionalDetailsPreferenceEnum? AdditionalDetailsPreference { get; set; }
+        [DataMember(Name = "additionalDetailsPreference", IsRequired = true, EmitDefaultValue = true)]
+        public AdditionalDetailsPreferenceEnum AdditionalDetailsPreference { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PFLitePaymentLinkRequestSettings" /> class.
         /// </summary>
-        /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
-        /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
-        /// <param name="intent">intent.</param>
-        public PFLitePaymentLinkRequestSettings(string selectedCustomerFields = default(string), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), PaymentLinkRequestSettingsIntent intent = default(PaymentLinkRequestSettingsIntent))
+        [JsonConstructorAttribute]
+        protected PFLitePaymentLinkRequestSettings() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PFLitePaymentLinkRequestSettings" /> class.
+        /// </summary>
+        /// <param name="selectedCustomerFields">selectedCustomerFields (required).</param>
+        /// <param name="additionalDetailsPreference">additionalDetailsPreference (required).</param>
+        /// <param name="displaySummary">displaySummary.</param>
+        /// <param name="acceptCustomerInfo">acceptCustomerInfo.</param>
+        /// <param name="removeHeader">removeHeader.</param>
+        /// <param name="acceptCard">acceptCard.</param>
+        /// <param name="acceptBankAccount">acceptBankAccount.</param>
+        /// <param name="saveCustomer">saveCustomer.</param>
+        /// <param name="saveCustomerAccount">saveCustomerAccount.</param>
+        /// <param name="intent">intent (required).</param>
+        public PFLitePaymentLinkRequestSettings(string selectedCustomerFields = default(string), AdditionalDetailsPreferenceEnum additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum), bool displaySummary = default(bool), bool acceptCustomerInfo = default(bool), bool removeHeader = default(bool), bool acceptCard = default(bool), bool acceptBankAccount = default(bool), bool saveCustomer = default(bool), bool saveCustomerAccount = default(bool), PaymentLinkRequestSettingsIntent intent = default(PaymentLinkRequestSettingsIntent))
         {
+            // to ensure "selectedCustomerFields" is required (not null)
+            if (selectedCustomerFields == null)
+            {
+                throw new ArgumentNullException("selectedCustomerFields is a required property for PFLitePaymentLinkRequestSettings and cannot be null");
+            }
             this.SelectedCustomerFields = selectedCustomerFields;
             this.AdditionalDetailsPreference = additionalDetailsPreference;
+            // to ensure "intent" is required (not null)
+            if (intent == null)
+            {
+                throw new ArgumentNullException("intent is a required property for PFLitePaymentLinkRequestSettings and cannot be null");
+            }
             this.Intent = intent;
+            this.DisplaySummary = displaySummary;
+            this.AcceptCustomerInfo = acceptCustomerInfo;
+            this.RemoveHeader = removeHeader;
+            this.AcceptCard = acceptCard;
+            this.AcceptBankAccount = acceptBankAccount;
+            this.SaveCustomer = saveCustomer;
+            this.SaveCustomerAccount = saveCustomerAccount;
         }
 
         /// <summary>
         /// Gets or Sets SelectedCustomerFields
         /// </summary>
-        [DataMember(Name = "selectedCustomerFields", EmitDefaultValue = false)]
+        [DataMember(Name = "selectedCustomerFields", IsRequired = true, EmitDefaultValue = true)]
         public string SelectedCustomerFields { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplaySummary
+        /// </summary>
+        [DataMember(Name = "displaySummary", EmitDefaultValue = true)]
+        public bool DisplaySummary { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AcceptCustomerInfo
+        /// </summary>
+        [DataMember(Name = "acceptCustomerInfo", EmitDefaultValue = true)]
+        public bool AcceptCustomerInfo { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RemoveHeader
+        /// </summary>
+        [DataMember(Name = "removeHeader", EmitDefaultValue = true)]
+        public bool RemoveHeader { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AcceptCard
+        /// </summary>
+        [DataMember(Name = "acceptCard", EmitDefaultValue = true)]
+        public bool AcceptCard { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AcceptBankAccount
+        /// </summary>
+        [DataMember(Name = "acceptBankAccount", EmitDefaultValue = true)]
+        public bool AcceptBankAccount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SaveCustomer
+        /// </summary>
+        [DataMember(Name = "saveCustomer", EmitDefaultValue = true)]
+        public bool SaveCustomer { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SaveCustomerAccount
+        /// </summary>
+        [DataMember(Name = "saveCustomerAccount", EmitDefaultValue = true)]
+        public bool SaveCustomerAccount { get; set; }
 
         /// <summary>
         /// Gets or Sets Intent
         /// </summary>
-        [DataMember(Name = "intent", EmitDefaultValue = false)]
+        [DataMember(Name = "intent", IsRequired = true, EmitDefaultValue = true)]
         public PaymentLinkRequestSettingsIntent Intent { get; set; }
 
         /// <summary>
@@ -97,6 +180,13 @@ namespace Org.OpenAPITools.Model
             sb.Append("class PFLitePaymentLinkRequestSettings {\n");
             sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
             sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
+            sb.Append("  DisplaySummary: ").Append(DisplaySummary).Append("\n");
+            sb.Append("  AcceptCustomerInfo: ").Append(AcceptCustomerInfo).Append("\n");
+            sb.Append("  RemoveHeader: ").Append(RemoveHeader).Append("\n");
+            sb.Append("  AcceptCard: ").Append(AcceptCard).Append("\n");
+            sb.Append("  AcceptBankAccount: ").Append(AcceptBankAccount).Append("\n");
+            sb.Append("  SaveCustomer: ").Append(SaveCustomer).Append("\n");
+            sb.Append("  SaveCustomerAccount: ").Append(SaveCustomerAccount).Append("\n");
             sb.Append("  Intent: ").Append(Intent).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -39,9 +39,9 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequestInsured" /> class.
         /// </summary>
-        /// <param name="agentCustomerNumber">agentCustomerNumber (required).</param>
+        /// <param name="agentCustomerNumber">agentCustomerNumber.</param>
         /// <param name="email">email (required).</param>
-        /// <param name="careOf">careOf (required).</param>
+        /// <param name="careOf">careOf.</param>
         /// <param name="uniqueId">uniqueId.</param>
         /// <param name="address">address (required).</param>
         /// <param name="hasDataChangeAgentCustomerNumber">hasDataChangeAgentCustomerNumber.</param>
@@ -57,30 +57,20 @@ namespace Org.OpenAPITools.Model
         /// <param name="hasDataChangeInsured">hasDataChangeInsured.</param>
         public QuoteRequestInsured(string agentCustomerNumber = default(string), string email = default(string), string careOf = default(string), string uniqueId = default(string), QuoteRequestInsuredAddress address = default(QuoteRequestInsuredAddress), bool hasDataChangeAgentCustomerNumber = default(bool), bool hasDataChangeName = default(bool), bool hasDataChangeAddress1 = default(bool), bool hasDataChangeAddress2 = default(bool), bool hasDataChangeCity = default(bool), bool hasDataChangeState = default(bool), bool hasDataChangeZip = default(bool), bool hasDataChangePhone = default(bool), bool hasDataChangeEmail = default(bool), bool hasDataChangeCareOf = default(bool), bool hasDataChangeInsured = default(bool))
         {
-            // to ensure "agentCustomerNumber" is required (not null)
-            if (agentCustomerNumber == null)
-            {
-                throw new ArgumentNullException("agentCustomerNumber is a required property for QuoteRequestInsured and cannot be null");
-            }
-            this.AgentCustomerNumber = agentCustomerNumber;
             // to ensure "email" is required (not null)
             if (email == null)
             {
                 throw new ArgumentNullException("email is a required property for QuoteRequestInsured and cannot be null");
             }
             this.Email = email;
-            // to ensure "careOf" is required (not null)
-            if (careOf == null)
-            {
-                throw new ArgumentNullException("careOf is a required property for QuoteRequestInsured and cannot be null");
-            }
-            this.CareOf = careOf;
             // to ensure "address" is required (not null)
             if (address == null)
             {
                 throw new ArgumentNullException("address is a required property for QuoteRequestInsured and cannot be null");
             }
             this.Address = address;
+            this.AgentCustomerNumber = agentCustomerNumber;
+            this.CareOf = careOf;
             this.UniqueId = uniqueId;
             this.HasDataChangeAgentCustomerNumber = hasDataChangeAgentCustomerNumber;
             this.HasDataChangeName = hasDataChangeName;
@@ -98,7 +88,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets AgentCustomerNumber
         /// </summary>
-        [DataMember(Name = "agentCustomerNumber", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "agentCustomerNumber", EmitDefaultValue = false)]
         public string AgentCustomerNumber { get; set; }
 
         /// <summary>
@@ -110,7 +100,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets CareOf
         /// </summary>
-        [DataMember(Name = "careOf", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "careOf", EmitDefaultValue = false)]
         public string CareOf { get; set; }
 
         /// <summary>

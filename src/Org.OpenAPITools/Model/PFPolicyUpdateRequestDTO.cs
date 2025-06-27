@@ -44,7 +44,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="premium">This denotes the premium amount. (required).</param>
         /// <param name="category">This denotes the coverage type. (required).</param>
         /// <param name="newPolicyNumber">This denotes the new policy number. (required).</param>
-        public PFPolicyUpdateRequestDTO(decimal quoteKey = default(decimal), string accountNumber = default(string), decimal premium = default(decimal), string category = default(string), string newPolicyNumber = default(string))
+        public PFPolicyUpdateRequestDTO(float quoteKey = default(float), string accountNumber = default(string), float premium = default(float), string category = default(string), string newPolicyNumber = default(string))
         {
             this.QuoteKey = quoteKey;
             this.Premium = premium;
@@ -68,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>This denotes the quote key.</value>
         [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
-        public decimal QuoteKey { get; set; }
+        public float QuoteKey { get; set; }
 
         /// <summary>
         /// This denotes the loan account number.
@@ -82,7 +82,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <value>This denotes the premium amount.</value>
         [DataMember(Name = "premium", IsRequired = true, EmitDefaultValue = true)]
-        public decimal Premium { get; set; }
+        public float Premium { get; set; }
 
         /// <summary>
         /// This denotes the coverage type.

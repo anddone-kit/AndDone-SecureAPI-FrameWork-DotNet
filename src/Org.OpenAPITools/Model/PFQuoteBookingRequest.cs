@@ -34,9 +34,14 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PFQuoteBookingRequest" /> class.
         /// </summary>
-        /// <param name="quoteKey">quoteKey.</param>
+        [JsonConstructorAttribute]
+        protected PFQuoteBookingRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PFQuoteBookingRequest" /> class.
+        /// </summary>
+        /// <param name="quoteKey">quoteKey (required).</param>
         /// <param name="merchantToken">merchantToken.</param>
-        public PFQuoteBookingRequest(decimal quoteKey = default(decimal), string merchantToken = default(string))
+        public PFQuoteBookingRequest(float quoteKey = default(float), string merchantToken = default(string))
         {
             this.QuoteKey = quoteKey;
             this.MerchantToken = merchantToken;
@@ -45,8 +50,8 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets QuoteKey
         /// </summary>
-        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public decimal QuoteKey { get; set; }
+        [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
+        public float QuoteKey { get; set; }
 
         /// <summary>
         /// Gets or Sets MerchantToken

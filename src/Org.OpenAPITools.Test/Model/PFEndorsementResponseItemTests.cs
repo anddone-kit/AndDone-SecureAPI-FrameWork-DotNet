@@ -71,5 +71,14 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'Quote'
         }
+
+        /// <summary>
+        /// Test the property 'PaymentIntent'
+        /// </summary>
+        [Fact]
+        public void PaymentIntentTest()
+        {
+            // TODO unit test for the property 'PaymentIntent'
+        }
     }
 }

@@ -15,7 +15,7 @@ All URIs are relative to *https://api.uat.anddone.com*
 
 <a id="vendorapisecuremerchantsvendorsdeletepost"></a>
 # **VendorapiSecureMerchantsVendorsDeletePost**
-> void VendorapiSecureMerchantsVendorsDeletePost (string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO)
+> void VendorapiSecureMerchantsVendorsDeletePost (string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO)
 
 This API deletes vendor into system
 
@@ -46,15 +46,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureVendorStatusRequestDTO = new SecureVendorStatusRequestDTO(); // SecureVendorStatusRequestDTO | SecureVendorStatusRequestDTO
 
             try
             {
                 // This API deletes vendor into system
-                apiInstance.VendorapiSecureMerchantsVendorsDeletePost(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+                apiInstance.VendorapiSecureMerchantsVendorsDeletePost(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
             }
             catch (ApiException  e)
             {
@@ -74,7 +74,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API deletes vendor into system
-    apiInstance.VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+    apiInstance.VendorapiSecureMerchantsVendorsDeletePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
 }
 catch (ApiException e)
 {
@@ -89,8 +89,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureVendorStatusRequestDTO** | [**SecureVendorStatusRequestDTO**](SecureVendorStatusRequestDTO.md) | SecureVendorStatusRequestDTO |  |
 
@@ -120,7 +120,7 @@ void (empty response body)
 
 <a id="vendorapisecuremerchantsvendorsdetailspost"></a>
 # **VendorapiSecureMerchantsVendorsDetailsPost**
-> VendorResponseDTO VendorapiSecureMerchantsVendorsDetailsPost (string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorRequestDTO secureVendorRequestDTO)
+> VendorResponseDTO VendorapiSecureMerchantsVendorsDetailsPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorRequestDTO secureVendorRequestDTO)
 
 This API gets details of particular vendor
 
@@ -151,15 +151,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureVendorRequestDTO = new SecureVendorRequestDTO(); // SecureVendorRequestDTO | SecureVendorRequestDTO
 
             try
             {
                 // This API gets details of particular vendor
-                VendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsDetailsPost(xApiKey, xVersion, xAppKey, origin, secureVendorRequestDTO);
+                VendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsDetailsPost(xApiKey, xAppKey, xVersion, origin, secureVendorRequestDTO);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -180,7 +180,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API gets details of particular vendor
-    ApiResponse<VendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorRequestDTO);
+    ApiResponse<VendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsDetailsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorRequestDTO);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -198,8 +198,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureVendorRequestDTO** | [**SecureVendorRequestDTO**](SecureVendorRequestDTO.md) | SecureVendorRequestDTO |  |
 
@@ -229,7 +229,7 @@ catch (ApiException e)
 
 <a id="vendorapisecuremerchantsvendorseditpost"></a>
 # **VendorapiSecureMerchantsVendorsEditPost**
-> SecureVendorResponseDTO VendorapiSecureMerchantsVendorsEditPost (string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO)
+> SecureVendorResponseDTO VendorapiSecureMerchantsVendorsEditPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorUpdateRequestDTO secureVendorUpdateRequestDTO)
 
 This API Updates the existing vendor
 
@@ -260,15 +260,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureVendorUpdateRequestDTO = new SecureVendorUpdateRequestDTO(); // SecureVendorUpdateRequestDTO | SecureVendorUpdateRequestDTO
 
             try
             {
                 // This API Updates the existing vendor
-                SecureVendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsEditPost(xApiKey, xVersion, xAppKey, origin, secureVendorUpdateRequestDTO);
+                SecureVendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsEditPost(xApiKey, xAppKey, xVersion, origin, secureVendorUpdateRequestDTO);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -289,7 +289,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API Updates the existing vendor
-    ApiResponse<SecureVendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorUpdateRequestDTO);
+    ApiResponse<SecureVendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsEditPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorUpdateRequestDTO);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -307,8 +307,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureVendorUpdateRequestDTO** | [**SecureVendorUpdateRequestDTO**](SecureVendorUpdateRequestDTO.md) | SecureVendorUpdateRequestDTO |  |
 
@@ -338,7 +338,7 @@ catch (ApiException e)
 
 <a id="vendorapisecuremerchantsvendorspost"></a>
 # **VendorapiSecureMerchantsVendorsPost**
-> SecureVendorResponseDTO VendorapiSecureMerchantsVendorsPost (string xApiKey, decimal xVersion, string xAppKey, string origin, VendorRequestDTO vendorRequestDTO)
+> SecureVendorResponseDTO VendorapiSecureMerchantsVendorsPost (string xApiKey, string xAppKey, float xVersion, string origin, VendorRequestDTO vendorRequestDTO)
 
 This API creates vendor into system
 
@@ -369,15 +369,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var vendorRequestDTO = new VendorRequestDTO(); // VendorRequestDTO | VendorRequestDTO
 
             try
             {
                 // This API creates vendor into system
-                SecureVendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsPost(xApiKey, xVersion, xAppKey, origin, vendorRequestDTO);
+                SecureVendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsPost(xApiKey, xAppKey, xVersion, origin, vendorRequestDTO);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -398,7 +398,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API creates vendor into system
-    ApiResponse<SecureVendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, vendorRequestDTO);
+    ApiResponse<SecureVendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, vendorRequestDTO);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -416,8 +416,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **vendorRequestDTO** | [**VendorRequestDTO**](VendorRequestDTO.md) | VendorRequestDTO |  |
 
@@ -447,7 +447,7 @@ catch (ApiException e)
 
 <a id="vendorapisecuremerchantsvendorssearchpost"></a>
 # **VendorapiSecureMerchantsVendorsSearchPost**
-> PageVendorResponseDTO VendorapiSecureMerchantsVendorsSearchPost (string xApiKey, decimal xVersion, string xAppKey, string? paymentMethodType = null, string? attention = null, string? vendorId = null, string? vendorName = null, string? vendorStatus = null, string? createdBy = null, string? startDate = null, string? endDate = null, int? pageSize = null, string? searchText = null, string? sortField = null, string? startRow = null, bool? asc = null)
+> PageVendorResponseDTO VendorapiSecureMerchantsVendorsSearchPost (string xApiKey, string xAppKey, float xVersion, string origin, string? paymentMethodType = null, string? attention = null, string? vendorId = null, string? vendorName = null, string? vendorStatus = null, string? createdBy = null, string? startDate = null, string? endDate = null, float? pageSize = null, string? searchText = null, string? sortField = null, string? startRow = null, bool? asc = null)
 
 This API returns list of all the Vendors of Merchant
 
@@ -478,9 +478,10 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
-            var paymentMethodType = "Checks";  // string? | Set paymentMethodType (optional) 
+            var xVersion = 8.14D;  // float | x-version
+            var origin = "origin_example";  // string | origin
+            var paymentMethodType = "Check";  // string? | Set paymentMethodType (optional) 
             var attention = "attention_example";  // string? | Set attention (optional) 
             var vendorId = "vendorId_example";  // string? | Set vendorId (optional) 
             var vendorName = "vendorName_example";  // string? | Set vendorName (optional) 
@@ -488,7 +489,7 @@ namespace Example
             var createdBy = "createdBy_example";  // string? | Set createdBy (optional) 
             var startDate = "startDate_example";  // string? | set start Date (optional) 
             var endDate = "endDate_example";  // string? | set end Date (optional) 
-            var pageSize = 56;  // int? | Set PageSize (optional) 
+            var pageSize = 8.14D;  // float? | Set PageSize (optional) 
             var searchText = "searchText_example";  // string? | search Text (optional) 
             var sortField = "sortField_example";  // string? | Set SortField (optional) 
             var startRow = "startRow_example";  // string? | Set StartRow (optional) 
@@ -497,7 +498,7 @@ namespace Example
             try
             {
                 // This API returns list of all the Vendors of Merchant
-                PageVendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsSearchPost(xApiKey, xVersion, xAppKey, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc);
+                PageVendorResponseDTO result = apiInstance.VendorapiSecureMerchantsVendorsSearchPost(xApiKey, xAppKey, xVersion, origin, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -518,7 +519,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API returns list of all the Vendors of Merchant
-    ApiResponse<PageVendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(xApiKey, xVersion, xAppKey, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc);
+    ApiResponse<PageVendorResponseDTO> response = apiInstance.VendorapiSecureMerchantsVendorsSearchPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, paymentMethodType, attention, vendorId, vendorName, vendorStatus, createdBy, startDate, endDate, pageSize, searchText, sortField, startRow, asc);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -536,8 +537,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
+| **origin** | **string** | origin |  |
 | **paymentMethodType** | **string?** | Set paymentMethodType | [optional]  |
 | **attention** | **string?** | Set attention | [optional]  |
 | **vendorId** | **string?** | Set vendorId | [optional]  |
@@ -546,7 +548,7 @@ catch (ApiException e)
 | **createdBy** | **string?** | Set createdBy | [optional]  |
 | **startDate** | **string?** | set start Date | [optional]  |
 | **endDate** | **string?** | set end Date | [optional]  |
-| **pageSize** | **int?** | Set PageSize | [optional]  |
+| **pageSize** | **float?** | Set PageSize | [optional]  |
 | **searchText** | **string?** | search Text | [optional]  |
 | **sortField** | **string?** | Set SortField | [optional]  |
 | **startRow** | **string?** | Set StartRow | [optional]  |
@@ -578,7 +580,7 @@ catch (ApiException e)
 
 <a id="vendorapisecuremerchantsvendorssuspendpost"></a>
 # **VendorapiSecureMerchantsVendorsSuspendPost**
-> void VendorapiSecureMerchantsVendorsSuspendPost (string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO)
+> void VendorapiSecureMerchantsVendorsSuspendPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO)
 
 This API suspends vendor into system
 
@@ -609,15 +611,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureVendorStatusRequestDTO = new SecureVendorStatusRequestDTO(); // SecureVendorStatusRequestDTO | SecureVendorStatusRequestDTO
 
             try
             {
                 // This API suspends vendor into system
-                apiInstance.VendorapiSecureMerchantsVendorsSuspendPost(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+                apiInstance.VendorapiSecureMerchantsVendorsSuspendPost(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
             }
             catch (ApiException  e)
             {
@@ -637,7 +639,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API suspends vendor into system
-    apiInstance.VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+    apiInstance.VendorapiSecureMerchantsVendorsSuspendPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
 }
 catch (ApiException e)
 {
@@ -652,8 +654,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureVendorStatusRequestDTO** | [**SecureVendorStatusRequestDTO**](SecureVendorStatusRequestDTO.md) | SecureVendorStatusRequestDTO |  |
 
@@ -683,7 +685,7 @@ void (empty response body)
 
 <a id="vendorapisecuremerchantsvendorstimelinepost"></a>
 # **VendorapiSecureMerchantsVendorsTimelinePost**
-> List&lt;VendorTimelineResponseListInner&gt; VendorapiSecureMerchantsVendorsTimelinePost (string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO)
+> List&lt;VendorTimelineResponseListInner&gt; VendorapiSecureMerchantsVendorsTimelinePost (string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorTimelineRequestDTO secureVendorTimelineRequestDTO)
 
 This API gets timeline of particular vendor
 
@@ -714,15 +716,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureVendorTimelineRequestDTO = new SecureVendorTimelineRequestDTO(); // SecureVendorTimelineRequestDTO | SecureVendorTimelineRequestDTO
 
             try
             {
                 // This API gets timeline of particular vendor
-                List<VendorTimelineResponseListInner> result = apiInstance.VendorapiSecureMerchantsVendorsTimelinePost(xApiKey, xVersion, xAppKey, origin, secureVendorTimelineRequestDTO);
+                List<VendorTimelineResponseListInner> result = apiInstance.VendorapiSecureMerchantsVendorsTimelinePost(xApiKey, xAppKey, xVersion, origin, secureVendorTimelineRequestDTO);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -743,7 +745,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API gets timeline of particular vendor
-    ApiResponse<List<VendorTimelineResponseListInner>> response = apiInstance.VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorTimelineRequestDTO);
+    ApiResponse<List<VendorTimelineResponseListInner>> response = apiInstance.VendorapiSecureMerchantsVendorsTimelinePostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorTimelineRequestDTO);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -761,8 +763,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureVendorTimelineRequestDTO** | [**SecureVendorTimelineRequestDTO**](SecureVendorTimelineRequestDTO.md) | SecureVendorTimelineRequestDTO |  |
 
@@ -792,7 +794,7 @@ catch (ApiException e)
 
 <a id="vendorapisecuremerchantsvendorsunsuspendpost"></a>
 # **VendorapiSecureMerchantsVendorsUnsuspendPost**
-> void VendorapiSecureMerchantsVendorsUnsuspendPost (string xApiKey, decimal xVersion, string xAppKey, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO)
+> void VendorapiSecureMerchantsVendorsUnsuspendPost (string xApiKey, string xAppKey, float xVersion, string origin, SecureVendorStatusRequestDTO secureVendorStatusRequestDTO)
 
 This API unsuspends vendor into system
 
@@ -823,15 +825,15 @@ namespace Example
 
             var apiInstance = new SecureVendorManagementApi(config);
             var xApiKey = "xApiKey_example";  // string | an authorization header
-            var xVersion = 8.14D;  // decimal | x-version
             var xAppKey = "xAppKey_example";  // string | an authorization header
+            var xVersion = 8.14D;  // float | x-version
             var origin = "origin_example";  // string | origin
             var secureVendorStatusRequestDTO = new SecureVendorStatusRequestDTO(); // SecureVendorStatusRequestDTO | SecureVendorStatusRequestDTO
 
             try
             {
                 // This API unsuspends vendor into system
-                apiInstance.VendorapiSecureMerchantsVendorsUnsuspendPost(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+                apiInstance.VendorapiSecureMerchantsVendorsUnsuspendPost(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
             }
             catch (ApiException  e)
             {
@@ -851,7 +853,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // This API unsuspends vendor into system
-    apiInstance.VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(xApiKey, xVersion, xAppKey, origin, secureVendorStatusRequestDTO);
+    apiInstance.VendorapiSecureMerchantsVendorsUnsuspendPostWithHttpInfo(xApiKey, xAppKey, xVersion, origin, secureVendorStatusRequestDTO);
 }
 catch (ApiException e)
 {
@@ -866,8 +868,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xApiKey** | **string** | an authorization header |  |
-| **xVersion** | **decimal** | x-version |  |
 | **xAppKey** | **string** | an authorization header |  |
+| **xVersion** | **float** | x-version |  |
 | **origin** | **string** | origin |  |
 | **secureVendorStatusRequestDTO** | [**SecureVendorStatusRequestDTO**](SecureVendorStatusRequestDTO.md) | SecureVendorStatusRequestDTO |  |
 

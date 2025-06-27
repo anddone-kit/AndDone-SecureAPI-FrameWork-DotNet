@@ -34,18 +34,28 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TransactionRefundEligibilityRequest" /> class.
         /// </summary>
+        [JsonConstructorAttribute]
+        protected TransactionRefundEligibilityRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TransactionRefundEligibilityRequest" /> class.
+        /// </summary>
         /// <param name="invoiceNumber">invoiceNumber.</param>
         /// <param name="pONumber">pONumber.</param>
         /// <param name="refundAmount">refundAmount.</param>
-        /// <param name="transactionId">transactionId.</param>
+        /// <param name="transactionId">transactionId (required).</param>
         /// <param name="remarks">remarks.</param>
         /// <param name="splits">splits.</param>
-        public TransactionRefundEligibilityRequest(string invoiceNumber = default(string), string pONumber = default(string), decimal refundAmount = default(decimal), string transactionId = default(string), string remarks = default(string), List<PaymentIntentResponseSplitsInner> splits = default(List<PaymentIntentResponseSplitsInner>))
+        public TransactionRefundEligibilityRequest(string invoiceNumber = default(string), string pONumber = default(string), float refundAmount = default(float), string transactionId = default(string), string remarks = default(string), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>))
         {
+            // to ensure "transactionId" is required (not null)
+            if (transactionId == null)
+            {
+                throw new ArgumentNullException("transactionId is a required property for TransactionRefundEligibilityRequest and cannot be null");
+            }
+            this.TransactionId = transactionId;
             this.InvoiceNumber = invoiceNumber;
             this.PONumber = pONumber;
             this.RefundAmount = refundAmount;
-            this.TransactionId = transactionId;
             this.Remarks = remarks;
             this.Splits = splits;
         }
@@ -66,12 +76,12 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets RefundAmount
         /// </summary>
         [DataMember(Name = "refundAmount", EmitDefaultValue = false)]
-        public decimal RefundAmount { get; set; }
+        public float RefundAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionId
         /// </summary>
-        [DataMember(Name = "transactionId", EmitDefaultValue = false)]
+        [DataMember(Name = "transactionId", IsRequired = true, EmitDefaultValue = true)]
         public string TransactionId { get; set; }
 
         /// <summary>
@@ -84,7 +94,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Splits
         /// </summary>
         [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentIntentResponseSplitsInner> Splits { get; set; }
+        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

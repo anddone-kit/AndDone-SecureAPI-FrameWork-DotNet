@@ -55,15 +55,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Title'
-        /// </summary>
-        [Fact]
-        public void TitleTest()
-        {
-            // TODO unit test for the property 'Title'
-        }
-
-        /// <summary>
         /// Test the property 'MerchantId'
         /// </summary>
         [Fact]
@@ -73,39 +64,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'ShortDescription'
+        /// Test the property 'Title'
         /// </summary>
         [Fact]
-        public void ShortDescriptionTest()
+        public void TitleTest()
         {
-            // TODO unit test for the property 'ShortDescription'
-        }
-
-        /// <summary>
-        /// Test the property 'SaveForFuture'
-        /// </summary>
-        [Fact]
-        public void SaveForFutureTest()
-        {
-            // TODO unit test for the property 'SaveForFuture'
-        }
-
-        /// <summary>
-        /// Test the property 'PaymentDescription'
-        /// </summary>
-        [Fact]
-        public void PaymentDescriptionTest()
-        {
-            // TODO unit test for the property 'PaymentDescription'
-        }
-
-        /// <summary>
-        /// Test the property 'IsPayInFull'
-        /// </summary>
-        [Fact]
-        public void IsPayInFullTest()
-        {
-            // TODO unit test for the property 'IsPayInFull'
+            // TODO unit test for the property 'Title'
         }
 
         /// <summary>
@@ -118,66 +82,30 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'PaymentDescription'
+        /// </summary>
+        [Fact]
+        public void PaymentDescriptionTest()
+        {
+            // TODO unit test for the property 'PaymentDescription'
+        }
+
+        /// <summary>
+        /// Test the property 'Customers'
+        /// </summary>
+        [Fact]
+        public void CustomersTest()
+        {
+            // TODO unit test for the property 'Customers'
+        }
+
+        /// <summary>
         /// Test the property 'InvoiceNumber'
         /// </summary>
         [Fact]
         public void InvoiceNumberTest()
         {
             // TODO unit test for the property 'InvoiceNumber'
-        }
-
-        /// <summary>
-        /// Test the property 'EnablePartialPayment'
-        /// </summary>
-        [Fact]
-        public void EnablePartialPaymentTest()
-        {
-            // TODO unit test for the property 'EnablePartialPayment'
-        }
-
-        /// <summary>
-        /// Test the property 'EnableMultiplePayment'
-        /// </summary>
-        [Fact]
-        public void EnableMultiplePaymentTest()
-        {
-            // TODO unit test for the property 'EnableMultiplePayment'
-        }
-
-        /// <summary>
-        /// Test the property 'EnableProtection'
-        /// </summary>
-        [Fact]
-        public void EnableProtectionTest()
-        {
-            // TODO unit test for the property 'EnableProtection'
-        }
-
-        /// <summary>
-        /// Test the property 'ProtectionMode'
-        /// </summary>
-        [Fact]
-        public void ProtectionModeTest()
-        {
-            // TODO unit test for the property 'ProtectionMode'
-        }
-
-        /// <summary>
-        /// Test the property 'DisplayReceipt'
-        /// </summary>
-        [Fact]
-        public void DisplayReceiptTest()
-        {
-            // TODO unit test for the property 'DisplayReceipt'
-        }
-
-        /// <summary>
-        /// Test the property 'ExpireIn'
-        /// </summary>
-        [Fact]
-        public void ExpireInTest()
-        {
-            // TODO unit test for the property 'ExpireIn'
         }
 
         /// <summary>
@@ -190,21 +118,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'ExpireOn'
+        /// Test the property 'ExpireIn'
         /// </summary>
         [Fact]
-        public void ExpireOnTest()
+        public void ExpireInTest()
         {
-            // TODO unit test for the property 'ExpireOn'
-        }
-
-        /// <summary>
-        /// Test the property 'ReferenceType'
-        /// </summary>
-        [Fact]
-        public void ReferenceTypeTest()
-        {
-            // TODO unit test for the property 'ReferenceType'
+            // TODO unit test for the property 'ExpireIn'
         }
 
         /// <summary>
@@ -217,57 +136,30 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'ReferenceNumber'
+        /// Test the property 'ExpireOn'
         /// </summary>
         [Fact]
-        public void ReferenceNumberTest()
+        public void ExpireOnTest()
         {
-            // TODO unit test for the property 'ReferenceNumber'
+            // TODO unit test for the property 'ExpireOn'
         }
 
         /// <summary>
-        /// Test the property 'ReferenceKey'
+        /// Test the property 'LineItems'
         /// </summary>
         [Fact]
-        public void ReferenceKeyTest()
+        public void LineItemsTest()
         {
-            // TODO unit test for the property 'ReferenceKey'
+            // TODO unit test for the property 'LineItems'
         }
 
         /// <summary>
-        /// Test the property 'EnablePremiumFinance'
+        /// Test the property 'ShortDescription'
         /// </summary>
         [Fact]
-        public void EnablePremiumFinanceTest()
+        public void ShortDescriptionTest()
         {
-            // TODO unit test for the property 'EnablePremiumFinance'
-        }
-
-        /// <summary>
-        /// Test the property 'PlatformSettlementStatus'
-        /// </summary>
-        [Fact]
-        public void PlatformSettlementStatusTest()
-        {
-            // TODO unit test for the property 'PlatformSettlementStatus'
-        }
-
-        /// <summary>
-        /// Test the property 'ReferenceDataList'
-        /// </summary>
-        [Fact]
-        public void ReferenceDataListTest()
-        {
-            // TODO unit test for the property 'ReferenceDataList'
-        }
-
-        /// <summary>
-        /// Test the property 'AccountNumber'
-        /// </summary>
-        [Fact]
-        public void AccountNumberTest()
-        {
-            // TODO unit test for the property 'AccountNumber'
+            // TODO unit test for the property 'ShortDescription'
         }
 
         /// <summary>
@@ -289,6 +181,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Settings'
+        /// </summary>
+        [Fact]
+        public void SettingsTest()
+        {
+            // TODO unit test for the property 'Settings'
+        }
+
+        /// <summary>
         /// Test the property 'PaymentLinkType'
         /// </summary>
         [Fact]
@@ -298,30 +199,12 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'ApplyPaymentAdjustments'
+        /// Test the property 'SaveForFuture'
         /// </summary>
         [Fact]
-        public void ApplyPaymentAdjustmentsTest()
+        public void SaveForFutureTest()
         {
-            // TODO unit test for the property 'ApplyPaymentAdjustments'
-        }
-
-        /// <summary>
-        /// Test the property 'QuoteKey'
-        /// </summary>
-        [Fact]
-        public void QuoteKeyTest()
-        {
-            // TODO unit test for the property 'QuoteKey'
-        }
-
-        /// <summary>
-        /// Test the property 'Customers'
-        /// </summary>
-        [Fact]
-        public void CustomersTest()
-        {
-            // TODO unit test for the property 'Customers'
+            // TODO unit test for the property 'SaveForFuture'
         }
 
         /// <summary>
@@ -334,21 +217,129 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'LineItems'
+        /// Test the property 'QuoteKey'
         /// </summary>
         [Fact]
-        public void LineItemsTest()
+        public void QuoteKeyTest()
         {
-            // TODO unit test for the property 'LineItems'
+            // TODO unit test for the property 'QuoteKey'
         }
 
         /// <summary>
-        /// Test the property 'Settings'
+        /// Test the property 'AccountNumber'
         /// </summary>
         [Fact]
-        public void SettingsTest()
+        public void AccountNumberTest()
         {
-            // TODO unit test for the property 'Settings'
+            // TODO unit test for the property 'AccountNumber'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceType'
+        /// </summary>
+        [Fact]
+        public void ReferenceTypeTest()
+        {
+            // TODO unit test for the property 'ReferenceType'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceNumber'
+        /// </summary>
+        [Fact]
+        public void ReferenceNumberTest()
+        {
+            // TODO unit test for the property 'ReferenceNumber'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceKey'
+        /// </summary>
+        [Fact]
+        public void ReferenceKeyTest()
+        {
+            // TODO unit test for the property 'ReferenceKey'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceDataList'
+        /// </summary>
+        [Fact]
+        public void ReferenceDataListTest()
+        {
+            // TODO unit test for the property 'ReferenceDataList'
+        }
+
+        /// <summary>
+        /// Test the property 'EnablePremiumFinance'
+        /// </summary>
+        [Fact]
+        public void EnablePremiumFinanceTest()
+        {
+            // TODO unit test for the property 'EnablePremiumFinance'
+        }
+
+        /// <summary>
+        /// Test the property 'SuppressTechnologyFee'
+        /// </summary>
+        [Fact]
+        public void SuppressTechnologyFeeTest()
+        {
+            // TODO unit test for the property 'SuppressTechnologyFee'
+        }
+
+        /// <summary>
+        /// Test the property 'OverrideTechnologyFee'
+        /// </summary>
+        [Fact]
+        public void OverrideTechnologyFeeTest()
+        {
+            // TODO unit test for the property 'OverrideTechnologyFee'
+        }
+
+        /// <summary>
+        /// Test the property 'PlatformSettlementStatus'
+        /// </summary>
+        [Fact]
+        public void PlatformSettlementStatusTest()
+        {
+            // TODO unit test for the property 'PlatformSettlementStatus'
+        }
+
+        /// <summary>
+        /// Test the property 'IsPayInFull'
+        /// </summary>
+        [Fact]
+        public void IsPayInFullTest()
+        {
+            // TODO unit test for the property 'IsPayInFull'
+        }
+
+        /// <summary>
+        /// Test the property 'IsPremiumFinancier'
+        /// </summary>
+        [Fact]
+        public void IsPremiumFinancierTest()
+        {
+            // TODO unit test for the property 'IsPremiumFinancier'
+        }
+
+        /// <summary>
+        /// Test the property 'Pfr'
+        /// </summary>
+        [Fact]
+        public void PfrTest()
+        {
+            // TODO unit test for the property 'Pfr'
+        }
+
+        /// <summary>
+        /// Test the property 'PfType'
+        /// </summary>
+        [Fact]
+        public void PfTypeTest()
+        {
+            // TODO unit test for the property 'PfType'
         }
     }
 }

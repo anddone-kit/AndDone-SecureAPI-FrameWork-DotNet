@@ -40,7 +40,7 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="PFLiteSecureQuoteRequestPoliciesInnerCarrier" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
-        /// <param name="bestNumber">bestNumber (required).</param>
+        /// <param name="bestNumber">bestNumber.</param>
         /// <param name="uniqueId">uniqueId (required).</param>
         public PFLiteSecureQuoteRequestPoliciesInnerCarrier(string name = default(string), string bestNumber = default(string), string uniqueId = default(string))
         {
@@ -50,18 +50,13 @@ namespace Org.OpenAPITools.Model
                 throw new ArgumentNullException("name is a required property for PFLiteSecureQuoteRequestPoliciesInnerCarrier and cannot be null");
             }
             this.Name = name;
-            // to ensure "bestNumber" is required (not null)
-            if (bestNumber == null)
-            {
-                throw new ArgumentNullException("bestNumber is a required property for PFLiteSecureQuoteRequestPoliciesInnerCarrier and cannot be null");
-            }
-            this.BestNumber = bestNumber;
             // to ensure "uniqueId" is required (not null)
             if (uniqueId == null)
             {
                 throw new ArgumentNullException("uniqueId is a required property for PFLiteSecureQuoteRequestPoliciesInnerCarrier and cannot be null");
             }
             this.UniqueId = uniqueId;
+            this.BestNumber = bestNumber;
         }
 
         /// <summary>
@@ -73,7 +68,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets BestNumber
         /// </summary>
-        [DataMember(Name = "bestNumber", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "bestNumber", EmitDefaultValue = false)]
         public string BestNumber { get; set; }
 
         /// <summary>

@@ -28,19 +28,29 @@ namespace Org.OpenAPITools.Model
     /// <summary>
     /// QuoteRequestPoliciesInnerGa
     /// </summary>
-    [DataContract(Name = "QuoteRequest_policies_inner_Ga")]
+    [DataContract(Name = "QuoteRequest_policies_inner_ga")]
     public partial class QuoteRequestPoliciesInnerGa : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="QuoteRequestPoliciesInnerGa" /> class.
         /// </summary>
-        /// <param name="uniqueId">uniqueId.</param>
+        [JsonConstructorAttribute]
+        protected QuoteRequestPoliciesInnerGa() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QuoteRequestPoliciesInnerGa" /> class.
+        /// </summary>
+        /// <param name="uniqueId">uniqueId (required).</param>
         /// <param name="name">name.</param>
         /// <param name="careOf">careOf.</param>
         /// <param name="isValidationRequired">isValidationRequired.</param>
         /// <param name="address">address.</param>
-        public QuoteRequestPoliciesInnerGa(string uniqueId = default(string), string name = default(string), string careOf = default(string), bool isValidationRequired = default(bool), QuoteRequestInsuredAddress address = default(QuoteRequestInsuredAddress))
+        public QuoteRequestPoliciesInnerGa(string uniqueId = default(string), string name = default(string), string careOf = default(string), bool isValidationRequired = default(bool), QuoteRequestPoliciesInnerGaAddress address = default(QuoteRequestPoliciesInnerGaAddress))
         {
+            // to ensure "uniqueId" is required (not null)
+            if (uniqueId == null)
+            {
+                throw new ArgumentNullException("uniqueId is a required property for QuoteRequestPoliciesInnerGa and cannot be null");
+            }
             this.UniqueId = uniqueId;
             this.Name = name;
             this.CareOf = careOf;
@@ -51,7 +61,7 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets UniqueId
         /// </summary>
-        [DataMember(Name = "uniqueId", EmitDefaultValue = false)]
+        [DataMember(Name = "uniqueId", IsRequired = true, EmitDefaultValue = true)]
         public string UniqueId { get; set; }
 
         /// <summary>
@@ -76,7 +86,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Address
         /// </summary>
         [DataMember(Name = "address", EmitDefaultValue = false)]
-        public QuoteRequestInsuredAddress Address { get; set; }
+        public QuoteRequestPoliciesInnerGaAddress Address { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

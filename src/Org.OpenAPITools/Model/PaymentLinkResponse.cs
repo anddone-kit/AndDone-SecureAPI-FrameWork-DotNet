@@ -32,6 +32,178 @@ namespace Org.OpenAPITools.Model
     public partial class PaymentLinkResponse : IValidatableObject
     {
         /// <summary>
+        /// Defines ExpireInUnit
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ExpireInUnitEnum
+        {
+            /// <summary>
+            /// Enum Seconds for value: Seconds
+            /// </summary>
+            [EnumMember(Value = "Seconds")]
+            Seconds = 1,
+
+            /// <summary>
+            /// Enum Minutes for value: Minutes
+            /// </summary>
+            [EnumMember(Value = "Minutes")]
+            Minutes = 2,
+
+            /// <summary>
+            /// Enum Hours for value: Hours
+            /// </summary>
+            [EnumMember(Value = "Hours")]
+            Hours = 3,
+
+            /// <summary>
+            /// Enum Days for value: Days
+            /// </summary>
+            [EnumMember(Value = "Days")]
+            Days = 4,
+
+            /// <summary>
+            /// Enum Weeks for value: Weeks
+            /// </summary>
+            [EnumMember(Value = "Weeks")]
+            Weeks = 5
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ExpireInUnit
+        /// </summary>
+        [DataMember(Name = "expireInUnit", EmitDefaultValue = false)]
+        public ExpireInUnitEnum? ExpireInUnit { get; set; }
+        /// <summary>
+        /// Defines LinkStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LinkStatusEnum
+        {
+            /// <summary>
+            /// Enum Created for value: Created
+            /// </summary>
+            [EnumMember(Value = "Created")]
+            Created = 1,
+
+            /// <summary>
+            /// Enum Enabled for value: Enabled
+            /// </summary>
+            [EnumMember(Value = "Enabled")]
+            Enabled = 2,
+
+            /// <summary>
+            /// Enum Disabled for value: Disabled
+            /// </summary>
+            [EnumMember(Value = "Disabled")]
+            Disabled = 3,
+
+            /// <summary>
+            /// Enum Expired for value: Expired
+            /// </summary>
+            [EnumMember(Value = "Expired")]
+            Expired = 4,
+
+            /// <summary>
+            /// Enum Paid for value: Paid
+            /// </summary>
+            [EnumMember(Value = "Paid")]
+            Paid = 5,
+
+            /// <summary>
+            /// Enum PaymentInitiated for value: PaymentInitiated
+            /// </summary>
+            [EnumMember(Value = "PaymentInitiated")]
+            PaymentInitiated = 6,
+
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 7
+        }
+
+
+        /// <summary>
+        /// Gets or Sets LinkStatus
+        /// </summary>
+        [DataMember(Name = "linkStatus", EmitDefaultValue = false)]
+        public LinkStatusEnum? LinkStatus { get; set; }
+        /// <summary>
+        /// Defines ResponseType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ResponseTypeEnum
+        {
+            /// <summary>
+            /// Enum OnScreen for value: OnScreen
+            /// </summary>
+            [EnumMember(Value = "OnScreen")]
+            OnScreen = 1,
+
+            /// <summary>
+            /// Enum CallBack for value: CallBack
+            /// </summary>
+            [EnumMember(Value = "CallBack")]
+            CallBack = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ResponseType
+        /// </summary>
+        [DataMember(Name = "responseType", EmitDefaultValue = false)]
+        public ResponseTypeEnum? ResponseType { get; set; }
+        /// <summary>
+        /// Defines ReferenceType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ReferenceTypeEnum
+        {
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum QuoteId for value: QuoteId
+            /// </summary>
+            [EnumMember(Value = "QuoteId")]
+            QuoteId = 2,
+
+            /// <summary>
+            /// Enum AccountNumber for value: AccountNumber
+            /// </summary>
+            [EnumMember(Value = "AccountNumber")]
+            AccountNumber = 3,
+
+            /// <summary>
+            /// Enum PolicyNumber for value: PolicyNumber
+            /// </summary>
+            [EnumMember(Value = "PolicyNumber")]
+            PolicyNumber = 4,
+
+            /// <summary>
+            /// Enum InvoiceNumber for value: InvoiceNumber
+            /// </summary>
+            [EnumMember(Value = "InvoiceNumber")]
+            InvoiceNumber = 5,
+
+            /// <summary>
+            /// Enum Other for value: Other
+            /// </summary>
+            [EnumMember(Value = "Other")]
+            Other = 6
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ReferenceType
+        /// </summary>
+        [DataMember(Name = "referenceType", EmitDefaultValue = false)]
+        public ReferenceTypeEnum? ReferenceType { get; set; }
+        /// <summary>
         /// Defines PaymentLinkType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -59,7 +231,13 @@ namespace Org.OpenAPITools.Model
             /// Enum TokenLink for value: TokenLink
             /// </summary>
             [EnumMember(Value = "TokenLink")]
-            TokenLink = 4
+            TokenLink = 4,
+
+            /// <summary>
+            /// Enum Invoice for value: Invoice
+            /// </summary>
+            [EnumMember(Value = "Invoice")]
+            Invoice = 5
         }
 
 
@@ -78,17 +256,12 @@ namespace Org.OpenAPITools.Model
         /// <param name="shortLink">shortLink.</param>
         /// <param name="amount">amount.</param>
         /// <param name="paymentDescription">paymentDescription.</param>
-        /// <param name="expireBy">expireBy.</param>
+        /// <param name="expireIn">expireIn.</param>
+        /// <param name="expireInUnit">expireInUnit.</param>
         /// <param name="expireOn">expireOn.</param>
-        /// <param name="applyPaymentAdjustments">applyPaymentAdjustments.</param>
-        /// <param name="enablePartialPayment">enablePartialPayment.</param>
-        /// <param name="enableMultiplePayment">enableMultiplePayment.</param>
         /// <param name="payments">payments.</param>
         /// <param name="noOfPaymentMade">noOfPaymentMade.</param>
         /// <param name="totalPaidAmount">totalPaidAmount.</param>
-        /// <param name="enableProtection">enableProtection.</param>
-        /// <param name="protectionMode">protectionMode.</param>
-        /// <param name="displayReceipt">displayReceipt.</param>
         /// <param name="linkStatus">linkStatus.</param>
         /// <param name="invoiceNumber">invoiceNumber.</param>
         /// <param name="createdOn">createdOn.</param>
@@ -96,7 +269,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="modifiedOn">modifiedOn.</param>
         /// <param name="modifiedBy">modifiedBy.</param>
         /// <param name="shortDescription">shortDescription.</param>
-        /// <param name="resonseType">resonseType.</param>
+        /// <param name="responseType">responseType.</param>
         /// <param name="callbackParameters">callbackParameters.</param>
         /// <param name="customers">customers.</param>
         /// <param name="lineItems">lineItems.</param>
@@ -105,6 +278,9 @@ namespace Org.OpenAPITools.Model
         /// <param name="saveForFuture">saveForFuture.</param>
         /// <param name="quoteKey">quoteKey.</param>
         /// <param name="accountNumber">accountNumber.</param>
+        /// <param name="referenceType">referenceType.</param>
+        /// <param name="referenceNumber">referenceNumber.</param>
+        /// <param name="referenceKey">referenceKey.</param>
         /// <param name="referenceDataList">referenceDataList.</param>
         /// <param name="enablePremiumFinance">enablePremiumFinance.</param>
         /// <param name="isPremiumFinancier">isPremiumFinancier.</param>
@@ -114,7 +290,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="overrideTechnologyFee">overrideTechnologyFee.</param>
         /// <param name="isPFLite">isPFLite.</param>
         /// <param name="isPayInFull">isPayInFull.</param>
-        public PaymentLinkResponse(string id = default(string), string merchantId = default(string), string title = default(string), string paymentLink = default(string), string shortLink = default(string), decimal amount = default(decimal), string paymentDescription = default(string), string expireBy = default(string), string expireOn = default(string), bool applyPaymentAdjustments = default(bool), bool enablePartialPayment = default(bool), bool enableMultiplePayment = default(bool), string payments = default(string), decimal noOfPaymentMade = default(decimal), decimal totalPaidAmount = default(decimal), bool enableProtection = default(bool), string protectionMode = default(string), bool displayReceipt = default(bool), decimal linkStatus = default(decimal), string invoiceNumber = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string shortDescription = default(string), string resonseType = default(string), PaymentLinkResponseCallbackParameters callbackParameters = default(PaymentLinkResponseCallbackParameters), List<PaymentLinkResponseCustomersInner> customers = default(List<PaymentLinkResponseCustomersInner>), List<PaymentLinkResponseLineItemsInner> lineItems = default(List<PaymentLinkResponseLineItemsInner>), string displaySettings = default(string), List<PaymentLinkResponseSplitsInner> splits = default(List<PaymentLinkResponseSplitsInner>), bool saveForFuture = default(bool), string quoteKey = default(string), string accountNumber = default(string), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>), bool enablePremiumFinance = default(bool), bool isPremiumFinancier = default(bool), PaymentLinkResponsePfr pfr = default(PaymentLinkResponsePfr), PaymentLinkTypeEnum? paymentLinkType = default(PaymentLinkTypeEnum?), bool suppressTechnologyFee = default(bool), decimal overrideTechnologyFee = default(decimal), bool isPFLite = default(bool), bool isPayInFull = default(bool))
+        public PaymentLinkResponse(string id = default(string), string merchantId = default(string), string title = default(string), string paymentLink = default(string), string shortLink = default(string), float amount = default(float), string paymentDescription = default(string), int expireIn = default(int), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), string expireOn = default(string), List<PaymentLinkResponsePaymentsInner> payments = default(List<PaymentLinkResponsePaymentsInner>), float noOfPaymentMade = default(float), float totalPaidAmount = default(float), LinkStatusEnum? linkStatus = default(LinkStatusEnum?), string invoiceNumber = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), string shortDescription = default(string), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), PaymentLinkResponseCallbackParameters callbackParameters = default(PaymentLinkResponseCallbackParameters), List<PaymentLinkResponseCustomersInner> customers = default(List<PaymentLinkResponseCustomersInner>), List<PaymentLinkResponseLineItemsInner> lineItems = default(List<PaymentLinkResponseLineItemsInner>), PaymentLinkResponseDisplaySettings displaySettings = default(PaymentLinkResponseDisplaySettings), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>), bool saveForFuture = default(bool), string quoteKey = default(string), string accountNumber = default(string), ReferenceTypeEnum? referenceType = default(ReferenceTypeEnum?), string referenceNumber = default(string), string referenceKey = default(string), List<PaymentLinkResponseReferenceDataListInner> referenceDataList = default(List<PaymentLinkResponseReferenceDataListInner>), bool enablePremiumFinance = default(bool), bool isPremiumFinancier = default(bool), PaymentIntentRequestPfr pfr = default(PaymentIntentRequestPfr), PaymentLinkTypeEnum? paymentLinkType = default(PaymentLinkTypeEnum?), bool suppressTechnologyFee = default(bool), float overrideTechnologyFee = default(float), bool isPFLite = default(bool), bool isPayInFull = default(bool))
         {
             this.Id = id;
             this.MerchantId = merchantId;
@@ -123,17 +299,12 @@ namespace Org.OpenAPITools.Model
             this.ShortLink = shortLink;
             this.Amount = amount;
             this.PaymentDescription = paymentDescription;
-            this.ExpireBy = expireBy;
+            this.ExpireIn = expireIn;
+            this.ExpireInUnit = expireInUnit;
             this.ExpireOn = expireOn;
-            this.ApplyPaymentAdjustments = applyPaymentAdjustments;
-            this.EnablePartialPayment = enablePartialPayment;
-            this.EnableMultiplePayment = enableMultiplePayment;
             this.Payments = payments;
             this.NoOfPaymentMade = noOfPaymentMade;
             this.TotalPaidAmount = totalPaidAmount;
-            this.EnableProtection = enableProtection;
-            this.ProtectionMode = protectionMode;
-            this.DisplayReceipt = displayReceipt;
             this.LinkStatus = linkStatus;
             this.InvoiceNumber = invoiceNumber;
             this.CreatedOn = createdOn;
@@ -141,7 +312,7 @@ namespace Org.OpenAPITools.Model
             this.ModifiedOn = modifiedOn;
             this.ModifiedBy = modifiedBy;
             this.ShortDescription = shortDescription;
-            this.ResonseType = resonseType;
+            this.ResponseType = responseType;
             this.CallbackParameters = callbackParameters;
             this.Customers = customers;
             this.LineItems = lineItems;
@@ -150,6 +321,9 @@ namespace Org.OpenAPITools.Model
             this.SaveForFuture = saveForFuture;
             this.QuoteKey = quoteKey;
             this.AccountNumber = accountNumber;
+            this.ReferenceType = referenceType;
+            this.ReferenceNumber = referenceNumber;
+            this.ReferenceKey = referenceKey;
             this.ReferenceDataList = referenceDataList;
             this.EnablePremiumFinance = enablePremiumFinance;
             this.IsPremiumFinancier = isPremiumFinancier;
@@ -195,7 +369,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentDescription
@@ -204,10 +378,10 @@ namespace Org.OpenAPITools.Model
         public string PaymentDescription { get; set; }
 
         /// <summary>
-        /// Gets or Sets ExpireBy
+        /// Gets or Sets ExpireIn
         /// </summary>
-        [DataMember(Name = "expireBy", EmitDefaultValue = false)]
-        public string ExpireBy { get; set; }
+        [DataMember(Name = "expireIn", EmitDefaultValue = false)]
+        public int ExpireIn { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpireOn
@@ -216,64 +390,22 @@ namespace Org.OpenAPITools.Model
         public string ExpireOn { get; set; }
 
         /// <summary>
-        /// Gets or Sets ApplyPaymentAdjustments
-        /// </summary>
-        [DataMember(Name = "applyPaymentAdjustments", EmitDefaultValue = true)]
-        public bool ApplyPaymentAdjustments { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnablePartialPayment
-        /// </summary>
-        [DataMember(Name = "enablePartialPayment", EmitDefaultValue = true)]
-        public bool EnablePartialPayment { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableMultiplePayment
-        /// </summary>
-        [DataMember(Name = "enableMultiplePayment", EmitDefaultValue = true)]
-        public bool EnableMultiplePayment { get; set; }
-
-        /// <summary>
         /// Gets or Sets Payments
         /// </summary>
         [DataMember(Name = "payments", EmitDefaultValue = false)]
-        public string Payments { get; set; }
+        public List<PaymentLinkResponsePaymentsInner> Payments { get; set; }
 
         /// <summary>
         /// Gets or Sets NoOfPaymentMade
         /// </summary>
         [DataMember(Name = "noOfPaymentMade", EmitDefaultValue = false)]
-        public decimal NoOfPaymentMade { get; set; }
+        public float NoOfPaymentMade { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalPaidAmount
         /// </summary>
         [DataMember(Name = "totalPaidAmount", EmitDefaultValue = false)]
-        public decimal TotalPaidAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableProtection
-        /// </summary>
-        [DataMember(Name = "enableProtection", EmitDefaultValue = true)]
-        public bool EnableProtection { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProtectionMode
-        /// </summary>
-        [DataMember(Name = "protectionMode", EmitDefaultValue = false)]
-        public string ProtectionMode { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DisplayReceipt
-        /// </summary>
-        [DataMember(Name = "displayReceipt", EmitDefaultValue = true)]
-        public bool DisplayReceipt { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LinkStatus
-        /// </summary>
-        [DataMember(Name = "linkStatus", EmitDefaultValue = false)]
-        public decimal LinkStatus { get; set; }
+        public float TotalPaidAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets InvoiceNumber
@@ -312,12 +444,6 @@ namespace Org.OpenAPITools.Model
         public string ShortDescription { get; set; }
 
         /// <summary>
-        /// Gets or Sets ResonseType
-        /// </summary>
-        [DataMember(Name = "resonseType", EmitDefaultValue = false)]
-        public string ResonseType { get; set; }
-
-        /// <summary>
         /// Gets or Sets CallbackParameters
         /// </summary>
         [DataMember(Name = "callbackParameters", EmitDefaultValue = false)]
@@ -339,13 +465,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets DisplaySettings
         /// </summary>
         [DataMember(Name = "displaySettings", EmitDefaultValue = false)]
-        public string DisplaySettings { get; set; }
+        public PaymentLinkResponseDisplaySettings DisplaySettings { get; set; }
 
         /// <summary>
         /// Gets or Sets Splits
         /// </summary>
         [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentLinkResponseSplitsInner> Splits { get; set; }
+        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
 
         /// <summary>
         /// Gets or Sets SaveForFuture
@@ -366,10 +492,22 @@ namespace Org.OpenAPITools.Model
         public string AccountNumber { get; set; }
 
         /// <summary>
+        /// Gets or Sets ReferenceNumber
+        /// </summary>
+        [DataMember(Name = "referenceNumber", EmitDefaultValue = false)]
+        public string ReferenceNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReferenceKey
+        /// </summary>
+        [DataMember(Name = "referenceKey", EmitDefaultValue = false)]
+        public string ReferenceKey { get; set; }
+
+        /// <summary>
         /// Gets or Sets ReferenceDataList
         /// </summary>
         [DataMember(Name = "referenceDataList", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestReferenceDataListInner> ReferenceDataList { get; set; }
+        public List<PaymentLinkResponseReferenceDataListInner> ReferenceDataList { get; set; }
 
         /// <summary>
         /// Gets or Sets EnablePremiumFinance
@@ -387,7 +525,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Pfr
         /// </summary>
         [DataMember(Name = "pfr", EmitDefaultValue = false)]
-        public PaymentLinkResponsePfr Pfr { get; set; }
+        public PaymentIntentRequestPfr Pfr { get; set; }
 
         /// <summary>
         /// Gets or Sets SuppressTechnologyFee
@@ -399,12 +537,12 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets OverrideTechnologyFee
         /// </summary>
         [DataMember(Name = "overrideTechnologyFee", EmitDefaultValue = false)]
-        public decimal OverrideTechnologyFee { get; set; }
+        public float OverrideTechnologyFee { get; set; }
 
         /// <summary>
         /// Gets or Sets IsPFLite
         /// </summary>
-        [DataMember(Name = "IsPFLite", EmitDefaultValue = true)]
+        [DataMember(Name = "isPFLite", EmitDefaultValue = true)]
         public bool IsPFLite { get; set; }
 
         /// <summary>
@@ -428,17 +566,12 @@ namespace Org.OpenAPITools.Model
             sb.Append("  ShortLink: ").Append(ShortLink).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  PaymentDescription: ").Append(PaymentDescription).Append("\n");
-            sb.Append("  ExpireBy: ").Append(ExpireBy).Append("\n");
+            sb.Append("  ExpireIn: ").Append(ExpireIn).Append("\n");
+            sb.Append("  ExpireInUnit: ").Append(ExpireInUnit).Append("\n");
             sb.Append("  ExpireOn: ").Append(ExpireOn).Append("\n");
-            sb.Append("  ApplyPaymentAdjustments: ").Append(ApplyPaymentAdjustments).Append("\n");
-            sb.Append("  EnablePartialPayment: ").Append(EnablePartialPayment).Append("\n");
-            sb.Append("  EnableMultiplePayment: ").Append(EnableMultiplePayment).Append("\n");
             sb.Append("  Payments: ").Append(Payments).Append("\n");
             sb.Append("  NoOfPaymentMade: ").Append(NoOfPaymentMade).Append("\n");
             sb.Append("  TotalPaidAmount: ").Append(TotalPaidAmount).Append("\n");
-            sb.Append("  EnableProtection: ").Append(EnableProtection).Append("\n");
-            sb.Append("  ProtectionMode: ").Append(ProtectionMode).Append("\n");
-            sb.Append("  DisplayReceipt: ").Append(DisplayReceipt).Append("\n");
             sb.Append("  LinkStatus: ").Append(LinkStatus).Append("\n");
             sb.Append("  InvoiceNumber: ").Append(InvoiceNumber).Append("\n");
             sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
@@ -446,7 +579,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("  ModifiedOn: ").Append(ModifiedOn).Append("\n");
             sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
             sb.Append("  ShortDescription: ").Append(ShortDescription).Append("\n");
-            sb.Append("  ResonseType: ").Append(ResonseType).Append("\n");
+            sb.Append("  ResponseType: ").Append(ResponseType).Append("\n");
             sb.Append("  CallbackParameters: ").Append(CallbackParameters).Append("\n");
             sb.Append("  Customers: ").Append(Customers).Append("\n");
             sb.Append("  LineItems: ").Append(LineItems).Append("\n");
@@ -455,6 +588,9 @@ namespace Org.OpenAPITools.Model
             sb.Append("  SaveForFuture: ").Append(SaveForFuture).Append("\n");
             sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
+            sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
+            sb.Append("  ReferenceKey: ").Append(ReferenceKey).Append("\n");
             sb.Append("  ReferenceDataList: ").Append(ReferenceDataList).Append("\n");
             sb.Append("  EnablePremiumFinance: ").Append(EnablePremiumFinance).Append("\n");
             sb.Append("  IsPremiumFinancier: ").Append(IsPremiumFinancier).Append("\n");

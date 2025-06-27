@@ -38,67 +38,114 @@ namespace Org.OpenAPITools.Model
         public enum ExpireInUnitEnum
         {
             /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
+            /// Enum Seconds for value: Seconds
+            /// </summary>
+            [EnumMember(Value = "Seconds")]
+            Seconds = 2,
+
+            /// <summary>
             /// Enum Minutes for value: Minutes
             /// </summary>
             [EnumMember(Value = "Minutes")]
-            Minutes = 1,
+            Minutes = 3,
 
             /// <summary>
             /// Enum Hours for value: Hours
             /// </summary>
             [EnumMember(Value = "Hours")]
-            Hours = 2,
+            Hours = 4,
 
             /// <summary>
             /// Enum Days for value: Days
             /// </summary>
             [EnumMember(Value = "Days")]
-            Days = 3,
+            Days = 5,
 
             /// <summary>
             /// Enum Weeks for value: Weeks
             /// </summary>
             [EnumMember(Value = "Weeks")]
-            Weeks = 4
+            Weeks = 6
         }
 
 
         /// <summary>
         /// Gets or Sets ExpireInUnit
         /// </summary>
-        [DataMember(Name = "expireInUnit", EmitDefaultValue = false)]
-        public ExpireInUnitEnum? ExpireInUnit { get; set; }
+        [DataMember(Name = "expireInUnit", IsRequired = true, EmitDefaultValue = true)]
+        public ExpireInUnitEnum ExpireInUnit { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="PFLitePaymentLinkRequest" /> class.
         /// </summary>
-        /// <param name="quoteKey">quoteKey.</param>
+        [JsonConstructorAttribute]
+        protected PFLitePaymentLinkRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PFLitePaymentLinkRequest" /> class.
+        /// </summary>
+        /// <param name="quoteKey">quoteKey (required).</param>
         /// <param name="isPayInFull">isPayInFull.</param>
-        /// <param name="title">title.</param>
-        /// <param name="paymentDescription">paymentDescription.</param>
-        /// <param name="expireIn">expireIn.</param>
-        /// <param name="expireInUnit">expireInUnit.</param>
-        /// <param name="referenceDataList">referenceDataList.</param>
+        /// <param name="title">title (required).</param>
+        /// <param name="paymentDescription">paymentDescription (required).</param>
+        /// <param name="expireIn">expireIn (required).</param>
+        /// <param name="expireInUnit">expireInUnit (required).</param>
+        /// <param name="referenceDataList">referenceDataList (required).</param>
         /// <param name="callbackParameters">callbackParameters.</param>
         /// <param name="customers">customers.</param>
-        /// <param name="settings">settings.</param>
-        public PFLitePaymentLinkRequest(string quoteKey = default(string), bool isPayInFull = default(bool), string title = default(string), string paymentDescription = default(string), int expireIn = default(int), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>), PFLitePaymentLinkRequestCallbackParameters callbackParameters = default(PFLitePaymentLinkRequestCallbackParameters), List<PaymentLinkResponseCustomersInner> customers = default(List<PaymentLinkResponseCustomersInner>), PFLitePaymentLinkRequestSettings settings = default(PFLitePaymentLinkRequestSettings))
+        /// <param name="settings">settings (required).</param>
+        public PFLitePaymentLinkRequest(string quoteKey = default(string), bool isPayInFull = default(bool), string title = default(string), string paymentDescription = default(string), string expireIn = default(string), ExpireInUnitEnum expireInUnit = default(ExpireInUnitEnum), List<PFLitePaymentLinkRequestReferenceDataListInner> referenceDataList = default(List<PFLitePaymentLinkRequestReferenceDataListInner>), PFLitePaymentLinkRequestCallbackParameters callbackParameters = default(PFLitePaymentLinkRequestCallbackParameters), List<PFLitePaymentLinkRequestCustomersInner> customers = default(List<PFLitePaymentLinkRequestCustomersInner>), PFLitePaymentLinkRequestSettings settings = default(PFLitePaymentLinkRequestSettings))
         {
+            // to ensure "quoteKey" is required (not null)
+            if (quoteKey == null)
+            {
+                throw new ArgumentNullException("quoteKey is a required property for PFLitePaymentLinkRequest and cannot be null");
+            }
             this.QuoteKey = quoteKey;
-            this.IsPayInFull = isPayInFull;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for PFLitePaymentLinkRequest and cannot be null");
+            }
             this.Title = title;
+            // to ensure "paymentDescription" is required (not null)
+            if (paymentDescription == null)
+            {
+                throw new ArgumentNullException("paymentDescription is a required property for PFLitePaymentLinkRequest and cannot be null");
+            }
             this.PaymentDescription = paymentDescription;
+            // to ensure "expireIn" is required (not null)
+            if (expireIn == null)
+            {
+                throw new ArgumentNullException("expireIn is a required property for PFLitePaymentLinkRequest and cannot be null");
+            }
             this.ExpireIn = expireIn;
             this.ExpireInUnit = expireInUnit;
+            // to ensure "referenceDataList" is required (not null)
+            if (referenceDataList == null)
+            {
+                throw new ArgumentNullException("referenceDataList is a required property for PFLitePaymentLinkRequest and cannot be null");
+            }
             this.ReferenceDataList = referenceDataList;
+            // to ensure "settings" is required (not null)
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings is a required property for PFLitePaymentLinkRequest and cannot be null");
+            }
+            this.Settings = settings;
+            this.IsPayInFull = isPayInFull;
             this.CallbackParameters = callbackParameters;
             this.Customers = customers;
-            this.Settings = settings;
         }
 
         /// <summary>
         /// Gets or Sets QuoteKey
         /// </summary>
-        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
+        [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
         public string QuoteKey { get; set; }
 
         /// <summary>
@@ -110,26 +157,26 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentDescription
         /// </summary>
-        [DataMember(Name = "paymentDescription", EmitDefaultValue = false)]
+        [DataMember(Name = "paymentDescription", IsRequired = true, EmitDefaultValue = true)]
         public string PaymentDescription { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpireIn
         /// </summary>
-        [DataMember(Name = "expireIn", EmitDefaultValue = false)]
-        public int ExpireIn { get; set; }
+        [DataMember(Name = "expireIn", IsRequired = true, EmitDefaultValue = true)]
+        public string ExpireIn { get; set; }
 
         /// <summary>
         /// Gets or Sets ReferenceDataList
         /// </summary>
-        [DataMember(Name = "referenceDataList", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestReferenceDataListInner> ReferenceDataList { get; set; }
+        [DataMember(Name = "referenceDataList", IsRequired = true, EmitDefaultValue = true)]
+        public List<PFLitePaymentLinkRequestReferenceDataListInner> ReferenceDataList { get; set; }
 
         /// <summary>
         /// Gets or Sets CallbackParameters
@@ -141,12 +188,12 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Customers
         /// </summary>
         [DataMember(Name = "customers", EmitDefaultValue = false)]
-        public List<PaymentLinkResponseCustomersInner> Customers { get; set; }
+        public List<PFLitePaymentLinkRequestCustomersInner> Customers { get; set; }
 
         /// <summary>
         /// Gets or Sets Settings
         /// </summary>
-        [DataMember(Name = "settings", EmitDefaultValue = false)]
+        [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public PFLitePaymentLinkRequestSettings Settings { get; set; }
 
         /// <summary>

@@ -35,16 +35,52 @@ namespace Org.OpenAPITools.Model
         /// Initializes a new instance of the <see cref="PaymentBatchDetailsResponse" /> class.
         /// </summary>
         /// <param name="batchId">batchId.</param>
+        /// <param name="merchantId">merchantId.</param>
         /// <param name="batchStatus">batchStatus.</param>
+        /// <param name="processMethods">processMethods.</param>
+        /// <param name="processorName">processorName.</param>
+        /// <param name="isDefault">isDefault.</param>
+        /// <param name="executedOnDemand">executedOnDemand.</param>
         /// <param name="executionTime">executionTime.</param>
         /// <param name="completionTime">completionTime.</param>
+        /// <param name="createdOn">createdOn.</param>
+        /// <param name="createdBy">createdBy.</param>
+        /// <param name="modifiedOn">modifiedOn.</param>
+        /// <param name="modifiedBy">modifiedBy.</param>
+        /// <param name="captureCount">captureCount.</param>
+        /// <param name="captureAmount">captureAmount.</param>
+        /// <param name="voidedCount">voidedCount.</param>
+        /// <param name="voidedAmount">voidedAmount.</param>
+        /// <param name="totalLiveAmount">totalLiveAmount.</param>
+        /// <param name="refundedCount">refundedCount.</param>
+        /// <param name="refundedAmount">refundedAmount.</param>
+        /// <param name="chargebackCount">chargebackCount.</param>
+        /// <param name="chargebackAmount">chargebackAmount.</param>
         /// <param name="transactionDetails">transactionDetails.</param>
-        public PaymentBatchDetailsResponse(string batchId = default(string), string batchStatus = default(string), string executionTime = default(string), string completionTime = default(string), List<PaymentBatchDetailsResponseTransactionDetailsInner> transactionDetails = default(List<PaymentBatchDetailsResponseTransactionDetailsInner>))
+        public PaymentBatchDetailsResponse(string batchId = default(string), string merchantId = default(string), string batchStatus = default(string), string processMethods = default(string), string processorName = default(string), bool isDefault = default(bool), bool executedOnDemand = default(bool), string executionTime = default(string), string completionTime = default(string), string createdOn = default(string), string createdBy = default(string), string modifiedOn = default(string), string modifiedBy = default(string), float captureCount = default(float), float captureAmount = default(float), float voidedCount = default(float), float voidedAmount = default(float), float totalLiveAmount = default(float), float refundedCount = default(float), float refundedAmount = default(float), float chargebackCount = default(float), float chargebackAmount = default(float), List<PaymentBatchDetailsResponseTransactionDetailsInner> transactionDetails = default(List<PaymentBatchDetailsResponseTransactionDetailsInner>))
         {
             this.BatchId = batchId;
+            this.MerchantId = merchantId;
             this.BatchStatus = batchStatus;
+            this.ProcessMethods = processMethods;
+            this.ProcessorName = processorName;
+            this.IsDefault = isDefault;
+            this.ExecutedOnDemand = executedOnDemand;
             this.ExecutionTime = executionTime;
             this.CompletionTime = completionTime;
+            this.CreatedOn = createdOn;
+            this.CreatedBy = createdBy;
+            this.ModifiedOn = modifiedOn;
+            this.ModifiedBy = modifiedBy;
+            this.CaptureCount = captureCount;
+            this.CaptureAmount = captureAmount;
+            this.VoidedCount = voidedCount;
+            this.VoidedAmount = voidedAmount;
+            this.TotalLiveAmount = totalLiveAmount;
+            this.RefundedCount = refundedCount;
+            this.RefundedAmount = refundedAmount;
+            this.ChargebackCount = chargebackCount;
+            this.ChargebackAmount = chargebackAmount;
             this.TransactionDetails = transactionDetails;
         }
 
@@ -55,10 +91,40 @@ namespace Org.OpenAPITools.Model
         public string BatchId { get; set; }
 
         /// <summary>
+        /// Gets or Sets MerchantId
+        /// </summary>
+        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
+        public string MerchantId { get; set; }
+
+        /// <summary>
         /// Gets or Sets BatchStatus
         /// </summary>
         [DataMember(Name = "batchStatus", EmitDefaultValue = false)]
         public string BatchStatus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessMethods
+        /// </summary>
+        [DataMember(Name = "processMethods", EmitDefaultValue = false)]
+        public string ProcessMethods { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ProcessorName
+        /// </summary>
+        [DataMember(Name = "processorName", EmitDefaultValue = false)]
+        public string ProcessorName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDefault
+        /// </summary>
+        [DataMember(Name = "isDefault", EmitDefaultValue = true)]
+        public bool IsDefault { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExecutedOnDemand
+        /// </summary>
+        [DataMember(Name = "executedOnDemand", EmitDefaultValue = true)]
+        public bool ExecutedOnDemand { get; set; }
 
         /// <summary>
         /// Gets or Sets ExecutionTime
@@ -71,6 +137,84 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "completionTime", EmitDefaultValue = false)]
         public string CompletionTime { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedOn
+        /// </summary>
+        [DataMember(Name = "createdOn", EmitDefaultValue = false)]
+        public string CreatedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreatedBy
+        /// </summary>
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
+        public string CreatedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedOn
+        /// </summary>
+        [DataMember(Name = "modifiedOn", EmitDefaultValue = false)]
+        public string ModifiedOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedBy
+        /// </summary>
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
+        public string ModifiedBy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CaptureCount
+        /// </summary>
+        [DataMember(Name = "captureCount", EmitDefaultValue = false)]
+        public float CaptureCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CaptureAmount
+        /// </summary>
+        [DataMember(Name = "captureAmount", EmitDefaultValue = false)]
+        public float CaptureAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VoidedCount
+        /// </summary>
+        [DataMember(Name = "voidedCount", EmitDefaultValue = false)]
+        public float VoidedCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VoidedAmount
+        /// </summary>
+        [DataMember(Name = "voidedAmount", EmitDefaultValue = false)]
+        public float VoidedAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TotalLiveAmount
+        /// </summary>
+        [DataMember(Name = "totalLiveAmount", EmitDefaultValue = false)]
+        public float TotalLiveAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefundedCount
+        /// </summary>
+        [DataMember(Name = "refundedCount", EmitDefaultValue = false)]
+        public float RefundedCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RefundedAmount
+        /// </summary>
+        [DataMember(Name = "refundedAmount", EmitDefaultValue = false)]
+        public float RefundedAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ChargebackCount
+        /// </summary>
+        [DataMember(Name = "chargebackCount", EmitDefaultValue = false)]
+        public float ChargebackCount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ChargebackAmount
+        /// </summary>
+        [DataMember(Name = "chargebackAmount", EmitDefaultValue = false)]
+        public float ChargebackAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets TransactionDetails
@@ -87,9 +231,27 @@ namespace Org.OpenAPITools.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentBatchDetailsResponse {\n");
             sb.Append("  BatchId: ").Append(BatchId).Append("\n");
+            sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
             sb.Append("  BatchStatus: ").Append(BatchStatus).Append("\n");
+            sb.Append("  ProcessMethods: ").Append(ProcessMethods).Append("\n");
+            sb.Append("  ProcessorName: ").Append(ProcessorName).Append("\n");
+            sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
+            sb.Append("  ExecutedOnDemand: ").Append(ExecutedOnDemand).Append("\n");
             sb.Append("  ExecutionTime: ").Append(ExecutionTime).Append("\n");
             sb.Append("  CompletionTime: ").Append(CompletionTime).Append("\n");
+            sb.Append("  CreatedOn: ").Append(CreatedOn).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
+            sb.Append("  ModifiedOn: ").Append(ModifiedOn).Append("\n");
+            sb.Append("  ModifiedBy: ").Append(ModifiedBy).Append("\n");
+            sb.Append("  CaptureCount: ").Append(CaptureCount).Append("\n");
+            sb.Append("  CaptureAmount: ").Append(CaptureAmount).Append("\n");
+            sb.Append("  VoidedCount: ").Append(VoidedCount).Append("\n");
+            sb.Append("  VoidedAmount: ").Append(VoidedAmount).Append("\n");
+            sb.Append("  TotalLiveAmount: ").Append(TotalLiveAmount).Append("\n");
+            sb.Append("  RefundedCount: ").Append(RefundedCount).Append("\n");
+            sb.Append("  RefundedAmount: ").Append(RefundedAmount).Append("\n");
+            sb.Append("  ChargebackCount: ").Append(ChargebackCount).Append("\n");
+            sb.Append("  ChargebackAmount: ").Append(ChargebackAmount).Append("\n");
             sb.Append("  TransactionDetails: ").Append(TransactionDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

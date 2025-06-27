@@ -78,7 +78,19 @@ namespace Org.OpenAPITools.Model
             /// Enum NA for value: NA
             /// </summary>
             [EnumMember(Value = "NA")]
-            NA = 1
+            NA = 1,
+
+            /// <summary>
+            /// Enum Manual for value: Manual
+            /// </summary>
+            [EnumMember(Value = "Manual")]
+            Manual = 2,
+
+            /// <summary>
+            /// Enum SmartyLookup for value: Smarty_lookup
+            /// </summary>
+            [EnumMember(Value = "Smarty_lookup")]
+            SmartyLookup = 3
         }
 
 

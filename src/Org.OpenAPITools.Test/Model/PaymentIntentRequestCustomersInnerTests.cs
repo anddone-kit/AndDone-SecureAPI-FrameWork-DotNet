@@ -55,6 +55,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CustomerId'
+        /// </summary>
+        [Fact]
+        public void CustomerIdTest()
+        {
+            // TODO unit test for the property 'CustomerId'
+        }
+
+        /// <summary>
         /// Test the property 'FirstName'
         /// </summary>
         [Fact]
@@ -88,15 +97,6 @@ namespace Org.OpenAPITools.Test.Model
         public void PhoneTest()
         {
             // TODO unit test for the property 'Phone'
-        }
-
-        /// <summary>
-        /// Test the property 'CustomerId'
-        /// </summary>
-        [Fact]
-        public void CustomerIdTest()
-        {
-            // TODO unit test for the property 'CustomerId'
         }
     }
 }

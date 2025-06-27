@@ -32,6 +32,153 @@ namespace Org.OpenAPITools.Model
     public partial class SecureTokenLinkByIdResponseTimeLineInner : IValidatableObject
     {
         /// <summary>
+        /// Defines PaymentLinkType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentLinkTypeEnum
+        {
+            /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
+            /// Enum PaymentLink for value: PaymentLink
+            /// </summary>
+            [EnumMember(Value = "PaymentLink")]
+            PaymentLink = 2,
+
+            /// <summary>
+            /// Enum PaymentIntent for value: PaymentIntent
+            /// </summary>
+            [EnumMember(Value = "PaymentIntent")]
+            PaymentIntent = 3,
+
+            /// <summary>
+            /// Enum TokenLink for value: TokenLink
+            /// </summary>
+            [EnumMember(Value = "TokenLink")]
+            TokenLink = 4,
+
+            /// <summary>
+            /// Enum Invoice for value: Invoice
+            /// </summary>
+            [EnumMember(Value = "Invoice")]
+            Invoice = 5
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PaymentLinkType
+        /// </summary>
+        [DataMember(Name = "paymentLinkType", EmitDefaultValue = false)]
+        public PaymentLinkTypeEnum? PaymentLinkType { get; set; }
+        /// <summary>
+        /// Defines LinkStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LinkStatusEnum
+        {
+            /// <summary>
+            /// Enum Created for value: Created
+            /// </summary>
+            [EnumMember(Value = "Created")]
+            Created = 1,
+
+            /// <summary>
+            /// Enum Enabled for value: Enabled
+            /// </summary>
+            [EnumMember(Value = "Enabled")]
+            Enabled = 2,
+
+            /// <summary>
+            /// Enum Disabled for value: Disabled
+            /// </summary>
+            [EnumMember(Value = "Disabled")]
+            Disabled = 3,
+
+            /// <summary>
+            /// Enum Expired for value: Expired
+            /// </summary>
+            [EnumMember(Value = "Expired")]
+            Expired = 4,
+
+            /// <summary>
+            /// Enum Paid for value: Paid
+            /// </summary>
+            [EnumMember(Value = "Paid")]
+            Paid = 5,
+
+            /// <summary>
+            /// Enum PaymentInitiated for value: PaymentInitiated
+            /// </summary>
+            [EnumMember(Value = "PaymentInitiated")]
+            PaymentInitiated = 6,
+
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 7
+        }
+
+
+        /// <summary>
+        /// Gets or Sets LinkStatus
+        /// </summary>
+        [DataMember(Name = "linkStatus", EmitDefaultValue = false)]
+        public LinkStatusEnum? LinkStatus { get; set; }
+        /// <summary>
+        /// Defines TokenLinkStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TokenLinkStatusEnum
+        {
+            /// <summary>
+            /// Enum NA for value: NA
+            /// </summary>
+            [EnumMember(Value = "NA")]
+            NA = 1,
+
+            /// <summary>
+            /// Enum Created for value: Created
+            /// </summary>
+            [EnumMember(Value = "Created")]
+            Created = 2,
+
+            /// <summary>
+            /// Enum Completed for value: Completed
+            /// </summary>
+            [EnumMember(Value = "Completed")]
+            Completed = 3,
+
+            /// <summary>
+            /// Enum Expired for value: Expired
+            /// </summary>
+            [EnumMember(Value = "Expired")]
+            Expired = 4,
+
+            /// <summary>
+            /// Enum Invalidated for value: Invalidated
+            /// </summary>
+            [EnumMember(Value = "Invalidated")]
+            Invalidated = 5,
+
+            /// <summary>
+            /// Enum Failed for value: Failed
+            /// </summary>
+            [EnumMember(Value = "Failed")]
+            Failed = 6
+        }
+
+
+        /// <summary>
+        /// Gets or Sets TokenLinkStatus
+        /// </summary>
+        [DataMember(Name = "tokenLinkStatus", EmitDefaultValue = false)]
+        public TokenLinkStatusEnum? TokenLinkStatus { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SecureTokenLinkByIdResponseTimeLineInner" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -41,7 +188,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="linkStatus">linkStatus.</param>
         /// <param name="tokenLinkStatus">tokenLinkStatus.</param>
         /// <param name="eventDate">eventDate.</param>
-        public SecureTokenLinkByIdResponseTimeLineInner(string id = default(string), string tokenLinkId = default(string), string merchantId = default(string), string paymentLinkType = default(string), string linkStatus = default(string), string tokenLinkStatus = default(string), string eventDate = default(string))
+        public SecureTokenLinkByIdResponseTimeLineInner(string id = default(string), string tokenLinkId = default(string), string merchantId = default(string), PaymentLinkTypeEnum? paymentLinkType = default(PaymentLinkTypeEnum?), LinkStatusEnum? linkStatus = default(LinkStatusEnum?), TokenLinkStatusEnum? tokenLinkStatus = default(TokenLinkStatusEnum?), string eventDate = default(string))
         {
             this.Id = id;
             this.TokenLinkId = tokenLinkId;
@@ -69,24 +216,6 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "merchantId", EmitDefaultValue = false)]
         public string MerchantId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentLinkType
-        /// </summary>
-        [DataMember(Name = "paymentLinkType", EmitDefaultValue = false)]
-        public string PaymentLinkType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LinkStatus
-        /// </summary>
-        [DataMember(Name = "linkStatus", EmitDefaultValue = false)]
-        public string LinkStatus { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TokenLinkStatus
-        /// </summary>
-        [DataMember(Name = "tokenLinkStatus", EmitDefaultValue = false)]
-        public string TokenLinkStatus { get; set; }
 
         /// <summary>
         /// Gets or Sets EventDate

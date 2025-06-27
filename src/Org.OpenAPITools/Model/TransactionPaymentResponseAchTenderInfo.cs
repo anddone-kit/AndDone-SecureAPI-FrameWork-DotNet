@@ -57,6 +57,49 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "accountCategory", EmitDefaultValue = false)]
         public AccountCategoryEnum? AccountCategory { get; set; }
         /// <summary>
+        /// Defines PaymentAdjustmentType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PaymentAdjustmentTypeEnum
+        {
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum CashIncentive for value: CashIncentive
+            /// </summary>
+            [EnumMember(Value = "CashIncentive")]
+            CashIncentive = 2,
+
+            /// <summary>
+            /// Enum Surcharge for value: Surcharge
+            /// </summary>
+            [EnumMember(Value = "Surcharge")]
+            Surcharge = 3,
+
+            /// <summary>
+            /// Enum ConvenienceFee for value: ConvenienceFee
+            /// </summary>
+            [EnumMember(Value = "ConvenienceFee")]
+            ConvenienceFee = 4,
+
+            /// <summary>
+            /// Enum CashDiscount for value: CashDiscount
+            /// </summary>
+            [EnumMember(Value = "CashDiscount")]
+            CashDiscount = 5
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PaymentAdjustmentType
+        /// </summary>
+        [DataMember(Name = "paymentAdjustmentType", EmitDefaultValue = false)]
+        public PaymentAdjustmentTypeEnum? PaymentAdjustmentType { get; set; }
+        /// <summary>
         /// Defines CommissionType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -86,6 +129,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="bankName">bankName.</param>
         /// <param name="routingNumber">routingNumber.</param>
+        /// <param name="accountType">accountType.</param>
         /// <param name="checkType">checkType.</param>
         /// <param name="checkNumber">checkNumber.</param>
         /// <param name="nameOnCheck">nameOnCheck.</param>
@@ -95,9 +139,6 @@ namespace Org.OpenAPITools.Model
         /// <param name="amount">amount.</param>
         /// <param name="convenienceAmount">convenienceAmount.</param>
         /// <param name="binNumber">binNumber.</param>
-        /// <param name="taxAmount">taxAmount.</param>
-        /// <param name="taxAfterDiscount">taxAfterDiscount.</param>
-        /// <param name="taxPercent">taxPercent.</param>
         /// <param name="adjustmentPercentValue">adjustmentPercentValue.</param>
         /// <param name="adjustmentFixedValue">adjustmentFixedValue.</param>
         /// <param name="adjustmentAmount">adjustmentAmount.</param>
@@ -109,15 +150,14 @@ namespace Org.OpenAPITools.Model
         /// <param name="accountToken">accountToken.</param>
         /// <param name="accountTokenMessage">accountTokenMessage.</param>
         /// <param name="createAccountToken">createAccountToken.</param>
-        /// <param name="discountType">discountType.</param>
-        /// <param name="discountPercent">discountPercent.</param>
-        /// <param name="discountAmount">discountAmount.</param>
         /// <param name="commissionType">commissionType.</param>
         /// <param name="commissionValue">commissionValue.</param>
-        public TransactionPaymentResponseAchTenderInfo(string bankName = default(string), string routingNumber = default(string), string checkType = default(string), string checkNumber = default(string), string nameOnCheck = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), decimal captureAmount = default(decimal), decimal amount = default(decimal), decimal convenienceAmount = default(decimal), string binNumber = default(string), decimal taxAmount = default(decimal), decimal taxAfterDiscount = default(decimal), decimal taxPercent = default(decimal), decimal adjustmentPercentValue = default(decimal), decimal adjustmentFixedValue = default(decimal), decimal adjustmentAmount = default(decimal), decimal adjustmentDisplayName = default(decimal), decimal adjustmentDescriptorMessage = default(decimal), decimal paymentAdjustmentType = default(decimal), decimal preAuthCode = default(decimal), decimal maskAccount = default(decimal), decimal accountToken = default(decimal), string accountTokenMessage = default(string), string createAccountToken = default(string), string discountType = default(string), string discountPercent = default(string), decimal discountAmount = default(decimal), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), decimal commissionValue = default(decimal))
+        /// <param name="commissionFixedValue">commissionFixedValue.</param>
+        public TransactionPaymentResponseAchTenderInfo(string bankName = default(string), string routingNumber = default(string), string accountType = default(string), string checkType = default(string), string checkNumber = default(string), string nameOnCheck = default(string), string accountHolderName = default(string), AccountCategoryEnum? accountCategory = default(AccountCategoryEnum?), float captureAmount = default(float), float amount = default(float), float convenienceAmount = default(float), string binNumber = default(string), float adjustmentPercentValue = default(float), float adjustmentFixedValue = default(float), float adjustmentAmount = default(float), string adjustmentDisplayName = default(string), string adjustmentDescriptorMessage = default(string), PaymentAdjustmentTypeEnum? paymentAdjustmentType = default(PaymentAdjustmentTypeEnum?), string preAuthCode = default(string), string maskAccount = default(string), string accountToken = default(string), string accountTokenMessage = default(string), bool createAccountToken = default(bool), CommissionTypeEnum? commissionType = default(CommissionTypeEnum?), float commissionValue = default(float), float commissionFixedValue = default(float))
         {
             this.BankName = bankName;
             this.RoutingNumber = routingNumber;
+            this.AccountType = accountType;
             this.CheckType = checkType;
             this.CheckNumber = checkNumber;
             this.NameOnCheck = nameOnCheck;
@@ -127,9 +167,6 @@ namespace Org.OpenAPITools.Model
             this.Amount = amount;
             this.ConvenienceAmount = convenienceAmount;
             this.BinNumber = binNumber;
-            this.TaxAmount = taxAmount;
-            this.TaxAfterDiscount = taxAfterDiscount;
-            this.TaxPercent = taxPercent;
             this.AdjustmentPercentValue = adjustmentPercentValue;
             this.AdjustmentFixedValue = adjustmentFixedValue;
             this.AdjustmentAmount = adjustmentAmount;
@@ -141,11 +178,9 @@ namespace Org.OpenAPITools.Model
             this.AccountToken = accountToken;
             this.AccountTokenMessage = accountTokenMessage;
             this.CreateAccountToken = createAccountToken;
-            this.DiscountType = discountType;
-            this.DiscountPercent = discountPercent;
-            this.DiscountAmount = discountAmount;
             this.CommissionType = commissionType;
             this.CommissionValue = commissionValue;
+            this.CommissionFixedValue = commissionFixedValue;
         }
 
         /// <summary>
@@ -159,6 +194,12 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "routingNumber", EmitDefaultValue = false)]
         public string RoutingNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountType
+        /// </summary>
+        [DataMember(Name = "accountType", EmitDefaultValue = false)]
+        public string AccountType { get; set; }
 
         /// <summary>
         /// Gets or Sets CheckType
@@ -188,19 +229,19 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets CaptureAmount
         /// </summary>
         [DataMember(Name = "captureAmount", EmitDefaultValue = false)]
-        public decimal CaptureAmount { get; set; }
+        public float CaptureAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets ConvenienceAmount
         /// </summary>
         [DataMember(Name = "convenienceAmount", EmitDefaultValue = false)]
-        public decimal ConvenienceAmount { get; set; }
+        public float ConvenienceAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets BinNumber
@@ -209,76 +250,52 @@ namespace Org.OpenAPITools.Model
         public string BinNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaxAmount
-        /// </summary>
-        [DataMember(Name = "taxAmount", EmitDefaultValue = false)]
-        public decimal TaxAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxAfterDiscount
-        /// </summary>
-        [DataMember(Name = "taxAfterDiscount", EmitDefaultValue = false)]
-        public decimal TaxAfterDiscount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TaxPercent
-        /// </summary>
-        [DataMember(Name = "taxPercent", EmitDefaultValue = false)]
-        public decimal TaxPercent { get; set; }
-
-        /// <summary>
         /// Gets or Sets AdjustmentPercentValue
         /// </summary>
         [DataMember(Name = "adjustmentPercentValue", EmitDefaultValue = false)]
-        public decimal AdjustmentPercentValue { get; set; }
+        public float AdjustmentPercentValue { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentFixedValue
         /// </summary>
         [DataMember(Name = "adjustmentFixedValue", EmitDefaultValue = false)]
-        public decimal AdjustmentFixedValue { get; set; }
+        public float AdjustmentFixedValue { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentAmount
         /// </summary>
         [DataMember(Name = "adjustmentAmount", EmitDefaultValue = false)]
-        public decimal AdjustmentAmount { get; set; }
+        public float AdjustmentAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentDisplayName
         /// </summary>
         [DataMember(Name = "adjustmentDisplayName", EmitDefaultValue = false)]
-        public decimal AdjustmentDisplayName { get; set; }
+        public string AdjustmentDisplayName { get; set; }
 
         /// <summary>
         /// Gets or Sets AdjustmentDescriptorMessage
         /// </summary>
         [DataMember(Name = "adjustmentDescriptorMessage", EmitDefaultValue = false)]
-        public decimal AdjustmentDescriptorMessage { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PaymentAdjustmentType
-        /// </summary>
-        [DataMember(Name = "paymentAdjustmentType", EmitDefaultValue = false)]
-        public decimal PaymentAdjustmentType { get; set; }
+        public string AdjustmentDescriptorMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets PreAuthCode
         /// </summary>
         [DataMember(Name = "preAuthCode", EmitDefaultValue = false)]
-        public decimal PreAuthCode { get; set; }
+        public string PreAuthCode { get; set; }
 
         /// <summary>
         /// Gets or Sets MaskAccount
         /// </summary>
         [DataMember(Name = "maskAccount", EmitDefaultValue = false)]
-        public decimal MaskAccount { get; set; }
+        public string MaskAccount { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountToken
         /// </summary>
         [DataMember(Name = "accountToken", EmitDefaultValue = false)]
-        public decimal AccountToken { get; set; }
+        public string AccountToken { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountTokenMessage
@@ -289,32 +306,20 @@ namespace Org.OpenAPITools.Model
         /// <summary>
         /// Gets or Sets CreateAccountToken
         /// </summary>
-        [DataMember(Name = "createAccountToken", EmitDefaultValue = false)]
-        public string CreateAccountToken { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DiscountType
-        /// </summary>
-        [DataMember(Name = "discountType", EmitDefaultValue = false)]
-        public string DiscountType { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DiscountPercent
-        /// </summary>
-        [DataMember(Name = "discountPercent", EmitDefaultValue = false)]
-        public string DiscountPercent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DiscountAmount
-        /// </summary>
-        [DataMember(Name = "discountAmount", EmitDefaultValue = false)]
-        public decimal DiscountAmount { get; set; }
+        [DataMember(Name = "createAccountToken", EmitDefaultValue = true)]
+        public bool CreateAccountToken { get; set; }
 
         /// <summary>
         /// Gets or Sets CommissionValue
         /// </summary>
         [DataMember(Name = "commissionValue", EmitDefaultValue = false)]
-        public decimal CommissionValue { get; set; }
+        public float CommissionValue { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CommissionFixedValue
+        /// </summary>
+        [DataMember(Name = "CommissionFixedValue", EmitDefaultValue = false)]
+        public float CommissionFixedValue { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -326,6 +331,7 @@ namespace Org.OpenAPITools.Model
             sb.Append("class TransactionPaymentResponseAchTenderInfo {\n");
             sb.Append("  BankName: ").Append(BankName).Append("\n");
             sb.Append("  RoutingNumber: ").Append(RoutingNumber).Append("\n");
+            sb.Append("  AccountType: ").Append(AccountType).Append("\n");
             sb.Append("  CheckType: ").Append(CheckType).Append("\n");
             sb.Append("  CheckNumber: ").Append(CheckNumber).Append("\n");
             sb.Append("  NameOnCheck: ").Append(NameOnCheck).Append("\n");
@@ -335,9 +341,6 @@ namespace Org.OpenAPITools.Model
             sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  ConvenienceAmount: ").Append(ConvenienceAmount).Append("\n");
             sb.Append("  BinNumber: ").Append(BinNumber).Append("\n");
-            sb.Append("  TaxAmount: ").Append(TaxAmount).Append("\n");
-            sb.Append("  TaxAfterDiscount: ").Append(TaxAfterDiscount).Append("\n");
-            sb.Append("  TaxPercent: ").Append(TaxPercent).Append("\n");
             sb.Append("  AdjustmentPercentValue: ").Append(AdjustmentPercentValue).Append("\n");
             sb.Append("  AdjustmentFixedValue: ").Append(AdjustmentFixedValue).Append("\n");
             sb.Append("  AdjustmentAmount: ").Append(AdjustmentAmount).Append("\n");
@@ -349,11 +352,9 @@ namespace Org.OpenAPITools.Model
             sb.Append("  AccountToken: ").Append(AccountToken).Append("\n");
             sb.Append("  AccountTokenMessage: ").Append(AccountTokenMessage).Append("\n");
             sb.Append("  CreateAccountToken: ").Append(CreateAccountToken).Append("\n");
-            sb.Append("  DiscountType: ").Append(DiscountType).Append("\n");
-            sb.Append("  DiscountPercent: ").Append(DiscountPercent).Append("\n");
-            sb.Append("  DiscountAmount: ").Append(DiscountAmount).Append("\n");
             sb.Append("  CommissionType: ").Append(CommissionType).Append("\n");
             sb.Append("  CommissionValue: ").Append(CommissionValue).Append("\n");
+            sb.Append("  CommissionFixedValue: ").Append(CommissionFixedValue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

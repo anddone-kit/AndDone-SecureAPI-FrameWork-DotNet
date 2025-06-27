@@ -206,5 +206,50 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'PhysicalAddress'
         }
+
+        /// <summary>
+        /// Test the property 'VendorStatus'
+        /// </summary>
+        [Fact]
+        public void VendorStatusTest()
+        {
+            // TODO unit test for the property 'VendorStatus'
+        }
+
+        /// <summary>
+        /// Test the property 'CreatedBy'
+        /// </summary>
+        [Fact]
+        public void CreatedByTest()
+        {
+            // TODO unit test for the property 'CreatedBy'
+        }
+
+        /// <summary>
+        /// Test the property 'ModifiedBy'
+        /// </summary>
+        [Fact]
+        public void ModifiedByTest()
+        {
+            // TODO unit test for the property 'ModifiedBy'
+        }
+
+        /// <summary>
+        /// Test the property 'CreatedOn'
+        /// </summary>
+        [Fact]
+        public void CreatedOnTest()
+        {
+            // TODO unit test for the property 'CreatedOn'
+        }
+
+        /// <summary>
+        /// Test the property 'ModifiedOn'
+        /// </summary>
+        [Fact]
+        public void ModifiedOnTest()
+        {
+            // TODO unit test for the property 'ModifiedOn'
+        }
     }
 }

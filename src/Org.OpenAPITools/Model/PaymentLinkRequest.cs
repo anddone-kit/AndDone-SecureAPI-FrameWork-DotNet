@@ -32,147 +32,48 @@ namespace Org.OpenAPITools.Model
     public partial class PaymentLinkRequest : IValidatableObject
     {
         /// <summary>
-        /// Defines ProtectionMode
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ProtectionModeEnum
-        {
-            /// <summary>
-            /// Enum EmailOTP for value: EmailOTP
-            /// </summary>
-            [EnumMember(Value = "EmailOTP")]
-            EmailOTP = 1,
-
-            /// <summary>
-            /// Enum PhoneOTP for value: PhoneOTP
-            /// </summary>
-            [EnumMember(Value = "PhoneOTP")]
-            PhoneOTP = 2
-        }
-
-
-        /// <summary>
-        /// Gets or Sets ProtectionMode
-        /// </summary>
-        [DataMember(Name = "protectionMode", EmitDefaultValue = false)]
-        public ProtectionModeEnum? ProtectionMode { get; set; }
-        /// <summary>
-        /// Defines ReferenceType
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ReferenceTypeEnum
-        {
-            /// <summary>
-            /// Enum None for value: None
-            /// </summary>
-            [EnumMember(Value = "None")]
-            None = 1,
-
-            /// <summary>
-            /// Enum QuoteNumber for value: QuoteNumber
-            /// </summary>
-            [EnumMember(Value = "QuoteNumber")]
-            QuoteNumber = 2,
-
-            /// <summary>
-            /// Enum AccountNumber for value: AccountNumber
-            /// </summary>
-            [EnumMember(Value = "AccountNumber")]
-            AccountNumber = 3,
-
-            /// <summary>
-            /// Enum PolicyNumber for value: PolicyNumber
-            /// </summary>
-            [EnumMember(Value = "PolicyNumber")]
-            PolicyNumber = 4,
-
-            /// <summary>
-            /// Enum InvoiceNumber for value: InvoiceNumber
-            /// </summary>
-            [EnumMember(Value = "InvoiceNumber")]
-            InvoiceNumber = 5,
-
-            /// <summary>
-            /// Enum OtherNumber for value: OtherNumber
-            /// </summary>
-            [EnumMember(Value = "OtherNumber")]
-            OtherNumber = 6
-        }
-
-
-        /// <summary>
-        /// Gets or Sets ReferenceType
-        /// </summary>
-        [DataMember(Name = "referenceType", EmitDefaultValue = false)]
-        public ReferenceTypeEnum? ReferenceType { get; set; }
-        /// <summary>
         /// Defines ExpireInUnit
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ExpireInUnitEnum
         {
             /// <summary>
+            /// Enum Seconds for value: Seconds
+            /// </summary>
+            [EnumMember(Value = "Seconds")]
+            Seconds = 1,
+
+            /// <summary>
             /// Enum Minutes for value: Minutes
             /// </summary>
             [EnumMember(Value = "Minutes")]
-            Minutes = 1,
+            Minutes = 2,
 
             /// <summary>
             /// Enum Hours for value: Hours
             /// </summary>
             [EnumMember(Value = "Hours")]
-            Hours = 2,
+            Hours = 3,
 
             /// <summary>
             /// Enum Days for value: Days
             /// </summary>
             [EnumMember(Value = "Days")]
-            Days = 3,
+            Days = 4,
 
             /// <summary>
             /// Enum Weeks for value: Weeks
             /// </summary>
             [EnumMember(Value = "Weeks")]
-            Weeks = 4
+            Weeks = 5
         }
 
 
         /// <summary>
         /// Gets or Sets ExpireInUnit
         /// </summary>
-        [DataMember(Name = "expireInUnit", EmitDefaultValue = false)]
-        public ExpireInUnitEnum? ExpireInUnit { get; set; }
-        /// <summary>
-        /// Defines PlatformSettlementStatus
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum PlatformSettlementStatusEnum
-        {
-            /// <summary>
-            /// Enum NotDefined for value: NotDefined
-            /// </summary>
-            [EnumMember(Value = "NotDefined")]
-            NotDefined = 1,
-
-            /// <summary>
-            /// Enum Pending for value: Pending
-            /// </summary>
-            [EnumMember(Value = "Pending")]
-            Pending = 2,
-
-            /// <summary>
-            /// Enum Settled for value: Settled
-            /// </summary>
-            [EnumMember(Value = "Settled")]
-            Settled = 3
-        }
-
-
-        /// <summary>
-        /// Gets or Sets PlatformSettlementStatus
-        /// </summary>
-        [DataMember(Name = "platformSettlementStatus", EmitDefaultValue = false)]
-        public PlatformSettlementStatusEnum? PlatformSettlementStatus { get; set; }
+        [DataMember(Name = "expireInUnit", IsRequired = true, EmitDefaultValue = true)]
+        public ExpireInUnitEnum ExpireInUnit { get; set; }
         /// <summary>
         /// Defines ResponseType
         /// </summary>
@@ -226,7 +127,13 @@ namespace Org.OpenAPITools.Model
             /// Enum TokenLink for value: TokenLink
             /// </summary>
             [EnumMember(Value = "TokenLink")]
-            TokenLink = 4
+            TokenLink = 4,
+
+            /// <summary>
+            /// Enum Invoice for value: Invoice
+            /// </summary>
+            [EnumMember(Value = "Invoice")]
+            Invoice = 5
         }
 
 
@@ -236,101 +143,223 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "paymentLinkType", EmitDefaultValue = false)]
         public PaymentLinkTypeEnum? PaymentLinkType { get; set; }
         /// <summary>
+        /// Defines ReferenceType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ReferenceTypeEnum
+        {
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum QuoteNumber for value: QuoteNumber
+            /// </summary>
+            [EnumMember(Value = "QuoteNumber")]
+            QuoteNumber = 2,
+
+            /// <summary>
+            /// Enum AccountNumber for value: AccountNumber
+            /// </summary>
+            [EnumMember(Value = "AccountNumber")]
+            AccountNumber = 3,
+
+            /// <summary>
+            /// Enum PolicyNumber for value: PolicyNumber
+            /// </summary>
+            [EnumMember(Value = "PolicyNumber")]
+            PolicyNumber = 4,
+
+            /// <summary>
+            /// Enum InvoiceNumber for value: InvoiceNumber
+            /// </summary>
+            [EnumMember(Value = "InvoiceNumber")]
+            InvoiceNumber = 5,
+
+            /// <summary>
+            /// Enum OtherNumber for value: OtherNumber
+            /// </summary>
+            [EnumMember(Value = "OtherNumber")]
+            OtherNumber = 6
+        }
+
+
+        /// <summary>
+        /// Gets or Sets ReferenceType
+        /// </summary>
+        [DataMember(Name = "referenceType", EmitDefaultValue = false)]
+        public ReferenceTypeEnum? ReferenceType { get; set; }
+        /// <summary>
+        /// Defines PlatformSettlementStatus
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PlatformSettlementStatusEnum
+        {
+            /// <summary>
+            /// Enum NotDefined for value: NotDefined
+            /// </summary>
+            [EnumMember(Value = "NotDefined")]
+            NotDefined = 1,
+
+            /// <summary>
+            /// Enum Pending for value: Pending
+            /// </summary>
+            [EnumMember(Value = "Pending")]
+            Pending = 2,
+
+            /// <summary>
+            /// Enum Settled for value: Settled
+            /// </summary>
+            [EnumMember(Value = "Settled")]
+            Settled = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PlatformSettlementStatus
+        /// </summary>
+        [DataMember(Name = "platformSettlementStatus", EmitDefaultValue = false)]
+        public PlatformSettlementStatusEnum? PlatformSettlementStatus { get; set; }
+        /// <summary>
+        /// Defines PfType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PfTypeEnum
+        {
+            /// <summary>
+            /// Enum PF for value: PF
+            /// </summary>
+            [EnumMember(Value = "PF")]
+            PF = 1,
+
+            /// <summary>
+            /// Enum PFLite for value: PFLite
+            /// </summary>
+            [EnumMember(Value = "PFLite")]
+            PFLite = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets PfType
+        /// </summary>
+        [DataMember(Name = "pfType", EmitDefaultValue = false)]
+        public PfTypeEnum? PfType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLinkRequest" /> class.
         /// </summary>
-        /// <param name="title">title.</param>
-        /// <param name="merchantId">merchantId.</param>
-        /// <param name="shortDescription">shortDescription.</param>
-        /// <param name="saveForFuture">saveForFuture.</param>
+        [JsonConstructorAttribute]
+        protected PaymentLinkRequest() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentLinkRequest" /> class.
+        /// </summary>
+        /// <param name="merchantId">merchantId (required).</param>
+        /// <param name="title">title (required).</param>
+        /// <param name="amount">amount (required).</param>
         /// <param name="paymentDescription">paymentDescription.</param>
-        /// <param name="isPayInFull">isPayInFull.</param>
-        /// <param name="amount">amount.</param>
+        /// <param name="customers">customers.</param>
         /// <param name="invoiceNumber">invoiceNumber.</param>
-        /// <param name="enablePartialPayment">enablePartialPayment.</param>
-        /// <param name="enableMultiplePayment">enableMultiplePayment.</param>
-        /// <param name="enableProtection">enableProtection.</param>
-        /// <param name="protectionMode">protectionMode.</param>
-        /// <param name="displayReceipt">displayReceipt.</param>
-        /// <param name="expireIn">expireIn.</param>
         /// <param name="expireBy">expireBy.</param>
+        /// <param name="expireIn">expireIn (required).</param>
+        /// <param name="expireInUnit">expireInUnit (required).</param>
         /// <param name="expireOn">expireOn.</param>
-        /// <param name="referenceType">referenceType.</param>
-        /// <param name="expireInUnit">expireInUnit.</param>
-        /// <param name="referenceNumber">referenceNumber.</param>
-        /// <param name="referenceKey">referenceKey.</param>
-        /// <param name="enablePremiumFinance">enablePremiumFinance.</param>
-        /// <param name="platformSettlementStatus">platformSettlementStatus.</param>
-        /// <param name="referenceDataList">referenceDataList.</param>
-        /// <param name="accountNumber">accountNumber.</param>
+        /// <param name="lineItems">lineItems.</param>
+        /// <param name="shortDescription">shortDescription.</param>
         /// <param name="responseType">responseType.</param>
         /// <param name="callbackParameters">callbackParameters.</param>
+        /// <param name="settings">settings (required).</param>
         /// <param name="paymentLinkType">paymentLinkType.</param>
-        /// <param name="applyPaymentAdjustments">applyPaymentAdjustments.</param>
-        /// <param name="quoteKey">quoteKey.</param>
-        /// <param name="customers">customers.</param>
+        /// <param name="saveForFuture">saveForFuture.</param>
         /// <param name="splits">splits.</param>
-        /// <param name="lineItems">lineItems.</param>
-        /// <param name="settings">settings.</param>
-        public PaymentLinkRequest(string title = default(string), string merchantId = default(string), string shortDescription = default(string), bool saveForFuture = default(bool), string paymentDescription = default(string), bool isPayInFull = default(bool), decimal amount = default(decimal), string invoiceNumber = default(string), bool enablePartialPayment = default(bool), bool enableMultiplePayment = default(bool), bool enableProtection = default(bool), ProtectionModeEnum? protectionMode = default(ProtectionModeEnum?), bool displayReceipt = default(bool), int expireIn = default(int), int expireBy = default(int), string expireOn = default(string), ReferenceTypeEnum? referenceType = default(ReferenceTypeEnum?), ExpireInUnitEnum? expireInUnit = default(ExpireInUnitEnum?), string referenceNumber = default(string), string referenceKey = default(string), bool enablePremiumFinance = default(bool), PlatformSettlementStatusEnum? platformSettlementStatus = default(PlatformSettlementStatusEnum?), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>), string accountNumber = default(string), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), PaymentLinkRequestCallbackParameters callbackParameters = default(PaymentLinkRequestCallbackParameters), PaymentLinkTypeEnum? paymentLinkType = default(PaymentLinkTypeEnum?), bool applyPaymentAdjustments = default(bool), string quoteKey = default(string), List<PaymentLinkResponseCustomersInner> customers = default(List<PaymentLinkResponseCustomersInner>), List<PaymentLinkRequestSplitsInner> splits = default(List<PaymentLinkRequestSplitsInner>), List<PaymentLinkResponseLineItemsInner> lineItems = default(List<PaymentLinkResponseLineItemsInner>), PaymentLinkRequestSettings settings = default(PaymentLinkRequestSettings))
+        /// <param name="quoteKey">quoteKey.</param>
+        /// <param name="accountNumber">accountNumber.</param>
+        /// <param name="referenceType">referenceType.</param>
+        /// <param name="referenceNumber">referenceNumber.</param>
+        /// <param name="referenceKey">referenceKey.</param>
+        /// <param name="referenceDataList">referenceDataList (required).</param>
+        /// <param name="enablePremiumFinance">enablePremiumFinance.</param>
+        /// <param name="suppressTechnologyFee">suppressTechnologyFee.</param>
+        /// <param name="overrideTechnologyFee">overrideTechnologyFee.</param>
+        /// <param name="platformSettlementStatus">platformSettlementStatus.</param>
+        /// <param name="isPayInFull">isPayInFull.</param>
+        /// <param name="isPremiumFinancier">isPremiumFinancier.</param>
+        /// <param name="pfr">pfr.</param>
+        /// <param name="pfType">pfType.</param>
+        public PaymentLinkRequest(string merchantId = default(string), string title = default(string), float amount = default(float), string paymentDescription = default(string), List<PaymentLinkResponseCustomersInner> customers = default(List<PaymentLinkResponseCustomersInner>), string invoiceNumber = default(string), float expireBy = default(float), int expireIn = default(int), ExpireInUnitEnum expireInUnit = default(ExpireInUnitEnum), string expireOn = default(string), List<PaymentLinkResponseLineItemsInner> lineItems = default(List<PaymentLinkResponseLineItemsInner>), string shortDescription = default(string), ResponseTypeEnum? responseType = default(ResponseTypeEnum?), PaymentLinkResponseCallbackParameters callbackParameters = default(PaymentLinkResponseCallbackParameters), PaymentLinkRequestSettings settings = default(PaymentLinkRequestSettings), PaymentLinkTypeEnum? paymentLinkType = default(PaymentLinkTypeEnum?), bool saveForFuture = default(bool), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>), string quoteKey = default(string), string accountNumber = default(string), ReferenceTypeEnum? referenceType = default(ReferenceTypeEnum?), string referenceNumber = default(string), string referenceKey = default(string), List<PaymentLinkResponseReferenceDataListInner> referenceDataList = default(List<PaymentLinkResponseReferenceDataListInner>), bool enablePremiumFinance = default(bool), bool suppressTechnologyFee = default(bool), float overrideTechnologyFee = default(float), PlatformSettlementStatusEnum? platformSettlementStatus = default(PlatformSettlementStatusEnum?), bool isPayInFull = default(bool), bool isPremiumFinancier = default(bool), PaymentIntentRequestPfr pfr = default(PaymentIntentRequestPfr), PfTypeEnum? pfType = default(PfTypeEnum?))
         {
-            this.Title = title;
+            // to ensure "merchantId" is required (not null)
+            if (merchantId == null)
+            {
+                throw new ArgumentNullException("merchantId is a required property for PaymentLinkRequest and cannot be null");
+            }
             this.MerchantId = merchantId;
-            this.ShortDescription = shortDescription;
-            this.SaveForFuture = saveForFuture;
-            this.PaymentDescription = paymentDescription;
-            this.IsPayInFull = isPayInFull;
+            // to ensure "title" is required (not null)
+            if (title == null)
+            {
+                throw new ArgumentNullException("title is a required property for PaymentLinkRequest and cannot be null");
+            }
+            this.Title = title;
             this.Amount = amount;
-            this.InvoiceNumber = invoiceNumber;
-            this.EnablePartialPayment = enablePartialPayment;
-            this.EnableMultiplePayment = enableMultiplePayment;
-            this.EnableProtection = enableProtection;
-            this.ProtectionMode = protectionMode;
-            this.DisplayReceipt = displayReceipt;
             this.ExpireIn = expireIn;
+            this.ExpireInUnit = expireInUnit;
+            // to ensure "settings" is required (not null)
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings is a required property for PaymentLinkRequest and cannot be null");
+            }
+            this.Settings = settings;
+            // to ensure "referenceDataList" is required (not null)
+            if (referenceDataList == null)
+            {
+                throw new ArgumentNullException("referenceDataList is a required property for PaymentLinkRequest and cannot be null");
+            }
+            this.ReferenceDataList = referenceDataList;
+            this.PaymentDescription = paymentDescription;
+            this.Customers = customers;
+            this.InvoiceNumber = invoiceNumber;
             this.ExpireBy = expireBy;
             this.ExpireOn = expireOn;
-            this.ReferenceType = referenceType;
-            this.ExpireInUnit = expireInUnit;
-            this.ReferenceNumber = referenceNumber;
-            this.ReferenceKey = referenceKey;
-            this.EnablePremiumFinance = enablePremiumFinance;
-            this.PlatformSettlementStatus = platformSettlementStatus;
-            this.ReferenceDataList = referenceDataList;
-            this.AccountNumber = accountNumber;
+            this.LineItems = lineItems;
+            this.ShortDescription = shortDescription;
             this.ResponseType = responseType;
             this.CallbackParameters = callbackParameters;
             this.PaymentLinkType = paymentLinkType;
-            this.ApplyPaymentAdjustments = applyPaymentAdjustments;
-            this.QuoteKey = quoteKey;
-            this.Customers = customers;
+            this.SaveForFuture = saveForFuture;
             this.Splits = splits;
-            this.LineItems = lineItems;
-            this.Settings = settings;
+            this.QuoteKey = quoteKey;
+            this.AccountNumber = accountNumber;
+            this.ReferenceType = referenceType;
+            this.ReferenceNumber = referenceNumber;
+            this.ReferenceKey = referenceKey;
+            this.EnablePremiumFinance = enablePremiumFinance;
+            this.SuppressTechnologyFee = suppressTechnologyFee;
+            this.OverrideTechnologyFee = overrideTechnologyFee;
+            this.PlatformSettlementStatus = platformSettlementStatus;
+            this.IsPayInFull = isPayInFull;
+            this.IsPremiumFinancier = isPremiumFinancier;
+            this.Pfr = pfr;
+            this.PfType = pfType;
         }
-
-        /// <summary>
-        /// Gets or Sets Title
-        /// </summary>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
-        public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets MerchantId
         /// </summary>
-        [DataMember(Name = "merchantId", EmitDefaultValue = false)]
+        [DataMember(Name = "merchantId", IsRequired = true, EmitDefaultValue = true)]
         public string MerchantId { get; set; }
 
         /// <summary>
-        /// Gets or Sets ShortDescription
+        /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "shortDescription", EmitDefaultValue = false)]
-        public string ShortDescription { get; set; }
+        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets SaveForFuture
+        /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name = "saveForFuture", EmitDefaultValue = true)]
-        public bool SaveForFuture { get; set; }
+        [DataMember(Name = "amount", IsRequired = true, EmitDefaultValue = true)]
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets PaymentDescription
@@ -339,16 +368,10 @@ namespace Org.OpenAPITools.Model
         public string PaymentDescription { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsPayInFull
+        /// Gets or Sets Customers
         /// </summary>
-        [DataMember(Name = "isPayInFull", EmitDefaultValue = true)]
-        public bool IsPayInFull { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Amount
-        /// </summary>
-        [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        [DataMember(Name = "customers", EmitDefaultValue = false)]
+        public List<PaymentLinkResponseCustomersInner> Customers { get; set; }
 
         /// <summary>
         /// Gets or Sets InvoiceNumber
@@ -357,46 +380,70 @@ namespace Org.OpenAPITools.Model
         public string InvoiceNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets EnablePartialPayment
+        /// Gets or Sets ExpireBy
         /// </summary>
-        [DataMember(Name = "enablePartialPayment", EmitDefaultValue = true)]
-        public bool EnablePartialPayment { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableMultiplePayment
-        /// </summary>
-        [DataMember(Name = "enableMultiplePayment", EmitDefaultValue = true)]
-        public bool EnableMultiplePayment { get; set; }
-
-        /// <summary>
-        /// Gets or Sets EnableProtection
-        /// </summary>
-        [DataMember(Name = "enableProtection", EmitDefaultValue = true)]
-        public bool EnableProtection { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DisplayReceipt
-        /// </summary>
-        [DataMember(Name = "displayReceipt", EmitDefaultValue = true)]
-        public bool DisplayReceipt { get; set; }
+        [DataMember(Name = "expireBy", EmitDefaultValue = false)]
+        public float ExpireBy { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpireIn
         /// </summary>
-        [DataMember(Name = "expireIn", EmitDefaultValue = false)]
+        [DataMember(Name = "expireIn", IsRequired = true, EmitDefaultValue = true)]
         public int ExpireIn { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ExpireBy
-        /// </summary>
-        [DataMember(Name = "expireBy", EmitDefaultValue = false)]
-        public int ExpireBy { get; set; }
 
         /// <summary>
         /// Gets or Sets ExpireOn
         /// </summary>
         [DataMember(Name = "expireOn", EmitDefaultValue = false)]
         public string ExpireOn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets LineItems
+        /// </summary>
+        [DataMember(Name = "lineItems", EmitDefaultValue = false)]
+        public List<PaymentLinkResponseLineItemsInner> LineItems { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShortDescription
+        /// </summary>
+        [DataMember(Name = "shortDescription", EmitDefaultValue = false)]
+        public string ShortDescription { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CallbackParameters
+        /// </summary>
+        [DataMember(Name = "callbackParameters", EmitDefaultValue = false)]
+        public PaymentLinkResponseCallbackParameters CallbackParameters { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Settings
+        /// </summary>
+        [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
+        public PaymentLinkRequestSettings Settings { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SaveForFuture
+        /// </summary>
+        [DataMember(Name = "saveForFuture", EmitDefaultValue = true)]
+        public bool SaveForFuture { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Splits
+        /// </summary>
+        [DataMember(Name = "splits", EmitDefaultValue = false)]
+        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
+
+        /// <summary>
+        /// Gets or Sets QuoteKey
+        /// </summary>
+        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
+        public string QuoteKey { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AccountNumber
+        /// </summary>
+        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
+        public string AccountNumber { get; set; }
 
         /// <summary>
         /// Gets or Sets ReferenceNumber
@@ -411,64 +458,46 @@ namespace Org.OpenAPITools.Model
         public string ReferenceKey { get; set; }
 
         /// <summary>
+        /// Gets or Sets ReferenceDataList
+        /// </summary>
+        [DataMember(Name = "referenceDataList", IsRequired = true, EmitDefaultValue = true)]
+        public List<PaymentLinkResponseReferenceDataListInner> ReferenceDataList { get; set; }
+
+        /// <summary>
         /// Gets or Sets EnablePremiumFinance
         /// </summary>
         [DataMember(Name = "enablePremiumFinance", EmitDefaultValue = true)]
         public bool EnablePremiumFinance { get; set; }
 
         /// <summary>
-        /// Gets or Sets ReferenceDataList
+        /// Gets or Sets SuppressTechnologyFee
         /// </summary>
-        [DataMember(Name = "referenceDataList", EmitDefaultValue = false)]
-        public List<PaymentIntentRequestReferenceDataListInner> ReferenceDataList { get; set; }
+        [DataMember(Name = "suppressTechnologyFee", EmitDefaultValue = true)]
+        public bool SuppressTechnologyFee { get; set; }
 
         /// <summary>
-        /// Gets or Sets AccountNumber
+        /// Gets or Sets OverrideTechnologyFee
         /// </summary>
-        [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
-        public string AccountNumber { get; set; }
+        [DataMember(Name = "overrideTechnologyFee", EmitDefaultValue = false)]
+        public float OverrideTechnologyFee { get; set; }
 
         /// <summary>
-        /// Gets or Sets CallbackParameters
+        /// Gets or Sets IsPayInFull
         /// </summary>
-        [DataMember(Name = "callbackParameters", EmitDefaultValue = false)]
-        public PaymentLinkRequestCallbackParameters CallbackParameters { get; set; }
+        [DataMember(Name = "isPayInFull", EmitDefaultValue = true)]
+        public bool IsPayInFull { get; set; }
 
         /// <summary>
-        /// Gets or Sets ApplyPaymentAdjustments
+        /// Gets or Sets IsPremiumFinancier
         /// </summary>
-        [DataMember(Name = "applyPaymentAdjustments", EmitDefaultValue = true)]
-        public bool ApplyPaymentAdjustments { get; set; }
+        [DataMember(Name = "isPremiumFinancier", EmitDefaultValue = true)]
+        public bool IsPremiumFinancier { get; set; }
 
         /// <summary>
-        /// Gets or Sets QuoteKey
+        /// Gets or Sets Pfr
         /// </summary>
-        [DataMember(Name = "quoteKey", EmitDefaultValue = false)]
-        public string QuoteKey { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Customers
-        /// </summary>
-        [DataMember(Name = "customers", EmitDefaultValue = false)]
-        public List<PaymentLinkResponseCustomersInner> Customers { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Splits
-        /// </summary>
-        [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentLinkRequestSplitsInner> Splits { get; set; }
-
-        /// <summary>
-        /// Gets or Sets LineItems
-        /// </summary>
-        [DataMember(Name = "lineItems", EmitDefaultValue = false)]
-        public List<PaymentLinkResponseLineItemsInner> LineItems { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Settings
-        /// </summary>
-        [DataMember(Name = "settings", EmitDefaultValue = false)]
-        public PaymentLinkRequestSettings Settings { get; set; }
+        [DataMember(Name = "pfr", EmitDefaultValue = false)]
+        public PaymentIntentRequestPfr Pfr { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -478,39 +507,38 @@ namespace Org.OpenAPITools.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class PaymentLinkRequest {\n");
-            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  MerchantId: ").Append(MerchantId).Append("\n");
-            sb.Append("  ShortDescription: ").Append(ShortDescription).Append("\n");
-            sb.Append("  SaveForFuture: ").Append(SaveForFuture).Append("\n");
-            sb.Append("  PaymentDescription: ").Append(PaymentDescription).Append("\n");
-            sb.Append("  IsPayInFull: ").Append(IsPayInFull).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
+            sb.Append("  PaymentDescription: ").Append(PaymentDescription).Append("\n");
+            sb.Append("  Customers: ").Append(Customers).Append("\n");
             sb.Append("  InvoiceNumber: ").Append(InvoiceNumber).Append("\n");
-            sb.Append("  EnablePartialPayment: ").Append(EnablePartialPayment).Append("\n");
-            sb.Append("  EnableMultiplePayment: ").Append(EnableMultiplePayment).Append("\n");
-            sb.Append("  EnableProtection: ").Append(EnableProtection).Append("\n");
-            sb.Append("  ProtectionMode: ").Append(ProtectionMode).Append("\n");
-            sb.Append("  DisplayReceipt: ").Append(DisplayReceipt).Append("\n");
-            sb.Append("  ExpireIn: ").Append(ExpireIn).Append("\n");
             sb.Append("  ExpireBy: ").Append(ExpireBy).Append("\n");
-            sb.Append("  ExpireOn: ").Append(ExpireOn).Append("\n");
-            sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  ExpireIn: ").Append(ExpireIn).Append("\n");
             sb.Append("  ExpireInUnit: ").Append(ExpireInUnit).Append("\n");
-            sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
-            sb.Append("  ReferenceKey: ").Append(ReferenceKey).Append("\n");
-            sb.Append("  EnablePremiumFinance: ").Append(EnablePremiumFinance).Append("\n");
-            sb.Append("  PlatformSettlementStatus: ").Append(PlatformSettlementStatus).Append("\n");
-            sb.Append("  ReferenceDataList: ").Append(ReferenceDataList).Append("\n");
-            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
+            sb.Append("  ExpireOn: ").Append(ExpireOn).Append("\n");
+            sb.Append("  LineItems: ").Append(LineItems).Append("\n");
+            sb.Append("  ShortDescription: ").Append(ShortDescription).Append("\n");
             sb.Append("  ResponseType: ").Append(ResponseType).Append("\n");
             sb.Append("  CallbackParameters: ").Append(CallbackParameters).Append("\n");
-            sb.Append("  PaymentLinkType: ").Append(PaymentLinkType).Append("\n");
-            sb.Append("  ApplyPaymentAdjustments: ").Append(ApplyPaymentAdjustments).Append("\n");
-            sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
-            sb.Append("  Customers: ").Append(Customers).Append("\n");
-            sb.Append("  Splits: ").Append(Splits).Append("\n");
-            sb.Append("  LineItems: ").Append(LineItems).Append("\n");
             sb.Append("  Settings: ").Append(Settings).Append("\n");
+            sb.Append("  PaymentLinkType: ").Append(PaymentLinkType).Append("\n");
+            sb.Append("  SaveForFuture: ").Append(SaveForFuture).Append("\n");
+            sb.Append("  Splits: ").Append(Splits).Append("\n");
+            sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
+            sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
+            sb.Append("  ReferenceType: ").Append(ReferenceType).Append("\n");
+            sb.Append("  ReferenceNumber: ").Append(ReferenceNumber).Append("\n");
+            sb.Append("  ReferenceKey: ").Append(ReferenceKey).Append("\n");
+            sb.Append("  ReferenceDataList: ").Append(ReferenceDataList).Append("\n");
+            sb.Append("  EnablePremiumFinance: ").Append(EnablePremiumFinance).Append("\n");
+            sb.Append("  SuppressTechnologyFee: ").Append(SuppressTechnologyFee).Append("\n");
+            sb.Append("  OverrideTechnologyFee: ").Append(OverrideTechnologyFee).Append("\n");
+            sb.Append("  PlatformSettlementStatus: ").Append(PlatformSettlementStatus).Append("\n");
+            sb.Append("  IsPayInFull: ").Append(IsPayInFull).Append("\n");
+            sb.Append("  IsPremiumFinancier: ").Append(IsPremiumFinancier).Append("\n");
+            sb.Append("  Pfr: ").Append(Pfr).Append("\n");
+            sb.Append("  PfType: ").Append(PfType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

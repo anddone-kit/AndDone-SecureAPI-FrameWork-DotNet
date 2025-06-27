@@ -32,6 +32,37 @@ namespace Org.OpenAPITools.Model
     public partial class PaymentLinkResponseLineItemsInner : IValidatableObject
     {
         /// <summary>
+        /// Defines LineItemType
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum LineItemTypeEnum
+        {
+            /// <summary>
+            /// Enum External for value: External
+            /// </summary>
+            [EnumMember(Value = "External")]
+            External = 1,
+
+            /// <summary>
+            /// Enum Product for value: Product
+            /// </summary>
+            [EnumMember(Value = "Product")]
+            Product = 2,
+
+            /// <summary>
+            /// Enum Service for value: Service
+            /// </summary>
+            [EnumMember(Value = "Service")]
+            Service = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets LineItemType
+        /// </summary>
+        [DataMember(Name = "lineItemType", EmitDefaultValue = false)]
+        public LineItemTypeEnum? LineItemType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentLinkResponseLineItemsInner" /> class.
         /// </summary>
         /// <param name="lineItemType">lineItemType.</param>
@@ -39,7 +70,7 @@ namespace Org.OpenAPITools.Model
         /// <param name="description">description.</param>
         /// <param name="quantity">quantity.</param>
         /// <param name="rate">rate.</param>
-        public PaymentLinkResponseLineItemsInner(decimal lineItemType = default(decimal), string productId = default(string), string description = default(string), decimal quantity = default(decimal), decimal rate = default(decimal))
+        public PaymentLinkResponseLineItemsInner(LineItemTypeEnum? lineItemType = default(LineItemTypeEnum?), string productId = default(string), string description = default(string), int quantity = default(int), float rate = default(float))
         {
             this.LineItemType = lineItemType;
             this.ProductId = productId;
@@ -47,12 +78,6 @@ namespace Org.OpenAPITools.Model
             this.Quantity = quantity;
             this.Rate = rate;
         }
-
-        /// <summary>
-        /// Gets or Sets LineItemType
-        /// </summary>
-        [DataMember(Name = "lineItemType", EmitDefaultValue = false)]
-        public decimal LineItemType { get; set; }
 
         /// <summary>
         /// Gets or Sets ProductId
@@ -70,13 +95,13 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Quantity
         /// </summary>
         [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public decimal Quantity { get; set; }
+        public int Quantity { get; set; }
 
         /// <summary>
         /// Gets or Sets Rate
         /// </summary>
         [DataMember(Name = "rate", EmitDefaultValue = false)]
-        public decimal Rate { get; set; }
+        public float Rate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

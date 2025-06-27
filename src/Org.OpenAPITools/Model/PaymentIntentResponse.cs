@@ -75,6 +75,37 @@ namespace Org.OpenAPITools.Model
         [DataMember(Name = "additionalDetailsPreference", EmitDefaultValue = false)]
         public AdditionalDetailsPreferenceEnum? AdditionalDetailsPreference { get; set; }
         /// <summary>
+        /// Defines DisplayMode
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DisplayModeEnum
+        {
+            /// <summary>
+            /// Enum None for value: None
+            /// </summary>
+            [EnumMember(Value = "None")]
+            None = 1,
+
+            /// <summary>
+            /// Enum PremiumFinanceOnly for value: PremiumFinanceOnly
+            /// </summary>
+            [EnumMember(Value = "PremiumFinanceOnly")]
+            PremiumFinanceOnly = 2,
+
+            /// <summary>
+            /// Enum Both for value: Both
+            /// </summary>
+            [EnumMember(Value = "Both")]
+            Both = 3
+        }
+
+
+        /// <summary>
+        /// Gets or Sets DisplayMode
+        /// </summary>
+        [DataMember(Name = "displayMode", EmitDefaultValue = false)]
+        public DisplayModeEnum? DisplayMode { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="PaymentIntentResponse" /> class.
         /// </summary>
         /// <param name="paymentToken">paymentToken.</param>
@@ -90,11 +121,16 @@ namespace Org.OpenAPITools.Model
         /// <param name="splits">splits.</param>
         /// <param name="quoteKey">quoteKey.</param>
         /// <param name="accountNumber">accountNumber.</param>
+        /// <param name="suppressTechnologyFee">suppressTechnologyFee.</param>
+        /// <param name="overrideTechnologyFee">overrideTechnologyFee.</param>
+        /// <param name="isPremiumFinancier">isPremiumFinancier.</param>
+        /// <param name="pfr">pfr.</param>
         /// <param name="customers">customers.</param>
         /// <param name="additionalDetailsPreference">additionalDetailsPreference.</param>
         /// <param name="selectedCustomerFields">selectedCustomerFields.</param>
         /// <param name="referenceDataList">referenceDataList.</param>
-        public PaymentIntentResponse(string paymentToken = default(string), decimal amount = default(decimal), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresOn = default(string), PaymentIntentResponseIntent intent = default(PaymentIntentResponseIntent), bool saveForFuture = default(bool), bool enablePremiumFinance = default(bool), List<PaymentIntentResponseSplitsInner> splits = default(List<PaymentIntentResponseSplitsInner>), string quoteKey = default(string), string accountNumber = default(string), List<PaymentIntentResponseCustomersInner> customers = default(List<PaymentIntentResponseCustomersInner>), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), string selectedCustomerFields = default(string), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>))
+        /// <param name="displayMode">displayMode.</param>
+        public PaymentIntentResponse(string paymentToken = default(string), float amount = default(float), string title = default(string), string shortDescription = default(string), string paymentDescription = default(string), string invoiceNumber = default(string), string expiresOn = default(string), PaymentIntentRequestIntent intent = default(PaymentIntentRequestIntent), bool saveForFuture = default(bool), bool enablePremiumFinance = default(bool), List<PaymentIntentRequestSplitsInner> splits = default(List<PaymentIntentRequestSplitsInner>), string quoteKey = default(string), string accountNumber = default(string), bool suppressTechnologyFee = default(bool), float overrideTechnologyFee = default(float), bool isPremiumFinancier = default(bool), PaymentIntentRequestPfr pfr = default(PaymentIntentRequestPfr), List<PaymentIntentResponseCustomersInner> customers = default(List<PaymentIntentResponseCustomersInner>), AdditionalDetailsPreferenceEnum? additionalDetailsPreference = default(AdditionalDetailsPreferenceEnum?), string selectedCustomerFields = default(string), List<PaymentIntentRequestReferenceDataListInner> referenceDataList = default(List<PaymentIntentRequestReferenceDataListInner>), DisplayModeEnum? displayMode = default(DisplayModeEnum?))
         {
             this.PaymentToken = paymentToken;
             this.Amount = amount;
@@ -109,10 +145,15 @@ namespace Org.OpenAPITools.Model
             this.Splits = splits;
             this.QuoteKey = quoteKey;
             this.AccountNumber = accountNumber;
+            this.SuppressTechnologyFee = suppressTechnologyFee;
+            this.OverrideTechnologyFee = overrideTechnologyFee;
+            this.IsPremiumFinancier = isPremiumFinancier;
+            this.Pfr = pfr;
             this.Customers = customers;
             this.AdditionalDetailsPreference = additionalDetailsPreference;
             this.SelectedCustomerFields = selectedCustomerFields;
             this.ReferenceDataList = referenceDataList;
+            this.DisplayMode = displayMode;
         }
 
         /// <summary>
@@ -125,7 +166,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Amount
         /// </summary>
         [DataMember(Name = "amount", EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Title
@@ -161,7 +202,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Intent
         /// </summary>
         [DataMember(Name = "intent", EmitDefaultValue = false)]
-        public PaymentIntentResponseIntent Intent { get; set; }
+        public PaymentIntentRequestIntent Intent { get; set; }
 
         /// <summary>
         /// Gets or Sets SaveForFuture
@@ -179,7 +220,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets Splits
         /// </summary>
         [DataMember(Name = "splits", EmitDefaultValue = false)]
-        public List<PaymentIntentResponseSplitsInner> Splits { get; set; }
+        public List<PaymentIntentRequestSplitsInner> Splits { get; set; }
 
         /// <summary>
         /// Gets or Sets QuoteKey
@@ -192,6 +233,30 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         [DataMember(Name = "accountNumber", EmitDefaultValue = false)]
         public string AccountNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SuppressTechnologyFee
+        /// </summary>
+        [DataMember(Name = "suppressTechnologyFee", EmitDefaultValue = true)]
+        public bool SuppressTechnologyFee { get; set; }
+
+        /// <summary>
+        /// Gets or Sets OverrideTechnologyFee
+        /// </summary>
+        [DataMember(Name = "overrideTechnologyFee", EmitDefaultValue = false)]
+        public float OverrideTechnologyFee { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsPremiumFinancier
+        /// </summary>
+        [DataMember(Name = "isPremiumFinancier", EmitDefaultValue = true)]
+        public bool IsPremiumFinancier { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pfr
+        /// </summary>
+        [DataMember(Name = "pfr", EmitDefaultValue = false)]
+        public PaymentIntentRequestPfr Pfr { get; set; }
 
         /// <summary>
         /// Gets or Sets Customers
@@ -232,10 +297,15 @@ namespace Org.OpenAPITools.Model
             sb.Append("  Splits: ").Append(Splits).Append("\n");
             sb.Append("  QuoteKey: ").Append(QuoteKey).Append("\n");
             sb.Append("  AccountNumber: ").Append(AccountNumber).Append("\n");
+            sb.Append("  SuppressTechnologyFee: ").Append(SuppressTechnologyFee).Append("\n");
+            sb.Append("  OverrideTechnologyFee: ").Append(OverrideTechnologyFee).Append("\n");
+            sb.Append("  IsPremiumFinancier: ").Append(IsPremiumFinancier).Append("\n");
+            sb.Append("  Pfr: ").Append(Pfr).Append("\n");
             sb.Append("  Customers: ").Append(Customers).Append("\n");
             sb.Append("  AdditionalDetailsPreference: ").Append(AdditionalDetailsPreference).Append("\n");
             sb.Append("  SelectedCustomerFields: ").Append(SelectedCustomerFields).Append("\n");
             sb.Append("  ReferenceDataList: ").Append(ReferenceDataList).Append("\n");
+            sb.Append("  DisplayMode: ").Append(DisplayMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

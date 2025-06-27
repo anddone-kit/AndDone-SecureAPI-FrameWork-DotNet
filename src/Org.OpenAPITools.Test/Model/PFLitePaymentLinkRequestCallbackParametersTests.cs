@@ -71,5 +71,59 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'CallbackMessage'
         }
+
+        /// <summary>
+        /// Test the property 'AccessKey'
+        /// </summary>
+        [Fact]
+        public void AccessKeyTest()
+        {
+            // TODO unit test for the property 'AccessKey'
+        }
+
+        /// <summary>
+        /// Test the property 'SecretKey'
+        /// </summary>
+        [Fact]
+        public void SecretKeyTest()
+        {
+            // TODO unit test for the property 'SecretKey'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceNo'
+        /// </summary>
+        [Fact]
+        public void ReferenceNoTest()
+        {
+            // TODO unit test for the property 'ReferenceNo'
+        }
+
+        /// <summary>
+        /// Test the property 'ReferenceType'
+        /// </summary>
+        [Fact]
+        public void ReferenceTypeTest()
+        {
+            // TODO unit test for the property 'ReferenceType'
+        }
+
+        /// <summary>
+        /// Test the property 'TransactionId'
+        /// </summary>
+        [Fact]
+        public void TransactionIdTest()
+        {
+            // TODO unit test for the property 'TransactionId'
+        }
+
+        /// <summary>
+        /// Test the property 'RedirectionTime'
+        /// </summary>
+        [Fact]
+        public void RedirectionTimeTest()
+        {
+            // TODO unit test for the property 'RedirectionTime'
+        }
     }
 }

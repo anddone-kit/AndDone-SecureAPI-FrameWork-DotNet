@@ -64,6 +64,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'TransactionCode'
+        /// </summary>
+        [Fact]
+        public void TransactionCodeTest()
+        {
+            // TODO unit test for the property 'TransactionCode'
+        }
+
+        /// <summary>
         /// Test the property 'BillingContact'
         /// </summary>
         [Fact]
@@ -91,12 +100,39 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'IpAddress'
+        /// </summary>
+        [Fact]
+        public void IpAddressTest()
+        {
+            // TODO unit test for the property 'IpAddress'
+        }
+
+        /// <summary>
+        /// Test the property 'ChannelType'
+        /// </summary>
+        [Fact]
+        public void ChannelTypeTest()
+        {
+            // TODO unit test for the property 'ChannelType'
+        }
+
+        /// <summary>
         /// Test the property 'ProcessMethod'
         /// </summary>
         [Fact]
         public void ProcessMethodTest()
         {
             // TODO unit test for the property 'ProcessMethod'
+        }
+
+        /// <summary>
+        /// Test the property 'ProcessorName'
+        /// </summary>
+        [Fact]
+        public void ProcessorNameTest()
+        {
+            // TODO unit test for the property 'ProcessorName'
         }
 
         /// <summary>
@@ -154,15 +190,6 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'CustomerAccountId'
-        /// </summary>
-        [Fact]
-        public void CustomerAccountIdTest()
-        {
-            // TODO unit test for the property 'CustomerAccountId'
-        }
-
-        /// <summary>
         /// Test the property 'InvoiceNo'
         /// </summary>
         [Fact]
@@ -172,12 +199,30 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ReferenceNo'
+        /// </summary>
+        [Fact]
+        public void ReferenceNoTest()
+        {
+            // TODO unit test for the property 'ReferenceNo'
+        }
+
+        /// <summary>
         /// Test the property 'Remarks'
         /// </summary>
         [Fact]
         public void RemarksTest()
         {
             // TODO unit test for the property 'Remarks'
+        }
+
+        /// <summary>
+        /// Test the property 'TerminalId'
+        /// </summary>
+        [Fact]
+        public void TerminalIdTest()
+        {
+            // TODO unit test for the property 'TerminalId'
         }
 
         /// <summary>
@@ -226,6 +271,24 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'SettlementDate'
+        /// </summary>
+        [Fact]
+        public void SettlementDateTest()
+        {
+            // TODO unit test for the property 'SettlementDate'
+        }
+
+        /// <summary>
+        /// Test the property 'Issuer'
+        /// </summary>
+        [Fact]
+        public void IssuerTest()
+        {
+            // TODO unit test for the property 'Issuer'
+        }
+
+        /// <summary>
         /// Test the property 'PaymentType'
         /// </summary>
         [Fact]
@@ -250,6 +313,51 @@ namespace Org.OpenAPITools.Test.Model
         public void TransactionEntitySplitResponsesTest()
         {
             // TODO unit test for the property 'TransactionEntitySplitResponses'
+        }
+
+        /// <summary>
+        /// Test the property 'PaymentDescription'
+        /// </summary>
+        [Fact]
+        public void PaymentDescriptionTest()
+        {
+            // TODO unit test for the property 'PaymentDescription'
+        }
+
+        /// <summary>
+        /// Test the property 'RefundTransactions'
+        /// </summary>
+        [Fact]
+        public void RefundTransactionsTest()
+        {
+            // TODO unit test for the property 'RefundTransactions'
+        }
+
+        /// <summary>
+        /// Test the property 'ChargebackTargetAccount'
+        /// </summary>
+        [Fact]
+        public void ChargebackTargetAccountTest()
+        {
+            // TODO unit test for the property 'ChargebackTargetAccount'
+        }
+
+        /// <summary>
+        /// Test the property 'UserId'
+        /// </summary>
+        [Fact]
+        public void UserIdTest()
+        {
+            // TODO unit test for the property 'UserId'
+        }
+
+        /// <summary>
+        /// Test the property 'UserName'
+        /// </summary>
+        [Fact]
+        public void UserNameTest()
+        {
+            // TODO unit test for the property 'UserName'
         }
 
         /// <summary>

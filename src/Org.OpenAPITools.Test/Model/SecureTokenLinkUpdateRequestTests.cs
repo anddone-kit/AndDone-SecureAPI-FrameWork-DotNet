@@ -98,5 +98,14 @@ namespace Org.OpenAPITools.Test.Model
         {
             // TODO unit test for the property 'Intent'
         }
+
+        /// <summary>
+        /// Test the property 'CallBackParameters'
+        /// </summary>
+        [Fact]
+        public void CallBackParametersTest()
+        {
+            // TODO unit test for the property 'CallBackParameters'
+        }
     }
 }

@@ -55,30 +55,21 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'AdditionalDetailsPreference'
-        /// </summary>
-        [Fact]
-        public void AdditionalDetailsPreferenceTest()
-        {
-            // TODO unit test for the property 'AdditionalDetailsPreference'
-        }
-
-        /// <summary>
-        /// Test the property 'Intent'
-        /// </summary>
-        [Fact]
-        public void IntentTest()
-        {
-            // TODO unit test for the property 'Intent'
-        }
-
-        /// <summary>
         /// Test the property 'SelectedCustomerFields'
         /// </summary>
         [Fact]
         public void SelectedCustomerFieldsTest()
         {
             // TODO unit test for the property 'SelectedCustomerFields'
+        }
+
+        /// <summary>
+        /// Test the property 'AdditionalDetailsPreference'
+        /// </summary>
+        [Fact]
+        public void AdditionalDetailsPreferenceTest()
+        {
+            // TODO unit test for the property 'AdditionalDetailsPreference'
         }
 
         /// <summary>
@@ -142,6 +133,15 @@ namespace Org.OpenAPITools.Test.Model
         public void SaveCustomerAccountTest()
         {
             // TODO unit test for the property 'SaveCustomerAccount'
+        }
+
+        /// <summary>
+        /// Test the property 'Intent'
+        /// </summary>
+        [Fact]
+        public void IntentTest()
+        {
+            // TODO unit test for the property 'Intent'
         }
     }
 }

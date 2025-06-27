@@ -109,6 +109,15 @@ namespace Org.OpenAPITools.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CardNumber'
+        /// </summary>
+        [Fact]
+        public void CardNumberTest()
+        {
+            // TODO unit test for the property 'CardNumber'
+        }
+
+        /// <summary>
         /// Test the property 'CardExpiry'
         /// </summary>
         [Fact]
