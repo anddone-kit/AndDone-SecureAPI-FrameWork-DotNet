@@ -116,7 +116,7 @@ paths:
               $ref: '#/components/schemas/PaymentIntentRequest'
         description: Payment Intent Request
       responses:
-        "200":
+        "201":
           content:
             application/json:
               schema:
@@ -4904,6 +4904,7 @@ components:
         userName:
           type: string
         chargeBackAmount:
+          nullable: true
           type: number
         suppressTechnologyFee:
           type: boolean
@@ -7473,7 +7474,7 @@ components:
       properties:
         quoteKey:
           description: This denotes the quote key.
-          type: number
+          type: integer
         accountNumber:
           description: This denotes the loan account number.
           type: string
@@ -7583,7 +7584,7 @@ components:
       properties:
         quoteKey:
           description: This denotes the quoteKey.
-          type: number
+          type: integer
       required:
       - quoteKey
       type: object
@@ -8171,7 +8172,7 @@ components:
         merchantToken: afwgetghweth
       properties:
         quoteKey:
-          type: number
+          type: integer
         merchantToken:
           type: string
       required:

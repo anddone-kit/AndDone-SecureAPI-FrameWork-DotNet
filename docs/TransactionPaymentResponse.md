@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 **ChargebackTargetAccount** | **string** |  | [optional] 
 **UserId** | **string** |  | [optional] 
 **UserName** | **string** |  | [optional] 
-**ChargeBackAmount** | **float** |  | [optional] 
+**ChargeBackAmount** | **decimal?** |  | [optional] 
 **SuppressTechnologyFee** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

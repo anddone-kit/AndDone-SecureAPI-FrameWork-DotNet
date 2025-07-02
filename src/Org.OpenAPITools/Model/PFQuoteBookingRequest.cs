@@ -41,7 +41,7 @@ namespace Org.OpenAPITools.Model
         /// </summary>
         /// <param name="quoteKey">quoteKey (required).</param>
         /// <param name="merchantToken">merchantToken.</param>
-        public PFQuoteBookingRequest(float quoteKey = default(float), string merchantToken = default(string))
+        public PFQuoteBookingRequest(int quoteKey = default(int), string merchantToken = default(string))
         {
             this.QuoteKey = quoteKey;
             this.MerchantToken = merchantToken;
@@ -51,7 +51,7 @@ namespace Org.OpenAPITools.Model
         /// Gets or Sets QuoteKey
         /// </summary>
         [DataMember(Name = "quoteKey", IsRequired = true, EmitDefaultValue = true)]
-        public float QuoteKey { get; set; }
+        public int QuoteKey { get; set; }
 
         /// <summary>
         /// Gets or Sets MerchantToken

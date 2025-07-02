@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**QuoteKey** | **float** | This denotes the quote key. | 
+**QuoteKey** | **int** | This denotes the quote key. | 
 **AccountNumber** | **string** | This denotes the loan account number. | [optional] 
 **Premium** | **float** | This denotes the premium amount. | 
 **Category** | **string** | This denotes the coverage type. | 
