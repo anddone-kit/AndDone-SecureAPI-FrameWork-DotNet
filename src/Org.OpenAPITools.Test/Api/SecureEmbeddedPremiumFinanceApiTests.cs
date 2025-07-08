@@ -21,6 +21,7 @@ using Org.OpenAPITools.Api;
 using Xunit.Abstractions;
 // uncomment below to import models
 using Org.OpenAPITools.Model;
+using Newtonsoft.Json.Linq;
 
 namespace Org.OpenAPITools.Test.Api
 {
@@ -63,10 +64,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PFPolicyUpdateRequestDTO request = new(
                 quoteKey: 29694517,
                 premium: 9000,
@@ -103,10 +107,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PFQuoteBookingRequest request = new(
                 quoteKey: 29694517
             );
@@ -140,10 +147,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PFQuoteEsignRequest request = new(
                 merchantToken: xAppKey,
                 quoteKey: "29694517",
@@ -182,10 +192,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             QuoteRequest request = new(
                 paymentIntentId: "RdQkXMgx",
                 details: new QuoteRequestDetails(
@@ -202,7 +215,7 @@ namespace Org.OpenAPITools.Test.Api
                     agentCustomerNumber: "Suyash",
                     email: "dylan.smith@fmkagency.com",
                     careOf: "",
-                    uniqueId: "bdYqRMdn",
+                    uniqueId: xAppKey,
                     address: new QuoteRequestInsuredAddress(
                         name: "Sam",
                         address1: "1055 Broadway",
@@ -214,7 +227,7 @@ namespace Org.OpenAPITools.Test.Api
                     )
                 ),
                 agent: new QuoteRequestAgent (
-                    uniqueID: "bdYqRMdn",// Merchant Id
+                    uniqueID: xAppKey,// Merchant Id
                     email: "dylan.smith@fmkagency.com",
                     address: new QuoteRequestAgentAddress (
                         name: "Insurance Agency",
@@ -284,10 +297,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             GetQuoteRequest request = new(
                 paymentIntentId: "RdQkXMgx"
             );
@@ -321,10 +337,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             GetQuoteKeyRequest request = new(
                 quoteKey: "29694517"
             );
@@ -358,10 +377,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PFRetrievePFARequestDTO request = new(
                 quoteKey: "29694517"
             );

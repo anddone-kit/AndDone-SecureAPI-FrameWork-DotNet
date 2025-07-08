@@ -21,6 +21,7 @@ using Org.OpenAPITools.Api;
 // uncomment below to import models
 using Org.OpenAPITools.Model;
 using Xunit.Abstractions;
+using Newtonsoft.Json.Linq;
 
 namespace Org.OpenAPITools.Test.Api
 {
@@ -63,10 +64,14 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecurePremiumFinanceLiteApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
+            
             PFLiteSecureQuoteRequest request = new(
                 merchantId: xAppKey,
                 merchant: new PFLiteSecureQuoteRequestMerchant(
@@ -142,10 +147,14 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecurePremiumFinanceLiteApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
+
             PFLiteGetQuoteRequest request = new(
                 merchantToken: xAppKey,
                 paymentLinkId: "Gx12XgK8"
@@ -182,10 +191,14 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecurePremiumFinanceLiteApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
+            
             PFLitePaymentLinkRequest request = new(
                 quoteKey: "29695764",
                 isPayInFull: true,

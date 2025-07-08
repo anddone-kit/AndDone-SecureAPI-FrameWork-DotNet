@@ -21,6 +21,7 @@ using Org.OpenAPITools.Api;
 using Xunit.Abstractions;
 // uncomment below to import models
 using Org.OpenAPITools.Model;
+using Newtonsoft.Json.Linq;
 
 namespace Org.OpenAPITools.Test.Api
 {
@@ -63,10 +64,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureOutboundPaymentsApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PaymentTimeLineRequestDto request = new(
                 paymentId: "952cff23-eff2-4547-a5f7-931d37563d8b"
             );
@@ -100,10 +104,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureOutboundPaymentsApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             CancelPaymentRequestDTO request = new(
                 paymentId: "952cff23-eff2-4547-a5f7-931d37563d8b"
             );
@@ -137,10 +144,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureOutboundPaymentsApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PaymentRequestDetailDTO request = new(
                 paymentId: "952cff23-eff2-4547-a5f7-931d37563d8b"
             );
@@ -175,10 +185,13 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureOutboundPaymentsApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
             PaymentRequestDto request = new(
                 vendorId: "Dv4VRa8R",
                 paymentMethod: (PaymentRequestDto.PaymentMethodEnum)1,
@@ -276,10 +289,14 @@ namespace Org.OpenAPITools.Test.Api
             };
 
             var apiInstance = new SecureOutboundPaymentsApi(config);
-            var xApiKey = "T3Hj93GzbuhMLiNQg/yJ/yNArhFJeEHoSLyFZ9IBQkY=";  // string | an authorization header
-            var xAppKey = "bdYqRMdn";  // string | an authorization header
-            var origin = "136.34.79.196/32";  // string | an authorization header. Your origin IP address or URL. Must be configured with AndDone Administration
-            var xVersion = 2.3F;  // string | x-version
+            using StreamReader r = new("C:\\Work\\AndDone_SDKs\\anddone-csharp-sdk-openapi-codegen\\config.json");
+            dynamic jsonConfig = JObject.Parse(r.ReadToEnd());
+            
+            string xApiKey = jsonConfig.xApiKey;
+            string xAppKey = jsonConfig.xAppKey;
+            float xVersion = jsonConfig.xVersion;
+            string origin = jsonConfig.origin;
+            
             string vendorId = null;
             string paymentBasedId = null;
             string paymentId = null;
