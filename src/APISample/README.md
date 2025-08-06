@@ -21,11 +21,11 @@ cd anddone
 ```
 5. Clone the repository
 ```sh
-git clone https://github.com/daryl-fmk/APISample.git
+git clone https://github.com/FMK-Agency/anddone-dotnet-sdk-sample-installation.git
 ````
-6. Change to the "APISample" folder
+6. Change to the project folder
 ```sh
-cd APISample
+cd anddone-dotnet-sdk-sample-installation
 ```
 7. Restore packages and Build Solution
 ```sh
@@ -41,7 +41,7 @@ dotnet build APISample.sln -c Release --property WarningLevel=0
 2. Find your Origin by opening a browser and browse to: https://www.whatsmyip.org/  Your origin will be your IP Address
 3. Create a settings file to contain AndDone specific settings
 ```sh
-cd bin\Release\net8.0-windows
+cd src\APISample\bin\Release\net8.0-windows
 ```
 4. Using your favorite editor, create a file "appsettings.json"
 5. COpy below into the "appsettings.json" and enter the xAPIKey, xAPPKey and Origin to the values to match your company settings.  Do not modify the BasePath or xVersion settings.  Save the settings and close the file.
@@ -49,16 +49,17 @@ cd bin\Release\net8.0-windows
 {
   "Settings": {
     "BasePath": "https://api.uat.anddone.com",
+    "BasePath2": "https://api2.uat.anddone.com",
     "xApiKey": "",
     "xAppKey": "",
-    "xVersion": "2.1",
+    "xVersion": "2.3",
     "Origin": ""
   }
 }
 ```
 
 ## Running the Sample API Application
-1. In Powershell, make sure you are in the folder d:\workspace\anddone\APISample\APISample\bin\Release\net8.0-windows
+1. In Powershell, make sure you are in the folder d:\workspace\anddone\anddone-dotnet-sdk-sample-isntallation\src\APISample\bin\Release\net8.0-windows
 2. Enter the following command:
 ```sh
 .\APISample.exe
@@ -88,7 +89,7 @@ To update the API Sample project, do the following:
 
 1.  Change to the root folder
 ```sh
-cd d:\workspace\anddone\APISample
+cd d:\workspace\anddone\anddone-dotnet-sdk-sample-isntallation
 ```
 2.  Pull the latest changes
 ```sh
