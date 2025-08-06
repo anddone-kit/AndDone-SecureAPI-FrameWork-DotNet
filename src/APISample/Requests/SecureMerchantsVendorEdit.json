@@ -1,0 +1,37 @@
+{
+  "vendorId": "Bv9o5G8a",
+  "legalEntityType": "Corporation",
+  "vendorName": "Vendor Name",
+  "vendorAliasName": "Alias",
+  "vendorDbName": "DB Name",
+  "paymentMethodType": "Check",
+  "notificationType": "Email",
+  "vendorNotes": "Some notes",
+  "phoneNumber": "1234567890",
+  "isMobileNumber": "true",
+  "useSameAsPhysicalAddress": "true",
+  "email": "daryl.broxterman@fmkagency.com",
+  "url": "https://vendor.com",
+  "remittanceAddress": {
+    "attention": "Attention",
+    "addressLine1": "123 Main St",
+    "addressLine2": "Apt 101",
+    "city": "Pittsford",
+    "state": "NJ",
+    "country": "US",
+    "postalCode": "12345",
+    "addressType": "Remittance",
+    "addressSource": "Manual"
+  },
+  "physicalAddress": {
+    "attention": "Attention 2",
+    "addressLine1": "456 Main St",
+    "addressLine2": "Apt 202",
+    "city": "Pittsford",
+    "state": "NJ",
+    "country": "US",
+    "postalCode": "54321",
+    "addressType": "Correspondence",
+    "addressSource": "Manual"
+  }
+}

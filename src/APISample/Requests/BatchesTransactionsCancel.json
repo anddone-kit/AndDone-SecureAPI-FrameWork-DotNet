@@ -1,0 +1,9 @@
+{
+  "merchantId": "BxpQwN8R",
+  "batchId": "OgdZ5m8N",
+  "voidReason": "Duplicate Payments",
+  "transactionIds": [
+    "03bf6f8a-4bcb-4abf-8877-46273baa38cb",
+    "4eff82fb-cc60-4e0a-93bd-585ef227266d"
+  ]
+}

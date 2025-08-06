@@ -1,0 +1,66 @@
+{
+  "vendorId": "jdeeBRdz",
+  "paymentMethod": "Check",
+  "amount": 70.23,
+  "bankDetail": {
+    "accountNumber": "123456780",
+    "routingNumber": "121000358"
+  },
+  "Data": {
+    "checkNumber": 1003,
+    "memo": "Self transfer",
+    "checkDate": "05-19-2025",
+    "remittanceData": {
+      "headings": [
+        {
+          "name": "Item1",
+          "type": "Date"
+        },
+        {
+          "name": "Amount1",
+          "type": "decimal"
+        },
+        {
+          "name": "desc",
+          "type": "text"
+        }
+      ],
+      "rows": [
+        [
+          {
+            "name": "Item1",
+            "value": "04-24-2024",
+            "type": "Date"
+          },
+          {
+            "name": "Amount1",
+            "value": "100.12",
+            "type": "decimal"
+          },
+          {
+            "name": "desc",
+            "value": "100.12",
+            "type": "text"
+          }
+        ],
+        [
+          {
+            "name": "Item1",
+            "value": "04-27-2024",
+            "type": "Date"
+          },
+          {
+            "name": "Amount1",
+            "value": "500",
+            "type": "decimal"
+          },
+          {
+            "name": "desc",
+            "value": "100.12",
+            "type": "text"
+          }
+        ]
+      ]
+    }
+  }
+}

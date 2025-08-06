@@ -1,0 +1,31 @@
+{
+  "quoteKey": "25673371",
+  "isPayInFull": true,
+  "title": "FirstPayment",
+  "paymentDescription": "FirstPayment",
+  "expireIn": "2",
+  "expireInUnit": "5",
+  "customers": null,
+  "callbackParameters": {
+    "callbackApiUrl": "htttp://yahoo.com",
+    "callbackMessage": "this is test message"
+  },
+  "referenceDataList": [
+    {
+      "referenceType": "PolicyNumber",
+      "referenceNumber": "pol123",
+      "referenceKey": null
+    }
+  ],
+  "settings": {
+    "selectedCustomerFields": "First Name,Last Name,Email,Phone",
+    "additionalDetailsPreference": "1",
+    "intent": {
+      "paymentTypes": [
+        "ACH",
+        "CreditCard",
+        "DebitCard"
+      ]
+    }
+  }
+}

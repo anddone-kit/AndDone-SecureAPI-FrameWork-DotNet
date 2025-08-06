@@ -1,0 +1,13 @@
+{
+  "tokenlinkid": "KvoG7Rbv",
+  "expireIn": 14,
+  "expireInUnit": "Days",
+  "suppressTechnologyFee": true,
+  "intent": {
+    "paymentTypes": [
+      "ACH",
+      "CreditCard",
+      "DebitCard"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "quote": {
+    "agreementId": "9875972",
+    "merchantReference": "MER456123",
+    "policies": [
+      {
+        "policyId": "9875972",
+        "premium": 1200,
+        "effectiveDate": "2023-02-20T05:39:43.181Z",
+        "expirationDate": "2023-02-20T05:39:43.181Z",
+        "coverage": "FIRE",
+        "term": 1,
+        "company": {
+          "BestNumber": "",
+          "UniqueID": "0000",
+          "Name": "IPFS TOTALPAY",
+          "CareOf": "moon",
+          "Address1": "789 Oak Ave",
+          "Address2": "789 Oak Ave",
+          "City": "Kansas City",
+          "State": "MO",
+          "Zip": "442356",
+          "Phone": "442356312312"
+        }
+      }
+    ],
+    "Insured": {
+      "UniqueID": "test",
+      "Email": "test@test.com",
+      "Address": {
+        "Name": "Michael Jackson",
+        "Address1": "7438 Airport Drive",
+        "Address2": "743 Airport Drive",
+        "City": "Kansas City",
+        "State": "MO",
+        "Zip": "12345",
+        "Phone": "9090909090"
+      }
+    },
+    "Agent": {
+      "UniqueID": "test1",
+      "Email": "test@test.com",
+      "Address": {
+        "Name": "Michael Jackson",
+        "Address1": "7438 Airport Drive",
+        "Address2": "743 Airport Drive",
+        "City": "Kansas City",
+        "State": "MO",
+        "Zip": "12345",
+        "Phone": "9090909090"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "title": "PL-11071",
+  "merchantId": "BxpQwN8R",
+  "paymentDescription": "Premium down payment.",
+  "amount": 101.00,
+  "expireIn": 7,
+  "expireInUnit": 4,
+  "referenceType": 4,
+  "referenceNumber": "ACT123234123421",
+  "referenceKey": "",
+  "responseType": 1,
+  "referenceDataList": [
+    {
+      "referenceType": 2,
+      "referenceNumber": "TEST00000002",
+      "referenceKey": ""
+    }
+  ],
+  "callbackParameters": {
+    "callbackApiUrl": "https://www.anddone.com",
+    "callbackMessage": "Thank you for your payment!"
+  },
+  "customers": [
+    {
+      "firstName": "Bill",
+      "lastName": "Billingsly",
+      "email": "bb@test.com",
+      "phone": "9877655444",
+      "address": {
+        "addressLine1": "5321 Sunset Palms Drive",
+        "addressLine2": "#228",
+        "city": "Anchorage",
+        "state": "AK",
+        "country": 1,
+        "postalCode": "23354"
+      }
+    }
+  ],
+  "settings": {
+    "additionalDetailsPreference": 2,
+    "SelectedCustomerFields": 1,
+    "intent": {
+      "PaymentTypes": [
+        "ACH",
+        "CreditCard",
+        "DebitCard"
+      ]
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "PaymentReference": "PMT-10162024-4",
+  "type": "OpenPayment",
+  "tenderInfo": {
+    "amount": 10164,
+    "cardHolderName": "John Doe",
+    "cardType": "VISA",
+    "cardNumber": "4000620000000007",
+    "cardExpiry": "0330",
+    "cvDataStatus": "AV",
+    "cvv": 737,
+    "removeDiscounting": false
+  },
+  "transactionCode": "Web",
+  "channelType": "CreditCard",
+  "billingcontact": {
+    "phone": "8003213388",
+    "name": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "address": {
+      "addressLine1": "30",
+      "addressLine2": "Memorial Drive",
+      "city": "Avon ",
+      "state": "NY",
+      "postalCode": "12701"
+    }
+  }
+}

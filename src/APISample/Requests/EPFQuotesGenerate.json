@@ -1,0 +1,71 @@
+{
+  "merchantId": "BxpQwN8R", //Use App_Key here
+  "paymentIntentId": "y8yGjV9v", //Obtained from Create Payment Intent
+  "details": {
+    "programIDs": [82262],
+    "couponInvoicePrinted": "False",
+    "installments": 0,
+    "batchID": "Batch-00543738",
+    "commercial": "NA",
+    "coupon": "NA",
+    "interval": "NA",
+    "downPaymentMethod": "BOTH",
+    "downPaymentPaidBy": "Insured"
+  },
+  "insured": {
+    "uniqueId": "BxpQwN8R", //Use App_Key here
+    "agentCustomerNumber": "Suyash",
+    "email": "test@test.com",
+    "careOf": "Test",
+    "address": {
+      "name": "Sam",
+      "address1": "1055 Broadway",
+      "address2": "",
+      "city": "Kansas City",
+      "state": "KY",
+      "zip": "64105",
+      "phone": ""
+    }
+  },
+  "agent": {
+    "uniqueID": "BxpQwN8R", //Use App_Key here
+    "email": "daryl.broxterman@fmkagency.com",
+    "address": {
+      "name": "Insurance Agency",
+      "address1": "PO Box 486",
+      "address2": "",
+      "city": "Kansas City",
+      "state": "KY",
+      "zip": "64105",
+      "phone": ""
+    }
+  },
+  "policies": [
+    {
+      "policyID": 2,
+      "premium": 1000,
+      "fee": 0,
+      "tax": 0,
+      "coverage": "FIRE",
+      "effectiveDate": "2024-11-11T00:00:00",
+      "expirationDate": "2025-11-21T00:00:00",
+      "term": 12,
+      "minimumEarned": 0,
+      "minimumLiability": 0,
+      "maximumLiability": 0,
+      "invoiceNumber": "",
+      "policyFees": [],
+      "company": {
+        "bestNumber": "",
+        "uniqueId": "LIC",
+        "name": "LEXINGTON INSURANCE COMPANY",
+        "address1": "",
+        "address2": "",
+        "city": "Kansas City",
+        "state": "MO",
+        "zip": "",
+        "phone": ""
+      }
+    }
+  ]
+}

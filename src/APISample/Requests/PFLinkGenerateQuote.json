@@ -1,0 +1,56 @@
+{
+  "merchantId": "BxpQwN8R",
+  "merchant": {
+    "contactName": "Test User",
+    "contactPhone": "1234567890"
+  },
+  "insured": {
+    "FirstName": "John",
+    "LastName": "Doe",
+    "UniqueID": "test",
+    "EmailAddress": "test@test.com",
+    "Address": {
+      "Name": "Michael Jackson",
+      "Address1": "7438 Airport Drive",
+      "Address2": "743 Airport Drive",
+      "City": "Kansas City",
+      "State": "MO",
+      "Zip": "12345",
+      "Phone": "9090909090"
+    }
+  },
+  "program": {
+    "programId": 82262,
+    "loanType": "Personal"
+  },
+  "policies": [
+    {
+      "policyId": "9875972",
+      "policyNumber": "9875972",
+      "minimumEarnedPercent": 1,
+      "premium": 1200,
+      "cancelDays": "2", 
+      "carrier": {
+        "name": "OCCIDENTAL FIRE & CASUALTY CO OF NO",
+        "bestNumber": "5555551234",
+        "uniqueId": "23248"
+      },
+      "effectiveDate": "2025-02-01T05:39:43.181Z",
+      "expirationDate": "2026-02-01T05:39:43.181Z",
+      "coverageType": "FIRE",
+      "term": 1.0,
+      "company": {
+        "BestNumber": "",
+        "UniqueID": "0000",
+        "Name": "IPFS TOTALPAY",
+        "CareOf": "moon",
+        "Address1": "789 Oak Ave",
+        "Address2": "789 Oak Ave",
+        "City": "Kansas City",
+        "State": "MO",
+        "Zip": "442356",
+        "Phone": "442356312312"
+      }
+    }
+  ]
+}

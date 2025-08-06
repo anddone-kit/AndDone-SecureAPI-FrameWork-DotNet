@@ -1,0 +1,20 @@
+{
+  "saveForFuture": false,
+  "title": "Inv1111-1",
+  "AccountNumber": "ACH-001",
+  "shortDescription": "short_Description",
+  "paymentDescription": "payment_Description",
+  "amount": 25.00,
+  "invoiceNumber": "1111",
+  "expiresIn": "30000000",
+  "enablePremiumFinance": true,
+  "intent": {
+    "paymentTypes": [
+      "CreditCard",
+      "DebitCard",
+      "ACH"
+    ]
+  },
+  "splits": null,
+  "additionalDetailsPreference": 4 
+}
