@@ -698,8 +698,8 @@ namespace APISample
             }
             catch (ApiException ex)
             {
-                epfQuoteEndorseBookingStatusTextBox.Text = ex.Message;
-                epfQuoteEndorseBookingResponseStatusBox.Text = ex.ErrorCode + "";
+                epfQuoteEndorseBookingStatusTextBox.Text = ex.ErrorCode + "";
+                epfQuoteEndorseBookingResponseStatusBox.Text = ex.Message;
                 Console.WriteLine("Exception when calling EPF.QuoteEndorseBooking: " + ex.Message);
                 Console.WriteLine("Status Code: " + ex.ErrorCode);
                 Console.WriteLine(ex.StackTrace);
