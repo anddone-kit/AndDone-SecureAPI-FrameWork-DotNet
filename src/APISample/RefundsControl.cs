@@ -43,7 +43,7 @@ namespace APISample
 
         private void refundEligibleAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-refunds-eligibility-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-refunds-eligibility-post", UseShellExecute = true });
         }
 
         private void refundEligibleRunButton_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace APISample
 
         private void refundRequestAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-refunds-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-refunds-post", UseShellExecute = true });
         }
 
         private void refundRequestClearButton_Click(object sender, EventArgs e)

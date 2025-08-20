@@ -35,7 +35,7 @@ namespace APISample
 
         private void batchGetBatchesAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-batches-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-batches-post", UseShellExecute = true });
         }
 
         private void batchGetBatchesClearButton_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace APISample
 
         private void batchesTransactionsCancelAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-batches-transactions-cancel-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-batches-transactions-cancel-post", UseShellExecute = true });
         }
 
         private void batchTransactionCancelClearButton_Click(object sender, EventArgs e)
@@ -208,7 +208,7 @@ namespace APISample
 
         private void batchExecuteAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-batches-execute-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-batches-execute-post", UseShellExecute = true });
         }
 
         private void batchExecuteClearButton_Click(object sender, EventArgs e)
@@ -271,7 +271,7 @@ namespace APISample
 
         private void batchTimelinesAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-batches-timelines-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-batches-timelines-post", UseShellExecute = true });
         }
 
         private void batchTimelinesClearButton_Click(object sender, EventArgs e)
@@ -328,7 +328,7 @@ namespace APISample
 
         private void batchDetailsAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-batches-details-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-batches-details-post", UseShellExecute = true });
         }
 
         private void batchDetailsClearButton_Click(object sender, EventArgs e)

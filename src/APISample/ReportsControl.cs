@@ -43,7 +43,7 @@ namespace APISample
 
         private void reportsDownloadAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-reports-downloads-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-reports-downloads-post", UseShellExecute = true });
         }
 
         private void reportsDownloadClearButton_Click(object sender, EventArgs e)

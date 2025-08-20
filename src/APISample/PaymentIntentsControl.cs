@@ -43,7 +43,7 @@ namespace APISample
 
         private void payIntentCreateAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentintents-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentintents-post", UseShellExecute = true });
         }
 
         private void payIntentCreateClearButton_Click(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace APISample
 
         private void payIntentExpAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentintents-expirations-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentintents-expirations-post", UseShellExecute = true });
         }
 
         private void payIntentExpClearButton_Click(object sender, EventArgs e)

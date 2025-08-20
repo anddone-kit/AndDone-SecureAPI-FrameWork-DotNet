@@ -53,7 +53,7 @@ namespace APISample
 
         private void epfGenQuoteAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quotes-generate-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quotes-generate-post", UseShellExecute = true });
         }
 
         private void epfGenQuoteClearButton_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace APISample
 
         private void epfGetByIntentAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quotes-intent-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quotes-intent-post", UseShellExecute = true });
         }
 
         private void epfGetByIntentClearButton_Click(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace APISample
 
         private void epfGetKeyAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quotes-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quotes-post", UseShellExecute = true });
         }
 
         private void epfGetKeyClearButton_Click(object sender, EventArgs e)
@@ -290,7 +290,7 @@ namespace APISample
 
         private void epfEndorseAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-endorsements-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-endorsements-post", UseShellExecute = true });
         }
 
         private void epfEndorseClearButton_Click(object sender, EventArgs e)
@@ -348,7 +348,7 @@ namespace APISample
 
         private void epfRetrievePFAAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-retrievepfa-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-retrievepfa-post", UseShellExecute = true });
         }
 
         private void epfRetrievePFAClearButton_Click(object sender, EventArgs e)
@@ -434,7 +434,7 @@ namespace APISample
 
         private void epfUpdateIntentAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-updateintent-put", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-updateintent-put", UseShellExecute = true });
         }
 
         private void epfUpdateIntentClearButton_Click(object sender, EventArgs e)
@@ -493,7 +493,7 @@ namespace APISample
 
         private void eofQuoteEndorseAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quote-endorsement-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quote-endorsement-post", UseShellExecute = true });
         }
 
         private void epfQuoteEndorseClearButton_Click(object sender, EventArgs e)
@@ -551,7 +551,7 @@ namespace APISample
 
         private void epfQuoteESignAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quotes-captureesign-put", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quotes-captureesign-put", UseShellExecute = true });
         }
 
         private void epfQuoteESignClearButton_Click(object sender, EventArgs e)
@@ -605,7 +605,7 @@ namespace APISample
 
         private void epfQuoteBookingAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quotes-booking-put", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quotes-booking-put", UseShellExecute = true });
         }
 
         private void epfQuoteBookingClearButton_Click(object sender, EventArgs e)
@@ -661,7 +661,7 @@ namespace APISample
 
         private void epfQuoteEndorseBookingAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epf-quote-endorsement-booking-put", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epf-quote-endorsement-booking-put", UseShellExecute = true });
         }
 
         private void epfQuoteEndorseBookingClearButton_Click(object sender, EventArgs e)

@@ -205,7 +205,7 @@ namespace APISample
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-payments-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-payments-post", UseShellExecute = true });
         }
 
         private void payDetailsGoToFileButton_Click(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace APISample
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-payments-search-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-payments-search-post", UseShellExecute = true });
         }
 
         private void paymentSearchResetButton_Click(object sender, EventArgs e)
@@ -238,7 +238,7 @@ namespace APISample
 
         private void payExportAPILink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-payments-export-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-payments-export-post", UseShellExecute = true });
         }
 
         private void payExportClearButton_Click(object sender, EventArgs e)

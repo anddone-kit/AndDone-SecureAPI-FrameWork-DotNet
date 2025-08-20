@@ -43,7 +43,7 @@ namespace APISample
 
         private void tokensDeactivateAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokens-activations-delete", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokens-activations-delete", UseShellExecute = true });
         }
 
         private void tokensDeactivateRunButton_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace APISample
 
         private void tokensDetailsAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokens-details-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokens-details-post", UseShellExecute = true });
         }
 
         private void tokensDetailsRunButton_Click(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace APISample
 
         private void pfLinkQuotePaymentLinkAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epflite-quotes-paymentlinks-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epflite-quotes-paymentlinks-post", UseShellExecute = true });
         }
 
         private void pfLinkQuotePaymentLinkClearButton_Click(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace APISample
 
         private void pfLinkGenreateQuoteAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epflite-quotes-generate-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epflite-quotes-generate-post", UseShellExecute = true });
         }
 
         private void pfLinkGenerateQuoteClearButton_Click(object sender, EventArgs e)
@@ -228,7 +228,7 @@ namespace APISample
 
         private void pfLinkGetQuoteAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-epflite-quotes-link-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-epflite-quotes-link-post", UseShellExecute = true });
         }
 
         private void pfLinkGetQuotesClearButton_Click(object sender, EventArgs e)

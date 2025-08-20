@@ -43,7 +43,7 @@ namespace APISample
 
         private void merchantUpdatePolicyAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-search-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-search-post", UseShellExecute = true });
         }
 
         private void merchantUpdatePolicyClearButton_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace APISample
 
         private void tokensDetailsAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-post", UseShellExecute = true });
         }
 
         private void merchantsCreateRunButton_Click(object sender, EventArgs e)
@@ -208,7 +208,7 @@ namespace APISample
 
         private void merchantsDetailsAPILink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-details-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-details-post", UseShellExecute = true });
         }
 
         private void merchantsDetailsRunButton_Click(object sender, EventArgs e)
@@ -265,7 +265,7 @@ namespace APISample
 
         private void merchantsSuspendAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-suspend-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-suspend-post", UseShellExecute = true });
         }
 
         private void merchantsSuspendRunButton_Click(object sender, EventArgs e)
@@ -323,7 +323,7 @@ namespace APISample
 
         private void merchantsUnsuspendAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-unsuspend-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-unsuspend-post", UseShellExecute = true });
         }
 
         private void merchantsUnsuspendRunButton_Click(object sender, EventArgs e)
@@ -380,7 +380,7 @@ namespace APISample
 
         private void merchantsDeleteAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-delete-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-delete-post", UseShellExecute = true });
         }
 
         private void merchantsDeleteRunButton_Click(object sender, EventArgs e)
@@ -436,7 +436,7 @@ namespace APISample
 
         private void merchantsTimelineAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-timeline-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-timeline-post", UseShellExecute = true });
         }
 
         private void merchantsTimelineRunButton_Click(object sender, EventArgs e)
@@ -493,7 +493,7 @@ namespace APISample
 
         private void merchantsEditAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-merchants-vendors-edit-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-merchants-vendors-edit-post", UseShellExecute = true });
         }
 
         private void merchantsEditRunButton_Click(object sender, EventArgs e)

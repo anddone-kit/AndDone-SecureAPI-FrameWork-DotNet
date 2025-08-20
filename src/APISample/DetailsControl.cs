@@ -85,7 +85,7 @@ namespace APISample
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentsdetails-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentsdetails-post", UseShellExecute = true });
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -164,7 +164,7 @@ namespace APISample
 
         private void payDetailTokenAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentsdetails-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentsdetails-post", UseShellExecute = true });
         }
 
         private void payDetailTokenClearButton_Click(object sender, EventArgs e)

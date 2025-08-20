@@ -42,7 +42,7 @@ namespace APISample
 
         private void outboundPaymentsCancelAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-outboundpayments-cancel-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-outboundpayments-cancel-post", UseShellExecute = true });
         }
 
         private void outboundPaymentsCancelRunButton_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace APISample
 
         private void outboundPaymentsSearchAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-outboundpayments-search-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-outboundpayments-search-post", UseShellExecute = true });
         }
 
         private void outboundPaymentsSearchRunButton_Click(object sender, EventArgs e)
@@ -205,7 +205,7 @@ namespace APISample
 
         private void outboundPaymentsDetailsAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-outboundpayments-detail-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-outboundpayments-detail-post", UseShellExecute = true });
         }
 
         private void outboundPaymentsDetailsRunButton_Click(object sender, EventArgs e)
@@ -261,7 +261,7 @@ namespace APISample
 
         private void outboundPaymentsCreateAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-outboundpayments-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-outboundpayments-post", UseShellExecute = true });
         }
 
         private void outboundPaymentsCreateRunButton_Click(object sender, EventArgs e)
@@ -317,7 +317,7 @@ namespace APISample
 
         private void outboundPaymentsTimelinesAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/vendorapi-secure-outboundPayments-timelines-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/vendorapi-secure-outboundPayments-timelines-post", UseShellExecute = true });
         }
 
         private void outboundPaymentsTimelinesRunButton_Click(object sender, EventArgs e)

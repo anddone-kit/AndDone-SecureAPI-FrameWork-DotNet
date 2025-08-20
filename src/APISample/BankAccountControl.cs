@@ -42,7 +42,7 @@ namespace APISample
 
         private void bankAccountAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-bankaccounts-details-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-bankaccounts-details-post", UseShellExecute = true });
         }
 
         private void bankAccountsDetailsRunButton_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace APISample
 
         private void bankAccountsVerifyAPILabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-bankaccounts-verify-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-bankaccounts-verify-post", UseShellExecute = true });
         }
 
         private void bankAccountsVerifyRunButton_Click(object sender, EventArgs e)

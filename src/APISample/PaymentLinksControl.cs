@@ -161,7 +161,7 @@ namespace APISample
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentlinks-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentlinks-post", UseShellExecute = true });
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace APISample
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentlinks-details-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentlinks-details-post", UseShellExecute = true });
         }
 
         private void payLinkDetailRunButton_Click(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace APISample
 
         private void payLinkUpdateAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentlinks--id-put", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentlinks--id-put", UseShellExecute = true });
         }
 
         private void payLinkUpdateClearButton_Click(object sender, EventArgs e)
@@ -289,7 +289,7 @@ namespace APISample
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-paymentlinks-expirations-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-paymentlinks-expirations-post", UseShellExecute = true });
         }
 
         private void payLinkExpRunButton_Click(object sender, EventArgs e)

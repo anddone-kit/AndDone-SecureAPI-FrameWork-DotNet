@@ -84,7 +84,7 @@ namespace APISample
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-cancellations-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-cancellations-post", UseShellExecute = true });
         }
 
         private void DisplayTreeView(JToken root, string rootName)

@@ -52,7 +52,7 @@ namespace APISample
 
         private void tokenLinkCreateAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokenlinks-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokenlinks-post", UseShellExecute = true });
         }
 
         private void tokenLinkCreateClearButton_Click(object sender, EventArgs e)
@@ -172,7 +172,7 @@ namespace APISample
 
         private void tokenLinkDetailAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokenlinks-details-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokenlinks-details-post", UseShellExecute = true });
         }
 
         private void tokenLinkClearButton_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace APISample
 
         private void tokenLinkUpdateApiButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokenlinks-put", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokenlinks-put", UseShellExecute = true });
         }
 
         private void tokenLinkUpdateClearButton_Click(object sender, EventArgs e)
@@ -293,7 +293,7 @@ namespace APISample
 
         private void tokenLinkExpireApiButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokenlinks-expirations-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokenlinks-expirations-post", UseShellExecute = true });
         }
 
         private void tokenLinkExpireClearButton_Click(object sender, EventArgs e)
@@ -349,7 +349,7 @@ namespace APISample
 
         private void tokenLinkDeleteAPIButton_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/explorer/e/secure-tokenlinks-list-post", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = @"https://docs.dev.anddone.com/explorer/#/e/secure-tokenlinks-list-post", UseShellExecute = true });
         }
 
         private void tokenLinkListClearButton_Click(object sender, EventArgs e)
