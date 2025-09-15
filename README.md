@@ -38,7 +38,9 @@ dotnet build APISample.sln -c Release --property WarningLevel=0
    2. In the left menu, click "Developer" then "API Keys"
    3. Your xApiKey will be the API Key
    4. Your xAppKey will be the App Key
-2. Find your Origin by opening a browser and browse to: https://www.whatsmyip.org/  Your origin will be your IP Address
+2. You will need to register your Origin with us to execute API calls against our Secure endpoints.
+   1. Typically, we use your domain for production or other hosted environments and IP address for local development environments.
+   2. Contact AndDone support (integrations@anddone.com) or your onboarding agent to ensure all your domains or IP addresses you may use are registered for use with our secure APIs.
 3. Create a settings file to contain AndDone specific settings
 ```sh
 cd src\APISample\bin\Release\net8.0-windows
