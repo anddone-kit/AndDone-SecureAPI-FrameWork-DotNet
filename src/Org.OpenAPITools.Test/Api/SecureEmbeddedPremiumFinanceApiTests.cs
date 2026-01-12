@@ -213,7 +213,7 @@ namespace Org.OpenAPITools.Test.Api
                 ),
                 insured: new QuoteRequestInsured(
                     agentCustomerNumber: "Suyash",
-                    email: "dylan.smith@fmkagency.com",
+                    email: "test@test.com",
                     careOf: "",
                     uniqueId: xAppKey,
                     address: new QuoteRequestInsuredAddress(
@@ -228,7 +228,7 @@ namespace Org.OpenAPITools.Test.Api
                 ),
                 agent: new QuoteRequestAgent (
                     uniqueID: xAppKey,// Merchant Id
-                    email: "dylan.smith@fmkagency.com",
+                    email: "test@test.com",
                     address: new QuoteRequestAgentAddress (
                         name: "Insurance Agency",
                         address1: "PO Box 486",

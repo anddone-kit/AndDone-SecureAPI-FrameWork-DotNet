@@ -178,7 +178,7 @@ namespace Org.OpenAPITools.Test.Api
                     ]),
                     insured: new PFEndorsementRequestQuoteInsured (
                         agentCustomerNumber: "Suyash",
-                        email: "dylan.smith@fmkagency.com",
+                        email: "test@test.com",
                         careOf: "",
                         address: new PFEndorsementRequestQuoteInsuredAddress (
                             name: "Sam",

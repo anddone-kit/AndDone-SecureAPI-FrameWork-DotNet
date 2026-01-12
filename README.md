@@ -1,11 +1,20 @@
-# APISample
+# AndDone Framework - DotNet
 
-## Prerequisites
-You must have the .Net 8 SDK Runtime installed.
-You can download and install the SDK at:
+This project serves as a sample installation of a project utilizing **AndDone's DotNet client library** to integrate 
+with our APIs.
 
-https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+By following the instructions below, you will be able to see our API endpoints in action quickly.
 
+- **Base DotNet Client Library**: [AndDone-SecureAPI-ClientLibrary-DotNet](https://github.com/anddone-kit/AndDone-SecureAPI-ClientLibrary-DotNet)  
+- **Developer Documentation**: [DevDocs](https://docs.anddone.com/)  
+- **API Explorer**: [AndDone API Explorer](https://docs.anddone.com/explorer/)
+
+---
+
+## ✅ Prerequisites
+
+- **.Net 8 SDK Runtime**
+[Download .NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## Installation
 
@@ -21,7 +30,7 @@ cd anddone
 ```
 5. Clone the repository
 ```sh
-git clone https://github.com/FMK-Agency/anddone-dotnet-sdk-sample-installation.git
+git clone https://github.com/anddone-kit/AndDone-SecureAPI-FrameWork-DotNet.git
 ````
 6. Change to the project folder
 ```sh
@@ -77,6 +86,22 @@ cd src\APISample\bin\Release\net8.0-windows
 The API Calls are grouped into sections (menu buttons) on the left side menu.  For example, you can click on the "Payments" button to see all the Payment related API Calls.
 
 For every API call, a Request Payload (in JSON format) is required.  All Request JSON Files are located in the "Requests" folder.  When you Click on an API section in the Left Menu, you will see a tab for each specific API Call.  Each tab will show the location and filename of the Request Payload.  In order to change the Request Payload, use an editor to modify the JSON file.  Save the file and re-run the API Call.  You do not need to stop/start the APISample application.
+
+#### Reports Payload
+
+The Reports Payload requires a "reportId" and "date". To obtain these values:
+
+1. Login to (UAT) https://portal.uat.anddone.com/   (Production) https://portal.anddone.com/
+2. In the left menu, click "Reporting".
+3. Choose a Report and click "Generate Report"
+4. Enter the date for the data you want and click "Generate"
+5. This will take you to the Report List page.
+6. Note the URL will be in the format of: "/merchant/reports/generate-reports/KGx1n813"
+7. The final path in the URL (ex: KGx1n813) will be the "reportId" to use for the payload
+8. The "date" for the payload is the "Report Date" column on the Report List page, in the format "mm-dd-yyyy"
+
+Note that instead of generating a new report, after clicking the left menu "Reporting", you can select already generated
+reports and follow the same steps for obtaining the "reportId" and "date"
 
 ## Responses
 After clicking a button to execute an API Call, there will be 2 outputs displayed on the screen.  The first will be the "Response Code" returned from the API Call.  The second will be the Raw JSON returned from the API Call.

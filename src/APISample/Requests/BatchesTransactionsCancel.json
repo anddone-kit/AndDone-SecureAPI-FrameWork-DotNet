@@ -1,5 +1,5 @@
 {
-  "merchantId": "BxpQwN8R",
+  "merchantId": "YOUR_APP_KEY",
   "batchId": "OgdZ5m8N",
   "voidReason": "Duplicate Payments",
   "transactionIds": [

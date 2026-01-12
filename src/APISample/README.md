@@ -21,7 +21,7 @@ cd anddone
 ```
 5. Clone the repository
 ```sh
-git clone https://github.com/FMK-Agency/anddone-dotnet-sdk-sample-installation.git
+git clone https://github.com/anddone-kit/AndDone-SecureAPI-FrameWork-DotNet.git
 ````
 6. Change to the project folder
 ```sh

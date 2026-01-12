@@ -10,7 +10,7 @@
   "phoneNumber": "1234567890",
   "isMobileNumber": "true",
   "useSameAsPhysicalAddress": "true",
-  "email": "daryl.broxterman@fmkagency.com",
+  "email": "test@test.com",
   "url": "https://vendor.com",
   "remittanceAddress": {
     "attention": "Attention",
