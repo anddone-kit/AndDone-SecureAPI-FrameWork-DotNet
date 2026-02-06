@@ -145,7 +145,10 @@ To include the **AndDone's DotNet client library** in your project:
 ```sh
 dotnet nuget add source --username {GH_USER} --password {GH_PAT} --store-password-in-clear-text --name githubanddone "https://nuget.pkg.github.com/AndDone-kit/index.json"
 ```
-    7. In your .csproj file, add a package reference to: ```<PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />```
+    7. In your .csproj file, add a package reference to: 
+```sh
+<PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />
+```
    
 3. Within Visual Studio
     1. Open your solution in Visual Studio
