@@ -16,6 +16,8 @@ By following the instructions below, you will be able to see our API endpoints i
 - **.Net 8 SDK Runtime**
 [Download .NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
+Or
+
 - **.Net Standard2.0 Runtime**
 [Download .NET Core 2.0](https://dotnet.microsoft.com/en-us/download/dotnet/2.0)
 
@@ -130,3 +132,16 @@ git pull
 dotnet build APISample.sln -c Release --property WarningLevel=0
 ```
 
+## Including the **AndDone's DotNet client library**
+To include the **AndDone's DotNet client library** in your project:
+
+1. Manually
+    1. In your .csproj file, add a package reference to: ```<PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />```
+   
+3. Within Visual Studio
+    1. Open your solution in Visual Studio
+    2. Select Tools -> Nuget Package Manager -> Manage NuGet Package for solution
+    3. Click Gear Setting and add Package Source:  https://nuget.pkg.github.com/AndDone-LLC/index.json  with any name
+    4. Select same name in Package Source drop down
+    5. Click Browse Tab and select "AndDoneSecureClientLibrary"
+    6. Select your project and "Install"
