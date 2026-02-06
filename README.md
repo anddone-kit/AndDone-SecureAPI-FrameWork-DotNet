@@ -136,12 +136,21 @@ dotnet build APISample.sln -c Release --property WarningLevel=0
 To include the **AndDone's DotNet client library** in your project:
 
 1. Manually
-    1. In your .csproj file, add a package reference to: ```<PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />```
+    1. Create a GitHub Personal Access Token (PAT) by logging into GitHub
+    2. Select User -> Settings -> Developer Settings -> Personal access tokens -> Tokens (classic)
+    3. Select Generate new token -> Generate new token (classic)
+    4. Give an identifiable description name
+    5. Copy Token to be used below as GH_PAT
+    6. Add the GHCR reference to the local machine by running the following in Powershell: 
+```sh
+dotnet nuget add source --username {GH_USER} --password {GH_PAT} --store-password-in-clear-text --name githubanddone "https://nuget.pkg.github.com/AndDone-kit/index.json"
+```
+    7. In your .csproj file, add a package reference to: ```<PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />```
    
 3. Within Visual Studio
     1. Open your solution in Visual Studio
     2. Select Tools -> Nuget Package Manager -> Manage NuGet Package for solution
-    3. Click Gear Setting and add Package Source:  https://nuget.pkg.github.com/AndDone-LLC/index.json  with any name
+    3. Click Gear Setting and add Package Source:  https://nuget.pkg.github.com/AndDone-kit/index.json  with any name
     4. Select same name in Package Source drop down
     5. Click Browse Tab and select "AndDoneSecureClientLibrary"
     6. Select your project and "Install"
