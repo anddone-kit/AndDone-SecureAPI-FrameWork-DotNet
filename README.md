@@ -16,6 +16,9 @@ By following the instructions below, you will be able to see our API endpoints i
 - **.Net 8 SDK Runtime**
 [Download .NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
+- **.Net Standard2.0 Runtime**
+[Download .NET Core 2.0](https://dotnet.microsoft.com/en-us/download/dotnet/2.0)
+
 ## Installation
 
 1. Open a Powershell window
