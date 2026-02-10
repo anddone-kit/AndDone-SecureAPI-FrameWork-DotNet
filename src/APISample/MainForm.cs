@@ -85,7 +85,6 @@ namespace APISample
             reportsControl1.Hide();
             tokenLinksControl1.Hide();
             batchesControl1.Hide();
-            bankAccountControl1.Hide();
             outboundPaymentControl1.Hide();
             tokensControl1.Hide();
         }
@@ -129,7 +128,6 @@ namespace APISample
         private void bankAccountButton_Click(object sender, EventArgs e)
         {
             HideAll();
-            bankAccountControl1.Show();
         }
 
         private void outboundPaymentButton_Click(object sender, EventArgs e)

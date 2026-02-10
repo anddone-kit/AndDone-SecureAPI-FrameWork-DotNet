@@ -1,7 +1,9 @@
-﻿using APISample.Settings;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+﻿using AndDoneSecureClientLibrary.Client;
+using AndDoneSecureClientLibrary.Model;
+using APISample.Settings;
+using AndDoneSecureClientLibrary.Api;
+using AndDoneSecureClientLibrary.Client;
+using AndDoneSecureClientLibrary.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

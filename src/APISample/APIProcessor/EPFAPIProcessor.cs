@@ -1,7 +1,7 @@
 ﻿using APISample.Settings;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using AndDoneSecureClientLibrary.Api;
+using AndDoneSecureClientLibrary.Client;
+using AndDoneSecureClientLibrary.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,7 +148,7 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PFUpdatePFAResponse> QuoteEndorsementBooking(PFQuoteBookingRequest request, ConfigSettings _settings)
+        static public ApiResponse<PFUpdatePFAResponse> QuoteEndorsementBooking(SecurePFQuoteBookingRequest request, ConfigSettings _settings)
         {
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;

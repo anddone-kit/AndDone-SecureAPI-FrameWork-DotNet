@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using AndDoneSecureClientLibrary.Api;
+using AndDoneSecureClientLibrary.Client;
+using AndDoneSecureClientLibrary.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

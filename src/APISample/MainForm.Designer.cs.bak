@@ -50,22 +50,6 @@ namespace APISample
             reportsButton = new System.Windows.Forms.Button();
             tokenLinksButton = new System.Windows.Forms.Button();
             tokensButton = new System.Windows.Forms.Button();
-            configurationButton = new System.Windows.Forms.Button();
-            cancellationsControl1 = new CancellationsControl();
-            configurationControl1 = new ConfigurationControl();
-            paymentsControl1 = new PaymentsControl();
-            paymentLinksControl1 = new PaymentLinksControl();
-            detailsControl1 = new DetailsControl();
-            epfControl2 = new EPFControl();
-            epfLiteControl1 = new PFLinkControl();
-            merchantsControl1 = new MerchantsControl();
-            paymentIntentsControl1 = new PaymentIntentsControl();
-            refundsControl1 = new RefundsControl();
-            reportsControl1 = new ReportsControl();
-            tokenLinksControl1 = new TokenLinksControl();
-            batchesControl1 = new BatchesControl();
-            outboundPaymentControl1 = new OutboundPaymentControl();
-            tokensControl1 = new TokensControl();
             panel1 = new System.Windows.Forms.Panel();
             exitButton = new System.Windows.Forms.Button();
             configurationButton = new System.Windows.Forms.Button();
@@ -273,125 +257,6 @@ namespace APISample
             tokensButton.UseVisualStyleBackColor = true;
             tokensButton.Click += tokensButton_Click;
             // 
-            // configurationButton
-            // 
-            configurationButton.Location = new System.Drawing.Point(12, 39);
-            configurationButton.Margin = new System.Windows.Forms.Padding(12, 4, 4, 11);
-            configurationButton.Name = "configurationButton";
-            configurationButton.Size = new System.Drawing.Size(98, 26);
-            configurationButton.TabIndex = 2;
-            configurationButton.Text = "Configuration";
-            configurationButton.UseVisualStyleBackColor = true;
-            configurationButton.Click += configurationButton_Click;
-            // 
-            // cancellationsControl1
-            // 
-            cancellationsControl1.Location = new System.Drawing.Point(130, 10);
-            cancellationsControl1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            cancellationsControl1.Name = "cancellationsControl1";
-            cancellationsControl1.Size = new System.Drawing.Size(980, 591);
-            cancellationsControl1.TabIndex = 3;
-            // 
-            // configurationControl1
-            // 
-            configurationControl1.Location = new System.Drawing.Point(130, 10);
-            configurationControl1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            configurationControl1.Name = "configurationControl1";
-            configurationControl1.Size = new System.Drawing.Size(980, 591);
-            configurationControl1.TabIndex = 2;
-            // 
-            // paymentsControl1
-            // 
-            paymentsControl1.Location = new System.Drawing.Point(130, 10);
-            paymentsControl1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-            paymentsControl1.Name = "paymentsControl1";
-            paymentsControl1.Size = new System.Drawing.Size(980, 591);
-            paymentsControl1.TabIndex = 4;
-            // 
-            // paymentLinksControl1
-            // 
-            paymentLinksControl1.Location = new System.Drawing.Point(130, 10);
-            paymentLinksControl1.Name = "paymentLinksControl1";
-            paymentLinksControl1.Size = new System.Drawing.Size(980, 591);
-            paymentLinksControl1.TabIndex = 5;
-            // 
-            // detailsControl1
-            // 
-            detailsControl1.Location = new System.Drawing.Point(130, 10);
-            detailsControl1.Name = "detailsControl1";
-            detailsControl1.Size = new System.Drawing.Size(980, 591);
-            detailsControl1.TabIndex = 6;
-            // 
-            // epfControl2
-            // 
-            epfControl2.Location = new System.Drawing.Point(130, 10);
-            epfControl2.Name = "epfControl2";
-            epfControl2.Size = new System.Drawing.Size(980, 591);
-            epfControl2.TabIndex = 8;
-            // 
-            // epfLiteControl1
-            // 
-            epfLiteControl1.Location = new System.Drawing.Point(130, 10);
-            epfLiteControl1.Name = "epfLiteControl1";
-            epfLiteControl1.Size = new System.Drawing.Size(980, 591);
-            epfLiteControl1.TabIndex = 9;
-            // 
-            // merchantsControl1
-            // 
-            merchantsControl1.Location = new System.Drawing.Point(130, 10);
-            merchantsControl1.Name = "merchantsControl1";
-            merchantsControl1.Size = new System.Drawing.Size(980, 591);
-            merchantsControl1.TabIndex = 10;
-            // 
-            // paymentIntentsControl1
-            // 
-            paymentIntentsControl1.Location = new System.Drawing.Point(130, 10);
-            paymentIntentsControl1.Name = "paymentIntentsControl1";
-            paymentIntentsControl1.Size = new System.Drawing.Size(980, 591);
-            paymentIntentsControl1.TabIndex = 11;
-            // 
-            // refundsControl1
-            // 
-            refundsControl1.Location = new System.Drawing.Point(130, 10);
-            refundsControl1.Name = "refundsControl1";
-            refundsControl1.Size = new System.Drawing.Size(980, 591);
-            refundsControl1.TabIndex = 12;
-            // 
-            // reportsControl1
-            // 
-            reportsControl1.Location = new System.Drawing.Point(130, 10);
-            reportsControl1.Name = "reportsControl1";
-            reportsControl1.Size = new System.Drawing.Size(980, 591);
-            reportsControl1.TabIndex = 13;
-            // 
-            // tokenLinksControl1
-            // 
-            tokenLinksControl1.Location = new System.Drawing.Point(130, 10);
-            tokenLinksControl1.Name = "tokenLinksControl1";
-            tokenLinksControl1.Size = new System.Drawing.Size(980, 591);
-            tokenLinksControl1.TabIndex = 14;
-            // 
-            // batchesControl1
-            // 
-            batchesControl1.Location = new System.Drawing.Point(130, 10);
-            batchesControl1.Name = "batchesControl1";
-            batchesControl1.Size = new System.Drawing.Size(980, 591);
-            batchesControl1.TabIndex = 15;
-            // 
-            // outboundPaymentControl1
-            // 
-            outboundPaymentControl1.Location = new System.Drawing.Point(130, 10);
-            outboundPaymentControl1.Name = "outboundPaymentControl1";
-            outboundPaymentControl1.Size = new System.Drawing.Size(980, 591);
-            outboundPaymentControl1.TabIndex = 17;
-            // 
-            // tokensControl1
-            // 
-            tokensControl1.Location = new System.Drawing.Point(130, 10);
-            tokensControl1.Name = "tokensControl1";
-            tokensControl1.Size = new System.Drawing.Size(980, 591);
-            tokensControl1.TabIndex = 18;
-            // 
             // panel1
             // 
             panel1.Controls.Add(exitButton);
@@ -429,21 +294,6 @@ namespace APISample
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.Control;
             ClientSize = new System.Drawing.Size(1084, 701);
-            Controls.Add(tokensControl1);
-            Controls.Add(outboundPaymentControl1);
-            Controls.Add(batchesControl1);
-            Controls.Add(tokenLinksControl1);
-            Controls.Add(reportsControl1);
-            Controls.Add(refundsControl1);
-            Controls.Add(paymentIntentsControl1);
-            Controls.Add(merchantsControl1);
-            Controls.Add(epfLiteControl1);
-            Controls.Add(epfControl2);
-            Controls.Add(detailsControl1);
-            Controls.Add(paymentLinksControl1);
-            Controls.Add(paymentsControl1);
-            Controls.Add(cancellationsControl1);
-            Controls.Add(configurationControl1);
             Controls.Add(flowLayoutPanel1);
             Margin = new System.Windows.Forms.Padding(2);
             Name = "MainForm";

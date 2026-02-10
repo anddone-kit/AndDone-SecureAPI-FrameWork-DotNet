@@ -2,9 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+using AndDoneSecureClientLibrary.Api;
+using AndDoneSecureClientLibrary.Client;
+using AndDoneSecureClientLibrary.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -677,7 +677,7 @@ namespace APISample
 
             JObject data = JObject.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + "\\Requests\\EPFQuoteEndorseBooking.json"));
 
-            PFQuoteBookingRequest request = JsonConvert.DeserializeObject<PFQuoteBookingRequest>(data.ToString());
+            SecurePFQuoteBookingRequest request = JsonConvert.DeserializeObject<SecurePFQuoteBookingRequest>(data.ToString());
 
             try
             {

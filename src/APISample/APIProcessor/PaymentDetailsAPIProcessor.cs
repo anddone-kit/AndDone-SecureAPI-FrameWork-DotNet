@@ -1,12 +1,12 @@
-﻿using APISample.Settings;
-using Org.OpenAPITools.Api;
-using Org.OpenAPITools.Client;
-using Org.OpenAPITools.Model;
+﻿using AndDoneSecureClientLibrary.Model;
+using AndDoneSecureClientLibrary.Api;
+using APISample.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AndDoneSecureClientLibrary.Client;
 
 namespace APISample.APIProcessor
 {
