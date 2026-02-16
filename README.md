@@ -133,9 +133,10 @@ dotnet build APISample.sln -c Release --property WarningLevel=0
 ```
 
 ## Including the **AndDone's DotNet client library**
-To include the **AndDone's DotNet client library** in your project:
+You can include the **AndDone's DotNet client library** in your project manually or within Visual Studio.  Note that the first time you include the library, you may be prompted to enter your GitHub credentials.
 
-#### Manually - In your .csproj file, add a package reference to:
+#### Manually
+In your .csproj file, add a package reference to:
 
 ```sh
 <PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />
