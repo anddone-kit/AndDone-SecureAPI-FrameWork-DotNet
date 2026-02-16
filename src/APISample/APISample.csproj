@@ -26,7 +26,7 @@
     <Content Include="AndDoneLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AndDoneSecureClientLibrary" Version="1.0.0" />
+    <PackageReference Include="AndDoneSecureClientLibrary" Version="*" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
 	  <PackageReference Include="JsonSubTypes" Version="2.0.1" />
