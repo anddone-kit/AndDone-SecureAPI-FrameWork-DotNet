@@ -7,19 +7,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class EPFAPIProcessor
     {
-        static public ApiResponse<List<PFGenerateQuoteResponse>> Generate(QuoteRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecureEmbeddedPremiumFinanceApi _apiInstance;
+        static SecureEmbeddedPremiumFinanceEndorsementsApi _apiInstance2;
+        public EPFAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            _apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
+            _apiInstance2 = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
+        }
+        static public ApiResponse<List<PFGenerateQuoteResponse>> Generate(QuoteRequest request)
+        {
             try
             {
-                ApiResponse<List<PFGenerateQuoteResponse>> response = apiInstance.SecureEpfQuotesGeneratePostWithHttpInfo(
+                ApiResponse<List<PFGenerateQuoteResponse>> response = _apiInstance.SecureEpfQuotesGeneratePostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +38,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<List<QuoteResponse>> GetByIntent(GetQuoteRequest request, ConfigSettings _settings)
+        static public ApiResponse<List<QuoteResponse>> GetByIntent(GetQuoteRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             try
             {
-                ApiResponse<List<QuoteResponse>> response = apiInstance.SecureEpfQuotesIntentPostWithHttpInfo(
+                ApiResponse<List<QuoteResponse>> response = _apiInstance.SecureEpfQuotesIntentPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -46,14 +52,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<QuoteResponse> GetByKey(GetQuoteKeyRequest request, ConfigSettings _settings)
+        static public ApiResponse<QuoteResponse> GetByKey(GetQuoteKeyRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             try
             {
-                ApiResponse<QuoteResponse> response = apiInstance.SecureEpfQuotesPostWithHttpInfo(
+                ApiResponse<QuoteResponse> response = _apiInstance.SecureEpfQuotesPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -63,14 +66,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PFPolicyUpdateResponse> UpdateIntent(PFPolicyUpdateRequestDTO request, ConfigSettings _settings)
+        static public ApiResponse<PFPolicyUpdateResponse> UpdateIntent(PFPolicyUpdateRequestDTO request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             try
             {
-                ApiResponse<PFPolicyUpdateResponse> response = apiInstance.SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(
+                ApiResponse<PFPolicyUpdateResponse> response = _apiInstance.SecureEpfMerchantsQuotesPolicyPutWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -80,14 +80,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PFCheckEndorsementsResponse> EndorsementEligibility(PFCheckEndorsementsRequest request, ConfigSettings _settings)
+        static public ApiResponse<PFCheckEndorsementsResponse> EndorsementEligibility(PFCheckEndorsementsRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
             try
             {
-                ApiResponse<PFCheckEndorsementsResponse> response = apiInstance.SecureEpfEndorsementsPostWithHttpInfo(
+                ApiResponse<PFCheckEndorsementsResponse> response = _apiInstance2.SecureEpfEndorsementsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -97,14 +94,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PFEndorsementResponse> QuoteEndorsement(PFEndorsementRequest request, ConfigSettings _settings)
+        static public ApiResponse<PFEndorsementResponse> QuoteEndorsement(PFEndorsementRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
             try
             {
-                ApiResponse<PFEndorsementResponse> response = apiInstance.SecureEpfQuoteEndorsementPostWithHttpInfo(
+                ApiResponse<PFEndorsementResponse> response = _apiInstance2.SecureEpfQuoteEndorsementPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -114,14 +108,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<Object> QuoteESign(PFQuoteEsignRequest request, ConfigSettings _settings)
+        static public ApiResponse<Object> QuoteESign(PFQuoteEsignRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             try
             {
-                ApiResponse<Object> response = apiInstance.SecureEpfQuotesCaptureesignPutWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.SecureEpfQuotesCaptureesignPutWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -131,14 +122,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PFUpdatePFAResponse> QuoteBooking(PFQuoteBookingRequest request, ConfigSettings _settings)
+        static public ApiResponse<PFUpdatePFAResponse> QuoteBooking(PFQuoteBookingRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             try
             {
-                ApiResponse<PFUpdatePFAResponse> response = apiInstance.SecureEpfQuotesBookingPutWithHttpInfo(
+                ApiResponse<PFUpdatePFAResponse> response = _apiInstance.SecureEpfQuotesBookingPutWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -148,14 +136,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PFUpdatePFAResponse> QuoteEndorsementBooking(SecurePFQuoteBookingRequest request, ConfigSettings _settings)
+        static public ApiResponse<PFUpdatePFAResponse> QuoteEndorsementBooking(SecurePFQuoteBookingRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceEndorsementsApi(config);
             try
             {
-                ApiResponse<PFUpdatePFAResponse> response = apiInstance.SecureEpfQuoteEndorsementBookingPutWithHttpInfo(
+                ApiResponse<PFUpdatePFAResponse> response = _apiInstance2.SecureEpfQuoteEndorsementBookingPutWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -165,14 +150,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<string> RetrievePFA(PFRetrievePFARequestDTO request, ConfigSettings _settings)
+        static public ApiResponse<string> RetrievePFA(PFRetrievePFARequestDTO request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureEmbeddedPremiumFinanceApi(config);
             try
             {
-                ApiResponse<string> response = apiInstance.SecureEpfRetrievepfaPostWithHttpInfo(
+                ApiResponse<string> response = _apiInstance.SecureEpfRetrievepfaPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }

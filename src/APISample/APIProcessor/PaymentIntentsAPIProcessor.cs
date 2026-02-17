@@ -7,19 +7,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class PaymentIntentsAPIProcessor
     {
-        static public ApiResponse<PaymentIntentResponse> Create(PaymentIntentRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecurePaymentIntentApi _apiInstance;
+        public PaymentIntentsAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentIntentApi(config);
+            _apiInstance = new SecurePaymentIntentApi(config);
+        }
+        public static ApiResponse<PaymentIntentResponse> Create(PaymentIntentRequest request)
+        {
             try
             {
-                ApiResponse<PaymentIntentResponse> response = apiInstance.SecurePaymentintentsPostWithHttpInfo(
+                ApiResponse<PaymentIntentResponse> response = _apiInstance.SecurePaymentintentsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +37,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PaymentIntentExpiresResponse> Expiration(string expToken, ConfigSettings _settings)
+        static public ApiResponse<PaymentIntentExpiresResponse> Expiration(string expToken)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentIntentApi(config);
             try
             {
-                ApiResponse<PaymentIntentExpiresResponse> response = apiInstance.SecurePaymentintentsExpirationsPostWithHttpInfo(
+                ApiResponse<PaymentIntentExpiresResponse> response = _apiInstance.SecurePaymentintentsExpirationsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, expToken);
                 return response;
             }

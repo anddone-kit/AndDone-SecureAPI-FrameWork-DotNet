@@ -21,15 +21,9 @@ namespace APISample
 {
     public partial class OutboundPaymentControl : UserControl
     {
-        ConfigSettings _settings;
         public OutboundPaymentControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void outboundPaymentsCancelGoToFileButton_Click(object sender, EventArgs e)
@@ -55,7 +49,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = OutboundPaymentsAPIProcessor.Cancel(request, _settings);
+                ApiResponse<Object> response = OutboundPaymentsAPIProcessor.Cancel(request);
                 Console.WriteLine("API: /vendorapi/secure/outboundpayments/cancel");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -161,7 +155,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PagePaymentListResponseDTO> response = OutboundPaymentsAPIProcessor.Search(paymentId, _settings);
+                ApiResponse<PagePaymentListResponseDTO> response = OutboundPaymentsAPIProcessor.Search(paymentId);
                 Console.WriteLine("API: /vendorapi/secure/outboundpayments/search");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -218,7 +212,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentDetailResponseDTO> response = OutboundPaymentsAPIProcessor.Details(request, _settings);
+                ApiResponse<PaymentDetailResponseDTO> response = OutboundPaymentsAPIProcessor.Details(request);
                 Console.WriteLine("API: /vendorapi/secure/outboundpayments/detail");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -274,7 +268,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentResponseDto> response = OutboundPaymentsAPIProcessor.Create(request, _settings);
+                ApiResponse<PaymentResponseDto> response = OutboundPaymentsAPIProcessor.Create(request);
                 Console.WriteLine("API: /vendorapi/secure/outboundpayments");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -330,7 +324,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<List<OutboundPaymentTimelineResponseDTOInner>> response = OutboundPaymentsAPIProcessor.Timelines(request, _settings);
+                ApiResponse<List<OutboundPaymentTimelineResponseDTOInner>> response = OutboundPaymentsAPIProcessor.Timelines(request);
                 Console.WriteLine("API: /vendorapi/secure/outboundpayments/timelines");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

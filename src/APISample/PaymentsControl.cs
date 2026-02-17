@@ -25,16 +25,9 @@ namespace APISample
 {
     public partial class PaymentsControl : UserControl
     {
-        ConfigSettings _settings;
         public PaymentsControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
-
         }
 
         private void createPaymentButton_Click(object sender, EventArgs e)
@@ -46,7 +39,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<TransactionDetailResponse> response = PaymentAPIProcessor.Create(request, _settings);
+                ApiResponse<TransactionDetailResponse> response = PaymentAPIProcessor.Create(request);
                 Console.WriteLine("API: /secure/payments");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -167,7 +160,7 @@ namespace APISample
             {
 
                 ApiResponse<MerchantTransactionEntityResponse> response = PaymentAPIProcessor.Search(startDate, endDate,
-                    startRow, _settings);
+                    startRow);
                 Console.WriteLine("API: /secure/payments/search");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -259,7 +252,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = PaymentAPIProcessor.Export(startDate, endDate, startRow, _settings);
+                ApiResponse<Object> response = PaymentAPIProcessor.Export(startDate, endDate, startRow);
                 Console.WriteLine("API: /secure/payments/export");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

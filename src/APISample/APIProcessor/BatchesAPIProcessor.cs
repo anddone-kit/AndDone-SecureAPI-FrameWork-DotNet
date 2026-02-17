@@ -9,19 +9,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class BatchesAPIProcessor
     {
-        static public ApiResponse<PaymentBatchResponse> Get(int startRow, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecurePaymentBatchingApi _apiInstance;
+
+        public BatchesAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentBatchingApi(config);
+            _apiInstance = new SecurePaymentBatchingApi(config);
+        }
+        static public ApiResponse<PaymentBatchResponse> Get(int startRow)
+        {
             try
             {
-                ApiResponse<PaymentBatchResponse> response = apiInstance.SecureBatchesPostWithHttpInfo(
+                ApiResponse<PaymentBatchResponse> response = _apiInstance.SecureBatchesPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, startRow: startRow);
                 return response;
             }
@@ -31,14 +39,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<Object> TransactionCancel(PaymentBatchCancellationRequest request, ConfigSettings _settings)
+        static public ApiResponse<Object> TransactionCancel(PaymentBatchCancellationRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentBatchingApi(config);
             try
             {
-                ApiResponse<Object> response = apiInstance.SecureBatchesTransactionsCancelPostWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.SecureBatchesTransactionsCancelPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -48,14 +53,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<Object> Execute(SecureBatchExecuteRequest request, ConfigSettings _settings)
+        static public ApiResponse<Object> Execute(SecureBatchExecuteRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentBatchingApi(config);
             try
             {
-                ApiResponse<Object> response = apiInstance.SecureBatchesExecutePostWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.SecureBatchesExecutePostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -65,14 +67,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<List<PaymentBatchEventLogResponse>> Timelines(SecurePaymentBatchDetailsRequest request, ConfigSettings _settings)
+        static public ApiResponse<List<PaymentBatchEventLogResponse>> Timelines(SecurePaymentBatchDetailsRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentBatchingApi(config);
             try
             {
-                ApiResponse<List<PaymentBatchEventLogResponse>> response = apiInstance.SecureBatchesTimelinesPostWithHttpInfo(
+                ApiResponse<List<PaymentBatchEventLogResponse>> response = _apiInstance.SecureBatchesTimelinesPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -82,14 +81,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<List<PaymentBatchDetailsResponse>> Details(SecurePaymentBatchDetailsRequest request, ConfigSettings _settings)
+        static public ApiResponse<List<PaymentBatchDetailsResponse>> Details(SecurePaymentBatchDetailsRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentBatchingApi(config);
             try
             {
-                ApiResponse<List<PaymentBatchDetailsResponse>> response = apiInstance.SecureBatchesDetailsPostWithHttpInfo(
+                ApiResponse<List<PaymentBatchDetailsResponse>> response = _apiInstance.SecureBatchesDetailsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }

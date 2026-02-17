@@ -22,17 +22,12 @@ namespace APISample
 {
     public partial class DetailsControl : UserControl
     {
-        ConfigSettings _settings;
         public DetailsControl()
         {
             InitializeComponent();
 
             detailsByIdDependLabel.Text = "Dependency: Use the 'transactionId' returned from Payments->Create";
             payDetailTokenDepLabel.Text = "Dependency: Use the 'paymentToken' returned from Payment Intents->Create";
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void paymentDetailsByIdButton_Click(object sender, EventArgs e)
@@ -44,7 +39,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<TransactionPaymentResponse> response = PaymentDetailsAPIProcessor.ById(request, _settings);
+                ApiResponse<TransactionPaymentResponse> response = PaymentDetailsAPIProcessor.ById(request);
                 Console.WriteLine("API: /secure/paymentsdetails - Id");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -183,7 +178,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<TransactionPaymentResponse> response = PaymentDetailsAPIProcessor.ByToken(request, _settings);
+                ApiResponse<TransactionPaymentResponse> response = PaymentDetailsAPIProcessor.ByToken(request);
                 Console.WriteLine("API: /secure/paymentsdetails - Token");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

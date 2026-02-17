@@ -7,19 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AndDoneSecureClientLibrary.Client;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class PaymentDetailsAPIProcessor
     {
-        static public ApiResponse<TransactionPaymentResponse> ById(SecurePaymentDetailsRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecurePaymentsApi _apiInstance;
+        public PaymentDetailsAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentsApi(config);
+            _apiInstance = new SecurePaymentsApi(config);
+        }
+        static public ApiResponse<TransactionPaymentResponse> ById(SecurePaymentDetailsRequest request)
+        {
             try
             {
-                ApiResponse<TransactionPaymentResponse> response = apiInstance.SecurePaymentsdetailsPostWithHttpInfo(
+                ApiResponse<TransactionPaymentResponse> response = _apiInstance.SecurePaymentsdetailsPostWithHttpInfo(
                    _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +36,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<TransactionPaymentResponse> ByToken(SecurePaymentDetailsRequest request, ConfigSettings _settings)
+        static public ApiResponse<TransactionPaymentResponse> ByToken(SecurePaymentDetailsRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentsApi(config);
             try
             {
-                ApiResponse<TransactionPaymentResponse> response = apiInstance.SecurePaymentsdetailsPostWithHttpInfo(
+                ApiResponse<TransactionPaymentResponse> response = _apiInstance.SecurePaymentsdetailsPostWithHttpInfo(
                    _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }

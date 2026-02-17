@@ -21,16 +21,11 @@ namespace APISample
 {
     public partial class TokensControl : UserControl
     {
-        ConfigSettings _settings;
         public TokensControl()
         {
             InitializeComponent();
 
             label9.Text = "Dependency: Use the 'tokenLinkId' returned from Token Links->Create. Token must be processed";
-            var builder = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void tokensDeactivateGoToFileButton_Click(object sender, EventArgs e)
@@ -55,7 +50,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = TokensAPIProcessor.Deaactivate(request, _settings);
+                ApiResponse<Object> response = TokensAPIProcessor.Deaactivate(request);
                 Console.WriteLine("API: /secure/tokens/activations");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -109,7 +104,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureTokenLinkByIdResponse> response = TokenLinksAPIProcessor.Details(request, _settings);
+                ApiResponse<SecureTokenLinkByIdResponse> response = TokenLinksAPIProcessor.Details(request);
                 Console.WriteLine("API: /secure/tokenlinks/details");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

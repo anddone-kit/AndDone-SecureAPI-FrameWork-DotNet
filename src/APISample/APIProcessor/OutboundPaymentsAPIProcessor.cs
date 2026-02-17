@@ -2,6 +2,7 @@
 using AndDoneSecureClientLibrary.Client;
 using AndDoneSecureClientLibrary.Model;
 using APISample.Settings;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,20 @@ namespace APISample.APIProcessor
 {
     public class OutboundPaymentsAPIProcessor
     {
-        static public ApiResponse<PaymentResponseDto> Create(PaymentRequestDto request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecureOutboundPaymentsApi _apiInstance;
+        public OutboundPaymentsAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath2;
-            var apiInstance = new SecureOutboundPaymentsApi(config);
+            _apiInstance = new SecureOutboundPaymentsApi(config);
+        }
+        static public ApiResponse<PaymentResponseDto> Create(PaymentRequestDto request)
+        {
             try
             {
-                ApiResponse<PaymentResponseDto> response = apiInstance.VendorapiSecureOutboundpaymentsPostWithHttpInfo(
+                ApiResponse<PaymentResponseDto> response = _apiInstance.VendorapiSecureOutboundpaymentsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +36,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PaymentDetailResponseDTO> Details(PaymentRequestDetailDTO request, ConfigSettings _settings)
+        static public ApiResponse<PaymentDetailResponseDTO> Details(PaymentRequestDetailDTO request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath2;
-            var apiInstance = new SecureOutboundPaymentsApi(config);
             try
             {
-                ApiResponse<PaymentDetailResponseDTO> response = apiInstance.VendorapiSecureOutboundpaymentsDetailPostWithHttpInfo(
+                ApiResponse<PaymentDetailResponseDTO> response = _apiInstance.VendorapiSecureOutboundpaymentsDetailPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -46,14 +50,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<Object> Cancel(CancelPaymentRequestDTO request, ConfigSettings _settings)
+        static public ApiResponse<Object> Cancel(CancelPaymentRequestDTO request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath2;
-            var apiInstance = new SecureOutboundPaymentsApi(config);
             try
             {
-                ApiResponse<Object> response = apiInstance.VendorapiSecureOutboundpaymentsCancelPostWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.VendorapiSecureOutboundpaymentsCancelPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -63,14 +64,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<List<OutboundPaymentTimelineResponseDTOInner>> Timelines(PaymentTimeLineRequestDto request, ConfigSettings _settings)
+        static public ApiResponse<List<OutboundPaymentTimelineResponseDTOInner>> Timelines(PaymentTimeLineRequestDto request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath2;
-            var apiInstance = new SecureOutboundPaymentsApi(config);
             try
             {
-                ApiResponse<List<OutboundPaymentTimelineResponseDTOInner>> response = apiInstance.VendorapiSecureOutboundPaymentsTimelinesPostWithHttpInfo(
+                ApiResponse<List<OutboundPaymentTimelineResponseDTOInner>> response = _apiInstance.VendorapiSecureOutboundPaymentsTimelinesPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -80,14 +78,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PagePaymentListResponseDTO> Search(string paymentId, ConfigSettings _settings)
+        static public ApiResponse<PagePaymentListResponseDTO> Search(string paymentId)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath2;
-            var apiInstance = new SecureOutboundPaymentsApi(config);
             try
             {
-                ApiResponse<PagePaymentListResponseDTO> response = apiInstance.VendorapiSecureOutboundpaymentsSearchPostWithHttpInfo(
+                ApiResponse<PagePaymentListResponseDTO> response = _apiInstance.VendorapiSecureOutboundpaymentsSearchPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, paymentId: paymentId);
                 return response;
             }

@@ -7,19 +7,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class TokensAPIProcessor
     {
-        static public ApiResponse<SecureMerchantTokenShortResponse> Details(SecureTokenLinkRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecureTokenManagementApi _apiInstance;
+        public TokensAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenManagementApi(config);
+            _apiInstance = new SecureTokenManagementApi(config);
+        }
+        static public ApiResponse<SecureMerchantTokenShortResponse> Details(SecureTokenLinkRequest request)
+        {
             try
             {
-                ApiResponse<SecureMerchantTokenShortResponse> response = apiInstance.SecureTokensDetailsPostWithHttpInfo(
+                ApiResponse<SecureMerchantTokenShortResponse> response = _apiInstance.SecureTokensDetailsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +36,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<Object> Deaactivate(TokenRequest request, ConfigSettings _settings)
+        static public ApiResponse<Object> Deaactivate(TokenRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenManagementApi(config);
             try
             {
-                ApiResponse<Object> response = apiInstance.SecureTokensActivationsDeleteWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.SecureTokensActivationsDeleteWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }

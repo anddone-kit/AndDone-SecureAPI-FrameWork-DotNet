@@ -24,7 +24,6 @@ namespace APISample
 {
     public partial class PaymentLinksControl : UserControl
     {
-        ConfigSettings _settings;
         public PaymentLinksControl()
         {
             InitializeComponent();
@@ -32,10 +31,6 @@ namespace APISample
             payLinkDetailDependLable.Text = "Dependency: Use the 'id' returned from Payment Links->Create";
             payLinkExpDependLabel.Text = "Dependency: Use the 'id' returned from Payment Links->Create";
             payLinkUpdateDependLabel.Text = "Dependency: Enter the 'id' from Payment Links->Create";
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void paymentLinksCreateButton_Click(object sender, EventArgs e)
@@ -48,7 +43,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentLinkResponse> response = PaymentLinksAPIProcessor.Create(request, _settings);
+                ApiResponse<PaymentLinkResponse> response = PaymentLinksAPIProcessor.Create(request);
                 Console.WriteLine("API: /secure/paymentlinks");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -187,7 +182,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentLinkResponse> response = PaymentLinksAPIProcessor.Details(request, _settings);
+                ApiResponse<PaymentLinkResponse> response = PaymentLinksAPIProcessor.Details(request);
                 Console.WriteLine("API: /secure/paymentlinks/details");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -253,7 +248,7 @@ namespace APISample
             try
             {
                 ApiResponse<PaymentLinkResponse> response = PaymentLinksAPIProcessor.Update(request, 
-                    payLinkUpdateIdTextBox.Text, _settings);
+                    payLinkUpdateIdTextBox.Text);
                 Console.WriteLine("API: /secure/paymentlinks/{id}");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -302,7 +297,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentLinkExpiresResponse> response = PaymentLinksAPIProcessor.Exprirations(request, _settings);
+                ApiResponse<PaymentLinkExpiresResponse> response = PaymentLinksAPIProcessor.Exprirations(request);
                 Console.WriteLine("API: /secure/paymentlinks/expirations");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

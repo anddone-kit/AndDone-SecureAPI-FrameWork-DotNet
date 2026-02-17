@@ -7,19 +7,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class RefundsAPIProcessor
     {
-        static public ApiResponse<RefundEligibility> Eligibility(TransactionRefundEligibilityRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecureRefundsApi _apiInstance;
+        public RefundsAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureRefundsApi(config);
+            _apiInstance = new SecureRefundsApi(config);
+        }
+        static public ApiResponse<RefundEligibility> Eligibility(TransactionRefundEligibilityRequest request)
+        {
             try
             {
-                ApiResponse<RefundEligibility> response = apiInstance.SecureRefundsEligibilityPostWithHttpInfo(
+                ApiResponse<RefundEligibility> response = _apiInstance.SecureRefundsEligibilityPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +36,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<SecureTransactionDetailDTO> Request(SecureTransactionRefundRequest request, ConfigSettings _settings)
+        static public ApiResponse<SecureTransactionDetailDTO> Request(SecureTransactionRefundRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureRefundsApi(config);
             try
             {
-                ApiResponse<SecureTransactionDetailDTO> response = apiInstance.SecureRefundsPostWithHttpInfo(
+                ApiResponse<SecureTransactionDetailDTO> response = _apiInstance.SecureRefundsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }

@@ -22,7 +22,6 @@ namespace APISample
 {
     public partial class TokenLinksControl : UserControl
     {
-        ConfigSettings _settings;
         string tokenLinkCreateUrl = "";
         public TokenLinksControl()
         {
@@ -35,11 +34,6 @@ namespace APISample
 
             tokenLinkCreateDependLabel.Visible = false;
             tokenLinkCreateUrlLink.Visible = false;
-
-            var builder = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void tokenLinkCreateGotToFileButton_Click(object sender, EventArgs e)
@@ -74,7 +68,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureTokenLinkResponse> response = TokenLinksAPIProcessor.Create(request, _settings);
+                ApiResponse<SecureTokenLinkResponse> response = TokenLinksAPIProcessor.Create(request);
                 Console.WriteLine("API: /secure/tokenlinks");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -192,7 +186,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureTokenLinkByIdResponse> response = TokenLinksAPIProcessor.Details(request, _settings);
+                ApiResponse<SecureTokenLinkByIdResponse> response = TokenLinksAPIProcessor.Details(request);
                 Console.WriteLine("API: /secure/tokenlinks/details");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -253,7 +247,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = TokenLinksAPIProcessor.Update(request, _settings);
+                ApiResponse<Object> response = TokenLinksAPIProcessor.Update(request);
                 Console.WriteLine("API: /secure/tokenlinks");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -313,7 +307,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureTokenLinkExpiredResponse> response = TokenLinksAPIProcessor.Expire(request, _settings);
+                ApiResponse<SecureTokenLinkExpiredResponse> response = TokenLinksAPIProcessor.Expire(request);
                 Console.WriteLine("API: /secure/tokenlinks/expirations");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -365,7 +359,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<TokenLinkResponse> response = TokenLinksAPIProcessor.List(_settings);
+                ApiResponse<TokenLinkResponse> response = TokenLinksAPIProcessor.List();
                 Console.WriteLine("API: /secure/tokenlinks/list");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

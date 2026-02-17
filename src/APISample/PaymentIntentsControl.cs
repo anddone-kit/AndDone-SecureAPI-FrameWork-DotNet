@@ -22,15 +22,9 @@ namespace APISample
 {
     public partial class PaymentIntentsControl : UserControl
     {
-        ConfigSettings _settings;
         public PaymentIntentsControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void payIntentCreateGoToFileButton_Click(object sender, EventArgs e)
@@ -63,7 +57,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentIntentResponse> response = PaymentIntentsAPIProcessor.Create(request, _settings);
+                ApiResponse<PaymentIntentResponse> response = PaymentIntentsAPIProcessor.Create(request);
                 Console.WriteLine("API: /secure/paymentintents");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -162,7 +156,7 @@ namespace APISample
             try
             {
                 ApiResponse<PaymentIntentExpiresResponse> response = PaymentIntentsAPIProcessor.Expiration(
-                    payIntentExpTokenTextBox.Text, _settings);
+                    payIntentExpTokenTextBox.Text);
                 Console.WriteLine("API: /secure/paymentintents/expirations?id={paymentToken}");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

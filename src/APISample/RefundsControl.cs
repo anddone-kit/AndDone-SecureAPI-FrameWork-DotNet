@@ -22,15 +22,9 @@ namespace APISample
 {
     public partial class RefundsControl : UserControl
     {
-        ConfigSettings _settings;
         public RefundsControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void refundEligibleGotToFileButton_Click(object sender, EventArgs e)
@@ -55,7 +49,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<RefundEligibility> response = RefundsAPIProcessor.Eligibility(request, _settings);
+                ApiResponse<RefundEligibility> response = RefundsAPIProcessor.Eligibility(request);
                 Console.WriteLine("API: /secure/refunds/eligibility");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -170,7 +164,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureTransactionDetailDTO> response = RefundsAPIProcessor.Request(request, _settings);
+                ApiResponse<SecureTransactionDetailDTO> response = RefundsAPIProcessor.Request(request);
                 Console.WriteLine("API: /secure/refunds");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

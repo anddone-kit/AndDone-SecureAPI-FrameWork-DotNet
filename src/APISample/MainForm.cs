@@ -1,4 +1,6 @@
-﻿using System;
+﻿using APISample.Settings;
+using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,11 @@ namespace APISample
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private readonly ConfigSettings configSettings;
+        public MainForm(IOptions<ConfigSettings> _settings)
         {
             InitializeComponent();
+            configSettings = _settings.Value;
         }
 
         private void exitButton_Click(object sender, EventArgs e)

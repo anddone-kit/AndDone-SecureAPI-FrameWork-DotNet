@@ -22,16 +22,11 @@ namespace APISample
 {
     public partial class CancellationsControl : UserControl
     {
-        ConfigSettings _settings;
         public CancellationsControl()
         {
             InitializeComponent();
             cancelDependLabel.Text = "Dependency: Use the 'transactionId' returned from Payments->Create";
 
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void cancellationsCancelButton_Click(object sender, EventArgs e)
@@ -43,7 +38,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureCancelledTransactionResponse> response = CancellationsAPIProcessor.Cancel(request, _settings);
+                ApiResponse<SecureCancelledTransactionResponse> response = CancellationsAPIProcessor.Cancel(request);
                 Console.WriteLine("API: /secure/cancellations");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

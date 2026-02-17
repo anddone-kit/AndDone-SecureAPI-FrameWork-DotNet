@@ -22,15 +22,9 @@ namespace APISample
 {
     public partial class MerchantsControl : UserControl
     {
-        ConfigSettings _settings;
         public MerchantsControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void merchantUpdatePolicyGoToFileButton_Click(object sender, EventArgs e)
@@ -62,7 +56,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PageVendorResponseDTO> response = VendorAPIProcessor.Search(vendorId, _settings);
+                ApiResponse<PageVendorResponseDTO> response = VendorAPIProcessor.Search(vendorId);
                 Console.WriteLine("API: /vendorapi/secure/merchants/vendors/search");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -164,7 +158,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureVendorResponseDTO> response = VendorAPIProcessor.Create(request, _settings);
+                ApiResponse<SecureVendorResponseDTO> response = VendorAPIProcessor.Create(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/vendors");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -221,7 +215,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<VendorResponseDTO> response = VendorAPIProcessor.Details(request, _settings);
+                ApiResponse<VendorResponseDTO> response = VendorAPIProcessor.Details(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/vendors/details");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -278,7 +272,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = VendorAPIProcessor.Suspend(request, _settings);
+                ApiResponse<Object> response = VendorAPIProcessor.Suspend(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/vendors/suspend");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -336,7 +330,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = VendorAPIProcessor.Unsuspend(request, _settings);
+                ApiResponse<Object> response = VendorAPIProcessor.Unsuspend(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/vendors/unsuspend");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -393,7 +387,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = VendorAPIProcessor.Delete(request, _settings);
+                ApiResponse<Object> response = VendorAPIProcessor.Delete(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/vendors/delete");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -449,7 +443,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<List<VendorTimelineResponseListInner>> response = VendorAPIProcessor.Timeline(request, _settings);
+                ApiResponse<List<VendorTimelineResponseListInner>> response = VendorAPIProcessor.Timeline(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/timeline");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -506,7 +500,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<SecureVendorResponseDTO> response = VendorAPIProcessor.Edit(request, _settings);
+                ApiResponse<SecureVendorResponseDTO> response = VendorAPIProcessor.Edit(request);
                 Console.WriteLine("API: /vendorapi/secure/merchants/edit");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

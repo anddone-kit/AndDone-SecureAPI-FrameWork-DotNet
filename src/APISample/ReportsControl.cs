@@ -22,15 +22,9 @@ namespace APISample
 {
     public partial class ReportsControl : UserControl
     {
-        ConfigSettings _settings;
         public ReportsControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void reportsDownloadGotToFileButton_Click(object sender, EventArgs e)
@@ -61,7 +55,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = ReportsAPIProcessor.Download(request, _settings);
+                ApiResponse<Object> response = ReportsAPIProcessor.Download(request);
                 Console.WriteLine("API: /secure/reports/download");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

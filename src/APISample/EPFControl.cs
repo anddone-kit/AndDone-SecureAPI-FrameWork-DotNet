@@ -23,7 +23,6 @@ namespace APISample
 {
     public partial class EPFControl : UserControl
     {
-        ConfigSettings _settings;
         string quoteLinkUrl = "";
         public EPFControl()
         {
@@ -37,10 +36,6 @@ namespace APISample
             pdflLinkText.Visible = false;
             pdfButton.Visible = false;
 
-            var builder = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void epfGenQuoteGoToFileButton_Click(object sender, EventArgs e)
@@ -75,7 +70,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<List<PFGenerateQuoteResponse>> response = EPFAPIProcessor.Generate(request, _settings);
+                ApiResponse<List<PFGenerateQuoteResponse>> response = EPFAPIProcessor.Generate(request);
                 Console.WriteLine("API: /secure/epf/quotes/generate");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -193,7 +188,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<List<QuoteResponse>> response = EPFAPIProcessor.GetByIntent(request, _settings); 
+                ApiResponse<List<QuoteResponse>> response = EPFAPIProcessor.GetByIntent(request); 
                 Console.WriteLine("API: /secure/epf/quotes/intent");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -251,7 +246,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<QuoteResponse> response = EPFAPIProcessor.GetByKey(request, _settings); 
+                ApiResponse<QuoteResponse> response = EPFAPIProcessor.GetByKey(request); 
                 Console.WriteLine("API: /secure/epf/quotes");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -310,7 +305,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PFCheckEndorsementsResponse> response = EPFAPIProcessor.EndorsementEligibility(request, _settings); 
+                ApiResponse<PFCheckEndorsementsResponse> response = EPFAPIProcessor.EndorsementEligibility(request); 
                 Console.WriteLine("API: /secure/epf/quotes");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -371,7 +366,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<string> response = EPFAPIProcessor.RetrievePFA(request, _settings);
+                ApiResponse<string> response = EPFAPIProcessor.RetrievePFA(request);
                 Console.WriteLine("API: /secure/epf/retrievepfa");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -454,7 +449,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PFPolicyUpdateResponse> response = EPFAPIProcessor.UpdateIntent(request, _settings);
+                ApiResponse<PFPolicyUpdateResponse> response = EPFAPIProcessor.UpdateIntent(request);
                 Console.WriteLine("API: /secure/epf/updateintent");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -513,7 +508,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PFEndorsementResponse> response = EPFAPIProcessor.QuoteEndorsement(request, _settings);
+                ApiResponse<PFEndorsementResponse> response = EPFAPIProcessor.QuoteEndorsement(request);
                 Console.WriteLine("API: /secure/epf/quote/endorsement");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -571,7 +566,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = EPFAPIProcessor.QuoteESign(request, _settings);
+                ApiResponse<Object> response = EPFAPIProcessor.QuoteESign(request);
                 Console.WriteLine("API: /secure/epf/quotes/captureesign");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -625,7 +620,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PFUpdatePFAResponse> response = EPFAPIProcessor.QuoteBooking(request, _settings);
+                ApiResponse<PFUpdatePFAResponse> response = EPFAPIProcessor.QuoteBooking(request);
                 Console.WriteLine("API: /secure/epf/quotes/booking");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -681,7 +676,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PFUpdatePFAResponse> response = EPFAPIProcessor.QuoteEndorsementBooking(request, _settings);
+                ApiResponse<PFUpdatePFAResponse> response = EPFAPIProcessor.QuoteEndorsementBooking(request);
                 Console.WriteLine("API: /secure/epf/quote/endorsement/booking");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

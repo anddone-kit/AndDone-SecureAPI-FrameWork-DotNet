@@ -7,19 +7,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class TokenLinksAPIProcessor
     {
-        static public ApiResponse<SecureTokenLinkResponse> Create(TokenLinkSecureRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecureTokenLinksApi _apiInstance;
+        public TokenLinksAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenLinksApi(config);
+            _apiInstance = new SecureTokenLinksApi(config);
+        }
+        static public ApiResponse<SecureTokenLinkResponse> Create(TokenLinkSecureRequest request)
+        {
             try
             {
-                ApiResponse<SecureTokenLinkResponse> response = apiInstance.SecureTokenlinksPostWithHttpInfo(
+                ApiResponse<SecureTokenLinkResponse> response = _apiInstance.SecureTokenlinksPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -29,14 +36,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<SecureTokenLinkByIdResponse> Details(SecureTokenLinkRequest request, ConfigSettings _settings)
+        static public ApiResponse<SecureTokenLinkByIdResponse> Details(SecureTokenLinkRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenLinksApi(config);
             try
             {
-                ApiResponse<SecureTokenLinkByIdResponse> response = apiInstance.SecureTokenlinksDetailsPostWithHttpInfo(
+                ApiResponse<SecureTokenLinkByIdResponse> response = _apiInstance.SecureTokenlinksDetailsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -46,14 +50,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<Object> Update(SecureTokenLinkUpdateRequest request, ConfigSettings _settings)
+        static public ApiResponse<Object> Update(SecureTokenLinkUpdateRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenLinksApi(config);
             try
             {
-                ApiResponse<Object> response = apiInstance.SecureTokenlinksPutWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.SecureTokenlinksPutWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -63,14 +64,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<SecureTokenLinkExpiredResponse> Expire(SecureTokenLinkRequest request, ConfigSettings _settings)
+        static public ApiResponse<SecureTokenLinkExpiredResponse> Expire(SecureTokenLinkRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenLinksApi(config);
             try
             {
-                ApiResponse<SecureTokenLinkExpiredResponse> response = apiInstance.SecureTokenlinksExpirationsPostWithHttpInfo(
+                ApiResponse<SecureTokenLinkExpiredResponse> response = _apiInstance.SecureTokenlinksExpirationsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -80,14 +78,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<TokenLinkResponse> List(ConfigSettings _settings)
+        static public ApiResponse<TokenLinkResponse> List()
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureTokenLinksApi(config);
             try
             {
-                ApiResponse<TokenLinkResponse> response = apiInstance.SecureTokenlinksListPostWithHttpInfo(
+                ApiResponse<TokenLinkResponse> response = _apiInstance.SecureTokenlinksListPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin);
                 return response;
             }

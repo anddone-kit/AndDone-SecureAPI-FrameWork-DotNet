@@ -7,19 +7,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class ReportsAPIProcessor
     {
-        static public ApiResponse<Object> Download(ReportDownloadRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecureReportsApi _apiInstance;
+        public ReportsAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecureReportsApi(config);
+            _apiInstance = new SecureReportsApi(config);
+        }
+        static public ApiResponse<Object> Download(ReportDownloadRequest request)
+        {
             try
             {
-                ApiResponse<Object> response = apiInstance.SecureReportsDownloadsPostWithHttpInfo(
+                ApiResponse<Object> response = _apiInstance.SecureReportsDownloadsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }

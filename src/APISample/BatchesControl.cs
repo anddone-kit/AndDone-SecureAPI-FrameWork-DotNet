@@ -26,11 +26,6 @@ namespace APISample
         public BatchesControl()
         {
             InitializeComponent();
-
-            var builder = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            IConfiguration Configuration = builder.Build();
-            _settings = Configuration.GetSection("Settings").Get<ConfigSettings>();
         }
 
         private void batchGetBatchesAPI_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -54,7 +49,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<PaymentBatchResponse> response = BatchesAPIProcessor.Get(startRow, _settings);
+                ApiResponse<PaymentBatchResponse> response = BatchesAPIProcessor.Get(startRow);
                 Console.WriteLine("API: /secure/batches");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -171,7 +166,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = BatchesAPIProcessor.TransactionCancel(request, _settings);
+                ApiResponse<Object> response = BatchesAPIProcessor.TransactionCancel(request);
                 Console.WriteLine("API: /secure/batches/transactions/cancel");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -233,7 +228,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<Object> response = BatchesAPIProcessor.Execute(request, _settings);
+                ApiResponse<Object> response = BatchesAPIProcessor.Execute(request);
                 Console.WriteLine("API: /secure/batches/execute");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -291,7 +286,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<List<PaymentBatchEventLogResponse>> response = BatchesAPIProcessor.Timelines(request, _settings);
+                ApiResponse<List<PaymentBatchEventLogResponse>> response = BatchesAPIProcessor.Timelines(request);
                 Console.WriteLine("API: /secure/batches/timelines");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);
@@ -348,7 +343,7 @@ namespace APISample
 
             try
             {
-                ApiResponse<List<PaymentBatchDetailsResponse>> response = BatchesAPIProcessor.Details(request, _settings);
+                ApiResponse<List<PaymentBatchDetailsResponse>> response = BatchesAPIProcessor.Details(request);
                 Console.WriteLine("API: /secure/batches/details");
                 Console.WriteLine("Status Code: " + response.StatusCode);
                 Console.WriteLine("Response Body: " + response.RawContent);

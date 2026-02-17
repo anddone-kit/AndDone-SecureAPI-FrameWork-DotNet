@@ -7,19 +7,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 
 namespace APISample.APIProcessor
 {
     public class PaymentLinksAPIProcessor
     {
-        static public ApiResponse<PaymentLinkResponse> Create(PaymentLinkRequest request, ConfigSettings _settings)
+        private static ConfigSettings _settings;
+        static SecurePaymentLinksApi _apiInstance;
+        public PaymentLinksAPIProcessor(IOptions<ConfigSettings> settings)
         {
+            _settings = settings.Value;
             Configuration config = new Configuration();
             config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentLinksApi(config);
+            _apiInstance = new SecurePaymentLinksApi(config);
+        }
+        static public ApiResponse<PaymentLinkResponse> Create(PaymentLinkRequest request)
+        {
             try
             {
-                ApiResponse<PaymentLinkResponse> response = apiInstance.SecurePaymentlinksPostWithHttpInfo(
+                ApiResponse<PaymentLinkResponse> response = _apiInstance.SecurePaymentlinksPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -28,14 +35,11 @@ namespace APISample.APIProcessor
                 throw e;
             }
         }
-        static public ApiResponse<PaymentLinkResponse> Details(SecurePaymentLinkRequest request, ConfigSettings _settings)
+        static public ApiResponse<PaymentLinkResponse> Details(SecurePaymentLinkRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentLinksApi(config);
             try
             {
-                ApiResponse<PaymentLinkResponse> response = apiInstance.SecurePaymentlinksDetailsPostWithHttpInfo(
+                ApiResponse<PaymentLinkResponse> response = _apiInstance.SecurePaymentlinksDetailsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
@@ -46,14 +50,11 @@ namespace APISample.APIProcessor
         }
 
         static public ApiResponse<PaymentLinkResponse> Update(SecureUpdatePaymentLinkRequest request, 
-            string payLinkId, ConfigSettings _settings)
+            string payLinkId)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentLinksApi(config);
             try
             {
-                ApiResponse<PaymentLinkResponse> response = apiInstance.SecurePaymentlinksIdPutWithHttpInfo(
+                ApiResponse<PaymentLinkResponse> response = _apiInstance.SecurePaymentlinksIdPutWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, 
                     payLinkId, request);
                 return response;
@@ -64,14 +65,11 @@ namespace APISample.APIProcessor
             }
         }
 
-        static public ApiResponse<PaymentLinkExpiresResponse> Exprirations(SecurePaymentLinkRequest request, ConfigSettings _settings)
+        static public ApiResponse<PaymentLinkExpiresResponse> Exprirations(SecurePaymentLinkRequest request)
         {
-            Configuration config = new Configuration();
-            config.BasePath = _settings.BasePath;
-            var apiInstance = new SecurePaymentLinksApi(config);
             try
             {
-                ApiResponse<PaymentLinkExpiresResponse> response = apiInstance.SecurePaymentlinksExpirationsPostWithHttpInfo(
+                ApiResponse<PaymentLinkExpiresResponse> response = _apiInstance.SecurePaymentlinksExpirationsPostWithHttpInfo(
                     _settings.xApiKey, _settings.xAppKey, _settings.xVersion, _settings.Origin, request);
                 return response;
             }
