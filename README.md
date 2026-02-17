@@ -55,24 +55,43 @@ dotnet build APISample.sln -c Release --property WarningLevel=0
 2. You will need to register your Origin with us to execute API calls against our Secure endpoints.
    1. Typically, we use your domain for production or other hosted environments and IP address for local development environments.
    2. Contact AndDone support (integrations@anddone.com) or your onboarding agent to ensure all your domains or IP addresses you may use are registered for use with our secure APIs.
-3. Create a settings file to contain AndDone specific settings
-```sh
-cd src\APISample\bin\Release\net8.0-windows
-```
-4. Using your favorite editor, create a file "appsettings.json"
-5. COpy below into the "appsettings.json" and enter the xAPIKey, xAPPKey and Origin to the values to match your company settings.  Do not modify the BasePath or xVersion settings.  Save the settings and close the file.
-```sh
-{
-  "Settings": {
-    "BasePath": "https://api.uat.anddone.com",
-    "BasePath2": "https://api2.uat.anddone.com",
-    "xApiKey": "",
-    "xAppKey": "",
-    "xVersion": "2.3",
-    "Origin": ""
-  }
-}
-```
+3. Create settings configuration
+   #### * Using appsettings.json configuration file
+   1. Create a settings file to contain AndDone specific settings
+   ```sh
+   cd src\APISample\bin\Release\net8.0-windows
+   ```
+   2. Using your favorite editor, create a file "appsettings.json"
+   3. Copy below into the "appsettings.json" and enter the xAPIKey, xAPPKey and Origin to the values to match your company settings.  Do not modify the BasePath or xVersion settings.  Save the settings and close the file.
+   ```sh
+   {
+     "AndDoneSecureApi": {
+       "BasePath": "https://api.uat.anddone.com",
+       "BasePath2": "https://api2.uat.anddone.com",
+       "xApiKey": "",
+       "xAppKey": "",
+       "xVersion": "2.3",
+       "Origin": ""
+     }
+   }
+   ```
+   #### * Using environment variables
+   1. Modify program.cs Main method adding each of the settings and enter the xAPIKey, xAPPKey and Origin to the values to match your company settings.  Do not modify the BasePath or xVersion settings.
+   ```
+   Environment.SetEnvironmentVariable("AndDoneSecureApi__BasePath", "https://api.uat.anddone.com");
+   Environment.SetEnvironmentVariable("AndDoneSecureApi__BasePath2", "https://api2.uat.anddone.com");
+   Environment.SetEnvironmentVariable("AndDoneSecureApi__xApiKey", "");
+   Environment.SetEnvironmentVariable("AndDoneSecureApi__xAppKey", "");
+   Environment.SetEnvironmentVariable("AndDoneSecureApi__xVersion", "2.3");
+   Environment.SetEnvironmentVariable("AndDoneSecureApi__Origin", "");
+   ```
+   #### * Using a Cloud Key Vault
+   To use a Cloud Key Vault such as Azure, follow the steps located at
+   [Azure Key Value configuration](https://learn.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-8.0)
+
+   #### * Other settings implementations
+   To use other settings implemenations, modify the program.cs ConfigureServices method as appropriate.
+
 
 ## Running the Sample API Application
 1. In Powershell, make sure you are in the folder d:\workspace\anddone\anddone-dotnet-sdk-sample-isntallation\src\APISample\bin\Release\net8.0-windows
