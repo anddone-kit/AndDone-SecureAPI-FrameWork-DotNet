@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="JsonSubTypes" Version="2.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="RestSharp" Version="114.0.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
